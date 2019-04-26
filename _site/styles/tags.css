@@ -1,0 +1,90 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    background-color: #EFEFEF;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: #57BF7D;
+    text-decoration: none;
+}
+
+.nickname {
+    font-size: 16px;
+    color: #AAA;
+    font-family: mottoFont;
+    margin-bottom: 20px;
+}
+
+.categories-area {
+    box-sizing: border-box;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    width: 50%;
+    overflow: hidden;
+}
+
+.category-name {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline;
+    line-height: 30px;
+    font-weight: bold;
+    color: #666;
+}
+
+#archives {
+    width: 50%;
+}
+
+.archive-group {
+    box-sizing: border-box;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.category-head {
+    text-align: center;
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.archive-item {
+    text-align: center;
+    line-height: 44px;
+    font-size: 16px;
+}
+
+.archive-item a {
+    color: #666;
+}
+
+.archive-item a:hover {
+    color: #73BC83;
+}

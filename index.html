@@ -1,0 +1,56 @@
+---
+layout: home
+title: ManateeLazyCat
+---
+
+<div class="topbar">
+    <div class="topbar-mine">ManateeLazyCat</div>
+    <div class="topbar-button">
+        <a href="{{ site.url }}/index.html">Home</a>
+    </div>
+    <div class="topbar-button">
+        <a href="{{ site.url }}/tags.html">Tags</a>
+    </div>
+    <div class="topbar-button">
+        <a href="{{ site.url }}/about.html">About</a>
+    </div>
+</div>
+
+<div class="slogan">
+    「生活可以更简单, 欢迎来到我的开源世界」
+</div>
+
+<ul>
+
+    {% for post in site.posts %}
+
+    <li class="post-line">
+        <a
+            class="post-title"
+            href="{{ site.baseurl }}{{ post.url }}"
+        >
+            {{ post.title }}
+        </a>
+
+        <div class="post-summary">
+            {{ post.content | strip_html | truncate: 200, " ..." }}
+        </div>
+        <div class="post-info">
+            <div class="category-area">
+                {% for category in post.categories %}
+                <a href="{{ site.url }}/tags.html#{{ category }}">
+                    <div class="category">
+                        {{ category }}
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="post-date">
+                {{ post.date | date: "%Y-%m-%d" }}
+            </div>
+        </div>
+    </li>
+
+    {% endfor %}
+
+</ul>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>我为什么不想把自己的Emacs插件放到MELPA上?</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                我为什么不想把自己的Emacs插件放到MELPA上?
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <p>玩了Emacs十几年, 写了很多 <a href="https://www.emacswiki.org/emacs/AndyStewart">Emacs插件</a> , 有很多人都建议把我的Emacs插件放到 MELPA 上.</p>
+
+<p>我一直以来的回答都是: NO</p>
+
+<p>今天把原因写出来, 以后如果再有人问到我, 我就可以直接把这篇回答直接发过去, 不用反复的回答:</p>
+
+<ol>
+  <li>我十年前答应朋友 rgr 把 org-w3m.el 贡献到 Emacs 主分支的时候就耗费了我很多时间, 几乎是编码一晚上, 合并代码2个月的赶脚</li>
+  <li>后来听了 rgr 的建议, 把所有插件都放到 <a href="https://www.emacswiki.org/emacs/AndyStewart">EmacsWiki</a> 以后, 剩余的十多年时间, 我的邮箱都被各种 emacser 轰炸, 开源软件就是这样, 创造的时间很短, 但是维护的时间却远远大于创作的时间, 包括大家经常用的 multi-term.el、sdcv.el、auto-install.el、anything.el、auto-complete.el 等插件, 我都维护超过十年以上的时间, 虽然能够帮助全世界的 emacser 我真的超级开心, 但是维护插件真的需要耗费我个人非常多的时间</li>
+  <li>诚然 MELPA/Package.el 对于用户来说很方便, 也会让更多人知道我写的插件, 但是同时也意味着会有成百倍的用户给我提 issue 和 建议, 我是一个不喜欢拒绝别人的人, 如果成百倍的用户发送 issue 和 建议, 我一定会睡不着觉去完善我的插件, 那样势必会占用我陪家人的时间, 综合考虑, 我更希望更多的时间让家人开心, 而不是让全世界的 emacser 更开心, 虽然他们都很友善和可爱</li>
+  <li>写Emacs插件和弄懂各种插件的细节, 我花费了无数个日日夜夜, 虽然 MELPA 让 90% 的Emacs用户可以一键自动下载安装(包括依赖), 但是同时也成就了太多不动脑筋的用户, 遇到问题不会搜索和研究, 只会抱怨, 最终放弃 Emacs. Emacs从基因上毕竟不是开箱即用的IDE, 你开始可能不会Elisp编程, 但是到最后你一定要学会 Elisp 编程才会把Emacs这把屠龙刀打造的尽可能顺手. 所以, 我不希望大家都变成傻瓜化的 MELPA 用户, 那样只会让自己丧失解决Emacs问题的能力, 最后把更多用户推离Emacs, 而不是拥抱Emacs的哲学理念</li>
+  <li>我现在已经过了向世人证明我个人能力的那段日子, 接下来的几十年, 我希望花更多的时间去学习新的技术和陪伴家人, 而不是无穷无尽的折腾 Emacs, 折腾Emacs而不学习高深的技术, 就像一个永远只会淬炼刀剑的却没有时间练习剑法的工匠一样, Emacs这个工具始终是为了探索好奇心服务, Emacs本身不应该成为学习的目标</li>
+  <li>除了技术以外, 我对产品的细节有很多我自己的见解, 我更喜欢制作一些开箱即用和细节优雅的插件, 就是那种 <strong>刚刚够用, 不多也不少</strong> 的感觉. 不太喜欢像传统开源软件开发者一样, 做功能非常丰富的瑞士军刀, 即使很多功能作者都不用. 使用的人太多, 就会众口难调, 最后自己写的插件连我自己都不喜欢, 那样就太无趣了, 而且拒绝那些提出建设性意见的人, 我自己也有点于心不忍, 所以我的插件就留给那些和我有同样品味的 emacser 发掘吧, 物以类聚, 不互相勉强的状态最舒服</li>
+</ol>
+
+<p>过去十几年活的很累, 总是给自己太多负担.</p>
+
+<p>以后的日子, 我希望为自己的好奇心和个人习惯而活, 简单点, 喜欢我的作品我很高兴, 不喜欢我的作品欢迎你继续探索, 这样的日子最简单, 也最快乐.</p>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

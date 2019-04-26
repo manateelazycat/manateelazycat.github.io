@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Tide, JavaScript智能补全插件</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                Tide, JavaScript智能补全插件
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <p>LSP (Language Server Protocol) 是微软领导开发的编程语言语法补全和代码分析框架, 好处是全世界黑客都一起开发 LSP 后端, 不论你用的是 Emacs, Vim 还是 Sublime, VSCode, Elicpse, IntelliJ 等编程工具, 都可以享受同等智能的语法补全后端.</p>
+
+<p>Emacs 的 <a href="https://github.com/emacs-lsp/lsp-mode">lsp-mode</a> 是LSP协议在Emacs的客户端实现.
+lsp-mode现在能够很好的支持 C++, Python, Ruby, Golang, Haskell, OCamel, Rust, PHP等语言.
+当然也包括 JavaScript.</p>
+
+<p>lsp-mode 对 JavaScript 的默认补全主要靠 javascript-typescript-langserver 这个后端来实现.</p>
+
+<p>tide 使用的是 <a href="https://github.com/Microsoft/TypeScript/wiki/Standalone-Server-%28tsserver%29">tsserver</a>, 也就是微软给 VSCode 开发的JavaScript智能补全后端, 可以很好的支持 JavaScript 和 TypeScript.</p>
+
+<h2 id="安装方法">安装方法</h2>
+
+<h3 id="1-安装-tsserver-补全后端">1. 安装 tsserver 补全后端</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> typescript
+npm <span class="nb">install </span>jquery <span class="nt">--save</span>
+</code></pre></div></div>
+
+<ol>
+  <li>typescript 这个包会安装 tsserver</li>
+  <li>jquery –save 这个包安装以后, tsserver 就不会抱怨找不到 JQuery 的 $ 符号了 ;)</li>
+</ol>
+
+<h3 id="2-安装-tide">2. 安装 tide</h3>
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">```</span><span class="nv">Elisp</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'tide</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">hook</span> <span class="p">(</span><span class="nb">list</span>
+               <span class="ss">'js2-mode-hook</span>
+               <span class="ss">'rjsx-mode-hook</span>
+               <span class="ss">'typescript-mode-hook</span>
+               <span class="p">))</span>
+  <span class="p">(</span><span class="nv">add-hook</span> <span class="nv">hook</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
+                   <span class="c1">;; 初始化 tide</span>
+                   <span class="p">(</span><span class="nv">tide-setup</span><span class="p">)</span>
+                   <span class="c1">;; 当 tsserver 服务没有启动时自动重新启动</span>
+                   <span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nv">tide-current-server</span><span class="p">)</span>
+                     <span class="p">(</span><span class="nv">tide-restart-server</span><span class="p">))</span>
+                   <span class="p">)))</span>
+</code></pre></div></div>
+
+<h2 id="体验">体验</h2>
+<p>打开 *.js 文件后, tide 会自动把当前目录识别为 root 目录 (这对于大部分的 WebPack 项目来说已经是足够了的)</p>
+
+<p><img src="http://localhost:4000/pics/tide/tide-1.png" alt="Tide 补全" class="center-image" /></p>
+
+<p>其他比较有用的命令:</p>
+<ol>
+  <li>tide-jump-to-definition: 跳转到函数或变量定义的地方</li>
+  <li>tide-jump-back: 跳转定义以后再跳转回来</li>
+  <li>tide-rename-symbol: 语法重命名符号</li>
+  <li>tide-rename-file: 重命名JS文件</li>
+</ol>
+
+<p>也可以像这样用 <code class="highlighter-rouge">tide-references</code> 命令查找符号所有语法引用的地方.</p>
+
+<p><img src="http://localhost:4000/pics/tide/tide-2.png" alt="Tide 反向引用" class="center-image" /></p>
+
+<p>更多命令请参考 <a href="https://github.com/ananthakumaran/tide">Tide github</a></p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">前面说的</span> <span class="nv">lsp-mode</span> <span class="err">默认使用</span> <span class="nv">javascript-typescript-langserver</span> <span class="err">这个后端</span><span class="o">,</span> <span class="err">其实换成</span> <span class="nv">typescript-language-server</span> <span class="p">(</span><span class="nv">tsserver</span> <span class="err">的封装</span><span class="p">)</span> <span class="err">也可以达到</span> <span class="nv">tide</span> <span class="err">的同样效果</span><span class="o">,</span> <span class="err">类似的配置如下:</span>
+
+<span class="o">```</span><span class="nv">Elisp</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'lsp-typescript</span><span class="p">)</span>
+
+<span class="c1">;; Javascript, Typescript and Flow support for lsp-mode</span>
+<span class="c1">;;</span>
+<span class="c1">;; Install:</span>
+<span class="c1">;;</span>
+<span class="c1">;; npm install -g typescript</span>
+<span class="c1">;; npm install -g typescript-language-server</span>
+<span class="c1">;;</span>
+<span class="c1">;; Fixed error "[tsserver] /bin/sh: /usr/local/Cellar/node/10.5.0_1/bin/npm: No such file or directory" :</span>
+<span class="c1">;;</span>
+<span class="c1">;; sudo ln -s /usr/local/bin/npm /usr/local/Cellar/node/10.5.0_1/bin/npm</span>
+<span class="c1">;;</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'js-mode-hook</span> <span class="nf">#'</span><span class="nv">lsp-typescript-enable</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'typescript-mode-hook</span> <span class="nf">#'</span><span class="nv">lsp-typescript-enable</span><span class="p">)</span> <span class="c1">;; for typescript support</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'js3-mode-hook</span> <span class="nf">#'</span><span class="nv">lsp-typescript-enable</span><span class="p">)</span> <span class="c1">;; for js3-mode support</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'rjsx-mode</span> <span class="nf">#'</span><span class="nv">lsp-typescript-enable</span><span class="p">)</span> <span class="c1">;; for rjsx-mode support</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">lsp-company-transformer</span> <span class="p">(</span><span class="nv">candidates</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">completion-ignore-case</span> <span class="no">t</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">all-completions</span> <span class="p">(</span><span class="nv">company-grab-symbol</span><span class="p">)</span> <span class="nv">candidates</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">lsp-js-hook</span> <span class="no">nil</span>
+  <span class="p">(</span><span class="nv">make-local-variable</span> <span class="ss">'company-transformers</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">push</span> <span class="ss">'lsp-company-transformer</span> <span class="nv">company-transformers</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'js-mode-hook</span> <span class="ss">'lsp-js-hook</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="备注">备注</h3>
+<p>请直接使用js-mode, 不要使用 js2-mode 或者基于 js2-mode 的插件(比如 rjsx-mode), js2-mode 会导致编辑 JS 文件时非常非常卡顿.</p>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Golang/Gin框架添加对HTTPS的支持</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                Golang/Gin框架添加对HTTPS的支持
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Golang">
+                    <div class="category">
+                        Golang
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <p>HTTPS配置步骤:</p>
+<ol>
+  <li>首先在阿里云搞定ICP域名备案</li>
+  <li>添加一个子域名</li>
+  <li>给子域名申请免费 SSL 证书, 然后下载证书对应的 pem 和 key 文件.</li>
+</ol>
+
+<p>用 GIN 框架添加一个 github.com/unrolled/secure 中间件就可以了.</p>
+
+<p>下面是一个简单的示例代码:</p>
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+    </span><span class="s">"github.com/gin-gonic/gin"</span><span class="x">
+    </span><span class="s">"github.com/unrolled/secure"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">router</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gin</span><span class="o">.</span><span class="n">Default</span><span class="p">()</span><span class="x">
+    </span><span class="n">router</span><span class="o">.</span><span class="n">Use</span><span class="p">(</span><span class="n">TlsHandler</span><span class="p">())</span><span class="x">
+
+    </span><span class="n">router</span><span class="o">.</span><span class="n">RunTLS</span><span class="p">(</span><span class="s">":8080"</span><span class="p">,</span><span class="x"> </span><span class="s">"ssl.pem"</span><span class="p">,</span><span class="x"> </span><span class="s">"ssl.key"</span><span class="p">)</span><span class="x">
+</span><span class="p">}</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">TlsHandler</span><span class="p">()</span><span class="x"> </span><span class="n">gin</span><span class="o">.</span><span class="n">HandlerFunc</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="k">return</span><span class="x"> </span><span class="k">func</span><span class="p">(</span><span class="n">c</span><span class="x"> </span><span class="o">*</span><span class="n">gin</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x">
+        </span><span class="n">secureMiddleware</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">secure</span><span class="o">.</span><span class="n">New</span><span class="p">(</span><span class="n">secure</span><span class="o">.</span><span class="n">Options</span><span class="p">{</span><span class="x">
+            </span><span class="n">SSLRedirect</span><span class="o">:</span><span class="x"> </span><span class="no">true</span><span class="p">,</span><span class="x">
+            </span><span class="n">SSLHost</span><span class="o">:</span><span class="x">     </span><span class="s">"localhost:8080"</span><span class="p">,</span><span class="x">
+        </span><span class="p">})</span><span class="x">
+        </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">secureMiddleware</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">Writer</span><span class="p">,</span><span class="x"> </span><span class="n">c</span><span class="o">.</span><span class="n">Request</span><span class="p">)</span><span class="x">
+
+        </span><span class="c">// If there was an error, do not continue.</span><span class="x">
+        </span><span class="k">if</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+            </span><span class="k">return</span><span class="x">
+        </span><span class="p">}</span><span class="x">
+
+        </span><span class="n">c</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span><span class="x">
+    </span><span class="p">}</span><span class="x">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>上面代码直接在子域名前添加 HTTPS 就可以安全通讯了.</p>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

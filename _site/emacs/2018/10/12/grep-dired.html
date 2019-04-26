@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Emacs, grep-dired 快速文件过滤和重构工具</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                Emacs, grep-dired 快速文件过滤和重构工具
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <p>一个多月前开发了 <a href="https://www.jianshu.com/p/6d77c5d63b79">基于 ripgrep 的代码搜索和重构工具</a> , 可以快速的搜索和重构项目.</p>
+
+<p>但是 ripgrep 只能对文件内容进行搜索, 有时候我们需要对项目下面的文件进行快速搜索并批量操作, 原来一直用 <code class="highlighter-rouge">find-lisp-find-dired</code> 这个命令, 但是这个命令最大的缺点就是它是一个同步命令, 当你搜索一个超级大的目录时, 这个命令就会卡主Emacs, 直到它最终搜索完所有的文件才能响应.</p>
+
+<p>今天开发了基于 find 命令的 <a href="https://github.com/manateelazycat/grep-dired">grep-dired</a> 插件, 这个插件是完全异步设计的, 当你在搜索巨大目录时, 你同时可以用Emacs做其他事情.</p>
+
+<p>这个插件的核心和Shell命令 <code class="highlighter-rouge">find . -type f -name '*keyword*'</code>的意义是一样的: 根据用户的关键字, 递归的搜索当前目录下匹配的文件名.</p>
+
+<p>不同的是, 这个插件可以实时的把匹配的文件对接到 Emacs 的文件管理器 dired 中, 一旦文件列入 dired 后, 我们就可以进行更为高效的操作:</p>
+<ol>
+  <li>用 isearch 进行二次查找</li>
+  <li>用 dired 的命令进行快速批量标记, 删除, 移动和对标记的文件进行 shell 命令</li>
+  <li>甚至结合 wdired 对所有的文件名进行快速重构.</li>
+</ol>
+
+<p><img src="http://localhost:4000/pics/grep-dired/grep-dired.png" alt="grep-dired" class="center-image" /></p>
+
+<p>本来基于 color-rg.el 代码进行原型开发, 开发到一半发现 Emacs 有 find-dired 的代码做了同样的事情, 干脆放弃最开始的原型代码, 基于 find-dired 的代码, 裁剪了很多老旧的代码 (比如 find + grep 搜索文件内容, 显然没有 ripgrep 快), 去掉了很多Unix系统的兼容代码, 加入了自己的一些函数, 很快就构建出 grep-dired.el</p>
+
+<h3 id="安装方法">安装方法</h3>
+
+<ol>
+  <li>下载 <a href="https://github.com/manateelazycat/grep-dired">grep-dired</a> 里面的 grep-dired.el 放到 ~/elisp 目录</li>
+  <li>把下面的配置加入到 ~/.emacs 中</li>
+</ol>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'load-path</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">"~/elisp"</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'grep-dired</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="使用">使用</h3>
+<p><code class="highlighter-rouge">grep-dired-dwim</code> 快速搜索当前目录下的文件</p>
+
+<p><code class="highlighter-rouge">grep-dired</code> 自定义搜索</p>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

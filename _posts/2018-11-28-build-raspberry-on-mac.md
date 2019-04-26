@@ -1,0 +1,26 @@
+---
+layout: post
+title: 用Mac灌制树莓派系统
+categories: [Raspberry]
+---
+
+最近在折腾树莓派, 一般都是在Linux下下载镜像后, 然后 dd 命令搞定.
+
+今天不知道怎么的, 家里的 deepin linux 识别不了我的U盘了 (deepin的小伙子你们对内核做了啥? ), 所以我在想用身边的 Mac 做一下系统, 反正都是 Unix, 下面是折腾记录, 现在年纪大了, 不写下来, 以后记不住.
+
+1. **下载树莓派镜像压缩包**: 从 [树莓派官方镜像](https://www.raspberrypi.org/downloads/) 下载一个镜像压缩文件, 用 wget -c 命令来下, 可以断点续传, 免得下载一半断了, 又要重新下载, 下载下来是一个 raspbian_full_latest 的压缩文件, 不是真正的的镜像文件, 这个文件是为了方便下载, 大小只有1.8GB
+2. **解压真正的镜像文件**: 用 Dr. Unarchiver 解压 raspbin_full_last 压缩文件, 会解压出来一个 2018-xx-xx-raspbian-stretch-full.img 的镜像文件, *.img文件, 大小4.9GB, 记得一定要解压出来 img 文件用, 不能直接用第一步下载的压缩文件, 镜像文件先晾干待用
+3. **格式化SD卡**: Mac 下用 [SD Card Formatter](https://www.sdcard.org/downloads/formatter_4/eula_mac/index.html) 这个软件格式化就可以了, 快速格式化就可以了, 不必用慢速覆盖格式化
+4. **卸载SD卡分区**: 先用命令 ```diskutil list``` 列出一下Mac所有的磁盘设备, 然后找到 external disk , 这就是外接USB设备, 在我的电脑上块设备是 /dev/disk3, 所以卸载分区的命令是 ```diskutil unmount /dev/disk3s1``` (注意, /dev/disk3 是块设备, /dev/disk3s1 是块设备上的分区, /dev/rdisk3 是原始字符设备, 我们这里要卸载的是分区, 所以用 /dev/disk3s1 )
+5. **制作系统盘**: 用 dd 命令即可, ```sudo dd bs=16m if=2017-xx-xx-raspbian-stretch.img of=/dev/rdisk3``` , 注意这里要用 /dev/rdisk3 这个原始字符设备, 等几分钟, 直到输出类似 ```916019200 bytes transferred in 127.253638 secs (9691442 bytes/sec)``` 的信息就证明制作成功了
+6. **弹出SD卡**: ```diskutil eject /dev/disk3``` 这里直接弹出块设备 /dev/disk3 即可.
+
+这样树莓派的系统就灌制好了, 把SD卡插入树莓派, 接上显示器,鼠标键盘和电源就可以直接启动了.
+
+电源 PWR 灯亮了证明电源通了, ACT灯闪烁表示SD卡系统正在读取数据启动, 如果ACT灯没有亮, 证明SD卡的分区,系统文件或者引导文件是有问题的. 请仔细读我上面的手册, 特别是块设备, 分区, 原始字符设备的几个区别不要搞错了, 一般都是搞错了导致的.
+
+其他发行版Arch Linux的步骤也是类似的, 下面是启动状态中树莓派的样子.
+
+![树莓派3B+]({{site.url}}/pics/build-raspberry-on-mac/build-raspberry-on-mac.jpg){: .center-image}
+
+系统灌好了, 我的电烙铁也差不多热了, 哈哈哈.

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>基于 Company 的英文助手</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                基于 Company 的英文助手
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <h4 id="emacs-英文补全助手">Emacs 英文补全助手</h4>
+<p>十几年的 <a href="https://www.emacswiki.org/emacs/PredictiveMode">Predictive</a> 粉丝, 这个插件帮我这个英语渣渣编写各种英文邮件和文档和国外的开发者交流.</p>
+
+<p>一个月前基于 Company 新写了一个英文补全的插件： <a href="https://github.com/manateelazycat/company-english-helper">Company English Helper</a>
+效果和性能要比Predictive好很多, 不但可以补全英文单词, 还可以实时显示中文翻译, 甚至可以补全英文句子.</p>
+
+<p>英文补全助手的效果图如下:</p>
+
+<p><img src="http://localhost:4000/pics/company-english-helper/company-english-helper.jpg" alt="company english helper" class="center-image" /></p>
+
+<h4 id="安装方法">安装方法</h4>
+<ol>
+  <li>
+    <p>下载文件 <a href="https://raw.githubusercontent.com/manateelazycat/company-english-helper/master/company-english-helper.el">company-english-helper.el</a> 和 <a href="https://raw.githubusercontent.com/manateelazycat/company-english-helper/master/company-english-helper-data.el">company-english-helper-data.el</a> , 放到目录 ~/elisp/ 下 (也可以放到你自己的其他目录)</p>
+  </li>
+  <li>
+    <p>在 ~/.emacs 中添加以下配置</p>
+  </li>
+</ol>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'load-path</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">"~/elisp"</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'company-english-helper</span><span class="p">)</span>
+</code></pre></div></div>
+<ol>
+  <li>执行命令 `toggle-company-english-helper’ , 就可以在Emacs中飞速的编写英文文档了.</li>
+</ol>
+
+<h4 id="自定义词典">自定义词典</h4>
+<p>默认的词典是从 stardict KDict 这个词典转换出来的, 包括11万单词.
+如果你不喜欢默认的词库, 可以用我写的 stardict 词典转换库 <a href="https://raw.githubusercontent.com/manateelazycat/company-english-helper/master/stardict.py">stardict.py</a> 来转换你喜欢的 stardict 词典.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python ./stardict.py stardict-kdic-ec-11w-2.4.2/kdic-ec-11w.ifo
+</code></pre></div></div>
+
+<p>把 stardict-kdic-ec-11w-2.4.2/kdic-ec-11w.ifo 替换成你喜欢的 stardict 字典, 命令执行完成后, 会自动生成新的 company-english-helper-data.el 文件</p>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

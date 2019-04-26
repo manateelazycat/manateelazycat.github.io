@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Emacs, 我已经十年没有按过保存按键了（附带 auto-save.el 源码解析）</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                Emacs, 我已经十年没有按过保存按键了（附带 auto-save.el 源码解析）
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <h4 id="有些插件还是要传播一下的">有些插件还是要传播一下的</h4>
+<p>很多VI党经常吐槽Emacs按键难按， 特别是保存一个文件还要别扭的按 Ctrl + x Ctrl + s, 其实这个世界上很多Emacs高手一般看到这些误解都是不吭声的， 本来我也是不想吭声的， 直到我去年上海参加 Gopher 2015 大会夜谈会， 看到一波Eclipse高手和编辑器高手介绍自己写了一个多么方便的保存插件， 怎么点一下就很方便可以保存文件， 我当时深深的忍住了， 但是我居然看到会上一个 Google 工程师， 说自己写了一个 VI 插件， 怎么怎么按什么快捷键就可以快速保存文件了。</p>
+
+<p>对于我这种资深Google粉来说， 实在看不惯 Google 工程师这么low， 当时就在台上跟他们演示了什么叫做自动保存…..</p>
+
+<h4 id="emacs-的插件哲学">Emacs 的插件哲学</h4>
+<p>因为Emacs发展30多年到今天， 其实已经不是一个简简单单编辑器了， Emacs是一个自给自足的操作系统， 就像我在<a href="http://www.jianshu.com/writer#/notebooks/3484007">《Emacs是什么》</a>里面讲的一样， Emacs强调的是工具协调的生态。 Emacs的插件强调的不是按键要多么简洁， 它强调的时候研究开发者心理， 开发者在编程场景中遇到最大的痛点是什么？ 它强调的是开发者不需要做任何按键就能自动在后台做好，最大化减少插件和开发者之间的交互过程， 让开发者把所有时间都放在实际代码和深度思考上。</p>
+
+<p>所以很多Emacs插件的优秀标准就是“润物细无声”， 插件的存在感越少越好， 最好什么按键都不要按， 插件作者已经总结出开发者在编程中思考的必经之路， 一切都是顺其自然的完成的。</p>
+
+<h4 id="自动保存文件">自动保存文件</h4>
+<p>说到编辑器保存这个功能， 我最开始学Emacs的时候按了一个月的 Ctrl + x Ctrl + s 就受不了了， 最让人受不了的时候有时候辛辛苦苦写的代码， 忘记按保存了， 这时候突然停电了， 除了 WTF 就没有任何然后了。那时候我就想为什么一定要手动按 Ctrl + x Ctrl + s按键来保存呢？能否自动保存所编辑的文件？ 什么时候最合适呢？</p>
+
+<p>其实每个程序员编写程序的时候， 写着写着思维不是那么流畅了， 需要停下来稍微思考一下， 其实这时候就是自动保存的最佳时刻： 利用程序员犹豫下一个字符应该敲什么的空隙时间就足够保存一个文件了。</p>
+
+<p>所以那时候就写了一个 <a href="https://github.com/manateelazycat/deepin-emacs/blob/master/site-lisp/extensions/lazycat/auto-save.el">auto-save.el</a> 来做这件事情， 每当Emacs发现你停止敲键盘超过1s钟以后， 它就会把所有没有保存的文件全部保存一遍。</p>
+
+<p>所以自从那时候我基本十年没有在手动保存过任何文件了， 也从来没有丢失过任何一行写的代码。 配置很简单， 下载 <a href="https://github.com/manateelazycat/deepin-emacs/blob/master/site-lisp/extensions/lazycat/auto-save.el">auto-save.el</a>， 然后在 ~/.emacs 里面加上下面的代码：</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">require</span> <span class="ss">'auto-save</span><span class="p">)</span>            <span class="c1">;; 加载自动保存模块</span>
+
+<span class="p">(</span><span class="nv">auto-save-enable</span><span class="p">)</span>              <span class="c1">;; 开启自动保存功能</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">auto-save-slient</span> <span class="no">t</span><span class="p">)</span>       <span class="c1">;; 自动保存的时候静悄悄的， 不要打扰我</span>
+</code></pre></div></div>
+
+<p>懒人也可以从 <a href="https://github.com/manateelazycat/deepin-emacs/blob/master/site-lisp/config/init-auto-save.el">init-auto-save.el</a> 下载写好的配置文件， 然后只在 ~/.emacs 写上下面配置文件就可以了:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">require</span> <span class="ss">'init-auto-save</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>到这里， 以后用Emacs就不用傻傻的按保存键了， Emacs发现你手指头没有敲键盘的时候自动保存的，没事不会和你抢CPU的。 ;)</p>
+
+<h4 id="auto-saveel-源码解析">auto-save.el 源码解析</h4>
+<p>对Elisp感兴趣的同学可以继续往下看 auto-save.el 的源码解析：</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;; defgroup 关键字的意思是定义一个工作组，执行 Alt + x customize-group 命令的时候可以进行图形化的模块配置</span>
+<span class="c1">;; 第一个参数是模块的名字， 比如 auto-save</span>
+<span class="c1">;; 第二个参数是模块默认开启的状态， 在 elisp 中， t 表示 true, nil 表示 false</span>
+<span class="c1">;; 第三个参数是对模块的文本解释</span>
+<span class="c1">;; 第四个参数表示对外提供 auto-save 这个 group</span>
+<span class="p">(</span><span class="nv">defgroup</span> <span class="nv">auto-save</span> <span class="no">nil</span>
+  <span class="s">"Auto save file when emacs idle."</span>
+  <span class="ss">:group</span> <span class="ss">'auto-save</span><span class="p">)</span>
+
+<span class="c1">;; defcustom 关键字的意思是定义一个可以被用户自定义的变量， 当用户执行 Alt + x customize-variable 的时候就可以补全 auto-save-idle 这个变量， defcustom 和 defvar 的区别主要是 defcustom 用于提供一些参数让用户可以在 Emacs 中图形化定制变量内容， defvar 这只有变量名和 List 内容， 一般用于函数内部变量值存储用， 不对外抛出给用户定制</span>
+<span class="c1">;; 第一个参数是变量的名字 autos-ave-idle</span>
+<span class="c1">;; 第二个参数是变量的值， 这里我们定义为 1s, 表示自动保存的延迟秒数</span>
+<span class="c1">;; 第三个参数是变量的解释， 一般在 Alt + x describe-variable 的时候就会显示具体变量的文档描述</span>
+<span class="c1">;; 第四个参数用于定义变量的类型， 这里定义为整形， 这样在 customize-group 的时候只有输入整型才是正确保存</span>
+<span class="c1">;; 第五个参数表示这个变量属于 auto-save 这个组， 主要作用就是 customize-group 的时候能够在一个界面中设置同一组的所有变量</span>
+<span class="p">(</span><span class="nv">defcustom</span> <span class="nv">auto-save-idle</span> <span class="mi">1</span>
+  <span class="s">"The idle seconds to auto save file."</span>
+  <span class="ss">:type</span> <span class="ss">'integer</span>
+  <span class="ss">:group</span> <span class="ss">'auto-save</span><span class="p">)</span>
+
+<span class="c1">;; autos-save-slient 的作用就是一个boolean值得变量， 设置为 nil 的时候， 表示每次自动保存都会在 minibuffer 提示， 设置成 t 的时候就会 shutup, 让我安安静静写会代码， 别闹...</span>
+<span class="p">(</span><span class="nv">defcustom</span> <span class="nv">auto-save-slient</span> <span class="no">nil</span>
+  <span class="s">"Nothing to dirty minibuffer if this option is non-nil."</span>
+  <span class="ss">:type</span> <span class="ss">'boolean</span>
+  <span class="ss">:group</span> <span class="ss">'auto-save</span><span class="p">)</span>
+
+<span class="c1">;; 这段代码的作用就是避免 Emacs 在保存文件的时候生成一大堆垃圾的 #foo# 文件， 这种文件最讨厌了， 不但什么用都没有， 反而污染代码目录， 删除都删的我手酸</span>
+<span class="c1">;; 想当年为了找到关闭这个脑残功能的变量， 我把 emacs 几百个带有 save 的变量全部打出来， 一个一个变量的试才找到你啊 （可惜当年我英文不好， 不知道怎么描述我想要的效果）</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">auto-save-default</span> <span class="no">nil</span><span class="p">)</span>
+
+<span class="c1">;; 前方高能核心代码， 请集中注意力</span>
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">auto-save-buffers</span> <span class="p">()</span>
+  <span class="c1">;; 所有你在 Alt + x 以后可以调用的函数都要手动加上 (interactive) ， 否则这段代码只能在 Elisp 解释器中执行， 但是不能直接被用户从 Alt + x 调用， 就想 interactive 这个单词的意思一样</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+ <span class="c1">;; 创建 autosave-buffer-list 这个变量， 用于保存所有需要遍历的 buffer 列表</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">autosave-buffer-list</span><span class="p">))</span>
+    <span class="c1">;; save-excursion 这个关键字的意思是， 所有在 save-excursion 里面的代码不管怎么折腾都不会对 save-excursion 之前的Emacs状态进行任何改变， 你可以理解为这个关键字的意思就是用于保护现场用的 ;)</span>
+    <span class="p">(</span><span class="nv">save-excursion</span>
+      <span class="c1">;; dolist 的作用就和很多语言的 foreach 一个意思， 把 buffer-list 这个函数返回的所有 buffer 在循环内赋值给 buf 这个变量， 并在 dolist 的作用域中执行对 buf 影响的代码</span>
+      <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">buf</span> <span class="p">(</span><span class="nv">buffer-list</span><span class="p">))</span>
+        <span class="c1">;; 设置当前代码的 buffer 为 buf 变量值， 如果没有前面 save-excursion, 你会发现emacs会一直在快速的切换所有 buffer 的过程</span>
+        <span class="p">(</span><span class="nv">set-buffer</span> <span class="nv">buf</span><span class="p">)</span>
+        <span class="c1">;; 如果当前 buffer 有一个相关联文件 (buffer-file-name), 同时当前 buffer 已经被用户修改了 (buffer-modified-p) 的情况下就执行自动保存</span>
+        <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">)</span> <span class="p">(</span><span class="nv">buffer-modified-p</span><span class="p">))</span>
+            <span class="p">(</span><span class="k">progn</span>
+              <span class="c1">;; 把当前 buffer 的名字压进 autosave-buffer-list 列表， 用于后面的保存提示</span>
+              <span class="p">(</span><span class="nb">push</span> <span class="p">(</span><span class="nv">buffer-name</span><span class="p">)</span> <span class="nv">autosave-buffer-list</span><span class="p">)</span>
+              <span class="p">(</span><span class="k">if</span> <span class="nv">auto-save-slient</span>
+                  <span class="c1">;; 如果 auto-save-slient 这个变量为 true, 就不显示任何保存信息， 因为 Emacs 的保存函数 (basic-save-buffer) 本身机会 blabla 的告诉你文件已经保存了， 所以我们用 with-temp-message 配合空字符串来禁止 with-temp-message 里面的代码在 minibuffer 显示任何内容</span>
+                  <span class="p">(</span><span class="nv">with-temp-message</span> <span class="s">""</span>
+                    <span class="p">(</span><span class="nv">basic-save-buffer</span><span class="p">))</span>
+                <span class="p">(</span><span class="nv">basic-save-buffer</span><span class="p">))</span>
+              <span class="p">)))</span>
+      <span class="c1">;; unless 的意思是除非 auto-save-slient 为 false 就执行</span>
+      <span class="p">(</span><span class="nb">unless</span> <span class="nv">auto-save-slient</span>
+        <span class="c1">;; cond 就是 elisp 版的 switch， 用于条件语句对比执行</span>
+        <span class="p">(</span><span class="nb">cond</span>
+         <span class="c1">;; 如果 autosave-buffer-list 列表里面没有任何一个文件需要保存， 我们就不要去烦用户了， 默默打酱油路过就好了</span>
+
+         <span class="c1">;; 如果有一个文件需要保存， 我们就说 Saved ...</span>
+         <span class="p">((</span><span class="nb">=</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">autosave-buffer-list</span><span class="p">)</span> <span class="mi">1</span><span class="p">)</span>
+          <span class="p">(</span><span class="nv">message</span> <span class="s">"# Saved %s"</span> <span class="p">(</span><span class="nb">car</span> <span class="nv">autosave-buffer-list</span><span class="p">)))</span>
+         <span class="c1">;; 如果有多个文件需要保存， 就说 Saved ... files</span>
+         <span class="p">((</span><span class="nb">&gt;</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">autosave-buffer-list</span><span class="p">)</span> <span class="mi">1</span><span class="p">)</span>
+          <span class="p">(</span><span class="nv">message</span> <span class="s">"# Saved %d files: %s"</span>
+                   <span class="p">(</span><span class="nb">length</span> <span class="nv">autosave-buffer-list</span><span class="p">)</span>
+                   <span class="p">(</span><span class="nv">mapconcat</span> <span class="ss">'identity</span> <span class="nv">autosave-buffer-list</span> <span class="s">", "</span><span class="p">)))))</span>
+      <span class="p">)))</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">auto-save-enable</span> <span class="p">()</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="c1">;; run-with-idle-timer 函数的意思就是在 auto-save-idle 定义的描述以后自动执行 auto-save-buffers 函数</span>
+  <span class="c1">;; #' 的意思就是在 runtime 执行的时候再展开 auto-save-buffers 函数</span>
+  <span class="p">(</span><span class="nv">run-with-idle-timer</span> <span class="nv">auto-save-idle</span> <span class="no">t</span> <span class="nf">#'</span><span class="nv">auto-save-buffers</span><span class="p">)</span>
+  <span class="p">)</span>
+
+<span class="p">(</span><span class="nb">provide</span> <span class="ss">'auto-save</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="最后">最后</h4>
+<p>Enjoy, have fun! ;)</p>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>
