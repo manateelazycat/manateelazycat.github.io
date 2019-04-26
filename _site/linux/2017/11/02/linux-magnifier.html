@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Linux实时放大镜原理</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                Linux实时放大镜原理
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Linux">
+                    <div class="category">
+                        Linux
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <h3 id="还是离不开编码的生活">还是离不开编码的生活</h3>
+<p>今年国庆节前后出差太多，导致一个多月没有摸键盘了，甚是想念写代码的感觉。准备找一个小的产品练练手。</p>
+
+<h3 id="心目中的完美取色器">心目中的完美取色器</h3>
+<p>做产品对UI的时候，经常需要对着设计图取色，Linux传统的 gcolor2 一直都不是很方便，先要打开 gcolor2 窗口，然后还要点击取色图标，取色图标非常小，每次用取色图标取色都取不准确，取完颜色以后还要手动复制到系统剪切板。
+<img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-1.gif" alt="" class="center-image" /></p>
+
+<p>所以一直一来都想做一个交互极简的取色器，最好鼠标移动到目标位置，快捷键直接启动取色器，点击就马上取色并自动复制到系统剪切板。
+经过三天的研究终于做出了我理想中的取色器，世界上最简单的屏幕取色器：</p>
+
+<p><img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-2.gif" alt="深度录屏_Desktop_20171102165716.gif" class="center-image" /></p>
+
+<p>1、启动取色器以后立即对屏幕进行实时预览
+2、点击左键取色后自动把颜色数值复制到剪切板
+3、点击右键弹出不同的颜色类型，方便不同类型的开发者</p>
+
+<h3 id="关键技术原理">关键技术原理</h3>
+<p>为了做到极致的性能和操作流畅度，屏幕取色器最关键的技术就是 “实时放大镜”。
+第一版demo做的时候，采用了深度截图同样的技术：</p>
+<ul>
+  <li>先把屏幕的截图截取成 Pixmap 保存到内存中，以备取色使用</li>
+  <li>光标移动的时候，根据光标坐标截取光标下的色块进行放大，形成 ”放大镜图层“</li>
+  <li>重新绘制 “屏幕截图图层” 后，再绘制 ”放大镜图层“，通过两个图层的合成绘制，给用户一种实时放大屏幕的视觉错觉
+<img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-3.png" alt="深度截图_选择区域_20171102175731.png" class="center-image" /></li>
+</ul>
+
+<p>像深度截图这种传统的图层绘制方式有一个巨大的缺点，就是每次光标移动的时候，都会触发 “屏幕截图图层” 重新绘制，即使光标下的区域只更新了非常小的区域，这样就会造成潜在的性能问题。</p>
+
+<p><img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-4.png" alt="3 (1).png" class="center-image" /></p>
+
+<p>比如当用户使用的是双屏或者三屏，同时这些屏幕的分辨率都是2k以上的话，每次光标移动都会导致 6000x2000 像素的图片进行重新绘制，如果用户这时候快速移动光标，电脑瞬间就会卡顿，因为在 30ms 传统的流畅帧循环中，已经无法在一个循环中完成绘制超大图片所需的计算时间。</p>
+
+<p>第二天的时候，就针对怎么实现 “实时放大镜” 的技术进行冥思苦想，到第二天晚上快放弃这个产品研发的时候，突然发现截图的时候是无法截取屏幕的光标的，然后又想到Linux系统中的光标是由窗口管理器根据光标主题的图标实时进行合成的，任何应用程序都无法截取这个由窗口管理器单独管理和绘制的光标图层。</p>
+
+<p>突然灵机一动，如果我截取光标小的色块以后，直接把光标的图形设置成截图色块，这样我就不用每次移动光标的时候，手动去重新绘制屏幕截图的整个图层，因为根本就不需要绘制 “屏幕截图图层”， 每个图层的数据都会被窗口管理器保存，实时改变光标的图形后，窗口管理器自动会把当前的屏幕和光标进行实时合成来实现放大镜的效果。</p>
+
+<p>这样做的好处就是，每次光标移动的时候，实际的计算量就只有截取光标处几十像素色块，不论屏幕多大，永远都只消耗常量的计算量，而且窗口管理器本身就会使用显卡进行图层混合，所以实时改变光标的技术的性能要比传统的截图自行混合图层的技术好百倍以上，而且随着屏幕的增大，性能优势非常明显。</p>
+
+<p><img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-5.png" alt="2.png" class="center-image" /></p>
+
+<p>真是古语所言 “山穷水尽疑无路，柳暗花明又一村”， 所以很多时候技术上遇到瓶颈，千万不要放弃，先暂时放一下，灵感会随着你长时间的深入思考突然蹦出来的。 ;)</p>
+
+<p>随之而来的第二个问题就是，虽然我可以把屏幕取色色块设置成光标的样式，但是Qt本身只能设置应用自身的光标，无法设置整个系统的光标样式，除非用 X11 的技术。当最难的问题都解决时，剩下的问题就更容易攻破: 如果我启动一个窗口和整个屏幕一样大，而且窗口本身透明，这样屏幕所能看到的位置其实都是取色器应用窗口的位置，这样就可以通过 “设置一个全屏程序的光标” 来解决改变整个系统的光标的目的。</p>
+
+<p>剩下的事情很简单，利用 <a href="http://www.jianshu.com/p/80cf81413d31">Linux全局事件监听技术</a>所介绍的技术来实现整个屏幕的鼠标移动和点击操作。
+把 实时屏幕放大→设置光标内容→监听全局事件 这三种技术一串联，整个产品逻辑流程就非常清晰了。</p>
+
+<h3 id="关键源码讲解">关键源码讲解</h3>
+<p>完整的源代码在：<a href="https://github.com/manateelazycat/deepin-picker">deepin-picker github</a>, 下面是关键源代码的讲解：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 设置窗口属性</span>
+<span class="c1">// X11BypassWindowManagerHint表示不受窗口管理器控制, 好把取色透明窗口铺满全屏</span>
+<span class="c1">// WindowStaysOnTopHint 表示窗口永远置顶</span>
+<span class="c1">// FramelessWindowHint 表示窗口不显示窗口边框和标题栏</span>
+<span class="c1">// Tool 利用Qt::Tool的特有属性实现不在任务栏显示图标</span>
+<span class="n">setWindowFlags</span><span class="p">(</span><span class="n">Qt</span><span class="o">::</span><span class="n">X11BypassWindowManagerHint</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">::</span><span class="n">WindowStaysOnTopHint</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">::</span><span class="n">FramelessWindowHint</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">::</span><span class="n">Tool</span><span class="p">);</span>
+<span class="c1">// 设置窗口背景透明</span>
+<span class="n">setAttribute</span><span class="p">(</span><span class="n">Qt</span><span class="o">::</span><span class="n">WA_TranslucentBackground</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+
+<span class="p">...</span>
+
+<span class="c1">// 得到光标位置</span>
+<span class="n">cursorX</span> <span class="o">=</span> <span class="n">QCursor</span><span class="o">::</span><span class="n">pos</span><span class="p">().</span><span class="n">x</span><span class="p">();</span>
+<span class="n">cursorY</span> <span class="o">=</span> <span class="n">QCursor</span><span class="o">::</span><span class="n">pos</span><span class="p">().</span><span class="n">y</span><span class="p">();</span>
+
+<span class="c1">// 获取屏幕光标处的截图，并放大一定倍数实现放大镜的视觉</span>
+<span class="n">screenshotPixmap</span> <span class="o">=</span> <span class="n">QApplication</span><span class="o">::</span><span class="n">primaryScreen</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">grabWindow</span><span class="p">(</span>
+            <span class="mi">0</span><span class="p">,</span>
+            <span class="n">cursorX</span> <span class="o">-</span> <span class="n">size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">cursorY</span> <span class="o">-</span> <span class="n">size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">size</span><span class="p">,</span>
+            <span class="n">size</span><span class="p">).</span><span class="n">scaled</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+
+<span class="c1">// 创建一个空的 cursorPixmap 用于填充光标色块图形</span>
+<span class="n">QPainter</span> <span class="n">painter</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cursorPixmap</span><span class="p">);</span>
+
+<span class="c1">// 打开绘制反锯齿，使得放大镜的圆形边框是无锯齿的</span>
+<span class="n">painter</span><span class="p">.</span><span class="n">setRenderHint</span><span class="p">(</span><span class="n">QPainter</span><span class="o">::</span><span class="n">Antialiasing</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+
+<span class="c1">// 把光标处的色块画成圆形的样子</span>
+<span class="n">painter</span><span class="p">.</span><span class="n">save</span><span class="p">();</span>
+<span class="n">QPainterPath</span> <span class="n">circlePath</span><span class="p">;</span>
+<span class="n">circlePath</span><span class="p">.</span><span class="n">addEllipse</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">offsetX</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">offsetY</span><span class="p">,</span> <span class="n">width</span> <span class="o">-</span> <span class="mi">4</span><span class="p">,</span> <span class="n">height</span> <span class="o">-</span> <span class="mi">4</span><span class="p">);</span>
+<span class="n">painter</span><span class="p">.</span><span class="n">setClipPath</span><span class="p">(</span><span class="n">circlePath</span><span class="p">);</span>
+<span class="n">painter</span><span class="p">.</span><span class="n">drawPixmap</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">offsetX</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">offsetY</span><span class="p">,</span> <span class="n">screenshotPixmap</span><span class="p">);</span>
+<span class="n">painter</span><span class="p">.</span><span class="n">restore</span><span class="p">();</span>
+
+<span class="p">...</span>
+
+<span class="c1">// 设置光标为放大镜的图形</span>
+<span class="n">QApplication</span><span class="o">::</span><span class="n">setOverrideCursor</span><span class="p">(</span><span class="n">QCursor</span><span class="p">(</span><span class="n">cursorPixmap</span><span class="p">));</span>
+
+</code></pre></div></div>
+
+<h3 id="最后">最后</h3>
+<blockquote>
+  <p>做一个好的产品就像手工打造一把军刀，每一个菱角，每一个刀锋都经过精心思考，每一个产品的操作都是在充分研究用户的心理后，顺着用户的思绪对产品的功能进行自然的延伸和操作，用户遇到的每一个逻辑的转角，都完全符合用户的下一步心理预期，所有操作都一气呵成，操作完以后给用户一种好似泉水一般的清爽，有触感而无形，不需要用户过多思考即可自然完成用户期望的操作。</p>
+</blockquote>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>awesome-tray 替代Emacs mode-line, 让编程更加专注</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                awesome-tray 替代Emacs mode-line, 让编程更加专注
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <p>Emacs 默认用 mode-line 显示 buffer 的信息, 但是大部分的信息都是没用的, mode-line 还会在上下分屏的时候, 干扰代码的上下对比.</p>
+
+<p>其实, 我们编程的时候就关心几个必要的信息: 时间、位置、当前模式, 最多再加一个 git 分支.</p>
+
+<p>几年前写了 <a href="https://www.emacswiki.org/emacs/MiniBufferTray">MinibufferTray</a>, 但是这个插件的实现方式依赖 PyQt5, 而且只在 Linux 下可以正常工作.</p>
+
+<p>今天按照 MinibufferTray 的设计, 重新写了一个新的插件 <a href="https://github.com/manateelazycat/awesome-tray">AwesomeTray</a>, 不再需要 PyQt5, 所有平台都可以工作.</p>
+
+<p><img src="http://localhost:4000/pics/awesome-tray/awesome-tray.png" alt="awesome-tray" class="center-image" /></p>
+
+<p>安装好以后, mode-line 默认隐藏, 只在右下角显示必要的信息, 当你在操作 minibuffer 的时候右下角的信息自动隐藏, 当你退出 minibuffer 时, 右下角信息又会自动显示.</p>
+
+<h3 id="安装方法">安装方法</h3>
+
+<ol>
+  <li>下载  <a href="https://github.com/manateelazycat/awesome-tray">AwesomeTray</a> 里面的 awesome-tray.el 放到 ~/elisp 目录</li>
+  <li>把下面的配置加入到 ~/.emacs 中</li>
+</ol>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'load-path</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">"~/elisp"</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'awesome-tray</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">awesome-tray-mode</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

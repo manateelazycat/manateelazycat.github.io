@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Rails Everyday, HTML导出成Word文档</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                Rails Everyday, HTML导出成Word文档
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Rails">
+                    <div class="category">
+                        Rails
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <p>从深度出来以后, 认识Tower的老沈和古灵很多年, 在Tower做了一段时间研发工作, 今天把Tower工作期间做的一个库分享下: HTML文档导出成Word文档.</p>
+
+<h3 id="pandoc">Pandoc</h3>
+<p>做为资深的Linux开发者和Haskell爱好者, 第一时间想到的是 Pandoc 这个文档转换神器, 比如下面的命令就可以直接转换Html字符串成Word文档:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandoc <span class="nt">-f</span> html <span class="nt">-t</span> docx <span class="nt">-o</span> export.doc input.html
+</code></pre></div></div>
+
+<p>pandoc 号称文档转换利器, 速度非常快, 最开始我也很满意, 但是最后发现几个问题, 导致没法真正当做产品解决方案:</p>
+<ol>
+  <li>转出的文档的很多布局细节都有问题, 布局完全无法和浏览器中看到的相比</li>
+  <li>样式几乎没有, 比如字体颜色、大小、粗细等, 当然 pandoc 可以支持样式自定义, 但是想一想要把每个 CSS 样式改成 Pandoc 的格式, 一旦将来设计师改页面细节, 又要手动调一次, 而且还不一定完全一样, 想一想这种半自动方案, 头皮都发麻</li>
+  <li>转换出来的表格没有边框, 原因是 Pandoc 默认把 Table 样式写死了, 如果要解决表格边框看不到的问题, 还需要修改 Haskell 源代码重新编译, 然后自己维护一个 pandoc 版本, 还要定期合并上游补丁, 对于我这种懒人来说, 想想就好麻烦</li>
+  <li>最大的问题是, html 中 img tag的下载问题, 比如有些是墙外的图片(比如维基百科), 有些是云主机的图片, 必须要用 cookie 信息才能获取用户自己的隐私图片, 而这些 pandoc 完全没有支持, 会导致转换出来的 Word 文档没有任何图片</li>
+</ol>
+
+<p>所以, Pandoc 只适合个人的文档转一转, 方便自己整理Word文字素材还可以, 像商业化图文混排的复杂布局, 完全没法用.</p>
+
+<h3 id="word解析器">Word解析器</h3>
+<p>中间也想过写一个专门HTML转Word的解析器, 但是原来做操作系统的时候, 和WPS的朋友就聊过微软Office那恐怖的隐晦标准和复杂的格式, 即使微软开发Office的人也很难理解所有标准和实现方式.</p>
+
+<p>所以这个方式因为自己的开发经验和无法预期的结果, 很快就作罢了.</p>
+
+<h3 id="从-chm-想到的解决方案">从 CHM 想到的解决方案</h3>
+<p>原来玩 Windows XP 的时候, 有大量的 CHM 电子书 (那时候 PDF 还不流行), CHM本质就是一堆 HTML 文件和本地资源的打包文件.</p>
+
+<p>而且当时知道 CHM 的内容是可以直接拷贝到微软Office里面, 同时保留布局格式的, 所以我就问自己, 是不是微软Office本身就可以支持 HTML 文件呢?</p>
+
+<p>最后一番研究, 微软Office是支持MHTML这种格式的Word文档的, MHTML详细格式信息可以自行Google, 简单的理解就是:</p>
+<ol>
+  <li>MHTML这种Word格式本质就是一个单个的文本文件: HTML字符串 + Word文档模板字符串</li>
+  <li>MHTML既然是HTML,同时也就很自然的支持CSS文件的, 这样以后设计样式改变了, 直接拷贝样式就可以了.</li>
+  <li>MHTML里面的图片以 base64 的形式存在, 也就是说, 我们可以自己写代码下载 img tag 的图片, 然后转换成 base64 字符串插入 MHTML 文档中</li>
+</ol>
+
+<h3 id="mhtml-方案">MHTML 方案</h3>
+<p>既然知道了MHTML格式信息, 代码方案就非常清晰了, 下面是伪代码逻辑:</p>
+<ol>
+  <li>提取HTML文档字符串</li>
+  <li>遍历所有 img tag 标签, 根据 img src 是在云端, 墙外等各种信息, 先把图片下载下来, 然后通过程序库把下载下来的图片文件转成 base64 字符串插入MHTML</li>
+  <li>传递HTML CSS文件 (包括表格的样式) 的内容插入MHTML</li>
+  <li>最后根据MHTML的Office模板字符串对上面所有信息进行拼装, 并以 *.doc 的格式进行保存即可</li>
+</ol>
+
+<p>根据上面的逻辑, 我写了一个 Rails 的库 <a href="https://github.com/manateelazycat/html-to-word">html-to-word</a></p>
+
+<p>下面是html-to-word这个库的源码注释:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#coding: utf-8</span>
+
+<span class="c1"># 一些需要引入的库</span>
+<span class="nb">require</span> <span class="s1">'base64'</span>
+<span class="nb">require</span> <span class="s1">'cgi'</span>
+<span class="nb">require</span> <span class="s1">'digest/sha1'</span>
+<span class="nb">require</span> <span class="s1">'fastimage'</span>
+
+<span class="k">module</span> <span class="nn">HTMLToWord</span>
+  <span class="c1"># 微软Office的模板, 用于组装出格式合法的 Word 文档</span>
+  <span class="no">PAGE_VIEW_HTML_TEMPLATE</span> <span class="o">=</span> <span class="s2">"xmlns:v=</span><span class="se">\"</span><span class="s2">urn:schemas-microsoft-com:vml</span><span class="se">\"</span><span class="s2"> xmlns:o=</span><span class="se">\"</span><span class="s2">urn:schemas-microsoft-com:office:office</span><span class="se">\"</span><span class="s2"> xmlns:w=</span><span class="se">\"</span><span class="s2">urn:schemas-microsoft-com:office:word</span><span class="se">\"</span><span class="s2"> xmlns:m=</span><span class="se">\"</span><span class="s2">http://schemas.microsoft.com/office/2004/12/omml</span><span class="se">\"</span><span class="s2"> xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/TR/REC-html40</span><span class="se">\"</span><span class="s2">"</span>
+
+  <span class="no">PAGE_VIEW_HEAD_TEMPLATE</span> <span class="o">=</span> <span class="s2">"&lt;!--[if gte mso 9]&gt;&lt;xml&gt;&lt;w:WordDocument&gt;&lt;w:View&gt;Print&lt;/w:View&gt;&lt;w:TrackMoves&gt;false&lt;/w:TrackMoves&gt;&lt;w:TrackFormatting/&gt;&lt;w:ValidateAgainstSchemas/&gt;&lt;w:SaveIfXMLInvalid&gt;false&lt;/w:SaveIfXMLInvalid&gt;&lt;w:IgnoreMixedContent&gt;false&lt;/w:IgnoreMixedContent&gt;&lt;w:AlwaysShowPlaceholderText&gt;false&lt;/w:AlwaysShowPlaceholderText&gt;&lt;w:DoNotPromoteQF/&gt;&lt;w:LidThemeOther&gt;EN-US&lt;/w:LidThemeOther&gt;&lt;w:LidThemeAsian&gt;ZH-CN&lt;/w:LidThemeAsian&gt;&lt;w:LidThemeComplexScript&gt;X-NONE&lt;/w:LidThemeComplexScript&gt;&lt;w:Compatibility&gt;&lt;w:BreakWrappedTables/&gt;&lt;w:SnapToGridInCell/&gt;&lt;w:WrapTextWithPunct/&gt;&lt;w:UseAsianBreakRules/&gt;&lt;w:DontGrowAutofit/&gt;&lt;w:SplitPgBreakAndParaMark/&gt;&lt;w:DontVertAlignCellWithSp/&gt;&lt;w:DontBreakConstrainedForcedTables/&gt;&lt;w:DontVertAlignInTxbx/&gt;&lt;w:Word11KerningPairs/&gt;&lt;w:CachedColBalance/&gt;&lt;w:UseFELayout/&gt;&lt;/w:Compatibility&gt;&lt;w:BrowserLevel&gt;MicrosoftInternetExplorer4&lt;/w:BrowserLevel&gt;&lt;m:mathPr&gt;&lt;m:mathFont m:val=</span><span class="se">\"</span><span class="s2">Cambria Math</span><span class="se">\"</span><span class="s2">/&gt;&lt;m:brkBin m:val=</span><span class="se">\"</span><span class="s2">before</span><span class="se">\"</span><span class="s2">/&gt;&lt;m:brkBinSub m:val=</span><span class="se">\"</span><span class="s2">--</span><span class="se">\"</span><span class="s2">/&gt;&lt;m:smallFrac m:val=</span><span class="se">\"</span><span class="s2">off</span><span class="se">\"</span><span class="s2">/&gt;&lt;m:dispDef/&gt;&lt;m:lMargin m:val=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">/&gt; &lt;m:rMargin m:val=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">/&gt;&lt;m:defJc m:val=</span><span class="se">\"</span><span class="s2">centerGroup</span><span class="se">\"</span><span class="s2">/&gt;&lt;m:wrapIndent m:val=</span><span class="se">\"</span><span class="s2">1440</span><span class="se">\"</span><span class="s2">/&gt;&lt;m:intLim m:val=</span><span class="se">\"</span><span class="s2">subSup</span><span class="se">\"</span><span class="s2">/&gt;&lt;m:naryLim m:val=</span><span class="se">\"</span><span class="s2">undOvr</span><span class="se">\"</span><span class="s2">/&gt;&lt;/m:mathPr&gt;&lt;/w:WordDocument&gt;&lt;/xml&gt;&lt;![endif]--&gt;</span><span class="se">\n</span><span class="s2">"</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">html</span><span class="p">,</span>
+                   <span class="n">document_guid</span><span class="p">,</span>
+                   <span class="n">max_image_width</span><span class="p">,</span>
+                   <span class="n">css_files</span><span class="p">,</span>
+                   <span class="n">image_filter</span><span class="p">,</span>
+                   <span class="n">percent_start_number</span><span class="p">,</span>
+                   <span class="n">percent_end_number</span><span class="p">,</span>
+                   <span class="n">percent_update</span><span class="p">,</span>
+                   <span class="n">development_proxy_address</span><span class="p">,</span>
+                   <span class="n">development_proxy_port</span><span class="p">,</span>
+                   <span class="n">production_proxy_address</span><span class="p">,</span>
+                   <span class="n">production_proxy_port</span><span class="p">)</span>
+    <span class="c1"># Make sure all images' size small than max size.</span>
+    <span class="n">no_size_attr_hash</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span>
+
+    <span class="c1"># 遍历 img tag 提取所有图片的大小信息, 以方便后续进行图片下载和缩放操作.</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+    <span class="n">doc</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="s2">"img"</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">img</span><span class="o">|</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="nf">keys</span><span class="p">.</span><span class="nf">include?</span> <span class="s2">"width"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="nf">keys</span><span class="p">.</span><span class="nf">include?</span> <span class="s2">"height"</span><span class="p">)</span>
+        <span class="n">img_width</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="s2">"width"</span><span class="p">].</span><span class="nf">to_i</span>
+        <span class="n">img_height</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="s2">"height"</span><span class="p">].</span><span class="nf">to_i</span>
+
+        <span class="c1"># Image won't show in Word file if image's width or height equal 0.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">img_width</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">img_height</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+          <span class="n">render_width</span> <span class="o">=</span> <span class="p">[</span><span class="n">img_width</span><span class="p">,</span> <span class="n">max_image_width</span><span class="p">].</span><span class="nf">min</span>
+          <span class="n">render_height</span> <span class="o">=</span> <span class="n">render_width</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">img_width</span> <span class="o">*</span> <span class="n">img_height</span>
+
+          <span class="n">img</span><span class="p">[</span><span class="s2">"width"</span><span class="p">]</span> <span class="o">=</span> <span class="n">render_width</span>
+          <span class="n">img</span><span class="p">[</span><span class="s2">"height"</span><span class="p">]</span> <span class="o">=</span> <span class="n">render_height</span>
+        <span class="k">end</span>
+      <span class="k">else</span>
+        <span class="n">no_size_attr_hash</span><span class="p">[</span><span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">]]</span> <span class="o">=</span> <span class="kp">nil</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="c1"># Unescape html first to avoid base64's link not same as image tag's link.</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">unescapeHTML</span><span class="p">(</span><span class="n">doc</span><span class="p">.</span><span class="nf">to_html</span><span class="p">)</span>
+
+    <span class="c1"># 进度显示的初始化操作</span>
+    <span class="n">download_image_count</span> <span class="o">=</span> <span class="n">doc</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="s2">"img"</span><span class="p">).</span><span class="nf">length</span>
+    <span class="k">if</span> <span class="n">download_image_count</span> <span class="o">&gt;</span> <span class="mi">0</span>
+      <span class="n">percent_update</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">percent_start_number</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 下面一大段都是在抓取图片的 base64 字符串, 因为现实场景很复杂, 做了想大多的容错处理</span>
+    <span class="c1"># Fetch image's base64.</span>
+    <span class="n">base64_cache</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span>
+    <span class="n">filter_image_replace_hash</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span>
+    <span class="n">mhtml_bottom</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">download_image_index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">).</span><span class="nf">css</span><span class="p">(</span><span class="s1">'img'</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">img</span><span class="o">|</span>
+      <span class="k">if</span> <span class="n">img</span><span class="p">.</span><span class="nf">keys</span><span class="p">.</span><span class="nf">include?</span> <span class="s2">"src"</span>
+        <span class="c1"># Init.</span>
+        <span class="n">image_src</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="nf">attr</span><span class="p">(</span><span class="s2">"src"</span><span class="p">)</span>
+        <span class="k">begin</span>
+          <span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="n">image_src</span><span class="p">)</span>
+          <span class="n">proxy_addr</span> <span class="o">=</span> <span class="kp">nil</span>
+          <span class="n">proxy_port</span> <span class="o">=</span> <span class="kp">nil</span>
+
+          <span class="c1"># Use image_filter to convert internal images to real image uri.</span>
+          <span class="n">real_image_src</span> <span class="o">=</span> <span class="n">image_filter</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">image_src</span><span class="p">)</span>
+          <span class="n">base64_image_src</span> <span class="o">=</span> <span class="n">image_src</span>
+          <span class="k">if</span> <span class="n">real_image_src</span> <span class="o">!=</span> <span class="n">image_src</span>
+            <span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="n">real_image_src</span><span class="p">)</span>
+
+            <span class="c1"># We need use convert image to hash string make sure all internal image visible in Word file.</span>
+            <span class="n">uri_hash</span> <span class="o">=</span> <span class="no">Digest</span><span class="o">::</span><span class="no">SHA1</span><span class="p">.</span><span class="nf">hexdigest</span><span class="p">(</span><span class="n">image_src</span><span class="p">)</span>
+            <span class="n">placeholder_uri</span> <span class="o">=</span> <span class="s2">"https://placeholder/</span><span class="si">#{</span><span class="n">uri_hash</span><span class="si">}</span><span class="s2">"</span>
+            <span class="n">filter_image_replace_hash</span><span class="p">[</span><span class="n">image_src</span><span class="p">]</span> <span class="o">=</span> <span class="n">placeholder_uri</span>
+            <span class="n">base64_image_src</span> <span class="o">=</span> <span class="n">placeholder_uri</span>
+          <span class="k">else</span>
+            <span class="c1"># Use proxy when image is not store inside of webside.</span>
+            <span class="c1"># Of course, you don't need proxy if your code not running in China.</span>
+            <span class="k">if</span> <span class="sx">%w(test development)</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">.</span><span class="nf">to_s</span><span class="p">)</span>
+              <span class="n">proxy_addr</span> <span class="o">=</span> <span class="n">development_proxy_address</span>
+              <span class="n">proxy_port</span> <span class="o">=</span> <span class="n">development_proxy_port</span>
+            <span class="k">else</span>
+              <span class="n">proxy_addr</span> <span class="o">=</span> <span class="n">production_proxy_address</span>
+              <span class="n">proxy_port</span> <span class="o">=</span> <span class="n">production_proxy_port</span>
+            <span class="k">end</span>
+          <span class="k">end</span>
+
+          <span class="c1"># Fetch image's base64.</span>
+          <span class="n">image_base64</span> <span class="o">=</span> <span class="s2">""</span>
+
+          <span class="k">if</span> <span class="n">base64_cache</span><span class="p">.</span><span class="nf">include?</span> <span class="n">image_src</span>
+            <span class="c1"># Read from cache if image has fetched.</span>
+            <span class="n">image_base64</span> <span class="o">=</span> <span class="n">base64_cache</span><span class="p">[</span><span class="n">image_src</span><span class="p">]</span>
+          <span class="k">else</span>
+            <span class="c1"># Get image response.</span>
+            <span class="c1">#</span>
+            <span class="c1"># URI is invalid if method request_uri not exists.</span>
+            <span class="k">if</span> <span class="n">uri</span><span class="p">.</span><span class="nf">respond_to?</span> <span class="ss">:request_uri</span>
+              <span class="n">response</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">start</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">hostname</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">,</span> <span class="n">proxy_addr</span><span class="p">,</span> <span class="n">proxy_port</span><span class="p">,</span> <span class="ss">use_ssl: </span><span class="n">uri</span><span class="p">.</span><span class="nf">scheme</span> <span class="o">==</span> <span class="s2">"https"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">http</span><span class="o">|</span>
+                <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">request_uri</span><span class="p">))</span>
+              <span class="k">end</span>
+
+              <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="nf">is_a?</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTPSuccess</span>
+                <span class="n">image_base64</span> <span class="o">=</span> <span class="no">Base64</span><span class="p">.</span><span class="nf">encode64</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">body</span><span class="p">)</span>
+
+                <span class="n">base64_cache</span><span class="p">[</span><span class="n">image_src</span><span class="p">]</span> <span class="o">=</span> <span class="n">image_base64</span>
+              <span class="k">end</span>
+            <span class="k">end</span>
+          <span class="k">end</span>
+
+          <span class="c1"># Fetch image size if img tag haven't any size attributes.</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">no_size_attr_hash</span><span class="p">.</span><span class="nf">include?</span> <span class="n">image_src</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">no_size_attr_hash</span><span class="p">[</span><span class="n">image_src</span><span class="p">]</span> <span class="o">==</span> <span class="kp">nil</span><span class="p">)</span>
+            <span class="n">proxy_for_fast_image</span> <span class="o">=</span> <span class="kp">nil</span>
+            <span class="k">if</span> <span class="n">proxy_addr</span> <span class="o">&amp;&amp;</span> <span class="n">proxy_port</span>
+              <span class="n">proxy_for_fast_image</span> <span class="o">=</span> <span class="s2">"http://</span><span class="si">#{</span><span class="n">proxy_addr</span><span class="si">}</span><span class="s2">:</span><span class="si">#{</span><span class="n">proxy_port</span><span class="si">}</span><span class="s2">"</span>
+            <span class="k">end</span>
+
+            <span class="c1"># NOTE:</span>
+            <span class="c1"># This value maybe nil if remote image unreachable.</span>
+            <span class="n">no_size_attr_hash</span><span class="p">[</span><span class="n">image_src</span><span class="p">]</span> <span class="o">=</span> <span class="no">FastImage</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="n">real_image_src</span><span class="p">,</span> <span class="p">{</span> <span class="ss">proxy: </span><span class="n">proxy_for_fast_image</span> <span class="p">})</span>
+          <span class="k">end</span>
+
+          <span class="c1"># 如果抓到图片的 base64 字符串就按照下面的方式插入 base64 字符串到 MHTML 文档中</span>
+          <span class="c1"># Build image base64 template.</span>
+          <span class="k">if</span> <span class="n">image_base64</span> <span class="o">!=</span> <span class="s2">""</span>
+            <span class="n">mhtml_bottom</span> <span class="o">+=</span> <span class="s2">"--NEXT.ITEM-BOUNDARY</span><span class="se">\n</span><span class="s2">"</span>
+            <span class="n">mhtml_bottom</span> <span class="o">+=</span> <span class="s2">"Content-Location: </span><span class="si">#{</span><span class="n">base64_image_src</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+            <span class="n">mhtml_bottom</span> <span class="o">+=</span> <span class="s2">"Content-Type: image/png</span><span class="se">\n</span><span class="s2">"</span>
+            <span class="n">mhtml_bottom</span> <span class="o">+=</span> <span class="s2">"Content-Transfer-Encoding: base64</span><span class="se">\n\n</span><span class="s2">"</span>
+            <span class="n">mhtml_bottom</span> <span class="o">+=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">image_base64</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">"</span>
+          <span class="k">else</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Can't fetch image base64: "</span> <span class="o">+</span> <span class="n">base64_image_src</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+          <span class="k">end</span>
+        <span class="k">rescue</span> <span class="no">URI</span><span class="o">::</span><span class="no">InvalidURIError</span><span class="p">,</span> <span class="no">URI</span><span class="o">::</span><span class="no">InvalidComponentError</span>
+          <span class="no">Rails</span><span class="p">.</span><span class="nf">logger</span><span class="p">.</span><span class="nf">info</span> <span class="s2">"[FILE] Document </span><span class="si">#{</span><span class="n">document_guid</span><span class="si">}</span><span class="s2"> contain invalid url, pass it. error: </span><span class="si">#{</span><span class="n">e</span><span class="si">}</span><span class="s2">; backtraces:</span><span class="se">\n</span><span class="s2"> </span><span class="si">#{</span><span class="n">e</span><span class="p">.</span><span class="nf">backtrace</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">end</span>
+
+        <span class="c1"># Update download index to calcuate percent.</span>
+        <span class="n">download_image_index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">percent_update</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">percent_start_number</span> <span class="o">+</span> <span class="p">(</span><span class="n">percent_end_number</span> <span class="o">-</span> <span class="n">percent_start_number</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">download_image_index</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">download_image_count</span><span class="p">))</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="n">mhtml_bottom</span> <span class="o">+=</span> <span class="s2">"--NEXT.ITEM-BOUNDARY--"</span>
+
+    <span class="c1"># 很多 img tag 没有 width/height 属性, 需要添加大小属性, 避免贼大的图片在Word里没法正常显示</span>
+    <span class="c1"># Adjust image size of img tag that haven't size attributes.</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+    <span class="n">doc</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="s2">"img"</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">img</span><span class="o">|</span>
+      <span class="k">if</span> <span class="n">img</span><span class="p">.</span><span class="nf">keys</span><span class="p">.</span><span class="nf">include?</span> <span class="s2">"src"</span>
+        <span class="c1"># no_size_attr_hash[img["src"]] will got nil if remote image unreachable.</span>
+        <span class="c1"># So give up scale image size here because the image won't show up in Word.</span>
+        <span class="k">if</span> <span class="n">no_size_attr_hash</span><span class="p">[</span><span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">]].</span><span class="nf">present?</span>
+          <span class="n">size</span> <span class="o">=</span> <span class="n">no_size_attr_hash</span><span class="p">[</span><span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">]]</span>
+
+          <span class="n">render_width</span> <span class="o">=</span> <span class="p">[</span><span class="n">size</span><span class="p">.</span><span class="nf">first</span><span class="p">,</span> <span class="n">max_image_width</span><span class="p">].</span><span class="nf">min</span>
+          <span class="n">render_height</span> <span class="o">=</span> <span class="n">render_width</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">size</span><span class="p">.</span><span class="nf">first</span> <span class="o">*</span> <span class="n">size</span><span class="p">.</span><span class="nf">second</span>
+
+          <span class="n">img</span><span class="p">[</span><span class="s2">"width"</span><span class="p">]</span> <span class="o">=</span> <span class="n">render_width</span>
+          <span class="n">img</span><span class="p">[</span><span class="s2">"height"</span><span class="p">]</span> <span class="o">=</span> <span class="n">render_height</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">unescapeHTML</span><span class="p">(</span><span class="n">doc</span><span class="p">.</span><span class="nf">to_html</span><span class="p">)</span>
+
+    <span class="c1"># Replace image hash.</span>
+    <span class="n">filter_image_replace_hash</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+      <span class="n">html</span> <span class="o">=</span> <span class="n">html</span><span class="p">.</span><span class="nf">gsub</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 这里插入CSS文件的内容</span>
+    <span class="c1"># Pick up style content from stylesheet file.</span>
+    <span class="n">stylesheet</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">css_files</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">scss_file</span><span class="o">|</span>
+      <span class="k">if</span> <span class="sx">%w(test development)</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">.</span><span class="nf">to_s</span><span class="p">)</span>
+        <span class="n">stylesheet</span> <span class="o">+=</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">find_asset</span><span class="p">(</span><span class="n">scss_file</span><span class="p">).</span><span class="nf">source</span>
+      <span class="k">else</span>
+        <span class="n">stylesheet</span> <span class="o">+=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">,</span> <span class="s2">"public"</span><span class="p">,</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">helpers</span><span class="p">.</span><span class="nf">asset_url</span><span class="p">(</span><span class="n">scss_file</span><span class="p">.</span><span class="nf">ext</span><span class="p">(</span><span class="s2">"css"</span><span class="p">))))</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="k">if</span> <span class="n">download_image_count</span> <span class="o">&gt;</span> <span class="mi">0</span>
+      <span class="n">percent_update</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">percent_end_number</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 最后的总体拼装</span>
+    <span class="c1"># Return word content.</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="s2">"&lt;head&gt;</span><span class="se">\n</span><span class="s2"> </span><span class="si">#{</span><span class="no">PAGE_VIEW_HEAD_TEMPLATE</span><span class="si">}</span><span class="s2"> &lt;meta http-equiv=</span><span class="se">\"</span><span class="s2">Content-Type</span><span class="se">\"</span><span class="s2"> content=</span><span class="se">\"</span><span class="s2">text/html; charset=utf-8</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">head</span> <span class="o">+=</span> <span class="s2">"&lt;style&gt;</span><span class="se">\n</span><span class="s2"> </span><span class="si">#{</span><span class="n">stylesheet</span><span class="si">}</span><span class="s2"> _</span><span class="se">\n</span><span class="s2">&lt;/style&gt;</span><span class="se">\n</span><span class="s2">&lt;/head&gt;</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="s2">"&lt;body&gt; </span><span class="si">#{</span><span class="n">html</span><span class="si">}</span><span class="s2"> &lt;/body&gt;"</span>
+
+    <span class="n">mhtml_top</span> <span class="o">=</span> <span class="s2">"Mime-Version: 1.0</span><span class="se">\n</span><span class="s2">Content-Base: </span><span class="si">#{</span><span class="n">document_guid</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">mhtml_top</span> <span class="o">+=</span> <span class="s2">"Content-Type: Multipart/related; boundary=</span><span class="se">\"</span><span class="s2">NEXT.ITEM-BOUNDARY</span><span class="se">\"</span><span class="s2">;type=</span><span class="se">\"</span><span class="s2">text/html</span><span class="se">\"\n\n</span><span class="s2">--NEXT.ITEM-BOUNDARY</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">mhtml_top</span> <span class="o">+=</span> <span class="s2">"Content-Type: text/html; charset=</span><span class="se">\"</span><span class="s2">utf-8</span><span class="se">\"\n</span><span class="s2">Content-Location: </span><span class="si">#{</span><span class="n">document_guid</span><span class="si">}</span><span class="s2"> </span><span class="se">\n\n</span><span class="s2">"</span>
+    <span class="n">mhtml_top</span> <span class="o">+=</span> <span class="s2">"&lt;!DOCTYPE html&gt;</span><span class="se">\n</span><span class="s2">&lt;html </span><span class="si">#{</span><span class="no">PAGE_VIEW_HTML_TEMPLATE</span><span class="si">}</span><span class="s2">  &gt;</span><span class="se">\n</span><span class="s2"> </span><span class="si">#{</span><span class="n">head</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">body</span><span class="si">}</span><span class="s2"> &lt;/html&gt;"</span>
+
+    <span class="n">mhtml_top</span> <span class="o">+</span> <span class="n">mhtml_bottom</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>其实逻辑非常简单, 但是因为现实场景下, 很多html文档非常不标准, 加上很多 img tag 的字符串有各种各样的问题 (比如没有大小属性, http字符串是错的, 等等), 所以上面代码做了非常多的容错处理.</p>
+
+<p>如果你是经验丰富的Rails程序员, 应该很容易看懂上面的 Ruby 代码.
+当然, 你也可以直接像下面的 demo 代码那样去使用:</p>
+
+<ol>
+  <li>首先安装依赖库:  <a href="https://www.nokogiri.org/tutorials/installing_nokogiri.html">Nokogiri</a> 和 <a href="https://github.com/sdsykes/fastimage">FastImage</a></li>
+  <li>Nokogiri是用于把HTML文档中各种Tag属性提取出来的库</li>
+  <li>FastImage 是用于抓取图片的 head 信息来获取服务器图片的大小, 因为只读取图片文件的 head 内容, 所以不管图片文件本身有大多, 都能非常快速的读取远程图片文件的大小信息</li>
+  <li>然后把下面代码拷贝到你的项目中就可以使用了.</li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 进度回调函数, 用于向前端推送转换进度, 你可以把下面的 print 函数改成 WebSocket 相关代码实现, 以此来实现向前端推送进度的功能</span>
+<span class="n">updater</span> <span class="o">=</span> <span class="o">-&gt;</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span> <span class="p">{</span> <span class="nb">print</span> <span class="n">percent</span> <span class="p">}</span>
+
+<span class="c1"># 图片转换回调函数, 比如阿里云的 OSS 需要根据 key 才能得到真实的图片地址, 如果HTML只包含外网图片, 这个回调函数可以不用修改</span>
+<span class="n">filter</span> <span class="o">=</span> <span class="o">-&gt;</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span> <span class="p">{</span> <span class="n">uri</span> <span class="p">}</span>
+
+<span class="c1"># 导出成Word文档</span>
+<span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">"export.doc"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+  <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span>
+  <span class="o">::</span><span class="no">HTMLToWord</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span>
+    <span class="n">html_string</span><span class="p">,</span>              <span class="c1"># 需要转换的 HTML 字符串</span>
+    <span class="n">document_guid</span><span class="p">,</span>            <span class="c1"># 任意字符串, 只要能在导出Word文档中得知是什么文件, 方便调试即可</span>
+    <span class="mi">420</span><span class="p">,</span>                      <span class="c1"># Word文档中图片最大的宽度, 我调试的 420 像素的宽度就很好</span>
+    <span class="p">[</span><span class="s2">"html.scss"</span><span class="p">],</span>            <span class="c1"># Rails中 scss 文件的名称, html-to-word 库会自动查找 scss 文件的路径并提取出样式信息, 建议把需要转换的样式(包括表格样式)单独写一个文件用于转换用</span>
+    <span class="n">filter</span><span class="p">,</span>                   <span class="c1"># 图片连接过滤函数, 主要用于云端图片地址转换</span>
+    <span class="mi">5</span><span class="p">,</span>                        <span class="c1"># 起始进度, 比如一开始就显示 5%</span>
+    <span class="mi">80</span><span class="p">,</span>                       <span class="c1"># 结束进度, 我选择 80%, 这样给下载文件留一点进度, 用户体验比较真实</span>
+    <span class="n">updater</span><span class="p">,</span>                  <span class="c1"># 进度回调函数</span>
+    <span class="s2">"127.0.0.1"</span><span class="p">,</span> <span class="mi">1080</span><span class="p">,</span>        <span class="c1"># 本地http代理配置, 保证可以本地抓取墙外图片</span>
+    <span class="s2">"192.168.xxx.xxx"</span><span class="p">,</span> <span class="mi">8080</span>   <span class="c1"># 服务器生产环境的 http 代理配置</span>
+  <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>上面的代码, 就可以在你的 Rails 项目中快速测试 html-to-word 的效果, 但是你需要自己很多代码去融入到你自己的 Rail 项目, 比如:</p>
+<ul>
+  <li>编写 Sidekiq 代码用于队列处理, 避免长时间转换卡住 http 请求</li>
+  <li>完善 WebSocket 代码向前端推送进度</li>
+  <li>写代码 push doc 文档到浏览器, 注意这个步骤, 要保证文件扩展名为 *.doc 而不是 *.docx , 同时文件的 MIME type 应该是 <code class="highlighter-rouge">application/msword;charset=utf-8</code>, 否则转换出来的 Word 文档会报格式错误的问题</li>
+</ul>
+
+<p>MHTML转换方案的优点:</p>
+<ol>
+  <li>转换出来Word文档中的布局和你在浏览器看到的一模一样</li>
+  <li>可以支持样式自定义, 直接拷贝 css 文件内容即可, 维护方便</li>
+  <li>支持各种复杂图片的内嵌和布局</li>
+</ol>
+
+<p>缺点只有一个:</p>
+<ol>
+  <li>MHTML虽然是RFC标准, 但是目前只有微软Office和WPS实现了, 其他Office软件像苹果的 Pages 等就不能打开MHTML格式的Word文档</li>
+</ol>
+
+<h3 id="其他坑">其他坑</h3>
+<p>如果你看懂我上面 HTML 转 Word 的原理, 很容易改写成其他编程语言的, 比如 Python, PHP啊, 因为本质上就是下载图片文件的base64, 再结合Office模板, css和html字符串进行拼装.</p>
+
+<p>但是有一点, 不要用JS在浏览器拼装, 我在实现 html-to-word 这个库的前面一个版本就是利用 new Canvas 的方法, 先把 img src 赋值给 Canvas, 然后根据Canvas的内容在浏览器端转成 base64 来做的, 这样有一个最大问题是:</p>
+
+<p>浏览器会因为本地安全策略的限制, 限制直接从Canvas提取base64的操作, 浏览器本身会报CROS的跨域问题. 当然你可以从服务器配置, 云厂商配置, Rails配置一直配置到JS库, 但是真的真的好麻烦, 配置一堆东西的复杂度都超过转换库本身的复杂度了, 而且这种配置都是分散在服务器各个地方, 维护和调试都非常脆弱.</p>
+
+<p>所以还是建议HTML转换Word的工作用服务器后端来做, 逻辑简单清晰, 也容易维护.</p>
+
+<h3 id="最后">最后</h3>
+<p>上面就是HTML转Word文档的各种折腾历程和坑经验分享, 希望可以帮到你完成你项目中转换Word文档的需求, 不要像我这样折腾了.</p>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

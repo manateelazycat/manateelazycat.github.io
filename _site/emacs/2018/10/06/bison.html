@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>使Emacs支持语法分析器 bison</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                使Emacs支持语法分析器 bison
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <p>前几天写了一个 <a href="https://www.jianshu.com/p/ee5b87940f46">flex.el</a> , 今天看了一下 bison-mode.el 的代码, 也太陈旧了, 顺手再写一个 <a href="https://github.com/manateelazycat/bison">bison.el</a></p>
+
+<p><img src="http://localhost:4000/pics/bison/bison.png" alt="bison mode" class="center-image" /></p>
+
+<p><a href="https://github.com/manateelazycat/bison">bison</a> 支持 bison 的标记定义和规则代码区域的语法高亮.</p>
+
+<h3 id="安装方法">安装方法</h3>
+
+<ol>
+  <li>下载 <a href="https://github.com/manateelazycat/bison">bison</a> 里面的 bison.el 放到 ~/elisp 目录</li>
+  <li>把下面的配置加入到 ~/.emacs 中</li>
+</ol>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'load-path</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">"~/elisp"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'bison</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'auto-mode-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">"\\.y$"</span> <span class="o">.</span> <span class="nv">bison-mode</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">autoload</span> <span class="ss">'bison-mode</span> <span class="s">"bison"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="使用">使用</h3>
+<p>打开 *.y 结尾的 bison 文件, 会自动加载 bison-mode 并进行语法高亮, 直接编辑文件即可.</p>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

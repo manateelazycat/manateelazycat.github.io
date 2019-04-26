@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>cache-path-from-shell, 只加载环境变量一次</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                cache-path-from-shell, 只加载环境变量一次
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <p>在Mac下用Emacs最悲伤的事就是, 所有插件都加载完毕以后, 插件一直抱怨找不到各种执行文件.
+这些在Linux下都完全不用考虑的, 直接加载就可以用.</p>
+
+<p>因为Mac默认只会让Emacs使用系统默认的环境变量, 而不会像在终端那样把所有的环境变量都加载进来.
+这样就导致很多Emacs插件在执行外部命令时, 无法在 $PATH 环境变量中找到期望的二进制文件.</p>
+
+<p>解决方案很简单, 使用 Steve Purcell 开发的 <a href="https://github.com/purcell/exec-path-from-shell">exec-path-from-shell</a> 即可解决.
+一般直接用下面的代码就可以了:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">featurep</span> <span class="ss">'cocoa</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">require</span> <span class="ss">'exec-path-from-shell</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">exec-path-from-shell-initialize</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>因为 exec-path-from-shell 这个插件工作的非常好, 我开发的所有Emacs插件都会在插件开头写上这段代码保证能够正确调用外部命令.</p>
+
+<p>Emacs作为一个永远都可以折腾下去的邪恶操作系统, exec-path-from-shell 又衍生出另外一个问题:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>exec-path-from-shell-initialize 命令要从 shell rc 文件中读取环境变量
+shell rc 文件越大, 读取越慢.
+
+想象十几个Emacs插件启动的时候都需要执行一次
+exec-path-from-shell-initialize 命令,
+每次你都会感受到一种明显的顿挫感.
+</code></pre></div></div>
+
+<p>这样是不是很不爽? 其实 exec-path-from-shell-initialize 命令在最开始执行一次就行了, 不用每次都执行.
+但是我们也不能控制其他Emacs插件的作者, 大家协调一致只调用一次, 他们可能想调用多少次都是他们的自由.</p>
+
+<p>为了解决这个问题, 我写了一个新的插件 <a href="https://github.com/manateelazycat/cache-path-from-shell">cache-path-from-shell</a>
+这个插件会针对 exec-path-from-shell-initialize 命令建立一个缓存机制, 确保 exec-path-from-shell-initialize 命令只能执行一次,
+从而避免多个Emacs插件调用 exec-path-from-shell-initialize 命令而叠加的延时和不爽.</p>
+
+<h3 id="安装">安装</h3>
+<p>先安装 <a href="https://github.com/purcell/exec-path-from-shell">exec-path-from-shell</a></p>
+
+<p>再从 <a href="https://github.com/manateelazycat/cache-path-from-shell">cache-path-from-shell</a> 下载 cache-path-from-shell.el
+然后在 ~/.emacs 的最开头的位置加上(注意一定是最开头的位置)</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">require</span> <span class="ss">'cache-path-from-shell</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>That’s all.</p>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

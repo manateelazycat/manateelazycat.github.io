@@ -1,0 +1,146 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    background-color: #EFEFEF;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-area {
+    box-sizing: border-box;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    width: 60%;
+    margin: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+ul{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #57BF7D;
+    text-decoration: none;
+}
+
+.title {
+    color: #000;
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.content {
+    line-height: 28px;
+}
+
+.center-image {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+}
+
+.nickname {
+    font-size: 16px;
+    color: #AAA;
+    font-family: mottoFont;
+    margin-bottom: 20px;
+}
+
+pre {
+    white-space: pre;
+    overflow: auto;
+}
+
+div.highlighter-rouge {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+div.highlight,
+pre.highlight {
+    border-radius: 5px;
+}
+
+figure.highlight pre {
+    padding: 10px;
+}
+
+div.highlight pre.highlight {
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #AAA;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+th {
+    border: 1px solid #AAA;
+    padding: 5px;
+    background-color: #EFEFEF;
+}
+
+td {
+    border: 1px solid #AAA;
+    padding: 5px;
+}
+
+#archives {
+    position: fixed;
+    right: 100px;
+    top: 100px;
+}
+
+.category-name {
+    font-size: 16px;
+    color: #73BC83;
+    line-height: 30px;
+}
+
+.category-area {
+    color: #999;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.category {
+    color: #999;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

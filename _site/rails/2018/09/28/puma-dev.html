@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Rails Everyday, 使用 puma-dev 作为 Rails 的本地服务器</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="http://localhost:4000/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="http://localhost:4000/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                Rails Everyday, 使用 puma-dev 作为 Rails 的本地服务器
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Rails">
+                    <div class="category">
+                        Rails
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="content">
+                <p>平常都用 <code class="highlighter-rouge">rails server</code>放在终端中启动 Rails 服务, 可以用 puma-dev 作为本地服务器替代 <code class="highlighter-rouge">rails server</code> 命令, 主要有几个好处:</p>
+<ol>
+  <li>默认支持 HTTPS</li>
+  <li>可以简单方便的设定一个本地域名用于调试</li>
+  <li>端口管理也比较方便</li>
+</ol>
+
+<h3 id="安装方法">安装方法</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew install puma/puma/puma-dev
+$ sudo puma-dev -setup
+$ security add-trusted-cert -k login.keychain-db ~/Library/Application\ Support/io.puma.dev/cert.pem
+</code></pre></div></div>
+
+<h3 id="配置-rails-项目服务">配置 Rails 项目服务</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir -p ~/.puma-dev; cd ~/.puma-dev
+$ ln -s /Users/andy/tower tower
+$ puma-dev -d dev -install
+</code></pre></div></div>
+<p>上面的 /Users/andy/tower 是本地 Rails项目的目录</p>
+
+<p>设置完毕以后, 直接访问 <a href="https://tower.dev/">https://tower.dev</a> 就可以了。</p>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

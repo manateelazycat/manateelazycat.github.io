@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{{site.url}}/styles/font.css">
+        <link rel="stylesheet" href="{{site.url}}/styles/post.css">
+        <link rel="stylesheet" href="{{site.url}}/styles/navigatebar.css">
+        <link rel="stylesheet" href="{{site.url}}/theme/highlight.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>{{ page.title }}</title>
+    </head>
+    <body>
+        <div class="navigatebar">
+            <div class="navigatebar-button navigatebar-mine">
+                <a href="{{ site.url }}/index.html">ManateeLazyCat</a>
+            </div>
+            <div class="navigatebar-slogan">
+                「生活可以更简单, 欢迎来到我的开源世界」
+            </div>
+            <div class="navigatebar-button">
+                <a href="{{ site.url }}/index.html">Home</a>
+            </div>
+            <div class="navigatebar-button">
+                <a href="{{ site.url }}/tags.html">Tags</a>
+            </div>
+            <div class="navigatebar-button navigatebar-about">
+                <a href="{{ site.url }}/about.html">About</a>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="title">
+                {{ page.title }}
+            </div>
+            <div class="category-area">
+                「{% for category in page.categories %}
+                <a href="{{ site.url }}/tags.html#{{ category }}">
+                    <div class="category">
+                        {{ category }}
+                    </div>
+                </a>
+                {% endfor %}」
+            </div>
+            <div class="content">
+                {{ content }}
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>
