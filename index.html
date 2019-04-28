@@ -25,6 +25,20 @@ title: ManateeLazyCat
 
 <ul>
 
+    <div class="char-total-counter">
+        {% assign count = 0 %}
+        {% for post in site.posts %}
+        {% assign single_count = post.content | strip_html | strip_newlines | remove: " " | size %}
+        {% assign count = count | plus: single_count %}
+        {% endfor %}
+
+        {% if count > 10000 %}
+        字数 {{ count | divided_by: 10000 }} 万 {{ count | modulo: 10000 }}
+        {% else %}
+        {{ count }}
+        {% endif %}
+    </div>
+
     {% for post in site.posts %}
 
     <li class="post-line">
@@ -47,6 +61,9 @@ title: ManateeLazyCat
                     </div>
                 </a>
                 {% endfor %}
+            </div>
+            <div class="char-counter">
+                字数 {{ post.content | strip_html | strip_newlines | remove: " " | size }}
             </div>
             <div class="post-date">
                 {{ post.date | date: "%Y-%m-%d" }}
