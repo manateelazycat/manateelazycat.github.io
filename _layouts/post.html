@@ -10,26 +10,7 @@
         <title>{{ page.title }}</title>
     </head>
     <body>
-        <div class="navigatebar">
-            <div class="navigatebar-button navigatebar-mine">
-                <a href="{{ site.url }}/index.html">ManateeLazyCat</a>
-            </div>
-            <div class="navigatebar-slogan">
-                「生活可以更简单, 欢迎来到我的开源世界」
-            </div>
-            <div class="navigatebar-button">
-                <a href="{{ site.url }}/index.html">Home</a>
-            </div>
-            <div class="navigatebar-button">
-                <a href="{{ site.url }}/tags.html">Tags</a>
-            </div>
-            <div class="navigatebar-button">
-                <a href="{{ site.url }}/feed.xml">Feeds</a>
-            </div>
-            <div class="navigatebar-button navigatebar-about">
-                <a href="{{ site.url }}/about.html">About</a>
-            </div>
-        </div>
+        {% include navigatebar.html %}
         <div class="content-area">
             <div class="title">
                 {{ page.title }}
