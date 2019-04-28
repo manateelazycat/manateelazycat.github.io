@@ -1,0 +1,1167 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-28T21:16:54+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Jekyll 简单介绍</title><link href="http://localhost:4000/tech/2019/04/24/jekyll.html" rel="alternate" type="text/html" title="Jekyll 简单介绍" /><published>2019-04-24T00:00:00+08:00</published><updated>2019-04-24T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/04/24/jekyll</id><content type="html" xml:base="http://localhost:4000/tech/2019/04/24/jekyll.html">&lt;p&gt;自从把博客迁移到 Github Pages 以后, 又找到一种久违的创造欲.
+主要的原因主要都是因为 Github Pages 背后的 Jekyll 太适合我的口味了.&lt;/p&gt;
+
+&lt;p&gt;Jekyll 这个静态博客生成器吸引我的主要有几点:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;一个简单的静态页面生成器，不需要数据库和自己部署VPS，一切都放到Github上，免费好用&lt;/li&gt;
+  &lt;li&gt;完美的融合了 Markdown 和 CSS, 既可以享受 Markdown 的极简编写，又可以根据自己的喜好自定义 Markdown 的样式细节, 比如斑马线的表格、代码块圆角细节、图片自动根据页面宽度自动缩放等&lt;/li&gt;
+  &lt;li&gt;专注于内容, 一旦我定义好主题细节后, 我只用按照 Markdown 的语法编写文章 git push 就可以了, 一切又回到我最喜欢的极简风格&lt;/li&gt;
+  &lt;li&gt;本地实时预览, 一条 jekyll serve 的命令即可实时预览博客最终的展示效果和细节&lt;/li&gt;
+  &lt;li&gt;最后一点最重要, 不需要简陋的网站编辑器, 我可以直接在 Emacs 编辑文章的内容, 一切都是那么顺手&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;下面我分享一下我定制 Jekyll 的一些技巧：&lt;/p&gt;
+
+&lt;h3 id=&quot;让所有图片都自动缩放成页面的宽度&quot;&gt;让所有图片都自动缩放成页面的宽度&lt;/h3&gt;
+
+&lt;p&gt;我们的拍照和截图大部分都是各种尺寸的，放到博客中，难免会产生宽度不一致的情况，非常的丑陋。
+在Jekyll中，要让所有图片根据页面的宽度自动缩放却非常简单。
+首先，在你的 Jekyll 页面样式中加入:&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.center-image&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后在 Markdown 的图片后面加入 .center-image 样式即可，比如：&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;image name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;image_url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .center-image}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;看到了吗？你是在用 Markdown 的语法编辑文章内容，但是你却可以用 CSS 定制 Markdown 内容的展示样式, 既有编辑效率, 又能掌控样式细节！！！&lt;/p&gt;
+
+&lt;h3 id=&quot;表格居中显示&quot;&gt;表格居中显示&lt;/h3&gt;
+
+&lt;p&gt;Markdown 的表格一般都是左对齐显示，不是很优雅，怎么放中间呢？
+在样式中加入：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-collapse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;collapse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-spacing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#AAA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;margin-left 和 margin-right 都设置成 auto 即可达到居中显示的目的，是不是比那些商业的 Markdown 网站更灵活?&lt;/p&gt;
+
+&lt;h3 id=&quot;表格斑马线&quot;&gt;表格斑马线&lt;/h3&gt;
+
+&lt;p&gt;默认表格行多的时候，很难数清楚，加入淡淡的斑马线， 好看又实用：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;tbody&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;tr&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;even&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#F5F5F5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;代码块圆角&quot;&gt;代码块圆角&lt;/h3&gt;
+
+&lt;p&gt;Markdown 文档通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;foo&lt;/code&gt; 语法来展示代码，但是默认的代码区域是一个冲突感的直角，如果能够稍稍的做点圆角，
+就会降低代码区域的视觉冲突，人眼查看更加自然舒服。&lt;/p&gt;
+
+&lt;p&gt;方法很简单，浏览器折腾一下，把下面样式写到CSS文件中即可：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.highlight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.highlight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;看到优雅的圆角了吗？就像上面这块代码区域的视觉效果&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll-写作环境&quot;&gt;Jekyll 写作环境&lt;/h2&gt;
+
+&lt;p&gt;上面只是一些小细节展示，你只需要研究一些 CSS 技巧，静态页面也可以设计的非常现代。&lt;/p&gt;
+
+&lt;p&gt;当然，Jeyll 对于我来说，更宝贵的让我进入了一种新的专注状态：&lt;/p&gt;
+
+&lt;p&gt;用最小的代价兼顾编辑效率和视觉细节的同时，给我创造了一种非常专注的写作环境, 流畅，舒适&lt;/p&gt;</content><author><name></name></author><summary type="html">自从把博客迁移到 Github Pages 以后, 又找到一种久违的创造欲. 主要的原因主要都是因为 Github Pages 背后的 Jekyll 太适合我的口味了.</summary></entry><entry><title type="html">Hello, GitHub Pages</title><link href="http://localhost:4000/tech/2019/04/19/hello-github-page.html" rel="alternate" type="text/html" title="Hello, GitHub Pages" /><published>2019-04-19T00:00:00+08:00</published><updated>2019-04-19T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/04/19/hello-github-page</id><content type="html" xml:base="http://localhost:4000/tech/2019/04/19/hello-github-page.html">&lt;p&gt;自己不喜欢浪费时间搭建博客网站，所以文章一直都放到简书上，编写简单，容易维护。
+直到有一天天朝盯上了简书，我的很多技术文章很多被简书屏蔽以后，自己也懒的发邮件去申诉。&lt;/p&gt;
+
+&lt;p&gt;花了1个小时研究了Jekyll的文档，然后用Emacs和Wget把所有简书的文章迁移到 GitHub Pages 上来，
+以后 Emacs 里面写文章，git push自动更新，一劳永逸解决文章屏蔽的问题。&lt;/p&gt;
+
+&lt;p&gt;迁移到 Github Pages 上以后还可以自己控制页面的样式，也不用每次登录简书被迫看那些无聊的广告。&lt;/p&gt;</content><author><name></name></author><summary type="html">自己不喜欢浪费时间搭建博客网站，所以文章一直都放到简书上，编写简单，容易维护。 直到有一天天朝盯上了简书，我的很多技术文章很多被简书屏蔽以后，自己也懒的发邮件去申诉。</summary></entry><entry><title type="html">树莓派指定声卡硬件播放声音</title><link href="http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card.html" rel="alternate" type="text/html" title="树莓派指定声卡硬件播放声音" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card</id><content type="html" xml:base="http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card.html">&lt;p&gt;树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.&lt;/p&gt;
+
+&lt;p&gt;一般我们用下面方式去禁用树莓派的板载声卡:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;nano /boot/config.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;把文件中的 dtparam=audio=on 改成 dtparam=audio=off&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /proc/asound/cards
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;这个命令查询声卡 id, 比如我们需要声卡 id 为1 的声卡设备, 记录备用&lt;/p&gt;
+
+&lt;p&gt;修改 ~/.asoundrc 配置
+文件的内容如下, card id 为 1&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pcm.!default &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;hw
+        card 1
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+ctl.!default &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;type &lt;/span&gt;hw
+        card 1
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;修改 alsa.conf 配置
+替换 /usr/share/alsa/alsa.conf 文件中的&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults.ctl.card 0
+defaults.pcm.card 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;改成&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults.ctl.card 1
+defaults.pcm.card 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这样就可以让树莓派指定使用id为1的声卡设备去播放声音了, 但是坑爹的事情还没有完, 因为Linux设备如果插拔和重启的时候, 声卡设备的 id 分配是完全靠内核心情的, 你这次调用的是 id 1的声卡设备, 下次就有可能变成 0 和 2等其他 id. 遇到这种情况, 如果声卡设备只有麦克风而没有扬声器(比如USB摄像头), 就会报 jack server 的错误, 无法正常发出声音.&lt;/p&gt;
+
+&lt;p&gt;怎么办?&lt;/p&gt;
+
+&lt;p&gt;/proc/asound/pcm 文件中会有所有声卡设备的 “设备号-序列号” 的信息, 我们只用&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;打开 /proc/asound/pcm 文件, 过滤出具有 playback 1 的设备&lt;/li&gt;
+  &lt;li&gt;提取出 “设备号-序列号” 的信息&lt;/li&gt;
+  &lt;li&gt;通过 mpg123 指定 设备号-序列号 信息, 即可播放指定声卡硬件播放声音&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;示例代码如下:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_sound_card_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/proc/asound/pcm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;playback 1&quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;-&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;0,0&quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play_sound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sound_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sound_card_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_sound_card_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;play_command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;mpg123 -o alsa -a hw:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sound_card_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sound_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Popen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;play_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;玩树莓派还是Python好啊, 轻描淡写几行代码就搞定了.&lt;/p&gt;</content><author><name></name></author><summary type="html">树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.</summary></entry><entry><title type="html">Golang/Gin框架添加对HTTPS的支持</title><link href="http://localhost:4000/golang/2019/02/17/gin-https.html" rel="alternate" type="text/html" title="Golang/Gin框架添加对HTTPS的支持" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/golang/2019/02/17/gin-https</id><content type="html" xml:base="http://localhost:4000/golang/2019/02/17/gin-https.html">&lt;p&gt;HTTPS配置步骤:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;首先在阿里云搞定ICP域名备案&lt;/li&gt;
+  &lt;li&gt;添加一个子域名&lt;/li&gt;
+  &lt;li&gt;给子域名申请免费 SSL 证书, 然后下载证书对应的 pem 和 key 文件.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;用 GIN 框架添加一个 github.com/unrolled/secure 中间件就可以了.&lt;/p&gt;
+
+&lt;p&gt;下面是一个简单的示例代码:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;github.com/gin-gonic/gin&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;github.com/unrolled/secure&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TlsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RunTLS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:8080&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ssl.pem&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ssl.key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TlsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HandlerFunc&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secureMiddleware&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSLRedirect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSLHost&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;     &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;localhost:8080&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secureMiddleware&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Writer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// If there was an error, do not continue.&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;上面代码直接在子域名前添加 HTTPS 就可以安全通讯了.&lt;/p&gt;</content><author><name></name></author><summary type="html">HTTPS配置步骤: 首先在阿里云搞定ICP域名备案 添加一个子域名 给子域名申请免费 SSL 证书, 然后下载证书对应的 pem 和 key 文件.</summary></entry><entry><title type="html">用 air 给 Golang/Gin 框架提供热重启支持</title><link href="http://localhost:4000/golang/2019/02/17/air-gin.html" rel="alternate" type="text/html" title="用 air 给 Golang/Gin 框架提供热重启支持" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/golang/2019/02/17/air-gin</id><content type="html" xml:base="http://localhost:4000/golang/2019/02/17/air-gin.html">&lt;p&gt;Golang 这种编译语言和 Rails/Python 这种脚本语言不同, 脚本语言做后端, 只要不是配置和数据库有变化, 一般都是源代码一修改后, 最新后端服务就立即生效了.&lt;/p&gt;
+
+&lt;p&gt;但是 Golang 做后端, 需要每次修改代码以后都要重新编译后重启服务才行.
+但是每次改完代码都切换到终端按 Ctrl + C 也是无比的烦.&lt;/p&gt;
+
+&lt;p&gt;对于我这种懒得写代码的懒人, 伟大的Google从来都有现成的方案, 在Mac上直接用下面的命令在后端目录下执行:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fLo&lt;/span&gt; ~/air &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    https://raw.githubusercontent.com/cosmtrek/air/master/bin/darwin/air
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x ~/air
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./air&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;就是这么简单, 配合 FRP, 直接在本地开发, 前端直接调用就可以通过阿里云反向代理到本地开发机进行访问了.&lt;/p&gt;
+
+&lt;p&gt;只要 Golang 源代码一改, air 会自动重新编译并重启, 超级方便, 再也不用按 Ctrl + C 了.&lt;/p&gt;
+
+&lt;p&gt;注意:  air 这种重新编译和重启的方案只适合开发环境, 如果生产环境, 还需要基于 Golang HTTP.shutdown 方案开发更加智能的子进程热替换方案, 否则会因为重启瞬间丢失用户访问请求.&lt;/p&gt;
+
+&lt;p&gt;That’s all, gopher! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Golang 这种编译语言和 Rails/Python 这种脚本语言不同, 脚本语言做后端, 只要不是配置和数据库有变化, 一般都是源代码一修改后, 最新后端服务就立即生效了.</summary></entry><entry><title type="html">聊聊Rails和Golang开发的体验差别</title><link href="http://localhost:4000/golang/rails/web/2019/02/17/golang-and-rails.html" rel="alternate" type="text/html" title="聊聊Rails和Golang开发的体验差别" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/golang/rails/web/2019/02/17/golang-and-rails</id><content type="html" xml:base="http://localhost:4000/golang/rails/web/2019/02/17/golang-and-rails.html">&lt;p&gt;最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.&lt;/p&gt;
+
+&lt;p&gt;单从微信小程序框架的感觉和设计思路来看, 和 Vue.js 非常像, 这种前端框架, 的确是用 Golang 做为后端开发更好一点.&lt;/p&gt;
+
+&lt;p&gt;就拿现在我正在用的 Gin 这个 Golang 框架来说, 其实只用几十行写个路由返回微信小程序用的 JSON 数据就可以了, 基本上所有的界面效果都由小程序去渲染, 后台服务可以做的很薄:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;设计好数据库&lt;/li&gt;
+  &lt;li&gt;理清需求和业务逻辑&lt;/li&gt;
+  &lt;li&gt;Golang从数据库和HTTP路由请求, 按照 Restful API 规范返回 JSON 数据即可.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因为 Golang 的 HTTP 库设计的非常好, 所以基于 Golang HTTP 库的Web框架多如牛毛, 大多数Web框架都很轻, 主要的功能都在路由设计上.&lt;/p&gt;
+
+&lt;p&gt;所以如果拿 Rails 和 Golang 做对比的话:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Rails 更像一个Web最佳实践的全功能框架, 什么都有最好的, 但是因为包括的东西实在是太多了, 光是学清楚每个最佳实践库的配置和集成就很复杂, 因为 Rails 真的要配置好的话, 不同模块之间的集成往往都是不透明的, 你首先要学会这些配置, 只有看了源代码才知道为什么一定要这么配置才行&lt;/li&gt;
+  &lt;li&gt;Golang 框架和Rails是反的, 框架只有核心的 HTTP 路由功能, 至于高级功能, 比如HTTPS, 表单Token验证, JSON解析, 数据库的ORM等等, 都需要网上去找库和中间件实现, 但是每个模块之间的胶水代码都是自己写的, 所以模块之间关系处理都比较透明, 出了错好解决到问题的根源&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;简单的结论:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Rails更适合做传统偏向内容的Web网站构建, 约定好的配置入门比较简单, 开发效率高, 但是要玩精通还是比较复杂, 受到框架限制比较多&lt;/li&gt;
+  &lt;li&gt;Golang更适合前后端分离的应用开发, 比如小程序, 高级功能入门比较复杂, 但是一旦折腾好了, 可以很容易玩出高级功能, 不用受到严格框架的限制&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;像我这种Emacs党, 说句实话, 我更喜欢Golang这种框架, 虽然很多功能都需要自己折腾, 但是可以做到很多细节心中有数, 每个模块的最佳实践可以随着自己的经验增加而快速迭代, 而像 Rails 这种每个大版本引入的新的最佳实践都会和上一版本不兼容, 团队和业务代码多了, 更新代码去兼容最新框架本身就很痛苦.&lt;/p&gt;
+
+&lt;p&gt;最近开发了微信小程序, 感觉Web也像三国一样, 分久必合合久必分.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;最开始是 Java 这种简单粗暴的中间件玩法&lt;/li&gt;
+  &lt;li&gt;过去十年大多数都是 Rails 这种更加优雅的 Web 框架, 强调最佳实践, 强调 Web 纯正的方法论&lt;/li&gt;
+  &lt;li&gt;现在移动终端的性能、多分辨率和用户体验的新需求, 大家又回到Java那个时代的前后端分离了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;其实, 计算机这么多年的软件框架一直都是随着流星硬件和用户交互模式的迁移而不断变化和不断重复历史.&lt;/p&gt;
+
+&lt;p&gt;对于我这种操作系统行业打拼出来的人, Golang这种Web框架的思路对于我更简单, 设计好数据库和API接口, 剩下的就是把后端数据吐给前端框架就完事了.&lt;/p&gt;
+
+&lt;p&gt;所以, 业务导向, 什么技术对于业务最好就用什么技术, 对于小程序开发, 我选择 Golang Web框架.&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.</summary></entry><entry><title type="html">追逐彩云之南</title><link href="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html" rel="alternate" type="text/html" title="追逐彩云之南" /><published>2019-02-10T00:00:00+08:00</published><updated>2019-02-10T00:00:00+08:00</updated><id>http://localhost:4000/travel/2019/02/10/tourism-yunnan</id><content type="html" xml:base="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html">&lt;p&gt;老婆有一个小小的梦想, 在有生之年周游世界, 看遍这个世界的美与不同.
+继青岛大海、银川沙漠、红岩顶雪山、黄山奇石后, 今年趁着武汉的寒冬带老婆来一次自驾迁徙, 体验四季如春的彩云之南.&lt;/p&gt;
+
+&lt;p&gt;冬季去旅游景区的最大好处就是景区的人非常少, 可以尽情的感受风景, 而不是大家一起扮演植物大战僵尸.&lt;/p&gt;
+
+&lt;h4 id=&quot;石牛寨国家地质公园&quot;&gt;石牛寨国家地质公园&lt;/h4&gt;
+&lt;p&gt;门票+下山索道: 207元/人&lt;/p&gt;
+
+&lt;p&gt;第一站去了离武汉最近的岳阳市, 从马蜂窝知道岳阳市有一个适合户外攀岩的丹霞地质公园, 石牛寨国家地质公园离武汉非常近, 高速武深高速非常好走, 末端的盘山路路有点窄, 建议在白天通过, 视野比较好一点.&lt;/p&gt;
+
+&lt;p&gt;当地的美食非常像贵州风味的做法, 我们在上山之前的一个路边小餐馆, 三菜一汤才70~80, 美味又实惠.&lt;/p&gt;
+
+&lt;p&gt;住宿的话建议住在山下的县城里, 条件要好很多, 这次我们住的是景区门口的客栈, 不管是吃的还是住宿都不是很好 (没想到老司机第一站就翻车了, 手动捂脸)
+&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-c9be28fc0ccd2d99.jpg&quot; alt=&quot;141549774282_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-108673a5bf43c453.jpg&quot; alt=&quot;151549774283_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-09f853c0d5b5212e.jpg&quot; alt=&quot;161549774284_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-3eb9eb44c5c169eb.jpg&quot; alt=&quot;171549774285_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-e808d5c1e2e88178.jpg&quot; alt=&quot;181549774286_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-e6a12952b22756d0.jpg&quot; alt=&quot;191549774287_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d08e750b1e7bb9db.jpg&quot; alt=&quot;201549774288_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-2dd4e3d30d965bf8.jpg&quot; alt=&quot;211549774289_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;也许是去过了黄山和银川的寺口大峡谷, 对奇石怪林和丹霞之险已经没那么新奇了, 我们一家第二天早早的起床随着缆车就登山山顶开始游览, 景区不是很大, 2个多小时就游览完了, 下山的时候比较坑, 说是可以走下山, 但是是没有下山路的, 只能被迫坐索道.&lt;/p&gt;
+
+&lt;p&gt;下了山可以带小朋友逛一逛山下的猴园坐一下秋千, 整个景区就算打卡完成.&lt;/p&gt;
+
+&lt;p&gt;对于第一站的评论:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;如果没有体验过丹霞地貌, 在武汉还是可以去一下的, 非常近, 当天去当天回.&lt;/li&gt;
+  &lt;li&gt;如果已经体验过各种山川, 不建议去, 景点不大, 但是收费却比较高, 周边的设施现在还不是很好.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;张家界&quot;&gt;张家界&lt;/h4&gt;
+&lt;p&gt;门票+免费环保车: 70元/人, 四天内进出景区&lt;/p&gt;
+
+&lt;p&gt;张家界国家森林公园是拍摄西游记和阿凡达的取景地, 号称”三千奇峰，八百秀水”, 对张家界的各种传说旁听已久, 甚是向往.&lt;/p&gt;
+
+&lt;p&gt;这次旅游比较幸运的时, 每去一个地方, 老天爷都晴空高照, 张家界游玩的几天也不例外.&lt;/p&gt;
+
+&lt;p&gt;去之前, 看了马蜂窝攻略, 说张家界景点浩大, 包括黄石寨、金鞭溪、袁家界、杨家界、天子山和索溪峪等区域, 漫游四天, 快的也要三天.&lt;/p&gt;
+
+&lt;p&gt;仔细研究了这几个景点, 黄石寨这种索道上索道下的甚是乏味, 溶洞和玻璃栈道也没有什么好玩的. 最后决定就去两个地方:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;国家森林公园大门口的 “金鞭溪” (西游记取景地), 来回14公里, 一下午就可以徒步完成&lt;/li&gt;
+  &lt;li&gt;袁家界和杨家界 (阿凡达的取景地), 因为景区有免费的环保车接送, 其实一天就足够游览&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-0dafe95aae3d38a6.jpg&quot; alt=&quot;221549775640_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-bd0183e292a3de40.jpg&quot; alt=&quot;231549775641_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-14b83fd8dbeca6d0.jpg&quot; alt=&quot;241549775642_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-c7429b9c3c36ebc5.jpg&quot; alt=&quot;251549775643_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-9824fd18c1f0ec19.jpg&quot; alt=&quot;261549775644_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-238f8c8572cd1fb9.jpg&quot; alt=&quot;271549775645_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-703384328d9139a1.jpg&quot; alt=&quot;281549775646_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-80c06167bf9e1ae2.jpg&quot; alt=&quot;291549775647_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-c304c4a16200ba43.jpg&quot; alt=&quot;301549775648_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-f0d7722dcce5419b.jpg&quot; alt=&quot;311549775656_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-1f422da603a27147.jpg&quot; alt=&quot;321549775657_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-1a7d0d0cd47c6a06.jpg&quot; alt=&quot;331549775658_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-071acaec2ea64568.jpg&quot; alt=&quot;341549775659_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-349f982a8d9138ab.jpg&quot; alt=&quot;351549775660_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-8ae34668af1dfc23.jpg&quot; alt=&quot;361549775661_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-ba65d188d0f2a943.jpg&quot; alt=&quot;371549775662_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-f8d4fe331a8e62e3.jpg&quot; alt=&quot;381549775663_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-77ab166372759da3.jpg&quot; alt=&quot;391549775664_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;对于第二站的点评:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;金鞭溪的感觉就像走进了一个原始森林的小溪中, 逆流而上, 到处都是参天的松柏, 夏天来一定是天然的大自然氧吧, 沿途到处都是成群结队的猴子, 进景区千万不要带任何吃的, 我们亲眼看到一大堆猴子直接上手抓破口袋一抢而哄的场景, 非常凶狠, 就是一帮土匪&lt;/li&gt;
+  &lt;li&gt;袁家界和杨家界的景色大部分都是百米高的怪石, 和黄山那种自然的巧夺天工不太一样的是, 张家界的这些怪石怪山透出了很多灵气, 特别是在山顶往下看的时候, 总是感觉有很多奇怪的生灵就在这些怪石群的谷底一样, 回武汉后才明白, 因为这就是西游记的取景地啊, 看到这些地方就难免想到神仙出没的感觉&lt;/li&gt;
+  &lt;li&gt;张家界虽然大, 但是景区门票在淡季时相当便宜, 70元4天还包括免费的大巴和环保车接送, 最重要的是淡季人少, 我觉得冬季是游览张家界最好的时候&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;武隆天生三桥--天坑地缝--仙女山滑雪场&quot;&gt;武隆天生三桥 + 天坑地缝 + 仙女山滑雪场&lt;/h4&gt;
+&lt;p&gt;天生三桥门票: 75元/人
+天坑地缝门票: 75元/人
+仙女山滑雪场: 240元/小时&lt;/p&gt;
+
+&lt;p&gt;本来准备从张家界直接去恩施大峡谷, 但是网上评论看, 恩施大峡谷主要是爬楼梯, 张家界第二天下了7000阶台阶, 实在没有勇气去爬楼梯了. 在研究从张家界回四川的高速上, 发现了武隆这个网红景点, 说改就改, 第三站就直接开到武隆.&lt;/p&gt;
+
+&lt;p&gt;武隆天生三桥是«满城尽带黄金甲»和«变形金刚4»拍摄地, 是全世界最高的串珠式天生硚群。景区内有三座平均高度300米以上的天然石拱桥呈纵向排列, 平行横跨在羊水河峡谷之上，将两岸山体连在一起。三座天然石拱桥之间又有青龙天坑、神鹰天坑两个天坑，形成了“三硚夹两坑”的奇特景色。&lt;/p&gt;
+
+&lt;p&gt;武隆的整个行程还是比较轻松的, 第一天早上游览天生三桥, 天生三桥出口有直接到天坑地缝入口的大巴, 下午轻轻松松即可游览完天坑地缝. 第二天早上开车上山到仙女山山顶玩一下山顶的自然滑雪场, 坐着滑雪圈, 还是挺刺激的, 比较适合带小朋友一起玩.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-32177e10c9708cc8.jpg&quot; alt=&quot;401549787122_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-62ceca1d09e54124.jpg&quot; alt=&quot;411549787123_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-bc6ff8e461f061d1.jpg&quot; alt=&quot;421549787124_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d17ce3b859c58331.jpg&quot; alt=&quot;431549787125_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-ff0f8ca90446a8d7.jpg&quot; alt=&quot;441549787126_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d8c50e052ce5f6eb.jpg&quot; alt=&quot;451549787127_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-44697f3b0dac9265.jpg&quot; alt=&quot;461549787128_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-011cef1c3c3052cc.jpg&quot; alt=&quot;471549787129_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-6c4f851919912f4e.jpg&quot; alt=&quot;481549787130_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-203c5b52483653fd.jpg&quot; alt=&quot;491549787131_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-473937e5cd55f9cb.jpg&quot; alt=&quot;501549787132_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-859f2b6df2f54a5f.jpg&quot; alt=&quot;511549787133_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;对于第三站的点评&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;武隆是我们旅途中临时添加的景点, 但是景色之美和震撼却是超出我们的期望&lt;/li&gt;
+  &lt;li&gt;天生三桥的那三座横跨天坑之上的自然石桥, 那种仰望才能净收眼底的震撼很难从照片中感受出来, 只能亲自站到坑底, 才能惊叹大自然的鬼斧神工和自己的渺小&lt;/li&gt;
+  &lt;li&gt;天坑地缝中地缝的幽灵, 山泉的碧绿和飞瀑的秀丽都非常美, 但是和我们自己幻想的美景方向不太对, 我们去之前以为是深入地洞看地下暗河, 去了以后发现这是顺着谷底的小溪顺流而下&lt;/li&gt;
+  &lt;li&gt;仙女山山顶的滑雪场很好玩, 我们去的时候是冬季, 强烈建议大家夏天来仙女山山顶, 这里的草原, 公路和森林号称有东方瑞士的即时感&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;四川老家&quot;&gt;四川老家&lt;/h4&gt;
+&lt;p&gt;四川老家主要是吃酒, 啥都不说了, 吃了妹妹做的麻辣味香肠和羊肉杂, 满满的满足感.
+&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-29af695b3d227538.jpg&quot; alt=&quot;521549788912_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-a89176d681eada75.jpg&quot; alt=&quot;531549788913_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;泸沽湖&quot;&gt;泸沽湖&lt;/h4&gt;
+&lt;p&gt;门票: 75元/人&lt;/p&gt;
+
+&lt;p&gt;在四川住了2~3天, 就驱车来到西昌, 西昌是四川省里泸沽湖最近的一个城市, 第二天一早从西昌开车前往泸沽湖, 原来以为200多公里的路其实一上午几个小时的时间完全足够了, 没想到S307盘山路整整开了一天, 一路上都是下坡发卡弯, 在这样的山路上开, 需要注意控制车速和点刹, 千万不要高速和急刹, 因为这里出了问题不是车祸, 而是空难, 随时都可以跌下悬崖.&lt;/p&gt;
+
+&lt;p&gt;去之前我就在想, 泸沽湖再美不过就是一个湖而已, 可以震撼到哪里去?&lt;/p&gt;
+
+&lt;p&gt;头一天到泸沽湖都晚上了, 除了满天繁星什么都看不到, 到了第二天早上起床后, 才真的体验到泸沽湖的美, 泸沽湖为四川最大, 全国第三大的淡水湖, 水清澈见底, 湖面上有到处都是野鸭子, 西伯利亚飞来过冬的海鸥和小渔船, 加上规划很好, 湖边没有商业化的小摊贩, 吃的住的都在集中的半岛上, 90%的沿途都是自然风光和野生动物, 在湖边的山坡上看到成群的羊群牛群…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d3f7bb38a683a5cd.jpg&quot; alt=&quot;541549788914_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-60527b7159b4d834.jpg&quot; alt=&quot;551549788915_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-17b4106b60ceb76b.jpg&quot; alt=&quot;561549788916_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-ffe77d9deb0b549c.jpg&quot; alt=&quot;571549788917_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-b4db25802f50b06d.jpg&quot; alt=&quot;581549788918_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d83405d249ff9267.jpg&quot; alt=&quot;591549788919_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-acd9d9635d443576.jpg&quot; alt=&quot;601549788920_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-91149bee320ed7cd.jpg&quot; alt=&quot;611549788921_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-1bac501e4042b6b7.jpg&quot; alt=&quot;621549788922_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;对于第四站泸沽湖的点评:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;泸沽湖的美, 那种自带滤镜的美, 不像大海, 沙漠和雪山, 它的美不是那种你一眼看去就会为之震撼的美, 它的美是那种幽静的美, 你的心越平静你越能体验它的美, 如果说别的风景是饕餮盛宴, 泸沽湖的美就是一徐清茶, 需要你静静的品味, 越品味越陶醉其中&lt;/li&gt;
+  &lt;li&gt;去过泸沽湖的人, 无不夸奖, 除了那种静谧的美, 我想更多的游客是因为泸沽湖的生态, 泸沽湖环游一圈是那种安安静静的美景等着你发现, 没有商贩的吆喝, 整个湖周围的生态和卫生都保持的非常好, 非常干净, 干净到你舍不得去污染它. 也正因如此, 我们这个时代看遍古镇和商业运作的景点后, 更加珍惜泸沽湖这种原汁原味的自然生态&lt;/li&gt;
+  &lt;li&gt;环湖累了就望着一望无际的湖面, 波光粼粼, 海鸥, 羊群, 牛群, 走在草地和沙滩上, 感觉整个世间的累都被泸沽湖给稀释了, 就算行走在走婚桥上, 随手一拍都是大片美景…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;泸沽湖的美就是没有任何刻意和装饰的美, 看到泸沽湖, 就想起了人生自己一样, 柴米油盐酱醋茶, 轻描淡写都是美, 你在这种美当中, 不会感到美腻了, 也不会有一见钟情的震撼, 更不会在离开它时日消逝后忘记它的美, 因为当你第一天看到它时, 它的一举一动, 一山一水早就印入你的心田, 它的美给你的感觉是一旦触碰后永远都无法忘记的美, 因为它的美就是家的感觉, 人对完美生活的真实向往.&lt;/p&gt;
+
+&lt;h4 id=&quot;丽宁公路&quot;&gt;丽宁公路&lt;/h4&gt;
+&lt;p&gt;在旅游开始之前和到张家界后, 就有多位朋友告诉我, 从四川到云南的那段山路非常刺激.&lt;/p&gt;
+
+&lt;p&gt;泸沽湖环湖完了以后, 就驱车前往丽江玉龙县的白沙古镇, 中间的这段路就叫做丽宁公路, 先给你们几张图感受一下.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-9cd39fd2a90e6e47.jpg&quot; alt=&quot;641549790841_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-95304e441de15c5c.jpg&quot; alt=&quot;651549790842_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在这条公路上开, 每隔五秒就是导航播报: 前方急下坡, 前方有急弯, 旁边有落石…
+全程都是急下坡后马上左转90°急弯后马上又180°向右的发卡弯, 周而复始, 如果不是老司机千万不要开这条路, 太危险了, 因为当你躲避落石的同时往往会和对面的来车迎面擦过.&lt;/p&gt;
+
+&lt;p&gt;我开完这条公路后, 才发现这条丽宁公路在云南12条魔鬼公路中排名第二, 秒杀传说中的秋名山, 原来秋名山车神不在日本, 在那些弯道超我车的云南司机里啊&lt;/p&gt;
+
+&lt;h4 id=&quot;玉龙雪山&quot;&gt;玉龙雪山&lt;/h4&gt;
+&lt;p&gt;门票 + 牦牛坪索道: 165元/人&lt;/p&gt;
+
+&lt;p&gt;在白沙古镇住下后, 第二天就带着小朋友爬了北半球维度最低,海拔最高的玉龙雪山, 因为去年一家人已经挑战过徒手攀登红岩顶, 加上今年玉龙雪山上有索道, 所以攀登玉龙雪山非常轻松.&lt;/p&gt;
+
+&lt;p&gt;玉龙雪山这边天非常干, 要多注意喝水和抹唇膏, 要不是会变成洪七公的嘴唇的, 哈哈哈哈.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-0e41ec2181783315.jpg&quot; alt=&quot;661549791434_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-4f6968294b8b50c9.jpg&quot; alt=&quot;671549791435_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-457ee731a42e9d53.jpg&quot; alt=&quot;681549791436_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-1b4e5a96836fb8f7.jpg&quot; alt=&quot;691549791437_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-8f84c878b2e3257e.jpg&quot; alt=&quot;701549791438_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-43beba652ab332d1.jpg&quot; alt=&quot;711549791439_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-e005b196037da5b0.jpg&quot; alt=&quot;721549791440_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-f0158009fab9a50a.jpg&quot; alt=&quot;731549791441_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第五站评价:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;玉龙雪山不像大多数川西和藏区的雪山, 雪并不多, 海拔也不是那么夸张(5596米), 它给我的感觉非常非常的安静, 甚至有一点暖和的感觉&lt;/li&gt;
+  &lt;li&gt;因为玉龙雪山身处云南境内, 山下四季如春, 绿植长披, 反而有一点像瑞士的雪山&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其实玉龙雪山并不是此行的目的地, 来朋友的青旅才是最终的目的, 只是刚好朋友的青旅就在玉龙雪山的山脚下.&lt;/p&gt;
+
+&lt;h4 id=&quot;那里青旅&quot;&gt;那里青旅&lt;/h4&gt;
+&lt;p&gt;本来准备去了泸沽湖以后, 再去稻城亚丁, 但是在四川的时候, 耽搁的时间有点多, 加上沿途感冒严重,不想春节的时候还在亚丁雪山的寒风中过.&lt;/p&gt;
+
+&lt;p&gt;所以这次直接砍掉了稻城亚丁, 转而在朋友的青旅中度过春节, 我们一家在那里青旅度过的非常非常快乐, 感谢老朋友贤民的招待 (贤民也是电脑高手, deepin的粉丝), 还有米汤, 民谣小川, 彪叔以及倩倩的热情招待, 如果你也是文艺青年, 厌倦了商业化的酒店, 不妨也去那里青旅住几天, 看着雪山, 每天和民谣歌手和各国友人畅聊人生, 那才是生活&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-6fc3e3fe68a20b00.jpg&quot; alt=&quot;741549792072_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-df855f5da0a263fc.jpg&quot; alt=&quot;751549792073_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-ffee0f18c2a3bafd.jpg&quot; alt=&quot;771549792075_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-0cf3350319b2fa0f.jpg&quot; alt=&quot;781549792076_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-f1cf028a7dda014c.jpg&quot; alt=&quot;791549792077_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-490eb373f4f60bd9.jpg&quot; alt=&quot;801549792078_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-b5a1fdbd74aecf03.jpg&quot; alt=&quot;811549792079_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-62c543e09e2949c1.jpg&quot; alt=&quot;821549792080_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-11c5a686c16d000b.jpg&quot; alt=&quot;831549792081_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-94d61e471eb30bbb.jpg&quot; alt=&quot;841549792082_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-eaeaebaf6155fb6a.jpg&quot; alt=&quot;851549792083_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;洱海&quot;&gt;洱海&lt;/h4&gt;
+&lt;p&gt;门票: 无&lt;/p&gt;
+
+&lt;p&gt;在那里青旅过完春节后, 初一赶到了传说中的大理洱海.&lt;/p&gt;
+
+&lt;p&gt;洱海就是一个缩小版的泸沽湖, 但是我却很难去赞美洱海, 因为商业化太严重了, 到处都是美食街, 人头和污染, 走在人山人海中, 很难提起对大自然的兴致.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-84f68d1ef1557f81.jpg&quot; alt=&quot;871549792497_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;美景不如泸沽湖, 但是小吃好丰盛, 除了吃小吃外, 最喜欢这道菜, 水性杨花, 就是生在在大理湖上的一种叫 “水性杨花” 的植物, 吃起来特别嫩, 入口即化的感觉, 传说这种植物必须生在在矿泉水水质的水域中才能存活.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-e52b85ba5222b49f.jpeg&quot; alt=&quot;WechatIMG86.jpeg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第六站评价:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;洱海全面不如泸沽湖, 强烈推荐看了泸沽湖就pass洱海吧&lt;/li&gt;
+  &lt;li&gt;这边环海120公里, 开车太堵, 建议50元租一辆电动车, 带着家人兜兜风还是很爽的.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;石林景区&quot;&gt;石林景区&lt;/h4&gt;
+&lt;p&gt;门票 + 观光车: 155元/人&lt;/p&gt;
+
+&lt;p&gt;高速路上看到好多壮美的石林风景, 冲动的下了高速进景区游览, 但是证明冲动是魔鬼, 因为进景区已经下午6点了, 时间太匆忙, 无法深入的游览石林的魅力.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-a89cfe948c1264a6.jpg&quot; alt=&quot;881549792890_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-cb991e22a2b7dace.jpg&quot; alt=&quot;891549792891_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-45042fe51b5f6757.jpg&quot; alt=&quot;901549792892_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-42a0495af50159da.jpg&quot; alt=&quot;911549792893_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-71a4ba8c4fe90ceb.jpg&quot; alt=&quot;921549792894_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-424df4fcb45499c6.jpg&quot; alt=&quot;931549792895_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第七站评价:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;建议下次有时间, 一天慢慢的逛, 不要像我们这样冲动, 哈哈哈哈&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;罗平油菜花田&quot;&gt;罗平油菜花田&lt;/h4&gt;
+&lt;p&gt;门票 + 观光车: 50元/人&lt;/p&gt;
+
+&lt;p&gt;如果问中国哪个地方春天来得最早
+那一定少不了云南和贵州
+它们俩就像是一对相杀相爱的恋人
+从第一抹春色开始
+便会用不断盛开的花海来展示各自的魅力&lt;/p&gt;
+
+&lt;p&gt;中国最早的春天
+在云南的罗平
+从一月下旬开始
+30万亩的油菜花便会似金黄色的地毯一样
+舒展开娇媚的身姿
+铺满山野
+妆点一座座孤峰
+把淡淡的清香洒满人间&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-54078979a606a428.jpg&quot; alt=&quot;951549793437_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-817c304dc248db79.jpg&quot; alt=&quot;961549793438_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-51b14d1c42110cd0.jpg&quot; alt=&quot;971549793439_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-0a537fa651507cb5.jpg&quot; alt=&quot;981549793440_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-38d96e6ad4708e12.jpg&quot; alt=&quot;991549793441_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-8c15334ffe8da582.jpg&quot; alt=&quot;1001549793442_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d1fb4a30c53aee57.jpg&quot; alt=&quot;1011549793443_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-99271f2b15992f2f.jpg&quot; alt=&quot;1021549793444_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-a6f179e5c1961acb.jpg&quot; alt=&quot;1031549793445_.pic_hd.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-4460b67ce6520e16.jpg&quot; alt=&quot;1041549793447_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-87cf083cffd26d65.jpg&quot; alt=&quot;1051549793448_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-073460d994482e72.jpg&quot; alt=&quot;1061549793449_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-c64b9037903e9c8b.jpg&quot; alt=&quot;1071549793450_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-bb1b8f4aa6a25812.jpg&quot; alt=&quot;1081549793451_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-57cb202959bfd223.jpg&quot; alt=&quot;1091549793452_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-40f9f61164a304da.jpg&quot; alt=&quot;1131549793489_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-6c25c1adff7d0a8d.jpg&quot; alt=&quot;1141549793490_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-56c5f1618a9999c2.jpg&quot; alt=&quot;1151549793491_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-e597db826cdd5faa.jpg&quot; alt=&quot;1161549793492_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-bf24e09c2e1b2ab3.jpg&quot; alt=&quot;1171549793493_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;油菜花田旁有卖这种五彩糯米, 是用山上小花小草染色后晾干制成的, 给小朋友买了一碗, 超级好吃.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-6f45857b99e97b55.jpg&quot; alt=&quot;1101549793453_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-c9d8131f6cdf7dc6.jpg&quot; alt=&quot;1111549793454_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-40086890ad68161f.jpg&quot; alt=&quot;1121549793455_.pic.jpg&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第八站评价:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;当你看到一块油菜花地不会觉得美, 但是当你沉浸在30万亩油菜花田, 无边无际的时候, 你不但会觉得美, 会觉得好浪漫&lt;/li&gt;
+  &lt;li&gt;油菜花田旁边有很多养蜂人, 油菜花蜜超级甜, 嚼一块蜂蜜蜡, 纯天然的, 甜腻了, 但是注意不要离蜜蜂太近了, 我就被它们在头皮上狠狠的蛰了一针, 头疼炸了&lt;/li&gt;
+  &lt;li&gt;法国有薰衣草的浪漫, 中国有属于我们自己的浪漫&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;打道回府&quot;&gt;打道回府&lt;/h4&gt;
+&lt;p&gt;这次旅行从武汉出发, 从北边湖南四川穿越, 南下到云南, 再从贵州湖南北上回武汉, 历时20天, 全程: 5142公里&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;武汉 - 岳阳石牛寨国家地质公园: 258公里&lt;/li&gt;
+  &lt;li&gt;岳阳石牛寨国家地质公园 - 张家界: 474公里&lt;/li&gt;
+  &lt;li&gt;张家界 - 重庆武隆天生三桥: 450公里&lt;/li&gt;
+  &lt;li&gt;重庆武隆天生三桥 - 老婆四川老家: 320公里&lt;/li&gt;
+  &lt;li&gt;老婆四川老家 - 西昌市: 800公里&lt;/li&gt;
+  &lt;li&gt;西昌市 - 泸沽湖: 276公里&lt;/li&gt;
+  &lt;li&gt;泸沽湖 - 玉龙雪山: 209公里&lt;/li&gt;
+  &lt;li&gt;玉龙雪山 - 洱海: 217公里&lt;/li&gt;
+  &lt;li&gt;洱海 - 罗平县金鸡峰丛: 538公里&lt;/li&gt;
+  &lt;li&gt;罗平县金鸡峰丛 - 兴义 - 铜仁 - 武汉: 1600公里&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;回到武汉后, 还在下雪, 超级怀念云南四季如春的日子, 希望以后可以在云南找一个安静的地方生活和学习下去, 在那样的蓝天下, 远离世间纷扰, 安安静静的生活, 真是神仙般的生活…&lt;/p&gt;</content><author><name></name></author><summary type="html">老婆有一个小小的梦想, 在有生之年周游世界, 看遍这个世界的美与不同. 继青岛大海、银川沙漠、红岩顶雪山、黄山奇石后, 今年趁着武汉的寒冬带老婆来一次自驾迁徙, 体验四季如春的彩云之南.</summary></entry><entry><title type="html">Emacs智能标记并一键跳转</title><link href="http://localhost:4000/emacs/2019/01/05/lazy-search.html" rel="alternate" type="text/html" title="Emacs智能标记并一键跳转" /><published>2019-01-05T00:00:00+08:00</published><updated>2019-01-05T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/01/05/lazy-search</id><content type="html" xml:base="http://localhost:4000/emacs/2019/01/05/lazy-search.html">&lt;p&gt;Emacs的isearch一般都是激活以后直接搜索字符并上下跳转, 但是我们编程的时候, 往往搜索的内容就是当前光标处的符号, 如果每次都敲一遍符号字符串效率就会非常低.&lt;/p&gt;
+
+&lt;p&gt;2008年的时候, 写了插件 lazy-search.el, 主要的目的是, 自动激活当前光标处的符号, 然后直接按 s 或者 r 就可以在匹配的字符中快速跳转, 跳转到目标位置后按q退出搜索继续编程&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/lazy-search/lazy-search.png&quot; alt=&quot;lazy-search.el&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但是这个插件依赖我的另一个插件 one-key.el , on-key 是一个针对快捷键的菜单导航系统, one-key.el 虽然强大但是配置还是比较折腾的.&lt;/p&gt;
+
+&lt;p&gt;所以, 今天把 lazy-search.el 重新调整了一下:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;移除了对 one-key.el 的依赖&lt;/li&gt;
+  &lt;li&gt;移除了很多不用的mark函数, 因为用的最多的就是标记光标处的符号或者选区内容&lt;/li&gt;
+  &lt;li&gt;重构了一些代码和名字, 使得更容易理解&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;安装&quot;&gt;安装&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;下载 &lt;a href=&quot;https://github.com/manateelazycat/lazy-search&quot;&gt;lazy-search.el&lt;/a&gt; 里面的 lazy-search.el 放到 ~/elisp 目录&lt;/li&gt;
+  &lt;li&gt;把下面的配置加入到 ~/.emacs 中&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'load-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;expand-file-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/elisp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'lazy-search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;global-set-key&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;kbd&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;M-s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'lazy-search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;把光标移动到想要搜索的符号位置&lt;/li&gt;
+  &lt;li&gt;按 Alt + S 激活 lazy-search 模式&lt;/li&gt;
+  &lt;li&gt;按照下面的按键跳转, 或者按 q 退出 lazy-search 模式&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;按键&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;命令&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;解释&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;s&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-jump-to-next-match&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;跳转到下一个匹配位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;r&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-jump-to-previous-match&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;跳转到上一个匹配位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;.&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-jump-to-first-match&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;跳转到第一个匹配位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;,&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-jump-to-last-match&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;跳转到最后一个匹配位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;i&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-jump-to-init&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;跳转到开始搜索的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;j&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-next-line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;移动到下一行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;k&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-previous-line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;移动到上一行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;h&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-backward-char&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;移动到前一个字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;l&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-forward-char&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;移动到下一个字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;H&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-line-beginning&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;移动到行首&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;L&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-line-end&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;移动到行尾&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;J&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-scroll-up-one-line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;向上滚动一行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;K&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-scroll-down-one-line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;向下滚动一行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;e&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-scroll-down-one-page&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;向上滚动一屏&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Space&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-scroll-up-one-page&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;向下滚动一屏&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;S&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-mark-symbol-or-region&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;用光标处的符号重新搜索&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;w&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-copy-object&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;拷贝搜索对象&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;E&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-edit-object&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;编辑搜索对象并重新搜索&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;c&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-search-previous-cache&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;搜索上次搜索对象&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Y&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-search-yank&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;搜索yank内容&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;t&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-to-isearch&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;切换到 isearch 模式&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;q&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-quit&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;退出 lazy-search 模式&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name></name></author><summary type="html">Emacs的isearch一般都是激活以后直接搜索字符并上下跳转, 但是我们编程的时候, 往往搜索的内容就是当前光标处的符号, 如果每次都敲一遍符号字符串效率就会非常低.</summary></entry><entry><title type="html">Emacs智能感知和操作光标处的语法对象</title><link href="http://localhost:4000/emacs/2018/12/22/thing-edit.html" rel="alternate" type="text/html" title="Emacs智能感知和操作光标处的语法对象" /><published>2018-12-22T00:00:00+08:00</published><updated>2018-12-22T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2018/12/22/thing-edit</id><content type="html" xml:base="http://localhost:4000/emacs/2018/12/22/thing-edit.html">&lt;p&gt;我在 2008 年开发了 thing-edit.el , 虽然这个插件平常没啥存在感, 但是几乎是天天都在用的插件.&lt;/p&gt;
+
+&lt;p&gt;thing-edit.el 简单来说, 就是不用移动光标, 会自动把光标处的各种语法对象 (表达式、邮件地址、文件名、URL、单词、符号、函数定义、列表、句子、空格、段落、行、注释、括号内容等)进行识别并操作, 比如复制, 剪切或者粘贴 kill-ring 内容.&lt;/p&gt;
+
+&lt;p&gt;thing-edit.el 相对于其他复制插件的优势在于你完全不用移动光标即可智能的感知语法对象并进行快速的操作. 等操作完成以后可以继续从当前的位置继续编程.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/thing-edit/thing-edit.gif&quot; alt=&quot;thing-edit.gif&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;安装方法&quot;&gt;安装方法&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;下载 &lt;a href=&quot;https://github.com/manateelazycat/thing-edit&quot;&gt;thing-edit git&lt;/a&gt; 里面的 thing-edit.el 放到 ~/elisp 目录&lt;/li&gt;
+  &lt;li&gt;把下面的配置加入到 ~/.emacs 中&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(add-to-list 'load-path (expand-file-name &quot;~/elisp&quot;))
+(require 'thing-edit)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
+&lt;p&gt;可以把你喜欢的按键绑定下面的命令:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;命令&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;解释&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-sexp&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut sexp around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-sexp&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy sexp around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-sexp&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace sexp around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-email&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut email string around cursor&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-email&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy email string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-email&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace email string around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-filename&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut filename string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-filename&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy filename string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-filename&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace filename string around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-url&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut url string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-url&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy url string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-url&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace url string around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-word&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut word string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-word&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy word string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-word&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace word string around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-symbol&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut symbol string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-symbol&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy symbol string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-symbol&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace symbol string around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-defun&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut function string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-defun&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy function string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-defun&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace function string around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-list&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut list string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-list&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy list string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-list&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace list string around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-sentence&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut sentence string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-sentence&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy sentence string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-sentence&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace sentence string around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-whitespace&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut whitespace string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-whitespace&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy whitespace string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-whitespace&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace whitespace string around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-page&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut page string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-page&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy page string around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-page&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace page string around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut current line.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy current line.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-line&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace current line with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-to-line-end&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut string to end of line.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-to-line-end&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy string to end of line.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-to-line-end&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace string to end of line with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-to-line-beginning&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut string to beginning of line.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-to-line-beginning&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy string to beginning of line.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-to-line-beginning&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace string to beginning of line with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-comment&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut comment.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-comment&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy comment.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-comment&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace comment with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-paragrap&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut paragraph around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-paragrap&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy paragraph around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-paragrap&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace paragraph around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-cut-parentheses&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;cut parentheses around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-copy-parentheses&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;copy parentheses around cursor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;thing-replace-parentheses&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;replace parentheses around cursor with content of kill-ring.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;期待发pr&quot;&gt;期待发PR&lt;/h4&gt;
+&lt;p&gt;thing-edito.el 本来放到我自己的 &lt;a href=&quot;https://github.com/manateelazycat/lazycat-emacs/tree/master/site-lisp/extensions/lazycat&quot;&gt;插件目录中&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;如果各位喜欢, 觉得有新的功能需要扩展, 我会把我自己的插件从 lazycat-emacs 中抽取出来, 单独成一个 git 仓库方便大家发送PR.&lt;/p&gt;
+
+&lt;p&gt;谢谢 谢鹏 同学编写的 thing-replace-* 函数, 非常的好用.&lt;/p&gt;</content><author><name></name></author><summary type="html">我在 2008 年开发了 thing-edit.el , 虽然这个插件平常没啥存在感, 但是几乎是天天都在用的插件.</summary></entry><entry><title type="html">怎么学习 Emacs ? 达到真正融汇贯通的境界?</title><link href="http://localhost:4000/emacs/2018/12/11/study-emacs.html" rel="alternate" type="text/html" title="怎么学习 Emacs ? 达到真正融汇贯通的境界?" /><published>2018-12-11T00:00:00+08:00</published><updated>2018-12-11T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2018/12/11/study-emacs</id><content type="html" xml:base="http://localhost:4000/emacs/2018/12/11/study-emacs.html">&lt;p&gt;学习Emacs有几条曲线:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;先会用基本的快捷键, 安装各种简单的插件, 抄各种各样的配置, 先体验一下Emacs的强大功能.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装复杂插件, 被各种配置搞崩溃了, 越改挂的越厉害, 大部分人卡在这个阶段, 因为不会Elisp, 导致东拼西凑的方法对于复杂插件行不通&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;你搞不懂Emacs复杂的配置的原因是因为你不懂 Elisp 编程, 学习Elisp的方法: 老老实实读Emacs内置的 Elisp reference manual, 这么厚的手册怎么学?
+    &lt;ul&gt;
+      &lt;li&gt;一页一页的挨着看, 一个API一个API的读, 不要跳过&lt;/li&gt;
+      &lt;li&gt;每个API, 都在 ielm 里面实践一下&lt;/li&gt;
+      &lt;li&gt;遇到不知道啥鬼用的API, 去Google或EmacsWiki上搜索一下, 看看别人怎么用这些API的?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果你花了一个月耐下心读完 Elisp reference manual 以后, Emacs 90% 以上的代码你都可以看懂了, 继续折腾复杂插件, 知道 require, autoload, set-key, 各种 hook, defadvice 的在不同环境下的细微差别, 编程上知道 save-excursion, ignore-errors 这些风骚 macro 的用法. 这个阶段可以尝试手动来写一写复杂的配置了, 这个阶段你已经是 Emacs 高级用户了.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果还不满足, 可以像我这样造点有趣的轮子: &lt;a href=&quot;https://www.emacswiki.org/emacs/AndyStewart&quot;&gt;My Emacs Plugins&lt;/a&gt; , 如果你自己会写Elisp插件, 你会发现Emacs其实是越用越简单的, 因为包括正则表达式, 语法高亮, 模式, 异步子进程, hook, overlay, advice 这些代码你写熟悉以后, 你会发现所有插件的唯一差别就是复杂度和想象力的区别, 不存在想得出来写不出来的东西.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;到了这个阶段, 唯一可以让你学习到更多知识的就是去 IRC #emacs 和那些古老的黑客们交流, 或者去扒Github Emacser, 我知道很多日本牛逼哄哄的Emacs开发者都把插件放到 ftp 上 (比如当年的 color-moccur.el ), 学点 Google 语法就可以定向搜索. 这些人都是你会写Emacs插件后, 需要学习和进阶的榜样, 这时候你再看Elisp代码, 你的注意力会放在他们Elisp编程的一些细节上, 比如代码写的更简洁, 方法用的妙, 架构设计上等等, 这是完全不同阶段的探索体验.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;如果你还不满足, 好好学习C语言, 然后再找个赚钱的工作, 把自己和家人照顾好. 业余时间直接用C或Elisp给Emacs底层做贡献, 把你的代码贡献固化到Emacs中, 然后你的名字可以像我一样写到 Emacs AUTHORS 里面去装逼: &lt;a href=&quot;https://github.com/emacs-mirror/emacs/blob/7f95e1aec3014f32366129bcbf61675ab858f053/etc/AUTHORS#L349&quot;&gt;Emacs AUTHORS&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如果你已经看到这里, 而且也做到上面的所有7点, 你自己的能力和精神境界都会很高了, 再也不会咋咋呼呼的吵着自己的技术要咋样咋样, 因为你会发现学的越多, 自己就是傻逼一个, 啥都不懂, 这辈子即使终身学习也学习不完, 哈哈哈哈.&lt;/p&gt;
+
+&lt;p&gt;上面就是我学习Emacs十多年的经验分享, 希望可以给同学们一点参考.&lt;/p&gt;</content><author><name></name></author><summary type="html">学习Emacs有几条曲线:</summary></entry></feed>
