@@ -130,8 +130,8 @@ td {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .category {
@@ -144,4 +144,12 @@ td {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.char-counter {
+    display: flex;
+    justify-content: flex-end;
+    color: #AAA;
+    font-size: 11px;
+    margin-bottom: 40px;
 }

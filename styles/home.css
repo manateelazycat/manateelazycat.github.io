@@ -131,6 +131,7 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex: 1;
 }
 
 .category {
@@ -150,3 +151,16 @@ a {
     justify-content: center;
 }
 
+.char-total-counter {
+    display: flex;
+    justify-content: flex-end;
+    color: #AAA;
+    font-size: 11px;
+    margin-right: 40px;
+}
+
+.char-counter {
+    color: #AAA;
+    font-size: 11px;
+    margin-right: 10px;
+}

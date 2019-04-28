@@ -70,7 +70,7 @@ a {
 
 .post-date {
     color: #AAA;
-    font-size: 16px;
+    font-size: 11px;
     text-align: right;
     margin-left: 10px;
     margin-right: 20px;
@@ -129,12 +129,13 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex: 1;
 }
 
 .category {
     color: #999;
-    font-size: 16px;
-    height: 20px;
+    font-size: 14px;
+    height: 18px;
     position: relative;
     background: #EFEFEF;
     margin-left: 5px;
@@ -146,4 +147,18 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.char-total-counter {
+    display: flex;
+    justify-content: flex-end;
+    color: #AAA;
+    font-size: 11px;
+    margin-right: 20px;
+}
+
+.char-counter {
+    color: #AAA;
+    font-size: 11px;
+    margin-right: 10px;
 }
