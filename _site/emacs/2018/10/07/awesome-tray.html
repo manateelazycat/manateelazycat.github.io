@@ -2,34 +2,40 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
-        <link rel="stylesheet" href="http://localhost:4000/styles/post.css">
-        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
-        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 900px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 900px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+
         <title>awesome-tray 替代Emacs mode-line, 让编程更加专注</title>
     </head>
     <body>
         <div class="navigatebar">
-            <div class="navigatebar-button navigatebar-mine">
-                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
-            </div>
-            <div class="navigatebar-slogan">
-                「生活可以更简单, 欢迎来到我的开源世界」
-            </div>
-            <div class="navigatebar-button">
-                <a href="http://localhost:4000/index.html">Home</a>
-            </div>
-            <div class="navigatebar-button">
-                <a href="http://localhost:4000/tags.html">Tags</a>
-            </div>
-            <div class="navigatebar-button">
-                <a href="http://localhost:4000/feed.xml">Feeds</a>
-            </div>
-            <div class="navigatebar-button navigatebar-about">
-                <a href="http://localhost:4000/about.html">About</a>
-            </div>
-        </div>
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
         <div class="content-area">
             <div class="title">
                 awesome-tray 替代Emacs mode-line, 让编程更加专注

@@ -2,11 +2,16 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="{{site.url}}/styles/font.css">
-        <link rel="stylesheet" href="{{site.url}}/styles/post.css">
-        <link rel="stylesheet" href="{{site.url}}/styles/navigatebar.css">
-        <link rel="stylesheet" href="{{site.url}}/theme/highlight.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+        <link rel="stylesheet" href="{{site.url}}/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 900px)" href="{{site.url}}/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{site.url}}/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 900px)" href="{{site.url}}/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{site.url}}/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="{{site.url}}/theme/highlight.css">
+
         <title>{{ page.title }}</title>
     </head>
     <body>

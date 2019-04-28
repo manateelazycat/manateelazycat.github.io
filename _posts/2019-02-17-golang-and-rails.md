@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 聊聊Rails和Golang开发的体验差别
-categories: [Golang, Rails, Web]
+categories: [Web]
 ---
 
 最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.
