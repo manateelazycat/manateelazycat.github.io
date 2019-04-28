@@ -2,33 +2,38 @@
 
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
-        <link rel="stylesheet" href="http://localhost:4000/styles/tags.css">
-        <link rel="stylesheet" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (min-width: 900px)" href="http://localhost:4000/styles/tags.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/tags_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 900px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <title>Categories</title>
     </head>
     <body>
         <div class="navigatebar">
-            <div class="navigatebar-button navigatebar-mine">
-                <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
-            </div>
-            <div class="navigatebar-slogan">
-                「生活可以更简单, 欢迎来到我的开源世界」
-            </div>
-            <div class="navigatebar-button">
-                <a href="http://localhost:4000/index.html">Home</a>
-            </div>
-            <div class="navigatebar-button">
-                <a href="http://localhost:4000/tags.html">Tags</a>
-            </div>
-            <div class="navigatebar-button">
-                <a href="http://localhost:4000/feed.xml">Feeds</a>
-            </div>
-            <div class="navigatebar-button navigatebar-about">
-                <a href="http://localhost:4000/about.html">About</a>
-            </div>
-        </div>
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
         <div class="categories-area">
     
     
@@ -486,10 +491,6 @@
         <a name="Rails"></a>
         
         <article class="archive-item">
-            <a href="/golang/rails/web/2019/02/17/golang-and-rails.html">聊聊Rails和Golang开发的体验差别</a>
-        </article>
-        
-        <article class="archive-item">
             <a href="/rails/2018/12/04/rails-export-doc.html">Rails Everyday, HTML导出成Word文档</a>
         </article>
         
@@ -550,7 +551,7 @@
         <a name="Web"></a>
         
         <article class="archive-item">
-            <a href="/golang/rails/web/2019/02/17/golang-and-rails.html">聊聊Rails和Golang开发的体验差别</a>
+            <a href="/web/2019/02/17/golang-and-rails.html">聊聊Rails和Golang开发的体验差别</a>
         </article>
         
         <article class="archive-item">
@@ -566,10 +567,6 @@
 
         <a name="Golang"><div class="category-head">「Golang」</div></a>
         <a name="Golang"></a>
-        
-        <article class="archive-item">
-            <a href="/golang/rails/web/2019/02/17/golang-and-rails.html">聊聊Rails和Golang开发的体验差别</a>
-        </article>
         
         <article class="archive-item">
             <a href="/golang/2019/02/17/gin-https.html">Golang/Gin框架添加对HTTPS的支持</a>
