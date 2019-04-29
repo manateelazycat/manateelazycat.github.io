@@ -1,30 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-29T22:54:28+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Jekyll 访问统计</title><link href="http://localhost:4000/tech/2019/04/29/jekyll-hit-counter.html" rel="alternate" type="text/html" title="Jekyll 访问统计" /><published>2019-04-29T00:00:00+08:00</published><updated>2019-04-29T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/04/29/jekyll-hit-counter</id><content type="html" xml:base="http://localhost:4000/tech/2019/04/29/jekyll-hit-counter.html">&lt;p&gt;这几天下班都在折腾Jekyll, 想给每篇文章添加一个访问统计，看看大家更喜好那类文章。
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-29T23:08:37+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Jekyll 访问统计</title><link href="http://localhost:4000/tech/2019/04/29/jekyll-hit-counter.html" rel="alternate" type="text/html" title="Jekyll 访问统计" /><published>2019-04-29T00:00:00+08:00</published><updated>2019-04-29T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/04/29/jekyll-hit-counter</id><content type="html" xml:base="http://localhost:4000/tech/2019/04/29/jekyll-hit-counter.html">&lt;p&gt;这几天下班都在折腾Jekyll, 想给每篇文章添加一个访问统计，看看大家更喜好那类文章。
 看了很多相关的工具，无意中发现了 &lt;a href=&quot;https://jerryzou.com/posts/introduction-to-hit-kounter-lc/&quot;&gt;Hit Kounter&lt;/a&gt; 这个工具.
 简单、完美适配Jekyll, 主要是不用担心因为添加了Google统计就导致网站访问不了.&lt;/p&gt;
 
 &lt;p&gt;使用方法非常简单：&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;首先在HTML head中加入下面代码:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;首先在HTML head中加入下面代码:&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn1.lncld.net/static/js/av-min-1.5.0.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.3.0.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/Jekyll-counter/1.png&quot; alt=&quot;hit-kounter-js&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;如果想在文章页面中显示统计，在文章模板文件中添加代码：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;如果想在文章页面中显示统计，在文章模板文件中添加代码：&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;浏览&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-hk-page=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;current&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; - &lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;次
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/Jekyll-counter/2.png&quot; alt=&quot;hit-kounter-current&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;如果想引用别的链接的统计，比如在首页显示各页面的访问次数，可以在首页模板中添加代码：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;如果想引用别的链接的统计，比如在首页显示各页面的访问次数，可以在首页模板中添加代码：&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;浏览 &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-hk-page=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https:http://localhost:4000&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/Jekyll-counter/3.png&quot; alt=&quot;hit-kounter-page&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;post.url 是引用文章的链接，prepend: site.url 的意思是添加域名前缀，https: 也必须加，要不是 Hit Kounter 无法正常工作。&lt;/p&gt;
 
