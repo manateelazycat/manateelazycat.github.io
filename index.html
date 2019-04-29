@@ -26,7 +26,6 @@ title: ManateeLazyCat
 <ul>
 
     <div class="char-total-counter">
-        浏览 <span data-hk-site> - </span> 次
         {% assign count = 0 %}
         {% for post in site.posts %}
         {% assign single_count = post.content | strip_html | strip_newlines | remove: " " | size %}
