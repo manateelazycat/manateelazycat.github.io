@@ -52,7 +52,7 @@
                 」
             </div>
             <div class="char-counter">
-                浏览<span data-hk-page="current"> - </span>次 字数617
+                浏览<span data-hk-page="current"> - </span>次 字数324
             </div>
             <div class="content">
                 <p>这几天下班都在折腾Jekyll, 想给每篇文章添加一个访问统计，看看大家更喜好那类文章。
@@ -63,19 +63,15 @@
 
 <p>首先在HTML head中加入下面代码:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn1.lncld.net/static/js/av-min-1.5.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.3.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div></div>
+<p><img src="http://localhost:4000/pics/Jekyll-counter/1.png" alt="hit-kounter-js" class="center-image" /></p>
 
 <p>如果想在文章页面中显示统计，在文章模板文件中添加代码：</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>浏览<span class="nt">&lt;span</span> <span class="na">data-hk-page=</span><span class="s">"current"</span><span class="nt">&gt;</span> - <span class="nt">&lt;/span&gt;</span>次
-</code></pre></div></div>
+<p><img src="http://localhost:4000/pics/Jekyll-counter/2.png" alt="hit-kounter-current" class="center-image" /></p>
 
 <p>如果想引用别的链接的统计，比如在首页显示各页面的访问次数，可以在首页模板中添加代码：</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>浏览 <span class="nt">&lt;span</span> <span class="na">data-hk-page=</span><span class="s">"https:http://localhost:4000"</span><span class="nt">&gt;</span>
-</code></pre></div></div>
+<p><img src="http://localhost:4000/pics/Jekyll-counter/3.png" alt="hit-kounter-page" class="center-image" /></p>
 
 <p>post.url 是引用文章的链接，prepend: site.url 的意思是添加域名前缀，https: 也必须加，要不是 Hit Kounter 无法正常工作。</p>
 
