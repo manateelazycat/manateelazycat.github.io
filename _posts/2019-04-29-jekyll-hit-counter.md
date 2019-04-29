@@ -12,15 +12,15 @@ categories: [Tech]
 
 首先在HTML head中加入下面代码:
 
-![hit-kounter-js]({{site.url}}/pics/Jekyll-counter/1.png){: .center-image}
+![hit-kounter-js]({{site.url}}/pics/jekyll-counter/1.png){: .center-image}
 
 如果想在文章页面中显示统计，在文章模板文件中添加代码：
 
-![hit-kounter-current]({{site.url}}/pics/Jekyll-counter/2.png){: .center-image}
+![hit-kounter-current]({{site.url}}/pics/jekyll-counter/2.png){: .center-image}
 
 如果想引用别的链接的统计，比如在首页显示各页面的访问次数，可以在首页模板中添加代码：
 
-![hit-kounter-page]({{site.url}}/pics/Jekyll-counter/3.png){: .center-image}
+![hit-kounter-page]({{site.url}}/pics/jekyll-counter/3.png){: .center-image}
 
 post.url 是引用文章的链接，prepend: site.url 的意思是添加域名前缀，https: 也必须加，要不是 Hit Kounter 无法正常工作。
 
