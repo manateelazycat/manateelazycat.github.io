@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-29T22:16:36+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Jekyll 简单介绍</title><link href="http://localhost:4000/tech/2019/04/24/jekyll.html" rel="alternate" type="text/html" title="Jekyll 简单介绍" /><published>2019-04-24T00:00:00+08:00</published><updated>2019-04-24T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/04/24/jekyll</id><content type="html" xml:base="http://localhost:4000/tech/2019/04/24/jekyll.html">&lt;p&gt;自从把博客迁移到 Github Pages 以后, 又找到一种久违的创造欲.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-29T22:54:28+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Jekyll 访问统计</title><link href="http://localhost:4000/tech/2019/04/29/jekyll-hit-counter.html" rel="alternate" type="text/html" title="Jekyll 访问统计" /><published>2019-04-29T00:00:00+08:00</published><updated>2019-04-29T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/04/29/jekyll-hit-counter</id><content type="html" xml:base="http://localhost:4000/tech/2019/04/29/jekyll-hit-counter.html">&lt;p&gt;这几天下班都在折腾Jekyll, 想给每篇文章添加一个访问统计，看看大家更喜好那类文章。
+看了很多相关的工具，无意中发现了 &lt;a href=&quot;https://jerryzou.com/posts/introduction-to-hit-kounter-lc/&quot;&gt;Hit Kounter&lt;/a&gt; 这个工具.
+简单、完美适配Jekyll, 主要是不用担心因为添加了Google统计就导致网站访问不了.&lt;/p&gt;
+
+&lt;p&gt;使用方法非常简单：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;首先在HTML head中加入下面代码:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn1.lncld.net/static/js/av-min-1.5.0.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.3.0.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;如果想在文章页面中显示统计，在文章模板文件中添加代码：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;浏览&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-hk-page=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;current&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; - &lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;次
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;如果想引用别的链接的统计，比如在首页显示各页面的访问次数，可以在首页模板中添加代码：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;浏览 &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-hk-page=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https:http://localhost:4000&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;post.url 是引用文章的链接，prepend: site.url 的意思是添加域名前缀，https: 也必须加，要不是 Hit Kounter 无法正常工作。&lt;/p&gt;
+
+&lt;p&gt;That’s all, git push 以后就可以看到各文章的访问流量了。&lt;/p&gt;</content><author><name></name></author><summary type="html">这几天下班都在折腾Jekyll, 想给每篇文章添加一个访问统计，看看大家更喜好那类文章。 看了很多相关的工具，无意中发现了 Hit Kounter 这个工具. 简单、完美适配Jekyll, 主要是不用担心因为添加了Google统计就导致网站访问不了.</summary></entry><entry><title type="html">Jekyll 简单介绍</title><link href="http://localhost:4000/tech/2019/04/24/jekyll.html" rel="alternate" type="text/html" title="Jekyll 简单介绍" /><published>2019-04-24T00:00:00+08:00</published><updated>2019-04-24T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/04/24/jekyll</id><content type="html" xml:base="http://localhost:4000/tech/2019/04/24/jekyll.html">&lt;p&gt;自从把博客迁移到 Github Pages 以后, 又找到一种久违的创造欲.
 主要的原因主要都是因为 Github Pages 背后的 Jekyll 太适合我的口味了.&lt;/p&gt;
 
 &lt;p&gt;Jekyll 这个静态博客生成器吸引我的主要有几点:&lt;/p&gt;
@@ -60,7 +90,7 @@
 
 &lt;h3 id=&quot;代码块圆角&quot;&gt;代码块圆角&lt;/h3&gt;
 
-&lt;p&gt;Markdown 文档通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;foo&lt;/code&gt; 语法来展示代码，但是默认的代码区域是一个冲突感的直角，如果能够稍稍的做点圆角，
+&lt;p&gt;Markdown默认的代码区域是一个冲突感的直角，如果能够稍稍的做点圆角，
 就会降低代码区域的视觉冲突，人眼查看更加自然舒服。&lt;/p&gt;
 
 &lt;p&gt;方法很简单，浏览器折腾一下，把下面样式写到CSS文件中即可：&lt;/p&gt;
@@ -85,7 +115,107 @@
 &lt;p&gt;花了1个小时研究了Jekyll的文档，然后用Emacs和Wget把所有简书的文章迁移到 GitHub Pages 上来，
 以后 Emacs 里面写文章，git push自动更新，一劳永逸解决文章屏蔽的问题。&lt;/p&gt;
 
-&lt;p&gt;迁移到 Github Pages 上以后还可以自己控制页面的样式，也不用每次登录简书被迫看那些无聊的广告。&lt;/p&gt;</content><author><name></name></author><summary type="html">自己不喜欢浪费时间搭建博客网站，所以文章一直都放到简书上，编写简单，容易维护。 直到有一天天朝盯上了简书，我的很多技术文章很多被简书屏蔽以后，自己也懒的发邮件去申诉。</summary></entry><entry><title type="html">树莓派指定声卡硬件播放声音</title><link href="http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card.html" rel="alternate" type="text/html" title="树莓派指定声卡硬件播放声音" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card</id><content type="html" xml:base="http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card.html">&lt;p&gt;树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.&lt;/p&gt;
+&lt;p&gt;迁移到 Github Pages 上以后还可以自己控制页面的样式，也不用每次登录简书被迫看那些无聊的广告。&lt;/p&gt;</content><author><name></name></author><summary type="html">自己不喜欢浪费时间搭建博客网站，所以文章一直都放到简书上，编写简单，容易维护。 直到有一天天朝盯上了简书，我的很多技术文章很多被简书屏蔽以后，自己也懒的发邮件去申诉。</summary></entry><entry><title type="html">聊聊Rails和Golang开发的体验差别</title><link href="http://localhost:4000/web/2019/02/17/golang-and-rails.html" rel="alternate" type="text/html" title="聊聊Rails和Golang开发的体验差别" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/02/17/golang-and-rails</id><content type="html" xml:base="http://localhost:4000/web/2019/02/17/golang-and-rails.html">&lt;p&gt;最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.&lt;/p&gt;
+
+&lt;p&gt;单从微信小程序框架的感觉和设计思路来看, 和 Vue.js 非常像, 这种前端框架, 的确是用 Golang 做为后端开发更好一点.&lt;/p&gt;
+
+&lt;p&gt;就拿现在我正在用的 Gin 这个 Golang 框架来说, 其实只用几十行写个路由返回微信小程序用的 JSON 数据就可以了, 基本上所有的界面效果都由小程序去渲染, 后台服务可以做的很薄:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;设计好数据库&lt;/li&gt;
+  &lt;li&gt;理清需求和业务逻辑&lt;/li&gt;
+  &lt;li&gt;Golang从数据库和HTTP路由请求, 按照 Restful API 规范返回 JSON 数据即可.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因为 Golang 的 HTTP 库设计的非常好, 所以基于 Golang HTTP 库的Web框架多如牛毛, 大多数Web框架都很轻, 主要的功能都在路由设计上.&lt;/p&gt;
+
+&lt;p&gt;所以如果拿 Rails 和 Golang 做对比的话:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Rails 更像一个Web最佳实践的全功能框架, 什么都有最好的, 但是因为包括的东西实在是太多了, 光是学清楚每个最佳实践库的配置和集成就很复杂, 因为 Rails 真的要配置好的话, 不同模块之间的集成往往都是不透明的, 你首先要学会这些配置, 只有看了源代码才知道为什么一定要这么配置才行&lt;/li&gt;
+  &lt;li&gt;Golang 框架和Rails是反的, 框架只有核心的 HTTP 路由功能, 至于高级功能, 比如HTTPS, 表单Token验证, JSON解析, 数据库的ORM等等, 都需要网上去找库和中间件实现, 但是每个模块之间的胶水代码都是自己写的, 所以模块之间关系处理都比较透明, 出了错好解决到问题的根源&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;简单的结论:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Rails更适合做传统偏向内容的Web网站构建, 约定好的配置入门比较简单, 开发效率高, 但是要玩精通还是比较复杂, 受到框架限制比较多&lt;/li&gt;
+  &lt;li&gt;Golang更适合前后端分离的应用开发, 比如小程序, 高级功能入门比较复杂, 但是一旦折腾好了, 可以很容易玩出高级功能, 不用受到严格框架的限制&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;像我这种Emacs党, 说句实话, 我更喜欢Golang这种框架, 虽然很多功能都需要自己折腾, 但是可以做到很多细节心中有数, 每个模块的最佳实践可以随着自己的经验增加而快速迭代, 而像 Rails 这种每个大版本引入的新的最佳实践都会和上一版本不兼容, 团队和业务代码多了, 更新代码去兼容最新框架本身就很痛苦.&lt;/p&gt;
+
+&lt;p&gt;最近开发了微信小程序, 感觉Web也像三国一样, 分久必合合久必分.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;最开始是 Java 这种简单粗暴的中间件玩法&lt;/li&gt;
+  &lt;li&gt;过去十年大多数都是 Rails 这种更加优雅的 Web 框架, 强调最佳实践, 强调 Web 纯正的方法论&lt;/li&gt;
+  &lt;li&gt;现在移动终端的性能、多分辨率和用户体验的新需求, 大家又回到Java那个时代的前后端分离了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;其实, 计算机这么多年的软件框架一直都是随着流星硬件和用户交互模式的迁移而不断变化和不断重复历史.&lt;/p&gt;
+
+&lt;p&gt;对于我这种操作系统行业打拼出来的人, Golang这种Web框架的思路对于我更简单, 设计好数据库和API接口, 剩下的就是把后端数据吐给前端框架就完事了.&lt;/p&gt;
+
+&lt;p&gt;所以, 业务导向, 什么技术对于业务最好就用什么技术, 对于小程序开发, 我选择 Golang Web框架.&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.</summary></entry><entry><title type="html">Golang/Gin框架添加对HTTPS的支持</title><link href="http://localhost:4000/golang/2019/02/17/gin-https.html" rel="alternate" type="text/html" title="Golang/Gin框架添加对HTTPS的支持" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/golang/2019/02/17/gin-https</id><content type="html" xml:base="http://localhost:4000/golang/2019/02/17/gin-https.html">&lt;p&gt;HTTPS配置步骤:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;首先在阿里云搞定ICP域名备案&lt;/li&gt;
+  &lt;li&gt;添加一个子域名&lt;/li&gt;
+  &lt;li&gt;给子域名申请免费 SSL 证书, 然后下载证书对应的 pem 和 key 文件.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;用 GIN 框架添加一个 github.com/unrolled/secure 中间件就可以了.&lt;/p&gt;
+
+&lt;p&gt;下面是一个简单的示例代码:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;github.com/gin-gonic/gin&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;github.com/unrolled/secure&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TlsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RunTLS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:8080&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ssl.pem&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ssl.key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TlsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HandlerFunc&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secureMiddleware&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSLRedirect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSLHost&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;     &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;localhost:8080&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secureMiddleware&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Writer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// If there was an error, do not continue.&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;上面代码直接在子域名前添加 HTTPS 就可以安全通讯了.&lt;/p&gt;</content><author><name></name></author><summary type="html">HTTPS配置步骤: 首先在阿里云搞定ICP域名备案 添加一个子域名 给子域名申请免费 SSL 证书, 然后下载证书对应的 pem 和 key 文件.</summary></entry><entry><title type="html">用 air 给 Golang/Gin 框架提供热重启支持</title><link href="http://localhost:4000/golang/2019/02/17/air-gin.html" rel="alternate" type="text/html" title="用 air 给 Golang/Gin 框架提供热重启支持" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/golang/2019/02/17/air-gin</id><content type="html" xml:base="http://localhost:4000/golang/2019/02/17/air-gin.html">&lt;p&gt;Golang 这种编译语言和 Rails/Python 这种脚本语言不同, 脚本语言做后端, 只要不是配置和数据库有变化, 一般都是源代码一修改后, 最新后端服务就立即生效了.&lt;/p&gt;
+
+&lt;p&gt;但是 Golang 做后端, 需要每次修改代码以后都要重新编译后重启服务才行.
+但是每次改完代码都切换到终端按 Ctrl + C 也是无比的烦.&lt;/p&gt;
+
+&lt;p&gt;对于我这种懒得写代码的懒人, 伟大的Google从来都有现成的方案, 在Mac上直接用下面的命令在后端目录下执行:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fLo&lt;/span&gt; ~/air &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    https://raw.githubusercontent.com/cosmtrek/air/master/bin/darwin/air
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x ~/air
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./air&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;就是这么简单, 配合 FRP, 直接在本地开发, 前端直接调用就可以通过阿里云反向代理到本地开发机进行访问了.&lt;/p&gt;
+
+&lt;p&gt;只要 Golang 源代码一改, air 会自动重新编译并重启, 超级方便, 再也不用按 Ctrl + C 了.&lt;/p&gt;
+
+&lt;p&gt;注意:  air 这种重新编译和重启的方案只适合开发环境, 如果生产环境, 还需要基于 Golang HTTP.shutdown 方案开发更加智能的子进程热替换方案, 否则会因为重启瞬间丢失用户访问请求.&lt;/p&gt;
+
+&lt;p&gt;That’s all, gopher! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Golang 这种编译语言和 Rails/Python 这种脚本语言不同, 脚本语言做后端, 只要不是配置和数据库有变化, 一般都是源代码一修改后, 最新后端服务就立即生效了.</summary></entry><entry><title type="html">树莓派指定声卡硬件播放声音</title><link href="http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card.html" rel="alternate" type="text/html" title="树莓派指定声卡硬件播放声音" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card</id><content type="html" xml:base="http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card.html">&lt;p&gt;树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.&lt;/p&gt;
 
 &lt;p&gt;一般我们用下面方式去禁用树莓派的板载声卡:&lt;/p&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;nano /boot/config.txt
@@ -153,107 +283,7 @@ defaults.pcm.card 1
     &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Popen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;play_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;玩树莓派还是Python好啊, 轻描淡写几行代码就搞定了.&lt;/p&gt;</content><author><name></name></author><summary type="html">树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.</summary></entry><entry><title type="html">Golang/Gin框架添加对HTTPS的支持</title><link href="http://localhost:4000/golang/2019/02/17/gin-https.html" rel="alternate" type="text/html" title="Golang/Gin框架添加对HTTPS的支持" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/golang/2019/02/17/gin-https</id><content type="html" xml:base="http://localhost:4000/golang/2019/02/17/gin-https.html">&lt;p&gt;HTTPS配置步骤:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;首先在阿里云搞定ICP域名备案&lt;/li&gt;
-  &lt;li&gt;添加一个子域名&lt;/li&gt;
-  &lt;li&gt;给子域名申请免费 SSL 证书, 然后下载证书对应的 pem 和 key 文件.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;用 GIN 框架添加一个 github.com/unrolled/secure 中间件就可以了.&lt;/p&gt;
-
-&lt;p&gt;下面是一个简单的示例代码:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;github.com/gin-gonic/gin&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;github.com/unrolled/secure&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TlsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RunTLS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:8080&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ssl.pem&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ssl.key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TlsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HandlerFunc&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secureMiddleware&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSLRedirect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSLHost&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;     &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;localhost:8080&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secureMiddleware&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Writer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-        &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// If there was an error, do not continue.&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-            &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;上面代码直接在子域名前添加 HTTPS 就可以安全通讯了.&lt;/p&gt;</content><author><name></name></author><summary type="html">HTTPS配置步骤: 首先在阿里云搞定ICP域名备案 添加一个子域名 给子域名申请免费 SSL 证书, 然后下载证书对应的 pem 和 key 文件.</summary></entry><entry><title type="html">用 air 给 Golang/Gin 框架提供热重启支持</title><link href="http://localhost:4000/golang/2019/02/17/air-gin.html" rel="alternate" type="text/html" title="用 air 给 Golang/Gin 框架提供热重启支持" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/golang/2019/02/17/air-gin</id><content type="html" xml:base="http://localhost:4000/golang/2019/02/17/air-gin.html">&lt;p&gt;Golang 这种编译语言和 Rails/Python 这种脚本语言不同, 脚本语言做后端, 只要不是配置和数据库有变化, 一般都是源代码一修改后, 最新后端服务就立即生效了.&lt;/p&gt;
-
-&lt;p&gt;但是 Golang 做后端, 需要每次修改代码以后都要重新编译后重启服务才行.
-但是每次改完代码都切换到终端按 Ctrl + C 也是无比的烦.&lt;/p&gt;
-
-&lt;p&gt;对于我这种懒得写代码的懒人, 伟大的Google从来都有现成的方案, 在Mac上直接用下面的命令在后端目录下执行:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fLo&lt;/span&gt; ~/air &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    https://raw.githubusercontent.com/cosmtrek/air/master/bin/darwin/air
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x ~/air
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./air&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;就是这么简单, 配合 FRP, 直接在本地开发, 前端直接调用就可以通过阿里云反向代理到本地开发机进行访问了.&lt;/p&gt;
-
-&lt;p&gt;只要 Golang 源代码一改, air 会自动重新编译并重启, 超级方便, 再也不用按 Ctrl + C 了.&lt;/p&gt;
-
-&lt;p&gt;注意:  air 这种重新编译和重启的方案只适合开发环境, 如果生产环境, 还需要基于 Golang HTTP.shutdown 方案开发更加智能的子进程热替换方案, 否则会因为重启瞬间丢失用户访问请求.&lt;/p&gt;
-
-&lt;p&gt;That’s all, gopher! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Golang 这种编译语言和 Rails/Python 这种脚本语言不同, 脚本语言做后端, 只要不是配置和数据库有变化, 一般都是源代码一修改后, 最新后端服务就立即生效了.</summary></entry><entry><title type="html">聊聊Rails和Golang开发的体验差别</title><link href="http://localhost:4000/web/2019/02/17/golang-and-rails.html" rel="alternate" type="text/html" title="聊聊Rails和Golang开发的体验差别" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/02/17/golang-and-rails</id><content type="html" xml:base="http://localhost:4000/web/2019/02/17/golang-and-rails.html">&lt;p&gt;最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.&lt;/p&gt;
-
-&lt;p&gt;单从微信小程序框架的感觉和设计思路来看, 和 Vue.js 非常像, 这种前端框架, 的确是用 Golang 做为后端开发更好一点.&lt;/p&gt;
-
-&lt;p&gt;就拿现在我正在用的 Gin 这个 Golang 框架来说, 其实只用几十行写个路由返回微信小程序用的 JSON 数据就可以了, 基本上所有的界面效果都由小程序去渲染, 后台服务可以做的很薄:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;设计好数据库&lt;/li&gt;
-  &lt;li&gt;理清需求和业务逻辑&lt;/li&gt;
-  &lt;li&gt;Golang从数据库和HTTP路由请求, 按照 Restful API 规范返回 JSON 数据即可.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;因为 Golang 的 HTTP 库设计的非常好, 所以基于 Golang HTTP 库的Web框架多如牛毛, 大多数Web框架都很轻, 主要的功能都在路由设计上.&lt;/p&gt;
-
-&lt;p&gt;所以如果拿 Rails 和 Golang 做对比的话:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Rails 更像一个Web最佳实践的全功能框架, 什么都有最好的, 但是因为包括的东西实在是太多了, 光是学清楚每个最佳实践库的配置和集成就很复杂, 因为 Rails 真的要配置好的话, 不同模块之间的集成往往都是不透明的, 你首先要学会这些配置, 只有看了源代码才知道为什么一定要这么配置才行&lt;/li&gt;
-  &lt;li&gt;Golang 框架和Rails是反的, 框架只有核心的 HTTP 路由功能, 至于高级功能, 比如HTTPS, 表单Token验证, JSON解析, 数据库的ORM等等, 都需要网上去找库和中间件实现, 但是每个模块之间的胶水代码都是自己写的, 所以模块之间关系处理都比较透明, 出了错好解决到问题的根源&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;简单的结论:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Rails更适合做传统偏向内容的Web网站构建, 约定好的配置入门比较简单, 开发效率高, 但是要玩精通还是比较复杂, 受到框架限制比较多&lt;/li&gt;
-  &lt;li&gt;Golang更适合前后端分离的应用开发, 比如小程序, 高级功能入门比较复杂, 但是一旦折腾好了, 可以很容易玩出高级功能, 不用受到严格框架的限制&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;像我这种Emacs党, 说句实话, 我更喜欢Golang这种框架, 虽然很多功能都需要自己折腾, 但是可以做到很多细节心中有数, 每个模块的最佳实践可以随着自己的经验增加而快速迭代, 而像 Rails 这种每个大版本引入的新的最佳实践都会和上一版本不兼容, 团队和业务代码多了, 更新代码去兼容最新框架本身就很痛苦.&lt;/p&gt;
-
-&lt;p&gt;最近开发了微信小程序, 感觉Web也像三国一样, 分久必合合久必分.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;最开始是 Java 这种简单粗暴的中间件玩法&lt;/li&gt;
-  &lt;li&gt;过去十年大多数都是 Rails 这种更加优雅的 Web 框架, 强调最佳实践, 强调 Web 纯正的方法论&lt;/li&gt;
-  &lt;li&gt;现在移动终端的性能、多分辨率和用户体验的新需求, 大家又回到Java那个时代的前后端分离了&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;其实, 计算机这么多年的软件框架一直都是随着流星硬件和用户交互模式的迁移而不断变化和不断重复历史.&lt;/p&gt;
-
-&lt;p&gt;对于我这种操作系统行业打拼出来的人, Golang这种Web框架的思路对于我更简单, 设计好数据库和API接口, 剩下的就是把后端数据吐给前端框架就完事了.&lt;/p&gt;
-
-&lt;p&gt;所以, 业务导向, 什么技术对于业务最好就用什么技术, 对于小程序开发, 我选择 Golang Web框架.&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.</summary></entry><entry><title type="html">追逐彩云之南</title><link href="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html" rel="alternate" type="text/html" title="追逐彩云之南" /><published>2019-02-10T00:00:00+08:00</published><updated>2019-02-10T00:00:00+08:00</updated><id>http://localhost:4000/travel/2019/02/10/tourism-yunnan</id><content type="html" xml:base="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html">&lt;p&gt;老婆有一个小小的梦想, 在有生之年周游世界, 看遍这个世界的美与不同.
+&lt;p&gt;玩树莓派还是Python好啊, 轻描淡写几行代码就搞定了.&lt;/p&gt;</content><author><name></name></author><summary type="html">树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.</summary></entry><entry><title type="html">追逐彩云之南</title><link href="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html" rel="alternate" type="text/html" title="追逐彩云之南" /><published>2019-02-10T00:00:00+08:00</published><updated>2019-02-10T00:00:00+08:00</updated><id>http://localhost:4000/travel/2019/02/10/tourism-yunnan</id><content type="html" xml:base="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html">&lt;p&gt;老婆有一个小小的梦想, 在有生之年周游世界, 看遍这个世界的美与不同.
 继青岛大海、银川沙漠、红岩顶雪山、黄山奇石后, 今年趁着武汉的寒冬带老婆来一次自驾迁徙, 体验四季如春的彩云之南.&lt;/p&gt;
 
 &lt;p&gt;冬季去旅游景区的最大好处就是景区的人非常少, 可以尽情的感受风景, 而不是大家一起扮演植物大战僵尸.&lt;/p&gt;
@@ -1134,34 +1164,4 @@ defaults.pcm.card 1
 
 &lt;p&gt;如果各位喜欢, 觉得有新的功能需要扩展, 我会把我自己的插件从 lazycat-emacs 中抽取出来, 单独成一个 git 仓库方便大家发送PR.&lt;/p&gt;
 
-&lt;p&gt;谢谢 谢鹏 同学编写的 thing-replace-* 函数, 非常的好用.&lt;/p&gt;</content><author><name></name></author><summary type="html">我在 2008 年开发了 thing-edit.el , 虽然这个插件平常没啥存在感, 但是几乎是天天都在用的插件.</summary></entry><entry><title type="html">怎么学习 Emacs ? 达到真正融汇贯通的境界?</title><link href="http://localhost:4000/emacs/2018/12/11/study-emacs.html" rel="alternate" type="text/html" title="怎么学习 Emacs ? 达到真正融汇贯通的境界?" /><published>2018-12-11T00:00:00+08:00</published><updated>2018-12-11T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2018/12/11/study-emacs</id><content type="html" xml:base="http://localhost:4000/emacs/2018/12/11/study-emacs.html">&lt;p&gt;学习Emacs有几条曲线:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;先会用基本的快捷键, 安装各种简单的插件, 抄各种各样的配置, 先体验一下Emacs的强大功能.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;安装复杂插件, 被各种配置搞崩溃了, 越改挂的越厉害, 大部分人卡在这个阶段, 因为不会Elisp, 导致东拼西凑的方法对于复杂插件行不通&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;你搞不懂Emacs复杂的配置的原因是因为你不懂 Elisp 编程, 学习Elisp的方法: 老老实实读Emacs内置的 Elisp reference manual, 这么厚的手册怎么学?
-    &lt;ul&gt;
-      &lt;li&gt;一页一页的挨着看, 一个API一个API的读, 不要跳过&lt;/li&gt;
-      &lt;li&gt;每个API, 都在 ielm 里面实践一下&lt;/li&gt;
-      &lt;li&gt;遇到不知道啥鬼用的API, 去Google或EmacsWiki上搜索一下, 看看别人怎么用这些API的?&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;如果你花了一个月耐下心读完 Elisp reference manual 以后, Emacs 90% 以上的代码你都可以看懂了, 继续折腾复杂插件, 知道 require, autoload, set-key, 各种 hook, defadvice 的在不同环境下的细微差别, 编程上知道 save-excursion, ignore-errors 这些风骚 macro 的用法. 这个阶段可以尝试手动来写一写复杂的配置了, 这个阶段你已经是 Emacs 高级用户了.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;如果还不满足, 可以像我这样造点有趣的轮子: &lt;a href=&quot;https://www.emacswiki.org/emacs/AndyStewart&quot;&gt;My Emacs Plugins&lt;/a&gt; , 如果你自己会写Elisp插件, 你会发现Emacs其实是越用越简单的, 因为包括正则表达式, 语法高亮, 模式, 异步子进程, hook, overlay, advice 这些代码你写熟悉以后, 你会发现所有插件的唯一差别就是复杂度和想象力的区别, 不存在想得出来写不出来的东西.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;到了这个阶段, 唯一可以让你学习到更多知识的就是去 IRC #emacs 和那些古老的黑客们交流, 或者去扒Github Emacser, 我知道很多日本牛逼哄哄的Emacs开发者都把插件放到 ftp 上 (比如当年的 color-moccur.el ), 学点 Google 语法就可以定向搜索. 这些人都是你会写Emacs插件后, 需要学习和进阶的榜样, 这时候你再看Elisp代码, 你的注意力会放在他们Elisp编程的一些细节上, 比如代码写的更简洁, 方法用的妙, 架构设计上等等, 这是完全不同阶段的探索体验.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;如果你还不满足, 好好学习C语言, 然后再找个赚钱的工作, 把自己和家人照顾好. 业余时间直接用C或Elisp给Emacs底层做贡献, 把你的代码贡献固化到Emacs中, 然后你的名字可以像我一样写到 Emacs AUTHORS 里面去装逼: &lt;a href=&quot;https://github.com/emacs-mirror/emacs/blob/7f95e1aec3014f32366129bcbf61675ab858f053/etc/AUTHORS#L349&quot;&gt;Emacs AUTHORS&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;如果你已经看到这里, 而且也做到上面的所有7点, 你自己的能力和精神境界都会很高了, 再也不会咋咋呼呼的吵着自己的技术要咋样咋样, 因为你会发现学的越多, 自己就是傻逼一个, 啥都不懂, 这辈子即使终身学习也学习不完, 哈哈哈哈.&lt;/p&gt;
-
-&lt;p&gt;上面就是我学习Emacs十多年的经验分享, 希望可以给同学们一点参考.&lt;/p&gt;</content><author><name></name></author><summary type="html">学习Emacs有几条曲线:</summary></entry></feed>
+&lt;p&gt;谢谢 谢鹏 同学编写的 thing-replace-* 函数, 非常的好用.&lt;/p&gt;</content><author><name></name></author><summary type="html">我在 2008 年开发了 thing-edit.el , 虽然这个插件平常没啥存在感, 但是几乎是天天都在用的插件.</summary></entry></feed>
