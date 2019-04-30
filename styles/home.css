@@ -165,3 +165,9 @@ a {
     font-size: 11px;
     margin-right: 10px;
 }
+
+.right-info-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
