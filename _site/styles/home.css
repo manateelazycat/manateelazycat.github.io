@@ -64,7 +64,6 @@ a {
 .post-summary {
     margin-top: 20px;
     margin-bottom: 10px;
-    margin-left: 10px;
     margin-right: 10px;
     font-size: 14px;
     line-height: 26px;
@@ -76,7 +75,6 @@ a {
     font-size: 12px;
     text-align: right;
     margin-left: 10px;
-    margin-right: 20px;
 }
 
 .topbar {
@@ -141,7 +139,6 @@ a {
     height: 16px;
     position: relative;
     background: #EFEFEF;
-    margin-left: 5px;
     margin-right: 5px;
     padding-left: 10px;
     padding-right: 10px;
