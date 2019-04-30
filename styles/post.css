@@ -7,7 +7,7 @@ body {
 html,
 body {
     width: 100%;
-    background-color: #EFEFEF;
+    background-color: #F5F5F5;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -103,7 +103,7 @@ tbody tr:nth-child(even) {
 th {
     border: 1px solid #AAA;
     padding: 5px;
-    background-color: #EFEFEF;
+    background-color: #F5F5F5;
 }
 
 td {
