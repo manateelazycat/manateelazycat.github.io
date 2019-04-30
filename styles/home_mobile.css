@@ -121,9 +121,7 @@ a {
 
 .post-info {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .category-area {
@@ -131,6 +129,8 @@ a {
     flex-direction: row;
     align-items: center;
     flex: 1;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .category {
@@ -162,4 +162,12 @@ a {
     color: #AAA;
     font-size: 11px;
     margin-right: 10px;
+}
+
+.right-info-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
 }
