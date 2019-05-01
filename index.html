@@ -27,14 +27,12 @@ title: ManateeLazyCat
 
     <div class="char-total-counter">
         {% assign count = 0 %}
-        {% assign post_count = 0 %}
         {% for post in site.posts %}
         {% assign single_count = post.content | strip_html | strip_newlines | remove: " " | size %}
         {% assign count = count | plus: single_count %}
-        {% assign post_count = post_count | plus: 1 %}
         {% endfor %}
 
-        {{ post_count }}篇文章
+        {{ site.posts.size }}篇文章
 
         {% if count > 1000 %}
         {{ count | divided_by: 1000 }},{{ count | modulo: 1000 }}字
