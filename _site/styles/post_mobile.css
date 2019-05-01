@@ -27,10 +27,11 @@ body {
     padding-right: 20px;
 }
 
-ul{
+ul {
     list-style-type:none;
     margin: 0;
     padding: 0;
+    margin-left: 2em;
 }
 
 a {
@@ -54,6 +55,8 @@ a {
     margin: 0 auto;
     display: block;
     max-width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .nickname {
@@ -152,21 +155,37 @@ td {
     margin-bottom: 40px;
 }
 
-.text-quote {
+blockquote {
+    margin: 0;
+}
+
+blockquote p {
     white-space: normal;
-    border-left: 4px solid #AAA;
+    border-left: 4px solid #EAEAEA;
     padding: 10px;
     background-color: #F5F5F5;
     margin-top: 40px;
+    text-indent: 0;
 }
 
-.text-paragraph {
+p {
     text-indent: 2em
 }
 
 .line-quote {
     white-space: normal;
-    border-left: 4px solid #AAA;
     padding: 10px;
+    background-color: #FFF0C6;
+    text-indent: 0;
+    margin-left: 2em;
+    border-radius: 5px;
+}
+
+.text-auote {
+    white-space: normal;
+    padding: 10px;
+    border-radius: 5px;
     background-color: #F5F5F5;
+    text-indent: 0;
+    margin-left: 2em;
 }
