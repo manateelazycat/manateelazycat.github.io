@@ -7,7 +7,7 @@ title: Categories
     {% for category in site.categories %}
     {% capture category_name %}{{ category | first }}{% endcapture %}
     <a href="{{ site.url }}/tags.html#{{ category_name }}">
-        <div class="category-name">{{ category_name }}</div>
+        <div class="category-name">{{ category_name }} ({{ site.categories[category_name].size }})</div>
     </a>
     {% endfor %}
 </div>
