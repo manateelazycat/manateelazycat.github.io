@@ -152,3 +152,22 @@ td {
     font-size: 13px;
     margin-bottom: 40px;
 }
+
+.text-quote {
+    white-space: normal;
+    border-left: 4px solid #AAA;
+    padding: 10px;
+    background-color: #F5F5F5;
+    margin-top: 60px;
+}
+
+.text-paragraph {
+    text-indent: 2em
+}
+
+.line-quote {
+    white-space: normal;
+    border-left: 4px solid #AAA;
+    padding: 10px;
+    background-color: #F5F5F5;
+}
