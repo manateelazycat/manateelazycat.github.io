@@ -107,7 +107,7 @@ table {
 }
 
 tbody tr:nth-child(even) {
-    background-color: #F5F5F5;
+    background-color: #FAFAFA;
 }
 
 th {
