@@ -112,4 +112,4 @@ categories: [Business, Reading]
 
 我强烈推荐那些创业大咖们看一下稻盛和夫这位创业前辈的书：《干法》, 我也希望那些还达不到创业素质，不热爱自己工作的人能够读这本书，从中找到激励自己的方式，不要浪费自己的才华，让自己的人生过得更加精彩。
 
-Kindle版链接：https://www.amazon.cn/%E5%B9%B2%E6%B3%95-%E7%A8%BB%E7%9B%9B%E5%92%8C%E5%A4%AB-%E8%91%97/dp/B00X3G98ME/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1501428593&sr=1-1&keywords=%E5%B9%B2%E6%B3%95　，这本书只要9.99, 你买不了xx, 买不了xx, 哈哈哈。　;)
+[Kindle版链接](https://www.amazon.cn/%E5%B9%B2%E6%B3%95-%E7%A8%BB%E7%9B%9B%E5%92%8C%E5%A4%AB-%E8%91%97/dp/B00X3G98ME/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1501428593&sr=1-1&keywords=%E5%B9%B2%E6%B3%95)，这本书只要9.99, 你买不了xx, 买不了xx, 哈哈哈。　;)
