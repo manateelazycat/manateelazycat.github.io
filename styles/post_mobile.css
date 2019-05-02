@@ -51,12 +51,16 @@ a {
     line-height: 28px;
 }
 
-.center-image {
+li>img,
+p>img {
     margin: 0 auto;
     display: block;
-    max-width: 100%;
+    max-width: 90%;
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-radius: 5px;
 }
 
 .nickname {
@@ -180,7 +184,7 @@ blockquote p {
     border-radius: 5px;
 }
 
-.text-auote {
+.text-quote {
     white-space: normal;
     padding: 10px;
     border-radius: 5px;
