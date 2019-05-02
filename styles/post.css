@@ -29,10 +29,9 @@ body {
 }
 
 ul {
-    list-style-type:none;
     margin: 0;
     padding: 0;
-    margin-left: 2em;
+    margin-left: 4em;
 }
 
 a {
@@ -73,8 +72,8 @@ pre {
 }
 
 div.highlighter-rouge {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
 div.highlight,
@@ -95,8 +94,8 @@ table {
     border-spacing: 0;
     border: 1px solid #AAA;
 
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
 tbody tr:nth-child(even) {
@@ -167,10 +166,9 @@ blockquote p {
     padding: 10px;
     background-color: #F5F5F5;
     margin-top: 40px;
-    text-indent: 0;
 }
 
-p {
+.content>p {
     text-indent: 2em
 }
 
@@ -178,7 +176,6 @@ p {
     white-space: normal;
     padding: 10px;
     background-color: #FFF0C6;
-    text-indent: 0;
     margin-left: 2em;
     border-radius: 5px;
 }
@@ -188,6 +185,5 @@ p {
     padding: 10px;
     border-radius: 5px;
     background-color: #F5F5F5;
-    text-indent: 0;
     margin-left: 2em;
 }
