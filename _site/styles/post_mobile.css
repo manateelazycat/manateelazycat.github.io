@@ -33,6 +33,10 @@ ul {
     margin-left: 4em;
 }
 
+ol {
+    margin-left: 1em;
+}
+
 a {
     color: #57BF7D;
     text-decoration: none;
