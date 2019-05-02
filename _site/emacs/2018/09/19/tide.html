@@ -52,7 +52,7 @@
                 」
             </div>
             <div class="char-counter">
-                浏览<span data-hk-page="current"> - </span>次 字数2043 2018-09-19
+                浏览<span data-hk-page="current"> - </span>次 字数2035 2018-09-19
             </div>
             <div class="content">
                 <p>LSP (Language Server Protocol) 是微软领导开发的编程语言语法补全和代码分析框架, 好处是全世界黑客都一起开发 LSP 后端, 不论你用的是 Emacs, Vim 还是 Sublime, VSCode, Elicpse, IntelliJ 等编程工具, 都可以享受同等智能的语法补全后端.</p>
@@ -116,10 +116,9 @@ npm <span class="nb">install </span>jquery <span class="nt">--save</span>
 
 <p>更多命令请参考 <a href="https://github.com/ananthakumaran/tide">Tide github</a></p>
 
-<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">前面说的</span> <span class="nv">lsp-mode</span> <span class="err">默认使用</span> <span class="nv">javascript-typescript-langserver</span> <span class="err">这个后端</span><span class="o">,</span> <span class="err">其实换成</span> <span class="nv">typescript-language-server</span> <span class="p">(</span><span class="nv">tsserver</span> <span class="err">的封装</span><span class="p">)</span> <span class="err">也可以达到</span> <span class="nv">tide</span> <span class="err">的同样效果</span><span class="o">,</span> <span class="err">类似的配置如下:</span>
+<p>前面说的 lsp-mode 默认使用 javascript-typescript-langserver 这个后端, 其实换成 typescript-language-server (tsserver 的封装) 也可以达到 tide 的同样效果, 类似的配置如下:</p>
 
-<span class="o">```</span><span class="nv">Elisp</span>
-<span class="p">(</span><span class="nb">require</span> <span class="ss">'lsp-typescript</span><span class="p">)</span>
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">require</span> <span class="ss">'lsp-typescript</span><span class="p">)</span>
 
 <span class="c1">;; Javascript, Typescript and Flow support for lsp-mode</span>
 <span class="c1">;;</span>
