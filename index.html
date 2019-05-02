@@ -24,7 +24,6 @@ title: ManateeLazyCat
 </div>
 
 <ul>
-
     <div class="char-total-counter">
         {% assign count = 0 %}
         {% for post in site.posts %}
@@ -66,7 +65,7 @@ title: ManateeLazyCat
             </div>
             <div class="right-info-area">
                 <div class="char-counter">
-                    浏览 <span data-hk-page="https:{{ post.url | prepend: site.url }}"> - </span>次 字数 {{ post.content | strip_html | strip_newlines | remove: " " | size }}
+                    浏览<span data-hk-page="https:{{ post.url | prepend: site.url }}"> - </span>次 字数 {{ post.content | strip_html | strip_newlines | remove: " " | size }}
                 </div>
                 <div class="post-date">
                     {{ post.date | date: "%Y-%m-%d" }}

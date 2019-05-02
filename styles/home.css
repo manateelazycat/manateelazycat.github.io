@@ -74,7 +74,6 @@ a {
     color: #AAA;
     font-size: 12px;
     text-align: right;
-    margin-left: 10px;
 }
 
 .topbar {
@@ -154,7 +153,7 @@ a {
     justify-content: flex-end;
     color: #AAA;
     font-size: 11px;
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 .char-counter {
