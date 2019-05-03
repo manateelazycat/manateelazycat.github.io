@@ -176,10 +176,6 @@ blockquote p {
     margin-top: 40px;
 }
 
-.content>p {
-    text-indent: 2em
-}
-
 .line-quote {
     white-space: normal;
     padding: 10px;
