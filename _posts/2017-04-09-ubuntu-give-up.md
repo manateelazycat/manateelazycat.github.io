@@ -53,9 +53,9 @@ Unity 产品的特点主要定位在几点：
 
 大家可以看一下下面的两张架构图来理解两者的差别：
 
-![X-architecture.png]({{site.url}}/pics/ubuntu-give-up/x11.png){: .center-image}
+![X-architecture.png]({{site.url}}/pics/ubuntu-give-up/x11.png)
 
-![Wayland-architecture.png]({{site.url}}/pics/ubuntu-give-up/wayland.png){: .center-image}
+![Wayland-architecture.png]({{site.url}}/pics/ubuntu-give-up/wayland.png)
 
 Wayland 因为要彻底从技术架构上颠覆Linux几十年X11的渲染方式，不论从架构设计还是代码实现上都会非常复杂，不但要开发协议本身，还需要开发适合Wayland的混合器和窗口管理器，最后导致Wayland 1.0稳定版一再跳票。
 

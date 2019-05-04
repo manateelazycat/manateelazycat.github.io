@@ -194,7 +194,7 @@ make
 编译完成以后，会弹出一个Qt窗口，可以实时查看鼠标和键盘的事件信息，大家可以基于上面的代码进行改造，以融合到自己的项目中。
 
 
-![全局事件监听]({{site.url}}/pics/global-event-monitor/global-event-monitor.png){: .center-image}
+![全局事件监听]({{site.url}}/pics/global-event-monitor/global-event-monitor.png)
 
 我对开发者的学习一项新技术的建议是：
 > 先拷贝现有代码→精简提炼出核心代码→融合到自己的项目中，先会用→用的熟练以后再研究API和每一个参数细节→最后查看底层库源代码

@@ -63,7 +63,7 @@
 
 <p>可以通过 Chrome 的调试工具来查看多次 XHR 请求:</p>
 
-<p><img src="http://localhost:4000/pics/turbolinks/turbolinks-1.png" alt="多次 XHR 请求" class="center-image" /></p>
+<p><img src="http://localhost:4000/pics/turbolinks/turbolinks-1.png" alt="多次 XHR 请求" /></p>
 
 <p>刚开始的时候, 没有特别在意, 因为一直在关注整个项目的架构设计和数据结构, 没有太在意这个小问题, 心里觉得可能是 Rails 哪里自己还没有彻底弄懂才导致的小问题.</p>
 
@@ -99,7 +99,7 @@
 </ol>
 
 <p>下面是网络朋友画的一张 Turbolinks 的处理流程图:
-<img src="http://localhost:4000/pics/turbolinks/turbolinks-2.png" alt="turbolinks流程图" class="center-image" /></p>
+<img src="http://localhost:4000/pics/turbolinks/turbolinks-2.png" alt="turbolinks流程图" /></p>
 
 <h3 id="turbolinks-解析页面的步骤分解">Turbolinks 解析页面的步骤分解</h3>
 
@@ -131,12 +131,12 @@
 </ol>
 
 <p>逆向思考完毕后, 推理的假设是: 我的 body 模板中有 script 相关代码, 为了证明我的假设, 先查看一下渲染后的源代码:
-<img src="http://localhost:4000/pics/turbolinks/turbolinks-3.png" alt="source code" class="center-image" /></p>
+<img src="http://localhost:4000/pics/turbolinks/turbolinks-3.png" alt="source code" /></p>
 
 <p>果然发现可疑的 script 代码, 上面的一大片 script 都是第三插件的代码, body 里的 script 点开, 发现都是我写的 Stimulusjs 相关的代码.</p>
 
 <p>既然查看 HTML 源码证明了我的假设, 问题已经出在模板文件中, 用我的 <a href="https://github.com/manateelazycat/color-rg">color-rg</a> 一番搜索 javascript 关键字以后, 发现在 _head.html.erb 模板文件中居然有这句:
-<img src="http://localhost:4000/pics/turbolinks/turbolinks-4.png" alt="body script" class="center-image" /></p>
+<img src="http://localhost:4000/pics/turbolinks/turbolinks-4.png" alt="body script" /></p>
 
 <p>这不就是问题的原因吗? 太激动了</p>
 
@@ -144,7 +144,7 @@
 
 <p>果然, 只移动一行代码以后, 问题完美解决:</p>
 
-<p><img src="http://localhost:4000/pics/turbolinks/turbolinks-5.png" alt="it works!" class="center-image" /></p>
+<p><img src="http://localhost:4000/pics/turbolinks/turbolinks-5.png" alt="it works!" /></p>
 
 <h2 id="最后">最后</h2>
 <p>这就是我的学习方式, 当我们对一个难题久攻不克时, 不要着急去满世界找现成的答案, 即使答案不小心碰对了, 我们心中依然有困惑, 出来混的, 总有一天会还回去的.</p>

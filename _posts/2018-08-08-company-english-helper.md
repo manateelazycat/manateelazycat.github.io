@@ -12,7 +12,7 @@ categories: [Emacs]
 
 英文补全助手的效果图如下:
 
-![company english helper]({{site.url}}/pics/company-english-helper/company-english-helper.jpg){: .center-image}
+![company english helper]({{site.url}}/pics/company-english-helper/company-english-helper.jpg)
 
 #### 安装方法
 1. 下载文件 [company-english-helper.el](https://raw.githubusercontent.com/manateelazycat/company-english-helper/master/company-english-helper.el) 和 [company-english-helper-data.el](https://raw.githubusercontent.com/manateelazycat/company-english-helper/master/company-english-helper-data.el) , 放到目录 ~/elisp/ 下 (也可以放到你自己的其他目录)

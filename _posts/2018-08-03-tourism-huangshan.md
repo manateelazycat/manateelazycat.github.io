@@ -28,38 +28,38 @@ categories: [Travel]
 #### 第二天: [牯牛降观音堂自然保护区](http://www.mafengwo.cn/poi/5429083.html)
 
 早上去的时候, 还是蛮期待网上的青山绿水照, 实际体验游览区域的时候, 觉得有点坑, 景点一般, 除了水比较清澈外, 没啥特点:
-![]({{site.url}}/pics/tourism-huangshan/5957-d2086b56eccf82ca.JPG){: .center-image}
-![]({{site.url}}/pics/tourism-huangshan/5957-d35fa954db4b21b6.png){: .center-image}
-![]({{site.url}}/pics/tourism-huangshan/5957-c05019a450aa5048.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-d2086b56eccf82ca.JPG)
+![]({{site.url}}/pics/tourism-huangshan/5957-d35fa954db4b21b6.png)
+![]({{site.url}}/pics/tourism-huangshan/5957-c05019a450aa5048.png)
 
 正当我们有点小失望准备去下一个景点的时候, 发现停车场里面的山上居然有一个峡谷, 瞬间勾起了一家人探险的兴致:
 
-![]({{site.url}}/pics/tourism-huangshan/5957-a45994e6e80e018e.JPG){: .center-image}
-![]({{site.url}}/pics/tourism-huangshan/5957-aaf9d999975d3267.png){: .center-image}
-![]({{site.url}}/pics/tourism-huangshan/5957-a550f8be4fbc19f7.png){: .center-image}
-![]({{site.url}}/pics/tourism-huangshan/5957-617471e344a5b365.png){: .center-image}
-![]({{site.url}}/pics/tourism-huangshan/5957-109aae53afbeeb30.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-a45994e6e80e018e.JPG)
+![]({{site.url}}/pics/tourism-huangshan/5957-aaf9d999975d3267.png)
+![]({{site.url}}/pics/tourism-huangshan/5957-a550f8be4fbc19f7.png)
+![]({{site.url}}/pics/tourism-huangshan/5957-617471e344a5b365.png)
+![]({{site.url}}/pics/tourism-huangshan/5957-109aae53afbeeb30.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-6fe63e10040ab15d.png){: .center-image}
-![]({{site.url}}/pics/tourism-huangshan/5957-afdae4973534282b.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-6fe63e10040ab15d.png)
+![]({{site.url}}/pics/tourism-huangshan/5957-afdae4973534282b.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-baef44e25e5cfdc7.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-baef44e25e5cfdc7.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-04aaf2c0777fc3c2.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-04aaf2c0777fc3c2.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-b7c5768f174757ab.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-b7c5768f174757ab.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-4b24a3203fd7488c.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-4b24a3203fd7488c.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-f9fdbda2709add4c.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-f9fdbda2709add4c.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-1657a359a704adca.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-1657a359a704adca.png)
 
 山上的峡谷中的小溪清澈见底, 溪底光滑的小石头反射着湖蓝色的水波, 双脚踏进去溪水透心凉, 半米深的溪水中蜿蜒着一些露出溪水的大石头, 带着小朋友时而在这些大石头中跳跃, 时而在溪边的岩石峭壁上攀岩, 有时候可以大胆的趟过溪水, 有时候必须小心翼翼的处理脚下湿滑的青苔, 整个峡谷逆流而上的野外冒险让第一天的旅行就充满了惊喜和兴奋.
 
-![]({{site.url}}/pics/tourism-huangshan/5957-d6fc0627f4377eb3.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-d6fc0627f4377eb3.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-56fbd9bfb027d028.JPG){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-56fbd9bfb027d028.JPG)
 
 最后走到一个一米多深的水潭, 小朋友太矮, 没有继续前进了, 我估计继续往前走还会有更多惊喜的冒险地, 下次带着泳衣再来继续探险.
 
@@ -70,29 +70,29 @@ categories: [Travel]
 
 从牯牛降风景区去宏村的路上, 基本上都是盘山路, 很多下山发卡弯, 开车需要小心点, 比较危险, 而且连续的发卡弯开着比较头晕.
 
-![]({{site.url}}/pics/tourism-huangshan/5957-0f5839096490c9eb.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-0f5839096490c9eb.png)
 
 就在我们快到宏村之前1公里, 就看到了传说中更加宁静和无商业化的卢村, 一帮人没有忍住, 就先拐进卢村去看看.
 
 进了卢村果然和马蜂窝上评论说的一样, 完全是一个无门票无商业化的徽派小村, 进了卢村仿佛走进一个时间气泡, 整个人的时间和一切都在气泡中慢了下来, 你看着质朴的村民在河中洗菜, 游泳, 钓鱼, 这就是生活的最简单的写照, 一日三餐, 安安静静的活着, 不怒不争, 一切都是那么慢, 慢而安静, 但是不是城市人眼中的养老和无聊, 而是一种细细品味人生的景象, 顺其自然的呼吸, 吃饭, 享受生活和每一口清新的空气.
 
-![]({{site.url}}/pics/tourism-huangshan/5957-81b49575d9c7f792.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-81b49575d9c7f792.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-65fb683806618dd3.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-65fb683806618dd3.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-be6f783d92b1209d.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-be6f783d92b1209d.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-e030e561296aaa7b.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-e030e561296aaa7b.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-2ab8ed98887b8a6f.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-2ab8ed98887b8a6f.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-ae070f1b8850f98f.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-ae070f1b8850f98f.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-bfb2ab34148c6a31.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-bfb2ab34148c6a31.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-4c066a7b8872fd26.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-4c066a7b8872fd26.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-0db72e1f6c1f6630.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-0db72e1f6c1f6630.png)
 
 做技术人这么多年, 希望有一天可以在川西或者云南的某个地方, 找到像卢村这么安静的地方, 远离城市的喧嚣和浮躁, 安安静静的敲代码, 平平静静的和家人生活, 享受我们每个人本应该享有的清新空气和慢节奏的生活.
 
@@ -104,7 +104,7 @@ categories: [Travel]
 
 #### 第三天: 黄山前山
 
-![]({{site.url}}/pics/tourism-huangshan/5957-ce21370d0fe28f25.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-ce21370d0fe28f25.png)
 
 黄山分为前山和后山, 前山入口在慈光阁, 后山入口在云谷寺, 不论是跟旅游团还是自驾, 都需要在南门的汽车站统一坐大巴车才能到达慈光阁或者云谷寺, 然后从这两个入口步行或者索道上山, 传说只有当地人的车才能直接开到慈光阁和云谷寺, 外地的车会直接被拦下来.
 
@@ -118,7 +118,7 @@ categories: [Travel]
 
 前山主要是游览天都峰(黄山第一高峰)和迎客松, 第一天选择徒步上山, 一开始徒步, 黄山就开始下大暴雨, 因为没有提前带雨衣, 5个人只带了两把小伞, 全身都湿透了. 所以, 去黄山一定要备雨衣, 黄山随时都可能会下大暴雨, 景区的天气预报极度不准确.
 
-![]({{site.url}}/pics/tourism-huangshan/5957-11a4b273b729670a.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-11a4b273b729670a.png)
 
 如果没有带雨衣, 上山路的小卖部都有卖雨衣的, 大家看看暴雨中登黄山的悲惨图吧, 真的很悲惨, 全身湿透, 除了可以玩瀑布, 各种不爽.
 
@@ -132,55 +132,55 @@ categories: [Travel]
 
 黄山以险峻和怪石著称, 号称有"五岳归来不看山, 黄山归来不看岳", 具体的美景无法用语言来形容, 只能用图来感受黄山的险峻了:
 
-![]({{site.url}}/pics/tourism-huangshan/5957-bde5f739a17ec3f6.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-bde5f739a17ec3f6.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-8cbcd3c3f220968f.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-8cbcd3c3f220968f.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-9816b5d5ff547213.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-9816b5d5ff547213.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-6098f46c89b4e8fa.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-6098f46c89b4e8fa.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-c6a1251fcfbaae74.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-c6a1251fcfbaae74.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-8d720f095415dcb4.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-8d720f095415dcb4.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-d655ff87ed1c8834.png){: .center-image}
-
-
-![]({{site.url}}/pics/tourism-huangshan/5957-e37bd0ef4f3fad2c.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-d655ff87ed1c8834.png)
 
 
-![]({{site.url}}/pics/tourism-huangshan/5957-0c020fa329f59abc.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-e37bd0ef4f3fad2c.png)
 
 
-![]({{site.url}}/pics/tourism-huangshan/5957-b8d4668931b7c840.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-0c020fa329f59abc.png)
+
+
+![]({{site.url}}/pics/tourism-huangshan/5957-b8d4668931b7c840.png)
 
 第一天起晚了, 11点才开始爬山, 加上大暴雨, 爬完天都峰以后, 一群人就赶在5点之前坐上了缆车下山, 虽然第一天遇到大暴雨, 大家都被淋成落汤鸡,但是黄山太险太美了, 第一天大家都玩的很尽兴.
 
-![]({{site.url}}/pics/tourism-huangshan/5957-51a2615ce1037ecf.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-51a2615ce1037ecf.png)
 
 
-![]({{site.url}}/pics/tourism-huangshan/5957-d770864a96691358.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-d770864a96691358.png)
 
 #### 第四天: 黄山后山
 
 有了第一天前山的经验, 第二天大家准备好雨衣和更多的水(因为所有物资都是挑山工人工搬运, 所以山上物价和住宿都很贵), 早上6点就坐索道山上开始爬后山, 后山主要的景点就是我们小学课本上的猴子观海和妙笔生花, 虽然二十几年前的课本背得滚瓜烂熟, 但是真的到了黄山, 看到这些景象, 还是要感叹大自然的鬼斧神工.
 
-![]({{site.url}}/pics/tourism-huangshan/5957-2640cbad95d486cb.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-2640cbad95d486cb.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-83d2588ebe3b1a18.png){: .center-image}
-
-
-![]({{site.url}}/pics/tourism-huangshan/5957-60f7adf9c5422b9b.png){: .center-image}
-
-![]({{site.url}}/pics/tourism-huangshan/5957-f8b2f4cf7122b310.png){: .center-image}
-
-![]({{site.url}}/pics/tourism-huangshan/5957-aec2a94a7855d5ac.png){: .center-image}
-
-![]({{site.url}}/pics/tourism-huangshan/5957-490331c48f6d43f2.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-83d2588ebe3b1a18.png)
 
 
-![]({{site.url}}/pics/tourism-huangshan/5957-208c54dccf02e626.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-60f7adf9c5422b9b.png)
+
+![]({{site.url}}/pics/tourism-huangshan/5957-f8b2f4cf7122b310.png)
+
+![]({{site.url}}/pics/tourism-huangshan/5957-aec2a94a7855d5ac.png)
+
+![]({{site.url}}/pics/tourism-huangshan/5957-490331c48f6d43f2.png)
+
+
+![]({{site.url}}/pics/tourism-huangshan/5957-208c54dccf02e626.png)
 
 
 第三天本来准备下午4点到山底的, 但是我们大大低估了两天爬16个小时路程对小腿的抗议程度, 第三天黄山的后山, 我们整整爬了10个小时, 还好大家都有登山杖杵着, 要不是发抖的双腿真的没有勇气往下走一步.
@@ -192,55 +192,55 @@ categories: [Travel]
 
 第一站主要是游览徽派建筑博物馆 -- 潜口民宅, 里面可以看到很多书法, 绘画和木雕手工艺人, 感受一下几百年历史的徽派建筑气息.
 
-![]({{site.url}}/pics/tourism-huangshan/5957-d2ad12cf11600f6b.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-d2ad12cf11600f6b.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-d63cef7897aef7d1.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-d63cef7897aef7d1.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-060c341ca7ebc0d5.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-060c341ca7ebc0d5.png)
 
 潜口民宅旁边有一个小公园, 有一座几百年历史的下尖塔, 非常有意思.
 
-![]({{site.url}}/pics/tourism-huangshan/5957-3b6a7cf2780ba753.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-3b6a7cf2780ba753.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-a0b839d04a05f0bf.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-a0b839d04a05f0bf.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-7574940151696a78.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-7574940151696a78.png)
 
 是的, 你没有看错, 塔的内部是直通塔尖的, 这么古老的塔, 几百年的沧桑依然屹立不倒.
 
 
 #### 第五天: 下午, [许村](http://www.mafengwo.cn/poi/5426245.html)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-dccf9f5e1727c110.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-dccf9f5e1727c110.png)
 
 
 看完潜口民宅后, 就驱车来到30公里外的许村, 许村门口的老大爷, 简直就是摄影达人, 每个进许村的人, 老大爷都会亲切的帮他们拍最美的许村照片.
 
-![]({{site.url}}/pics/tourism-huangshan/5957-228b1f76be7b61a4.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-228b1f76be7b61a4.png)
 
 许村是一个书香门第的村落, 这里出了很多大学士, 政治家, 院士.
 
 许村到处都是这些有学问人家的府邸, 踏进这些府邸高高的门槛, 感受着府邸的每一砖, 每一瓦, 精致的石雕和流传下来的家训, 仿佛穿越到明朝, 推开咿呀作响的木门, 闻着书香, 陪着这些有思想的古人一起读书识字, 习德养性.
 
-![]({{site.url}}/pics/tourism-huangshan/5957-626b5af1e4335ec5.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-626b5af1e4335ec5.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-a9d0673c0306dd14.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-a9d0673c0306dd14.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-43f1dcd1f41325cf.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-43f1dcd1f41325cf.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-e64ca334e4c4aaf3.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-e64ca334e4c4aaf3.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-70f6b439489add95.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-70f6b439489add95.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-714e641998558eb3.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-714e641998558eb3.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-e7f20b263a0ff34a.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-e7f20b263a0ff34a.png)
 
 相对于许村的书香门第, 小朋友更喜欢许村旁边的小溪, 抓田螺和螃蟹是一件更有意义的乐事, 哈哈哈哈.
 
-![]({{site.url}}/pics/tourism-huangshan/5957-509b82e98cc9430e.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-509b82e98cc9430e.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-21ac26b609902f46.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-21ac26b609902f46.png)
 
 
 
@@ -250,19 +250,19 @@ categories: [Travel]
 
 建议大家不用买门票, 因为呈坎村本身就像一个八卦形状, 随便一边找一个巷子就可以钻进去参观, 门票完全是忽悠外地人的摆设 (不要问我为啥知道不用买门票, 哈哈哈哈)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-c315afaa6aba937b.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-c315afaa6aba937b.png)
 
 
-![]({{site.url}}/pics/tourism-huangshan/5957-ff301ab37504e1f8.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-ff301ab37504e1f8.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-058e16b81819d335.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-058e16b81819d335.png)
 
 
-![]({{site.url}}/pics/tourism-huangshan/5957-d78b40c53c9990b2.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-d78b40c53c9990b2.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-3ad60249214b8ad4.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-3ad60249214b8ad4.png)
 
-![]({{site.url}}/pics/tourism-huangshan/5957-330d61d1f6a9a2da.png){: .center-image}
+![]({{site.url}}/pics/tourism-huangshan/5957-330d61d1f6a9a2da.png)
 
 #### 第六天 回武汉
 最后一天, 在呈坎吃了早饭以后驱车回武汉, 在回武汉的路上还找了一条小溪, 抓了两个小时的小鱼, 螃蟹和蚂蚱, 抓鱼简直是每个小朋友童年的最爱啊, 百玩不厌.

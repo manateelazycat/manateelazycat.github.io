@@ -60,12 +60,12 @@
 
 <h3 id="心目中的完美取色器">心目中的完美取色器</h3>
 <p>做产品对UI的时候，经常需要对着设计图取色，Linux传统的 gcolor2 一直都不是很方便，先要打开 gcolor2 窗口，然后还要点击取色图标，取色图标非常小，每次用取色图标取色都取不准确，取完颜色以后还要手动复制到系统剪切板。
-<img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-1.gif" alt="" class="center-image" /></p>
+<img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-1.gif" alt="" /></p>
 
 <p>所以一直一来都想做一个交互极简的取色器，最好鼠标移动到目标位置，快捷键直接启动取色器，点击就马上取色并自动复制到系统剪切板。
 经过三天的研究终于做出了我理想中的取色器，世界上最简单的屏幕取色器：</p>
 
-<p><img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-2.gif" alt="深度录屏_Desktop_20171102165716.gif" class="center-image" /></p>
+<p><img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-2.gif" alt="深度录屏_Desktop_20171102165716.gif" /></p>
 
 <p>1、启动取色器以后立即对屏幕进行实时预览
 2、点击左键取色后自动把颜色数值复制到剪切板
@@ -78,12 +78,12 @@
   <li>先把屏幕的截图截取成 Pixmap 保存到内存中，以备取色使用</li>
   <li>光标移动的时候，根据光标坐标截取光标下的色块进行放大，形成 ”放大镜图层“</li>
   <li>重新绘制 “屏幕截图图层” 后，再绘制 ”放大镜图层“，通过两个图层的合成绘制，给用户一种实时放大屏幕的视觉错觉
-<img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-3.png" alt="深度截图_选择区域_20171102175731.png" class="center-image" /></li>
+<img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-3.png" alt="深度截图_选择区域_20171102175731.png" /></li>
 </ul>
 
 <p>像深度截图这种传统的图层绘制方式有一个巨大的缺点，就是每次光标移动的时候，都会触发 “屏幕截图图层” 重新绘制，即使光标下的区域只更新了非常小的区域，这样就会造成潜在的性能问题。</p>
 
-<p><img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-4.png" alt="3 (1).png" class="center-image" /></p>
+<p><img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-4.png" alt="3 (1).png" /></p>
 
 <p>比如当用户使用的是双屏或者三屏，同时这些屏幕的分辨率都是2k以上的话，每次光标移动都会导致 6000x2000 像素的图片进行重新绘制，如果用户这时候快速移动光标，电脑瞬间就会卡顿，因为在 30ms 传统的流畅帧循环中，已经无法在一个循环中完成绘制超大图片所需的计算时间。</p>
 
@@ -93,7 +93,7 @@
 
 <p>这样做的好处就是，每次光标移动的时候，实际的计算量就只有截取光标处几十像素色块，不论屏幕多大，永远都只消耗常量的计算量，而且窗口管理器本身就会使用显卡进行图层混合，所以实时改变光标的技术的性能要比传统的截图自行混合图层的技术好百倍以上，而且随着屏幕的增大，性能优势非常明显。</p>
 
-<p><img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-5.png" alt="2.png" class="center-image" /></p>
+<p><img src="http://localhost:4000/pics/linux-magnifier/linux-magnifier-5.png" alt="2.png" /></p>
 
 <p>真是古语所言 “山穷水尽疑无路，柳暗花明又一村”， 所以很多时候技术上遇到瓶颈，千万不要放弃，先暂时放一下，灵感会随着你长时间的深入思考突然蹦出来的。 ;)</p>
 
