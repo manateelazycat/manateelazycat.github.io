@@ -12,7 +12,7 @@ Emacs 默认用 mode-line 显示 buffer 的信息, 但是大部分的信息都�
 
 今天按照 MinibufferTray 的设计, 重新写了一个新的插件 [AwesomeTray](https://github.com/manateelazycat/awesome-tray), 不再需要 PyQt5, 所有平台都可以工作.
 
-![awesome-tray]({{site.url}}/pics/awesome-tray/awesome-tray.png){: .center-image}
+![awesome-tray]({{site.url}}/pics/awesome-tray/awesome-tray.png)
 
 安装好以后, mode-line 默认隐藏, 只在右下角显示必要的信息, 当你在操作 minibuffer 的时候右下角的信息自动隐藏, 当你退出 minibuffer 时, 右下角信息又会自动显示.
 

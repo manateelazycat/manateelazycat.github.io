@@ -12,7 +12,7 @@ tabbar.el 的功能是非常强大的, 但是默认主题却非常丑陋, 像DOS
 
 所以, 今天把十几年的 tabbar.el 配置和扩展功能重新整理成 [Awesome-Tab](https://github.com/manateelazycat/awesome-tab), 下载安装后就是现代化的风格和强大的内置功能.
 
-![AwesomeTab]({{site.url}}/pics/awesome-tab/awesome-tab.png){: .center-image}
+![AwesomeTab]({{site.url}}/pics/awesome-tab/awesome-tab.png)
 
 
 ### 安装

@@ -17,7 +17,7 @@ categories: [Emacs]
 2. 用 dired 的命令进行快速批量标记, 删除, 移动和对标记的文件进行 shell 命令
 3. 甚至结合 wdired 对所有的文件名进行快速重构.
 
-![grep-dired]({{site.url}}/pics/grep-dired/grep-dired.png){: .center-image}
+![grep-dired]({{site.url}}/pics/grep-dired/grep-dired.png)
 
 本来基于 color-rg.el 代码进行原型开发, 开发到一半发现 Emacs 有 find-dired 的代码做了同样的事情, 干脆放弃最开始的原型代码, 基于 find-dired 的代码, 裁剪了很多老旧的代码 (比如 find + grep 搜索文件内容, 显然没有 ripgrep 快), 去掉了很多Unix系统的兼容代码, 加入了自己的一些函数, 很快就构建出 grep-dired.el
 
