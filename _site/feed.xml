@@ -1,4 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-05T16:28:21+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">读《远见》</title><link href="http://localhost:4000/reading/2019/05/01/vision.html" rel="alternate" type="text/html" title="读《远见》" /><published>2019-05-01T00:00:00+08:00</published><updated>2019-05-01T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/05/01/vision</id><content type="html" xml:base="http://localhost:4000/reading/2019/05/01/vision.html">&lt;p&gt;最近在读《远见》这本书，做了一些笔记，分享一下书中比较好的地方，写写我的一些想法．&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-05T18:36:50+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">利用lazy-load.el按需加载Emacs插件</title><link href="http://localhost:4000/emacs/2019/05/05/lazy-load.html" rel="alternate" type="text/html" title="利用lazy-load.el按需加载Emacs插件" /><published>2019-05-05T00:00:00+08:00</published><updated>2019-05-05T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/05/lazy-load</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/05/lazy-load.html">&lt;p&gt;随着Emacs的插件越来越多，Emacs的启动速度会越来越幔。&lt;/p&gt;
+
+&lt;p&gt;Emacs的启动速度慢，主要有两个原因：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;加载时垃圾回收的阈值太小了，导致启动加载插件时触发了垃圾回收，减慢了启动速度&lt;/li&gt;
+  &lt;li&gt;默认Emacs加载了过多的插件，导致启动的时候浪费了过多的时间去加载插件&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;解决第一个问题的方法如下：&lt;/p&gt;
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;;; 加载的时候临时增大`gc-cons-threshold'以加速启动速度。&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gc-cons-threshold&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;most-positive-fixnum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;;; 清空避免加载远程文件的时候分析文件。&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-name-handler-alist&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;;; Emacs配置文件内容写到下面.&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;上面的代码的目的时，在Emacs加载任何插件之前临时把 gc-cons-threshold 的值设置为最大，避免Emacs启动时触发垃圾回收。
+Emacs配置文件加载完毕后，自动恢复变量 gc-cons-threshold 为默认值，避免运行时Emacs占用过多内存。&lt;/p&gt;
+
+&lt;p&gt;至于第二个问题的解决方案，就要用到今天我编写的 lazy-load.el 插件了。&lt;/p&gt;
+
+&lt;p&gt;2007 ~ 2008这两年期间，我几乎把当时所有的Emacs插件都玩过一遍，当你把几百个插件一股脑的全部默认加载，Emacs的启动时间可以从秒开延长到几分钟。
+那时候就在思考怎么把Emacs的启动时间优化到秒开，同时不减少任何插件的使用，最终开发了 lazy-load.el 插件，即使我用 300+ 插件，Emacs启动速度依然是秒开。&lt;/p&gt;
+
+&lt;h3 id=&quot;原理&quot;&gt;原理&lt;/h3&gt;
+
+&lt;p&gt;lazy-load.el 的原理很简单:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;我们先把我们的 keymap 定义好,每个按键对应的函数都写好&lt;/li&gt;
+  &lt;li&gt;告诉Emacs函数对应插件的文件名，这样当调用函数时，Emacs知道去哪里加载插件&lt;/li&gt;
+  &lt;li&gt;Emacs默认只加载非常少的插件, 加载完成后，当我们第一次触发按键时才让Emacs去动态按需加载插件和按键对应的函数&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;因为99%的Emacs插件在单独加载的时候，都可以在1s之内完成，所以相当于99%的插件都在运行时按需加载，
+这样就大大减少了Emacs启动时需要加载的插件数量，从而最终达到提升Emacs启动时间的目的。&lt;/p&gt;
+
+&lt;h3 id=&quot;安装方法&quot;&gt;安装方法&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;下载 &lt;a href=&quot;https://github.com/manateelazycat/lazy-load&quot;&gt;lazy-load&lt;/a&gt; 里面的 lazy-load.el 放到 ~/elisp 目录&lt;/li&gt;
+  &lt;li&gt;把下面的配置加入到 ~/.emacs 中&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(add-to-list 'load-path (expand-file-name &quot;~/elisp&quot;))
+(require 'lazy-load)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
+&lt;p&gt;下面这段代码的意思是，第一次按 Alt + g 时，Emacs在 load-path 目录下去找　goto-line-preview.el 这个文件，加载插件并执行 goto-line-preview 这个函数。&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lazy-load-global-keys&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M-g&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;goto-line-preview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;&quot;goto-line-preview&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;下面这段代码的意思是，第一次按在 ruby mode 中按 Ctrl + c t 时，Emacs在 load-path 目录下去找　ruby-extension.el 这个文件，加载插件并执行 ruby-hash-syntax-toggle 这个函数。&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lazy-load-local-keys&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C-c t&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ruby-hash-syntax-toggle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+ &lt;span class=&quot;nv&quot;&gt;ruby-mode-map&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;&quot;ruby-extension&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;很多全局按键默认已经被Emacs占用了，必须先卸载以后才能重新绑定这些全局按键，比如 Ctrl + x, 下面这段代码就是用 lazy-load-unset-keys 卸载默认绑定的全局按键：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lazy-load-unset-keys&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C-x C-f&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;C-z&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;C-q&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s-W&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s-z&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;M-h&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;C-x C-c&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;C-\\&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s-c&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s-x&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s-v&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;高级用法&quot;&gt;高级用法&lt;/h3&gt;
+&lt;p&gt;有时候，我们会用一个前缀按键取分类插件中不同的函数，比如我的 sdcv.el 插件的不同函数就可以按照下面的代码用 Ctrl + z 这个按键作为前缀按键，
+先按 Ctrl + z ，再按 p 就可以触发 sdcv-search-pointer 函数&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lazy-load-global-keys&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;p&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sdcv-search-pointer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;y&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sdcv-search-pointer+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;i&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sdcv-search-input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sdcv-search-input+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;&quot;init-sdcv&quot;&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;&quot;C-z&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;对应的 lazy-load-local-keys 也支持最后一个参数传递前缀按键，只不过 lazy-load-local-keys 对应的不是 global-map ，而是插件的 keymap 。&lt;/p&gt;
+
+&lt;p&gt;如果Emacs默认就加载了某个插件，而不需要在运行时动态加载，也可以使用 lazy-load-set-keys 函数做单独的按键绑定操作，不用手动写一行行的重复写类似　(define-key keymap key) 的配置&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lazy-load-set-keys&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M-;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;comment-dwim-with-haskell-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+ &lt;span class=&quot;nv&quot;&gt;haskell-mode-map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;示例&quot;&gt;示例&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/lazycat-emacs/blob/master/site-lisp/config/init-key.el&quot;&gt;这里有很多 lazy-load 的示例用法&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">随着Emacs的插件越来越多，Emacs的启动速度会越来越幔。</summary></entry><entry><title type="html">读《远见》</title><link href="http://localhost:4000/reading/2019/05/01/vision.html" rel="alternate" type="text/html" title="读《远见》" /><published>2019-05-01T00:00:00+08:00</published><updated>2019-05-01T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/05/01/vision</id><content type="html" xml:base="http://localhost:4000/reading/2019/05/01/vision.html">&lt;p&gt;最近在读《远见》这本书，做了一些笔记，分享一下书中比较好的地方，写写我的一些想法．&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;人脉关系网的构建者的心态是交易性的，他们在追求人际关系时只考虑其他人能为他们做什么。而人际关系的构建者会首先尝试帮助别人，他们不会有所保留。虽然他们心里清楚大部分好意都会得到回报，但是并不会精于算计。他们还会时刻维护自己的人际关系，而不是在需要的时候才想起来。&lt;/p&gt;
@@ -185,7 +277,107 @@
 &lt;p&gt;花了1个小时研究了Jekyll的文档，然后用Emacs和Wget把所有简书的文章迁移到 GitHub Pages 上来，
 以后 Emacs 里面写文章，git push自动更新，一劳永逸解决文章屏蔽的问题。&lt;/p&gt;
 
-&lt;p&gt;迁移到 Github Pages 上以后还可以自己控制页面的样式，也不用每次登录简书被迫看那些无聊的广告。&lt;/p&gt;</content><author><name></name></author><summary type="html">自己不喜欢浪费时间搭建博客网站，所以文章一直都放到简书上，编写简单，容易维护。 直到有一天天朝盯上了简书，我的很多技术文章很多被简书屏蔽以后，自己也懒的发邮件去申诉。</summary></entry><entry><title type="html">树莓派指定声卡硬件播放声音</title><link href="http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card.html" rel="alternate" type="text/html" title="树莓派指定声卡硬件播放声音" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card</id><content type="html" xml:base="http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card.html">&lt;p&gt;树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.&lt;/p&gt;
+&lt;p&gt;迁移到 Github Pages 上以后还可以自己控制页面的样式，也不用每次登录简书被迫看那些无聊的广告。&lt;/p&gt;</content><author><name></name></author><summary type="html">自己不喜欢浪费时间搭建博客网站，所以文章一直都放到简书上，编写简单，容易维护。 直到有一天天朝盯上了简书，我的很多技术文章很多被简书屏蔽以后，自己也懒的发邮件去申诉。</summary></entry><entry><title type="html">聊聊Rails和Golang开发的体验差别</title><link href="http://localhost:4000/web/2019/02/17/golang-and-rails.html" rel="alternate" type="text/html" title="聊聊Rails和Golang开发的体验差别" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/02/17/golang-and-rails</id><content type="html" xml:base="http://localhost:4000/web/2019/02/17/golang-and-rails.html">&lt;p&gt;最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.&lt;/p&gt;
+
+&lt;p&gt;单从微信小程序框架的感觉和设计思路来看, 和 Vue.js 非常像, 这种前端框架, 的确是用 Golang 做为后端开发更好一点.&lt;/p&gt;
+
+&lt;p&gt;就拿现在我正在用的 Gin 这个 Golang 框架来说, 其实只用几十行写个路由返回微信小程序用的 JSON 数据就可以了, 基本上所有的界面效果都由小程序去渲染, 后台服务可以做的很薄:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;设计好数据库&lt;/li&gt;
+  &lt;li&gt;理清需求和业务逻辑&lt;/li&gt;
+  &lt;li&gt;Golang从数据库和HTTP路由请求, 按照 Restful API 规范返回 JSON 数据即可.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因为 Golang 的 HTTP 库设计的非常好, 所以基于 Golang HTTP 库的Web框架多如牛毛, 大多数Web框架都很轻, 主要的功能都在路由设计上.&lt;/p&gt;
+
+&lt;p&gt;所以如果拿 Rails 和 Golang 做对比的话:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Rails 更像一个Web最佳实践的全功能框架, 什么都有最好的, 但是因为包括的东西实在是太多了, 光是学清楚每个最佳实践库的配置和集成就很复杂, 因为 Rails 真的要配置好的话, 不同模块之间的集成往往都是不透明的, 你首先要学会这些配置, 只有看了源代码才知道为什么一定要这么配置才行&lt;/li&gt;
+  &lt;li&gt;Golang 框架和Rails是反的, 框架只有核心的 HTTP 路由功能, 至于高级功能, 比如HTTPS, 表单Token验证, JSON解析, 数据库的ORM等等, 都需要网上去找库和中间件实现, 但是每个模块之间的胶水代码都是自己写的, 所以模块之间关系处理都比较透明, 出了错好解决到问题的根源&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;简单的结论:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Rails更适合做传统偏向内容的Web网站构建, 约定好的配置入门比较简单, 开发效率高, 但是要玩精通还是比较复杂, 受到框架限制比较多&lt;/li&gt;
+  &lt;li&gt;Golang更适合前后端分离的应用开发, 比如小程序, 高级功能入门比较复杂, 但是一旦折腾好了, 可以很容易玩出高级功能, 不用受到严格框架的限制&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;像我这种Emacs党, 说句实话, 我更喜欢Golang这种框架, 虽然很多功能都需要自己折腾, 但是可以做到很多细节心中有数, 每个模块的最佳实践可以随着自己的经验增加而快速迭代, 而像 Rails 这种每个大版本引入的新的最佳实践都会和上一版本不兼容, 团队和业务代码多了, 更新代码去兼容最新框架本身就很痛苦.&lt;/p&gt;
+
+&lt;p&gt;最近开发了微信小程序, 感觉Web也像三国一样, 分久必合合久必分.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;最开始是 Java 这种简单粗暴的中间件玩法&lt;/li&gt;
+  &lt;li&gt;过去十年大多数都是 Rails 这种更加优雅的 Web 框架, 强调最佳实践, 强调 Web 纯正的方法论&lt;/li&gt;
+  &lt;li&gt;现在移动终端的性能、多分辨率和用户体验的新需求, 大家又回到Java那个时代的前后端分离了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;其实, 计算机这么多年的软件框架一直都是随着流星硬件和用户交互模式的迁移而不断变化和不断重复历史.&lt;/p&gt;
+
+&lt;p&gt;对于我这种操作系统行业打拼出来的人, Golang这种Web框架的思路对于我更简单, 设计好数据库和API接口, 剩下的就是把后端数据吐给前端框架就完事了.&lt;/p&gt;
+
+&lt;p&gt;所以, 业务导向, 什么技术对于业务最好就用什么技术, 对于小程序开发, 我选择 Golang Web框架.&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.</summary></entry><entry><title type="html">Golang/Gin框架添加对HTTPS的支持</title><link href="http://localhost:4000/golang/2019/02/17/gin-https.html" rel="alternate" type="text/html" title="Golang/Gin框架添加对HTTPS的支持" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/golang/2019/02/17/gin-https</id><content type="html" xml:base="http://localhost:4000/golang/2019/02/17/gin-https.html">&lt;p&gt;HTTPS配置步骤:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;首先在阿里云搞定ICP域名备案&lt;/li&gt;
+  &lt;li&gt;添加一个子域名&lt;/li&gt;
+  &lt;li&gt;给子域名申请免费 SSL 证书, 然后下载证书对应的 pem 和 key 文件.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;用 GIN 框架添加一个 github.com/unrolled/secure 中间件就可以了.&lt;/p&gt;
+
+&lt;p&gt;下面是一个简单的示例代码:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;github.com/gin-gonic/gin&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;github.com/unrolled/secure&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TlsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RunTLS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:8080&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ssl.pem&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ssl.key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TlsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HandlerFunc&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secureMiddleware&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSLRedirect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSLHost&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;     &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;localhost:8080&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secureMiddleware&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Writer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// If there was an error, do not continue.&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;上面代码直接在子域名前添加 HTTPS 就可以安全通讯了.&lt;/p&gt;</content><author><name></name></author><summary type="html">HTTPS配置步骤: 首先在阿里云搞定ICP域名备案 添加一个子域名 给子域名申请免费 SSL 证书, 然后下载证书对应的 pem 和 key 文件.</summary></entry><entry><title type="html">用 air 给 Golang/Gin 框架提供热重启支持</title><link href="http://localhost:4000/golang/2019/02/17/air-gin.html" rel="alternate" type="text/html" title="用 air 给 Golang/Gin 框架提供热重启支持" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/golang/2019/02/17/air-gin</id><content type="html" xml:base="http://localhost:4000/golang/2019/02/17/air-gin.html">&lt;p&gt;Golang 这种编译语言和 Rails/Python 这种脚本语言不同, 脚本语言做后端, 只要不是配置和数据库有变化, 一般都是源代码一修改后, 最新后端服务就立即生效了.&lt;/p&gt;
+
+&lt;p&gt;但是 Golang 做后端, 需要每次修改代码以后都要重新编译后重启服务才行.
+但是每次改完代码都切换到终端按 Ctrl + C 也是无比的烦.&lt;/p&gt;
+
+&lt;p&gt;对于我这种懒得写代码的懒人, 伟大的Google从来都有现成的方案, 在Mac上直接用下面的命令在后端目录下执行:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fLo&lt;/span&gt; ~/air &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    https://raw.githubusercontent.com/cosmtrek/air/master/bin/darwin/air
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x ~/air
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./air&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;就是这么简单, 配合 FRP, 直接在本地开发, 前端直接调用就可以通过阿里云反向代理到本地开发机进行访问了.&lt;/p&gt;
+
+&lt;p&gt;只要 Golang 源代码一改, air 会自动重新编译并重启, 超级方便, 再也不用按 Ctrl + C 了.&lt;/p&gt;
+
+&lt;p&gt;注意:  air 这种重新编译和重启的方案只适合开发环境, 如果生产环境, 还需要基于 Golang HTTP.shutdown 方案开发更加智能的子进程热替换方案, 否则会因为重启瞬间丢失用户访问请求.&lt;/p&gt;
+
+&lt;p&gt;That’s all, gopher! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Golang 这种编译语言和 Rails/Python 这种脚本语言不同, 脚本语言做后端, 只要不是配置和数据库有变化, 一般都是源代码一修改后, 最新后端服务就立即生效了.</summary></entry><entry><title type="html">树莓派指定声卡硬件播放声音</title><link href="http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card.html" rel="alternate" type="text/html" title="树莓派指定声卡硬件播放声音" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card</id><content type="html" xml:base="http://localhost:4000/raspberry/2019/02/17/raspberry-sound-card.html">&lt;p&gt;树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.&lt;/p&gt;
 
 &lt;p&gt;一般我们用下面方式去禁用树莓派的板载声卡:&lt;/p&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;nano /boot/config.txt
@@ -253,107 +445,7 @@ defaults.pcm.card 1
     &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Popen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;play_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;玩树莓派还是Python好啊, 轻描淡写几行代码就搞定了.&lt;/p&gt;</content><author><name></name></author><summary type="html">树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.</summary></entry><entry><title type="html">Golang/Gin框架添加对HTTPS的支持</title><link href="http://localhost:4000/golang/2019/02/17/gin-https.html" rel="alternate" type="text/html" title="Golang/Gin框架添加对HTTPS的支持" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/golang/2019/02/17/gin-https</id><content type="html" xml:base="http://localhost:4000/golang/2019/02/17/gin-https.html">&lt;p&gt;HTTPS配置步骤:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;首先在阿里云搞定ICP域名备案&lt;/li&gt;
-  &lt;li&gt;添加一个子域名&lt;/li&gt;
-  &lt;li&gt;给子域名申请免费 SSL 证书, 然后下载证书对应的 pem 和 key 文件.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;用 GIN 框架添加一个 github.com/unrolled/secure 中间件就可以了.&lt;/p&gt;
-
-&lt;p&gt;下面是一个简单的示例代码:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;github.com/gin-gonic/gin&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;github.com/unrolled/secure&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TlsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RunTLS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:8080&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ssl.pem&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ssl.key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TlsHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HandlerFunc&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secureMiddleware&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;New&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSLRedirect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SSLHost&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;     &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;localhost:8080&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secureMiddleware&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Writer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-        &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// If there was an error, do not continue.&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-            &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-
-        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;上面代码直接在子域名前添加 HTTPS 就可以安全通讯了.&lt;/p&gt;</content><author><name></name></author><summary type="html">HTTPS配置步骤: 首先在阿里云搞定ICP域名备案 添加一个子域名 给子域名申请免费 SSL 证书, 然后下载证书对应的 pem 和 key 文件.</summary></entry><entry><title type="html">用 air 给 Golang/Gin 框架提供热重启支持</title><link href="http://localhost:4000/golang/2019/02/17/air-gin.html" rel="alternate" type="text/html" title="用 air 给 Golang/Gin 框架提供热重启支持" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/golang/2019/02/17/air-gin</id><content type="html" xml:base="http://localhost:4000/golang/2019/02/17/air-gin.html">&lt;p&gt;Golang 这种编译语言和 Rails/Python 这种脚本语言不同, 脚本语言做后端, 只要不是配置和数据库有变化, 一般都是源代码一修改后, 最新后端服务就立即生效了.&lt;/p&gt;
-
-&lt;p&gt;但是 Golang 做后端, 需要每次修改代码以后都要重新编译后重启服务才行.
-但是每次改完代码都切换到终端按 Ctrl + C 也是无比的烦.&lt;/p&gt;
-
-&lt;p&gt;对于我这种懒得写代码的懒人, 伟大的Google从来都有现成的方案, 在Mac上直接用下面的命令在后端目录下执行:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fLo&lt;/span&gt; ~/air &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-    https://raw.githubusercontent.com/cosmtrek/air/master/bin/darwin/air
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x ~/air
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./air&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;就是这么简单, 配合 FRP, 直接在本地开发, 前端直接调用就可以通过阿里云反向代理到本地开发机进行访问了.&lt;/p&gt;
-
-&lt;p&gt;只要 Golang 源代码一改, air 会自动重新编译并重启, 超级方便, 再也不用按 Ctrl + C 了.&lt;/p&gt;
-
-&lt;p&gt;注意:  air 这种重新编译和重启的方案只适合开发环境, 如果生产环境, 还需要基于 Golang HTTP.shutdown 方案开发更加智能的子进程热替换方案, 否则会因为重启瞬间丢失用户访问请求.&lt;/p&gt;
-
-&lt;p&gt;That’s all, gopher! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Golang 这种编译语言和 Rails/Python 这种脚本语言不同, 脚本语言做后端, 只要不是配置和数据库有变化, 一般都是源代码一修改后, 最新后端服务就立即生效了.</summary></entry><entry><title type="html">聊聊Rails和Golang开发的体验差别</title><link href="http://localhost:4000/web/2019/02/17/golang-and-rails.html" rel="alternate" type="text/html" title="聊聊Rails和Golang开发的体验差别" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/02/17/golang-and-rails</id><content type="html" xml:base="http://localhost:4000/web/2019/02/17/golang-and-rails.html">&lt;p&gt;最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.&lt;/p&gt;
-
-&lt;p&gt;单从微信小程序框架的感觉和设计思路来看, 和 Vue.js 非常像, 这种前端框架, 的确是用 Golang 做为后端开发更好一点.&lt;/p&gt;
-
-&lt;p&gt;就拿现在我正在用的 Gin 这个 Golang 框架来说, 其实只用几十行写个路由返回微信小程序用的 JSON 数据就可以了, 基本上所有的界面效果都由小程序去渲染, 后台服务可以做的很薄:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;设计好数据库&lt;/li&gt;
-  &lt;li&gt;理清需求和业务逻辑&lt;/li&gt;
-  &lt;li&gt;Golang从数据库和HTTP路由请求, 按照 Restful API 规范返回 JSON 数据即可.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;因为 Golang 的 HTTP 库设计的非常好, 所以基于 Golang HTTP 库的Web框架多如牛毛, 大多数Web框架都很轻, 主要的功能都在路由设计上.&lt;/p&gt;
-
-&lt;p&gt;所以如果拿 Rails 和 Golang 做对比的话:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Rails 更像一个Web最佳实践的全功能框架, 什么都有最好的, 但是因为包括的东西实在是太多了, 光是学清楚每个最佳实践库的配置和集成就很复杂, 因为 Rails 真的要配置好的话, 不同模块之间的集成往往都是不透明的, 你首先要学会这些配置, 只有看了源代码才知道为什么一定要这么配置才行&lt;/li&gt;
-  &lt;li&gt;Golang 框架和Rails是反的, 框架只有核心的 HTTP 路由功能, 至于高级功能, 比如HTTPS, 表单Token验证, JSON解析, 数据库的ORM等等, 都需要网上去找库和中间件实现, 但是每个模块之间的胶水代码都是自己写的, 所以模块之间关系处理都比较透明, 出了错好解决到问题的根源&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;简单的结论:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Rails更适合做传统偏向内容的Web网站构建, 约定好的配置入门比较简单, 开发效率高, 但是要玩精通还是比较复杂, 受到框架限制比较多&lt;/li&gt;
-  &lt;li&gt;Golang更适合前后端分离的应用开发, 比如小程序, 高级功能入门比较复杂, 但是一旦折腾好了, 可以很容易玩出高级功能, 不用受到严格框架的限制&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;像我这种Emacs党, 说句实话, 我更喜欢Golang这种框架, 虽然很多功能都需要自己折腾, 但是可以做到很多细节心中有数, 每个模块的最佳实践可以随着自己的经验增加而快速迭代, 而像 Rails 这种每个大版本引入的新的最佳实践都会和上一版本不兼容, 团队和业务代码多了, 更新代码去兼容最新框架本身就很痛苦.&lt;/p&gt;
-
-&lt;p&gt;最近开发了微信小程序, 感觉Web也像三国一样, 分久必合合久必分.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;最开始是 Java 这种简单粗暴的中间件玩法&lt;/li&gt;
-  &lt;li&gt;过去十年大多数都是 Rails 这种更加优雅的 Web 框架, 强调最佳实践, 强调 Web 纯正的方法论&lt;/li&gt;
-  &lt;li&gt;现在移动终端的性能、多分辨率和用户体验的新需求, 大家又回到Java那个时代的前后端分离了&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;其实, 计算机这么多年的软件框架一直都是随着流星硬件和用户交互模式的迁移而不断变化和不断重复历史.&lt;/p&gt;
-
-&lt;p&gt;对于我这种操作系统行业打拼出来的人, Golang这种Web框架的思路对于我更简单, 设计好数据库和API接口, 剩下的就是把后端数据吐给前端框架就完事了.&lt;/p&gt;
-
-&lt;p&gt;所以, 业务导向, 什么技术对于业务最好就用什么技术, 对于小程序开发, 我选择 Golang Web框架.&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.</summary></entry><entry><title type="html">追逐彩云之南</title><link href="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html" rel="alternate" type="text/html" title="追逐彩云之南" /><published>2019-02-10T00:00:00+08:00</published><updated>2019-02-10T00:00:00+08:00</updated><id>http://localhost:4000/travel/2019/02/10/tourism-yunnan</id><content type="html" xml:base="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html">&lt;p&gt;老婆有一个小小的梦想, 在有生之年周游世界, 看遍这个世界的美与不同.
+&lt;p&gt;玩树莓派还是Python好啊, 轻描淡写几行代码就搞定了.&lt;/p&gt;</content><author><name></name></author><summary type="html">树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.</summary></entry><entry><title type="html">追逐彩云之南</title><link href="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html" rel="alternate" type="text/html" title="追逐彩云之南" /><published>2019-02-10T00:00:00+08:00</published><updated>2019-02-10T00:00:00+08:00</updated><id>http://localhost:4000/travel/2019/02/10/tourism-yunnan</id><content type="html" xml:base="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html">&lt;p&gt;老婆有一个小小的梦想, 在有生之年周游世界, 看遍这个世界的美与不同.
 继青岛大海、银川沙漠、红岩顶雪山、黄山奇石后, 今年趁着武汉的寒冬带老婆来一次自驾迁徙, 体验四季如春的彩云之南.&lt;/p&gt;
 
 &lt;p&gt;冬季去旅游景区的最大好处就是景区的人非常少, 可以尽情的感受风景, 而不是大家一起扮演植物大战僵尸.&lt;/p&gt;
@@ -736,193 +828,4 @@ defaults.pcm.card 1
   &lt;li&gt;罗平县金鸡峰丛 - 兴义 - 铜仁 - 武汉: 1600公里&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;回到武汉后, 还在下雪, 超级怀念云南四季如春的日子, 希望以后可以在云南找一个安静的地方生活和学习下去, 在那样的蓝天下, 远离世间纷扰, 安安静静的生活, 真是神仙般的生活…&lt;/p&gt;</content><author><name></name></author><summary type="html">老婆有一个小小的梦想, 在有生之年周游世界, 看遍这个世界的美与不同. 继青岛大海、银川沙漠、红岩顶雪山、黄山奇石后, 今年趁着武汉的寒冬带老婆来一次自驾迁徙, 体验四季如春的彩云之南.</summary></entry><entry><title type="html">Emacs智能标记并一键跳转</title><link href="http://localhost:4000/emacs/2019/01/05/lazy-search.html" rel="alternate" type="text/html" title="Emacs智能标记并一键跳转" /><published>2019-01-05T00:00:00+08:00</published><updated>2019-01-05T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/01/05/lazy-search</id><content type="html" xml:base="http://localhost:4000/emacs/2019/01/05/lazy-search.html">&lt;p&gt;Emacs的isearch一般都是激活以后直接搜索字符并上下跳转, 但是我们编程的时候, 往往搜索的内容就是当前光标处的符号, 如果每次都敲一遍符号字符串效率就会非常低.&lt;/p&gt;
-
-&lt;p&gt;2008年的时候, 写了插件 lazy-search.el, 主要的目的是, 自动激活当前光标处的符号, 然后直接按 s 或者 r 就可以在匹配的字符中快速跳转, 跳转到目标位置后按q退出搜索继续编程&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/lazy-search/lazy-search.png&quot; alt=&quot;lazy-search.el&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;但是这个插件依赖我的另一个插件 one-key.el , on-key 是一个针对快捷键的菜单导航系统, one-key.el 虽然强大但是配置还是比较折腾的.&lt;/p&gt;
-
-&lt;p&gt;所以, 今天把 lazy-search.el 重新调整了一下:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;移除了对 one-key.el 的依赖&lt;/li&gt;
-  &lt;li&gt;移除了很多不用的mark函数, 因为用的最多的就是标记光标处的符号或者选区内容&lt;/li&gt;
-  &lt;li&gt;重构了一些代码和名字, 使得更容易理解&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;安装&quot;&gt;安装&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;下载 &lt;a href=&quot;https://github.com/manateelazycat/lazy-search&quot;&gt;lazy-search.el&lt;/a&gt; 里面的 lazy-search.el 放到 ~/elisp 目录&lt;/li&gt;
-  &lt;li&gt;把下面的配置加入到 ~/.emacs 中&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'load-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;expand-file-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/elisp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'lazy-search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;global-set-key&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;kbd&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;M-s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'lazy-search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;把光标移动到想要搜索的符号位置&lt;/li&gt;
-  &lt;li&gt;按 Alt + S 激活 lazy-search 模式&lt;/li&gt;
-  &lt;li&gt;按照下面的按键跳转, 或者按 q 退出 lazy-search 模式&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;按键&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;命令&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;解释&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;s&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-jump-to-next-match&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;跳转到下一个匹配位置&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;r&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-jump-to-previous-match&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;跳转到上一个匹配位置&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;.&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-jump-to-first-match&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;跳转到第一个匹配位置&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;,&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-jump-to-last-match&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;跳转到最后一个匹配位置&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;i&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-jump-to-init&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;跳转到开始搜索的位置&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;j&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-next-line&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;移动到下一行&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;k&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-previous-line&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;移动到上一行&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;h&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-backward-char&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;移动到前一个字符&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;l&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-forward-char&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;移动到下一个字符&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;H&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-line-beginning&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;移动到行首&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;L&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-view-line-end&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;移动到行尾&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;J&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-scroll-up-one-line&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;向上滚动一行&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;K&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-scroll-down-one-line&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;向下滚动一行&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;e&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-scroll-down-one-page&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;向上滚动一屏&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Space&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-scroll-up-one-page&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;向下滚动一屏&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;S&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-mark-symbol-or-region&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;用光标处的符号重新搜索&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;w&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-copy-object&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;拷贝搜索对象&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;E&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-edit-object&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;编辑搜索对象并重新搜索&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;c&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-search-previous-cache&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;搜索上次搜索对象&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Y&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-search-yank&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;搜索yank内容&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;t&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-to-isearch&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;切换到 isearch 模式&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;q&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;lazy-search-quit&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;退出 lazy-search 模式&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name></name></author><summary type="html">Emacs的isearch一般都是激活以后直接搜索字符并上下跳转, 但是我们编程的时候, 往往搜索的内容就是当前光标处的符号, 如果每次都敲一遍符号字符串效率就会非常低.</summary></entry></feed>
+&lt;p&gt;回到武汉后, 还在下雪, 超级怀念云南四季如春的日子, 希望以后可以在云南找一个安静的地方生活和学习下去, 在那样的蓝天下, 远离世间纷扰, 安安静静的生活, 真是神仙般的生活…&lt;/p&gt;</content><author><name></name></author><summary type="html">老婆有一个小小的梦想, 在有生之年周游世界, 看遍这个世界的美与不同. 继青岛大海、银川沙漠、红岩顶雪山、黄山奇石后, 今年趁着武汉的寒冬带老婆来一次自驾迁徙, 体验四季如春的彩云之南.</summary></entry></feed>
