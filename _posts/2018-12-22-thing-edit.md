@@ -14,7 +14,7 @@ thing-edit.el 相对于其他复制插件的优势在于你完全不用移动光
 
 
 ### 安装方法
-1.  下载 [thing-edit git](https://github.com/manateelazycat/thing-edit) 里面的 thing-edit.el 放到 ~/elisp 目录
+1.  下载 [thing-edit](https://github.com/manateelazycat/thing-edit) 里面的 thing-edit.el 放到 ~/elisp 目录
 2.  把下面的配置加入到 ~/.emacs 中
 
 ```
@@ -97,8 +97,6 @@ thing-edit.el 相对于其他复制插件的优势在于你完全不用移动光
 |                                 |                                                                     |
 
 #### 期待发PR
-thing-edito.el 本来放到我自己的 [插件目录中]( https://github.com/manateelazycat/lazycat-emacs/tree/master/site-lisp/extensions/lazycat)
-
-如果各位喜欢, 觉得有新的功能需要扩展, 我会把我自己的插件从 lazycat-emacs 中抽取出来, 单独成一个 git 仓库方便大家发送PR.
+欢迎各位黑客大佬贡献新的补丁。
 
 谢谢 谢鹏 同学编写的 thing-replace-* 函数, 非常的好用.
