@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-05T18:36:50+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">利用lazy-load.el按需加载Emacs插件</title><link href="http://localhost:4000/emacs/2019/05/05/lazy-load.html" rel="alternate" type="text/html" title="利用lazy-load.el按需加载Emacs插件" /><published>2019-05-05T00:00:00+08:00</published><updated>2019-05-05T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/05/lazy-load</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/05/lazy-load.html">&lt;p&gt;随着Emacs的插件越来越多，Emacs的启动速度会越来越幔。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-07T23:18:15+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">读《重新理解创业》</title><link href="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html" rel="alternate" type="text/html" title="读《重新理解创业》" /><published>2019-05-07T00:00:00+08:00</published><updated>2019-05-07T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship</id><content type="html" xml:base="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html">&lt;p&gt;5.1的时候在家读了周航写的《重新理解创业》，这是一本我几乎读一页就需要标注半夜的书。看到书中的很多文字，其实看到的更多是我自己，在深度奋斗的时候，自己犯过很多相同的错误。当时在这些错误中很难跳出局面来看待自己，这两年从操作系统行业出来以后，一直在复盘自己过去的成长和缺陷，内心做了很多真诚的对话，直到看了这本书，很多自我对话的内容才重新梳理清楚，才知道原来世界上不止有我犯过同样的错误，不止有我有同样的想法，好的是，当读完这本书时，我收获了更多释怀，更能接受过去的自己。&lt;/p&gt;
+
+&lt;p&gt;周航是一个了不起的人，中国这种成王败寇的习惯给了太多成功者神话般的传说，周航却毫无保留的写出了自己创业过程中的无数坑，更难能可贵的是，当易道失败以后，认真的审视自我，进行了很多升维的思考，这种向内的深入审视带来的思考财富远远比创业成功后光鲜的表面结果更能激励创业者。&lt;/p&gt;
+
+&lt;p&gt;读书有三遍，第一遍开拓视野，第二遍深入思考，第三遍写出感想至融入自我。&lt;/p&gt;
+
+&lt;p&gt;下面就是我对这本书的第三遍阅读：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;和成功的待遇截然不同，这个社会又如此厌恶失败、鄙视失败。我们耻于谈论失败，甚至会讥讽一切失败的现象、失败的人。我们经常冷眼看着一家面临崩盘的公司走向灭亡，然后说：“我早就知道如此，你看，应验了吧？”眼见他起高楼，眼见他楼塌了，大家对待失败大抵都是这般吃瓜群众的心态。。。换个角度重新思考，从中你会发现美国创业文化中很重要的一部分是对失败的宽容。而且这种宽容，不仅没有影响到他们的创新，反而鼓励了创业者尝试和冒险，极大激发了创新。。。回溯科技史，我们发现推动行业发展的产品，并不全部都是成功的，失败在其中的作用举足轻重。正是那些失败的产品成为革新的养料——失败的尝试也是历史中群星闪耀的时刻。这样一看，所谓的失败是多么美好的事情，这是失败对于我们全社会的价值。如果一个社会还在耻于谈论失败、害怕失败、排斥失败，只崇尚成功的话，我们不太可能有探索意义上的创新。所以，如果你希望这是一个创新的国度，一个创新的社会，那么我们必然需要重新定义失败，重新理解失败。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以前做开源社区的时候，一直体会到国内开发者深入人心的 “国外的月亮圆，国外的代码就是香” 观念，当时一直从正面看，这是一种社会病态。但是现在想想，就和周航说的一样，背后深入的是整个社会害怕失败的教育和社会压力，大家因为太害怕失败以后给自己太多压力，从而导致自己没法从容的发挥和应对，往往最后真的就走向了失败。失败对于我这种性格好强的人，尤其有威慑力，为了做到完美，总是希望做到别人心目中的最好，即使身体有时候太累了，也在消耗式的坚持，往往容易进入High的时候像疯子，High完以后就进入 “对什么都不感兴趣” 的丧尸状态了。&lt;/p&gt;
+
+&lt;p&gt;其实没有人能够每天都能够正能量，但是社会希望每天都是正能量，人性的本质本来就是残缺，但是人性的伟大也是因为残缺而不断努力的去修行，变成更好的自我的过程。如果每个人都是完美的，一个大家对统一完美的标准去活着，社会就会失去多样性，失去多样性的生态和社会最终都会磨灭。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;我们学习失败的真正目的在于，面对它，接受它，解决它，放下它，然后从中成长，让自己以后生活得更好。。。于是我总结，学习失败的真正意义在于，我们可以坦然面对失败、接受失败、解决失败、放下失败，而不是避免失败，因为任何人都避免不了。失败几乎就是生命的一部分。拒绝失败，就是拒绝生命本身。这也是失败对我个人的意义所在。。。企业的终极宿命跟人的生命一样，会经历出生、成长、青壮年的强壮、中年的瓶颈、衰老直至死亡，关键是你怎么看待这件事情。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以前，我都一直在遵循克服自己的缺点，努力的做更好的自己，不断学习不断成长。我对于失败，最多只是很快忘记失败，但是我从来没有像周航这样去诠释失败，去理解失败。&lt;/p&gt;
+
+&lt;p&gt;一直很喜欢看神秘博士，神秘博士对于死亡是相当推崇的，认为死亡就是正常的一部分，也是生命精彩的延续。&lt;/p&gt;
+
+&lt;p&gt;现在回想起来，客观的看我这前半生的所有事情，大多数都是失败的，总是先错很多次，最后一两次才会做对，跌跌撞撞的走过来，这么多事情，失败是常态，成功的事情在几率上寥寥无几。唯一的变化是，面对失败更从容。最开始写代码的时候，什么都不懂，一错了就怀疑自我，抱怨自我，但是写了十几年代码以后，发现现在再也不会因为代码写不出来而焦虑，因为理解和知识还没到那一步，没有看穿，所以不对，但是因为心中觉得总是可以解决的，所以现在很少会因为代码而焦虑，任何编程的知识对于我来说只是风格、体验和投入不一样，平常心，慢下来往往有更大的收获。&lt;/p&gt;
+
+&lt;p&gt;我一直可以坦然面对失败，编程领域就是这样的。但是我在生活中，编程领域以外的区域，却很少能够像编程那样做的那么从容和快乐，撇开投入的时间和看穿的能力，最大的区别是，我对失败的认识不够。我在编程领域能够正确的认识失败，接受失败，但是在编程领域以外却很少能够面对失败，接受失败，导致有时候因为很多事情头破血流。&lt;/p&gt;
+
+&lt;p&gt;现在体会到，不仅仅是编程，从编程扩展开去，人生和创业过程中，要做到面对失败、接受失败、解决失败、放下失败。原来一直让自己放下，但是自己总是放不下。现在看来，原来是不知道自己应该放下什么才导致自己越想放下越放不下。&lt;/p&gt;
+
+&lt;p&gt;放下，放下失败才是修行！&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果你在创业的时候像当时的我们，把很多问题归结为营销问题，就要格外小心。实际上很可能是你在战略上出了问题，你的产品需求和定位就不应该那样设计。如果你需要用钓鱼的方式一个一个地“捞”用户，那说明这件事情本身就错了，你应该是用大网去捕鱼，而不是用鱼竿去钓鱼。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;技术人因为不善言辞，总是表面的认为自己不懂营销，往往机会陷入去学习很多营销的技巧上，这样从结果上往往还适得其反，纠其缘由还是战略方向不对。&lt;/p&gt;
+
+&lt;p&gt;战略方向不对源于对事情没有看穿，对行业没有看穿，当自己能够看穿行业时，就能看到行业的未来和趋势，能够看到趋势时，营销和市场不过是看穿的表现形式，而不是通过营销本身的技巧去做到看穿和成功。&lt;/p&gt;
+
+&lt;p&gt;所以，不管是市场营销高手还是技术人，本质上还是要多积累多思考，当你看穿这个行业时，营销就不会是问题，这个和一个人善不善于言辞关系这不大。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;对一家公司，特别是创业公司来说，一个时期只能有一项关键任务，不能有多项。但是我看到太多创业公司同时在做多项内容，并发多进程任务，这说明还没有思考清楚本质问题。并发多进程任务，看起来给公司带来很多机会和可能性，但其实公司资源总共就这么点儿，在关键任务之外做其他事情都是浪费资源，所以我们要认清每个时期竞争的关键和本质。只有认识清楚，你才能够确定好一家公司在某个时期的关键任务是什么。关键任务清楚了，公司上下才能达成共识，把全公司之力放在这一件事上&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;战略是自己视野和看穿行业的自然延伸，但是战略不是未来的口号和愿景。战略真正价值在于当你看穿一件事情以后，别人看不穿时，你可以通过你的战略去指导整个团队的执行力。而指导执行力的关键是，战略一定是简单的，单一的，专注并且带有长期价值的。&lt;/p&gt;
+
+&lt;p&gt;简单来说，如果战略简单到一句话说清楚，公司所有人都能够说清楚，即是好的战略，如果最终还能够打胜仗，那就是伟大的战略。反之，复杂的，左右摇摆的，飘忽不定的都不是战略，今天打东边，明天打西边，最后只会让大家去怀疑战略的制定者是否真的想清楚了？&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;愿景不是广告中的slogan（标语）。用户真的关心你的愿景吗？用户可能不会花时间理解它，因为他们最关心的是从中能得到什么。。。淘宝尚且如此，我们作为创业者更应该始终坚持挖掘品牌为用户创造的当下价值。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以前就走过这样的坑，就像大多数互联网公司一样，不装逼说出一段传奇故事，不装逼写一段高逼格的文字感觉就不配做互联网公司，不配在这个牛逼的时代混下去。&lt;/p&gt;
+
+&lt;p&gt;人都是自私的，社会也是自私的，但是整个社会在自私和多样性的生态中蓬勃发展，每个人都希望从别人那里获得更多的帮助和价值，同时自己创造价值去满足别人。&lt;/p&gt;
+
+&lt;p&gt;从根本上来说，如果一个企业讲清楚自己做的事情能够对用户和对社会产生什么样的价值？别人就记住你了，这个比你未来是否能够登顶更能让大家记住，因为现在变化太快，未来是什么样的谁都不知道。&lt;/p&gt;
+
+&lt;p&gt;当移动支付和打车在打价格战的时候，大家就知道一点，打车真便宜，座贼远的车还免费还倒给一瓶水，大家都说滴滴好，但是真的布局完成，价格战回归理性后，司机越来越少，大家只会抱怨滴滴。你说滴滴变了吗？也许一开始就那么坏，也许没有大家想的那么坏，但是为什么短短几年，大众的意识形态变化那么多？因为人只关心可以从你这里获得什么， 大部分人都倾向于看短期利益。所以赚钱来说，就是要把当下的价值说清楚，就是最好的品牌宣传，当在很长时间区间里把每个阶段和每个当下都做好了，愿景自然就实现了。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;因此，判断一个产品的流量是否有价值，我们先看以下几个要素：一是用户数，即DAU；二是时长，看用户黏性；三是交易属性。后来我自己有一个用来判断的公式：流量价值=DAU×时长×交易系数。。。比如宜家，为什么它要卖1元的冰激凌？很明显这并不赚钱，但宜家却非常欢迎大家去占这个便宜。因为家具是个低频、高价的产品，所以宜家需要在家具之外卖家居，比如衣服架、毛巾架、拖鞋以及那些价格非常低的食物等，这些家居产品的消费频次肯定要高得多。通过高频、低价的商品拉来流量，也为其他方面带来了利润，很多聪明的商家都会采用这个策略。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以前大家都在谈流量，但是流量是什么？流量怎么来？大家只看到别人有流量自己羡慕？但是自己做不到，做不到的原因是什么？还是看不穿。&lt;/p&gt;
+
+&lt;p&gt;流量的定义：DAU x 时长 x 交易系数&lt;/p&gt;
+
+&lt;p&gt;以前很不能理解那些不赚钱的商品，但是从这个公式来看，低利润和高利润的商品都有它自身的价值和战术战略一样，多样性和复杂性才是对抗不确定未来的最好的策略，而不仅仅只是看利润高的单一策略。&lt;/p&gt;
+
+&lt;p&gt;同时知道流量的价值后，倒过来很多事情怎么做选择反倒更为简单了。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;1.勇敢地做自己。2.去搭建你真正喜欢的团队，因为你只能领导你喜欢的人。3.去做与你的特质和领导力相匹配的事情。我相信你的领导力一定会得到充分发挥，你也将成为一个有领导力的人。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以前有很长一段时间都在锻炼自己包容不同性格的人，甚至专门找那种和我不一样的人去相处。客观的说，锻炼了自己很多，但是同时也让自己更多的失去自我，变的越来越活的像大家期望的样子，反而失去了自我最宝贵的特质，当人失去自我的时候，往往也就是失去一切的开端。&lt;/p&gt;
+
+&lt;p&gt;看到周航这一个观点的时候，还是蛮感慨的，人活一辈子的轨迹也是蛮有趣的，从向别人学习，包容别人到回归自己。&lt;/p&gt;
+
+&lt;p&gt;现在特别能够理解这段话，因为你只能领导你喜欢的人，哈哈哈，有时候和三观不和的人一起合作，其实往往事倍功半，当然这句话不是说不包容和固执，而是先要修行好自己，臭味相投但同时一样厉害的人一起合作，那种默契的感觉会好到你忘记人生和创业的痛苦。&lt;/p&gt;
+
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
+
+&lt;p&gt;总是喜欢去找一段最喜欢的话作为文章的结尾，希望同样可以激励正在阵痛期而未来更勇敢的你。&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;这段时间我有特别大的感触，总结一个关键词就是“成败”。我想说，只有你足够痛的时候，新的光亮才可能照进来。痛可能是光照进来的地方，如果你有足够的痛，恭喜你，你可能有新的开始，因为新的光亮可能照到你。在易到的创业中我经历了各种各样的事情，直到今年还遇到一些很痛苦的事情。正是因为经历太多，这些痛在自己心中反复咀嚼，才使得我开始把眼光真正从外部收回，从向外看世界回到了向内看自己，看自己的内心是怎么想的，认知上有没有变化，又应该有什么变化。我觉得只有足够痛的时候才会有这种心态，才会有新的开始。&lt;/p&gt;</content><author><name></name></author><summary type="html">5.1的时候在家读了周航写的《重新理解创业》，这是一本我几乎读一页就需要标注半夜的书。看到书中的很多文字，其实看到的更多是我自己，在深度奋斗的时候，自己犯过很多相同的错误。当时在这些错误中很难跳出局面来看待自己，这两年从操作系统行业出来以后，一直在复盘自己过去的成长和缺陷，内心做了很多真诚的对话，直到看了这本书，很多自我对话的内容才重新梳理清楚，才知道原来世界上不止有我犯过同样的错误，不止有我有同样的想法，好的是，当读完这本书时，我收获了更多释怀，更能接受过去的自己。</summary></entry><entry><title type="html">利用lazy-load.el按需加载Emacs插件</title><link href="http://localhost:4000/emacs/2019/05/05/lazy-load.html" rel="alternate" type="text/html" title="利用lazy-load.el按需加载Emacs插件" /><published>2019-05-05T00:00:00+08:00</published><updated>2019-05-05T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/05/lazy-load</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/05/lazy-load.html">&lt;p&gt;随着Emacs的插件越来越多，Emacs的启动速度会越来越幔。&lt;/p&gt;
 
 &lt;p&gt;Emacs的启动速度慢，主要有两个原因：&lt;/p&gt;
 &lt;ol&gt;
@@ -445,387 +533,4 @@ defaults.pcm.card 1
     &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Popen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;play_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;玩树莓派还是Python好啊, 轻描淡写几行代码就搞定了.&lt;/p&gt;</content><author><name></name></author><summary type="html">树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.</summary></entry><entry><title type="html">追逐彩云之南</title><link href="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html" rel="alternate" type="text/html" title="追逐彩云之南" /><published>2019-02-10T00:00:00+08:00</published><updated>2019-02-10T00:00:00+08:00</updated><id>http://localhost:4000/travel/2019/02/10/tourism-yunnan</id><content type="html" xml:base="http://localhost:4000/travel/2019/02/10/tourism-yunnan.html">&lt;p&gt;老婆有一个小小的梦想, 在有生之年周游世界, 看遍这个世界的美与不同.
-继青岛大海、银川沙漠、红岩顶雪山、黄山奇石后, 今年趁着武汉的寒冬带老婆来一次自驾迁徙, 体验四季如春的彩云之南.&lt;/p&gt;
-
-&lt;p&gt;冬季去旅游景区的最大好处就是景区的人非常少, 可以尽情的感受风景, 而不是大家一起扮演植物大战僵尸.&lt;/p&gt;
-
-&lt;h4 id=&quot;石牛寨国家地质公园&quot;&gt;石牛寨国家地质公园&lt;/h4&gt;
-&lt;p&gt;门票+下山索道: 207元/人&lt;/p&gt;
-
-&lt;p&gt;第一站去了离武汉最近的岳阳市, 从马蜂窝知道岳阳市有一个适合户外攀岩的丹霞地质公园, 石牛寨国家地质公园离武汉非常近, 高速武深高速非常好走, 末端的盘山路路有点窄, 建议在白天通过, 视野比较好一点.&lt;/p&gt;
-
-&lt;p&gt;当地的美食非常像贵州风味的做法, 我们在上山之前的一个路边小餐馆, 三菜一汤才70~80, 美味又实惠.&lt;/p&gt;
-
-&lt;p&gt;住宿的话建议住在山下的县城里, 条件要好很多, 这次我们住的是景区门口的客栈, 不管是吃的还是住宿都不是很好 (没想到老司机第一站就翻车了, 手动捂脸)
-&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-c9be28fc0ccd2d99.jpg&quot; alt=&quot;141549774282_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-108673a5bf43c453.jpg&quot; alt=&quot;151549774283_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-09f853c0d5b5212e.jpg&quot; alt=&quot;161549774284_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-3eb9eb44c5c169eb.jpg&quot; alt=&quot;171549774285_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-e808d5c1e2e88178.jpg&quot; alt=&quot;181549774286_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-e6a12952b22756d0.jpg&quot; alt=&quot;191549774287_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d08e750b1e7bb9db.jpg&quot; alt=&quot;201549774288_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-2dd4e3d30d965bf8.jpg&quot; alt=&quot;211549774289_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;也许是去过了黄山和银川的寺口大峡谷, 对奇石怪林和丹霞之险已经没那么新奇了, 我们一家第二天早早的起床随着缆车就登山山顶开始游览, 景区不是很大, 2个多小时就游览完了, 下山的时候比较坑, 说是可以走下山, 但是是没有下山路的, 只能被迫坐索道.&lt;/p&gt;
-
-&lt;p&gt;下了山可以带小朋友逛一逛山下的猴园坐一下秋千, 整个景区就算打卡完成.&lt;/p&gt;
-
-&lt;p&gt;对于第一站的评论:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;如果没有体验过丹霞地貌, 在武汉还是可以去一下的, 非常近, 当天去当天回.&lt;/li&gt;
-  &lt;li&gt;如果已经体验过各种山川, 不建议去, 景点不大, 但是收费却比较高, 周边的设施现在还不是很好.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;张家界&quot;&gt;张家界&lt;/h4&gt;
-&lt;p&gt;门票+免费环保车: 70元/人, 四天内进出景区&lt;/p&gt;
-
-&lt;p&gt;张家界国家森林公园是拍摄西游记和阿凡达的取景地, 号称”三千奇峰，八百秀水”, 对张家界的各种传说旁听已久, 甚是向往.&lt;/p&gt;
-
-&lt;p&gt;这次旅游比较幸运的时, 每去一个地方, 老天爷都晴空高照, 张家界游玩的几天也不例外.&lt;/p&gt;
-
-&lt;p&gt;去之前, 看了马蜂窝攻略, 说张家界景点浩大, 包括黄石寨、金鞭溪、袁家界、杨家界、天子山和索溪峪等区域, 漫游四天, 快的也要三天.&lt;/p&gt;
-
-&lt;p&gt;仔细研究了这几个景点, 黄石寨这种索道上索道下的甚是乏味, 溶洞和玻璃栈道也没有什么好玩的. 最后决定就去两个地方:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;国家森林公园大门口的 “金鞭溪” (西游记取景地), 来回14公里, 一下午就可以徒步完成&lt;/li&gt;
-  &lt;li&gt;袁家界和杨家界 (阿凡达的取景地), 因为景区有免费的环保车接送, 其实一天就足够游览&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-0dafe95aae3d38a6.jpg&quot; alt=&quot;221549775640_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-bd0183e292a3de40.jpg&quot; alt=&quot;231549775641_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-14b83fd8dbeca6d0.jpg&quot; alt=&quot;241549775642_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-c7429b9c3c36ebc5.jpg&quot; alt=&quot;251549775643_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-9824fd18c1f0ec19.jpg&quot; alt=&quot;261549775644_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-238f8c8572cd1fb9.jpg&quot; alt=&quot;271549775645_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-703384328d9139a1.jpg&quot; alt=&quot;281549775646_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-80c06167bf9e1ae2.jpg&quot; alt=&quot;291549775647_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-c304c4a16200ba43.jpg&quot; alt=&quot;301549775648_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-f0d7722dcce5419b.jpg&quot; alt=&quot;311549775656_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-1f422da603a27147.jpg&quot; alt=&quot;321549775657_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-1a7d0d0cd47c6a06.jpg&quot; alt=&quot;331549775658_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-071acaec2ea64568.jpg&quot; alt=&quot;341549775659_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-349f982a8d9138ab.jpg&quot; alt=&quot;351549775660_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-8ae34668af1dfc23.jpg&quot; alt=&quot;361549775661_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-ba65d188d0f2a943.jpg&quot; alt=&quot;371549775662_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-f8d4fe331a8e62e3.jpg&quot; alt=&quot;381549775663_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-77ab166372759da3.jpg&quot; alt=&quot;391549775664_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;对于第二站的点评:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;金鞭溪的感觉就像走进了一个原始森林的小溪中, 逆流而上, 到处都是参天的松柏, 夏天来一定是天然的大自然氧吧, 沿途到处都是成群结队的猴子, 进景区千万不要带任何吃的, 我们亲眼看到一大堆猴子直接上手抓破口袋一抢而哄的场景, 非常凶狠, 就是一帮土匪&lt;/li&gt;
-  &lt;li&gt;袁家界和杨家界的景色大部分都是百米高的怪石, 和黄山那种自然的巧夺天工不太一样的是, 张家界的这些怪石怪山透出了很多灵气, 特别是在山顶往下看的时候, 总是感觉有很多奇怪的生灵就在这些怪石群的谷底一样, 回武汉后才明白, 因为这就是西游记的取景地啊, 看到这些地方就难免想到神仙出没的感觉&lt;/li&gt;
-  &lt;li&gt;张家界虽然大, 但是景区门票在淡季时相当便宜, 70元4天还包括免费的大巴和环保车接送, 最重要的是淡季人少, 我觉得冬季是游览张家界最好的时候&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;武隆天生三桥--天坑地缝--仙女山滑雪场&quot;&gt;武隆天生三桥 + 天坑地缝 + 仙女山滑雪场&lt;/h4&gt;
-&lt;p&gt;天生三桥门票: 75元/人
-天坑地缝门票: 75元/人
-仙女山滑雪场: 240元/小时&lt;/p&gt;
-
-&lt;p&gt;本来准备从张家界直接去恩施大峡谷, 但是网上评论看, 恩施大峡谷主要是爬楼梯, 张家界第二天下了7000阶台阶, 实在没有勇气去爬楼梯了. 在研究从张家界回四川的高速上, 发现了武隆这个网红景点, 说改就改, 第三站就直接开到武隆.&lt;/p&gt;
-
-&lt;p&gt;武隆天生三桥是«满城尽带黄金甲»和«变形金刚4»拍摄地, 是全世界最高的串珠式天生硚群。景区内有三座平均高度300米以上的天然石拱桥呈纵向排列, 平行横跨在羊水河峡谷之上，将两岸山体连在一起。三座天然石拱桥之间又有青龙天坑、神鹰天坑两个天坑，形成了“三硚夹两坑”的奇特景色。&lt;/p&gt;
-
-&lt;p&gt;武隆的整个行程还是比较轻松的, 第一天早上游览天生三桥, 天生三桥出口有直接到天坑地缝入口的大巴, 下午轻轻松松即可游览完天坑地缝. 第二天早上开车上山到仙女山山顶玩一下山顶的自然滑雪场, 坐着滑雪圈, 还是挺刺激的, 比较适合带小朋友一起玩.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-32177e10c9708cc8.jpg&quot; alt=&quot;401549787122_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-62ceca1d09e54124.jpg&quot; alt=&quot;411549787123_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-bc6ff8e461f061d1.jpg&quot; alt=&quot;421549787124_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d17ce3b859c58331.jpg&quot; alt=&quot;431549787125_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-ff0f8ca90446a8d7.jpg&quot; alt=&quot;441549787126_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d8c50e052ce5f6eb.jpg&quot; alt=&quot;451549787127_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-44697f3b0dac9265.jpg&quot; alt=&quot;461549787128_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-011cef1c3c3052cc.jpg&quot; alt=&quot;471549787129_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-6c4f851919912f4e.jpg&quot; alt=&quot;481549787130_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-203c5b52483653fd.jpg&quot; alt=&quot;491549787131_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-473937e5cd55f9cb.jpg&quot; alt=&quot;501549787132_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-859f2b6df2f54a5f.jpg&quot; alt=&quot;511549787133_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;对于第三站的点评&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;武隆是我们旅途中临时添加的景点, 但是景色之美和震撼却是超出我们的期望&lt;/li&gt;
-  &lt;li&gt;天生三桥的那三座横跨天坑之上的自然石桥, 那种仰望才能净收眼底的震撼很难从照片中感受出来, 只能亲自站到坑底, 才能惊叹大自然的鬼斧神工和自己的渺小&lt;/li&gt;
-  &lt;li&gt;天坑地缝中地缝的幽灵, 山泉的碧绿和飞瀑的秀丽都非常美, 但是和我们自己幻想的美景方向不太对, 我们去之前以为是深入地洞看地下暗河, 去了以后发现这是顺着谷底的小溪顺流而下&lt;/li&gt;
-  &lt;li&gt;仙女山山顶的滑雪场很好玩, 我们去的时候是冬季, 强烈建议大家夏天来仙女山山顶, 这里的草原, 公路和森林号称有东方瑞士的即时感&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;四川老家&quot;&gt;四川老家&lt;/h4&gt;
-&lt;p&gt;四川老家主要是吃酒, 啥都不说了, 吃了妹妹做的麻辣味香肠和羊肉杂, 满满的满足感.
-&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-29af695b3d227538.jpg&quot; alt=&quot;521549788912_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-a89176d681eada75.jpg&quot; alt=&quot;531549788913_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;泸沽湖&quot;&gt;泸沽湖&lt;/h4&gt;
-&lt;p&gt;门票: 75元/人&lt;/p&gt;
-
-&lt;p&gt;在四川住了2~3天, 就驱车来到西昌, 西昌是四川省里泸沽湖最近的一个城市, 第二天一早从西昌开车前往泸沽湖, 原来以为200多公里的路其实一上午几个小时的时间完全足够了, 没想到S307盘山路整整开了一天, 一路上都是下坡发卡弯, 在这样的山路上开, 需要注意控制车速和点刹, 千万不要高速和急刹, 因为这里出了问题不是车祸, 而是空难, 随时都可以跌下悬崖.&lt;/p&gt;
-
-&lt;p&gt;去之前我就在想, 泸沽湖再美不过就是一个湖而已, 可以震撼到哪里去?&lt;/p&gt;
-
-&lt;p&gt;头一天到泸沽湖都晚上了, 除了满天繁星什么都看不到, 到了第二天早上起床后, 才真的体验到泸沽湖的美, 泸沽湖为四川最大, 全国第三大的淡水湖, 水清澈见底, 湖面上有到处都是野鸭子, 西伯利亚飞来过冬的海鸥和小渔船, 加上规划很好, 湖边没有商业化的小摊贩, 吃的住的都在集中的半岛上, 90%的沿途都是自然风光和野生动物, 在湖边的山坡上看到成群的羊群牛群…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d3f7bb38a683a5cd.jpg&quot; alt=&quot;541549788914_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-60527b7159b4d834.jpg&quot; alt=&quot;551549788915_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-17b4106b60ceb76b.jpg&quot; alt=&quot;561549788916_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-ffe77d9deb0b549c.jpg&quot; alt=&quot;571549788917_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-b4db25802f50b06d.jpg&quot; alt=&quot;581549788918_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d83405d249ff9267.jpg&quot; alt=&quot;591549788919_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-acd9d9635d443576.jpg&quot; alt=&quot;601549788920_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-91149bee320ed7cd.jpg&quot; alt=&quot;611549788921_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-1bac501e4042b6b7.jpg&quot; alt=&quot;621549788922_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;对于第四站泸沽湖的点评:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;泸沽湖的美, 那种自带滤镜的美, 不像大海, 沙漠和雪山, 它的美不是那种你一眼看去就会为之震撼的美, 它的美是那种幽静的美, 你的心越平静你越能体验它的美, 如果说别的风景是饕餮盛宴, 泸沽湖的美就是一徐清茶, 需要你静静的品味, 越品味越陶醉其中&lt;/li&gt;
-  &lt;li&gt;去过泸沽湖的人, 无不夸奖, 除了那种静谧的美, 我想更多的游客是因为泸沽湖的生态, 泸沽湖环游一圈是那种安安静静的美景等着你发现, 没有商贩的吆喝, 整个湖周围的生态和卫生都保持的非常好, 非常干净, 干净到你舍不得去污染它. 也正因如此, 我们这个时代看遍古镇和商业运作的景点后, 更加珍惜泸沽湖这种原汁原味的自然生态&lt;/li&gt;
-  &lt;li&gt;环湖累了就望着一望无际的湖面, 波光粼粼, 海鸥, 羊群, 牛群, 走在草地和沙滩上, 感觉整个世间的累都被泸沽湖给稀释了, 就算行走在走婚桥上, 随手一拍都是大片美景…&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;泸沽湖的美就是没有任何刻意和装饰的美, 看到泸沽湖, 就想起了人生自己一样, 柴米油盐酱醋茶, 轻描淡写都是美, 你在这种美当中, 不会感到美腻了, 也不会有一见钟情的震撼, 更不会在离开它时日消逝后忘记它的美, 因为当你第一天看到它时, 它的一举一动, 一山一水早就印入你的心田, 它的美给你的感觉是一旦触碰后永远都无法忘记的美, 因为它的美就是家的感觉, 人对完美生活的真实向往.&lt;/p&gt;
-
-&lt;h4 id=&quot;丽宁公路&quot;&gt;丽宁公路&lt;/h4&gt;
-&lt;p&gt;在旅游开始之前和到张家界后, 就有多位朋友告诉我, 从四川到云南的那段山路非常刺激.&lt;/p&gt;
-
-&lt;p&gt;泸沽湖环湖完了以后, 就驱车前往丽江玉龙县的白沙古镇, 中间的这段路就叫做丽宁公路, 先给你们几张图感受一下.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-9cd39fd2a90e6e47.jpg&quot; alt=&quot;641549790841_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-95304e441de15c5c.jpg&quot; alt=&quot;651549790842_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在这条公路上开, 每隔五秒就是导航播报: 前方急下坡, 前方有急弯, 旁边有落石…
-全程都是急下坡后马上左转90°急弯后马上又180°向右的发卡弯, 周而复始, 如果不是老司机千万不要开这条路, 太危险了, 因为当你躲避落石的同时往往会和对面的来车迎面擦过.&lt;/p&gt;
-
-&lt;p&gt;我开完这条公路后, 才发现这条丽宁公路在云南12条魔鬼公路中排名第二, 秒杀传说中的秋名山, 原来秋名山车神不在日本, 在那些弯道超我车的云南司机里啊&lt;/p&gt;
-
-&lt;h4 id=&quot;玉龙雪山&quot;&gt;玉龙雪山&lt;/h4&gt;
-&lt;p&gt;门票 + 牦牛坪索道: 165元/人&lt;/p&gt;
-
-&lt;p&gt;在白沙古镇住下后, 第二天就带着小朋友爬了北半球维度最低,海拔最高的玉龙雪山, 因为去年一家人已经挑战过徒手攀登红岩顶, 加上今年玉龙雪山上有索道, 所以攀登玉龙雪山非常轻松.&lt;/p&gt;
-
-&lt;p&gt;玉龙雪山这边天非常干, 要多注意喝水和抹唇膏, 要不是会变成洪七公的嘴唇的, 哈哈哈哈.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-0e41ec2181783315.jpg&quot; alt=&quot;661549791434_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-4f6968294b8b50c9.jpg&quot; alt=&quot;671549791435_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-457ee731a42e9d53.jpg&quot; alt=&quot;681549791436_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-1b4e5a96836fb8f7.jpg&quot; alt=&quot;691549791437_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-8f84c878b2e3257e.jpg&quot; alt=&quot;701549791438_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-43beba652ab332d1.jpg&quot; alt=&quot;711549791439_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-e005b196037da5b0.jpg&quot; alt=&quot;721549791440_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-f0158009fab9a50a.jpg&quot; alt=&quot;731549791441_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;第五站评价:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;玉龙雪山不像大多数川西和藏区的雪山, 雪并不多, 海拔也不是那么夸张(5596米), 它给我的感觉非常非常的安静, 甚至有一点暖和的感觉&lt;/li&gt;
-  &lt;li&gt;因为玉龙雪山身处云南境内, 山下四季如春, 绿植长披, 反而有一点像瑞士的雪山&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;其实玉龙雪山并不是此行的目的地, 来朋友的青旅才是最终的目的, 只是刚好朋友的青旅就在玉龙雪山的山脚下.&lt;/p&gt;
-
-&lt;h4 id=&quot;那里青旅&quot;&gt;那里青旅&lt;/h4&gt;
-&lt;p&gt;本来准备去了泸沽湖以后, 再去稻城亚丁, 但是在四川的时候, 耽搁的时间有点多, 加上沿途感冒严重,不想春节的时候还在亚丁雪山的寒风中过.&lt;/p&gt;
-
-&lt;p&gt;所以这次直接砍掉了稻城亚丁, 转而在朋友的青旅中度过春节, 我们一家在那里青旅度过的非常非常快乐, 感谢老朋友贤民的招待 (贤民也是电脑高手, deepin的粉丝), 还有米汤, 民谣小川, 彪叔以及倩倩的热情招待, 如果你也是文艺青年, 厌倦了商业化的酒店, 不妨也去那里青旅住几天, 看着雪山, 每天和民谣歌手和各国友人畅聊人生, 那才是生活&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-6fc3e3fe68a20b00.jpg&quot; alt=&quot;741549792072_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-df855f5da0a263fc.jpg&quot; alt=&quot;751549792073_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-ffee0f18c2a3bafd.jpg&quot; alt=&quot;771549792075_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-0cf3350319b2fa0f.jpg&quot; alt=&quot;781549792076_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-f1cf028a7dda014c.jpg&quot; alt=&quot;791549792077_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-490eb373f4f60bd9.jpg&quot; alt=&quot;801549792078_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-b5a1fdbd74aecf03.jpg&quot; alt=&quot;811549792079_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-62c543e09e2949c1.jpg&quot; alt=&quot;821549792080_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-11c5a686c16d000b.jpg&quot; alt=&quot;831549792081_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-94d61e471eb30bbb.jpg&quot; alt=&quot;841549792082_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-eaeaebaf6155fb6a.jpg&quot; alt=&quot;851549792083_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;洱海&quot;&gt;洱海&lt;/h4&gt;
-&lt;p&gt;门票: 无&lt;/p&gt;
-
-&lt;p&gt;在那里青旅过完春节后, 初一赶到了传说中的大理洱海.&lt;/p&gt;
-
-&lt;p&gt;洱海就是一个缩小版的泸沽湖, 但是我却很难去赞美洱海, 因为商业化太严重了, 到处都是美食街, 人头和污染, 走在人山人海中, 很难提起对大自然的兴致.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-84f68d1ef1557f81.jpg&quot; alt=&quot;871549792497_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;美景不如泸沽湖, 但是小吃好丰盛, 除了吃小吃外, 最喜欢这道菜, 水性杨花, 就是生在在大理湖上的一种叫 “水性杨花” 的植物, 吃起来特别嫩, 入口即化的感觉, 传说这种植物必须生在在矿泉水水质的水域中才能存活.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-e52b85ba5222b49f.jpeg&quot; alt=&quot;WechatIMG86.jpeg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;第六站评价:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;洱海全面不如泸沽湖, 强烈推荐看了泸沽湖就pass洱海吧&lt;/li&gt;
-  &lt;li&gt;这边环海120公里, 开车太堵, 建议50元租一辆电动车, 带着家人兜兜风还是很爽的.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;石林景区&quot;&gt;石林景区&lt;/h4&gt;
-&lt;p&gt;门票 + 观光车: 155元/人&lt;/p&gt;
-
-&lt;p&gt;高速路上看到好多壮美的石林风景, 冲动的下了高速进景区游览, 但是证明冲动是魔鬼, 因为进景区已经下午6点了, 时间太匆忙, 无法深入的游览石林的魅力.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-a89cfe948c1264a6.jpg&quot; alt=&quot;881549792890_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-cb991e22a2b7dace.jpg&quot; alt=&quot;891549792891_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-45042fe51b5f6757.jpg&quot; alt=&quot;901549792892_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-42a0495af50159da.jpg&quot; alt=&quot;911549792893_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-71a4ba8c4fe90ceb.jpg&quot; alt=&quot;921549792894_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-424df4fcb45499c6.jpg&quot; alt=&quot;931549792895_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;第七站评价:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;建议下次有时间, 一天慢慢的逛, 不要像我们这样冲动, 哈哈哈哈&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;罗平油菜花田&quot;&gt;罗平油菜花田&lt;/h4&gt;
-&lt;p&gt;门票 + 观光车: 50元/人&lt;/p&gt;
-
-&lt;p&gt;如果问中国哪个地方春天来得最早
-那一定少不了云南和贵州
-它们俩就像是一对相杀相爱的恋人
-从第一抹春色开始
-便会用不断盛开的花海来展示各自的魅力&lt;/p&gt;
-
-&lt;p&gt;中国最早的春天
-在云南的罗平
-从一月下旬开始
-30万亩的油菜花便会似金黄色的地毯一样
-舒展开娇媚的身姿
-铺满山野
-妆点一座座孤峰
-把淡淡的清香洒满人间&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-54078979a606a428.jpg&quot; alt=&quot;951549793437_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-817c304dc248db79.jpg&quot; alt=&quot;961549793438_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-51b14d1c42110cd0.jpg&quot; alt=&quot;971549793439_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-0a537fa651507cb5.jpg&quot; alt=&quot;981549793440_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-38d96e6ad4708e12.jpg&quot; alt=&quot;991549793441_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-8c15334ffe8da582.jpg&quot; alt=&quot;1001549793442_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-d1fb4a30c53aee57.jpg&quot; alt=&quot;1011549793443_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-99271f2b15992f2f.jpg&quot; alt=&quot;1021549793444_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-a6f179e5c1961acb.jpg&quot; alt=&quot;1031549793445_.pic_hd.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-4460b67ce6520e16.jpg&quot; alt=&quot;1041549793447_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-87cf083cffd26d65.jpg&quot; alt=&quot;1051549793448_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-073460d994482e72.jpg&quot; alt=&quot;1061549793449_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-c64b9037903e9c8b.jpg&quot; alt=&quot;1071549793450_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-bb1b8f4aa6a25812.jpg&quot; alt=&quot;1081549793451_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-57cb202959bfd223.jpg&quot; alt=&quot;1091549793452_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-40f9f61164a304da.jpg&quot; alt=&quot;1131549793489_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-6c25c1adff7d0a8d.jpg&quot; alt=&quot;1141549793490_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-56c5f1618a9999c2.jpg&quot; alt=&quot;1151549793491_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-e597db826cdd5faa.jpg&quot; alt=&quot;1161549793492_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-bf24e09c2e1b2ab3.jpg&quot; alt=&quot;1171549793493_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;油菜花田旁有卖这种五彩糯米, 是用山上小花小草染色后晾干制成的, 给小朋友买了一碗, 超级好吃.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-6f45857b99e97b55.jpg&quot; alt=&quot;1101549793453_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-c9d8131f6cdf7dc6.jpg&quot; alt=&quot;1111549793454_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tourism-yunnan/5957-40086890ad68161f.jpg&quot; alt=&quot;1121549793455_.pic.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;第八站评价:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;当你看到一块油菜花地不会觉得美, 但是当你沉浸在30万亩油菜花田, 无边无际的时候, 你不但会觉得美, 会觉得好浪漫&lt;/li&gt;
-  &lt;li&gt;油菜花田旁边有很多养蜂人, 油菜花蜜超级甜, 嚼一块蜂蜜蜡, 纯天然的, 甜腻了, 但是注意不要离蜜蜂太近了, 我就被它们在头皮上狠狠的蛰了一针, 头疼炸了&lt;/li&gt;
-  &lt;li&gt;法国有薰衣草的浪漫, 中国有属于我们自己的浪漫&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;打道回府&quot;&gt;打道回府&lt;/h4&gt;
-&lt;p&gt;这次旅行从武汉出发, 从北边湖南四川穿越, 南下到云南, 再从贵州湖南北上回武汉, 历时20天, 全程: 5142公里&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;武汉 - 岳阳石牛寨国家地质公园: 258公里&lt;/li&gt;
-  &lt;li&gt;岳阳石牛寨国家地质公园 - 张家界: 474公里&lt;/li&gt;
-  &lt;li&gt;张家界 - 重庆武隆天生三桥: 450公里&lt;/li&gt;
-  &lt;li&gt;重庆武隆天生三桥 - 老婆四川老家: 320公里&lt;/li&gt;
-  &lt;li&gt;老婆四川老家 - 西昌市: 800公里&lt;/li&gt;
-  &lt;li&gt;西昌市 - 泸沽湖: 276公里&lt;/li&gt;
-  &lt;li&gt;泸沽湖 - 玉龙雪山: 209公里&lt;/li&gt;
-  &lt;li&gt;玉龙雪山 - 洱海: 217公里&lt;/li&gt;
-  &lt;li&gt;洱海 - 罗平县金鸡峰丛: 538公里&lt;/li&gt;
-  &lt;li&gt;罗平县金鸡峰丛 - 兴义 - 铜仁 - 武汉: 1600公里&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;回到武汉后, 还在下雪, 超级怀念云南四季如春的日子, 希望以后可以在云南找一个安静的地方生活和学习下去, 在那样的蓝天下, 远离世间纷扰, 安安静静的生活, 真是神仙般的生活…&lt;/p&gt;</content><author><name></name></author><summary type="html">老婆有一个小小的梦想, 在有生之年周游世界, 看遍这个世界的美与不同. 继青岛大海、银川沙漠、红岩顶雪山、黄山奇石后, 今年趁着武汉的寒冬带老婆来一次自驾迁徙, 体验四季如春的彩云之南.</summary></entry></feed>
+&lt;p&gt;玩树莓派还是Python好啊, 轻描淡写几行代码就搞定了.&lt;/p&gt;</content><author><name></name></author><summary type="html">树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.</summary></entry></feed>
