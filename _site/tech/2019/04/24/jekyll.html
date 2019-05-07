@@ -52,7 +52,7 @@
                 」
             </div>
             <div class="char-counter">
-                浏览<span data-hk-page="current"> - </span>次 字数1318 2019-04-24
+                浏览<span data-hk-page="current"> - </span>次 字数1272 2019-04-24
             </div>
             <div class="content">
                 <p>自从把博客迁移到 Github Pages 以后, 又找到一种久违的创造欲.
@@ -75,20 +75,18 @@
 在Jekyll中，要让所有图片根据页面的宽度自动缩放却非常简单。
 首先，在你的 Jekyll 页面样式中加入:</p>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.center-image</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">li</span><span class="o">&gt;</span><span class="nt">img</span><span class="o">,</span>
+<span class="nt">p</span><span class="o">&gt;</span><span class="nt">img</span> <span class="p">{</span>
     <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
     <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
-    <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">max-width</span><span class="p">:</span> <span class="m">90%</span><span class="p">;</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">2em</span><span class="p">;</span>
+    <span class="nl">margin-right</span><span class="p">:</span> <span class="m">2em</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
-
-<p>然后在 Markdown 的图片后面加入 .center-image 样式即可，比如：</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">image name</span><span class="p">](</span><span class="sx">image_url</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>看到了吗？你是在用 Markdown 的语法编辑文章内容，但是你却可以用 CSS 定制 Markdown 内容的展示样式, 既有编辑效率, 又能掌控样式细节！！！</p>
-
 <h3 id="表格居中显示">表格居中显示</h3>
 
 <p>Markdown 的表格一般都是左对齐显示，不是很优雅，怎么放中间呢？
