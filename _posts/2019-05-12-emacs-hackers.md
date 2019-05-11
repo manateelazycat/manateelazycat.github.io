@@ -51,4 +51,6 @@ rubikitch
 
 {:.hacker-link}
 [EmacsWiki](https://www.emacswiki.org/emacs/rubikitch)
+
+{:.hacker-link}
 [Blog](http://rubikitch.com/)
