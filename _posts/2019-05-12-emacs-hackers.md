@@ -34,7 +34,7 @@ Sacha Chua
 [Blog](https://sachachua.com/blog/category/geek/emacs/)
 
 {:.hacker-name}
-TaylorCampbell
+Taylor Campbell
 
 {:.hacker-summary}
 ParEdit的作者，Emacs插件开发者必备插件， ParEdit的出现极大的推进了Elisp的编程效率，标准的Old School，网上信息极少，但是编程功力惊人。
