@@ -42,3 +42,13 @@ ParEdit的作者，Emacs插件开发者必备插件， ParEdit的出现极大的
 
 {:.hacker-link}
 [EmacsWiki](https://www.emacswiki.org/emacs/TaylorCampbell)
+
+{:.hacker-name}
+rubikitch
+
+{:.hacker-summary}
+高产的Emacs黑客，开发和维护了大量的Emacs插件，Anything（Helm前身）的核心开发者，Ruby玩的超级溜。典型的日本黑客，Emacs核心开发者中日本开发者占了相当大的比例。
+
+{:.hacker-link}
+[EmacsWiki](https://www.emacswiki.org/emacs/rubikitch)
+[Blog](http://rubikitch.com/)
