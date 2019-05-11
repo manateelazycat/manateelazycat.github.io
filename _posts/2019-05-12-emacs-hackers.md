@@ -54,3 +54,15 @@ rubikitch
 
 {:.hacker-link}
 [Blog](http://rubikitch.com/)
+
+{:.hacker-name}
+Thierry Volpiatto
+
+{:.hacker-summary}
+著名Helm框架的作者，还记得当年我和rubikitch以及Thierry Volpiatto共同开发Anything的那些时光，一个Wiki一个Ediff即可完成三人协作。Thierry Volpiatto这么多年靠一次次的重构，把Anything的思想不断提升精炼， 变成Emacs最流行的搜索补全框架，证明了一个开源项目，数十年如一日的坚持维护是多么的重要。Thierry Volpiatto的主业是攀岩，40多岁才开始学编程，真正的黑客是具有极强的好奇心和冒险精神，Linux内核开发者有牙医，Emacs开发者不但有攀登者，还有阿桑奇这样的斗士，这才是真正黑客的精彩生活，多么令人赞叹！
+
+{:.hacker-link}
+[Github](https://github.com/thierryvolpiatto)
+
+{:.hacker-link}
+[Interview with Thierry Volpiatto](https://sachachua.com/blog/2018/09/interview-with-thierry-volpiatto/)
