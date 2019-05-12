@@ -72,7 +72,7 @@ Thierry Volpiatto
 Matsushita Akihisa
 
 {:.hacker-summary}
-最早color-moccur.el的作者，这个人太低调，他的插件是我最早通过 Google ftp 语法才能搜索到，第一次用 color-moccur.el 的时候太惊叹了，Emacs还可以这样高效率的递归搜索和重构？
+color-moccur.el的作者，这个人太低调，他的插件是我最早通过 Google ftp 语法才能搜索到，第一次用 color-moccur.el 的时候太惊叹了，Emacs还可以这样高效率的递归搜索和重构？
 
 {:.hacker-link}
 [EmacsWiki](https://www.emacswiki.org/emacs/Matsushita)
