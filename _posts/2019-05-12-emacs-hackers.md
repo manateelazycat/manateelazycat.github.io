@@ -113,3 +113,15 @@ Emacs另一个顶级杀手锏org-mode的作者，荷兰阿姆斯特丹大学计�
 
 {:.hacker-link}
 [Org-mode](https://orgmode.org/)
+
+{:.hacker-name}
+Dmitry Gutov
+
+{:.hacker-summary}
+著名代码补全插件company-mode的作者, Emacs最著名的代码补全框架有auto-complete和company-mode，但就像Anything和Helm的发展历史一样，company-mode因为维护的更久更规范，现在company-mode应该是Emacs最好用也最全面的代码补全插件了。
+
+{:.hacker-link}
+[company-mode](https://company-mode.github.io/)
+
+{:.hacker-link}
+[Github](https://github.com/dgutov)
