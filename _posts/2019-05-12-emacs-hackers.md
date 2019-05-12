@@ -106,7 +106,7 @@ Emacs顶级杀手锏Magit的作者，如果没有Magit你会人工记忆各种�
 Carsten Dominik
 
 {:.hacker-summary}
-Emacs另一个顶级杀手锏org-mode的作者，荷兰阿姆斯特丹大学计算机教授，org-mode是GTD个人管理工具集大成者，只要你用心玩，你会发现个人记笔记和时间管理可以做到极致。当然有时候也会因为org-mode玩org-mode，org-mode不仅仅是个人任务管理工具，还最擅长写文章导出自己的博客。也是当年他的帮助，我可以快速的签署FSF纸质,给Emacs贡献了 org-w3m.el 这个插件。
+Emacs另一个顶级杀手锏org-mode的作者，荷兰阿姆斯特丹大学天文学教授，org-mode是GTD个人管理工具集大成者，只要你用心玩，你会发现个人记笔记和时间管理可以做到极致。当然有时候也会因为org-mode玩org-mode，org-mode不仅仅是个人任务管理工具，还最擅长写文章导出自己的博客。也是当年他的帮助，我可以快速的签署FSF纸质,给Emacs贡献了 org-w3m.el 这个插件。
 
 {:.hacker-link}
 [Blog](https://staff.fnwi.uva.nl/c.dominik/)
