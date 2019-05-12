@@ -75,3 +75,15 @@ Matsushita Akihisa
 
 {:.hacker-link}
 [EmacsWiki](https://www.emacswiki.org/emacs/Matsushita)
+
+{:.hacker-name}
+John Wiegley
+
+{:.hacker-summary}
+use-package作者和Haskell黑客，开发了众多的Emacs插件，虽然我不用use-package, 但单单从Emacs社区推广看，use-package极大的减少了Emacs新手的入门门槛，可以通过一种标准化的配置风格把Emacs的配置经验从老手传递给新手，而不是像Emacs黑客一贯的自由风格，东抄抄西抄抄。
+
+{:.hacker-link}
+[Blog](http://www.newartisans.com/)
+
+{:.hacker-link}
+[Github](https://github.com/jwiegley)
