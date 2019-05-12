@@ -12,6 +12,17 @@ categories: [Emacs
 本文希望用博客的方式列出当今世界上著名的Emacs黑客，集中的展示他们的网站，作品和博客，以方便国人更快地提升自己的Emacs水平。
 
 如果你知道厉害的Emacs黑客不存在下面的列表中，欢迎提交你的 [补丁](https://github.com/manateelazycat/manateelazycat.github.io/edit/master/_posts/2019-05-12-emacs-hackers.md)
+{:.hacker-name}
+RichardStallman
+{:.hacker-summary}
+"Emacs神教的教主"，Emacs, GCC, gdb, 和其他软件的第一作者，自由软件基金会，GNU项目，GPL的创始人， open source 的奠基人，顶尖的Lisp黑客, 关于教主的生平，相信也无需赘述. 
+江湖有传言:平生不识RMS，就称Coder也枉然
+{:.hacker-link}
+https://www.emacswiki.org/emacs/RichardStallman
+{:.hacker-link}
+https://en.wikipedia.org/wiki/Richard_Stallman
+{:.hacker-link}
+https://stallman.org/
 
 {:.hacker-name}
 Alex Schroeder
