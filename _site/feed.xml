@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-12T15:32:34+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Emacs黑客列表</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html" rel="alternate" type="text/html" title="Emacs黑客列表" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-hackers</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html">&lt;p&gt;当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-12T18:01:28+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Emacs黑客列表</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html" rel="alternate" type="text/html" title="Emacs黑客列表" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-hackers</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html">&lt;p&gt;当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。&lt;/p&gt;
 
 &lt;p&gt;我这么多年Emacs黑客教会我最大价值的东西就是好奇心和眼界，他们总是用更为简单和贴近本质的方式去解决原来我认为非常困难甚至不可能的事情, 以此激励我不断的学习和重新思考。&lt;/p&gt;
 
@@ -8,7 +8,7 @@
 
 &lt;p class=&quot;hacker-name&quot;&gt;Richard Stallman&lt;/p&gt;
 
-&lt;p class=&quot;hacker-summary&quot;&gt;“Emacs神教的教主”，Emacs, GCC, GDB和很多自由软件的第一作者，自由软件基金会，GNU项目，GPL的创始人， Open Source的奠基人，顶尖的Lisp黑客, 关于教主的生平，相信也无需赘述.
+&lt;p class=&quot;hacker-summary&quot;&gt;Emacs作者, GCC, GDB和很多自由软件的第一作者，自由软件基金会，GNU项目，GPL的创始人， Open Source的奠基人，顶尖的Lisp黑客, 关于教主的生平，相信也无需赘述.
 江湖有传言:平生不识RMS，就称Coder也枉然&lt;/p&gt;
 
 &lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/RichardStallman&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;

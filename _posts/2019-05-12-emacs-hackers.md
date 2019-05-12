@@ -17,7 +17,7 @@ categories: [Emacs
 Richard Stallman
 
 {:.hacker-summary}
-"Emacs神教的教主"，Emacs, GCC, GDB和很多自由软件的第一作者，自由软件基金会，GNU项目，GPL的创始人， Open Source的奠基人，顶尖的Lisp黑客, 关于教主的生平，相信也无需赘述.
+Emacs作者, GCC, GDB和很多自由软件的第一作者，自由软件基金会，GNU项目，GPL的创始人， Open Source的奠基人，顶尖的Lisp黑客, 关于教主的生平，相信也无需赘述.
 江湖有传言:平生不识RMS，就称Coder也枉然
 
 {:.hacker-link}
