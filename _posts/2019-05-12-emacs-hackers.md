@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Emacs黑客列表
-categories: [Emacs]
+categories: [Emacs
+]
 ---
 
 当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。
@@ -87,3 +88,16 @@ use-package作者和Haskell黑客，开发了众多的Emacs插件，虽然我不
 
 {:.hacker-link}
 [Github](https://github.com/jwiegley)
+
+{:.hacker-name}
+Jonas Bernoulli
+
+{:.hacker-summary}
+Emacs顶级杀手锏Magit的作者，如果没有Magit你会人工记忆各种复杂的Git命令，而且很多高级操作需要很多Git Workflow串联配合才搞的定。Magit可以让你只用记住快捷键，就可以玩各种Git骚操作，Emacs必备插件，强烈推荐。
+这家伙也会开发一些非常有意思的小插件。
+
+{:.hacker-link}
+[Github](https://github.com/tarsius)
+
+{:.hacker-link}
+[Blog](https://emacsair.me/)
