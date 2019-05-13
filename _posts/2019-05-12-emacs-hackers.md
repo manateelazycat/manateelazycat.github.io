@@ -141,3 +141,16 @@ Dmitry Gutov
 
 {:.hacker-link}
 [Github](https://github.com/dgutov)
+
+
+{:.hacker-name}
+Oleh Krehel
+
+{:.hacker-summary}
+Ivy，Hydra，Avy等一系列有名插件的开发者，想象力丰富的一名荷兰人。他刷新了许多人使用Emacs的习惯，让人感叹Emacs还能这么用！
+
+{:.hacker-link}
+[Github](https://github.com/abo-abo)
+
+{:.hacker-link}
+[Blog](https://oremacs.com)
