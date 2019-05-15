@@ -154,3 +154,18 @@ Ivy，Hydra，Avy等一系列有名插件的开发者，想象力丰富的一名
 
 {:.hacker-link}
 [Blog](https://oremacs.com)
+
+{:.hacker-name}
+Alan Mackenzie
+
+{:.hacker-summary}
+这位大神维护cc-mode已近20年。直到今天，只要你报bug，他就会回复，通常也会修好。
+
+{:.hacker-summary}
+cc-mode给Emacs提供C，C++，Java等一堆重要语言的支持，可以说是很多人每天都离不开的。和其他许多编辑器不一样，cc-mode用variable-name-face高亮的是变量或参数被声明，而不是被引用的地方，所以一眼就能轻松看出某个函数在哪里定义了哪几个局部变量。个人认为cc-mode的语法高亮是所有编辑器里最有用的，而不光是花花绿绿看着好看。
+
+{:.hacker-summary}
+Emacs正是有这些默默无闻的大神一直在后面维护，才造就了Emacs无与伦比的编程体验。
+
+{:.hacker-link}
+[EmacsWiki](https://www.emacswiki.org/emacs/AlanMackenzie)
