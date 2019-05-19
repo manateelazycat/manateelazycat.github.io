@@ -186,6 +186,8 @@ Matus Goljer
 
 {:.hacker-link}
 [Github](https://github.com/Fuco1)
+
+{:.hacker-link}
 [Blog](https://fuco1.github.io/sitemap.html)
 
 {:.hacker-name}
@@ -196,15 +198,21 @@ Magnar Sveen
 
 {:.hacker-link}
 [Github](https://github.com/magnars)
+
+{:.hacker-link}
 [Twitter](http://twitter.com/magnars)
 
 {:.hacker-name}
 王勇
 
 {:.hacker-summary}
-`anything (helm 前身)`, `emacs application framework`等众多 Emacs 插件的作者或重要贡献者，著名自由软件黑客，同时也是一个创业者（Deepin 前 CTO），人生经历非常丰富。
+`Anything (Helm 前身)`, `Emacs Application Framework`等众多 Emacs 插件的作者或重要贡献者，著名自由软件黑客，同时也是一个创业者（Deepin 前 CTO），人生经历非常丰富。[Commit by RenWenshan](https://github.com/manateelazycat/manateelazycat.github.io/commit/a334c37a843571014b30364071d5f5f97331721b)
 
 {:.hacker-link}
 [Github](https://github.com/manateelazycat)
+
+{:.hacker-link}
 [EmacsWiki](https://www.emacswiki.org/emacs/AndyStewart)
+
+{:.hacker-link}
 [Blog](https://manateelazycat.github.io)
