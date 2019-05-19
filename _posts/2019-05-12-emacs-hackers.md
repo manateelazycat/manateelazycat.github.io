@@ -182,7 +182,7 @@ Henrik Lissner
 Matus Goljer
 
 {:.hacker-summary}
-`smartparens`的作者，最强大和智能的括号对插件，类lisp编程的福音。同时开发和维护的流行插件包括`Elsa`(Emacs Lisp Static Analyzer), `dired-hacks`, `clippy`, `litable`等，都是功能强悍的精品。
+`smartparens`的作者，smartparens是流行的智能括号补全插件，类lisp编程的福音。同时开发和维护的流行插件包括`Elsa`(Emacs Lisp Static Analyzer), `dired-hacks`, `clippy`, `litable`等，都是功能强悍的精品。
 
 {:.hacker-link}
 [Github](https://github.com/Fuco1)

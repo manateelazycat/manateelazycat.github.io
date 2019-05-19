@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-15T21:56:43+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Emacs黑客列表</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html" rel="alternate" type="text/html" title="Emacs黑客列表" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-hackers</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html">&lt;p&gt;当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-19T19:45:55+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Emacs黑客列表</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html" rel="alternate" type="text/html" title="Emacs黑客列表" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-hackers</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html">&lt;p&gt;当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。&lt;/p&gt;
 
 &lt;p&gt;我这么多年Emacs黑客教会我最大价值的东西就是好奇心和眼界，他们总是用更为简单和贴近本质的方式去解决原来我认为非常困难甚至不可能的事情, 以此激励我不断的学习和重新思考。&lt;/p&gt;
 
@@ -109,7 +109,27 @@
 
 &lt;p class=&quot;hacker-summary&quot;&gt;Emacs正是有这些默默无闻的大神一直在后面维护，才造就了Emacs无与伦比的编程体验。&lt;/p&gt;
 
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/AlanMackenzie&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。</summary></entry><entry><title type="html">优化Emacs启动速度的方法论</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html" rel="alternate" type="text/html" title="优化Emacs启动速度的方法论" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html">&lt;h4 id=&quot;分析慢的原因&quot;&gt;分析慢的原因&lt;/h4&gt;
+&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/AlanMackenzie&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class=&quot;hacker-name&quot;&gt;Henrik Lissner&lt;/p&gt;
+
+&lt;p class=&quot;hacker-summary&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doom-emacs&lt;/code&gt; 的作者，居于加拿大多伦多，追求简洁的设计风格，使&lt;code class=&quot;highlighter-rouge&quot;&gt;doom-emacs&lt;/code&gt;成为与&lt;code class=&quot;highlighter-rouge&quot;&gt;spacemacs&lt;/code&gt;齐名的项目。开发非常积极，态度友善，同时开发了不少配套项目，比如&lt;code class=&quot;highlighter-rouge&quot;&gt;doom-themes&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;evil-multiedit&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;evil-snipe&lt;/code&gt;等。&lt;a href=&quot;https://github.com/seagle0128&quot;&gt;seagle0128&lt;/a&gt;的&lt;a href=&quot;https://github.com/seagle0128/doom-modeline&quot;&gt;doom-modeline&lt;/a&gt;也是在其启发和鼓励下开发的。&lt;/p&gt;
+
+&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/hlissner&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class=&quot;hacker-name&quot;&gt;Matus Goljer&lt;/p&gt;
+
+&lt;p class=&quot;hacker-summary&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;smartparens&lt;/code&gt;的作者，smartparens是流行的智能括号补全插件，类lisp编程的福音。同时开发和维护的流行插件包括&lt;code class=&quot;highlighter-rouge&quot;&gt;Elsa&lt;/code&gt;(Emacs Lisp Static Analyzer), &lt;code class=&quot;highlighter-rouge&quot;&gt;dired-hacks&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;clippy&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;litable&lt;/code&gt;等，都是功能强悍的精品。&lt;/p&gt;
+
+&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/Fuco1&quot;&gt;Github&lt;/a&gt;
+&lt;a href=&quot;https://fuco1.github.io/sitemap.html&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class=&quot;hacker-name&quot;&gt;Magnar Sveen&lt;/p&gt;
+
+&lt;p class=&quot;hacker-summary&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;multiple-cursors&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;expand-region&lt;/code&gt;的作者，大大提升了编辑体验。如果你还没用过千万不要错过。同时开发和维护着非常流行的&lt;code class=&quot;highlighter-rouge&quot;&gt;elisp&lt;/code&gt;库&lt;code class=&quot;highlighter-rouge&quot;&gt;dash&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;s&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/magnars&quot;&gt;Github&lt;/a&gt;
+&lt;a href=&quot;http://twitter.com/magnars&quot;&gt;Twitter&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。</summary></entry><entry><title type="html">优化Emacs启动速度的方法论</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html" rel="alternate" type="text/html" title="优化Emacs启动速度的方法论" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html">&lt;h4 id=&quot;分析慢的原因&quot;&gt;分析慢的原因&lt;/h4&gt;
 &lt;p&gt;首先下载 &lt;a href=&quot;https://github.com/dholm/benchmark-init-el&quot;&gt;benchmark-init&lt;/a&gt; 这个插件,
 在配置最开始的位置写下配置：&lt;/p&gt;
 
