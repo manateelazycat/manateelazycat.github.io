@@ -197,3 +197,14 @@ Magnar Sveen
 {:.hacker-link}
 [Github](https://github.com/magnars)
 [Twitter](http://twitter.com/magnars)
+
+{:.hacker-name}
+王勇
+
+{:.hacker-summary}
+`anything (helm 前身)`, `emacs application framework`等众多 Emacs 插件的作者或重要贡献者，著名自由软件黑客，同时也是一个创业者（Deepin 前 CTO），人生经历非常丰富。
+
+{:.hacker-link}
+[Github](https://github.com/manateelazycat)
+[EmacsWiki](https://www.emacswiki.org/emacs/AndyStewart)
+[Blog](https://manateelazycat.github.io)
