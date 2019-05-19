@@ -1,8 +1,7 @@
 ---
 layout: post
 title: Emacs黑客列表
-categories: [Emacs
-]
+categories: [Emacs]
 ---
 
 当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。
@@ -169,3 +168,32 @@ Emacs正是有这些默默无闻的大神一直在后面维护，才造就了Ema
 
 {:.hacker-link}
 [EmacsWiki](https://www.emacswiki.org/emacs/AlanMackenzie)
+
+{:.hacker-name}
+Henrik Lissner
+
+{:.hacker-summary}
+`doom-emacs` 的作者，居于加拿大多伦多，追求简洁的设计风格，使`doom-emacs`成为与`spacemacs`齐名的项目。开发非常积极，态度友善，同时开发了不少配套项目，比如`doom-themes`, `evil-multiedit`, `evil-snipe`等。[seagle0128](https://github.com/seagle0128)的[doom-modeline](https://github.com/seagle0128/doom-modeline)也是在其启发和鼓励下开发的。
+
+{:.hacker-link}
+[Github](https://github.com/hlissner)
+
+{:.hacker-name}
+Matus Goljer
+
+{:.hacker-summary}
+`smartparens`的作者，最强大和智能的括号对插件，类lisp编程的福音。同时开发和维护的流行插件包括`Elsa`(Emacs Lisp Static Analyzer), `dired-hacks`, `clippy`, `litable`等，都是功能强悍的精品。
+
+{:.hacker-link}
+[Github](https://github.com/Fuco1)
+[Blog](https://fuco1.github.io/sitemap.html)
+
+{:.hacker-name}
+Magnar Sveen
+
+{:.hacker-summary}
+`multiple-cursors`, `expand-region`的作者，大大提升了编辑体验。如果你还没用过千万不要错过。同时开发和维护着非常流行的`elisp`库`dash`和`s`.
+
+{:.hacker-link}
+[Github](https://github.com/magnars)
+[Twitter](http://twitter.com/magnars)
