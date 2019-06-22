@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<script src="https://jerryz.sgp1.cdn.digitaloceanspaces.com/lib/hit-kounter/hit-kounter-lc-0.3.0.js"></script>
+<title>代码语法快删除插件</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                代码语法快删除插件
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                浏览<span data-hk-page="current"> - </span>次 字数360 2019-06-22
+            </div>
+            <div class="content">
+                <h3 id="代码语法快删除插件">代码语法快删除插件</h3>
+<p>一般来说我们会用 <code class="highlighter-rouge">forward-word</code> 和 <code class="highlighter-rouge">backward-word</code> 这两个命令快速在Emacs中进行单词移动。
+如果开启了 <code class="highlighter-rouge">subword-mode</code> , <code class="highlighter-rouge">forward-word</code> 和 <code class="highlighter-rouge">backward-word</code> 会在骆驼风格的单词中按子单词的范围进行移动。
+比如 FooBarExample 这个单词，移动的范围依次是 Foo Bar Example</p>
+
+<p>今天写了一个插件，主要融合 <code class="highlighter-rouge">skip-syntax-forward</code> <code class="highlighter-rouge">skip-syntax-backward</code> 和 <code class="highlighter-rouge">subword-mode</code> , 使得Emacs可以快速向左和向右进行语法块删除，同时遇到骆驼风格单词的时候可以快速删除子单词。</p>
+
+<p><img src="http://localhost:4000/pics/delete-block/delete-block.gif" alt="delete-block" /></p>
+
+<p>安装方法见<a href="https://github.com/manateelazycat/delete-block">Github</a></p>
+
+<h3 id="使用方法">使用方法</h3>
+
+<p>使用方法很简单, 绑定按键到下面几个函数:</p>
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">delete-block-forward</span>
+<span class="nv">delete-block-backward</span>
+</code></pre></div></div>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>

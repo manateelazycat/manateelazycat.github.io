@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-19T22:38:51+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Emacs黑客列表</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html" rel="alternate" type="text/html" title="Emacs黑客列表" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-hackers</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html">&lt;p&gt;当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-22T17:35:38+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">代码语法快删除插件</title><link href="http://localhost:4000/emacs/2019/06/22/delete-block.html" rel="alternate" type="text/html" title="代码语法快删除插件" /><published>2019-06-22T00:00:00+08:00</published><updated>2019-06-22T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/06/22/delete-block</id><content type="html" xml:base="http://localhost:4000/emacs/2019/06/22/delete-block.html">&lt;h3 id=&quot;代码语法快删除插件&quot;&gt;代码语法快删除插件&lt;/h3&gt;
+&lt;p&gt;一般来说我们会用 &lt;code class=&quot;highlighter-rouge&quot;&gt;forward-word&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;backward-word&lt;/code&gt; 这两个命令快速在Emacs中进行单词移动。
+如果开启了 &lt;code class=&quot;highlighter-rouge&quot;&gt;subword-mode&lt;/code&gt; , &lt;code class=&quot;highlighter-rouge&quot;&gt;forward-word&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;backward-word&lt;/code&gt; 会在骆驼风格的单词中按子单词的范围进行移动。
+比如 FooBarExample 这个单词，移动的范围依次是 Foo Bar Example&lt;/p&gt;
+
+&lt;p&gt;今天写了一个插件，主要融合 &lt;code class=&quot;highlighter-rouge&quot;&gt;skip-syntax-forward&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;skip-syntax-backward&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;subword-mode&lt;/code&gt; , 使得Emacs可以快速向左和向右进行语法块删除，同时遇到骆驼风格单词的时候可以快速删除子单词。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/delete-block/delete-block.gif&quot; alt=&quot;delete-block&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;安装方法见&lt;a href=&quot;https://github.com/manateelazycat/delete-block&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
+
+&lt;p&gt;使用方法很简单, 绑定按键到下面几个函数:&lt;/p&gt;
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;delete-block-forward&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;delete-block-backward&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">代码语法快删除插件 一般来说我们会用 forward-word 和 backward-word 这两个命令快速在Emacs中进行单词移动。 如果开启了 subword-mode , forward-word 和 backward-word 会在骆驼风格的单词中按子单词的范围进行移动。 比如 FooBarExample 这个单词，移动的范围依次是 Foo Bar Example</summary></entry><entry><title type="html">Emacs黑客列表</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html" rel="alternate" type="text/html" title="Emacs黑客列表" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-hackers</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html">&lt;p&gt;当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。&lt;/p&gt;
 
 &lt;p&gt;我这么多年Emacs黑客教会我最大价值的东西就是好奇心和眼界，他们总是用更为简单和贴近本质的方式去解决原来我认为非常困难甚至不可能的事情, 以此激励我不断的学习和重新思考。&lt;/p&gt;
 
@@ -622,42 +638,4 @@ defaults.pcm.card 1
     &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Popen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;play_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;玩树莓派还是Python好啊, 轻描淡写几行代码就搞定了.&lt;/p&gt;</content><author><name></name></author><summary type="html">树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.</summary></entry><entry><title type="html">聊聊Rails和Golang开发的体验差别</title><link href="http://localhost:4000/web/2019/02/17/golang-and-rails.html" rel="alternate" type="text/html" title="聊聊Rails和Golang开发的体验差别" /><published>2019-02-17T00:00:00+08:00</published><updated>2019-02-17T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/02/17/golang-and-rails</id><content type="html" xml:base="http://localhost:4000/web/2019/02/17/golang-and-rails.html">&lt;p&gt;最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.&lt;/p&gt;
-
-&lt;p&gt;单从微信小程序框架的感觉和设计思路来看, 和 Vue.js 非常像, 这种前端框架, 的确是用 Golang 做为后端开发更好一点.&lt;/p&gt;
-
-&lt;p&gt;就拿现在我正在用的 Gin 这个 Golang 框架来说, 其实只用几十行写个路由返回微信小程序用的 JSON 数据就可以了, 基本上所有的界面效果都由小程序去渲染, 后台服务可以做的很薄:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;设计好数据库&lt;/li&gt;
-  &lt;li&gt;理清需求和业务逻辑&lt;/li&gt;
-  &lt;li&gt;Golang从数据库和HTTP路由请求, 按照 Restful API 规范返回 JSON 数据即可.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;因为 Golang 的 HTTP 库设计的非常好, 所以基于 Golang HTTP 库的Web框架多如牛毛, 大多数Web框架都很轻, 主要的功能都在路由设计上.&lt;/p&gt;
-
-&lt;p&gt;所以如果拿 Rails 和 Golang 做对比的话:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Rails 更像一个Web最佳实践的全功能框架, 什么都有最好的, 但是因为包括的东西实在是太多了, 光是学清楚每个最佳实践库的配置和集成就很复杂, 因为 Rails 真的要配置好的话, 不同模块之间的集成往往都是不透明的, 你首先要学会这些配置, 只有看了源代码才知道为什么一定要这么配置才行&lt;/li&gt;
-  &lt;li&gt;Golang 框架和Rails是反的, 框架只有核心的 HTTP 路由功能, 至于高级功能, 比如HTTPS, 表单Token验证, JSON解析, 数据库的ORM等等, 都需要网上去找库和中间件实现, 但是每个模块之间的胶水代码都是自己写的, 所以模块之间关系处理都比较透明, 出了错好解决到问题的根源&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;简单的结论:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Rails更适合做传统偏向内容的Web网站构建, 约定好的配置入门比较简单, 开发效率高, 但是要玩精通还是比较复杂, 受到框架限制比较多&lt;/li&gt;
-  &lt;li&gt;Golang更适合前后端分离的应用开发, 比如小程序, 高级功能入门比较复杂, 但是一旦折腾好了, 可以很容易玩出高级功能, 不用受到严格框架的限制&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;像我这种Emacs党, 说句实话, 我更喜欢Golang这种框架, 虽然很多功能都需要自己折腾, 但是可以做到很多细节心中有数, 每个模块的最佳实践可以随着自己的经验增加而快速迭代, 而像 Rails 这种每个大版本引入的新的最佳实践都会和上一版本不兼容, 团队和业务代码多了, 更新代码去兼容最新框架本身就很痛苦.&lt;/p&gt;
-
-&lt;p&gt;最近开发了微信小程序, 感觉Web也像三国一样, 分久必合合久必分.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;最开始是 Java 这种简单粗暴的中间件玩法&lt;/li&gt;
-  &lt;li&gt;过去十年大多数都是 Rails 这种更加优雅的 Web 框架, 强调最佳实践, 强调 Web 纯正的方法论&lt;/li&gt;
-  &lt;li&gt;现在移动终端的性能、多分辨率和用户体验的新需求, 大家又回到Java那个时代的前后端分离了&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;其实, 计算机这么多年的软件框架一直都是随着流星硬件和用户交互模式的迁移而不断变化和不断重复历史.&lt;/p&gt;
-
-&lt;p&gt;对于我这种操作系统行业打拼出来的人, Golang这种Web框架的思路对于我更简单, 设计好数据库和API接口, 剩下的就是把后端数据吐给前端框架就完事了.&lt;/p&gt;
-
-&lt;p&gt;所以, 业务导向, 什么技术对于业务最好就用什么技术, 对于小程序开发, 我选择 Golang Web框架.&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在用Golang开发Web后台, 前端用 ReactJS 或者微信小程序框架.</summary></entry></feed>
+&lt;p&gt;玩树莓派还是Python好啊, 轻描淡写几行代码就搞定了.&lt;/p&gt;</content><author><name></name></author><summary type="html">树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.</summary></entry></feed>
