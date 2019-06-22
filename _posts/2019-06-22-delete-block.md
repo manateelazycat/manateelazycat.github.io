@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 代码语法快删除插件
+title: 代码语法块删除插件
 categories: [Emacs]
 ---
 
-### 代码语法快删除插件
+### 代码语法块删除插件
 一般来说我们会用 ```forward-word``` 和 ```backward-word``` 这两个命令快速在Emacs中进行单词移动。
 如果开启了 ```subword-mode``` , ```forward-word``` 和 ```backward-word``` 会在骆驼风格的单词中按子单词的范围进行移动。
 比如 FooBarExample 这个单词，移动的范围依次是 Foo Bar Example
