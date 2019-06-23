@@ -1,0 +1,37 @@
+---
+layout: post
+title: smart-align.el 代码自动对齐插件
+categories: [Emacs]
+---
+
+像VSCode和很多IDE都具备快速对齐赋值表达式的功能。
+
+Emacs其实有更强大的 align-regexp 功能，可以让用户对选中的内容进行自定义正则对齐。
+只要正则表达式玩的溜，最后实现的功能比VSCode等IDE还要强大。
+
+比如 Emacs 中要进行对齐操作，一般需要三个步骤:
+1. 选中一段代码区域
+2. 调用 align-regexp 命令
+3. 写入需要对齐的赋值符号
+
+但是在实际编程中，大部分都是对齐赋值表达式，赋值的符号一般都是 = 或者 :
+并不会有非常复杂的规则需要开发者去编写正则表达式完成对齐操作。
+所以这时候 Emacs 的步骤就非常繁琐，特别是还需要手动选择需要对齐的代码区域，用户体验非常不好。
+
+针对上面的情况，写了 smart-align 这个插件，会自动选择当前光标处的代码块，一键就可以自动对齐代码块内的所有内容。
+
+![smart-align]({{site.url}}/pics/smart-align/smart-align.gif)
+
+安装方法见[Github](https://github.com/manateelazycat/smart-align)
+
+### 使用方法
+使用方法很简单, 绑定按键到 ```smart-align```
+
+### 代码贡献
+现在代码实现只是简单的用 ```backward-up-list``` 和 ```up-list``` 自动选择光标外的一层语法块，
+如果语法块内每一行都是赋值表达式，这个插件会工作的非常好。
+
+但是如果语法块内有某一行不是赋值表达式， ```align-regexp``` 函数就会失效，无法对代码进行自动对齐。
+
+正确的思路应该是在语法块内进一步搜索来竞争定位包含 = 或者 : 的子语法块范围，再依次传给 ```align-regexp```
+欢迎各大高手来一起 [完善](https://github.com/manateelazycat/smart-align/edit/master/smart-align.el)

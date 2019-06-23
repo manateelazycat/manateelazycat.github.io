@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>smart-align.el 代码自动对齐插件</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                smart-align.el 代码自动对齐插件
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数583 2019-06-24
+            </div>
+            <div class="content">
+                <p>像VSCode和很多IDE都具备快速对齐赋值表达式的功能。</p>
+
+<p>Emacs其实有更强大的 align-regexp 功能，可以让用户对选中的内容进行自定义正则对齐。
+只要正则表达式玩的溜，最后实现的功能比VSCode等IDE还要强大。</p>
+
+<p>比如 Emacs 中要进行对齐操作，一般需要三个步骤:</p>
+<ol>
+  <li>选中一段代码区域</li>
+  <li>调用 align-regexp 命令</li>
+  <li>写入需要对齐的赋值符号</li>
+</ol>
+
+<p>但是在实际编程中，大部分都是对齐赋值表达式，赋值的符号一般都是 = 或者 :
+并不会有非常复杂的规则需要开发者去编写正则表达式完成对齐操作。
+所以这时候 Emacs 的步骤就非常繁琐，特别是还需要手动选择需要对齐的代码区域，用户体验非常不好。</p>
+
+<p>针对上面的情况，写了 smart-align 这个插件，会自动选择当前光标处的代码块，一键就可以自动对齐代码块内的所有内容。</p>
+
+<p><img src="http://localhost:4000/pics/smart-align/smart-align.gif" alt="smart-align" /></p>
+
+<p>安装方法见<a href="https://github.com/manateelazycat/smart-align">Github</a></p>
+
+<h3 id="使用方法">使用方法</h3>
+<p>使用方法很简单, 绑定按键到 <code class="highlighter-rouge">smart-align</code></p>
+
+<h3 id="代码贡献">代码贡献</h3>
+<p>现在代码实现只是简单的用 <code class="highlighter-rouge">backward-up-list</code> 和 <code class="highlighter-rouge">up-list</code> 自动选择光标外的一层语法块，
+如果语法块内每一行都是赋值表达式，这个插件会工作的非常好。</p>
+
+<p>但是如果语法块内有某一行不是赋值表达式， <code class="highlighter-rouge">align-regexp</code> 函数就会失效，无法对代码进行自动对齐。</p>
+
+<p>正确的思路应该是在语法块内进一步搜索来竞争定位包含 = 或者 : 的子语法块范围，再依次传给 <code class="highlighter-rouge">align-regexp</code>
+欢迎各大高手来一起 <a href="https://github.com/manateelazycat/smart-align/edit/master/smart-align.el">完善</a></p>
+
+            </div>
+        </div>
+        <div class="nickname">
+            Smells Like Teen Spirit
+        </div>
+
+    </body>
+</html>
