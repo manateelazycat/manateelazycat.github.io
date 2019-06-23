@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-23T18:00:13+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">AwesomeTab支持图标显示了</title><link href="http://localhost:4000/emacs/2019/06/23/awesome-tab-support-icon.html" rel="alternate" type="text/html" title="AwesomeTab支持图标显示了" /><published>2019-06-23T00:00:00+08:00</published><updated>2019-06-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/06/23/awesome-tab-support-icon</id><content type="html" xml:base="http://localhost:4000/emacs/2019/06/23/awesome-tab-support-icon.html">&lt;p&gt;自从发布 &lt;a href=&quot;https://github.com/manateelazycat/awesome-tab&quot;&gt;AwesomeTab&lt;/a&gt; 这个Emacs最好的标签插件以后，很多社区的高手陆续地在给这个项目贡献建议和补丁。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-24T00:29:19+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">smart-align.el 代码自动对齐插件</title><link href="http://localhost:4000/emacs/2019/06/24/smart-align.html" rel="alternate" type="text/html" title="smart-align.el 代码自动对齐插件" /><published>2019-06-24T00:00:00+08:00</published><updated>2019-06-24T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/06/24/smart-align</id><content type="html" xml:base="http://localhost:4000/emacs/2019/06/24/smart-align.html">&lt;p&gt;像VSCode和很多IDE都具备快速对齐赋值表达式的功能。&lt;/p&gt;
+
+&lt;p&gt;Emacs其实有更强大的 align-regexp 功能，可以让用户对选中的内容进行自定义正则对齐。
+只要正则表达式玩的溜，最后实现的功能比VSCode等IDE还要强大。&lt;/p&gt;
+
+&lt;p&gt;比如 Emacs 中要进行对齐操作，一般需要三个步骤:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;选中一段代码区域&lt;/li&gt;
+  &lt;li&gt;调用 align-regexp 命令&lt;/li&gt;
+  &lt;li&gt;写入需要对齐的赋值符号&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;但是在实际编程中，大部分都是对齐赋值表达式，赋值的符号一般都是 = 或者 :
+并不会有非常复杂的规则需要开发者去编写正则表达式完成对齐操作。
+所以这时候 Emacs 的步骤就非常繁琐，特别是还需要手动选择需要对齐的代码区域，用户体验非常不好。&lt;/p&gt;
+
+&lt;p&gt;针对上面的情况，写了 smart-align 这个插件，会自动选择当前光标处的代码块，一键就可以自动对齐代码块内的所有内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/smart-align/smart-align.gif&quot; alt=&quot;smart-align&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;安装方法见&lt;a href=&quot;https://github.com/manateelazycat/smart-align&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
+&lt;p&gt;使用方法很简单, 绑定按键到 &lt;code class=&quot;highlighter-rouge&quot;&gt;smart-align&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;代码贡献&quot;&gt;代码贡献&lt;/h3&gt;
+&lt;p&gt;现在代码实现只是简单的用 &lt;code class=&quot;highlighter-rouge&quot;&gt;backward-up-list&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;up-list&lt;/code&gt; 自动选择光标外的一层语法块，
+如果语法块内每一行都是赋值表达式，这个插件会工作的非常好。&lt;/p&gt;
+
+&lt;p&gt;但是如果语法块内有某一行不是赋值表达式， &lt;code class=&quot;highlighter-rouge&quot;&gt;align-regexp&lt;/code&gt; 函数就会失效，无法对代码进行自动对齐。&lt;/p&gt;
+
+&lt;p&gt;正确的思路应该是在语法块内进一步搜索来竞争定位包含 = 或者 : 的子语法块范围，再依次传给 &lt;code class=&quot;highlighter-rouge&quot;&gt;align-regexp&lt;/code&gt;
+欢迎各大高手来一起 &lt;a href=&quot;https://github.com/manateelazycat/smart-align/edit/master/smart-align.el&quot;&gt;完善&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">像VSCode和很多IDE都具备快速对齐赋值表达式的功能。</summary></entry><entry><title type="html">AwesomeTab支持图标显示了</title><link href="http://localhost:4000/emacs/2019/06/23/awesome-tab-support-icon.html" rel="alternate" type="text/html" title="AwesomeTab支持图标显示了" /><published>2019-06-23T00:00:00+08:00</published><updated>2019-06-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/06/23/awesome-tab-support-icon</id><content type="html" xml:base="http://localhost:4000/emacs/2019/06/23/awesome-tab-support-icon.html">&lt;p&gt;自从发布 &lt;a href=&quot;https://github.com/manateelazycat/awesome-tab&quot;&gt;AwesomeTab&lt;/a&gt; 这个Emacs最好的标签插件以后，很多社区的高手陆续地在给这个项目贡献建议和补丁。&lt;/p&gt;
 
 &lt;p&gt;头两天接到一个国外开发者的 &lt;a href=&quot;https://github.com/manateelazycat/awesome-tab/issues/34&quot;&gt;issue&lt;/a&gt;, 提出了想在标签上显示图标的功能，今天早上思考了5分钟, 写了一个补丁: &lt;a href=&quot;https://github.com/manateelazycat/awesome-tab/commit/ae98cef5c9fe2b8674c705f1772400f0caf10a74&quot;&gt;让AwesomeTab支持图标渲染&lt;/a&gt;&lt;/p&gt;
 
@@ -573,10 +605,4 @@ Emacs配置文件加载完毕后，自动恢复变量 gc-cons-threshold 为默�
 
 &lt;p&gt;当然，Jeyll 对于我来说，更宝贵的让我进入了一种新的专注状态：&lt;/p&gt;
 
-&lt;p&gt;用最小的代价兼顾编辑效率和视觉细节的同时，给我创造了一种非常专注的写作环境, 流畅，舒适&lt;/p&gt;</content><author><name></name></author><summary type="html">自从把博客迁移到 Github Pages 以后, 又找到一种久违的创造欲. 主要的原因主要都是因为 Github Pages 背后的 Jekyll 太适合我的口味了.</summary></entry><entry><title type="html">Hello, GitHub Pages</title><link href="http://localhost:4000/tech/2019/04/19/hello-github-page.html" rel="alternate" type="text/html" title="Hello, GitHub Pages" /><published>2019-04-19T00:00:00+08:00</published><updated>2019-04-19T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/04/19/hello-github-page</id><content type="html" xml:base="http://localhost:4000/tech/2019/04/19/hello-github-page.html">&lt;p&gt;自己不喜欢浪费时间搭建博客网站，所以文章一直都放到简书上，编写简单，容易维护。
-直到有一天天朝盯上了简书，我的很多技术文章很多被简书屏蔽以后，自己也懒的发邮件去申诉。&lt;/p&gt;
-
-&lt;p&gt;花了1个小时研究了Jekyll的文档，然后用Emacs和Wget把所有简书的文章迁移到 GitHub Pages 上来，
-以后 Emacs 里面写文章，git push自动更新，一劳永逸解决文章屏蔽的问题。&lt;/p&gt;
-
-&lt;p&gt;迁移到 Github Pages 上以后还可以自己控制页面的样式，也不用每次登录简书被迫看那些无聊的广告。&lt;/p&gt;</content><author><name></name></author><summary type="html">自己不喜欢浪费时间搭建博客网站，所以文章一直都放到简书上，编写简单，容易维护。 直到有一天天朝盯上了简书，我的很多技术文章很多被简书屏蔽以后，自己也懒的发邮件去申诉。</summary></entry></feed>
+&lt;p&gt;用最小的代价兼顾编辑效率和视觉细节的同时，给我创造了一种非常专注的写作环境, 流畅，舒适&lt;/p&gt;</content><author><name></name></author><summary type="html">自从把博客迁移到 Github Pages 以后, 又找到一种久违的创造欲. 主要的原因主要都是因为 Github Pages 背后的 Jekyll 太适合我的口味了.</summary></entry></feed>
