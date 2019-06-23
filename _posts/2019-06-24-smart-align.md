@@ -33,5 +33,5 @@ Emacs其实有更强大的 align-regexp 功能，可以让用户对选中的内�
 
 但是如果语法块内有某一行不是赋值表达式， ```align-regexp``` 函数就会失效，无法对代码进行自动对齐。
 
-正确的思路应该是在语法块内进一步搜索来竞争定位包含 = 或者 : 的子语法块范围，再依次传给 ```align-regexp```
+正确的思路应该是在语法块内进一步搜索来进一步定位包含 = 或者 : 的子语法块范围，再依次传给 ```align-regexp```
 欢迎各大高手来一起 [完善](https://github.com/manateelazycat/smart-align/edit/master/smart-align.el)
