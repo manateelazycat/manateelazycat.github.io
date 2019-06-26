@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-24T07:04:29+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">smart-align.el 代码自动对齐插件</title><link href="http://localhost:4000/emacs/2019/06/24/smart-align.html" rel="alternate" type="text/html" title="smart-align.el 代码自动对齐插件" /><published>2019-06-24T00:00:00+08:00</published><updated>2019-06-24T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/06/24/smart-align</id><content type="html" xml:base="http://localhost:4000/emacs/2019/06/24/smart-align.html">&lt;p&gt;像VSCode和很多IDE都具备快速对齐赋值表达式的功能。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-27T00:06:31+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">instant-rename-tag.el 实时修改Tag名</title><link href="http://localhost:4000/emacs/2019/06/26/instant-rename-tag.html" rel="alternate" type="text/html" title="instant-rename-tag.el 实时修改Tag名" /><published>2019-06-26T00:00:00+08:00</published><updated>2019-06-26T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/06/26/instant-rename-tag</id><content type="html" xml:base="http://localhost:4000/emacs/2019/06/26/instant-rename-tag.html">&lt;p&gt;最近在研究VSCode好用的功能，希望通过一点点的努力, 把VSCode好的功能吸收到Emacs。&lt;/p&gt;
+
+&lt;p&gt;说到VSCode，说它是支持Web编程最好的IDE一点也不为过，其中实时修改Tag名字的功能非常好用。&lt;/p&gt;
+
+&lt;p&gt;可惜的是，Emacs一直都没有好用的实时修改Tag的功能，即使最强大的 web-mode 也需要从 minibuffer 中读取新的Tag，视线要在光标处和minibuffer来回跳动，不够爽。&lt;/p&gt;
+
+&lt;p&gt;以前类似的插件在原理上总是希望修改Tag的时候，实时的计算匹配的Tag区域并同步更新，这样的实现原理是有问题:&lt;/p&gt;
+
+&lt;p&gt;因为不管是 sgml-mode 还是 web-mode, 一旦发现Tag不匹配，就很难找到匹配Tag区域，究其原因是Emacs找到匹配的Tag区域是基于正则查找, 所以一旦Tag无法匹配，实时修改Tag的功能实现就很困难，而且在复杂的Emacs插件环境中特别容易出错。&lt;/p&gt;
+
+&lt;h3 id=&quot;instant-rename-tagel-的原理&quot;&gt;instant-rename-tag.el 的原理&lt;/h3&gt;
+
+&lt;p&gt;instant-rename-tag 认识到上面的问题，从实现上放弃了Tag实时匹配查找的策略，而是用下面的步骤来实现：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;重命名动作触发的时候，根据 Open Tag 还是 Close Tag的位置，找到匹配的Tag区域&lt;/li&gt;
+  &lt;li&gt;用 Overlay 来保存 Open Tag 和 Close Tag 的区域，一旦保存好以后，就不再进行任何Tag匹配的搜索&lt;/li&gt;
+  &lt;li&gt;监控光标插入，如果当前光标是在 Tag Overlay 区域修改，比如 &amp;lt;div&amp;gt; Tag中修改，会去找 &amp;lt;/div&amp;gt; 的 Overlay&lt;/li&gt;
+  &lt;li&gt;找到对应的 Tag Overlay, 同步其内容&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这样只在重命名启动的时候查找一下 Tag 的区域，后面只是简单的光标监控和内容同步，既实现了实时改名的功能，又不会因为Tag不匹配产生很多乱改用户buffer的问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/instant-rename-tag/instant-rename-tag.gif&quot; alt=&quot;instant-rename-tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;安装方法见&lt;a href=&quot;https://github.com/manateelazycat/instant-rename-tag&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
+&lt;p&gt;使用方法很简单, 绑定按键到 &lt;code class=&quot;highlighter-rouge&quot;&gt;instant-rename-tag&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;想修改Tag名字的时候，调用一次 instant-rename-tag , 修改完成后再调用一次即可.&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在研究VSCode好用的功能，希望通过一点点的努力, 把VSCode好的功能吸收到Emacs。</summary></entry><entry><title type="html">smart-align.el 代码自动对齐插件</title><link href="http://localhost:4000/emacs/2019/06/24/smart-align.html" rel="alternate" type="text/html" title="smart-align.el 代码自动对齐插件" /><published>2019-06-24T00:00:00+08:00</published><updated>2019-06-24T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/06/24/smart-align</id><content type="html" xml:base="http://localhost:4000/emacs/2019/06/24/smart-align.html">&lt;p&gt;像VSCode和很多IDE都具备快速对齐赋值表达式的功能。&lt;/p&gt;
 
 &lt;p&gt;Emacs其实有更强大的 align-regexp 功能，可以让用户对选中的内容进行自定义正则对齐。
 只要正则表达式玩的溜，最后实现的功能比VSCode等IDE还要强大。&lt;/p&gt;
@@ -55,7 +85,55 @@
 &lt;p&gt;使用方法很简单, 绑定按键到下面几个函数:&lt;/p&gt;
 &lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;delete-block-forward&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;delete-block-backward&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">代码语法块删除插件 一般来说我们会用 forward-word 和 backward-word 这两个命令快速在Emacs中进行单词移动。 如果开启了 subword-mode , forward-word 和 backward-word 会在骆驼风格的单词中按子单词的范围进行移动。 比如 FooBarExample 这个单词，移动的范围依次是 Foo Bar Example</summary></entry><entry><title type="html">Emacs黑客列表</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html" rel="alternate" type="text/html" title="Emacs黑客列表" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-hackers</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html">&lt;p&gt;当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">代码语法块删除插件 一般来说我们会用 forward-word 和 backward-word 这两个命令快速在Emacs中进行单词移动。 如果开启了 subword-mode , forward-word 和 backward-word 会在骆驼风格的单词中按子单词的范围进行移动。 比如 FooBarExample 这个单词，移动的范围依次是 Foo Bar Example</summary></entry><entry><title type="html">优化Emacs启动速度的方法论</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html" rel="alternate" type="text/html" title="优化Emacs启动速度的方法论" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html">&lt;h4 id=&quot;分析慢的原因&quot;&gt;分析慢的原因&lt;/h4&gt;
+&lt;p&gt;首先下载 &lt;a href=&quot;https://github.com/dholm/benchmark-init-el&quot;&gt;benchmark-init&lt;/a&gt; 这个插件,
+在配置最开始的位置写下配置：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;;; 加载的时候临时增大`gc-cons-threshold'以加速启动速度。&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gc-cons-threshold&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;most-positive-fixnum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;;; 清空避免加载远程文件的时候分析文件。&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-name-handler-alist&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'benchmark-init-modes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'benchmark-init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;benchmark-init/activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;;; 下面才写你的其它配置&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;启动完毕后，执行 M-x benchmark-init/show-durations-tree 命令，这个命令会递归的打印出所有插件的耗时明细。&lt;/p&gt;
+
+&lt;h4 id=&quot;优化-动态加载插件&quot;&gt;优化： 动态加载插件&lt;/h4&gt;
+&lt;p&gt;比如下面这个配置会禁止Emacs退出的时候问后台进程是否需要杀掉的问题，会用到 noflet 这个库。
+一般你可以这样写：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'noflet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defadvice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;save-buffers-kill-emacs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;no-query-kill-emacs&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;Prevent annoying \&quot;Active processes exist\&quot; query when you quit Emacs.&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;noflet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;process-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这样写的坏处是，Emacs没有退出时不会执行这个advice, 但是一启动就会加载 noflet 这个库, 浪费了启动时间。&lt;/p&gt;
+
+&lt;p&gt;优化的方式如下，把要调用的库在用的时候再加载，改成这样就好很多：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defadvice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;save-buffers-kill-emacs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;no-query-kill-emacs&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;Prevent annoying \&quot;Active processes exist\&quot; query when you quit Emacs.&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'noflet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;noflet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;process-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;优化-按键触发加载&quot;&gt;优化： 按键触发加载&lt;/h3&gt;
+&lt;p&gt;第二种优化方式主要用我头几天写的 &lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/05/05/lazy-load.html&quot;&gt;lazy-load&lt;/a&gt; 技术来做。
+把 90% 的插件放到运行时第一次按键时再加载，而不是启动的时候就加载好。
+因为lazy-load那篇文章已经详细说明了用法，这里就不再复述。&lt;/p&gt;
+
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
+&lt;p&gt;用我上面的三个优化步骤，可以把Emacs启动时间减少到 1/10.&lt;/p&gt;
+
+&lt;p&gt;Enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">分析慢的原因 首先下载 benchmark-init 这个插件, 在配置最开始的位置写下配置：</summary></entry><entry><title type="html">Emacs黑客列表</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html" rel="alternate" type="text/html" title="Emacs黑客列表" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-hackers</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html">&lt;p&gt;当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。&lt;/p&gt;
 
 &lt;p&gt;我这么多年Emacs黑客教会我最大价值的东西就是好奇心和眼界，他们总是用更为简单和贴近本质的方式去解决原来我认为非常困难甚至不可能的事情, 以此激励我不断的学习和重新思考。&lt;/p&gt;
 
@@ -198,55 +276,7 @@
 
 &lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/AndyStewart&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;
 
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://manateelazycat.github.io&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。</summary></entry><entry><title type="html">优化Emacs启动速度的方法论</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html" rel="alternate" type="text/html" title="优化Emacs启动速度的方法论" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html">&lt;h4 id=&quot;分析慢的原因&quot;&gt;分析慢的原因&lt;/h4&gt;
-&lt;p&gt;首先下载 &lt;a href=&quot;https://github.com/dholm/benchmark-init-el&quot;&gt;benchmark-init&lt;/a&gt; 这个插件,
-在配置最开始的位置写下配置：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;;; 加载的时候临时增大`gc-cons-threshold'以加速启动速度。&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gc-cons-threshold&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;most-positive-fixnum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;;; 清空避免加载远程文件的时候分析文件。&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-name-handler-alist&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'benchmark-init-modes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'benchmark-init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;benchmark-init/activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;;; 下面才写你的其它配置&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;启动完毕后，执行 M-x benchmark-init/show-durations-tree 命令，这个命令会递归的打印出所有插件的耗时明细。&lt;/p&gt;
-
-&lt;h4 id=&quot;优化-动态加载插件&quot;&gt;优化： 动态加载插件&lt;/h4&gt;
-&lt;p&gt;比如下面这个配置会禁止Emacs退出的时候问后台进程是否需要杀掉的问题，会用到 noflet 这个库。
-一般你可以这样写：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'noflet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defadvice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;save-buffers-kill-emacs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;no-query-kill-emacs&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;Prevent annoying \&quot;Active processes exist\&quot; query when you quit Emacs.&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;noflet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;process-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这样写的坏处是，Emacs没有退出时不会执行这个advice, 但是一启动就会加载 noflet 这个库, 浪费了启动时间。&lt;/p&gt;
-
-&lt;p&gt;优化的方式如下，把要调用的库在用的时候再加载，改成这样就好很多：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defadvice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;save-buffers-kill-emacs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;no-query-kill-emacs&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;Prevent annoying \&quot;Active processes exist\&quot; query when you quit Emacs.&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'noflet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;noflet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;process-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;优化-按键触发加载&quot;&gt;优化： 按键触发加载&lt;/h3&gt;
-&lt;p&gt;第二种优化方式主要用我头几天写的 &lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/05/05/lazy-load.html&quot;&gt;lazy-load&lt;/a&gt; 技术来做。
-把 90% 的插件放到运行时第一次按键时再加载，而不是启动的时候就加载好。
-因为lazy-load那篇文章已经详细说明了用法，这里就不再复述。&lt;/p&gt;
-
-&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-&lt;p&gt;用我上面的三个优化步骤，可以把Emacs启动时间减少到 1/10.&lt;/p&gt;
-
-&lt;p&gt;Enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">分析慢的原因 首先下载 benchmark-init 这个插件, 在配置最开始的位置写下配置：</summary></entry><entry><title type="html">读《重新理解创业》</title><link href="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html" rel="alternate" type="text/html" title="读《重新理解创业》" /><published>2019-05-07T00:00:00+08:00</published><updated>2019-05-07T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship</id><content type="html" xml:base="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html">&lt;p&gt;5.1的时候在家读了周航写的《重新理解创业》，这是一本我几乎读一页就需要标注半页的书。看到书中的很多文字，其实看到的更多是我自己，在深度奋斗的时候，自己犯过很多相同的错误。当时在这些错误中很难跳出局面来看待自己，这两年从操作系统行业出来以后，一直在复盘自己过去的成长和缺陷，内心做了很多真诚的对话，直到看了这本书，很多自我对话的内容才重新梳理清楚，才知道原来世界上不止有我犯过同样的错误，不止有我有同样的想法，好的是，当读完这本书时，我收获了更多释怀，更能接受过去的自己。&lt;/p&gt;
+&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://manateelazycat.github.io&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。</summary></entry><entry><title type="html">读《重新理解创业》</title><link href="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html" rel="alternate" type="text/html" title="读《重新理解创业》" /><published>2019-05-07T00:00:00+08:00</published><updated>2019-05-07T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship</id><content type="html" xml:base="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html">&lt;p&gt;5.1的时候在家读了周航写的《重新理解创业》，这是一本我几乎读一页就需要标注半页的书。看到书中的很多文字，其实看到的更多是我自己，在深度奋斗的时候，自己犯过很多相同的错误。当时在这些错误中很难跳出局面来看待自己，这两年从操作系统行业出来以后，一直在复盘自己过去的成长和缺陷，内心做了很多真诚的对话，直到看了这本书，很多自我对话的内容才重新梳理清楚，才知道原来世界上不止有我犯过同样的错误，不止有我有同样的想法，好的是，当读完这本书时，我收获了更多释怀，更能接受过去的自己。&lt;/p&gt;
 
 &lt;p&gt;周航是一个了不起的人，中国这种成王败寇的习惯给了太多成功者神话般的传说，周航却毫无保留的写出了自己创业过程中的无数坑，更难能可贵的是，当易道失败以后，认真的审视自我，进行了很多升维的思考，这种向内的深入审视带来的思考财富远远比创业成功后光鲜的表面结果更能激励创业者。&lt;/p&gt;
 
@@ -526,83 +556,4 @@ Emacs配置文件加载完毕后，自动恢复变量 gc-cons-threshold 为默�
 
 &lt;p&gt;post.url 是引用文章的链接，prepend: site.url 的意思是添加域名前缀，https: 也必须加，要不是 Hit Kounter 无法正常工作。&lt;/p&gt;
 
-&lt;p&gt;That’s all, git push 以后就可以看到各文章的访问流量了。&lt;/p&gt;</content><author><name></name></author><summary type="html">这几天下班都在折腾Jekyll, 想给每篇文章添加一个访问统计，看看大家更喜好那类文章。 看了很多相关的工具，无意中发现了 Hit Kounter 这个工具. 简单、完美适配Jekyll, 主要是不用担心因为添加了Google统计就导致网站访问不了.</summary></entry><entry><title type="html">Jekyll 简单介绍</title><link href="http://localhost:4000/tech/2019/04/24/jekyll.html" rel="alternate" type="text/html" title="Jekyll 简单介绍" /><published>2019-04-24T00:00:00+08:00</published><updated>2019-04-24T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/04/24/jekyll</id><content type="html" xml:base="http://localhost:4000/tech/2019/04/24/jekyll.html">&lt;p&gt;自从把博客迁移到 Github Pages 以后, 又找到一种久违的创造欲.
-主要的原因主要都是因为 Github Pages 背后的 Jekyll 太适合我的口味了.&lt;/p&gt;
-
-&lt;p&gt;Jekyll 这个静态博客生成器吸引我的主要有几点:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;一个简单的静态页面生成器，不需要数据库和自己部署VPS，一切都放到Github上，免费好用&lt;/li&gt;
-  &lt;li&gt;完美的融合了 Markdown 和 CSS, 既可以享受 Markdown 的极简编写，又可以根据自己的喜好自定义 Markdown 的样式细节, 比如斑马线的表格、代码块圆角细节、图片自动根据页面宽度自动缩放等&lt;/li&gt;
-  &lt;li&gt;专注于内容, 一旦我定义好主题细节后, 我只用按照 Markdown 的语法编写文章 git push 就可以了, 一切又回到我最喜欢的极简风格&lt;/li&gt;
-  &lt;li&gt;本地实时预览, 一条 jekyll serve 的命令即可实时预览博客最终的展示效果和细节&lt;/li&gt;
-  &lt;li&gt;最后一点最重要, 不需要简陋的网站编辑器, 我可以直接在 Emacs 编辑文章的内容, 一切都是那么顺手&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;下面我分享一下我定制 Jekyll 的一些技巧：&lt;/p&gt;
-
-&lt;h3 id=&quot;让所有图片都自动缩放成页面的宽度&quot;&gt;让所有图片都自动缩放成页面的宽度&lt;/h3&gt;
-
-&lt;p&gt;我们的拍照和截图大部分都是各种尺寸的，放到博客中，难免会产生宽度不一致的情况，非常的丑陋。
-在Jekyll中，要让所有图片根据页面的宽度自动缩放却非常简单。
-首先，在你的 Jekyll 页面样式中加入:&lt;/p&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;90%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;表格居中显示&quot;&gt;表格居中显示&lt;/h3&gt;
-
-&lt;p&gt;Markdown 的表格一般都是左对齐显示，不是很优雅，怎么放中间呢？
-在样式中加入：&lt;/p&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border-collapse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;collapse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border-spacing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#AAA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;margin-left 和 margin-right 都设置成 auto 即可达到居中显示的目的，是不是比那些商业的 Markdown 网站更灵活?&lt;/p&gt;
-
-&lt;h3 id=&quot;表格斑马线&quot;&gt;表格斑马线&lt;/h3&gt;
-
-&lt;p&gt;默认表格行多的时候，很难数清楚，加入淡淡的斑马线， 好看又实用：&lt;/p&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;tbody&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;tr&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;even&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#F5F5F5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;代码块圆角&quot;&gt;代码块圆角&lt;/h3&gt;
-
-&lt;p&gt;Markdown默认的代码区域是一个冲突感的直角，如果能够稍稍的做点圆角，
-就会降低代码区域的视觉冲突，人眼查看更加自然舒服。&lt;/p&gt;
-
-&lt;p&gt;方法很简单，浏览器折腾一下，把下面样式写到CSS文件中即可：&lt;/p&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.highlight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.highlight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;看到优雅的圆角了吗？就像上面这块代码区域的视觉效果&lt;/p&gt;
-
-&lt;h2 id=&quot;jekyll-写作环境&quot;&gt;Jekyll 写作环境&lt;/h2&gt;
-
-&lt;p&gt;上面只是一些小细节展示，你只需要研究一些 CSS 技巧，静态页面也可以设计的非常现代。&lt;/p&gt;
-
-&lt;p&gt;当然，Jeyll 对于我来说，更宝贵的让我进入了一种新的专注状态：&lt;/p&gt;
-
-&lt;p&gt;用最小的代价兼顾编辑效率和视觉细节的同时，给我创造了一种非常专注的写作环境, 流畅，舒适&lt;/p&gt;</content><author><name></name></author><summary type="html">自从把博客迁移到 Github Pages 以后, 又找到一种久违的创造欲. 主要的原因主要都是因为 Github Pages 背后的 Jekyll 太适合我的口味了.</summary></entry></feed>
+&lt;p&gt;That’s all, git push 以后就可以看到各文章的访问流量了。&lt;/p&gt;</content><author><name></name></author><summary type="html">这几天下班都在折腾Jekyll, 想给每篇文章添加一个访问统计，看看大家更喜好那类文章。 看了很多相关的工具，无意中发现了 Hit Kounter 这个工具. 简单、完美适配Jekyll, 主要是不用担心因为添加了Google统计就导致网站访问不了.</summary></entry></feed>
