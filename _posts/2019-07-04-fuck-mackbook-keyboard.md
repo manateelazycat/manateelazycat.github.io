@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MacBook Pro的键盘被我敲碎了
-categories: [Tech]
+categories: [Mac, Tech]
 ---
 
 都说Mac笔记本的键盘渣，最开始我一直以为只是手感差，论键盘手感，只有老款的ThinkPad的键盘手感才算过得去。
