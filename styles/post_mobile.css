@@ -57,12 +57,13 @@ a {
 
 li>img,
 p>img {
-    margin: 0 auto;
-    display: block;
-    max-width: 90%;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    max-width: 100%;
     border-radius: 5px;
+}
+
+p img {
+    display: block;
+    margin: 0 auto;
 }
 
 .nickname {
@@ -78,8 +79,7 @@ pre {
 }
 
 div.highlighter-rouge {
-    margin-left: 2em;
-    margin-right: 2em;
+    margin: 0
 }
 
 div.highlight,
@@ -208,4 +208,3 @@ blockquote p {
     margin-left: 5px;
     margin-right: 5px;
 }
-
