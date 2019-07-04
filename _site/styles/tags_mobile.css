@@ -56,16 +56,16 @@ a {
 }
 
 .category-head {
-    text-align: center;
     font-size: 20px;
     color: #333;
     margin-bottom: 40px;
 }
 
 .archive-item {
-    text-align: center;
-    line-height: 44px;
-    font-size: 14px;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 .archive-item a {
