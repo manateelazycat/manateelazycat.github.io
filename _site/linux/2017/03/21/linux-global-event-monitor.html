@@ -91,15 +91,16 @@ X11相关的技术有两种方案：</p>
 <h3 id="代码讲解">代码讲解</h3>
 <p>输入事件监听的核心代码都在 <a href="https://github.com/WHLUG/xrecord-example/blob/master/src/event_monitor.cpp">event_monitor.cpp</a> 中，下面我一个一个函数的讲解：</p>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// 因为 XRecord 的事件循环会堵塞当前线程，避免监听事件的时候应用程序卡主</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 因为 XRecord 的事件循环会堵塞当前线程，避免监听事件的时候应用程序卡主</span>
 <span class="c1">// 我们建立一个继承于 QThread 的EventMonitor类，通过子线程进行事件监听操作</span>
 <span class="n">EventMonitor</span><span class="o">::</span><span class="n">EventMonitor</span><span class="p">(</span><span class="n">QObject</span> <span class="o">*</span><span class="n">parent</span><span class="p">)</span> <span class="o">:</span> <span class="n">QThread</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="err">　</span><span class="c1">// 鼠标按下标志位，用于识别鼠标的拖拽操作</span>
     <span class="n">isPress</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">void</span> <span class="n">EventMonitor</span><span class="o">::</span><span class="n">run</span><span class="p">()</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">EventMonitor</span><span class="o">::</span><span class="n">run</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">// 创建记录 XRecord 协议的 X 专用连接</span>
     <span class="n">Display</span><span class="o">*</span> <span class="n">display</span> <span class="o">=</span> <span class="n">XOpenDisplay</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -160,9 +161,10 @@ X11相关的技术有两种方案：</p>
         <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"XRecordEnableContext() failed</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
         <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// handleRecordEvent 函数的wrapper，避免 XRecord 代码编译不过的问题</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// handleRecordEvent 函数的wrapper，避免 XRecord 代码编译不过的问题</span>
 <span class="kt">void</span> <span class="n">EventMonitor</span><span class="o">::</span><span class="n">callback</span><span class="p">(</span><span class="n">XPointer</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">XRecordInterceptData</span><span class="o">*</span> <span class="n">data</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="p">((</span><span class="n">EventMonitor</span> <span class="o">*</span><span class="p">)</span> <span class="n">ptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">handleRecordEvent</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
@@ -228,7 +230,8 @@ X11相关的技术有两种方案：</p>
 <span class="kt">bool</span> <span class="n">EventMonitor</span><span class="o">::</span><span class="n">filterWheelEvent</span><span class="p">(</span><span class="kt">int</span> <span class="n">detail</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="n">detail</span> <span class="o">!=</span> <span class="n">WheelUp</span> <span class="o">&amp;&amp;</span> <span class="n">detail</span> <span class="o">!=</span> <span class="n">WheelDown</span> <span class="o">&amp;&amp;</span> <span class="n">detail</span> <span class="o">!=</span> <span class="n">WheelLeft</span> <span class="o">&amp;&amp;</span> <span class="n">detail</span> <span class="o">!=</span> <span class="n">WheelRight</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="代码下载">代码下载</h3>
 <p>可编译的代码请在 https://github.com/WHLUG/xrecord-example 下载后，执行下面的命令来测试：</p>
