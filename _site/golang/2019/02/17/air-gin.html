@@ -61,12 +61,13 @@
 
 <p>对于我这种懒得写代码的懒人, 伟大的Google从来都有现成的方案, 在Mac上直接用下面的命令在后端目录下执行:</p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>curl <span class="nt">-fLo</span> ~/air <span class="se">\</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-fLo</span> ~/air <span class="se">\</span>
     https://raw.githubusercontent.com/cosmtrek/air/master/bin/darwin/air
 
 <span class="nv">$ </span><span class="nb">chmod</span> +x ~/air
 
-<span class="nv">$ </span>./air</code></pre></figure>
+<span class="nv">$ </span>./air
+</code></pre></div></div>
 
 <p>就是这么简单, 配合 FRP, 直接在本地开发, 前端直接调用就可以通过阿里云反向代理到本地开发机进行访问了.</p>
 

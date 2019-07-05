@@ -37,7 +37,7 @@ Linux下所有图形应用的底层消息顺序都是按照下面的顺序来执
 ### 代码讲解
 输入事件监听的核心代码都在 [event_monitor.cpp](https://github.com/WHLUG/xrecord-example/blob/master/src/event_monitor.cpp) 中，下面我一个一个函数的讲解：
 
-{% highlight c++ %}
+```c++
 // 因为 XRecord 的事件循环会堵塞当前线程，避免监听事件的时候应用程序卡主
 // 我们建立一个继承于 QThread 的EventMonitor类，通过子线程进行事件监听操作
 EventMonitor::EventMonitor(QObject *parent) : QThread(parent)
@@ -45,9 +45,9 @@ EventMonitor::EventMonitor(QObject *parent) : QThread(parent)
 　// 鼠标按下标志位，用于识别鼠标的拖拽操作
     isPress = false;
 }
-{% endhighlight %}
+```
 
-{% highlight c++ %}
+```c++
 void EventMonitor::run()
 {
     // 创建记录 XRecord 协议的 X 专用连接
@@ -110,9 +110,9 @@ void EventMonitor::run()
         return;
     }
 }
-{% endhighlight %}
+```
 
-{% highlight c++ %}
+```c++
 // handleRecordEvent 函数的wrapper，避免 XRecord 代码编译不过的问题
 void EventMonitor::callback(XPointer ptr, XRecordInterceptData* data)
 {
@@ -180,8 +180,7 @@ bool EventMonitor::filterWheelEvent(int detail)
 {
     return detail != WheelUp && detail != WheelDown && detail != WheelLeft && detail != WheelRight;
 }
-
-{% endhighlight %}
+```
 
 ### 代码下载
 可编译的代码请在 https://github.com/WHLUG/xrecord-example 下载后，执行下面的命令来测试：
