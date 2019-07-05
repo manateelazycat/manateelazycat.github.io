@@ -38,16 +38,29 @@ a {
     padding-right: 40px;
 
     width: 50%;
-    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
 }
 
 .category-name {
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 5px;
     display: inline;
     line-height: 30px;
     font-weight: bold;
     color: #666;
+}
+
+.category-number {
+    font-size: 14px;
+    color: #999;
 }
 
 #archives {
