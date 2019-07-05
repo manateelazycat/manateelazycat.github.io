@@ -7,7 +7,7 @@ body {
 html,
 body {
     width: 100%;
-    background-color: #F8F8F8;
+    background-color: #FFF;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -27,26 +27,25 @@ a {
     margin-bottom: 20px;
 }
 
+.tag-box {
+    display: flex;
+    flex-direction: row;
+}
+
 .categories-area {
-    box-sizing: border-box;
-    background-color: #FFF;
-    border-radius: 5px;
-    margin: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
-
-    width: 50%;
-
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
+    position: absolute;
+    top: 130px;
+    right: 200px;
+    border-left: 1px solid #EFEFEF;
+    padding-left: 20px;
 }
 
 .category-item {
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .category-name {
@@ -54,17 +53,18 @@ a {
     margin-right: 5px;
     display: inline;
     line-height: 30px;
+    font-size: 20px;
     font-weight: bold;
-    color: #666;
+    color: #888;
 }
 
 .category-number {
-    font-size: 14px;
+    font-size: 18px;
     color: #999;
 }
 
 #archives {
-    width: 50%;
+    width: 100%;
 }
 
 .archive-group {
@@ -73,8 +73,8 @@ a {
     border-radius: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -82,7 +82,7 @@ a {
 .category-head {
     font-size: 30px;
     color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .archive-item {

@@ -7,7 +7,7 @@ body {
 html,
 body {
     width: 100%;
-    background-color: #F8F8F8;
+    background-color: #FFF;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -49,8 +49,8 @@ a {
     background-color: #FFF;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -58,7 +58,7 @@ a {
 .category-head {
     font-size: 20px;
     color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .archive-item {
