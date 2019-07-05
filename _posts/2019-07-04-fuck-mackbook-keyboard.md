@@ -31,7 +31,7 @@ Mac无法正确映射IKBC的键盘布局，导致快捷键不兼容后我完全�
 
 最后设置当IKBC机械键盘插入时，禁用MacBook Pro的内置键盘，这样我就可以把机械键盘放到笔记本上敲而不会触发笔记本的内置键盘
 
-![MacBook Pro-Keyboard]({{site.url}}/pics/fuck-macbook-keyboard/3.png)
+![MacBook Pro-Keyboard]({{site.url}}/pics/fuck-macbook-keyboard/4.png)
 
 经过上面三个步骤的设置后，我又可以非常流畅的使用Emacs了，忍受了一年MacBook Pro的垃圾键盘，终于又体会到机械键盘写代码的快乐了。
 
