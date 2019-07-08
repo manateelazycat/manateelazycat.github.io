@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-06T08:48:32+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">MacBook Pro的键盘被我敲碎了</title><link href="http://localhost:4000/mac/tech/2019/07/04/fuck-mackbook-keyboard.html" rel="alternate" type="text/html" title="MacBook Pro的键盘被我敲碎了" /><published>2019-07-04T00:00:00+08:00</published><updated>2019-07-04T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/04/fuck-mackbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/04/fuck-mackbook-keyboard.html">&lt;p&gt;都说Mac笔记本的键盘渣，最开始我一直以为只是手感差，论键盘手感，只有老款的ThinkPad的键盘手感才算过得去。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-09T05:24:04+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘被我敲碎了&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;我在淘宝上买了键帽准备开始修复&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-macbook-keyboard/1.jpeg&quot; alt=&quot;MacBook Pro-Keyboard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;谁知是一场从头到尾的作死，也最终产生了这篇怎么教你徒手修复键盘的攻略&lt;/p&gt;
+
+&lt;h3 id=&quot;从头到尾的作死&quot;&gt;从头到尾的作死&lt;/h3&gt;
+&lt;p&gt;最开始，我以为只是键帽坏了，把键帽暴力按上去以后我才发现，其实本质上是蝴蝶支架坏了。
+当时也不知道我是怎么想的，去了五金店买了一瓶502胶水用来粘支架，当502滴下去那一瞬间，胶水瞬间晕染开来，
+不但把支架粘住了，同时也把键帽的底座整个给粘住了，因为502是速干腐蚀性胶水，在粘住支架的同时也把底座的塑料给腐蚀了。&lt;/p&gt;
+
+&lt;p&gt;MacBook Pro的蝴蝶键盘的回弹除了支架以外，主要靠底座的触点贴片和贴片之上的弹性塑料，当弹性塑料被502脆化以后，
+整个按键都无法回弹了。&lt;/p&gt;
+
+&lt;p&gt;看着完全无法回弹的J键，我知道502是这次作死操作的罪魁祸首。&lt;/p&gt;
+
+&lt;h3 id=&quot;分析原因&quot;&gt;分析原因&lt;/h3&gt;
+&lt;p&gt;既然底座被502脆化以后，干脆自己接把底座给撕下来研究一下Mac键盘的机械原理。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-macbook-keyboard/2.png&quot; alt=&quot;MacBook Pro-Keyboard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;从下到上依次是：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;键盘电路板，用于联通电路和给LED等通电&lt;/li&gt;
+  &lt;li&gt;蝴蝶支架，原来支架是夹在电路板和底座之间的，怪不得打开键帽以后，支架无法拆卸&lt;/li&gt;
+  &lt;li&gt;底座除了承担触点的功能外，主要的作用是通过四个点卡在电路板上的同时扣住支架&lt;/li&gt;
+  &lt;li&gt;最上面是键帽，键帽通过卡扣卡在支架上&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;通过这种环环相扣的方式，完成了从电路板、触点、支架和键帽的设计，从设计上来说不得不说做的很精巧。&lt;/p&gt;
+
+&lt;p&gt;既然知道了Mac键盘的机械结构，剩下的就是胶水选型，像502这种速干同时对塑料有腐蚀性的胶水千万不能再用。
+为了能够把底座粘贴在电路板上，胶水需要满足几个条件：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;出口是针头形状的，这样可以精确的控制胶水，保证在薄薄的粘贴底座的同时不能晕染到触点电路上&lt;/li&gt;
+  &lt;li&gt;不能腐蚀塑料，避免触点弹性塑料被腐蚀，无法回弹&lt;/li&gt;
+  &lt;li&gt;慢干型的，胶水万一挤多了，还可以用吸水纸吸一下&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;最终在淘宝上找到这种名字叫 B7000 的慢干精细型手机胶水。
+打开是一个针头粗细的出口，挤之前用吸水纸擦干就很容易把胶水的大小范围控制在毫米级别。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-macbook-keyboard/3.png&quot; alt=&quot;MacBook Pro-Keyboard&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;修复&quot;&gt;修复&lt;/h3&gt;
+&lt;p&gt;首先在淘宝上花10块买一个MacBook的底座和支架，老板可以剪给你, 如下图一所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-macbook-keyboard/4.png&quot; alt=&quot;MacBook Pro-Keyboard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后用镊子把底座从电路板上拔下来，注意底座和支架最后需要再粘贴到笔记本上，所以拔的时候一定要小心和耐心，一点点的拔，不要把底座和支架拔坏了。最终会变成上图中图二和图三的单个零件。&lt;/p&gt;
+
+&lt;p&gt;附一张我拔底座的残骸，看着好暴力的赶脚.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-macbook-keyboard/5.png&quot; alt=&quot;MacBook Pro-Keyboard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;修复步骤:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在电路板底部、左边中间、左边右边点三个直径2毫米的胶水滴，这三个位置可以有效避免胶水受压力晕染到电路板的触点上，顶部是LED的位置，不用点胶&lt;/li&gt;
+  &lt;li&gt;先把蝴蝶支架和底座扣好，蝴蝶支架有小字的那一面放在底座的顶部位置&lt;/li&gt;
+  &lt;li&gt;把底座的四个点对准电路板的四个凹槽按下去，并按压使胶水充分粘贴住底座和电路板&lt;/li&gt;
+  &lt;li&gt;用手指头戳一下底座中间的触点，只要能够敲击字符即可&lt;/li&gt;
+  &lt;li&gt;这一步很关键，先不要扣上键帽，放置底座几个小时等胶水干，要不然键帽没扣好重新下键帽的时候，底座、支架、键帽会一起被撬下来，不要问我为什么知道，说出来都是泪&lt;/li&gt;
+  &lt;li&gt;等胶水干透后，扣上键帽&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;按照上面的步骤修复后，又可以愉快的敲打键盘了。&lt;/p&gt;
+
+&lt;p&gt;通过这次键盘拆卸安装，可以充分体验到苹果的键盘设计是多么的垃圾，一个薄如0.5毫米的铁片 + 弹性塑料就承担了千万次键盘敲击的重任，怪不得键盘会被我敲坏。&lt;/p&gt;
+
+&lt;p&gt;但是通过这一次折腾，下次任何按键再坏掉以后，我都可以通过30元（10元底座支架、10元键帽、10元胶水）来快速修复它。&lt;/p&gt;
+
+&lt;p&gt;世界上没有修不好的机械，只要你有一颗作死的心, 哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">继上个星期我把MacBook Pro的键盘被我敲碎了</summary></entry><entry><title type="html">MacBook Pro的键盘被我敲碎了</title><link href="http://localhost:4000/mac/tech/2019/07/04/fuck-mackbook-keyboard.html" rel="alternate" type="text/html" title="MacBook Pro的键盘被我敲碎了" /><published>2019-07-04T00:00:00+08:00</published><updated>2019-07-04T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/04/fuck-mackbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/04/fuck-mackbook-keyboard.html">&lt;p&gt;都说Mac笔记本的键盘渣，最开始我一直以为只是手感差，论键盘手感，只有老款的ThinkPad的键盘手感才算过得去。&lt;/p&gt;
 
 &lt;p&gt;在MacBook Pro上写代码的时候，能明显地感觉到MacBook Pro那可怜的键盘回弹，敲上去总是给人一种非常脆弱的感觉。
 为了不把Mac笔记本的键盘敲坏，我一直小心翼翼的按键，生怕哪一天这个键盘罢工了。&lt;/p&gt;
@@ -135,7 +210,55 @@ Mac无法正确映射IKBC的键盘布局，导致快捷键不兼容后我完全�
 &lt;p&gt;使用方法很简单, 绑定按键到下面几个函数:&lt;/p&gt;
 &lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;delete-block-forward&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;delete-block-backward&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">代码语法块删除插件 一般来说我们会用 forward-word 和 backward-word 这两个命令快速在Emacs中进行单词移动。 如果开启了 subword-mode , forward-word 和 backward-word 会在骆驼风格的单词中按子单词的范围进行移动。 比如 FooBarExample 这个单词，移动的范围依次是 Foo Bar Example</summary></entry><entry><title type="html">Emacs黑客列表</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html" rel="alternate" type="text/html" title="Emacs黑客列表" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-hackers</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html">&lt;p&gt;当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">代码语法块删除插件 一般来说我们会用 forward-word 和 backward-word 这两个命令快速在Emacs中进行单词移动。 如果开启了 subword-mode , forward-word 和 backward-word 会在骆驼风格的单词中按子单词的范围进行移动。 比如 FooBarExample 这个单词，移动的范围依次是 Foo Bar Example</summary></entry><entry><title type="html">优化Emacs启动速度的方法论</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html" rel="alternate" type="text/html" title="优化Emacs启动速度的方法论" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html">&lt;h4 id=&quot;分析慢的原因&quot;&gt;分析慢的原因&lt;/h4&gt;
+&lt;p&gt;首先下载 &lt;a href=&quot;https://github.com/dholm/benchmark-init-el&quot;&gt;benchmark-init&lt;/a&gt; 这个插件,
+在配置最开始的位置写下配置：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;;; 加载的时候临时增大`gc-cons-threshold'以加速启动速度。&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gc-cons-threshold&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;most-positive-fixnum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;;; 清空避免加载远程文件的时候分析文件。&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-name-handler-alist&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'benchmark-init-modes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'benchmark-init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;benchmark-init/activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;;; 下面才写你的其它配置&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;启动完毕后，执行 M-x benchmark-init/show-durations-tree 命令，这个命令会递归的打印出所有插件的耗时明细。&lt;/p&gt;
+
+&lt;h4 id=&quot;优化-动态加载插件&quot;&gt;优化： 动态加载插件&lt;/h4&gt;
+&lt;p&gt;比如下面这个配置会禁止Emacs退出的时候问后台进程是否需要杀掉的问题，会用到 noflet 这个库。
+一般你可以这样写：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'noflet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defadvice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;save-buffers-kill-emacs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;no-query-kill-emacs&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;Prevent annoying \&quot;Active processes exist\&quot; query when you quit Emacs.&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;noflet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;process-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这样写的坏处是，Emacs没有退出时不会执行这个advice, 但是一启动就会加载 noflet 这个库, 浪费了启动时间。&lt;/p&gt;
+
+&lt;p&gt;优化的方式如下，把要调用的库在用的时候再加载，改成这样就好很多：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defadvice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;save-buffers-kill-emacs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;no-query-kill-emacs&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;Prevent annoying \&quot;Active processes exist\&quot; query when you quit Emacs.&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'noflet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;noflet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;process-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;优化-按键触发加载&quot;&gt;优化： 按键触发加载&lt;/h3&gt;
+&lt;p&gt;第二种优化方式主要用我头几天写的 &lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/05/05/lazy-load.html&quot;&gt;lazy-load&lt;/a&gt; 技术来做。
+把 90% 的插件放到运行时第一次按键时再加载，而不是启动的时候就加载好。
+因为lazy-load那篇文章已经详细说明了用法，这里就不再复述。&lt;/p&gt;
+
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
+&lt;p&gt;用我上面的三个优化步骤，可以把Emacs启动时间减少到 1/10.&lt;/p&gt;
+
+&lt;p&gt;Enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">分析慢的原因 首先下载 benchmark-init 这个插件, 在配置最开始的位置写下配置：</summary></entry><entry><title type="html">Emacs黑客列表</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html" rel="alternate" type="text/html" title="Emacs黑客列表" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-hackers</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html">&lt;p&gt;当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。&lt;/p&gt;
 
 &lt;p&gt;我这么多年Emacs黑客教会我最大价值的东西就是好奇心和眼界，他们总是用更为简单和贴近本质的方式去解决原来我认为非常困难甚至不可能的事情, 以此激励我不断的学习和重新思考。&lt;/p&gt;
 
@@ -278,55 +401,7 @@ Mac无法正确映射IKBC的键盘布局，导致快捷键不兼容后我完全�
 
 &lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/AndyStewart&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;
 
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://manateelazycat.github.io&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。</summary></entry><entry><title type="html">优化Emacs启动速度的方法论</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html" rel="alternate" type="text/html" title="优化Emacs启动速度的方法论" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html">&lt;h4 id=&quot;分析慢的原因&quot;&gt;分析慢的原因&lt;/h4&gt;
-&lt;p&gt;首先下载 &lt;a href=&quot;https://github.com/dholm/benchmark-init-el&quot;&gt;benchmark-init&lt;/a&gt; 这个插件,
-在配置最开始的位置写下配置：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;;; 加载的时候临时增大`gc-cons-threshold'以加速启动速度。&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gc-cons-threshold&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;most-positive-fixnum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;;; 清空避免加载远程文件的时候分析文件。&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-name-handler-alist&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'benchmark-init-modes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'benchmark-init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;benchmark-init/activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;;; 下面才写你的其它配置&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;启动完毕后，执行 M-x benchmark-init/show-durations-tree 命令，这个命令会递归的打印出所有插件的耗时明细。&lt;/p&gt;
-
-&lt;h4 id=&quot;优化-动态加载插件&quot;&gt;优化： 动态加载插件&lt;/h4&gt;
-&lt;p&gt;比如下面这个配置会禁止Emacs退出的时候问后台进程是否需要杀掉的问题，会用到 noflet 这个库。
-一般你可以这样写：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'noflet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defadvice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;save-buffers-kill-emacs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;no-query-kill-emacs&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;Prevent annoying \&quot;Active processes exist\&quot; query when you quit Emacs.&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;noflet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;process-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这样写的坏处是，Emacs没有退出时不会执行这个advice, 但是一启动就会加载 noflet 这个库, 浪费了启动时间。&lt;/p&gt;
-
-&lt;p&gt;优化的方式如下，把要调用的库在用的时候再加载，改成这样就好很多：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defadvice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;save-buffers-kill-emacs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;no-query-kill-emacs&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;Prevent annoying \&quot;Active processes exist\&quot; query when you quit Emacs.&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'noflet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;noflet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;process-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;优化-按键触发加载&quot;&gt;优化： 按键触发加载&lt;/h3&gt;
-&lt;p&gt;第二种优化方式主要用我头几天写的 &lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/05/05/lazy-load.html&quot;&gt;lazy-load&lt;/a&gt; 技术来做。
-把 90% 的插件放到运行时第一次按键时再加载，而不是启动的时候就加载好。
-因为lazy-load那篇文章已经详细说明了用法，这里就不再复述。&lt;/p&gt;
-
-&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-&lt;p&gt;用我上面的三个优化步骤，可以把Emacs启动时间减少到 1/10.&lt;/p&gt;
-
-&lt;p&gt;Enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">分析慢的原因 首先下载 benchmark-init 这个插件, 在配置最开始的位置写下配置：</summary></entry><entry><title type="html">读《重新理解创业》</title><link href="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html" rel="alternate" type="text/html" title="读《重新理解创业》" /><published>2019-05-07T00:00:00+08:00</published><updated>2019-05-07T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship</id><content type="html" xml:base="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html">&lt;p&gt;5.1的时候在家读了周航写的《重新理解创业》，这是一本我几乎读一页就需要标注半页的书。看到书中的很多文字，其实看到的更多是我自己，在深度奋斗的时候，自己犯过很多相同的错误。当时在这些错误中很难跳出局面来看待自己，这两年从操作系统行业出来以后，一直在复盘自己过去的成长和缺陷，内心做了很多真诚的对话，直到看了这本书，很多自我对话的内容才重新梳理清楚，才知道原来世界上不止有我犯过同样的错误，不止有我有同样的想法，好的是，当读完这本书时，我收获了更多释怀，更能接受过去的自己。&lt;/p&gt;
+&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://manateelazycat.github.io&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。</summary></entry><entry><title type="html">读《重新理解创业》</title><link href="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html" rel="alternate" type="text/html" title="读《重新理解创业》" /><published>2019-05-07T00:00:00+08:00</published><updated>2019-05-07T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship</id><content type="html" xml:base="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html">&lt;p&gt;5.1的时候在家读了周航写的《重新理解创业》，这是一本我几乎读一页就需要标注半页的书。看到书中的很多文字，其实看到的更多是我自己，在深度奋斗的时候，自己犯过很多相同的错误。当时在这些错误中很难跳出局面来看待自己，这两年从操作系统行业出来以后，一直在复盘自己过去的成长和缺陷，内心做了很多真诚的对话，直到看了这本书，很多自我对话的内容才重新梳理清楚，才知道原来世界上不止有我犯过同样的错误，不止有我有同样的想法，好的是，当读完这本书时，我收获了更多释怀，更能接受过去的自己。&lt;/p&gt;
 
 &lt;p&gt;周航是一个了不起的人，中国这种成王败寇的习惯给了太多成功者神话般的传说，周航却毫无保留的写出了自己创业过程中的无数坑，更难能可贵的是，当易道失败以后，认真的审视自我，进行了很多升维的思考，这种向内的深入审视带来的思考财富远远比创业成功后光鲜的表面结果更能激励创业者。&lt;/p&gt;
 
@@ -414,96 +489,4 @@ Mac无法正确映射IKBC的键盘布局，导致快捷键不兼容后我完全�
 
 &lt;p&gt;总是喜欢去找一段最喜欢的话作为文章的结尾，希望同样可以激励正在阵痛期而未来更勇敢的你。&lt;/p&gt;
 
-&lt;p class=&quot;line-quote&quot;&gt;这段时间我有特别大的感触，总结一个关键词就是“成败”。我想说，只有你足够痛的时候，新的光亮才可能照进来。痛可能是光照进来的地方，如果你有足够的痛，恭喜你，你可能有新的开始，因为新的光亮可能照到你。在易到的创业中我经历了各种各样的事情，直到今年还遇到一些很痛苦的事情。正是因为经历太多，这些痛在自己心中反复咀嚼，才使得我开始把眼光真正从外部收回，从向外看世界回到了向内看自己，看自己的内心是怎么想的，认知上有没有变化，又应该有什么变化。我觉得只有足够痛的时候才会有这种心态，才会有新的开始。&lt;/p&gt;</content><author><name></name></author><summary type="html">5.1的时候在家读了周航写的《重新理解创业》，这是一本我几乎读一页就需要标注半页的书。看到书中的很多文字，其实看到的更多是我自己，在深度奋斗的时候，自己犯过很多相同的错误。当时在这些错误中很难跳出局面来看待自己，这两年从操作系统行业出来以后，一直在复盘自己过去的成长和缺陷，内心做了很多真诚的对话，直到看了这本书，很多自我对话的内容才重新梳理清楚，才知道原来世界上不止有我犯过同样的错误，不止有我有同样的想法，好的是，当读完这本书时，我收获了更多释怀，更能接受过去的自己。</summary></entry><entry><title type="html">利用lazy-load.el按需加载Emacs插件</title><link href="http://localhost:4000/emacs/2019/05/05/lazy-load.html" rel="alternate" type="text/html" title="利用lazy-load.el按需加载Emacs插件" /><published>2019-05-05T00:00:00+08:00</published><updated>2019-05-05T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/05/lazy-load</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/05/lazy-load.html">&lt;p&gt;随着Emacs的插件越来越多，Emacs的启动速度会越来越幔。&lt;/p&gt;
-
-&lt;p&gt;Emacs的启动速度慢，主要有两个原因：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;加载时垃圾回收的阈值太小了，导致启动加载插件时触发了垃圾回收，减慢了启动速度&lt;/li&gt;
-  &lt;li&gt;默认Emacs加载了过多的插件，导致启动的时候浪费了过多的时间去加载插件&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;解决第一个问题的方法如下：&lt;/p&gt;
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;;; 加载的时候临时增大`gc-cons-threshold'以加速启动速度。&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gc-cons-threshold&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;most-positive-fixnum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;;; 清空避免加载远程文件的时候分析文件。&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-name-handler-alist&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;;; Emacs配置文件内容写到下面.&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;上面的代码的目的时，在Emacs加载任何插件之前临时把 gc-cons-threshold 的值设置为最大，避免Emacs启动时触发垃圾回收。
-Emacs配置文件加载完毕后，自动恢复变量 gc-cons-threshold 为默认值，避免运行时Emacs占用过多内存。&lt;/p&gt;
-
-&lt;p&gt;至于第二个问题的解决方案，就要用到今天我编写的 lazy-load.el 插件了。&lt;/p&gt;
-
-&lt;p&gt;2007 ~ 2008这两年期间，我几乎把当时所有的Emacs插件都玩过一遍，当你把几百个插件一股脑的全部默认加载，Emacs的启动时间可以从秒开延长到几分钟。
-那时候就在思考怎么把Emacs的启动时间优化到秒开，同时不减少任何插件的使用，最终开发了 lazy-load.el 插件，即使我用 300+ 插件，Emacs启动速度依然是秒开。&lt;/p&gt;
-
-&lt;h3 id=&quot;原理&quot;&gt;原理&lt;/h3&gt;
-
-&lt;p&gt;lazy-load.el 的原理很简单:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;我们先把我们的 keymap 定义好,每个按键对应的函数都写好&lt;/li&gt;
-  &lt;li&gt;告诉Emacs函数对应插件的文件名，这样当调用函数时，Emacs知道去哪里加载插件&lt;/li&gt;
-  &lt;li&gt;Emacs默认只加载非常少的插件, 加载完成后，当我们第一次触发按键时才让Emacs去动态按需加载插件和按键对应的函数&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;因为99%的Emacs插件在单独加载的时候，都可以在1s之内完成，所以相当于99%的插件都在运行时按需加载，
-这样就大大减少了Emacs启动时需要加载的插件数量，从而最终达到提升Emacs启动时间的目的。&lt;/p&gt;
-
-&lt;h3 id=&quot;安装方法&quot;&gt;安装方法&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;下载 &lt;a href=&quot;https://github.com/manateelazycat/lazy-load&quot;&gt;lazy-load&lt;/a&gt; 里面的 lazy-load.el 放到 ~/elisp 目录&lt;/li&gt;
-  &lt;li&gt;把下面的配置加入到 ~/.emacs 中&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(add-to-list 'load-path (expand-file-name &quot;~/elisp&quot;))
-(require 'lazy-load)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
-&lt;p&gt;下面这段代码的意思是，第一次按 Alt + g 时，Emacs在 load-path 目录下去找　goto-line-preview.el 这个文件，加载插件并执行 goto-line-preview 这个函数。&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lazy-load-global-keys&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M-g&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;goto-line-preview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&quot;goto-line-preview&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;下面这段代码的意思是，第一次按在 ruby mode 中按 Ctrl + c t 时，Emacs在 load-path 目录下去找　ruby-extension.el 这个文件，加载插件并执行 ruby-hash-syntax-toggle 这个函数。&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lazy-load-local-keys&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C-c t&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ruby-hash-syntax-toggle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
- &lt;span class=&quot;nv&quot;&gt;ruby-mode-map&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&quot;ruby-extension&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;很多全局按键默认已经被Emacs占用了，必须先卸载以后才能重新绑定这些全局按键，比如 Ctrl + x, 下面这段代码就是用 lazy-load-unset-keys 卸载默认绑定的全局按键：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lazy-load-unset-keys&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;C-x C-f&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;C-z&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;C-q&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s-W&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s-z&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;M-h&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;C-x C-c&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;C-\\&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s-c&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s-x&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s-v&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;高级用法&quot;&gt;高级用法&lt;/h3&gt;
-&lt;p&gt;有时候，我们会用一个前缀按键取分类插件中不同的函数，比如我的 sdcv.el 插件的不同函数就可以按照下面的代码用 Ctrl + z 这个按键作为前缀按键，
-先按 Ctrl + z ，再按 p 就可以触发 sdcv-search-pointer 函数&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lazy-load-global-keys&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;p&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sdcv-search-pointer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;y&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sdcv-search-pointer+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;i&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sdcv-search-input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sdcv-search-input+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&quot;init-sdcv&quot;&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&quot;C-z&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;对应的 lazy-load-local-keys 也支持最后一个参数传递前缀按键，只不过 lazy-load-local-keys 对应的不是 global-map ，而是插件的 keymap 。&lt;/p&gt;
-
-&lt;p&gt;如果Emacs默认就加载了某个插件，而不需要在运行时动态加载，也可以使用 lazy-load-set-keys 函数做单独的按键绑定操作，不用手动写一行行的重复写类似　(define-key keymap key) 的配置&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lazy-load-set-keys&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M-;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;comment-dwim-with-haskell-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
- &lt;span class=&quot;nv&quot;&gt;haskell-mode-map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;示例&quot;&gt;示例&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/lazycat-emacs/blob/master/site-lisp/config/init-key.el&quot;&gt;这里有很多 lazy-load 的示例用法&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">随着Emacs的插件越来越多，Emacs的启动速度会越来越幔。</summary></entry></feed>
+&lt;p class=&quot;line-quote&quot;&gt;这段时间我有特别大的感触，总结一个关键词就是“成败”。我想说，只有你足够痛的时候，新的光亮才可能照进来。痛可能是光照进来的地方，如果你有足够的痛，恭喜你，你可能有新的开始，因为新的光亮可能照到你。在易到的创业中我经历了各种各样的事情，直到今年还遇到一些很痛苦的事情。正是因为经历太多，这些痛在自己心中反复咀嚼，才使得我开始把眼光真正从外部收回，从向外看世界回到了向内看自己，看自己的内心是怎么想的，认知上有没有变化，又应该有什么变化。我觉得只有足够痛的时候才会有这种心态，才会有新的开始。&lt;/p&gt;</content><author><name></name></author><summary type="html">5.1的时候在家读了周航写的《重新理解创业》，这是一本我几乎读一页就需要标注半页的书。看到书中的很多文字，其实看到的更多是我自己，在深度奋斗的时候，自己犯过很多相同的错误。当时在这些错误中很难跳出局面来看待自己，这两年从操作系统行业出来以后，一直在复盘自己过去的成长和缺陷，内心做了很多真诚的对话，直到看了这本书，很多自我对话的内容才重新梳理清楚，才知道原来世界上不止有我犯过同样的错误，不止有我有同样的想法，好的是，当读完这本书时，我收获了更多释怀，更能接受过去的自己。</summary></entry></feed>
