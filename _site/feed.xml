@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-09T05:24:04+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘被我敲碎了&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-09T05:53:13+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘被我敲碎了&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;我在淘宝上买了键帽准备开始修复&lt;/p&gt;
 
@@ -11,19 +11,19 @@
 当时也不知道我是怎么想的，去了五金店买了一瓶502胶水用来粘支架，当502滴下去那一瞬间，胶水瞬间晕染开来，
 不但把支架粘住了，同时也把键帽的底座整个给粘住了，因为502是速干腐蚀性胶水，在粘住支架的同时也把底座的塑料给腐蚀了。&lt;/p&gt;
 
-&lt;p&gt;MacBook Pro的蝴蝶键盘的回弹除了支架以外，主要靠底座的触点贴片和贴片之上的弹性塑料，当弹性塑料被502脆化以后，
+&lt;p&gt;MacBook Pro的蝴蝶键盘的回弹除了支架以外，主要靠底座的触点铁片和铁片之上的弹性塑料，当弹性塑料被502脆化以后，
 整个按键都无法回弹了。&lt;/p&gt;
 
 &lt;p&gt;看着完全无法回弹的J键，我知道502是这次作死操作的罪魁祸首。&lt;/p&gt;
 
 &lt;h3 id=&quot;分析原因&quot;&gt;分析原因&lt;/h3&gt;
-&lt;p&gt;既然底座被502脆化以后，干脆自己接把底座给撕下来研究一下Mac键盘的机械原理。&lt;/p&gt;
+&lt;p&gt;既然底座被502脆化以后，干脆直接把底座给撕下来研究一下Mac键盘的机械原理。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-macbook-keyboard/2.png&quot; alt=&quot;MacBook Pro-Keyboard&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;从下到上依次是：&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;键盘电路板，用于联通电路和给LED等通电&lt;/li&gt;
+  &lt;li&gt;键盘电路板，用于联通电路和给LED灯通电&lt;/li&gt;
   &lt;li&gt;蝴蝶支架，原来支架是夹在电路板和底座之间的，怪不得打开键帽以后，支架无法拆卸&lt;/li&gt;
   &lt;li&gt;底座除了承担触点的功能外，主要的作用是通过四个点卡在电路板上的同时扣住支架&lt;/li&gt;
   &lt;li&gt;最上面是键帽，键帽通过卡扣卡在支架上&lt;/li&gt;
@@ -50,9 +50,9 @@
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-macbook-keyboard/4.png&quot; alt=&quot;MacBook Pro-Keyboard&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;然后用镊子把底座从电路板上拔下来，注意底座和支架最后需要再粘贴到笔记本上，所以拔的时候一定要小心和耐心，一点点的拔，不要把底座和支架拔坏了。最终会变成上图中图二和图三的单个零件。&lt;/p&gt;
+&lt;p&gt;然后用镊子把底座从电路板上撕下来，注意底座和支架最后需要再粘贴到笔记本上，所以撕的时候一定要小心和耐心，一点点的撕，不要把底座和支架撕坏了。最终会变成上图中图二和图三的单个零件。&lt;/p&gt;
 
-&lt;p&gt;附一张我拔底座的残骸，看着好暴力的赶脚.&lt;/p&gt;
+&lt;p&gt;附一张我撕底座的残骸，看着好暴力的赶脚.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-macbook-keyboard/5.png&quot; alt=&quot;MacBook Pro-Keyboard&quot; /&gt;&lt;/p&gt;
 
@@ -63,7 +63,7 @@
   &lt;li&gt;先把蝴蝶支架和底座扣好，蝴蝶支架有小字的那一面放在底座的顶部位置&lt;/li&gt;
   &lt;li&gt;把底座的四个点对准电路板的四个凹槽按下去，并按压使胶水充分粘贴住底座和电路板&lt;/li&gt;
   &lt;li&gt;用手指头戳一下底座中间的触点，只要能够敲击字符即可&lt;/li&gt;
-  &lt;li&gt;这一步很关键，先不要扣上键帽，放置底座几个小时等胶水干，要不然键帽没扣好重新下键帽的时候，底座、支架、键帽会一起被撬下来，不要问我为什么知道，说出来都是泪&lt;/li&gt;
+  &lt;li&gt;这一步很关键，先不要扣上键帽，放置底座几个小时等胶水干，要不然键帽没扣好重新扣键帽的时候，底座、支架、键帽会一起被扣下来，不要问我为什么知道，说出来都是泪&lt;/li&gt;
   &lt;li&gt;等胶水干透后，扣上键帽&lt;/li&gt;
 &lt;/ol&gt;
 
