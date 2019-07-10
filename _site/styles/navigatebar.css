@@ -20,6 +20,7 @@
     color: #888;
     font-size: 28px;
     font-family: angelinaFont;
+    z-index: 100;
 }
 
 .navigatebar-button a {
