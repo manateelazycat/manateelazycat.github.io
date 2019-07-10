@@ -4,7 +4,7 @@ title: 怎么徒手修复MacBook键盘？
 categories: [Mac, Tech]
 ---
 
-继上个星期我把[MacBook Pro的键盘被我敲碎了](https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html)
+继上个星期我把[MacBook Pro的键盘敲碎了](https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html)
 
 我在淘宝上买了键帽准备开始修复
 
