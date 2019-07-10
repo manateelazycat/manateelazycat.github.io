@@ -18,8 +18,12 @@ body {
 }
 
 a {
-    color: #57BF7D;
+    color: #333;
     text-decoration: none;
+}
+
+a:hover {
+    color: #57BF7D;
 }
 
 .cover {
