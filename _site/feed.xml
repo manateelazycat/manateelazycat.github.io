@@ -1,4 +1,275 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-10T15:31:46+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘敲碎了&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-14T07:00:48+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Vue.js的实践小技巧</title><link href="http://localhost:4000/web/2019/07/14/vue-tooltips.html" rel="alternate" type="text/html" title="Vue.js的实践小技巧" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/07/14/vue-tooltips</id><content type="html" xml:base="http://localhost:4000/web/2019/07/14/vue-tooltips.html">&lt;h3 id=&quot;vuejs是计算机发展的趋势使然&quot;&gt;Vue.js是计算机发展的趋势使然&lt;/h3&gt;
+&lt;p&gt;计算机的历史总是遵循分久必合合久必分的趋势，原来Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 那样进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树。&lt;/p&gt;
+
+&lt;p&gt;最终的问题是，一旦要切换新页面时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，依赖DOM节点查询的方式就很痛苦，项目也很难以维护。&lt;/p&gt;
+
+&lt;p&gt;Vue.js 主要解决的问题是，整个前端的界面修改都是在浏览器中完成的, 服务端只用提供API即可，而且界面整体逻辑是通过属性来动态绑定的，界面布局调整的JS代码并不依赖于DOM的节点查询，如果需要修改界面布局和设计时，只用大胆的调整前端模板和CSS样式即可，JS逻辑和后端代码都不用配合修改，整个界面改动的负担很小，可维护性也非常好。&lt;/p&gt;
+
+&lt;p&gt;原来学Rails的时候，对Vue.js和React的技术抱有偏见，很多Web的开发者总是争论是后端服务渲染好，还是Vue.js这种前端框架好？在我看来，任何撇开时代背景和用户需求的技术讨论都是个人喜好性质的讨论。&lt;/p&gt;
+
+&lt;p&gt;从总体来说，用户肯定希望界面交互越复杂越精致越好，不论后端渲染还是Vue.js这种前端框架，从理论上都是可以满足用户的计算需求的，只是Vue.js这种前端框架把真实的计算逻辑和界面布局给完全分开了，当快速迭代产品设计和交互体验时，Vue.js的更新和维护负担更小，成本更低的改动就意味着生产力和竞争力。&lt;/p&gt;
+
+&lt;p&gt;所以Vue.js这种前端框架的大行其道，并不是技术框架在技术层面的谁优谁劣，而是Web终端硬件性能提升和用户对Web应用功能期待的一种自然而然的演化行为，虽然Vue.js/React这种技术有很多技术细节和优点，但是从架构设计上来看，其实当今的Web技术又回到微软时代的那种前后端分离的技术，架构上是没有区别的，只是Vue.js相对于MFC、Gtk这类的技术，通过属性绑定和动态DOM的技术更有生产力的编写前端界面。&lt;/p&gt;
+
+&lt;h3 id=&quot;vuejs-的优点&quot;&gt;Vue.js 的优点&lt;/h3&gt;
+&lt;p&gt;对于我这种非常熟悉Gtk/Qt的开发者来说，我更喜欢Vue.js这种前后端分离的设计，因为前端的修改非常有效率，实时可以看到最新的界面效果，同时后端也可以做的很薄，可以让后端专注于架构设计、工程化运维和性能提升。&lt;/p&gt;
+
+&lt;p&gt;Vue.js 的优点主要有以下几点：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;通过属性绑定和DOM Tree Diff更新的技术来实时渲染Web界面，前端开发生产力非常高&lt;/li&gt;
+  &lt;li&gt;Vue.js的作者是国人，中文文档写的非常好，我想这也是Vue.js在中国非常流行的原因，官方的文档看一天即可入门写代码了&lt;/li&gt;
+  &lt;li&gt;内置 VueRouter、Vuex全家桶，包括 vue-cli 的发布，真正做到开箱即用，不用折腾各种插件和让人绝望的Webpack配置即可快速把精力投入到产品开啊中&lt;/li&gt;
+  &lt;li&gt;*.vue 文件一体化的设计，模板、JS代码和CSS样式，一个组件一个文件，非常好维护&lt;/li&gt;
+  &lt;li&gt;插件生态非常好，常用的各种插件都有Vue的版本，npm或者yarn都可以快速实验插件功能&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;vuejs-的一些小技巧&quot;&gt;Vue.js 的一些小技巧&lt;/h3&gt;
+&lt;p&gt;虽然Vue.js的&lt;a href=&quot;https://cn.vuejs.org/index.html&quot;&gt;官方文档&lt;/a&gt;写的非常好，但是通过几个项目的实践，还是有一些隐晦的地方需要自己动手才能搞懂。&lt;/p&gt;
+
+&lt;h4 id=&quot;vuejs路由的支持&quot;&gt;Vue.js路由的支持&lt;/h4&gt;
+&lt;p&gt;Vue.js官方文档可能从入门的角度看，都是用单文件的方式来展示Vue.js的示例，但是真的项目往往都是需要前端路由来控制，即使看完Vue.js/Vuex的文档，我相信大多数人还是不知道怎么配置一个 vue-cli 项目去支持前端页面的路由跳转。&lt;/p&gt;
+
+&lt;h4 id=&quot;路由跳转之appvue&quot;&gt;路由跳转之App.vue&lt;/h4&gt;
+&lt;p&gt;首先 App.vue 文件要改成 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt;&lt;/code&gt; 的形式，这样所有Vue.js动态切换的页面都会在 router-view 中进行替换，下面是我的 App.vue, 这个文件除了调样式外基本不用作任何改动。&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/router-view&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/template&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/style&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;路由跳转之mainjs&quot;&gt;路由跳转之main.js&lt;/h4&gt;
+&lt;p&gt;其次 main.js 要修改成下面的样子，这样你只用在 components 目录添加新的组件，然后更新 VueRouter 的内容即可实现各种路由跳转。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;router.beforeEach&lt;/code&gt; 这一段代码的意思是，路由更新是更改浏览器标签的标题。&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'vue'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;VueRouter&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'vue-router'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./App.vue'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Login&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./components/Login.vue'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Home&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./components/Home.vue'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;productionTip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;VueRouter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;VueRouter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;routes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Login title'&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/home'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Home&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Home title'&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'#app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;vuejs-组件中状态关键字&quot;&gt;Vue.js 组件中状态关键字&lt;/h3&gt;
+
+&lt;p&gt;Vue.js 的状态分为几个不同的关键字:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;data() { … }&lt;/li&gt;
+  &lt;li&gt;props: { … }&lt;/li&gt;
+  &lt;li&gt;computed: { … }&lt;/li&gt;
+  &lt;li&gt;watch: { … }&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;初学者一般看到这几个关键字都是一脸懵逼的，其实 Vue.js 是对状态的不同用法来进行关键字和区域划分的：&lt;/p&gt;
+
+&lt;h4 id=&quot;data---&quot;&gt;data() { … }&lt;/h4&gt;
+
+&lt;p&gt;data代码区域是组件内部自己用的，可以看做组件内部属性初始值的声明区域, 一般都是下面的形式:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;attr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;attr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;attr3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;props---&quot;&gt;props: { … }&lt;/h4&gt;
+&lt;p&gt;props代码区域是专门用于父组件进行属性绑定的，比如Foo组件是一个画布，就可以声明&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这样在其他组件Bar调用Foo时，就可以在模板中写入:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Foo&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;600&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;400&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;当然上面的 width 和 height 也可以换成 Foo 组件内部的属性值，只要父组件 Bar 属性发生变化，Foo组件的 width 和 height 属性也一起关联更新。&lt;/p&gt;
+
+&lt;p&gt;所以 props 区域的状态可以看成当前组件和其父组件之间属性绑定和通信的一种方式。&lt;/p&gt;
+
+&lt;h4 id=&quot;computed---&quot;&gt;computed: { … }&lt;/h4&gt;
+&lt;p&gt;computed代码区域是用作组件内部属性和Vuex Store状态绑定的，比如 Vuex 有一个 count 的状态，可以通过以下部分来声明组件内部的 count 属性, 一旦 Store 的 count 发生变化，组件内部的 count 属性也会跟着一起变化。&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;computed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;watch---&quot;&gt;watch: { … }&lt;/h4&gt;
+&lt;p&gt;watch代码区域是专门用户监听 Store 状态变化的，一旦 Store 状态发生变化，就可以在 watch 代码区域中调用对应的组件函数, 比如&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'#demo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Foo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Bar'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;fullName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Foo Bar'&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;watch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fullName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lastName&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fullName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;firstName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;当 Store 的 firstName 发生变化时，就可以更新组件内部的 fullName 属性。&lt;/p&gt;
+
+&lt;h3 id=&quot;状态关键字区分&quot;&gt;状态关键字区分&lt;/h3&gt;
+&lt;p&gt;看懂上面的说明后，按照以下方式记忆，然后多实践就可以很清晰明了了：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;data() { … } – 组件内部属性&lt;/li&gt;
+  &lt;li&gt;props: { … } – 需要和父组件通信的属性&lt;/li&gt;
+  &lt;li&gt;computed: { … } – 和Store状态绑定的属性&lt;/li&gt;
+  &lt;li&gt;watch: { … } – 监听Store状态变化的回调区域&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;store子模块&quot;&gt;Store子模块&lt;/h3&gt;
+&lt;p&gt;当项目很复杂时，需要针对不同用途的 Store 进行单文件管理，而不是所有状态都放在 store/index.js 里面。&lt;/p&gt;
+
+&lt;p&gt;比如有一个单独的状态模块 store/modules/Backround.js :&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;zoomRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;zoomRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;zoomRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mutations&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;updateZoomRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ratio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;zoomRatio&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ratio&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;namespaced&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;getters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;mutations&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在 *.Vue 组件中，动态绑定 Store 的 zoomRatio 状态，就需要这样写 computed 声明:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;computed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nl&quot;&gt;zoomRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Background/zoomRatio&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+         &lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Background/updateZoomRatio&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;因为 Background.js 是 store/modules 子目录下声明的单独Store模块&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;首先需要在 Background.js 模块中增加 &lt;code class=&quot;highlighter-rouge&quot;&gt;namespaced: true&lt;/code&gt; 的关键字以增加命名空间&lt;/li&gt;
+  &lt;li&gt;其次，需要在组件中用 &lt;code class=&quot;highlighter-rouge&quot;&gt;Background/zoomRatio&lt;/code&gt; 的前缀去调用 Store 状态。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这样才能在组件中对Store模块的状态进行正常访问&lt;/p&gt;
+
+&lt;h3 id=&quot;eventbus-回调调用两次的问题&quot;&gt;EventBus 回调调用两次的问题&lt;/h3&gt;
+&lt;p&gt;对于单向的组件之间通讯，比如子组件发送信号给父组件，有时候用 EventBus 更轻便。&lt;/p&gt;
+
+&lt;p&gt;一般我们都会在 mounted 区域中通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;EventBus.$on(&quot;signal&quot;, this.callback)&lt;/code&gt; 的方式进行事件回调处理:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;mounted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;EventBus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;signal&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这个地方的坑在于，一旦页面切换时，页面加载一次就会调用一次 &lt;code class=&quot;highlighter-rouge&quot;&gt;EventBus.$on(&quot;signal&quot;, this.callback)&lt;/code&gt; , 页面加载多次就会导致调用多次事件回调，然后再项目实践中产生各种诡异的问题。&lt;/p&gt;
+
+&lt;p&gt;要保证页面加载的时候只调用一次事件回调，就需要在 beforeDestroy 区域中调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;EventBus.$off(&quot;signal&quot;)&lt;/code&gt; 方法:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;beforeDestroy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;EventBus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;signal&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
+&lt;p&gt;虽然上面写了这么多，但是从整体上看，一旦你熟悉了Vue.js的使用方式，Vue.js的坑已经算同等开源项目里面比较少的项目，用起来还是非常省心和好用的。&lt;/p&gt;
+
+&lt;p&gt;上面就是我看了官方文档后，在Vue.js项目实践中的一些技巧分享，希望看到此文章的同学少走一些弯路。&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue.js是计算机发展的趋势使然 计算机的历史总是遵循分久必合合久必分的趋势，原来Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 那样进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树。</summary></entry><entry><title type="html">Vue Tooltips</title><link href="http://localhost:4000/2019/07/14/vue-tooltips.html" rel="alternate" type="text/html" title="Vue Tooltips" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/2019/07/14/vue-tooltips</id><content type="html" xml:base="http://localhost:4000/2019/07/14/vue-tooltips.html">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+	&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+
+&lt;head&gt;
+&lt;title&gt;2019-07-14-vue-tooltips.html&lt;/title&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+zsh:1: command not found: markdown
+
+&lt;/body&gt;
+&lt;/html&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘敲碎了&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;我在淘宝上买了键帽准备开始修复&lt;/p&gt;
 
@@ -258,235 +529,4 @@ Mac无法正确映射IKBC的键盘布局，导致快捷键不兼容后我完全�
 &lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
 &lt;p&gt;用我上面的三个优化步骤，可以把Emacs启动时间减少到 1/10.&lt;/p&gt;
 
-&lt;p&gt;Enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">分析慢的原因 首先下载 benchmark-init 这个插件, 在配置最开始的位置写下配置：</summary></entry><entry><title type="html">Emacs黑客列表</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html" rel="alternate" type="text/html" title="Emacs黑客列表" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-hackers</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-hackers.html">&lt;p&gt;当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。&lt;/p&gt;
-
-&lt;p&gt;我这么多年Emacs黑客教会我最大价值的东西就是好奇心和眼界，他们总是用更为简单和贴近本质的方式去解决原来我认为非常困难甚至不可能的事情, 以此激励我不断的学习和重新思考。&lt;/p&gt;
-
-&lt;p&gt;本文希望用博客的方式列出当今世界上著名的Emacs黑客，集中的展示他们的网站，作品和博客，以方便国人更快地提升自己的Emacs水平。&lt;/p&gt;
-
-&lt;p&gt;如果你知道厉害的Emacs黑客不存在下面的列表中，欢迎提交你的 &lt;a href=&quot;https://github.com/manateelazycat/manateelazycat.github.io/edit/master/_posts/2019-05-12-emacs-hackers.md&quot;&gt;补丁&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Richard Stallman&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;Emacs作者, GCC, GDB和很多自由软件的第一作者，自由软件基金会，GNU项目，GPL的创始人， Open Source的奠基人，顶尖的Lisp黑客, 关于教主的生平，相信也无需赘述.
-江湖有传言:平生不识RMS，就称Coder也枉然&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/RichardStallman&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Richard_Stallman&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://stallman.org/&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Alex Schroeder&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;EmacsWiki管理员，资深Emacs黑客，超级混血王子，精通多国语言，1/16的中国血统，不管哪个国家的Emacs黑客在EmacsWiki注册主页时，他都能用母语去欢迎他们。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/Alex_Schroeder&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://alexschroeder.ch/wiki/Recent_Changes&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Sacha Chua&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;每周都会整理Emacs的新插件，开发进度，新技巧，基本是现在最好的Emacs资讯聚合地，每周的更新我都会看，经常会发现一些非常实用的插件和技巧。最好玩的就是她的名字我总是记不住，总是依靠Google来搜索她的博客。;)&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://sachachua.com/blog/category/geek/emacs/&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Taylor Campbell&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;ParEdit的作者，Emacs插件开发者必备插件， ParEdit的出现极大的推进了Elisp的编程效率，标准的Old School，网上信息极少，但是编程功力惊人。
-顺便推广一下 ParEdit 的继任者 &lt;a href=&quot;https://github.com/manateelazycat/awesome-pair&quot;&gt;Awesome-Pair&lt;/a&gt;， 哈哈哈哈。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/TaylorCampbell&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;rubikitch&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;高产的Emacs黑客，开发和维护了大量的Emacs插件，Anything（Helm前身）的核心开发者，Ruby玩的超级溜。典型的日本黑客，Emacs核心开发者中日本开发者占了相当大的比例。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/rubikitch&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;http://rubikitch.com/&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Thierry Volpiatto&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;著名Helm框架的作者，还记得当年我和rubikitch以及Thierry Volpiatto共同开发Anything的那些时光，一个Wiki一个Ediff即可完成三人协作。Thierry Volpiatto这么多年靠一次次的重构，把Anything的思想不断提升精炼， 变成Emacs最流行的搜索补全框架，证明了一个开源项目，数十年如一日的坚持维护是多么的重要。Thierry Volpiatto的主业是攀岩，40多岁才开始学编程，真正的黑客是具有极强的好奇心和冒险精神，Linux内核开发者有牙医，Emacs开发者不但有攀登者，还有阿桑奇这样的斗士，这才是真正黑客的精彩生活，多么令人赞叹！&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/thierryvolpiatto&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://sachachua.com/blog/2018/09/interview-with-thierry-volpiatto/&quot;&gt;Interview with Thierry Volpiatto&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Matsushita Akihisa&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;color-moccur.el的作者，这个人太低调，他的插件是我最早通过 Google ftp 语法才能搜索到，第一次用 color-moccur.el 的时候太惊叹了，Emacs还可以这样高效率的递归搜索和重构？&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/Matsushita&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;John Wiegley&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;use-package作者和Haskell黑客，开发了众多的Emacs插件，虽然我不用use-package, 但单单从Emacs社区推广看，use-package极大的减少了Emacs新手的入门门槛，可以通过一种标准化的配置风格把Emacs的配置经验从老手传递给新手，而不是像Emacs黑客一贯的自由风格，东抄抄西抄抄。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;http://www.newartisans.com/&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/jwiegley&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Jonas Bernoulli&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;Emacs顶级杀手锏Magit的作者，如果没有Magit你会人工记忆各种复杂的Git命令，而且很多高级操作需要很多Git Workflow串联配合才搞的定。Magit可以让你只用记住快捷键，就可以玩各种Git骚操作，Emacs必备插件，强烈推荐。
-这家伙也会开发一些非常有意思的小插件。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/tarsius&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://emacsair.me/&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Carsten Dominik&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;Emacs另一个顶级杀手锏org-mode的作者，荷兰阿姆斯特丹大学天文学教授，org-mode是GTD个人管理工具集大成者，只要你用心玩，你会发现个人记笔记和时间管理可以做到极致。当然有时候也会因为org-mode玩org-mode，org-mode不仅仅是个人任务管理工具，还最擅长写文章导出自己的博客。也是当年他的帮助，我可以快速的签署FSF纸质,给Emacs贡献了 org-w3m.el 这个插件。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://staff.fnwi.uva.nl/c.dominik/&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://orgmode.org/&quot;&gt;Org-mode&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Dmitry Gutov&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;著名代码补全插件company-mode的作者, Emacs最著名的代码补全框架有auto-complete和company-mode，但就像Anything和Helm的发展历史一样，company-mode因为维护的更久更规范，现在company-mode应该是Emacs最好用也最全面的代码补全插件了。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://company-mode.github.io/&quot;&gt;company-mode&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/dgutov&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Oleh Krehel&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;Ivy，Hydra，Avy等一系列有名插件的开发者，想象力丰富的一名荷兰人。他刷新了许多人使用Emacs的习惯，让人感叹Emacs还能这么用！&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/abo-abo&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://oremacs.com&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Alan Mackenzie&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;这位大神维护cc-mode已近20年。直到今天，只要你报bug，他就会回复，通常也会修好。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;cc-mode给Emacs提供C，C++，Java等一堆重要语言的支持，可以说是很多人每天都离不开的。和其他许多编辑器不一样，cc-mode用variable-name-face高亮的是变量或参数被声明，而不是被引用的地方，所以一眼就能轻松看出某个函数在哪里定义了哪几个局部变量。个人认为cc-mode的语法高亮是所有编辑器里最有用的，而不光是花花绿绿看着好看。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;Emacs正是有这些默默无闻的大神一直在后面维护，才造就了Emacs无与伦比的编程体验。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/AlanMackenzie&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Henrik Lissner&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;doom-emacs&lt;/code&gt; 的作者，居于加拿大多伦多，追求简洁的设计风格，使&lt;code class=&quot;highlighter-rouge&quot;&gt;doom-emacs&lt;/code&gt;成为与&lt;code class=&quot;highlighter-rouge&quot;&gt;spacemacs&lt;/code&gt;齐名的项目。开发非常积极，态度友善，同时开发了不少配套项目，比如&lt;code class=&quot;highlighter-rouge&quot;&gt;doom-themes&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;evil-multiedit&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;evil-snipe&lt;/code&gt;等。&lt;a href=&quot;https://github.com/seagle0128&quot;&gt;seagle0128&lt;/a&gt;的&lt;a href=&quot;https://github.com/seagle0128/doom-modeline&quot;&gt;doom-modeline&lt;/a&gt;也是在其启发和鼓励下开发的。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/hlissner&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Matus Goljer&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;smartparens&lt;/code&gt;的作者，smartparens是流行的智能括号补全插件，类lisp编程的福音。同时开发和维护的流行插件包括&lt;code class=&quot;highlighter-rouge&quot;&gt;Elsa&lt;/code&gt;(Emacs Lisp Static Analyzer), &lt;code class=&quot;highlighter-rouge&quot;&gt;dired-hacks&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;clippy&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;litable&lt;/code&gt;等，都是功能强悍的精品。&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/Fuco1&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://fuco1.github.io/sitemap.html&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;Magnar Sveen&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;multiple-cursors&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;expand-region&lt;/code&gt;的作者，大大提升了编辑体验。如果你还没用过千万不要错过。同时开发和维护着非常流行的&lt;code class=&quot;highlighter-rouge&quot;&gt;elisp&lt;/code&gt;库&lt;code class=&quot;highlighter-rouge&quot;&gt;dash&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;s&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/magnars&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;http://twitter.com/magnars&quot;&gt;Twitter&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-name&quot;&gt;王勇&lt;/p&gt;
-
-&lt;p class=&quot;hacker-summary&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Anything (Helm 前身)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Emacs Application Framework&lt;/code&gt;等众多 Emacs 插件的作者或重要贡献者，著名自由软件黑客，同时也是一个创业者（Deepin 前 CTO），人生经历非常丰富。&lt;a href=&quot;https://github.com/manateelazycat/manateelazycat.github.io/commit/a334c37a843571014b30364071d5f5f97331721b&quot;&gt;Commit by RenWenshan&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://github.com/manateelazycat&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://www.emacswiki.org/emacs/AndyStewart&quot;&gt;EmacsWiki&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;hacker-link&quot;&gt;&lt;a href=&quot;https://manateelazycat.github.io&quot;&gt;Blog&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">当你把Elisp完全学会并且可以写Emacs插件以后，你下一阶段的提升方法就是多向世界著名的Emacs黑客去学习，学习他们的代码细节，学习他们的思考方式和生活态度。</summary></entry><entry><title type="html">读《重新理解创业》</title><link href="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html" rel="alternate" type="text/html" title="读《重新理解创业》" /><published>2019-05-07T00:00:00+08:00</published><updated>2019-05-07T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship</id><content type="html" xml:base="http://localhost:4000/reading/2019/05/07/reunderstanding-entrepreneurship.html">&lt;p&gt;5.1的时候在家读了周航写的《重新理解创业》，这是一本我几乎读一页就需要标注半页的书。看到书中的很多文字，其实看到的更多是我自己，在深度奋斗的时候，自己犯过很多相同的错误。当时在这些错误中很难跳出局面来看待自己，这两年从操作系统行业出来以后，一直在复盘自己过去的成长和缺陷，内心做了很多真诚的对话，直到看了这本书，很多自我对话的内容才重新梳理清楚，才知道原来世界上不止有我犯过同样的错误，不止有我有同样的想法，好的是，当读完这本书时，我收获了更多释怀，更能接受过去的自己。&lt;/p&gt;
-
-&lt;p&gt;周航是一个了不起的人，中国这种成王败寇的习惯给了太多成功者神话般的传说，周航却毫无保留的写出了自己创业过程中的无数坑，更难能可贵的是，当易道失败以后，认真的审视自我，进行了很多升维的思考，这种向内的深入审视带来的思考财富远远比创业成功后光鲜的表面结果更能激励创业者。&lt;/p&gt;
-
-&lt;p&gt;读书有三遍，第一遍开拓视野，第二遍深入思考，第三遍写出感想至融入自我。&lt;/p&gt;
-
-&lt;p&gt;下面就是我对这本书的第三遍阅读：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;和成功的待遇截然不同，这个社会又如此厌恶失败、鄙视失败。我们耻于谈论失败，甚至会讥讽一切失败的现象、失败的人。我们经常冷眼看着一家面临崩盘的公司走向灭亡，然后说：“我早就知道如此，你看，应验了吧？”眼见他起高楼，眼见他楼塌了，大家对待失败大抵都是这般吃瓜群众的心态。。。换个角度重新思考，从中你会发现美国创业文化中很重要的一部分是对失败的宽容。而且这种宽容，不仅没有影响到他们的创新，反而鼓励了创业者尝试和冒险，极大激发了创新。。。回溯科技史，我们发现推动行业发展的产品，并不全部都是成功的，失败在其中的作用举足轻重。正是那些失败的产品成为革新的养料——失败的尝试也是历史中群星闪耀的时刻。这样一看，所谓的失败是多么美好的事情，这是失败对于我们全社会的价值。如果一个社会还在耻于谈论失败、害怕失败、排斥失败，只崇尚成功的话，我们不太可能有探索意义上的创新。所以，如果你希望这是一个创新的国度，一个创新的社会，那么我们必然需要重新定义失败，重新理解失败。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;以前做开源社区的时候，一直体会到国内开发者深入人心的 “国外的月亮圆，国外的代码就是香” 观念，当时一直从正面看，这是一种社会病态。但是现在想想，就和周航说的一样，背后深入的是整个社会害怕失败的教育和社会压力，大家因为太害怕失败以后给自己太多压力，从而导致自己没法从容的发挥和应对，往往最后真的就走向了失败。失败对于我这种性格好强的人，尤其有威慑力，为了做到完美，总是希望做到别人心目中的最好，即使身体有时候太累了，也在消耗式的坚持，往往容易进入High的时候像疯子，High完以后就进入 “对什么都不感兴趣” 的丧尸状态了。&lt;/p&gt;
-
-&lt;p&gt;其实没有人能够每天都能够正能量，但是社会希望每天都是正能量，人性的本质本来就是残缺，但是人性的伟大也是因为残缺而不断努力的去修行，变成更好的自我的过程。如果每个人都是完美的，一个大家对统一完美的标准去活着，社会就会失去多样性，失去多样性的生态和社会最终都会磨灭。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;我们学习失败的真正目的在于，面对它，接受它，解决它，放下它，然后从中成长，让自己以后生活得更好。。。于是我总结，学习失败的真正意义在于，我们可以坦然面对失败、接受失败、解决失败、放下失败，而不是避免失败，因为任何人都避免不了。失败几乎就是生命的一部分。拒绝失败，就是拒绝生命本身。这也是失败对我个人的意义所在。。。企业的终极宿命跟人的生命一样，会经历出生、成长、青壮年的强壮、中年的瓶颈、衰老直至死亡，关键是你怎么看待这件事情。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;以前，我都一直在遵循克服自己的缺点，努力的做更好的自己，不断学习不断成长。我对于失败，最多只是很快忘记失败，但是我从来没有像周航这样去诠释失败，去理解失败。&lt;/p&gt;
-
-&lt;p&gt;一直很喜欢看神秘博士，神秘博士对于死亡是相当推崇的，认为死亡就是正常的一部分，也是生命精彩的延续。&lt;/p&gt;
-
-&lt;p&gt;现在回想起来，客观的看我这前半生的所有事情，大多数都是失败的，总是先错很多次，最后一两次才会做对，跌跌撞撞的走过来，这么多事情，失败是常态，成功的事情在几率上寥寥无几。唯一的变化是，面对失败更从容。最开始写代码的时候，什么都不懂，一错了就怀疑自我，抱怨自我，但是写了十几年代码以后，发现现在再也不会因为代码写不出来而焦虑，因为理解和知识还没到那一步，没有看穿，所以不对，但是因为心中觉得总是可以解决的，所以现在很少会因为代码而焦虑，任何编程的知识对于我来说只是风格、体验和投入不一样，平常心，慢下来往往有更大的收获。&lt;/p&gt;
-
-&lt;p&gt;我一直可以坦然面对失败，编程领域就是这样的。但是我在生活中，编程领域以外的区域，却很少能够像编程那样做的那么从容和快乐，撇开投入的时间和看穿的能力，最大的区别是，我对失败的认识不够。我在编程领域能够正确的认识失败，接受失败，但是在编程领域以外却很少能够面对失败，接受失败，导致有时候因为很多事情头破血流。&lt;/p&gt;
-
-&lt;p&gt;现在体会到，不仅仅是编程，从编程扩展开去，人生和创业过程中，要做到面对失败、接受失败、解决失败、放下失败。原来一直让自己放下，但是自己总是放不下。现在看来，原来是不知道自己应该放下什么才导致自己越想放下越放不下。&lt;/p&gt;
-
-&lt;p&gt;放下，放下失败才是修行！&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;如果你在创业的时候像当时的我们，把很多问题归结为营销问题，就要格外小心。实际上很可能是你在战略上出了问题，你的产品需求和定位就不应该那样设计。如果你需要用钓鱼的方式一个一个地“捞”用户，那说明这件事情本身就错了，你应该是用大网去捕鱼，而不是用鱼竿去钓鱼。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;技术人因为不善言辞，总是表面的认为自己不懂营销，往往机会陷入去学习很多营销的技巧上，这样从结果上往往还适得其反，纠其缘由还是战略方向不对。&lt;/p&gt;
-
-&lt;p&gt;战略方向不对源于对事情没有看穿，对行业没有看穿，当自己能够看穿行业时，就能看到行业的未来和趋势，能够看到趋势时，营销和市场不过是看穿的表现形式，而不是通过营销本身的技巧去做到看穿和成功。&lt;/p&gt;
-
-&lt;p&gt;所以，不管是市场营销高手还是技术人，本质上还是要多积累多思考，当你看穿这个行业时，营销就不会是问题，这个和一个人善不善于言辞关系这不大。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;对一家公司，特别是创业公司来说，一个时期只能有一项关键任务，不能有多项。但是我看到太多创业公司同时在做多项内容，并发多进程任务，这说明还没有思考清楚本质问题。并发多进程任务，看起来给公司带来很多机会和可能性，但其实公司资源总共就这么点儿，在关键任务之外做其他事情都是浪费资源，所以我们要认清每个时期竞争的关键和本质。只有认识清楚，你才能够确定好一家公司在某个时期的关键任务是什么。关键任务清楚了，公司上下才能达成共识，把全公司之力放在这一件事上&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;战略是自己视野和看穿行业的自然延伸，但是战略不是未来的口号和愿景。战略真正价值在于当你看穿一件事情以后，别人看不穿时，你可以通过你的战略去指导整个团队的执行力。而指导执行力的关键是，战略一定是简单的，单一的，专注并且带有长期价值的。&lt;/p&gt;
-
-&lt;p&gt;简单来说，如果战略简单到一句话说清楚，公司所有人都能够说清楚，即是好的战略，如果最终还能够打胜仗，那就是伟大的战略。反之，复杂的，左右摇摆的，飘忽不定的都不是战略，今天打东边，明天打西边，最后只会让大家去怀疑战略的制定者是否真的想清楚了？&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;愿景不是广告中的slogan（标语）。用户真的关心你的愿景吗？用户可能不会花时间理解它，因为他们最关心的是从中能得到什么。。。淘宝尚且如此，我们作为创业者更应该始终坚持挖掘品牌为用户创造的当下价值。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;以前就走过这样的坑，就像大多数互联网公司一样，不装逼说出一段传奇故事，不装逼写一段高逼格的文字感觉就不配做互联网公司，不配在这个牛逼的时代混下去。&lt;/p&gt;
-
-&lt;p&gt;人都是自私的，社会也是自私的，但是整个社会在自私和多样性的生态中蓬勃发展，每个人都希望从别人那里获得更多的帮助和价值，同时自己创造价值去满足别人。&lt;/p&gt;
-
-&lt;p&gt;从根本上来说，如果一个企业讲清楚自己做的事情能够对用户和对社会产生什么样的价值？别人就记住你了，这个比你未来是否能够登顶更能让大家记住，因为现在变化太快，未来是什么样的谁都不知道。&lt;/p&gt;
-
-&lt;p&gt;当移动支付和打车在打价格战的时候，大家就知道一点，打车真便宜，座贼远的车还免费还倒给一瓶水，大家都说滴滴好，但是真的布局完成，价格战回归理性后，司机越来越少，大家只会抱怨滴滴。你说滴滴变了吗？也许一开始就那么坏，也许没有大家想的那么坏，但是为什么短短几年，大众的意识形态变化那么多？因为人只关心可以从你这里获得什么， 大部分人都倾向于看短期利益。所以赚钱来说，就是要把当下的价值说清楚，就是最好的品牌宣传，当在很长时间区间里把每个阶段和每个当下都做好了，愿景自然就实现了。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;因此，判断一个产品的流量是否有价值，我们先看以下几个要素：一是用户数，即DAU；二是时长，看用户黏性；三是交易属性。后来我自己有一个用来判断的公式：流量价值=DAU×时长×交易系数。。。比如宜家，为什么它要卖1元的冰激凌？很明显这并不赚钱，但宜家却非常欢迎大家去占这个便宜。因为家具是个低频、高价的产品，所以宜家需要在家具之外卖家居，比如衣服架、毛巾架、拖鞋以及那些价格非常低的食物等，这些家居产品的消费频次肯定要高得多。通过高频、低价的商品拉来流量，也为其他方面带来了利润，很多聪明的商家都会采用这个策略。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;以前大家都在谈流量，但是流量是什么？流量怎么来？大家只看到别人有流量自己羡慕？但是自己做不到，做不到的原因是什么？还是看不穿。&lt;/p&gt;
-
-&lt;p&gt;流量的定义：DAU x 时长 x 交易系数&lt;/p&gt;
-
-&lt;p&gt;以前很不能理解那些不赚钱的商品，但是从这个公式来看，低利润和高利润的商品都有它自身的价值和战术战略一样，多样性和复杂性才是对抗不确定未来的最好的策略，而不仅仅只是看利润高的单一策略。&lt;/p&gt;
-
-&lt;p&gt;同时知道流量的价值后，倒过来很多事情怎么做选择反倒更为简单了。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;1.勇敢地做自己。2.去搭建你真正喜欢的团队，因为你只能领导你喜欢的人。3.去做与你的特质和领导力相匹配的事情。我相信你的领导力一定会得到充分发挥，你也将成为一个有领导力的人。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;以前有很长一段时间都在锻炼自己包容不同性格的人，甚至专门找那种和我不一样的人去相处。客观的说，锻炼了自己很多，但是同时也让自己更多的失去自我，变的越来越活的像大家期望的样子，反而失去了自我最宝贵的特质，当人失去自我的时候，往往也就是失去一切的开端。&lt;/p&gt;
-
-&lt;p&gt;看到周航这一个观点的时候，还是蛮感慨的，人活一辈子的轨迹也是蛮有趣的，从向别人学习，包容别人到回归自己。&lt;/p&gt;
-
-&lt;p&gt;现在特别能够理解这段话，因为你只能领导你喜欢的人，哈哈哈，有时候和三观不和的人一起合作，其实往往事倍功半，当然这句话不是说不包容和固执，而是先要修行好自己，臭味相投但同时一样厉害的人一起合作，那种默契的感觉会好到你忘记人生和创业的痛苦。&lt;/p&gt;
-
-&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-
-&lt;p&gt;总是喜欢去找一段最喜欢的话作为文章的结尾，希望同样可以激励正在阵痛期而未来更勇敢的你。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;这段时间我有特别大的感触，总结一个关键词就是“成败”。我想说，只有你足够痛的时候，新的光亮才可能照进来。痛可能是光照进来的地方，如果你有足够的痛，恭喜你，你可能有新的开始，因为新的光亮可能照到你。在易到的创业中我经历了各种各样的事情，直到今年还遇到一些很痛苦的事情。正是因为经历太多，这些痛在自己心中反复咀嚼，才使得我开始把眼光真正从外部收回，从向外看世界回到了向内看自己，看自己的内心是怎么想的，认知上有没有变化，又应该有什么变化。我觉得只有足够痛的时候才会有这种心态，才会有新的开始。&lt;/p&gt;</content><author><name></name></author><summary type="html">5.1的时候在家读了周航写的《重新理解创业》，这是一本我几乎读一页就需要标注半页的书。看到书中的很多文字，其实看到的更多是我自己，在深度奋斗的时候，自己犯过很多相同的错误。当时在这些错误中很难跳出局面来看待自己，这两年从操作系统行业出来以后，一直在复盘自己过去的成长和缺陷，内心做了很多真诚的对话，直到看了这本书，很多自我对话的内容才重新梳理清楚，才知道原来世界上不止有我犯过同样的错误，不止有我有同样的想法，好的是，当读完这本书时，我收获了更多释怀，更能接受过去的自己。</summary></entry></feed>
+&lt;p&gt;Enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">分析慢的原因 首先下载 benchmark-init 这个插件, 在配置最开始的位置写下配置：</summary></entry></feed>
