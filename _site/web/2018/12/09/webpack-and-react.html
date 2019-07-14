@@ -93,7 +93,7 @@
 
 <h4 id="准备工作">准备工作</h4>
 <p><strong>安装 homebrew</strong></p>
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="si">)</span><span class="s2">"</span>
 </code></pre></div></div>
 
 <p><strong>安装 nodejs</strong></p>
@@ -235,15 +235,15 @@ cnpm <span class="nb">install</span> <span class="nt">--save-dev</span> reload n
 <p>我们按照上面的目录结构去填充每个配置文件, 我会在文件下面讲解每行代码的意思:</p>
 
 <p><strong>app.js</strong></p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">),</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">),</span>
     <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">(),</span>
-    <span class="nx">reload</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'reload'</span><span class="p">),</span>
+    <span class="nx">reload</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">reload</span><span class="dl">'</span><span class="p">),</span>
     <span class="nx">rootPath</span> <span class="o">=</span> <span class="nx">__dirname</span><span class="p">;</span>
 
-<span class="kd">var</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"webpack"</span><span class="p">),</span>
-    <span class="nx">webpackConfig</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"./webpack.config"</span><span class="p">),</span>
-    <span class="nx">webpackDevMiddleware</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"webpack-dev-middleware"</span><span class="p">),</span>
-    <span class="nx">webpackHotMiddleware</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"webpack-hot-middleware"</span><span class="p">),</span>
+<span class="kd">var</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">webpack</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">webpackConfig</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./webpack.config</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">webpackDevMiddleware</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">webpack-dev-middleware</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">webpackHotMiddleware</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">webpack-hot-middleware</span><span class="dl">"</span><span class="p">),</span>
     <span class="nx">compiler</span> <span class="o">=</span> <span class="nx">webpack</span><span class="p">(</span><span class="nx">webpackConfig</span><span class="p">);</span>
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
@@ -256,16 +256,16 @@ cnpm <span class="nb">install</span> <span class="nt">--save-dev</span> reload n
   <span class="p">})</span>
 <span class="p">);</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">webpackHotMiddleware</span><span class="p">(</span><span class="nx">compiler</span><span class="p">));</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">'/dist'</span><span class="p">));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kd">static</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/dist</span><span class="dl">'</span><span class="p">));</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">res</span><span class="p">.</span><span class="nx">sendFile</span><span class="p">(</span><span class="nx">rootPath</span> <span class="o">+</span> <span class="s1">'/server/index.html'</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">sendFile</span><span class="p">(</span><span class="nx">rootPath</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/server/index.html</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="nx">reload</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'* Server starting...'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">* Server starting...</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -288,15 +288,15 @@ cnpm <span class="nb">install</span> <span class="nt">--save-dev</span> reload n
 </ul>
 
 <p><strong>client/index.js</strong></p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="s1">'react-dom'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">styles</span> <span class="k">from</span> <span class="s2">"./index.less"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-dom</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">styles</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./index.less</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="s1">'React + Express rocks!'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">React + Express rocks!</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
     <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">title</span> <span class="p">}</span> <span class="o">&gt;</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">,
-</span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'app'</span><span class="p">)</span>
+</span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">app</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">module</span><span class="p">.</span><span class="nx">hot</span><span class="p">)</span> <span class="p">{</span>
@@ -423,50 +423,50 @@ Webpack 为了加快编译速度, bundle.js 文件其实都存在于内存中, �
 <p><strong>webpack.config.js</strong>
 如果你看到这里了, 你会发现上面的这些配置一点都不复杂, 其实最复杂的就是 webpack.config.js , 但是如果你理解了我上面说的工作流程, 你会发现理解 webpack.config.js 的内容也是非常自然的:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'webpack'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpack</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">hotMiddlewareScript</span> <span class="o">=</span> <span class="s2">"webpack-hot-middleware/client?reload=true"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">hotMiddlewareScript</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">webpack-hot-middleware/client?reload=true</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">entry</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">client</span><span class="p">:</span> <span class="p">[</span><span class="s2">"./client"</span><span class="p">,</span> <span class="nx">hotMiddlewareScript</span><span class="p">]</span>
+    <span class="na">client</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">./client</span><span class="dl">"</span><span class="p">,</span> <span class="nx">hotMiddlewareScript</span><span class="p">]</span>
   <span class="p">},</span>
-  <span class="na">mode</span><span class="p">:</span> <span class="s2">"development"</span><span class="p">,</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">development</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
         <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.(</span><span class="sr">js|jsx</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span>
         <span class="na">exclude</span><span class="p">:</span> <span class="sr">/node_modules/</span><span class="p">,</span>
-        <span class="na">use</span><span class="p">:</span> <span class="p">[</span><span class="s1">'babel-loader'</span><span class="p">]</span>
+        <span class="na">use</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">babel-loader</span><span class="dl">'</span><span class="p">]</span>
       <span class="p">},</span>
       <span class="p">{</span>
         <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">less$/</span><span class="p">,</span>
         <span class="na">use</span><span class="p">:</span> <span class="p">[</span>
           <span class="p">{</span>
-            <span class="na">loader</span><span class="p">:</span> <span class="s2">"style-loader"</span>
+            <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">style-loader</span><span class="dl">"</span>
           <span class="p">},</span>
           <span class="p">{</span>
-            <span class="na">loader</span><span class="p">:</span> <span class="s2">"css-loader"</span><span class="p">,</span>
+            <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">css-loader</span><span class="dl">"</span><span class="p">,</span>
             <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
               <span class="na">sourceMap</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
               <span class="na">modules</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-              <span class="na">localIdentName</span><span class="p">:</span> <span class="s2">"[local]___[hash:base64:5]"</span>
+              <span class="na">localIdentName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">[local]___[hash:base64:5]</span><span class="dl">"</span>
             <span class="p">}</span>
           <span class="p">},</span>
           <span class="p">{</span>
-            <span class="na">loader</span><span class="p">:</span> <span class="s2">"less-loader"</span>
+            <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">less-loader</span><span class="dl">"</span>
           <span class="p">}</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">},</span>
   <span class="na">resolve</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">extensions</span><span class="p">:</span> <span class="p">[</span><span class="s1">'*'</span><span class="p">,</span> <span class="s1">'.js'</span><span class="p">,</span> <span class="s1">'.jsx'</span><span class="p">]</span>
+    <span class="na">extensions</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.js</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.jsx</span><span class="dl">'</span><span class="p">]</span>
   <span class="p">},</span>
   <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">path</span><span class="p">:</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">'/dist'</span><span class="p">,</span>
-    <span class="na">publicPath</span><span class="p">:</span> <span class="s2">"/"</span><span class="p">,</span>
-    <span class="na">filename</span><span class="p">:</span> <span class="s1">'bundle.js'</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/dist</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">publicPath</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bundle.js</span><span class="dl">'</span>
   <span class="p">},</span>
   <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
     <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">HotModuleReplacementPlugin</span><span class="p">(),</span>
