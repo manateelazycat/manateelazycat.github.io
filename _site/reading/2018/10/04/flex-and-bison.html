@@ -79,7 +79,7 @@
 <span class="p">.</span>               <span class="p">{</span> <span class="n">chars</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
 <span class="o">%%</span>
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">yylex</span><span class="p">();</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">"%8d%8d%8d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">chars</span><span class="p">);</span>
 <span class="p">}</span>
@@ -109,7 +109,7 @@
 <span class="p">.</span>               <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">yytext</span><span class="p">);</span> <span class="p">}</span>
 <span class="o">%%</span>
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">yylex</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -168,12 +168,12 @@
 <span class="p">;</span>
 <span class="o">%%</span>
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">"&gt;&gt;&gt; "</span><span class="p">);</span>
     <span class="n">yyparse</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="kt">void</span> <span class="n">yyerror</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">void</span> <span class="nf">yyerror</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="s">"error : %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -243,7 +243,7 @@
 <span class="p">.</span>               <span class="p">{</span> <span class="n">chars</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
 <span class="o">%%</span>
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">"%8s%8s%8s%8s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="s">"lines"</span><span class="p">,</span> <span class="s">"words"</span><span class="p">,</span> <span class="s">"chars"</span><span class="p">,</span> <span class="s">"file"</span><span class="p">);</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>

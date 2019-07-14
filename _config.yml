@@ -1,7 +1,6 @@
 url: //manateelazycat.github.io
 
 markdown: kramdown
-
 kramdown:
   input: GFM
   syntax_highlighter: rouge

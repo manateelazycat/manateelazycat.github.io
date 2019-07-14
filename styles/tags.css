@@ -57,12 +57,12 @@ a:hover {
     margin-right: 5px;
     display: inline;
     line-height: 30px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .category-number {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #archives {
