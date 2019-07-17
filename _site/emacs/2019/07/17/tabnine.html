@@ -51,7 +51,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数1706 2019-07-17
+                字数1703 2019-07-17
             </div>
             <div class="content">
                 <p>我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</p>
@@ -110,11 +110,11 @@ TabNine会根据它自己的算法来进行智能排序, 给出它认为最佳�
 
 <p>很多时候，我们会通过编写库和函数的方式来抽象重复代码，但是真实的项目中，对于一些使用一两次的代码片段，往往没有必要写函数去过度包装。</p>
 
-<p>所以当我在另外一个函数中写下 <code class="highlighter-rouge">machineDict[res.data[i].MachineId] = res.data[i]</code> 然后敲击 . 的时候，TabNine 通过算法分析出，我很有可能是像写 <code class="highlighter-rouge">res.data[i].Name</code> ， 那就是我想要他补全的。</p>
+<p>所以当我在另外一个函数中写下 <code class="highlighter-rouge">machineDict[res.data[i].MachineId] = res.data[i]</code> 然后敲击 . 的时候，TabNine 通过算法分析出，我很有可能是想写 <code class="highlighter-rouge">res.data[i].Name</code> ， 那也正是我想要的。</p>
 
 <p>注意这个例子中， Name 仅仅只是服务器返回的JSON结构体的一个属性值，从传统的抽象语法树补全技术看，<code class="highlighter-rouge">res.data[i]</code> 仅仅就是临时变量，除非真实从服务器请求，否则基于属性和方法的技术来解析，根本就不知道 <code class="highlighter-rouge">res.data[i]</code> 是什么类型的对象，更不用说代码补全了。</p>
 
-<p>而TabNine的技术就是对传统语法补全技术的一种极好的补充，因为程序员每天大部分时间都是在重复自己以前的编程思想和代码片段的，为什么不让机器来辅助人从重复的代码拷贝中解脱出来呢？</p>
+<p>而TabNine的技术就是对传统语法补全技术的一种极好的补充，因为程序员每天大部分时间都是在重复自己以前的编程思想和代码片段，为什么不让机器来辅助人从重复的代码拷贝中解脱出来呢？</p>
 
 <h3 id="tabnine-emacs补全前端">TabNine Emacs补全前端</h3>
 <p>TabNine的Emacs插件在 <a href="https://github.com/TommyX12/company-tabnine">company-tabnine</a> , 里面有详细的安装方法。</p>
