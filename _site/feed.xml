@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-14T18:07:05+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Vue.js的实践小技巧</title><link href="http://localhost:4000/web/2019/07/14/vue-tooltips.html" rel="alternate" type="text/html" title="Vue.js的实践小技巧" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/07/14/vue-tooltips</id><content type="html" xml:base="http://localhost:4000/web/2019/07/14/vue-tooltips.html">&lt;h3 id=&quot;vuejs是计算机发展的趋势使然&quot;&gt;Vue.js是计算机发展的趋势使然&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-17T14:41:26+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">TabNine 利用机器学习技术来补全项目代码</title><link href="http://localhost:4000/emacs/2019/07/17/tabnine.html" rel="alternate" type="text/html" title="TabNine 利用机器学习技术来补全项目代码" /><published>2019-07-17T00:00:00+08:00</published><updated>2019-07-17T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/17/tabnine</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/17/tabnine.html">&lt;p&gt;我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。&lt;/p&gt;
+
+&lt;p&gt;今天就来推荐一个让我惊讶的技术：TabNine&lt;/p&gt;
+
+&lt;p&gt;网上对 TabNine 的评价:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;TabNine是一种基于OpenAI的语言模型（GPT-2）来实现的智能代码补全技术。
+它支持23种编程语言、5种编辑器，使用简单，效果惊艳。
+不少使用过的网友说：TabNine是他们用过的最好的代码补全工具，这是属于程序员的杀手级应用。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;我记得最开始看到TabNine的时候是一个多月前，当时以为只是无脑AI新闻，并没有太认真去看待它，认为不过是一个噱头。但是从我短时间的体验来看，我改变了看法。&lt;/p&gt;
+
+&lt;h3 id=&quot;我对tabnine的评价&quot;&gt;我对TabNine的评价&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;TabNine通过很复杂的技术来学习当前项目的源代码，
+通过研究程序员的编码习惯最终来预测接下来可能会键入的单词或长句。
+
+传统的代码补全主要是基于当前文件的抽象语法树来进行上下文语义分析，
+现在做的最好的技术就是LSP协议，这些传统的语法补全技术在补全对象的属性或者方法的时候很好用。
+
+但是TabNine完全基于一种更为开放的分析方式来实现代码补全，
+在它分析现有项目的源代码后，不管是补全模板、方法变量还是代码片段，
+TabNine会根据它自己的算法来进行智能排序, 给出它认为最佳的匹配结果。
+
+打个比方，TabNine在光标处线索不够的时候，它有点像个精神病人那样喃喃自语，
+但是一旦它预测准确以后，它可以补全非常一长串代码，
+这段代码虽然不是属性和方法名，但是一旦准确预测，
+你可以敲一下Tab键就完成当前行的代码编写。
+而且这种技术在越大的项目中，代码预测补全效果越好。
+
+整体的感觉，就像一个懂你的机器人在帮你找你自己的代码思想和代码片段，
+在必要的时候帮你敲很长很长的代码。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;说的很玄乎，举两个例子：&lt;/p&gt;
+
+&lt;h4 id=&quot;elisp代码补全&quot;&gt;Elisp代码补全&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tabnine/elisp.png&quot; alt=&quot;Elisp exampele&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上面是我写的Emacs插件aweshell.el，当我敲击 &lt;code class=&quot;highlighter-rouge&quot;&gt;current-window&lt;/code&gt; 的时候，TabNine 的补全建议是：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;current-window (selected-window)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;current-window (selected-window)&lt;/code&gt; 不是一个正常的语法补全结构，
+但是当我敲 &lt;code class=&quot;highlighter-rouge&quot;&gt;current-window&lt;/code&gt; 这段代码的时候，脑袋里就是希望通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;(selected-window)&lt;/code&gt; 方法赋值结果给变量 &lt;code class=&quot;highlighter-rouge&quot;&gt;current-window&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;TabNine 在这个时候就让你很爽了，不管他的算法是怎么做的，这就是你想要的片段，Tab一下子就补全了。&lt;/p&gt;
+
+&lt;h4 id=&quot;javascript代码补全&quot;&gt;JavaScript代码补全&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tabnine/js.png&quot; alt=&quot;JavaScript exampele&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上面是一段JavaScript的项目代码，其中有一段 &lt;code class=&quot;highlighter-rouge&quot;&gt;machineDict[res.data[i].MachineId] = res.data[i].Name&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;很多时候，我们会通过编写库和函数的方式来抽象重复代码，但是真实的项目中，对于一些使用一两次的代码片段，往往没有必要写函数去过度包装。&lt;/p&gt;
+
+&lt;p&gt;所以当我在另外一个函数中写下 &lt;code class=&quot;highlighter-rouge&quot;&gt;machineDict[res.data[i].MachineId] = res.data[i]&lt;/code&gt; 然后敲击 . 的时候，TabNine 通过算法分析出，我很有可能是像写 &lt;code class=&quot;highlighter-rouge&quot;&gt;res.data[i].Name&lt;/code&gt; ， 那就是我想要他补全的。&lt;/p&gt;
+
+&lt;p&gt;注意这个例子中， Name 仅仅只是服务器返回的JSON结构体的一个属性值，从传统的抽象语法树补全技术看，&lt;code class=&quot;highlighter-rouge&quot;&gt;res.data[i]&lt;/code&gt; 仅仅就是临时变量，除非真实从服务器请求，否则基于属性和方法的技术来解析，根本就不知道 &lt;code class=&quot;highlighter-rouge&quot;&gt;res.data[i]&lt;/code&gt; 是什么类型的对象，更不用说代码补全了。&lt;/p&gt;
+
+&lt;p&gt;而TabNine的技术就是对传统语法补全技术的一种极好的补充，因为程序员每天大部分时间都是在重复自己以前的编程思想和代码片段的，为什么不让机器来辅助人从重复的代码拷贝中解脱出来呢？&lt;/p&gt;
+
+&lt;h3 id=&quot;tabnine-emacs补全前端&quot;&gt;TabNine Emacs补全前端&lt;/h3&gt;
+&lt;p&gt;TabNine的Emacs插件在 &lt;a href=&quot;https://github.com/TommyX12/company-tabnine&quot;&gt;company-tabnine&lt;/a&gt; , 里面有详细的安装方法。&lt;/p&gt;
+
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
+&lt;p&gt;从整体上看TabNine就是找各种token来暴力学习，所以性能的表现上比很多LSP服务器还要好，我在Emacs中使用TabNine补全，非常顺滑。&lt;/p&gt;
+
+&lt;p&gt;我希望有一天这种技术可以直接感知我的思想，这样我就不用动手了， 想一想代码就自动写完了，哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</summary></entry><entry><title type="html">Jekyll实时刷新</title><link href="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html" rel="alternate" type="text/html" title="Jekyll实时刷新" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/07/14/jekyll-livereload</id><content type="html" xml:base="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html">&lt;p&gt;用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档&lt;/p&gt;
+
+&lt;p&gt;用下面的命令启动Jekyll服务器, 而不是命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;，博客内容修改完成以后浏览器就可以实时自动刷新。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--livereload&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;配置好实时刷新功能以后，博客的编写预览更加无缝衔接了，以下是我平常写博客的工作流:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;在Emacs中用 markdown-mode 写博客&lt;/li&gt;
+  &lt;li&gt;手指头一松开，&lt;a href=&quot;https://github.com/manateelazycat/auto-save&quot;&gt;auto-save&lt;/a&gt; 插件会自动保存文件内容&lt;/li&gt;
+  &lt;li&gt;用 Hammerspoon 切换到浏览器，浏览器的内容已经自动刷新&lt;/li&gt;
+  &lt;li&gt;完成后用 Magit 快捷键，同步文章到 Github&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档</summary></entry><entry><title type="html">Vue.js的实践小技巧</title><link href="http://localhost:4000/web/2019/07/14/vue-tooltips.html" rel="alternate" type="text/html" title="Vue.js的实践小技巧" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/07/14/vue-tooltips</id><content type="html" xml:base="http://localhost:4000/web/2019/07/14/vue-tooltips.html">&lt;h3 id=&quot;vuejs是计算机发展的趋势使然&quot;&gt;Vue.js是计算机发展的趋势使然&lt;/h3&gt;
 &lt;p&gt;计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。&lt;/p&gt;
 
 &lt;p&gt;Vue.js 主要解决的问题是，整个前端的界面修改都是在浏览器中完成的, 服务端只用提供API即可，而且界面整体逻辑是通过属性来动态绑定的，界面布局调整的JS代码并不依赖于DOM的节点查询，如果需要修改界面布局和设计时，只用大胆的调整前端模板和CSS样式即可，JS逻辑和后端代码都不用配合修改，整个界面改动的负担很小，可维护性也非常好。&lt;/p&gt;
@@ -253,20 +334,7 @@
 &lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
 &lt;p&gt;虽然上面写了这么多，但是从整体上看，一旦你熟悉了Vue.js的使用方式，Vue.js已经算同等规模开源项目里面坑比较少的项目，用起来还是非常省心和好用的。&lt;/p&gt;
 
-&lt;p&gt;上面就是我在Vue.js项目实践中的一些技巧分享，希望看到此文章的同学少走一些弯路。&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue.js是计算机发展的趋势使然 计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。</summary></entry><entry><title type="html">Jekyll实时刷新</title><link href="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html" rel="alternate" type="text/html" title="Jekyll实时刷新" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/07/14/jekyll-livereload</id><content type="html" xml:base="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html">&lt;p&gt;用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档&lt;/p&gt;
-
-&lt;p&gt;用下面的命令启动Jekyll服务器, 而不是命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;，博客内容修改完成以后浏览器就可以实时自动刷新。&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--livereload&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;配置好实时刷新功能以后，博客的编写预览更加无缝衔接了，以下是我平常写博客的工作流:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;在Emacs中用 markdown-mode 写博客&lt;/li&gt;
-  &lt;li&gt;手指头一松开，&lt;a href=&quot;https://github.com/manateelazycat/auto-save&quot;&gt;auto-save&lt;/a&gt; 插件会自动保存文件内容&lt;/li&gt;
-  &lt;li&gt;用 Hammerspoon 切换到浏览器，浏览器的内容已经自动刷新&lt;/li&gt;
-  &lt;li&gt;完成后用 Magit 快捷键，同步文章到 Github&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档</summary></entry><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘敲碎了&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;上面就是我在Vue.js项目实践中的一些技巧分享，希望看到此文章的同学少走一些弯路。&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue.js是计算机发展的趋势使然 计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。</summary></entry><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘敲碎了&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;我在淘宝上买了键帽准备开始修复&lt;/p&gt;
 
@@ -478,52 +546,4 @@ Mac无法正确映射IKBC的键盘布局，导致快捷键不兼容后我完全�
 &lt;p&gt;使用方法很简单, 绑定按键到下面几个函数:&lt;/p&gt;
 &lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;delete-block-forward&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;delete-block-backward&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">代码语法块删除插件 一般来说我们会用 forward-word 和 backward-word 这两个命令快速在Emacs中进行单词移动。 如果开启了 subword-mode , forward-word 和 backward-word 会在骆驼风格的单词中按子单词的范围进行移动。 比如 FooBarExample 这个单词，移动的范围依次是 Foo Bar Example</summary></entry><entry><title type="html">优化Emacs启动速度的方法论</title><link href="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html" rel="alternate" type="text/html" title="优化Emacs启动速度的方法论" /><published>2019-05-12T00:00:00+08:00</published><updated>2019-05-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed</id><content type="html" xml:base="http://localhost:4000/emacs/2019/05/12/emacs-optimize-startup-speed.html">&lt;h4 id=&quot;分析慢的原因&quot;&gt;分析慢的原因&lt;/h4&gt;
-&lt;p&gt;首先下载 &lt;a href=&quot;https://github.com/dholm/benchmark-init-el&quot;&gt;benchmark-init&lt;/a&gt; 这个插件,
-在配置最开始的位置写下配置：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;;; 加载的时候临时增大`gc-cons-threshold'以加速启动速度。&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gc-cons-threshold&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;most-positive-fixnum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;;; 清空避免加载远程文件的时候分析文件。&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-name-handler-alist&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'benchmark-init-modes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'benchmark-init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;benchmark-init/activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;;; 下面才写你的其它配置&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;启动完毕后，执行 M-x benchmark-init/show-durations-tree 命令，这个命令会递归的打印出所有插件的耗时明细。&lt;/p&gt;
-
-&lt;h4 id=&quot;优化-动态加载插件&quot;&gt;优化： 动态加载插件&lt;/h4&gt;
-&lt;p&gt;比如下面这个配置会禁止Emacs退出的时候问后台进程是否需要杀掉的问题，会用到 noflet 这个库。
-一般你可以这样写：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'noflet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defadvice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;save-buffers-kill-emacs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;no-query-kill-emacs&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;Prevent annoying \&quot;Active processes exist\&quot; query when you quit Emacs.&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;noflet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;process-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这样写的坏处是，Emacs没有退出时不会执行这个advice, 但是一启动就会加载 noflet 这个库, 浪费了启动时间。&lt;/p&gt;
-
-&lt;p&gt;优化的方式如下，把要调用的库在用的时候再加载，改成这样就好很多：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defadvice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;save-buffers-kill-emacs&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;no-query-kill-emacs&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;Prevent annoying \&quot;Active processes exist\&quot; query when you quit Emacs.&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'noflet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;noflet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;process-list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;优化-按键触发加载&quot;&gt;优化： 按键触发加载&lt;/h3&gt;
-&lt;p&gt;第二种优化方式主要用我头几天写的 &lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/05/05/lazy-load.html&quot;&gt;lazy-load&lt;/a&gt; 技术来做。
-把 90% 的插件放到运行时第一次按键时再加载，而不是启动的时候就加载好。
-因为lazy-load那篇文章已经详细说明了用法，这里就不再复述。&lt;/p&gt;
-
-&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-&lt;p&gt;用我上面的三个优化步骤，可以把Emacs启动时间减少到 1/10.&lt;/p&gt;
-
-&lt;p&gt;Enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">分析慢的原因 首先下载 benchmark-init 这个插件, 在配置最开始的位置写下配置：</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">代码语法块删除插件 一般来说我们会用 forward-word 和 backward-word 这两个命令快速在Emacs中进行单词移动。 如果开启了 subword-mode , forward-word 和 backward-word 会在骆驼风格的单词中按子单词的范围进行移动。 比如 FooBarExample 这个单词，移动的范围依次是 Foo Bar Example</summary></entry></feed>
