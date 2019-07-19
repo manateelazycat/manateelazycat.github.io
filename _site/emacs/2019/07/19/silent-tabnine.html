@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>禁止TabNine不停的催我升级收费版本</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                禁止TabNine不停的催我升级收费版本
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数647 2019-07-19
+            </div>
+            <div class="content">
+                <p>前天推荐了非常好用的<a href="https://manateelazycat.github.io/emacs/2019/07/17/tabnine.html">TabNine</a></p>
+
+<p>这几天用下来，越用越喜欢，而且觉得免费版就够了, 但是TabNine在大型项目（超过400kb索引）的时候，会一直在 echo-area 催我升级收费版本，有点烦人。</p>
+
+<p>研究了一下 company 的源代码，写了一段补丁，把下面的代码粘贴到 ~/.emacs 配置文件中， TabNine就不会在大项目中反复的提示你升级收费版本了：</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;; The free version of TabNine is good enough,</span>
+<span class="c1">;; and below code is recommended that TabNine not always</span>
+<span class="c1">;; prompt me to purchase a paid version in a large project.</span>
+<span class="p">(</span><span class="nv">defadvice</span> <span class="nv">company-echo-show</span> <span class="p">(</span><span class="nv">around</span> <span class="nv">disable-tabnine-upgrade-message</span> <span class="nv">activate</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">company-message-func</span> <span class="p">(</span><span class="nv">ad-get-arg</span> <span class="mi">0</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="nv">company-message-func</span>
+               <span class="p">(</span><span class="nb">stringp</span> <span class="p">(</span><span class="nb">funcall</span> <span class="nv">company-message-func</span><span class="p">)))</span>
+      <span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nv">string-match</span> <span class="s">"The free version of TabNine only indexes up to"</span> <span class="p">(</span><span class="nb">funcall</span> <span class="nv">company-message-func</span><span class="p">))</span>
+        <span class="nv">ad-do-it</span><span class="p">))))</span>
+</code></pre></div></div>
+
+<p>世界终于清静了，但是鉴于TabNine补全的爽快，还是建议大家多多去<a href="https://tabnine.com/buy">购买</a>TabNine的收费版本, 支持一下作者。</p>
+
+            </div>
+        </div>
+    </body>
+</html>
