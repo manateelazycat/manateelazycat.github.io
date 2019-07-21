@@ -1,4 +1,150 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-19T11:54:38+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">禁止TabNine不停的催我升级收费版本</title><link href="http://localhost:4000/emacs/2019/07/19/silent-tabnine.html" rel="alternate" type="text/html" title="禁止TabNine不停的催我升级收费版本" /><published>2019-07-19T00:00:00+08:00</published><updated>2019-07-19T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/19/silent-tabnine</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/19/silent-tabnine.html">&lt;p&gt;前天推荐了非常好用的&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/17/tabnine.html&quot;&gt;TabNine&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-21T21:55:04+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails超级快的模糊搜索框架</title><link href="http://localhost:4000/emacs/2019/07/21/snails.html" rel="alternate" type="text/html" title="Snails超级快的模糊搜索框架" /><published>2019-07-21T00:00:00+08:00</published><updated>2019-07-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/21/snails</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/21/snails.html">&lt;h3 id=&quot;anything-helm-ivy&quot;&gt;Anything, Helm, Ivy&lt;/h3&gt;
+&lt;p&gt;十几年前和&lt;a href=&quot;http://rubikitch.com/&quot;&gt;rubikitch&lt;/a&gt;、&lt;a href=&quot;https://sachachua.com/blog/2018/09/interview-with-thierry-volpiatto/&quot;&gt;Thierry Volpiatto&lt;/a&gt;一起创建了Anything这个模糊搜索框架。&lt;/p&gt;
+
+&lt;p&gt;Anything做为当时第一个模糊搜索框架，因为其多后端搜索和强大的框架设计，比当时 ido 的效率要快很多，特别是当你要模糊搜索多个后端，却不想记一堆快捷键的时候，Anything真的很爽。&lt;/p&gt;
+
+&lt;p&gt;后来我和rubikitch都忙于工作，Thierry Volpiatto十几年坚持不懈的做了很多代码改进和重构，以至于后来创建了更为健壮和模块化的&lt;a href=&quot;https://github.com/emacs-helm/helm&quot;&gt;Helm&lt;/a&gt;,
+Helm到目前为止都是Emacs下最强大的模糊搜索框架。&lt;/p&gt;
+
+&lt;p&gt;最近几年，超级黑客&lt;a href=&quot;https://oremacs.com/&quot;&gt;Oleh Krehel&lt;/a&gt;创建的&lt;a href=&quot;https://github.com/abo-abo/swiper&quot;&gt;Ivy&lt;/a&gt;, 以其简洁的交互和超快的速度，俘获了大批Emacser的青睐。&lt;/p&gt;
+
+&lt;h3 id=&quot;snails一个超快的现代化和易于扩展的模糊搜索框架&quot;&gt;Snails一个超快的、现代化和易于扩展的模糊搜索框架&lt;/h3&gt;
+&lt;p&gt;我曾经也尝试过Ivy, 非常简洁，而且速度超快，一旦都不卡，但是Ivy有一个和我习惯冲突的设计是，Ivy一次只能搜索一个后端，对于我这种常年用Anything/Helm的老年人来说，让我按照分类来记住不同的搜索后端快捷键，真的很麻烦。&lt;/p&gt;
+
+&lt;p&gt;同时，Helm发展了十几年的时间，虽然非常成熟和强大，但是想要基于Helm写一个新的插件，都要看半天文档和小心各种细节。&lt;/p&gt;
+
+&lt;p&gt;所以，我有时候在想，我能否重新设计一个新的模糊搜索框架，兼具Helm和Ivy的优点呢？&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;像Helm那样支持多个后端同时搜索，特别是最近文件 + 已经打开的文件 + 本地磁盘全局搜索三个后端配合一起搜索的时候，几乎不存在找不到的文件&lt;/li&gt;
+  &lt;li&gt;像Ivy那样快，不管怎么搜索都是秒开，而且搜索的过程中不要让Emacs变得卡顿&lt;/li&gt;
+  &lt;li&gt;界面像 Sublime/VSCode 那样，弹出一个单独的固定窗口，不要像Helm那样破坏窗口布局，也不要像Ivy那样在minibuffer上随着输入来回跳动&lt;/li&gt;
+  &lt;li&gt;交互易用，就是输入搜索字符，上下移动后，按回车就行了，没有其他复杂操作&lt;/li&gt;
+  &lt;li&gt;插件门槛的编写达到最低，只要会基本的Elisp语法，会写过滤函数，任何插件都应该在5分钟之内完成&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;所以我创建了&lt;a href=&quot;https://github.com/manateelazycat/snails&quot;&gt;Snails&lt;/a&gt;这个全新的模糊搜索插件来满足我上面的全部要求, 发一张效果图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/snails/snails.png&quot; alt=&quot;snails&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;安装&quot;&gt;安装&lt;/h3&gt;
+&lt;p&gt;因为这个插件还在活跃开发中，安装和使用文档请见 &lt;a href=&quot;https://github.com/manateelazycat/snails&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;插件介绍&quot;&gt;插件介绍&lt;/h3&gt;
+&lt;p&gt;编写Snails的插件真的超级简单，只要你会基本的Elisp语法，会编写列表过滤函数，你可以在5分钟之内编写完一个新的插件！&lt;/p&gt;
+
+&lt;p&gt;Snails从分类上有两种插件语法：同步插件和异步插件&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;同步插件适用于那些马上可以获取补全列表信息的，比如获取打开的文件，最近浏览的文件这种&lt;/li&gt;
+  &lt;li&gt;异步插件适用于那些需要耗时搜索的操作，比如grep目录，在整个磁盘找文件这种&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;编写同步插件&quot;&gt;编写同步插件&lt;/h4&gt;
+&lt;p&gt;我们用内置的&lt;code class=&quot;highlighter-rouge&quot;&gt;snails-backend-recentf&lt;/code&gt;插件来讲解怎么编写同步插件：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'snails-core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'recentf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;recentf-mode&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;snails-create-sync-backend&lt;/span&gt;
+ &lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;&quot;RECENTF&quot;&lt;/span&gt;
+
+ &lt;span class=&quot;ss&quot;&gt;:candidate-filter&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;candidates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dolist&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;recentf-list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;or&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;string-equal&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string-match-p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;regexp-quote&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'candidates&lt;/span&gt;
+                      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;
+                       &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;snails-wrap-file-icon&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                       &lt;span class=&quot;nv&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                      &lt;span class=&quot;no&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+     &lt;span class=&quot;nv&quot;&gt;candidates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+ &lt;span class=&quot;ss&quot;&gt;:candiate-do&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;candidate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;find-file&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;candidate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;provide&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'snails-backend-recentf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;:name 参数是插件的名字，请为你的插件取一个不同的名字，Snails根据插件的名字来插入搜索结果&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;:candidate-filter 是一个过滤函数, &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; 参数指用户输入的字符串, 你需要返回一个候选词列表，列表的每一项是一个格式为 &lt;code class=&quot;highlighter-rouge&quot;&gt;(list display-name candidate-content)&lt;/code&gt;的对象, 对象的第一个元素 &lt;code class=&quot;highlighter-rouge&quot;&gt;display-name&lt;/code&gt; 是显示给用户的候选名字, 对象的第二个元素&lt;code class=&quot;highlighter-rouge&quot;&gt;candidate-content&lt;/code&gt; 是真实的补全结果，后面会传给回调函数 &lt;code class=&quot;highlighter-rouge&quot;&gt;candidate-do&lt;/code&gt;. 如果什么没有搜索到，可以返回nil，Snails框架会在结果中隐藏返回nil的后端。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;:candidate-do 是一个确认函数，当你按 Ctrl+m 的时候执行这个函数，函数内容你可以自由发挥。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以上面这段插件代码，它的意思是，如果用户什么都没有输入，显示所有最近浏览的文件，如果有输入，根据用户输入来过滤最近浏览的文件，用户确认后，用 &lt;code class=&quot;highlighter-rouge&quot;&gt;find-file&lt;/code&gt; 这个命令打开文件。&lt;/p&gt;
+
+&lt;h4 id=&quot;编写异步插件&quot;&gt;编写异步插件&lt;/h4&gt;
+&lt;p&gt;我们用内置的&lt;code class=&quot;highlighter-rouge&quot;&gt;snails-backend-mdfind&lt;/code&gt;插件来讲解怎么编写异步插件：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'snails-core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;snails-create-async-backend&lt;/span&gt;
+ &lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;&quot;MDFIND&quot;&lt;/span&gt;
+
+ &lt;span class=&quot;ss&quot;&gt;:build-command&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;featurep&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'cocoa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;mdfind&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;'%s'&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+
+ &lt;span class=&quot;ss&quot;&gt;:candidate-filter&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;candidate-list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;candidates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dolist&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;candidate&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;candidate-list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'candidates&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;
+                     &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;snails-wrap-file-icon&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;candidate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                     &lt;span class=&quot;nv&quot;&gt;candidate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                    &lt;span class=&quot;no&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+     &lt;span class=&quot;nv&quot;&gt;candidates&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+ &lt;span class=&quot;ss&quot;&gt;:candiate-do&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;candidate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;find-file&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;candidate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;provide&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'snails-backend-mdfind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;:name 参数是插件的名字，请为你的插件取一个不同的名字，Snails根据插件的名字来插入搜索结果&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;:build-command 是一个命令行参数构建函数，&lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; 是用户输入的字符串, 你需要返回一个字符串列表，列表第一个是调用的Shell工具的名字，列表剩下的字符串是传递给Shell工具的参数。如果你不想进一步搜索，可以直接返回nil。Snails会在结果中隐藏返回nil的后端。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;:candidate-filter 是一个过滤函数, &lt;code class=&quot;highlighter-rouge&quot;&gt;candidate-list&lt;/code&gt; 是Shell命令返回的字符串列表, 你需要返回一个候选词列表，列表的每一项是一个格式为 &lt;code class=&quot;highlighter-rouge&quot;&gt;(list display-name candidate-content)&lt;/code&gt;的对象, 对象的第一个元素 &lt;code class=&quot;highlighter-rouge&quot;&gt;display-name&lt;/code&gt; 是显示给用户的候选名字, 对象的第二个元素&lt;code class=&quot;highlighter-rouge&quot;&gt;candidate-content&lt;/code&gt; 是真实的补全结果，后面会传给回调函数 &lt;code class=&quot;highlighter-rouge&quot;&gt;candidate-do&lt;/code&gt;. 如果什么没有搜索到，可以返回nil，Snails框架会在结果中隐藏返回nil的后端。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;:candidate-do 是一个确认函数，当你按 Ctrl+m 的时候执行这个函数，函数内容你可以自由发挥。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以上面这段插件代码举例，如果用户输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;awesome&lt;/code&gt;, 他会构建一个命令字符串列表 &lt;code class=&quot;highlighter-rouge&quot;&gt;(list &quot;mdfind&quot; &quot;'awesome'&quot;)&lt;/code&gt; 用于创建搜索子进程，当子进程完成时，进程返回候选列表给candidate-fitler过滤函数, 过滤函数过滤Shell命令返回的结果进行候选词渲染。用户确认后，用 &lt;code class=&quot;highlighter-rouge&quot;&gt;find-file&lt;/code&gt; 这个命令打开文件。&lt;/p&gt;
+
+&lt;p&gt;Snails非常智能，它会管理所有异步后端的子进程，当用户修改输入时，Snails会自动创建新的子进程继续搜索，同时把那些旧的子进程杀掉。不管用户输入多快，都不会卡主Emacs。&lt;/p&gt;
+
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
+&lt;p&gt;Snails插件编写简单吧？&lt;/p&gt;
+
+&lt;p&gt;如果你和我有同样的口味，欢迎试用。&lt;/p&gt;
+
+&lt;p&gt;如果你想玩一下Elisp，欢迎编写心的插件。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Anything, Helm, Ivy 十几年前和rubikitch、Thierry Volpiatto一起创建了Anything这个模糊搜索框架。</summary></entry><entry><title type="html">禁止TabNine不停的催我升级收费版本</title><link href="http://localhost:4000/emacs/2019/07/19/silent-tabnine.html" rel="alternate" type="text/html" title="禁止TabNine不停的催我升级收费版本" /><published>2019-07-19T00:00:00+08:00</published><updated>2019-07-19T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/19/silent-tabnine</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/19/silent-tabnine.html">&lt;p&gt;前天推荐了非常好用的&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/17/tabnine.html&quot;&gt;TabNine&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;这几天用下来，越用越喜欢，而且觉得免费版就够了, 但是TabNine在大型项目（超过400kb索引）的时候，会一直在 echo-area 催我升级收费版本，有点烦人。&lt;/p&gt;
 
@@ -83,7 +229,20 @@ TabNine会根据它自己的算法来进行智能排序, 给出它认为最佳�
 &lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
 &lt;p&gt;从整体上看TabNine就是找各种token来暴力学习，所以性能的表现上比很多LSP服务器还要好，我在Emacs中使用TabNine补全，非常顺滑。&lt;/p&gt;
 
-&lt;p&gt;我希望有一天这种技术可以直接感知我的思想，这样我就不用动手了， 想一想代码就自动写完了，哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</summary></entry><entry><title type="html">Vue.js的实践小技巧</title><link href="http://localhost:4000/web/2019/07/14/vue-tooltips.html" rel="alternate" type="text/html" title="Vue.js的实践小技巧" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/07/14/vue-tooltips</id><content type="html" xml:base="http://localhost:4000/web/2019/07/14/vue-tooltips.html">&lt;h3 id=&quot;vuejs是计算机发展的趋势使然&quot;&gt;Vue.js是计算机发展的趋势使然&lt;/h3&gt;
+&lt;p&gt;我希望有一天这种技术可以直接感知我的思想，这样我就不用动手了， 想一想代码就自动写完了，哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</summary></entry><entry><title type="html">Jekyll实时刷新</title><link href="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html" rel="alternate" type="text/html" title="Jekyll实时刷新" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/07/14/jekyll-livereload</id><content type="html" xml:base="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html">&lt;p&gt;用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档&lt;/p&gt;
+
+&lt;p&gt;用下面的命令启动Jekyll服务器, 而不是命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;，博客内容修改完成以后浏览器就可以实时自动刷新。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--livereload&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;配置好实时刷新功能以后，博客的编写预览更加无缝衔接了，以下是我平常写博客的工作流:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;在Emacs中用 markdown-mode 写博客&lt;/li&gt;
+  &lt;li&gt;手指头一松开，&lt;a href=&quot;https://github.com/manateelazycat/auto-save&quot;&gt;auto-save&lt;/a&gt; 插件会自动保存文件内容&lt;/li&gt;
+  &lt;li&gt;用 Hammerspoon 切换到浏览器，浏览器的内容已经自动刷新&lt;/li&gt;
+  &lt;li&gt;完成后用 Magit 快捷键，同步文章到 Github&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档</summary></entry><entry><title type="html">Vue.js的实践小技巧</title><link href="http://localhost:4000/web/2019/07/14/vue-tooltips.html" rel="alternate" type="text/html" title="Vue.js的实践小技巧" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/07/14/vue-tooltips</id><content type="html" xml:base="http://localhost:4000/web/2019/07/14/vue-tooltips.html">&lt;h3 id=&quot;vuejs是计算机发展的趋势使然&quot;&gt;Vue.js是计算机发展的趋势使然&lt;/h3&gt;
 &lt;p&gt;计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。&lt;/p&gt;
 
 &lt;p&gt;Vue.js 主要解决的问题是，整个前端的界面修改都是在浏览器中完成的, 服务端只用提供API即可，而且界面整体逻辑是通过属性来动态绑定的，界面布局调整的JS代码并不依赖于DOM的节点查询，如果需要修改界面布局和设计时，只用大胆的调整前端模板和CSS样式即可，JS逻辑和后端代码都不用配合修改，整个界面改动的负担很小，可维护性也非常好。&lt;/p&gt;
@@ -338,20 +497,7 @@ TabNine会根据它自己的算法来进行智能排序, 给出它认为最佳�
 &lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
 &lt;p&gt;虽然上面写了这么多，但是从整体上看，一旦你熟悉了Vue.js的使用方式，Vue.js已经算同等规模开源项目里面坑比较少的项目，用起来还是非常省心和好用的。&lt;/p&gt;
 
-&lt;p&gt;上面就是我在Vue.js项目实践中的一些技巧分享，希望看到此文章的同学少走一些弯路。&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue.js是计算机发展的趋势使然 计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。</summary></entry><entry><title type="html">Jekyll实时刷新</title><link href="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html" rel="alternate" type="text/html" title="Jekyll实时刷新" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/07/14/jekyll-livereload</id><content type="html" xml:base="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html">&lt;p&gt;用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档&lt;/p&gt;
-
-&lt;p&gt;用下面的命令启动Jekyll服务器, 而不是命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;，博客内容修改完成以后浏览器就可以实时自动刷新。&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--livereload&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;配置好实时刷新功能以后，博客的编写预览更加无缝衔接了，以下是我平常写博客的工作流:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;在Emacs中用 markdown-mode 写博客&lt;/li&gt;
-  &lt;li&gt;手指头一松开，&lt;a href=&quot;https://github.com/manateelazycat/auto-save&quot;&gt;auto-save&lt;/a&gt; 插件会自动保存文件内容&lt;/li&gt;
-  &lt;li&gt;用 Hammerspoon 切换到浏览器，浏览器的内容已经自动刷新&lt;/li&gt;
-  &lt;li&gt;完成后用 Magit 快捷键，同步文章到 Github&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档</summary></entry><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘敲碎了&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;上面就是我在Vue.js项目实践中的一些技巧分享，希望看到此文章的同学少走一些弯路。&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue.js是计算机发展的趋势使然 计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。</summary></entry><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘敲碎了&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;我在淘宝上买了键帽准备开始修复&lt;/p&gt;
 
@@ -538,13 +684,4 @@ Mac无法正确映射IKBC的键盘布局，导致快捷键不兼容后我完全�
 &lt;p&gt;但是如果语法块内有某一行不是赋值表达式， &lt;code class=&quot;highlighter-rouge&quot;&gt;align-regexp&lt;/code&gt; 函数就会失效，无法对代码进行自动对齐。&lt;/p&gt;
 
 &lt;p&gt;正确的思路应该是在语法块内进一步搜索来进一步定位包含 = 或者 : 的子语法块范围，再依次传给 &lt;code class=&quot;highlighter-rouge&quot;&gt;align-regexp&lt;/code&gt;
-欢迎各大高手来一起 &lt;a href=&quot;https://github.com/manateelazycat/smart-align/edit/master/smart-align.el&quot;&gt;完善&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">像VSCode和很多IDE都具备快速对齐赋值表达式的功能。</summary></entry><entry><title type="html">AwesomeTab支持图标显示了</title><link href="http://localhost:4000/emacs/2019/06/23/awesome-tab-support-icon.html" rel="alternate" type="text/html" title="AwesomeTab支持图标显示了" /><published>2019-06-23T00:00:00+08:00</published><updated>2019-06-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/06/23/awesome-tab-support-icon</id><content type="html" xml:base="http://localhost:4000/emacs/2019/06/23/awesome-tab-support-icon.html">&lt;p&gt;自从发布 &lt;a href=&quot;https://github.com/manateelazycat/awesome-tab&quot;&gt;AwesomeTab&lt;/a&gt; 这个Emacs最好的标签插件以后，很多社区的高手陆续地在给这个项目贡献建议和补丁。&lt;/p&gt;
-
-&lt;p&gt;头两天接到一个国外开发者的 &lt;a href=&quot;https://github.com/manateelazycat/awesome-tab/issues/34&quot;&gt;issue&lt;/a&gt;, 提出了想在标签上显示图标的功能，今天早上思考了5分钟, 写了一个补丁: &lt;a href=&quot;https://github.com/manateelazycat/awesome-tab/commit/ae98cef5c9fe2b8674c705f1772400f0caf10a74&quot;&gt;让AwesomeTab支持图标渲染&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;只要 &lt;a href=&quot;https://github.com/domtronn/all-the-icons.el&quot;&gt;AllTheIcons&lt;/a&gt; 这个图标插件安装好以后， AwesomeTab会自动在标签上渲染对应的文件图标。&lt;/p&gt;
-
-&lt;p&gt;最终的效果图如下：
-&lt;img src=&quot;http://localhost:4000/pics/awesome-tab/support-icons.png&quot; alt=&quot;AwesomeTab&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这就是开源社区的魅力，每天只做一点点，滴水石穿就能做出非常好的软件。&lt;/p&gt;</content><author><name></name></author><summary type="html">自从发布 AwesomeTab 这个Emacs最好的标签插件以后，很多社区的高手陆续地在给这个项目贡献建议和补丁。</summary></entry></feed>
+欢迎各大高手来一起 &lt;a href=&quot;https://github.com/manateelazycat/smart-align/edit/master/smart-align.el&quot;&gt;完善&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">像VSCode和很多IDE都具备快速对齐赋值表达式的功能。</summary></entry></feed>
