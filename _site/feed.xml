@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-22T08:12:30+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails超级快的模糊搜索框架</title><link href="http://localhost:4000/emacs/2019/07/21/snails.html" rel="alternate" type="text/html" title="Snails超级快的模糊搜索框架" /><published>2019-07-21T00:00:00+08:00</published><updated>2019-07-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/21/snails</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/21/snails.html">&lt;h3 id=&quot;anything-helm-ivy&quot;&gt;Anything, Helm, Ivy&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-23T13:01:54+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails架构设计</title><link href="http://localhost:4000/emacs/2019/07/23/snails-framework.html" rel="alternate" type="text/html" title="Snails架构设计" /><published>2019-07-23T00:00:00+08:00</published><updated>2019-07-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/23/snails-framework</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/23/snails-framework.html">&lt;h3 id=&quot;怎么设计让多后端模糊搜索性能达到极致&quot;&gt;怎么设计让多后端模糊搜索性能达到极致？&lt;/h3&gt;
+&lt;p&gt;前天发布了&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/21/snails.html&quot;&gt;Snails&lt;/a&gt;这个新型的模糊搜索框架。
+Snails的这个项目的主要目的是：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;交互简单易用&lt;/li&gt;
+  &lt;li&gt;5分钟编写一个新的插件&lt;/li&gt;
+  &lt;li&gt;搜索速度快&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;要让Emacs快，我们首先要了解Emacs的优势和脾气，这样我们从设计上才能让Emacs更快：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;多线程不可行： Emacs的多线程设计上，每次只能运行一个线程上下文，所以不能采用像Gtk/Qt那样通过子线程的思路来解决耗时搜索时不卡界面的方法，因为一旦Emacs切换到耗时操作所在线程，耗时操作放还是会卡主Emacs。&lt;/li&gt;
+  &lt;li&gt;多进程可行：简单的搜索，比如搜索打开的文件，就放到Emacs进程中处理，耗时的搜索需要放到子进程里面处理, 这样耗时搜索的时候就不会卡主Emacs了&lt;/li&gt;
+  &lt;li&gt;避免子进程轰炸Emacs：子进程每更新一行结果不要去刷新Emacs的界面，对用户的输入流畅性干扰很大，在进程搜索完成以后再统一渲染结果，所以后端Shell命令就要选择高效率的工具，比如选 ripgrep 而不是 grep, 选 fd 而不是 find (Rust大法好，哈哈哈)&lt;/li&gt;
+  &lt;li&gt;按键缝隙不要创建子进程：一个人的输入间隔在 50ms ~ 200ms 之间，因为子进程创建一次很昂贵，所以在敲击键盘的时候就不要创建异步后端的子进程，以节省系统资源，这时候可以用 &lt;code class=&quot;highlighter-rouge&quot;&gt;run-with-idle-timer&lt;/code&gt; 函数做延迟处理，当用户手指头一松开在发愣的时候才创建搜索子进程&lt;/li&gt;
+  &lt;li&gt;尽快杀掉旧进程：当用户输入很快时，有一些子进程还在搜索旧的输入字符串，可以在新的搜索进程开始之前尽快的杀掉那些还还没有结束的旧进程，减少对系统资源的占用。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;架构设计&quot;&gt;架构设计&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/snails/framework.png&quot; alt=&quot;snails framework&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在想清楚设计思路以后，代码实现就很简单了，深入的思考和清晰的思路永远是架构设计的核心，代码不过是架构设计的表现方式而已。&lt;/p&gt;
+
+&lt;p&gt;简单一句话来概括框架：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;每次用户输入的时候框架分配一个新的 ticker ,
+后端们自己去搜索，得到结果的时候看看自己的 ticker 是不是最新的，
+最新的就能用，不是最新的就丢掉。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Snails整体架构上分为框架部分和后端实现部分。&lt;/p&gt;
+
+&lt;h4 id=&quot;框架部分的职责&quot;&gt;框架部分的职责：&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;监听用户输入，生成新的input ticker，然后给所有后端分配搜索任务&lt;/li&gt;
+  &lt;li&gt;检查后端的结果, 如果input ticker过期后抛弃后端搜索结果，如果input ticker没有过期就染后端搜索结果&lt;/li&gt;
+  &lt;li&gt;用户选择搜索结果后执行后端指定的命令&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;每次用户输入新的字符串后，都会产生一个input ticker作为标记传给后端，后端完成后需要带着标记来检查搜索结果是否过期（正在搜索的时候，用户又进行了新的搜索）&lt;/p&gt;
+
+&lt;p&gt;同步后端是在用户输入变化的时候就启动，异步后端是在用户手指头松开的一瞬间才启动。&lt;/p&gt;
+
+&lt;p&gt;这样既保证了简单搜索的及时响应，又保障了耗时操作不会卡主Emacs。&lt;/p&gt;
+
+&lt;h4 id=&quot;搜索后端的职责&quot;&gt;搜索后端的职责：&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;搜索和过滤字符串&lt;/li&gt;
+  &lt;li&gt;解析出显示名和真实的搜索结果&lt;/li&gt;
+  &lt;li&gt;用户确认后，对搜索结果调用自定义命令&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;后端在实现时不用了解框架中处理细节，只用做好搜索、过滤和自定义命令就可以了。&lt;/p&gt;
+
+&lt;p&gt;一个完整的后端实现规模在30~50行，一般在5分钟就可以写完整个后端插件的代码。&lt;/p&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+&lt;p&gt;欢迎来贡献&lt;a href=&quot;https://github.com/manateelazycat/snails/new/master&quot;&gt;新的插件&lt;/a&gt;, 一起来构建下一代模糊搜索框架。&lt;/p&gt;</content><author><name></name></author><summary type="html">怎么设计让多后端模糊搜索性能达到极致？ 前天发布了Snails这个新型的模糊搜索框架。 Snails的这个项目的主要目的是： 交互简单易用 5分钟编写一个新的插件 搜索速度快</summary></entry><entry><title type="html">Snails超级快的模糊搜索框架</title><link href="http://localhost:4000/emacs/2019/07/21/snails.html" rel="alternate" type="text/html" title="Snails超级快的模糊搜索框架" /><published>2019-07-21T00:00:00+08:00</published><updated>2019-07-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/21/snails</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/21/snails.html">&lt;h3 id=&quot;anything-helm-ivy&quot;&gt;Anything, Helm, Ivy&lt;/h3&gt;
 &lt;p&gt;十几年前和&lt;a href=&quot;http://rubikitch.com/&quot;&gt;rubikitch&lt;/a&gt;、&lt;a href=&quot;https://sachachua.com/blog/2018/09/interview-with-thierry-volpiatto/&quot;&gt;Thierry Volpiatto&lt;/a&gt;一起创建了Anything这个模糊搜索框架。&lt;/p&gt;
 
 &lt;p&gt;Anything做为当时第一个模糊搜索框架，因为其多后端搜索和强大的框架设计，比当时 ido 的效率要快很多，特别是当你要模糊搜索多个后端，却不想记一堆快捷键的时候，Anything真的很爽。&lt;/p&gt;
@@ -652,36 +711,4 @@ Mac无法正确映射IKBC的键盘布局，导致快捷键不兼容后我完全�
 &lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
 &lt;p&gt;使用方法很简单, 绑定按键到 &lt;code class=&quot;highlighter-rouge&quot;&gt;instant-rename-tag&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;想修改Tag名字的时候，调用一次 instant-rename-tag, 修改完成后只用把光标移动到非Tag区域继续编辑，刚刚重命名的区域会自动取消标记。&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在研究VSCode好用的功能，希望通过一点点的努力, 把VSCode好的功能吸收到Emacs。</summary></entry><entry><title type="html">smart-align.el 代码自动对齐插件</title><link href="http://localhost:4000/emacs/2019/06/24/smart-align.html" rel="alternate" type="text/html" title="smart-align.el 代码自动对齐插件" /><published>2019-06-24T00:00:00+08:00</published><updated>2019-06-24T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/06/24/smart-align</id><content type="html" xml:base="http://localhost:4000/emacs/2019/06/24/smart-align.html">&lt;p&gt;像VSCode和很多IDE都具备快速对齐赋值表达式的功能。&lt;/p&gt;
-
-&lt;p&gt;Emacs其实有更强大的 align-regexp 功能，可以让用户对选中的内容进行自定义正则对齐。
-只要正则表达式玩的溜，最后实现的功能比VSCode等IDE还要强大。&lt;/p&gt;
-
-&lt;p&gt;比如 Emacs 中要进行对齐操作，一般需要三个步骤:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;选中一段代码区域&lt;/li&gt;
-  &lt;li&gt;调用 align-regexp 命令&lt;/li&gt;
-  &lt;li&gt;写入需要对齐的赋值符号&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;但是在实际编程中，大部分都是对齐赋值表达式，赋值的符号一般都是 = 或者 :
-并不会有非常复杂的规则需要开发者去编写正则表达式完成对齐操作。
-所以这时候 Emacs 的步骤就非常繁琐，特别是还需要手动选择需要对齐的代码区域，用户体验非常不好。&lt;/p&gt;
-
-&lt;p&gt;针对上面的情况，写了 smart-align 这个插件，会自动选择当前光标处的代码块，一键就可以自动对齐代码块内的所有内容。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/smart-align/smart-align.gif&quot; alt=&quot;smart-align&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;安装方法见&lt;a href=&quot;https://github.com/manateelazycat/smart-align&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
-&lt;p&gt;使用方法很简单, 绑定按键到 &lt;code class=&quot;highlighter-rouge&quot;&gt;smart-align&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;代码贡献&quot;&gt;代码贡献&lt;/h3&gt;
-&lt;p&gt;现在代码实现只是简单的用 &lt;code class=&quot;highlighter-rouge&quot;&gt;backward-up-list&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;up-list&lt;/code&gt; 自动选择光标外的一层语法块，
-如果语法块内每一行都是赋值表达式，这个插件会工作的非常好。&lt;/p&gt;
-
-&lt;p&gt;但是如果语法块内有某一行不是赋值表达式， &lt;code class=&quot;highlighter-rouge&quot;&gt;align-regexp&lt;/code&gt; 函数就会失效，无法对代码进行自动对齐。&lt;/p&gt;
-
-&lt;p&gt;正确的思路应该是在语法块内进一步搜索来进一步定位包含 = 或者 : 的子语法块范围，再依次传给 &lt;code class=&quot;highlighter-rouge&quot;&gt;align-regexp&lt;/code&gt;
-欢迎各大高手来一起 &lt;a href=&quot;https://github.com/manateelazycat/smart-align/edit/master/smart-align.el&quot;&gt;完善&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">像VSCode和很多IDE都具备快速对齐赋值表达式的功能。</summary></entry></feed>
+&lt;p&gt;想修改Tag名字的时候，调用一次 instant-rename-tag, 修改完成后只用把光标移动到非Tag区域继续编辑，刚刚重命名的区域会自动取消标记。&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在研究VSCode好用的功能，希望通过一点点的努力, 把VSCode好的功能吸收到Emacs。</summary></entry></feed>
