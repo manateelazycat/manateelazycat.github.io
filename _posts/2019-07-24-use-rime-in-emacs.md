@@ -11,6 +11,10 @@ categories: [Emacs]
 
 几个月前知道pyim可以直接调用RIME输入法做为后端进行输入，那时候pyim才把Linux平台搞定，自己这段时间一直用Mac，所以只能眼馋的份，今天折腾了一下终于搞定了Mac下让pyim使用RIME输入法，坑比较多，故写下此文，帮助Mac版的Emacs用户。
 
+先上一张动态效果图，增强你克服困难的决心，哈哈哈哈:
+
+![pyim-and-rime]({{site.url}}/pics/pyim/rime.gif)
+
 ### 1 更新pyim和posframe到最新版
 为了支持RIME输入法需要把 [pyim](https://github.com/tumashu/pyim) 和 [posframe](https://github.com/tumashu/posframe)这两个库更新到最新，否则有可能会报posframe的错误
 

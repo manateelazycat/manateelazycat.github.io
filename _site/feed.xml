@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-24T19:09:27+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">在Mac版的Emacs中使用RIME输入法</title><link href="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html" rel="alternate" type="text/html" title="在Mac版的Emacs中使用RIME输入法" /><published>2019-07-24T00:00:00+08:00</published><updated>2019-07-24T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html">&lt;p&gt;做为一个资深的Emacs党，期望每件事情都用Emacs来搞定，同时做为中国人，输入中文真的是刚需。
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-24T19:16:09+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">在Mac版的Emacs中使用RIME输入法</title><link href="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html" rel="alternate" type="text/html" title="在Mac版的Emacs中使用RIME输入法" /><published>2019-07-24T00:00:00+08:00</published><updated>2019-07-24T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html">&lt;p&gt;做为一个资深的Emacs党，期望每件事情都用Emacs来搞定，同时做为中国人，输入中文真的是刚需。
 而&lt;a href=&quot;https://github.com/tumashu/pyim&quot;&gt;pyim&lt;/a&gt;就是一个非常牛逼的中文输入法框架。&lt;/p&gt;
 
 &lt;p&gt;虽然深爱着Emacs，即使pyim内置了词库，pyim在很多时候还是无法满足长句输入的需求，偶尔还是要切换到外部的输入法输入中文，比如写这篇博客的时候。但是外部输入法最大的问题是不知道Emacs的输入状态，所以经常需要来回切换输入法状态，非常不爽。&lt;/p&gt;
 
 &lt;p&gt;几个月前知道pyim可以直接调用RIME输入法做为后端进行输入，那时候pyim才把Linux平台搞定，自己这段时间一直用Mac，所以只能眼馋的份，今天折腾了一下终于搞定了Mac下让pyim使用RIME输入法，坑比较多，故写下此文，帮助Mac版的Emacs用户。&lt;/p&gt;
+
+&lt;p&gt;先上一张动态效果图，增强你克服困难的决心，哈哈哈哈:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/pyim/rime.gif&quot; alt=&quot;pyim-and-rime&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;1-更新pyim和posframe到最新版&quot;&gt;1 更新pyim和posframe到最新版&lt;/h3&gt;
 &lt;p&gt;为了支持RIME输入法需要把 &lt;a href=&quot;https://github.com/tumashu/pyim&quot;&gt;pyim&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/tumashu/posframe&quot;&gt;posframe&lt;/a&gt;这两个库更新到最新，否则有可能会报posframe的错误&lt;/p&gt;
