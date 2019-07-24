@@ -1,4 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-23T13:01:54+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails架构设计</title><link href="http://localhost:4000/emacs/2019/07/23/snails-framework.html" rel="alternate" type="text/html" title="Snails架构设计" /><published>2019-07-23T00:00:00+08:00</published><updated>2019-07-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/23/snails-framework</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/23/snails-framework.html">&lt;h3 id=&quot;怎么设计让多后端模糊搜索性能达到极致&quot;&gt;怎么设计让多后端模糊搜索性能达到极致？&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-24T19:09:27+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">在Mac版的Emacs中使用RIME输入法</title><link href="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html" rel="alternate" type="text/html" title="在Mac版的Emacs中使用RIME输入法" /><published>2019-07-24T00:00:00+08:00</published><updated>2019-07-24T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html">&lt;p&gt;做为一个资深的Emacs党，期望每件事情都用Emacs来搞定，同时做为中国人，输入中文真的是刚需。
+而&lt;a href=&quot;https://github.com/tumashu/pyim&quot;&gt;pyim&lt;/a&gt;就是一个非常牛逼的中文输入法框架。&lt;/p&gt;
+
+&lt;p&gt;虽然深爱着Emacs，即使pyim内置了词库，pyim在很多时候还是无法满足长句输入的需求，偶尔还是要切换到外部的输入法输入中文，比如写这篇博客的时候。但是外部输入法最大的问题是不知道Emacs的输入状态，所以经常需要来回切换输入法状态，非常不爽。&lt;/p&gt;
+
+&lt;p&gt;几个月前知道pyim可以直接调用RIME输入法做为后端进行输入，那时候pyim才把Linux平台搞定，自己这段时间一直用Mac，所以只能眼馋的份，今天折腾了一下终于搞定了Mac下让pyim使用RIME输入法，坑比较多，故写下此文，帮助Mac版的Emacs用户。&lt;/p&gt;
+
+&lt;h3 id=&quot;1-更新pyim和posframe到最新版&quot;&gt;1 更新pyim和posframe到最新版&lt;/h3&gt;
+&lt;p&gt;为了支持RIME输入法需要把 &lt;a href=&quot;https://github.com/tumashu/pyim&quot;&gt;pyim&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/tumashu/posframe&quot;&gt;posframe&lt;/a&gt;这两个库更新到最新，否则有可能会报posframe的错误&lt;/p&gt;
+
+&lt;h3 id=&quot;2-安装rime输入法&quot;&gt;2 安装RIME输入法&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;squirrel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-下载librime源码&quot;&gt;3 下载librime源码&lt;/h3&gt;
+&lt;p&gt;下载librime源码:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone &lt;span class=&quot;nt&quot;&gt;--recursive&lt;/span&gt; https://github.com/rime/librime.git &lt;span class=&quot;nt&quot;&gt;--depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-编译liberime&quot;&gt;4 编译liberime&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;4.1 下载liberime源码&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://gitlab.com/liberime/liberime.git &lt;span class=&quot;nt&quot;&gt;--depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;4.2 创建librime xbuild目录&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因为liberime动态库是需要根据librime来编译的，同时RIME输入法本身就带了librime.1.dylib，所以我们并不需要下载巨大无比的xcode去编译librime.1.dylib&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; ~/librime/xbuild/lib/Release/
+
+&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; /Library/Input&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Methods/Squirrel.app/Contents/Frameworks/librime.1.dylib ~/librime/xbuild/lib/Release/librime.dylib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;4.3 编译liberime.so文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/liberime
+
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;RIME_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/librime
+
+make liberime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;上面的命令自动会去 ~/librime/xbuild/lib/Release/ 目录下找 librime.dylib 文件，并在 ~/liberime/buid/ 目录下生成 liberime.so 动态库文件&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;4.4 把 librime.1.dylib 文件拷贝到系统lib目录&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo cp&lt;/span&gt; /Library/Input&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Methods/Squirrel.app/Contents/Frameworks/librime.1.dylib /usr/local/lib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;否则后面 (require ‘liberime) 的时候会下面的错误&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dyld: Library not loaded: @rpath/librime.1.dylib
+  Referenced from: ...
+  Reason: image not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;5-配置pyim&quot;&gt;5 配置pyim&lt;/h3&gt;
+&lt;p&gt;拷贝 librime.so 文件到 ~/.emacs.d/ 目录下，然后在 ~/.emacs 写下如下配置即可:&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;load-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cons&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-truename&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/.emacs.d/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;load-path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'pyim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'posframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'liberime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;default-input-method&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pyim&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-page-tooltip&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'posframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-page-length&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;liberime-start&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Library/Input Methods/Squirrel.app/Contents/SharedSupport&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-truename&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/.emacs.d/pyim/rime/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;liberime-select-schema&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;luna_pinyin_simp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-default-scheme&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'rime-quanpin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;6-增加rime候选词数量&quot;&gt;6 增加RIME候选词数量&lt;/h3&gt;
+
+&lt;p&gt;liberime默认只能获取5个后选词，用下面的方法可以增加RIME后端时的后选词数量。&lt;/p&gt;
+
+&lt;p&gt;创建 ~/.emacs.d/pyim/rime/default.custom.yaml 文件，内容如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;patch:
+     &lt;span class=&quot;s2&quot;&gt;&quot;menu/page_size&quot;&lt;/span&gt;: 100
+     &lt;span class=&quot;s2&quot;&gt;&quot;speller/auto_select&quot;&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+     &lt;span class=&quot;s2&quot;&gt;&quot;speller/auto_select_unique_candidate&quot;&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+&lt;p&gt;上面这么长一篇的文字都是我在Emacs下用pyim配合RIME后端来进行输入的，整个过程非常流畅，长句输入也非常非常的赞。&lt;/p&gt;
+
+&lt;p&gt;终于不用在Emacs中使用外部输入法了，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">做为一个资深的Emacs党，期望每件事情都用Emacs来搞定，同时做为中国人，输入中文真的是刚需。 而pyim就是一个非常牛逼的中文输入法框架。</summary></entry><entry><title type="html">Snails架构设计</title><link href="http://localhost:4000/emacs/2019/07/23/snails-framework.html" rel="alternate" type="text/html" title="Snails架构设计" /><published>2019-07-23T00:00:00+08:00</published><updated>2019-07-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/23/snails-framework</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/23/snails-framework.html">&lt;h3 id=&quot;怎么设计让多后端模糊搜索性能达到极致&quot;&gt;怎么设计让多后端模糊搜索性能达到极致？&lt;/h3&gt;
 &lt;p&gt;前天发布了&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/21/snails.html&quot;&gt;Snails&lt;/a&gt;这个新型的模糊搜索框架。
 Snails的这个项目的主要目的是：&lt;/p&gt;
 &lt;ol&gt;
@@ -288,20 +387,7 @@ TabNine会根据它自己的算法来进行智能排序, 给出它认为最佳�
 &lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
 &lt;p&gt;从整体上看TabNine就是找各种token来暴力学习，所以性能的表现上比很多LSP服务器还要好，我在Emacs中使用TabNine补全，非常顺滑。&lt;/p&gt;
 
-&lt;p&gt;我希望有一天这种技术可以直接感知我的思想，这样我就不用动手了， 想一想代码就自动写完了，哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</summary></entry><entry><title type="html">Jekyll实时刷新</title><link href="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html" rel="alternate" type="text/html" title="Jekyll实时刷新" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/07/14/jekyll-livereload</id><content type="html" xml:base="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html">&lt;p&gt;用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档&lt;/p&gt;
-
-&lt;p&gt;用下面的命令启动Jekyll服务器, 而不是命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;，博客内容修改完成以后浏览器就可以实时自动刷新。&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--livereload&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;配置好实时刷新功能以后，博客的编写预览更加无缝衔接了，以下是我平常写博客的工作流:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;在Emacs中用 markdown-mode 写博客&lt;/li&gt;
-  &lt;li&gt;手指头一松开，&lt;a href=&quot;https://github.com/manateelazycat/auto-save&quot;&gt;auto-save&lt;/a&gt; 插件会自动保存文件内容&lt;/li&gt;
-  &lt;li&gt;用 Hammerspoon 切换到浏览器，浏览器的内容已经自动刷新&lt;/li&gt;
-  &lt;li&gt;完成后用 Magit 快捷键，同步文章到 Github&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档</summary></entry><entry><title type="html">Vue.js的实践小技巧</title><link href="http://localhost:4000/web/2019/07/14/vue-tooltips.html" rel="alternate" type="text/html" title="Vue.js的实践小技巧" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/07/14/vue-tooltips</id><content type="html" xml:base="http://localhost:4000/web/2019/07/14/vue-tooltips.html">&lt;h3 id=&quot;vuejs是计算机发展的趋势使然&quot;&gt;Vue.js是计算机发展的趋势使然&lt;/h3&gt;
+&lt;p&gt;我希望有一天这种技术可以直接感知我的思想，这样我就不用动手了， 想一想代码就自动写完了，哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</summary></entry><entry><title type="html">Vue.js的实践小技巧</title><link href="http://localhost:4000/web/2019/07/14/vue-tooltips.html" rel="alternate" type="text/html" title="Vue.js的实践小技巧" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/07/14/vue-tooltips</id><content type="html" xml:base="http://localhost:4000/web/2019/07/14/vue-tooltips.html">&lt;h3 id=&quot;vuejs是计算机发展的趋势使然&quot;&gt;Vue.js是计算机发展的趋势使然&lt;/h3&gt;
 &lt;p&gt;计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。&lt;/p&gt;
 
 &lt;p&gt;Vue.js 主要解决的问题是，整个前端的界面修改都是在浏览器中完成的, 服务端只用提供API即可，而且界面整体逻辑是通过属性来动态绑定的，界面布局调整的JS代码并不依赖于DOM的节点查询，如果需要修改界面布局和设计时，只用大胆的调整前端模板和CSS样式即可，JS逻辑和后端代码都不用配合修改，整个界面改动的负担很小，可维护性也非常好。&lt;/p&gt;
@@ -556,7 +642,20 @@ TabNine会根据它自己的算法来进行智能排序, 给出它认为最佳�
 &lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
 &lt;p&gt;虽然上面写了这么多，但是从整体上看，一旦你熟悉了Vue.js的使用方式，Vue.js已经算同等规模开源项目里面坑比较少的项目，用起来还是非常省心和好用的。&lt;/p&gt;
 
-&lt;p&gt;上面就是我在Vue.js项目实践中的一些技巧分享，希望看到此文章的同学少走一些弯路。&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue.js是计算机发展的趋势使然 计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。</summary></entry><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘敲碎了&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;上面就是我在Vue.js项目实践中的一些技巧分享，希望看到此文章的同学少走一些弯路。&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue.js是计算机发展的趋势使然 计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。</summary></entry><entry><title type="html">Jekyll实时刷新</title><link href="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html" rel="alternate" type="text/html" title="Jekyll实时刷新" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/07/14/jekyll-livereload</id><content type="html" xml:base="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html">&lt;p&gt;用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档&lt;/p&gt;
+
+&lt;p&gt;用下面的命令启动Jekyll服务器, 而不是命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;，博客内容修改完成以后浏览器就可以实时自动刷新。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--livereload&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;配置好实时刷新功能以后，博客的编写预览更加无缝衔接了，以下是我平常写博客的工作流:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;在Emacs中用 markdown-mode 写博客&lt;/li&gt;
+  &lt;li&gt;手指头一松开，&lt;a href=&quot;https://github.com/manateelazycat/auto-save&quot;&gt;auto-save&lt;/a&gt; 插件会自动保存文件内容&lt;/li&gt;
+  &lt;li&gt;用 Hammerspoon 切换到浏览器，浏览器的内容已经自动刷新&lt;/li&gt;
+  &lt;li&gt;完成后用 Magit 快捷键，同步文章到 Github&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档</summary></entry><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘敲碎了&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;我在淘宝上买了键帽准备开始修复&lt;/p&gt;
 
@@ -681,34 +780,4 @@ Mac无法正确映射IKBC的键盘布局，导致快捷键不兼容后我完全�
 &lt;p&gt;安装方法见&lt;a href=&quot;https://github.com/manateelazycat/highlight-matching-tag&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
-&lt;p&gt;安装好只用调用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;(highlight-matching-tag 1)&lt;/code&gt; 即可&lt;/p&gt;</content><author><name></name></author><summary type="html">昨天花了一个小时给Emacs写了实时重命名Tag的插件instant-rename-tag</summary></entry><entry><title type="html">instant-rename-tag.el 实时修改Tag名</title><link href="http://localhost:4000/emacs/2019/06/26/instant-rename-tag.html" rel="alternate" type="text/html" title="instant-rename-tag.el 实时修改Tag名" /><published>2019-06-26T00:00:00+08:00</published><updated>2019-06-26T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/06/26/instant-rename-tag</id><content type="html" xml:base="http://localhost:4000/emacs/2019/06/26/instant-rename-tag.html">&lt;p&gt;最近在研究VSCode好用的功能，希望通过一点点的努力, 把VSCode好的功能吸收到Emacs。&lt;/p&gt;
-
-&lt;p&gt;说到VSCode，说它是支持Web编程最好的IDE一点也不为过，其中实时修改Tag名字的功能非常好用。&lt;/p&gt;
-
-&lt;p&gt;可惜的是，Emacs一直都没有好用的实时修改Tag的功能，即使最强大的 web-mode 也需要从 minibuffer 中读取新的Tag，视线要在光标处和minibuffer来回跳动，不够爽。&lt;/p&gt;
-
-&lt;p&gt;以前类似的插件在原理上总是希望修改Tag的时候，实时的计算匹配的Tag区域并同步更新，这样的实现原理是有问题:&lt;/p&gt;
-
-&lt;p&gt;因为不管是 sgml-mode 还是 web-mode, 一旦发现Tag不匹配，就很难找到匹配Tag区域，究其原因是Emacs找到匹配的Tag区域是基于正则查找, 所以一旦Tag无法匹配，实时修改Tag的功能实现就很困难，而且在复杂的Emacs插件环境中特别容易出错。&lt;/p&gt;
-
-&lt;h3 id=&quot;instant-rename-tagel-的原理&quot;&gt;instant-rename-tag.el 的原理&lt;/h3&gt;
-
-&lt;p&gt;instant-rename-tag 认识到上面的问题，从实现上放弃了Tag实时匹配查找的策略，而是用下面的步骤来实现：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;重命名动作触发的时候，根据 Open Tag 还是 Close Tag的位置，找到匹配的Tag区域&lt;/li&gt;
-  &lt;li&gt;用 Overlay 来保存 Open Tag 和 Close Tag 的区域，一旦保存好以后，就不再进行任何Tag匹配的搜索&lt;/li&gt;
-  &lt;li&gt;监控光标插入，如果当前光标是在 Tag Overlay 区域修改，比如 &amp;lt;div&amp;gt; Tag中修改，会去找 &amp;lt;/div&amp;gt; 的 Overlay&lt;/li&gt;
-  &lt;li&gt;找到对应的 Tag Overlay, 同步其内容&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;这样只在重命名启动的时候查找一下 Tag 的区域，后面只是简单的光标监控和内容同步，既实现了实时改名的功能，又不会因为Tag不匹配产生很多乱改用户buffer的问题。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/instant-rename-tag/instant-rename-tag.gif&quot; alt=&quot;instant-rename-tag&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;安装方法见&lt;a href=&quot;https://github.com/manateelazycat/instant-rename-tag&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
-&lt;p&gt;使用方法很简单, 绑定按键到 &lt;code class=&quot;highlighter-rouge&quot;&gt;instant-rename-tag&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;想修改Tag名字的时候，调用一次 instant-rename-tag, 修改完成后只用把光标移动到非Tag区域继续编辑，刚刚重命名的区域会自动取消标记。&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在研究VSCode好用的功能，希望通过一点点的努力, 把VSCode好的功能吸收到Emacs。</summary></entry></feed>
+&lt;p&gt;安装好只用调用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;(highlight-matching-tag 1)&lt;/code&gt; 即可&lt;/p&gt;</content><author><name></name></author><summary type="html">昨天花了一个小时给Emacs写了实时重命名Tag的插件instant-rename-tag</summary></entry></feed>
