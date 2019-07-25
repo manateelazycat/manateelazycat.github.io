@@ -51,7 +51,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数4208 2016-03-16
+                字数4207 2016-03-16
             </div>
             <div class="content">
                 <h4 id="有些插件还是要传播一下的">有些插件还是要传播一下的</h4>
@@ -69,9 +69,9 @@
 
 <p>其实每个程序员编写程序的时候， 写着写着思维不是那么流畅了， 需要停下来稍微思考一下， 其实这时候就是自动保存的最佳时刻： 利用程序员犹豫下一个字符应该敲什么的空隙时间就足够保存一个文件了。</p>
 
-<p>所以那时候就写了一个 <a href="https://github.com/manateelazycat/deepin-emacs/blob/master/site-lisp/extensions/lazycat/auto-save.el">auto-save.el</a> 来做这件事情， 每当Emacs发现你停止敲键盘超过1s钟以后， 它就会把所有没有保存的文件全部保存一遍。</p>
+<p>所以那时候就写了一个 <a href="https://github.com/auto-save/auto-save.el">auto-save.el</a> 来做这件事情， 每当Emacs发现你停止敲键盘超过1s钟以后， 它就会把所有没有保存的文件全部保存一遍。</p>
 
-<p>所以自从那时候我基本十年没有在手动保存过任何文件了， 也从来没有丢失过任何一行写的代码。 配置很简单， 下载 <a href="https://github.com/manateelazycat/deepin-emacs/blob/master/site-lisp/extensions/lazycat/auto-save.el">auto-save.el</a>， 然后在 ~/.emacs 里面加上下面的代码：</p>
+<p>所以自从那时候我基本十年没有在手动保存过任何文件了， 也从来没有丢失过任何一行写的代码。 配置很简单， 下载 <a href="https://github.com/auto-save/auto-save.el">auto-save.el</a>， 然后在 ~/.emacs 里面加上下面的代码：</p>
 
 <div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">require</span> <span class="ss">'auto-save</span><span class="p">)</span>            <span class="c1">;; 加载自动保存模块</span>
 
@@ -109,7 +109,7 @@
   <span class="ss">:type</span> <span class="ss">'integer</span>
   <span class="ss">:group</span> <span class="ss">'auto-save</span><span class="p">)</span>
 
-<span class="c1">;; autos-save-slient 的作用就是一个boolean值得变量， 设置为 nil 的时候， 表示每次自动保存都会在 minibuffer 提示， 设置成 t 的时候就会 shutup, 让我安安静静写会代码， 别闹...</span>
+<span class="c1">;; auto-save-slient 的作用就是一个boolean值得变量， 设置为 nil 的时候， 表示每次自动保存都会在 minibuffer 提示， 设置成 t 的时候就会 shutup, 让我安安静静写会代码， 别闹...</span>
 <span class="p">(</span><span class="nv">defcustom</span> <span class="nv">auto-save-slient</span> <span class="no">nil</span>
   <span class="s">"Nothing to dirty minibuffer if this option is non-nil."</span>
   <span class="ss">:type</span> <span class="ss">'boolean</span>
