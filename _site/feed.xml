@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-26T06:46:49+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">在Mac版的Emacs中使用RIME输入法</title><link href="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html" rel="alternate" type="text/html" title="在Mac版的Emacs中使用RIME输入法" /><published>2019-07-24T00:00:00+08:00</published><updated>2019-07-24T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html">&lt;p&gt;做为一个资深的Emacs党，期望每件事情都用Emacs来搞定，同时做为中国人，输入中文真的是刚需。
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-29T00:44:57+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails 5.0 发布了</title><link href="http://localhost:4000/emacs/2019/07/29/snails-5.0.html" rel="alternate" type="text/html" title="Snails 5.0 发布了" /><published>2019-07-29T00:00:00+08:00</published><updated>2019-07-29T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/29/snails-5.0</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/29/snails-5.0.html">&lt;p&gt;自从&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/21/snails.html&quot;&gt;Snails1.0&lt;/a&gt;发布一周后，Snails版本号不知不觉刷到5.0了，感谢社区同学积极测试和提供帮助。&lt;/p&gt;
+
+&lt;p&gt;Snails 5.0的更新如下：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;166次更新，新增5个社区贡献者，合并了9个社区补丁, 修复了超多bug&lt;/li&gt;
+  &lt;li&gt;补全窗口启动速度从 1~2 秒优化到瞬间 （插件首次加载依然需要点时间）&lt;/li&gt;
+  &lt;li&gt;采用队列渲染策略替换了抢占式渲染策略，将多后端渲染性能提升了3~5倍&lt;/li&gt;
+  &lt;li&gt;默认集成了9种搜索后端，按 “标签分组、打开文件、最近文件、书签、函数定义、当前文件全文、项目文件全文、当前目录文件、整个磁盘文件” 的优先级进行依次搜索, 已经覆盖了90%的代码搜索和导航需求&lt;/li&gt;
+  &lt;li&gt;其中当前文件全文和项目文件全文基于ripgrep来实现，特别是在超大文件的内容搜索上，要比Emacs内置的 isearch/grep 快很多&lt;/li&gt;
+  &lt;li&gt;多后端搜索时，当前选中的后选词状态保持不变，不会像1.0那样异步后端来数据后选中后选词被强制切换成第一个&lt;/li&gt;
+  &lt;li&gt;在 fuz.el 这个库安装以后，自动切换成模糊匹配算法，可以快速按照任意片段进行搜索，而不需要连续输入相邻字符&lt;/li&gt;
+  &lt;li&gt;增加了 snails-search-point 命令，方便快速搜索当前光标处的内容&lt;/li&gt;
+  &lt;li&gt;增加了很多自定义选项供大家个性化设置&lt;/li&gt;
+  &lt;li&gt;更多更新细节请查看&lt;a href=&quot;https://github.com/manateelazycat/snails/commits/master&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;虽然整个架构进行了大幅度的优化和增强，但是Snails的插件接口依然是非常简单灵活，你只用花5分钟，编写20行左右的过滤函数即可快速完成你想要的插件。&lt;/p&gt;
+
+&lt;p&gt;欢迎各路高手来&lt;a href=&quot;https://github.com/manateelazycat/snails/pulls&quot;&gt;贡献你自己的插件&lt;/a&gt; !&lt;/p&gt;</content><author><name></name></author><summary type="html">自从Snails1.0发布一周后，Snails版本号不知不觉刷到5.0了，感谢社区同学积极测试和提供帮助。</summary></entry><entry><title type="html">在Mac版的Emacs中使用RIME输入法</title><link href="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html" rel="alternate" type="text/html" title="在Mac版的Emacs中使用RIME输入法" /><published>2019-07-24T00:00:00+08:00</published><updated>2019-07-24T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html">&lt;p&gt;做为一个资深的Emacs党，期望每件事情都用Emacs来搞定，同时做为中国人，输入中文真的是刚需。
 而&lt;a href=&quot;https://github.com/tumashu/pyim&quot;&gt;pyim&lt;/a&gt;就是一个非常牛逼的中文输入法框架。&lt;/p&gt;
 
 &lt;p&gt;虽然深爱着Emacs，即使pyim内置了词库，pyim在很多时候还是无法满足长句输入的需求，偶尔还是要切换到外部的输入法输入中文，比如写这篇博客的时候。但是外部输入法最大的问题是不知道Emacs的输入状态，所以经常需要来回切换输入法状态，非常不爽。&lt;/p&gt;
@@ -391,7 +410,20 @@ TabNine会根据它自己的算法来进行智能排序, 给出它认为最佳�
 &lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
 &lt;p&gt;从整体上看TabNine就是找各种token来暴力学习，所以性能的表现上比很多LSP服务器还要好，我在Emacs中使用TabNine补全，非常顺滑。&lt;/p&gt;
 
-&lt;p&gt;我希望有一天这种技术可以直接感知我的思想，这样我就不用动手了， 想一想代码就自动写完了，哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</summary></entry><entry><title type="html">Vue.js的实践小技巧</title><link href="http://localhost:4000/web/2019/07/14/vue-tooltips.html" rel="alternate" type="text/html" title="Vue.js的实践小技巧" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/07/14/vue-tooltips</id><content type="html" xml:base="http://localhost:4000/web/2019/07/14/vue-tooltips.html">&lt;h3 id=&quot;vuejs是计算机发展的趋势使然&quot;&gt;Vue.js是计算机发展的趋势使然&lt;/h3&gt;
+&lt;p&gt;我希望有一天这种技术可以直接感知我的思想，这样我就不用动手了， 想一想代码就自动写完了，哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</summary></entry><entry><title type="html">Jekyll实时刷新</title><link href="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html" rel="alternate" type="text/html" title="Jekyll实时刷新" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/07/14/jekyll-livereload</id><content type="html" xml:base="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html">&lt;p&gt;用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档&lt;/p&gt;
+
+&lt;p&gt;用下面的命令启动Jekyll服务器, 而不是命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;，博客内容修改完成以后浏览器就可以实时自动刷新。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--livereload&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;配置好实时刷新功能以后，博客的编写预览更加无缝衔接了，以下是我平常写博客的工作流:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;在Emacs中用 markdown-mode 写博客&lt;/li&gt;
+  &lt;li&gt;手指头一松开，&lt;a href=&quot;https://github.com/manateelazycat/auto-save&quot;&gt;auto-save&lt;/a&gt; 插件会自动保存文件内容&lt;/li&gt;
+  &lt;li&gt;用 Hammerspoon 切换到浏览器，浏览器的内容已经自动刷新&lt;/li&gt;
+  &lt;li&gt;完成后用 Magit 快捷键，同步文章到 Github&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档</summary></entry><entry><title type="html">Vue.js的实践小技巧</title><link href="http://localhost:4000/web/2019/07/14/vue-tooltips.html" rel="alternate" type="text/html" title="Vue.js的实践小技巧" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/07/14/vue-tooltips</id><content type="html" xml:base="http://localhost:4000/web/2019/07/14/vue-tooltips.html">&lt;h3 id=&quot;vuejs是计算机发展的趋势使然&quot;&gt;Vue.js是计算机发展的趋势使然&lt;/h3&gt;
 &lt;p&gt;计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。&lt;/p&gt;
 
 &lt;p&gt;Vue.js 主要解决的问题是，整个前端的界面修改都是在浏览器中完成的, 服务端只用提供API即可，而且界面整体逻辑是通过属性来动态绑定的，界面布局调整的JS代码并不依赖于DOM的节点查询，如果需要修改界面布局和设计时，只用大胆的调整前端模板和CSS样式即可，JS逻辑和后端代码都不用配合修改，整个界面改动的负担很小，可维护性也非常好。&lt;/p&gt;
@@ -646,20 +678,7 @@ TabNine会根据它自己的算法来进行智能排序, 给出它认为最佳�
 &lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
 &lt;p&gt;虽然上面写了这么多，但是从整体上看，一旦你熟悉了Vue.js的使用方式，Vue.js已经算同等规模开源项目里面坑比较少的项目，用起来还是非常省心和好用的。&lt;/p&gt;
 
-&lt;p&gt;上面就是我在Vue.js项目实践中的一些技巧分享，希望看到此文章的同学少走一些弯路。&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue.js是计算机发展的趋势使然 计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。</summary></entry><entry><title type="html">Jekyll实时刷新</title><link href="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html" rel="alternate" type="text/html" title="Jekyll实时刷新" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/tech/2019/07/14/jekyll-livereload</id><content type="html" xml:base="http://localhost:4000/tech/2019/07/14/jekyll-livereload.html">&lt;p&gt;用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档&lt;/p&gt;
-
-&lt;p&gt;用下面的命令启动Jekyll服务器, 而不是命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;，博客内容修改完成以后浏览器就可以实时自动刷新。&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--livereload&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;配置好实时刷新功能以后，博客的编写预览更加无缝衔接了，以下是我平常写博客的工作流:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;在Emacs中用 markdown-mode 写博客&lt;/li&gt;
-  &lt;li&gt;手指头一松开，&lt;a href=&quot;https://github.com/manateelazycat/auto-save&quot;&gt;auto-save&lt;/a&gt; 插件会自动保存文件内容&lt;/li&gt;
-  &lt;li&gt;用 Hammerspoon 切换到浏览器，浏览器的内容已经自动刷新&lt;/li&gt;
-  &lt;li&gt;完成后用 Magit 快捷键，同步文章到 Github&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档</summary></entry><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘敲碎了&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;上面就是我在Vue.js项目实践中的一些技巧分享，希望看到此文章的同学少走一些弯路。&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue.js是计算机发展的趋势使然 计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。</summary></entry><entry><title type="html">怎么徒手修复MacBook键盘？</title><link href="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html" rel="alternate" type="text/html" title="怎么徒手修复MacBook键盘？" /><published>2019-07-09T00:00:00+08:00</published><updated>2019-07-09T00:00:00+08:00</updated><id>http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard</id><content type="html" xml:base="http://localhost:4000/mac/tech/2019/07/09/fix-macbook-keyboard.html">&lt;p&gt;继上个星期我把&lt;a href=&quot;https://manateelazycat.github.io/mac/tech/2019/07/04/fuck-mackbook-keyboard.html&quot;&gt;MacBook Pro的键盘敲碎了&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;我在淘宝上买了键帽准备开始修复&lt;/p&gt;
 
@@ -765,23 +784,4 @@ Mac无法正确映射IKBC的键盘布局，导致快捷键不兼容后我完全�
 
 &lt;p&gt;经过上面三个步骤的设置后，我又可以非常流畅的使用Emacs了，忍受了一年MacBook Pro的垃圾键盘，终于又体会到机械键盘写代码的快乐了。&lt;/p&gt;
 
-&lt;p&gt;我估计等MacBook Pro键帽换好以后，我还是会背着机械键盘走天下。&lt;/p&gt;</content><author><name></name></author><summary type="html">都说Mac笔记本的键盘渣，最开始我一直以为只是手感差，论键盘手感，只有老款的ThinkPad的键盘手感才算过得去。</summary></entry><entry><title type="html">highlight-matching-tag.el 实时高亮匹配标签</title><link href="http://localhost:4000/emacs/2019/06/27/highlight-matching-tag.html" rel="alternate" type="text/html" title="highlight-matching-tag.el 实时高亮匹配标签" /><published>2019-06-27T00:00:00+08:00</published><updated>2019-06-27T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/06/27/highlight-matching-tag</id><content type="html" xml:base="http://localhost:4000/emacs/2019/06/27/highlight-matching-tag.html">&lt;p&gt;昨天花了一个小时给Emacs写了实时重命名Tag的插件&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/06/26/instant-rename-tag.html&quot;&gt;instant-rename-tag&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;今天就在想，能否基于同样原理写一个实时高亮匹配标签的插件呢？&lt;/p&gt;
-
-&lt;h3 id=&quot;highlight-matching-tagel-的原理&quot;&gt;highlight-matching-tag.el 的原理&lt;/h3&gt;
-
-&lt;p&gt;highlight-matching-tag的原理和instant-rename-tag完全是一样的，只是绑定了不同的事件hook&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;post-command-hook&lt;/code&gt; 监听光标移动事件，如果当前处于 &lt;code class=&quot;highlighter-rouge&quot;&gt;web-mode&lt;/code&gt; 模式时继续处理&lt;/li&gt;
-  &lt;li&gt;如果光标在Tag区域，找到匹配的光标，然后用 Overlay 高亮匹配的标签&lt;/li&gt;
-  &lt;li&gt;如果光标不在Tag区域，隐藏标签高亮&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/highlight-matching-tag/highlight-matching-tag.gif&quot; alt=&quot;highlight-matching-tag&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;安装方法见&lt;a href=&quot;https://github.com/manateelazycat/highlight-matching-tag&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;使用方法&quot;&gt;使用方法&lt;/h3&gt;
-&lt;p&gt;安装好只用调用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;(highlight-matching-tag 1)&lt;/code&gt; 即可&lt;/p&gt;</content><author><name></name></author><summary type="html">昨天花了一个小时给Emacs写了实时重命名Tag的插件instant-rename-tag</summary></entry></feed>
+&lt;p&gt;我估计等MacBook Pro键帽换好以后，我还是会背着机械键盘走天下。&lt;/p&gt;</content><author><name></name></author><summary type="html">都说Mac笔记本的键盘渣，最开始我一直以为只是手感差，论键盘手感，只有老款的ThinkPad的键盘手感才算过得去。</summary></entry></feed>
