@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-03T08:56:44+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">技术人怎么领导一个开源社区？</title><link href="http://localhost:4000/opensource/2019/08/03/how-open-source-works.html" rel="alternate" type="text/html" title="技术人怎么领导一个开源社区？" /><published>2019-08-03T00:00:00+08:00</published><updated>2019-08-03T00:00:00+08:00</updated><id>http://localhost:4000/opensource/2019/08/03/how-open-source-works</id><content type="html" xml:base="http://localhost:4000/opensource/2019/08/03/how-open-source-works.html">&lt;p class=&quot;line-quote&quot;&gt;技术人怎么做开源社区？&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-03T09:47:38+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">技术人怎么领导一个开源社区？</title><link href="http://localhost:4000/opensource/2019/08/03/how-open-source-works.html" rel="alternate" type="text/html" title="技术人怎么领导一个开源社区？" /><published>2019-08-03T00:00:00+08:00</published><updated>2019-08-03T00:00:00+08:00</updated><id>http://localhost:4000/opensource/2019/08/03/how-open-source-works</id><content type="html" xml:base="http://localhost:4000/opensource/2019/08/03/how-open-source-works.html">&lt;p class=&quot;line-quote&quot;&gt;技术人怎么做开源社区？&lt;/p&gt;
 
 &lt;p&gt;这个问题，每年都会有很多朋友问起我这个问题，问的久了，发现其实每次跟朋友聊的时候都在说重复的东西。
 像我这样懒的人，今天决定干脆整理一下写出来，下次其他朋友再问起，我就直接把这篇博客发出去，哈哈哈哈。&lt;/p&gt;
@@ -37,8 +37,8 @@
   &lt;li&gt;在第一段话下面，放一张截图，最好是几秒的GIF动图，让用户看完以后马上懂这个项目是干啥的，如果看完动图以后，用户的感觉是 “我Ca，这个项目好牛逼，我一定要把它折腾好”，你就成功了一半了&lt;/li&gt;
   &lt;li&gt;最简单的安装文档，你要想尽任何办法把安装文档写的最简单易懂，因为一旦用户感兴趣你的项目后，马上就会想到怎么安装？一个复杂的安装文档会导致用户受挫，最终放弃你的项目&lt;/li&gt;
   &lt;li&gt;简单的用法，先告诉用户一个简单的用法，先不要着急把所有功能写出来，用户安装以后马上就可以实验就最好，一定要遏止住自己把所有功能堆砌出来的冲动，慢慢来&lt;/li&gt;
-  &lt;li&gt;用户简单方法会了以后，写各种高级功能了FAQ，避免常见问题困扰用户&lt;/li&gt;
-  &lt;li&gt;到这里，你已经做到了60分了，加一张加构图和架构图的原理说明，架构图用Google Docs来画，注意颜色和布局，画得漂亮点，如果原理太长，可以考虑做一个链接，不是谁都关心架构设计，一个好的架构设计图会让那些技术高手快速弄懂原理，培养潜在的开源社区贡献者&lt;/li&gt;
+  &lt;li&gt;用户简单方法会了以后，写各种高级功能和FAQ，避免常见问题困扰用户&lt;/li&gt;
+  &lt;li&gt;到这里，你已经做到了60分了，加一张架构图和架构图的原理说明，架构图用Google Docs来画，注意颜色和布局，画得漂亮点，如果原理太长，可以考虑做一个链接，不是谁都关心架构设计，一个好的架构设计图会让那些技术高手快速弄懂原理，培养潜在的开源社区贡献者&lt;/li&gt;
   &lt;li&gt;添加一个Todolist，写下你即将要做的功能，相当于一个简单的roadmap, 不管用户还是潜在的开发者都非常关心作者对这个项目的未来规划&lt;/li&gt;
   &lt;li&gt;最后10分怎么弄？把怎么贡献代码的文档写好，最好不要超过3步，方便初学者快速贡献代码&lt;/li&gt;
 &lt;/ul&gt;
