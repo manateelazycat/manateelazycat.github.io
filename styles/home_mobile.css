@@ -49,7 +49,7 @@ a {
     margin-left: 20px;
     margin-right: 20px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #EEE;
 }
 
@@ -118,7 +118,7 @@ a {
 
 .post-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .category-area {
