@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>Snails 6.0 发布了</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                Snails 6.0 发布了
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数719 2019-08-25
+            </div>
+            <div class="content">
+                <p>今天早上新加了一个<a href="https://github.com/manateelazycat/snails/commit/4b9d14311d0920ea6bf4d3a770e2a1257038561f">补丁</a>, 发布了 Snails 最新版本 6.0</p>
+
+<h3 id="按前缀来搜索不同的内容">按前缀来搜索不同的内容</h3>
+<p>Snails 6.0 的主要更新是支持像VSCode那样根据前缀来搜索不同的后端内容。</p>
+
+<ul>
+  <li>Snails启动后，默认在标签分组、缓存列表、最近访问文件、书签这些最高频的后端中进行搜索，以快速切换正在使用的文件</li>
+  <li>当输入中包含前缀 @ 时，Snails只在函数或变量定义中进行搜索，方便快速进行定义跳转</li>
+  <li>当输入中包含前缀 # 时，Snails使用 ripgrep 搜索当前文件的内容</li>
+  <li>当输入中包含前缀 ! 时，Snails使用 ripgrep 搜索当前项目里所有文件的内容</li>
+  <li>当输入中包含前缀 ? 时，Snails使用 fd、projctile、mdfind、everything 等后端进行全局文件名搜索，以快速找到并打开磁盘中的文件</li>
+</ul>
+
+<p>这样设计的作用是，Snails默认只搜索打开的文件，符合99%的默认使用习惯，当用户需要特殊搜索，比如函数定义的时候，可以在输入的内容加上前缀 ，使得Snails只在用户制定的后端中进行定向搜索。</p>
+
+<p>通过这样的设计，可以同时满足绝大多数用户的使用习惯，又不会因为默认加入太多的后端导致搜索信息过多的问题，最终提升用户的搜索效率。</p>
+
+<h3 id="自定义搜索后端">自定义搜索后端</h3>
+<p>当然，如果你不喜欢前缀的方案，可以通过自定义后端列表的方式进行自定义搜索:</p>
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">snails</span> <span class="o">'</span><span class="p">(</span><span class="nv">snails-backend-buffer</span> <span class="nv">snails-backend-current-buffer</span><span class="p">))</span>
+</code></pre></div></div>
+<p>比如按照上面的示例，Snails只会在缓存列表和当前文件内容这两个后端中进行搜索，并且忽略用户输入的任何前缀，这种自定义后端的搜索体验和Helm的体验保持一致。</p>
+
+<p>如果你只自定义一种后端，搜索体验将和Ivy保持一致。</p>
+
+<p>That’s all, enjoy!</p>
+
+            </div>
+        </div>
+    </body>
+</html>
