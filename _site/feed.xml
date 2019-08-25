@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-25T09:01:27+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails 6.0 发布了</title><link href="http://localhost:4000/emacs/2019/08/25/snails-6.0.html" rel="alternate" type="text/html" title="Snails 6.0 发布了" /><published>2019-08-25T00:00:00+08:00</published><updated>2019-08-25T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/08/25/snails-6.0</id><content type="html" xml:base="http://localhost:4000/emacs/2019/08/25/snails-6.0.html">&lt;p&gt;今天早上新加了一个&lt;a href=&quot;https://github.com/manateelazycat/snails/commit/4b9d14311d0920ea6bf4d3a770e2a1257038561f&quot;&gt;补丁&lt;/a&gt;, 发布了 Snails 最新版本 6.0&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-25T13:14:31+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails 6.0 发布了</title><link href="http://localhost:4000/emacs/2019/08/25/snails-6.0.html" rel="alternate" type="text/html" title="Snails 6.0 发布了" /><published>2019-08-25T00:00:00+08:00</published><updated>2019-08-25T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/08/25/snails-6.0</id><content type="html" xml:base="http://localhost:4000/emacs/2019/08/25/snails-6.0.html">&lt;p&gt;今天早上新加了一个&lt;a href=&quot;https://github.com/manateelazycat/snails/commit/4b9d14311d0920ea6bf4d3a770e2a1257038561f&quot;&gt;补丁&lt;/a&gt;, 发布了 Snails 最新版本 6.0&lt;/p&gt;
 
 &lt;h3 id=&quot;按前缀来搜索不同的内容&quot;&gt;按前缀来搜索不同的内容&lt;/h3&gt;
 &lt;p&gt;Snails 6.0 的主要更新是支持像VSCode那样根据前缀来搜索不同的后端内容。&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Snails启动后，默认在标签分组、缓存列表、最近访问文件、书签这些最高频的后端中进行搜索，以快速切换正在使用的文件&lt;/li&gt;
+  &lt;li&gt;当输入中包含前缀 &amp;gt; 时，Snails搜索所有可以执行的命令&lt;/li&gt;
   &lt;li&gt;当输入中包含前缀 @ 时，Snails只在函数或变量定义中进行搜索，方便快速进行定义跳转&lt;/li&gt;
   &lt;li&gt;当输入中包含前缀 # 时，Snails使用 ripgrep 搜索当前文件的内容&lt;/li&gt;
   &lt;li&gt;当输入中包含前缀 ! 时，Snails使用 ripgrep 搜索当前项目里所有文件的内容&lt;/li&gt;
