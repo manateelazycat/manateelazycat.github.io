@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-25T13:14:31+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails 6.0 发布了</title><link href="http://localhost:4000/emacs/2019/08/25/snails-6.0.html" rel="alternate" type="text/html" title="Snails 6.0 发布了" /><published>2019-08-25T00:00:00+08:00</published><updated>2019-08-25T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/08/25/snails-6.0</id><content type="html" xml:base="http://localhost:4000/emacs/2019/08/25/snails-6.0.html">&lt;p&gt;今天早上新加了一个&lt;a href=&quot;https://github.com/manateelazycat/snails/commit/4b9d14311d0920ea6bf4d3a770e2a1257038561f&quot;&gt;补丁&lt;/a&gt;, 发布了 Snails 最新版本 6.0&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-29T19:04:15+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">读《当下的力量》</title><link href="http://localhost:4000/reading/2019/08/29/reading-living-in-the-moment.html" rel="alternate" type="text/html" title="读《当下的力量》" /><published>2019-08-29T00:00:00+08:00</published><updated>2019-08-29T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/08/29/reading-living-in-the-moment</id><content type="html" xml:base="http://localhost:4000/reading/2019/08/29/reading-living-in-the-moment.html">&lt;p&gt;花了几个月时间终于把朋友推荐的这本书《当下的力量》看完，如果从篇幅看这本书我两天就可以看完，但是朋友说我以前是用脑子在读书，而不是用心在读书。&lt;/p&gt;
+
+&lt;p&gt;所以，这几个月，每天限制只看其中一段，用心去领悟这本书告诉我的很多道理，也解惑了我原来想不明白的很多事情。&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;焦虑、紧张、不安、压力、烦恼——所有形式的恐惧，都是因为对未来过于关注而对当下关注不够所引起的。
+愧疚、后悔、悲伤、怨恨、痛苦以及所有形式的不宽恕都是由过于关注过去而很少关注当下时刻引起的。&lt;/p&gt;
+
+&lt;p&gt;30岁以前获得非常痛苦和焦虑，现在看来原因很简单，因为小时候受过的苦难，久久不能忘怀，时常用拼命工作的方式逃避过去，当累了一天躺在床上，痛苦的过去一直像一台放映机一样在我脑海中一遍又一遍的播放，回味这么多年的痛苦美酒，越痛苦越上瘾，越无法自拔。&lt;/p&gt;
+
+&lt;p&gt;在这种痛苦叠加的过去下，我内心一直处于非常紧绷的高度危机感，总是认为当下不安全，只有拼命工作才能在未来的某一天解救自己, 未来的那一天在什么时候？原来一直告诉我，在把深度操作系统做成微软那么成功的时候，当自己有一天不会再为生活奔波，一心一意只做自己喜欢的事情的时候。&lt;/p&gt;
+
+&lt;p&gt;可是，真相是什么呢？工作和生活的困难只会一个一个的接一个来，你即使用尽全力，即使做再好，可是看着昨天的自己，还是有那么多不完美的地方，然后每天都生活在逃避过去痛苦，期待未来的焦虑中，长时间的这种状态导致我越来越疲惫，越来越迷茫，不知道怎么解救自己？&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;我们并不否认，当你不再认同你的痛苦之身时，你会遭受强烈的内在抗拒，特别是如果你大半生都强烈地与你的痛苦之身认同，并且从中汲取自我感的话，就更是如此。也就是说你从你的痛苦中创造了一个不幸的自我，并且认为这个由大脑创造的幻觉就是你。在这种情况下，害怕失去自我认同的无意识恐惧，会强烈地抗拒任何摆脱这个思维认同的努力。换句话说，你可能宁愿在痛苦中，与痛苦之身认同，也不愿冒风险去丢失你熟悉的不幸自我而跃入一个未知之中。&lt;/p&gt;
+
+&lt;p&gt;看到书中这段话的时候，我仿佛看到了自己一样，我之前的努力也好，拼命也好，本质上还是对一种我自己痛苦过去的认同，痛苦的太久了，痛苦变成了生活的必需，并时常以 “痛并快乐着” 来进行自我安慰，认为世界就是一个又一个的痛苦和苦难，只要我拼命的努力，总有一天我会超越痛苦的，不再痛苦，殊不知在长时间的挣扎中，痛苦已经变成了不由自主的自我的一部分，痛苦加上对未来的恐惧，导致了对自己和世界深深的误解，不但会影响自己，家人甚至会影响到身边的朋友。&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;无论何时，当你需要一个答案、一个解决方案或一个创意时，停止思维片刻，把你的注意力集中在你内在的能量场上，觉察这种内在的平静状态。当你重新开始思考时，你的思维将会变得新鲜且具有创造性。在任何思维活动中，请习惯性地徘徊于思考和对内心的倾听之间。我们可以这样说：别用你的大脑思考问题，而是用你的身体去思考问题。&lt;/p&gt;
+
+&lt;p&gt;我是一个用脑特别多的人，特别有时候写代码的时候会进入纯粹逻辑思维的那种心流状态，以前对 “活在当下” 的理解就是只要我时刻保持努力的状态，时刻保持写代码这种心流的忙碌状态，只要我保持的时间足够长，我就生活在这种 “忙碌的当下” 中，我就不会被过去的痛苦和未来的焦虑而打扰。&lt;/p&gt;
+
+&lt;p&gt;从大脑的层面上看，当我专注当下的忙碌过程中时，是一种形式的当下，因为脑袋里面不可能又专注解决当下的问题又焦虑未来，脑袋会短暂的忘记过去和未来。但是我一直没有解决的问题是，一旦我累了，一旦没有在写代码的时候，大脑又会进入过去和未来，无时无刻的折磨自己。&lt;/p&gt;
+
+&lt;p&gt;看完这本书，我明白了我的困扰，我的困扰现在也就烟消云散了：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;原来我一直认为大脑最重要，大脑代表理智和知识，其实大脑只是工具，能感受这个世界美的身体才最重要&lt;/li&gt;
+  &lt;li&gt;身体也许会出现疾病，但是身体本身不会痛苦和焦虑，大脑才是造成痛苦和焦虑的根本原因&lt;/li&gt;
+  &lt;li&gt;对过去痛苦的回忆和对未来的无穷焦虑，是大脑为了自我认同自我创造的高清电影，通过自我放映来影响我们的判断，最终通过痛苦和焦虑让我们沉浸在大脑的控制中，因为大脑需要你输送痛苦和焦虑让它来解决问题，大脑只有通过解决问题的方式才能刷存在感&lt;/li&gt;
+  &lt;li&gt;我们在身体健康的时候，我们没有任何问题，我们不需要大脑来伪造这些问题，我们只需感受这一切，努力生活即可，当下即宁静&lt;/li&gt;
+  &lt;li&gt;当我们痛苦和焦虑时，做为一个观察者去观察这些现象，不要带任何批判的角度去尝试纠正痛苦和焦虑，因为他们只是大脑虚幻出来的东西，不需要你纠正什么，当你把大脑当作一个工具去观察它自己时候，大脑的机制导致它没有任何多余的能量在观察自己的同时沉迷于痛苦和焦虑，只要我们不带任何感情的进入内观状态时，过去的痛苦和未来的焦虑就会自动消失，当他们消失的时候，你的身体就已经活在当下了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;最后这一条对我的帮助特别大，以前看了一些佛学的书籍，很多年前也去北京的龙泉寺体验了几天诵经念佛的生活，其实我一直不明白佛学怎么在入世中做到佛陀说的修行。&lt;/p&gt;
+
+&lt;p&gt;《当下的力量》这本书其实从另外一个角度去告诉普通人，像我这样的普通人，怎么去领悟佛学所说的 “内观” 。&lt;/p&gt;
+
+&lt;p&gt;在这个世界上，很多事情，我们不可能一帆风顺，当很多好的和坏的事情发生的时候，我们除了积极的面对问题外，我们其实什么都改变不了，因为过去已经发生了，未来事事无常我们控制不了。&lt;/p&gt;
+
+&lt;p&gt;而我们唯一能够做到“活在当下”的方式就是，观察这个世界发生的一切，向内观察我们自己真是的本我，真实的身体感受，身体做为世界的感受器，当我们真实的去体验而不是用脑袋去思考的时候，会发现已经发生的过去和无常的未来对于我们都没有意义，只有当下，此时此刻你看我文章的这一刻才充满力量，既然过去已经发生，未来变幻无常，为什么我们基于过去和未来而产生的痛苦和焦虑去折磨自己呢？&lt;/p&gt;
+
+&lt;p&gt;正是看了整本书，我完全接纳了世界和我过去的自己，我现在已经不会再收到痛苦和焦虑的干扰了，而什么是真正的宁静呢？真正身体感受到的平静呢？原来我在旅游的时候，短暂的体验了这种宁静：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;早晨光脚站在沙漠时，感觉身体的温度顺着双脚流入沙子时，感觉到那种自然才能给我的放松&lt;/li&gt;
+  &lt;li&gt;当我登上红岩顶后，周围都是积雪，看向远方的贡嘎雪山的那种由内向外的敬畏&lt;/li&gt;
+  &lt;li&gt;坐在泸沽湖边，感受湖面的平静和采菊东篱下的一切…&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以前我总是期望通过周游世界来寻找答案，其实当你真正的进入内观后，你随处可以体验到内心的宁静：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;早上5点遛狗的时候，一个人都没有，闭着眼睛可以闻到旁边小草和花的芬芳&lt;/li&gt;
+  &lt;li&gt;躺在石凳上，吹着和煦的风，可以听到抑扬顿挫的风声&lt;/li&gt;
+  &lt;li&gt;坐在电脑前，写完Emacs插件后分享出去的那一刻，从不管到底插件有没有用，就是因为喜欢而写&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;当我们真正进入内观状态后，心会告诉你这个世界什么才是真正重要的东西，就是你与这个世界的链接，你为这个世界的美而赞叹，你充满爱的去努力，去和别人相处，那种充满善意和爱的感觉去和别人交流，体验这一切，才是真正值得的东西。&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;如果你过于注重目标，或许因为你在寻找幸福或成就，成为一个更圆满的自我感，这时你就没有在关注当下了。当下失去了固有的价值，而沦为通向未来的踏脚石。这样钟表时间就变成了心理时间。这时，你生命的旅程不再是一场奇妙的探险，它变成了一个为了达到目标、获得成就的强迫性需要。你不会再看到路边的花朵或闻到它的芬芳，也不会觉察到存在于当下的围绕着你生命的美丽。&lt;/p&gt;
+
+&lt;p&gt;原来一直认为人必须事业有成，而事业有成的前提是工作很努力，达到一个又一个的目标，以致于最后因为工作放弃了太多太多的东西。
+其实当人的好的习惯养成以后，工作只是你长时间努力的一个结果而已，但是工作不能变成所有，不能变成你所有事情最后的意义。&lt;/p&gt;
+
+&lt;p&gt;当我们撕下工作上的各种标签以后，我们和内心有多么符合？其实人活着，应该尽量去体验这个世界，尽量让自己真实和充满爱，工作真的只是我们体验生活的一部分，但不是全部。&lt;/p&gt;
+
+&lt;p&gt;当工作不再是强迫性逼迫你必须认同未来的工具，你就是你，你依然可以很努力，依然可以做计划，但是所有你需要的只是在当下做你自己，未来可能会因为现在的努力变得更好，但是事事无常，很多事情你即使做了也不一定有你期望的结果，顺气自然，接纳一切，继续活在当下，一切最终会变得更好。&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;接受生活的现实就是活在一种恩典、安逸和轻松的状态里。这种状态不再取决于事情的好坏。这看似自相矛盾，但是当你不再依赖事物的外在形式之后，你的生活状况、外在形式就会有很大的改善。
+接受当下的现实，然后采取行动，尽最大的努力从泥沼中摆脱出来。这种行动叫积极的行动，它比产生于愤怒、绝望或挫折的消极行为更具威力。不对当下时刻贴任何心理标签，不断地臣服于当下，直到你取得理想的结果。
+对于有些人来说，臣服可能很消极，意味着失败、放弃、无法面对生活中的挑战、迟钝、退缩等。然而，真正的臣服是与这些完全不同的。它不是说消极地去忍受你生活中出现的任何情况，不做任何努力，也不是说停止制订计划或采取积极的行动。&lt;/p&gt;
+
+&lt;p&gt;我一直对佛学有一种误解，认为无为和臣服就是认命和接受现状，什么都不做, 既然什么都不做，那修行有什么意义？&lt;/p&gt;
+
+&lt;p&gt;现在我明白了，其实臣服是不要因为已经发生的好的事情或坏的事情而产生消极的抗拒，俗称抱怨。&lt;/p&gt;
+
+&lt;p&gt;原来我一直认为世间应该有对和错，大部分的对其实是社会环境标准，大部分的错其实是和我个人认知的冲突，最后跌跌撞撞发现，其实世间没有绝对的对和错，而且往往对和错时相互融合的。原来太看重要坚持做对的事情的同时，希望别人也一起做对的事情，其实世间很多事情是我们怎么也无法改变的，就像很多人其实无法改变我自己一样，接纳世间的好于坏，专注于当下积极的行动才是我们真正应该做的。&lt;/p&gt;
+
+&lt;p&gt;就像龙泉寺的和尚说的一样，吃饭就吃饭，睡觉就睡觉，吃饭睡觉皆修行。&lt;/p&gt;
+
+&lt;p&gt;现在不再纠结要做多大的事情，去影响世界，改变世界，做好自己的每一天，人生那么长，一定可以改变世界很多，但是首先要先做好自己。&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;你生活的外在情况和生活中所发生的任何事情，都是这个湖泊的表面。随着循环和季节的变化，湖面有时平静，有时波澜起伏。然而在湖的深处，总是宁静的。你就是整个大湖，不仅仅是湖的表面而且还是湖的底部，永远都是绝对的宁静。&lt;/p&gt;
+
+&lt;p&gt;现在每天我都会给自己很多时间，当自己沉溺于过去或者焦虑未来的时候，进入自我观察的阶段，不平静只是感受和接纳感受。内观真是非常了不起的一种方法，让我的内心进入了一种新的宁静。我想这就是这本书的名字的意思：当下的力量&lt;/p&gt;
+
+&lt;p&gt;什么时候我们活着当下了？当我们不再问我们这个问题的时候…&lt;/p&gt;</content><author><name></name></author><summary type="html">花了几个月时间终于把朋友推荐的这本书《当下的力量》看完，如果从篇幅看这本书我两天就可以看完，但是朋友说我以前是用脑子在读书，而不是用心在读书。</summary></entry><entry><title type="html">Snails 6.0 发布了</title><link href="http://localhost:4000/emacs/2019/08/25/snails-6.0.html" rel="alternate" type="text/html" title="Snails 6.0 发布了" /><published>2019-08-25T00:00:00+08:00</published><updated>2019-08-25T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/08/25/snails-6.0</id><content type="html" xml:base="http://localhost:4000/emacs/2019/08/25/snails-6.0.html">&lt;p&gt;今天早上新加了一个&lt;a href=&quot;https://github.com/manateelazycat/snails/commit/4b9d14311d0920ea6bf4d3a770e2a1257038561f&quot;&gt;补丁&lt;/a&gt;, 发布了 Snails 最新版本 6.0&lt;/p&gt;
 
 &lt;h3 id=&quot;按前缀来搜索不同的内容&quot;&gt;按前缀来搜索不同的内容&lt;/h3&gt;
 &lt;p&gt;Snails 6.0 的主要更新是支持像VSCode那样根据前缀来搜索不同的后端内容。&lt;/p&gt;
@@ -858,259 +944,4 @@ TabNine会根据它自己的算法来进行智能排序, 给出它认为最佳�
 &lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
 &lt;p&gt;从整体上看TabNine就是找各种token来暴力学习，所以性能的表现上比很多LSP服务器还要好，我在Emacs中使用TabNine补全，非常顺滑。&lt;/p&gt;
 
-&lt;p&gt;我希望有一天这种技术可以直接感知我的思想，这样我就不用动手了， 想一想代码就自动写完了，哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</summary></entry><entry><title type="html">Vue.js的实践小技巧</title><link href="http://localhost:4000/web/2019/07/14/vue-tooltips.html" rel="alternate" type="text/html" title="Vue.js的实践小技巧" /><published>2019-07-14T00:00:00+08:00</published><updated>2019-07-14T00:00:00+08:00</updated><id>http://localhost:4000/web/2019/07/14/vue-tooltips</id><content type="html" xml:base="http://localhost:4000/web/2019/07/14/vue-tooltips.html">&lt;h3 id=&quot;vuejs是计算机发展的趋势使然&quot;&gt;Vue.js是计算机发展的趋势使然&lt;/h3&gt;
-&lt;p&gt;计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。&lt;/p&gt;
-
-&lt;p&gt;Vue.js 主要解决的问题是，整个前端的界面修改都是在浏览器中完成的, 服务端只用提供API即可，而且界面整体逻辑是通过属性来动态绑定的，界面布局调整的JS代码并不依赖于DOM的节点查询，如果需要修改界面布局和设计时，只用大胆的调整前端模板和CSS样式即可，JS逻辑和后端代码都不用配合修改，整个界面改动的负担很小，可维护性也非常好。&lt;/p&gt;
-
-&lt;p&gt;原来学Rails的时候，对Vue.js和React的技术抱有偏见，很多Web的开发者总是争论到底是后端服务渲染好，还是Vue.js这种前端框架好？在我看来，任何撇开时代背景和用户需求的技术讨论都是个人喜好性质的讨论。&lt;/p&gt;
-
-&lt;p&gt;从总体来说，用户肯定希望界面交互越复杂越精致越好，不论后端渲染还是Vue.js这种前端框架，从理论上都是可以满足用户的计算需求的，只是Vue.js这种前端框架把真实的计算逻辑和界面布局给完全分开了，当快速迭代产品设计和交互体验时，Vue.js的更新和维护负担更小，成本更低的改动就意味着生产力和竞争力。&lt;/p&gt;
-
-&lt;p&gt;所以Vue.js这种前端框架的大行其道，并不是技术框架在技术层面的谁优谁劣，而是Web终端硬件性能提升和用户对Web应用功能期待的一种自然而然的演化行为，虽然Vue.js/React这种技术有很多技术细节和优点，但是从架构设计上来看，其实当今的Web技术又回到微软时代的那种前后端分离的技术，架构上是没有区别的，只是Vue.js相对于MFC、Gtk这类的技术，通过属性绑定和动态DOM的技术能够更有生产力的编写前端界面。&lt;/p&gt;
-
-&lt;h3 id=&quot;vuejs-的优点&quot;&gt;Vue.js 的优点&lt;/h3&gt;
-&lt;p&gt;对于我这种非常熟悉Gtk/Qt的开发者来说，我更喜欢Vue.js这种前后端分离的设计，因为前端的修改非常有效率，实时可以看到最新的界面效果，同时后端也可以做的很薄，后端从模板构造和服务的泥潭中解放出来，后端可以更专注于后端架构设计、工程化运维和性能优化。&lt;/p&gt;
-
-&lt;p&gt;Vue.js 的优点主要有以下几点：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;通过属性绑定和DOM Tree Diff更新的技术来实时渲染Web界面，前端开发生产力非常高&lt;/li&gt;
-  &lt;li&gt;Vue.js的作者是国人，中文文档写的非常好，我想这也是Vue.js在中国非常流行的原因，官方的文档看一天即可入门&lt;/li&gt;
-  &lt;li&gt;内置 VueRouter、Vuex全家桶，包括 vue-cli 的发布，真正做到开箱即用，不用折腾各种插件和让人绝望的Webpack配置即可快速把精力投入到产品开中&lt;/li&gt;
-  &lt;li&gt;*.vue 文件一体化的设计，模板、JS代码和CSS样式，一个组件一个文件，非常好维护&lt;/li&gt;
-  &lt;li&gt;插件生态非常好，常用的各种插件都有Vue的版本，npm或者yarn都可以快速实验插件功能&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;vuejs-的一些小技巧&quot;&gt;Vue.js 的一些小技巧&lt;/h3&gt;
-&lt;p&gt;虽然Vue.js的&lt;a href=&quot;https://cn.vuejs.org/index.html&quot;&gt;官方文档&lt;/a&gt;写的非常好，但是通过几个项目的实践，还是有一些隐晦的地方需要自己动手才能搞懂。&lt;/p&gt;
-
-&lt;h4 id=&quot;vuejs路由的支持&quot;&gt;Vue.js路由的支持&lt;/h4&gt;
-&lt;p&gt;Vue.js官方文档可能从入门的角度看，都是用单文件的方式来展示Vue.js的示例，但是真实的项目往往都是需要前端路由来控制，即使看完Vue.js/Vuex的文档，我相信大多数人还是不知道怎么修改一个 vue-cli 项目去支持前端页面的路由跳转。&lt;/p&gt;
-
-&lt;h4 id=&quot;路由跳转之appvue&quot;&gt;路由跳转之App.vue&lt;/h4&gt;
-&lt;p&gt;首先 App.vue 文件要改成 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt;&lt;/code&gt; 的形式，这样所有Vue.js动态切换的页面都会在 router-view 中进行替换，下面是我的 App.vue, 这个文件除了调样式外基本不用作任何改动。&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/router-view&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/template&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/style&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;路由跳转之mainjs&quot;&gt;路由跳转之main.js&lt;/h4&gt;
-&lt;p&gt;其次 main.js 要修改成下面的样子，这样你只用在 components 目录添加新的组件，然后更新 VueRouter 的内容即可实现各种路由跳转。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;router.beforeEach&lt;/code&gt; 这一段代码的意思是，路由更新是更改浏览器标签的标题。&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;vue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;VueRouter&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;vue-router&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./App.vue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Login&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./components/Login.vue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Home&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./components/Home.vue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;productionTip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;VueRouter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;VueRouter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;routes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-              &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Login title&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/home&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Home&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-              &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Home title&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;vuejs-组件中属性关键字&quot;&gt;Vue.js 组件中属性关键字&lt;/h3&gt;
-
-&lt;p&gt;*.Vue组件文件中一般分为几个不同的代码区域：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;data() { … }&lt;/li&gt;
-  &lt;li&gt;props: { … }&lt;/li&gt;
-  &lt;li&gt;computed: { … }&lt;/li&gt;
-  &lt;li&gt;watch: { … }&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;初学者一般看到这几个关键字都是一脸懵逼的，其实 Vue.js 是对组件不同属性的用法，分别用不同的关键字进行区分的。&lt;/p&gt;
-
-&lt;h4 id=&quot;data---&quot;&gt;data() { … }&lt;/h4&gt;
-
-&lt;p&gt;data代码区域是组件内部自己用的，可以看做组件内部属性初始值的声明区域, 一般都是下面的形式:&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-         &lt;span class=&quot;na&quot;&gt;attr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;na&quot;&gt;attr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;na&quot;&gt;attr3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;props---&quot;&gt;props: { … }&lt;/h4&gt;
-&lt;p&gt;props代码区域是专门用于父组件进行属性绑定的，比如Foo组件是一个画布，就可以声明&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这样在其他组件Bar调用Foo时，就可以在模板中写入:&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Foo&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;600&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;400&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;当然上面的 width 和 height 也可以换成 Foo 组件内部的属性值，只要父组件 Bar 属性发生变化，Foo组件的 width 和 height 属性也一起关联更新。&lt;/p&gt;
-
-&lt;p&gt;所以 props 区域的状态可以看成当前组件和其父组件之间属性绑定和通信的一种方式。&lt;/p&gt;
-
-&lt;h4 id=&quot;computed---&quot;&gt;computed: { … }&lt;/h4&gt;
-&lt;p&gt;computed代码区域是用作组件内部属性和Vuex Store状态绑定的，比如 Vuex 有一个 count 的状态，可以通过以下部分来声明组件内部的 count 属性, 一旦 Store 的 count 发生变化，组件内部的 count 属性也会跟着一起变化。&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;computed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;watch---&quot;&gt;watch: { … }&lt;/h4&gt;
-&lt;p&gt;watch代码区域是专门用户监听 Store 状态变化的，一旦 Store 状态发生变化，就可以在 watch 代码区域中调用对应的组件函数, 比如&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#demo&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Bar&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;fullName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Foo Bar&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;watch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fullName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lastName&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fullName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;firstName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;当 Store 的 firstName 发生变化时，就可以更新组件内部的 fullName 属性。&lt;/p&gt;
-
-&lt;h3 id=&quot;属性键字区分总结&quot;&gt;属性键字区分总结&lt;/h3&gt;
-&lt;p&gt;看懂上面的说明后，按照以下方式记忆，然后多实践就可以很清晰明了了：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;data() { … } – 组件内部属性&lt;/li&gt;
-  &lt;li&gt;props: { … } – 需要和父组件通信的属性&lt;/li&gt;
-  &lt;li&gt;computed: { … } – 和Store状态绑定的属性&lt;/li&gt;
-  &lt;li&gt;watch: { … } – 监听Store状态变化的回调区域&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;store子模块&quot;&gt;Store子模块&lt;/h3&gt;
-&lt;p&gt;当项目很复杂时，需要针对不同用途的 Store 进行单文件管理，而不是所有状态都放在 store/index.js 里面。&lt;/p&gt;
-
-&lt;p&gt;比如有一个单独的状态模块 store/modules/Backround.js :&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;zoomRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;zoomRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;zoomRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mutations&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;updateZoomRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ratio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;zoomRatio&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ratio&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;namespaced&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;getters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;mutations&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;在 *.Vue 组件中，动态绑定 Store 的 zoomRatio 状态，就需要这样写 computed 声明:&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;computed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-     &lt;span class=&quot;nl&quot;&gt;zoomRatio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-         &lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Background/zoomRatio&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-         &lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$store&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Background/updateZoomRatio&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;因为 Background.js 是 store/modules 子目录下声明的单独Store模块&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;首先需要在 Background.js 模块中增加 &lt;code class=&quot;highlighter-rouge&quot;&gt;namespaced: true&lt;/code&gt; 的关键字以支持命名空间&lt;/li&gt;
-  &lt;li&gt;其次需要在组件中用 &lt;code class=&quot;highlighter-rouge&quot;&gt;Background/zoomRatio&lt;/code&gt; 的前缀去调用 Store 状态。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;这样才能在组件中对Store子模块的状态进行正常访问&lt;/p&gt;
-
-&lt;h3 id=&quot;eventbus-回调调用两次的问题&quot;&gt;EventBus 回调调用两次的问题&lt;/h3&gt;
-&lt;p&gt;对于组件之间的单向通讯，比如子组件发送信号给父组件，有时候用 EventBus 更轻便。&lt;/p&gt;
-
-&lt;p&gt;一般我们都会在 mounted 区域中通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;EventBus.$on(&quot;signal&quot;, this.callback)&lt;/code&gt; 的方式进行事件回调处理:&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;mounted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;EventBus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这个地方的坑在于，一旦页面切换时，页面加载一次就会调用一次 &lt;code class=&quot;highlighter-rouge&quot;&gt;EventBus.$on(&quot;signal&quot;, this.callback)&lt;/code&gt; , 页面加载多次就会导致调用多次事件回调，在项目实践中会产生各种诡异的现场。&lt;/p&gt;
-
-&lt;p&gt;要保证页面加载的时候只调用一次事件回调，就需要在 beforeDestroy 区域中调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;EventBus.$off(&quot;signal&quot;)&lt;/code&gt; 方法:&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;beforeDestroy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;EventBus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这段代码的意思是，当页面销毁时注销事件回调，当页面创建时再注册事件回调，这样就解决 EventBus 回调调用两次的诡异问题。&lt;/p&gt;
-
-&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-&lt;p&gt;虽然上面写了这么多，但是从整体上看，一旦你熟悉了Vue.js的使用方式，Vue.js已经算同等规模开源项目里面坑比较少的项目，用起来还是非常省心和好用的。&lt;/p&gt;
-
-&lt;p&gt;上面就是我在Vue.js项目实践中的一些技巧分享，希望看到此文章的同学少走一些弯路。&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue.js是计算机发展的趋势使然 计算机的历史总是遵循分久必合合久必分的趋势，最开始Web前端硬件和浏览器的性能不够，为了用户体验和性能，开发者会选择像 Rails 类似的框架 来进行服务端模板渲染以提升性能，但是服务端模板渲染的技术弊端是，当前端界面复杂度达到PC软件的规模时，界面的调整太依赖于后端和DOM结构树的查询节点树，一旦要更新页面布局和设计时就需要后端改动一下，前端也改动一下，一旦前端界面大改时，JQuery这种依赖模板和DOM查询节点的方法就会很被动，因为界面布局和结构发生巨变时，DOM节点查询链条很容易断裂，代码也不敢轻易变动和删除，导致项目越久，代码冗余越多，项目也变得很难维护。</summary></entry></feed>
+&lt;p&gt;我希望有一天这种技术可以直接感知我的思想，这样我就不用动手了， 想一想代码就自动写完了，哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</summary></entry></feed>
