@@ -562,7 +562,7 @@ lrwx------ 1 andy andy 64 7月  22 17:18 99 -&gt; anon_inode:[eventfd]
 
 <p>代码参考实现：</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="nf">getDesktopFileFromName</span><span class="p">(</span><span class="kt">int</span> <span class="n">pid</span><span class="p">,</span> <span class="n">QString</span> <span class="n">procName</span><span class="p">,</span> <span class="n">QString</span> <span class="n">cmdline</span><span class="p">)</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getDesktopFileFromName</span><span class="p">(</span><span class="kt">int</span> <span class="n">pid</span><span class="p">,</span> <span class="n">QString</span> <span class="n">procName</span><span class="p">,</span> <span class="n">QString</span> <span class="n">cmdline</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">desktopfileMaps</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">cmdline</span><span class="p">))</span> <span class="p">{</span>
             <span class="k">return</span> <span class="n">desktopfileMaps</span><span class="p">[</span><span class="n">cmdline</span><span class="p">].</span><span class="n">toStdString</span><span class="p">();</span>
@@ -982,7 +982,7 @@ lrwx------ 1 andy andy 64 7月  22 17:18 99 -&gt; anon_inode:[eventfd]
     <span class="n">actionPids</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="n">QString</span> <span class="nf">getProcessEnvironmentVariable</span><span class="p">(</span><span class="n">pid_t</span> <span class="n">pid</span><span class="p">,</span> <span class="n">QString</span> <span class="n">environmentName</span><span class="p">)</span>
+<span class="n">QString</span> <span class="n">getProcessEnvironmentVariable</span><span class="p">(</span><span class="n">pid_t</span> <span class="n">pid</span><span class="p">,</span> <span class="n">QString</span> <span class="n">environmentName</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">temp</span><span class="p">;</span>
         <span class="k">try</span> <span class="p">{</span>

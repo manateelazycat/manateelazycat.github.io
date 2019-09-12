@@ -1,0 +1,82 @@
+I"<p>日常在Web开发中, 一般都是在Emacs敲好代码中, 打开Chrome测试, 调试的时候直接调用 Chrome 内建的 DevTools/Console 中快速的调试和定位 JavaScript 代码的问题.</p>
+
+<p>一般的都是这样玩的, 在Chrome中按  Cmd + Option + I:
+<img src="http://localhost:4000/pics/indium/indium-1.png" alt="Chrome DevTools" /></p>
+
+<p>Chrome 的开发者工具虽然很好用, 但是作为一个资深的Emacs党, 特别讨厌在 Chrome Console 中蹩脚的用方向键调整JavaSctipt 代码, 如果可以直接在Emacs中调试 JavaScript 代码改多好啊, 和Emacs高度集成, 想想都挺美的.</p>
+
+<p>这就是今天给大家介绍的 <a href="https://indium.readthedocs.io/en/latest/installation.html">Indium</a>
+<img src="http://localhost:4000/pics/indium/indium-2.png" alt="Chrome" />
+<img src="http://localhost:4000/pics/indium/indium-3.png" alt="Indium REPL" /></p>
+
+<p>安装了 Indium 了以后, Emacs 可以通过 Chrome 的调试协议, 直接在Emacs中, reload 页面、执行和补全JavaScript代码片段、通过 inspector 查找元素和属性、通过断点来调试 JavaScript 代码, 所有都在 Emacs 中完成, 再也不需要频繁的在 Emacs 和 Chrome 中切换.</p>
+
+<h3 id="indium-的安装方法">Indium 的安装方法</h3>
+
+<h4 id="1-安装-indium-服务器">1. 安装 indium 服务器</h4>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> indium
+</code></pre></div></div>
+
+<h4 id="2-安装-indium-emacs-客户端">2. 安装 indium Emacs 客户端</h4>
+<p>从 https://github.com/NicolasPetton/Indium 下载源码后, 在 ~/.emacs 写入:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">;; 引用 indium 库</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'indium</span><span class="p">)</span>
+
+<span class="c1">;; Mac系统中需要用 exec-path-from-shell-initialize 加载环境变量, 否则找不到 indium server</span>
+<span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">featurep</span> <span class="ss">'cocoa</span><span class="p">)</span>
+  <span class="c1">;; Initialize environment from user's shell to make eshell know every PATH by other shell.</span>
+  <span class="p">(</span><span class="nb">require</span> <span class="ss">'exec-path-from-shell</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">exec-path-from-shell-initialize</span><span class="p">))</span>
+
+<span class="c1">;; JavaScript 文件时打开 indium-interaction-mode , 可以方便的进行断点操作</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'js2-mode-hook</span> <span class="nf">#'</span><span class="nv">indium-interaction-mode</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="3-配置-web-项目的-indium-配置文件">3. 配置 Web 项目的 indium 配置文件</h4>
+<p>在你的 Web 项目根目录下创建一个叫 .indium.json 的文件, 内容如下:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"configurations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+	</span><span class="p">{</span><span class="w">
+	    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Tower NG"</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"chrome"</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">"host"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.0.0"</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">"url"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://0.0.0.0:3000"</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">9222</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>name: 随便起</li>
+  <li>type: Chrome 调试就写 “chrome”, NodeJS 调试请参考 <a href="https://indium.readthedocs.io/en/latest/setup.html">Indium Setup</a></li>
+  <li>host: 0.0.0.0 本地调试地址</li>
+  <li>url: http://0.0.0.0:3000 本地项目的首页地址和端口号, 你要改成你自己项目的要求</li>
+  <li>port: 9222 注意这个是 Chrome 的调试协议的端口号, 和下面介绍的 Chrome 启动参数有关, 和你的Web项目无关</li>
+</ul>
+
+<h4 id="4-用调试协议来重新启动-chrome">4. 用调试协议来重新启动 Chrome</h4>
+<p>注意, Chrome 即使关闭以后, 也会保留后台进程和相关的 helper 进程来保证 Chrome 下次启动如飞.
+Chrome 默认是不用调试协议启动的, 所以重新启动 Chrome 之前, 必须先自行 killall chrome 的操作.</p>
+
+<p>killall 清理所有 Chrome 进程以后, 使用调试协议参数启动 Chrome, Mac 系统下的启动方法如下:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Applications/Google<span class="se">\\</span> Chrome.app/Contents/MacOS/Google<span class="se">\\</span> Chrome <span class="nt">--remote-debugging-port</span><span class="o">=</span>9222 &amp;
+</code></pre></div></div>
+
+<p>注意 –remote-debugging-port 后面的端口号就是调试协议用的端口号, 需要和 .indium.json 文件中的 port 参数保持一致</p>
+
+<p>PS. Mac/HammerSpoon 同学可以参考我写的 <a href="https://github.com/manateelazycat/hammerspoon-config/blob/master/init.lua#L178">launchApp</a>函数智能的启动 Google Chrome, 不用每次都从终端中手动敲一长串命令.</p>
+
+<h4 id="5-见证奇迹的时候到了">5. 见证奇迹的时候到了</h4>
+<p>打开Emacs加载 indium 后, 打开Web项目中的 JavaScript 文件.
+执行 indium-connect 命令, 一旦连接成功后, 就可以看到如下界面:
+<img src="http://localhost:4000/pics/indium/indium-4.png" alt="Indium REPL" /></p>
+
+<p>就证明 indium 已经成功启用了, 现在就可以在 Emacs 中调试JavaScript代码了.
+因为 Indium 这个东西坑很多, 这篇文件把各种坑都踩了, 分享出来, 祝大家 Happy hacking.</p>
+
+<p>更多关于 Indium 的玩法请参考<a href="https://indium.readthedocs.io/en/latest/index.html">Indium手册</a></p>
+:ET

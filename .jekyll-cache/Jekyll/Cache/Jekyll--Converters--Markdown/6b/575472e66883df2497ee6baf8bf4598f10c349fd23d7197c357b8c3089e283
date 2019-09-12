@@ -1,0 +1,33 @@
+I"�	<p>我们写代码的时候, 经常会因为新的 commit 引入新的 bug.
+如果这个 commit 是刚刚引入的, 我们可以快速的进行 git reverse.</p>
+
+<p>但是如果这个 commit 是几天前引起的, 我们很有可能已经忘记具体是哪一个 commit 引起的.
+幸运的是, 我们往往记得引起 bug 的源代码位置, 哈哈哈.</p>
+
+<p>在Emacs中, 我们可以直接执行 magit-blame 命令反向从源代码定位到所有相关的 commint.
+就像下图一样, 我们可以在当前行相关的所有 commit 的 diff 中穿梭, 研究当前行相关的修改历史.
+<img src="http://localhost:4000/pics/magit-blame/magit-blame-1.png" alt="magit-blame default style" /></p>
+
+<p>如果定位到具体的 commit diff 位置, 可以直接按 C-c C-q 退出 blame mode.</p>
+
+<p>默认的 magit-blame 采用的 inline 风格, 把 commit 信息插入到源码中, 给出相关 commit 的线索.
+但是这种默认风格同时也打乱了源代码的布局, 影响我们对比源代码和 commit diff.</p>
+
+<p>研究了一下 magit 的源代码, 可以通过如下的配置, 修改默认 magit-blame 的风格:</p>
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">setq</span> <span class="nv">magit-blame--style</span>
+      <span class="o">'</span><span class="p">(</span><span class="nv">margin</span>
+        <span class="p">(</span><span class="nv">margin-format</span> <span class="s">" %s%f"</span> <span class="s">" %C %a"</span> <span class="s">" %H"</span><span class="p">)</span>
+        <span class="p">(</span><span class="nv">margin-width</span> <span class="o">.</span> <span class="mi">42</span><span class="p">)</span>
+        <span class="p">(</span><span class="nv">margin-face</span> <span class="o">.</span> <span class="nv">magit-blame-margin</span><span class="p">)</span>
+        <span class="p">(</span><span class="nv">margin-body-face</span> <span class="nv">magit-blame-dimmed</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p>修改的风格如下图所示:
+<img src="http://localhost:4000/pics/magit-blame/magit-blame-1.png" alt="magit-blame sidebar style" /></p>
+
+<p>commit 在左边, 源代码在右边, 直接在源代码中按回车或者移动光标即可实时查看 commit diff 同时又不影响源代码布局.</p>
+
+<p>我的 git 参考设置: https://github.com/manateelazycat/lazycat-emacs/blob/d694ad720609341c6c67851eb56e9d0ca56673bc/site-lisp/config/init-git.el</p>
+
+<p>Enjoy!</p>
+:ET

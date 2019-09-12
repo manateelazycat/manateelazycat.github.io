@@ -1,0 +1,234 @@
+I"�a<p>最近在看 《Flex &amp; Bison》 这本书, 针对书中的例子进行解读和笔记, 以消化每一个知识细节, 所以本文会持续更新, 直到《Flex &amp; Bison》读完.</p>
+
+<p>因为本文只是针对源码程序进行简单的笔记备忘, 不会完全讲解, 所以为了弄懂每行代码, 建议阅读《Flex &amp; Bison》原文.</p>
+
+<h4 id="运行环境">运行环境:</h4>
+<ul>
+  <li>Mac 10.13</li>
+  <li>flex 2.5.35 Apple(flex-31)</li>
+  <li>bison (GNU Bison) 2.3</li>
+</ul>
+
+<h4 id="单词统计程序">单词统计程序</h4>
+<p>wc.l 源代码:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">chars</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">words</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">lines</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="o">%</span><span class="p">}</span>
+
+<span class="o">%%</span>
+<span class="p">[</span><span class="o">^</span> <span class="err">\</span><span class="n">t</span><span class="err">\</span><span class="n">n</span><span class="err">\</span><span class="n">r</span><span class="err">\</span><span class="n">f</span><span class="err">\</span><span class="n">v</span><span class="p">]</span><span class="o">+</span> <span class="p">{</span> <span class="n">words</span><span class="o">++</span><span class="p">;</span> <span class="n">chars</span> <span class="o">+=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">yytext</span><span class="p">);</span> <span class="p">}</span>
+<span class="err">\</span><span class="n">n</span>              <span class="p">{</span> <span class="n">chars</span><span class="o">++</span><span class="p">;</span> <span class="n">lines</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">.</span>               <span class="p">{</span> <span class="n">chars</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">%%</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">yylex</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%8d%8d%8d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">chars</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>编译命令:
+<img src="http://localhost:4000/pics/flex-bison/flex-bison-1.png" alt="compile wc.l" /></p>
+
+<p>源码备注:</p>
+<ul>
+  <li>%{ … %} 是直接拷贝到 C 文件开头</li>
+  <li>%% … %% 是模式匹配的代码区域, 左边是正则表达式, 右边是匹配的 C 代码</li>
+  <li>yytext 代表匹配正则表达式的字符串</li>
+  <li>flex 的匹配默认是从最长匹配开始, 如果有多个匹配的正则表达式, 从最早的那个开始匹配, 所以上面的模式匹配, 首先是按照单词 -&gt; 行尾符 -&gt; 剩余字符串的顺序进行匹配的, 不会产生重复统计的问题</li>
+  <li>yylex 是调用 flex 的词法分析函数 yylex 进行计算</li>
+  <li>Linux 系统上用 -lfl 选项编译,  Mac 的编译选项是 -ll</li>
+</ul>
+
+<h4 id="英美式英语转换">英美式英语转换</h4>
+<p>convert.l 源代码:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span>
+<span class="s">"colour"</span>        <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"color"</span><span class="p">);</span> <span class="p">}</span>
+<span class="s">"flavour"</span>       <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"flavor"</span><span class="p">);</span> <span class="p">}</span>
+<span class="s">"clever"</span>        <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"smart"</span><span class="p">);</span> <span class="p">}</span>
+<span class="s">"conservative"</span>  <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"libreal"</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">.</span>               <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">yytext</span><span class="p">);</span> <span class="p">}</span>
+<span class="o">%%</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">yylex</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>编译命令:
+<img src="http://localhost:4000/pics/flex-bison/flex-bison-2.png" alt="compile convert.l" /></p>
+
+<p>源码备注:</p>
+<ul>
+  <li>匹配英式单词后, 转换称模式后的美式英语</li>
+  <li>最后的点表示不转换单词</li>
+</ul>
+
+<h4 id="计算器">计算器</h4>
+<p>calculator.y</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="p">{</span>
+<span class="cp">#define YYSTYPE double
+#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+</span><span class="kt">int</span> <span class="n">yylex</span><span class="p">();</span>
+<span class="kt">void</span> <span class="n">yyerror</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">);</span>
+<span class="o">%</span><span class="p">}</span>
+
+<span class="o">%</span><span class="n">token</span> <span class="n">NUMBER</span>
+<span class="o">%</span><span class="n">token</span> <span class="n">ADD</span> <span class="n">SUB</span> <span class="n">MUL</span> <span class="n">DIV</span> <span class="n">ABS</span>
+<span class="o">%</span><span class="n">token</span> <span class="n">EOL</span>
+<span class="o">%</span><span class="n">token</span> <span class="n">OP</span> <span class="n">CP</span>
+<span class="o">%</span><span class="n">token</span> <span class="n">POW</span> <span class="n">SQRT</span>
+
+<span class="o">%%</span>
+<span class="n">calclist</span><span class="o">:</span>
+<span class="o">|</span> <span class="n">calclist</span> <span class="n">exp</span> <span class="n">EOL</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"= %f</span><span class="se">\n</span><span class="s">&gt;&gt;&gt; "</span><span class="p">,</span> <span class="err">$</span><span class="mi">2</span><span class="p">);</span> <span class="p">}</span>
+<span class="o">|</span> <span class="n">calclist</span> <span class="n">EOL</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"&gt;&gt;&gt; "</span><span class="p">);</span> <span class="p">}</span> <span class="cm">/* blank line or a comment */</span>
+<span class="p">;</span>
+
+<span class="n">exp</span><span class="o">:</span> <span class="n">factor</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="err">$</span><span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">|</span> <span class="n">exp</span> <span class="n">ADD</span> <span class="n">factor</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="err">$</span><span class="mi">1</span> <span class="o">+</span> <span class="err">$</span><span class="mi">3</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">|</span> <span class="n">exp</span> <span class="n">SUB</span> <span class="n">factor</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="err">$</span><span class="mi">1</span> <span class="o">-</span> <span class="err">$</span><span class="mi">3</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">;</span>
+
+<span class="n">factor</span><span class="o">:</span> <span class="n">another_factor</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span><span class="err">$</span><span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">|</span> <span class="n">factor</span> <span class="n">MUL</span> <span class="n">another_factor</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="err">$</span><span class="mi">1</span> <span class="o">*</span> <span class="err">$</span><span class="mi">3</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">|</span> <span class="n">factor</span> <span class="n">DIV</span> <span class="n">another_factor</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="err">$</span><span class="mi">1</span> <span class="o">/</span> <span class="err">$</span><span class="mi">3</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">;</span>
+
+<span class="n">another_factor</span><span class="o">:</span> <span class="n">term</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="err">$</span><span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">|</span> <span class="n">SUB</span> <span class="n">another_factor</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="o">-</span><span class="err">$</span><span class="mi">2</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">|</span> <span class="n">another_factor</span> <span class="n">POW</span> <span class="n">another_factor</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="n">pow</span><span class="p">(</span><span class="err">$</span><span class="mi">1</span><span class="p">,</span><span class="err">$</span><span class="mi">3</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">;</span>
+
+<span class="n">term</span><span class="o">:</span> <span class="n">NUMBER</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="err">$</span><span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">|</span> <span class="n">ABS</span> <span class="n">exp</span> <span class="n">ABS</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="n">fabs</span><span class="p">(</span><span class="err">$</span><span class="mi">2</span><span class="p">);</span> <span class="p">}</span>
+<span class="o">|</span> <span class="n">OP</span> <span class="n">exp</span> <span class="n">CP</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="err">$</span><span class="mi">2</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">|</span> <span class="n">SQRT</span> <span class="n">OP</span> <span class="n">exp</span> <span class="n">CP</span> <span class="p">{</span> <span class="err">$$</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="err">$</span><span class="mi">3</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">;</span>
+<span class="o">%%</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"&gt;&gt;&gt; "</span><span class="p">);</span>
+    <span class="n">yyparse</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">yyerror</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="s">"error : %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>calculator.l</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="p">{</span>
+<span class="cp">#define YYSTYPE double
+#include "calculator.tab.h"
+#include &lt;stdlib.h&gt;
+</span><span class="n">YYSTYPE</span> <span class="n">yylval</span><span class="p">;</span>
+<span class="o">%</span><span class="p">}</span>
+
+<span class="o">%%</span>
+<span class="s">"+"</span>                             <span class="p">{</span> <span class="k">return</span> <span class="n">ADD</span><span class="p">;</span> <span class="p">}</span>
+<span class="s">"-"</span>                             <span class="p">{</span> <span class="k">return</span> <span class="n">SUB</span><span class="p">;</span> <span class="p">}</span>
+<span class="s">"*"</span>                             <span class="p">{</span> <span class="k">return</span> <span class="n">MUL</span><span class="p">;</span> <span class="p">}</span>
+<span class="s">"/"</span>                             <span class="p">{</span> <span class="k">return</span> <span class="n">DIV</span><span class="p">;</span> <span class="p">}</span>
+<span class="s">"|"</span>                             <span class="p">{</span> <span class="k">return</span> <span class="n">ABS</span><span class="p">;</span> <span class="p">}</span>
+<span class="s">"("</span>                             <span class="p">{</span> <span class="k">return</span> <span class="n">OP</span><span class="p">;</span> <span class="p">}</span>
+<span class="s">")"</span>                             <span class="p">{</span> <span class="k">return</span> <span class="n">CP</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">([</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="err">\</span><span class="p">.</span><span class="o">?</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+|</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="err">\</span><span class="p">.)</span>      <span class="p">{</span> <span class="n">yylval</span> <span class="o">=</span> <span class="n">atof</span><span class="p">(</span><span class="n">yytext</span><span class="p">);</span> <span class="k">return</span> <span class="n">NUMBER</span><span class="p">;}</span>
+<span class="s">"sqrt"</span>                          <span class="p">{</span> <span class="k">return</span> <span class="n">SQRT</span><span class="p">;</span> <span class="p">}</span>
+<span class="s">"**"</span>                            <span class="p">{</span> <span class="k">return</span> <span class="n">POW</span><span class="p">;</span> <span class="p">}</span>
+<span class="err">\</span><span class="n">n</span>                              <span class="p">{</span> <span class="k">return</span> <span class="n">EOL</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">[</span> <span class="err">\</span><span class="n">t</span><span class="p">]</span>                           <span class="p">{}</span>
+<span class="s">"//"</span><span class="p">.</span><span class="o">*</span>                          <span class="p">{}</span>
+<span class="o">%%</span>
+</code></pre></div></div>
+
+<p>编译命令:
+<img src="http://localhost:4000/pics/flex-bison/flex-bison-3.png" alt="compile calculator" /></p>
+
+<p>源码备注:</p>
+<ul>
+  <li><code class="highlighter-rouge">#define YYSTYPE double</code> 要放在顶部, 这样就可以把默认的 YYSTYPE 从 int 改成 double 来支持浮点数运算</li>
+  <li>calculator.y 顶部定义函数 yylex 和 yyerror 的声明, 避免 cc 编译的时候报警告</li>
+  <li>calculator.l 模式中, 只要 { … } 是空白就表示不处理标记 (token) , 也就可以实现忽略空格和注释字符串的功能</li>
+  <li>calculator.y 中越靠下的匹配规则在语法树的优先级越高, 因为它被别人应用的越多, 在语法树中越靠近树枝的部位</li>
+</ul>
+
+<h4 id="flex-的正则表达式">Flex 的正则表达式</h4>
+<p>Flex 有几个正则表达式和传统的正则表达式规则还是有点区别:</p>
+<ul>
+  <li>[a-z]{}[jv] 表示 a-z 里面再排除 j 和 v</li>
+  <li>/ 尾部上下文, 0/1 表示匹配 01 中的 0 , / 后面的只用于尾部模式匹配, 匹配出来的是斜线前面的内容, 但斜线后面的内容并不会消耗掉, 会继续给余下的规则匹配</li>
+</ul>
+
+<h4 id="统计文件中的单词数">统计文件中的单词数</h4>
+<p>wc-file.l 源代码:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">option</span> <span class="n">noyywrap</span>
+
+<span class="o">%</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">chars</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">words</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">lines</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">totchars</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">totwords</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">totlines</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="o">%</span><span class="p">}</span>
+
+<span class="o">%%</span>
+<span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">zA</span><span class="o">-</span><span class="n">Z</span><span class="p">]</span><span class="o">+</span>       <span class="p">{</span> <span class="n">words</span><span class="o">++</span><span class="p">;</span> <span class="n">chars</span> <span class="o">+=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">yytext</span><span class="p">);</span> <span class="p">}</span>
+<span class="err">\</span><span class="n">n</span>              <span class="p">{</span> <span class="n">chars</span><span class="o">++</span><span class="p">;</span> <span class="n">lines</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">.</span>               <span class="p">{</span> <span class="n">chars</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">%%</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%8s%8s%8s%8s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="s">"lines"</span><span class="p">,</span> <span class="s">"words"</span><span class="p">,</span> <span class="s">"chars"</span><span class="p">,</span> <span class="s">"file"</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">yylex</span><span class="p">();</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%8d%8d%8d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">chars</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">FILE</span> <span class="o">*</span><span class="n">f</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">"r"</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">f</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">perror</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">yyrestart</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+        <span class="n">yylex</span><span class="p">();</span>
+        <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%8d%8d%8d %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">chars</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+        <span class="n">totchars</span> <span class="o">+=</span> <span class="n">chars</span><span class="p">;</span> <span class="n">chars</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">totwords</span> <span class="o">+=</span> <span class="n">words</span><span class="p">;</span> <span class="n">words</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">totlines</span> <span class="o">+=</span> <span class="n">lines</span><span class="p">;</span> <span class="n">lines</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%8d%8d%8d total</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">totlines</span><span class="p">,</span> <span class="n">totwords</span><span class="p">,</span> <span class="n">totchars</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>编译命令:
+<img src="http://localhost:4000/pics/flex-bison/flex-bison-4.png" alt="compile wc-file.l" /></p>
+
+<p>阅读笔记:</p>
+<ul>
+  <li>%option noyywrap 是用于关闭 yywrap 这个鸡肋的函数, yywrap 主要用于调整 yyin 的值来读取新文件的内容</li>
+  <li>yyrestart(f) 放在 yylex 之前, 告诉 flex 读取文件 f 的内容</li>
+</ul>
+:ET

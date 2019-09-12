@@ -74,7 +74,7 @@ dyld: Library not loaded: @rpath/librime.1.dylib
 ```
 
 ### 5 配置pyim
-拷贝 librime.so 文件到 ~/.emacs.d/ 目录下，然后在 ~/.emacs 写下如下配置即可:
+拷贝 liberime.so 文件到 ~/.emacs.d/ 目录下，然后在 ~/.emacs 写下如下配置即可:
 
 ```elisp
 (setq load-path (cons (file-truename "~/.emacs.d/") load-path))

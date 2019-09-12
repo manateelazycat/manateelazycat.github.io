@@ -95,7 +95,7 @@
 <span class="p">{</span>
     <span class="n">Q_OBJECT</span>
 
-<span class="nl">public:</span>
+<span class="k">public</span><span class="o">:</span>
     <span class="n">SingleListView</span><span class="p">(</span><span class="n">DSimpleListView</span> <span class="o">*</span><span class="n">parent</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
 <span class="p">};</span>
 
@@ -113,7 +113,7 @@
 <span class="p">{</span>
     <span class="n">Q_OBJECT</span>
 
-<span class="nl">public:</span>
+<span class="k">public</span><span class="o">:</span>
     <span class="n">SingleListItem</span><span class="p">(</span><span class="n">QString</span> <span class="n">itemName</span><span class="p">);</span>
 
     <span class="c1">// DSimpleListItem 接口函数，用于区分两个Item是否是同一个Item?</span>
@@ -333,7 +333,7 @@
 <h3 id="弹出右键菜单">弹出右键菜单</h3>
 <p>当用户在列表中右键时往往希望弹出右键菜单，连接信号 rightClickItems 即可。</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">rightClickItems</span><span class="p">(</span><span class="n">QPoint</span> <span class="n">pos</span><span class="p">,</span> <span class="n">QList</span><span class="o">&lt;</span><span class="n">DSimpleListItem</span><span class="o">*&gt;</span> <span class="n">items</span><span class="p">);</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">rightClickItems</span><span class="p">(</span><span class="n">QPoint</span> <span class="n">pos</span><span class="p">,</span> <span class="n">QList</span><span class="o">&lt;</span><span class="n">DSimpleListItem</span><span class="o">*&gt;</span> <span class="n">items</span><span class="p">);</span>
 </code></pre></div></div>
 <ul>
   <li>参数 pos 表示用户右键点击的位置</li>
@@ -344,7 +344,7 @@
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 在 multilistview.h 中声明 popupMenu slots 用于处理 rightClickItems 信号</span>
 <span class="k">public</span> <span class="n">slots</span><span class="o">:</span>
-    <span class="kt">void</span> <span class="nf">popupMenu</span><span class="p">(</span><span class="n">QPoint</span> <span class="n">pos</span><span class="p">,</span> <span class="n">QList</span><span class="o">&lt;</span><span class="n">DSimpleListItem</span><span class="o">*&gt;</span> <span class="n">items</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="n">popupMenu</span><span class="p">(</span><span class="n">QPoint</span> <span class="n">pos</span><span class="p">,</span> <span class="n">QList</span><span class="o">&lt;</span><span class="n">DSimpleListItem</span><span class="o">*&gt;</span> <span class="n">items</span><span class="p">);</span>
 
 <span class="p">...</span>
 
@@ -377,9 +377,9 @@
 首先在 DSimpleListItem 的子类中实现静态的排序函数，以上面的 multilistitem.h 为例：</p>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// multilistview.h</span>
-    <span class="k">static</span> <span class="kt">bool</span> <span class="nf">sortByArtist</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">);</span>
-    <span class="k">static</span> <span class="kt">bool</span> <span class="nf">sortBySong</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">);</span>
-    <span class="k">static</span> <span class="kt">bool</span> <span class="nf">sortByLength</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">);</span>
+    <span class="k">static</span> <span class="kt">bool</span> <span class="n">sortByArtist</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">);</span>
+    <span class="k">static</span> <span class="kt">bool</span> <span class="n">sortBySong</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">);</span>
+    <span class="k">static</span> <span class="kt">bool</span> <span class="n">sortByLength</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">);</span>
 
 <span class="c1">// multilistview.cpp</span>
 <span class="kt">bool</span> <span class="n">MultiListItem</span><span class="o">::</span><span class="n">sortByArtist</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">)</span>
@@ -423,7 +423,7 @@
     <span class="n">setColumnSortingAlgorithms</span><span class="p">(</span><span class="n">alorithms</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
 </code></pre></div></div>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">setColumnSortingAlgorithms</span><span class="p">(</span><span class="n">QList</span><span class="o">&lt;</span><span class="n">SortAlgorithm</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">algorithms</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sortColumn</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="o">=</span><span class="nb">false</span><span class="p">);</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setColumnSortingAlgorithms</span><span class="p">(</span><span class="n">QList</span><span class="o">&lt;</span><span class="n">SortAlgorithm</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">algorithms</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sortColumn</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="o">=</span><span class="nb">false</span><span class="p">);</span>
 </code></pre></div></div>
 <p>setColumnSortingAlgorithms 列排序接口的参数依次表示：</p>
 <ul>
@@ -438,7 +438,7 @@
 <h3 id="搜索列表">搜索列表</h3>
 <p>搜索列表的实现原理，现在 DSimpleListItem 子类构建搜索函数:</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">bool</span> <span class="nf">search</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item</span><span class="p">,</span> <span class="n">QString</span> <span class="n">searchContent</span><span class="p">);</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">bool</span> <span class="n">search</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item</span><span class="p">,</span> <span class="n">QString</span> <span class="n">searchContent</span><span class="p">);</span>
 
 <span class="kt">bool</span> <span class="n">MultiListItem</span><span class="o">::</span><span class="n">search</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item</span><span class="p">,</span> <span class="n">QString</span> <span class="n">searchContent</span><span class="p">)</span>
 <span class="p">{</span>
@@ -455,7 +455,7 @@
 
 <p>最后，每次在 DSimpleListView 调用 search 函数的时候，DSimpleListView 自动会根据 setSearchAlgorithm 设置的搜索算法对列表的行进行过滤显示：</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">search</span><span class="p">(</span><span class="n">QString</span> <span class="n">searchContent</span><span class="p">);</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">search</span><span class="p">(</span><span class="n">QString</span> <span class="n">searchContent</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>搜索效果如下图（盗用深度监视器的效果）：
@@ -464,7 +464,7 @@
 <h3 id="隐藏指定列">隐藏指定列</h3>
 <p>DSimpleListView 的 setColumnHideFlags 接口可以用于控制列表中置顶列的是否显示</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">setColumnHideFlags</span><span class="p">(</span><span class="n">QList</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">toggleHideFlags</span><span class="p">,</span> <span class="kt">int</span> <span class="n">alwaysVisibleColumn</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setColumnHideFlags</span><span class="p">(</span><span class="n">QList</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">toggleHideFlags</span><span class="p">,</span> <span class="kt">int</span> <span class="n">alwaysVisibleColumn</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
 </code></pre></div></div>
 <ul>
   <li>参数 toggleHideFlags 表示对应列的隐藏状态， true 表示显示， false 表示隐藏</li>

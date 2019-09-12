@@ -1,0 +1,102 @@
+I"�<p>之前写了一篇文章<a href="https://manateelazycat.github.io/emacs/2019/07/24/use-rime-in-emacs.html">在Mac版的Emacs中使用RIME输入法</a>详细说明了Mac OS下怎么让Emacs使用RIME输入法。</p>
+
+<p>最近有折腾回我最喜欢的Linux，今天讲一下怎么在Linux下配置Emacs的RIME输入法。</p>
+
+<p>其实大多数步骤都是类似的，而且Linux下还要简单点，只不过有一些小小的坑。</p>
+
+<h3 id="1-更新pyim和posframe到最新版">1 更新pyim和posframe到最新版</h3>
+<p>为了支持RIME输入法需要把 <a href="https://github.com/tumashu/pyim">pyim</a> 和 <a href="https://github.com/tumashu/posframe">posframe</a>这两个库更新到最新，否则有可能会报posframe的错误</p>
+
+<h3 id="2-安装rime输入法">2 安装RIME输入法</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> fcitx-im fcitx-configtool fcitx-rime
+</code></pre></div></div>
+
+<p>在 ~/.xprofile</p>
+
+<h3 id="3-下载librime源码">3 下载librime源码</h3>
+<p>下载librime源码:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone <span class="nt">--recursive</span> https://github.com/rime/librime.git <span class="nt">--depth</span><span class="o">=</span>1
+</code></pre></div></div>
+
+<h3 id="4-编译liberime">4 编译liberime</h3>
+
+<ul>
+  <li>4.1 下载liberime源码</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://gitlab.com/liberime/liberime.git <span class="nt">--depth</span><span class="o">=</span>1
+</code></pre></div></div>
+
+<ul>
+  <li>4.2 创建librime xbuild目录</li>
+</ul>
+
+<p>因为liberime动态库是需要根据librime来编译的，同时RIME输入法本身就带了librime.1.dylib，所以我们并不需要下载巨大无比的xcode去编译librime.1.dylib</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/librime/xbuild/lib/Release/
+
+<span class="nb">cp</span> /Library/Input<span class="se">\ </span>Methods/Squirrel.app/Contents/Frameworks/librime.1.dylib ~/librime/xbuild/lib/Release/librime.dylib
+</code></pre></div></div>
+
+<ul>
+  <li>4.3 编译liberime.so文件</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/liberime
+
+<span class="nb">export </span><span class="nv">RIME_PATH</span><span class="o">=</span>~/librime
+
+make liberime
+</code></pre></div></div>
+<p>上面的命令自动会去 ~/librime/xbuild/lib/Release/ 目录下找 librime.dylib 文件，并在 ~/liberime/buid/ 目录下生成 liberime.so 动态库文件</p>
+
+<ul>
+  <li>4.4 把 librime.1.dylib 文件拷贝到系统lib目录</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo cp</span> /Library/Input<span class="se">\ </span>Methods/Squirrel.app/Contents/Frameworks/librime.1.dylib /usr/local/lib
+</code></pre></div></div>
+
+<p>否则后面 (require ‘liberime) 的时候会下面的错误</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dyld: Library not loaded: @rpath/librime.1.dylib
+  Referenced from: ...
+  Reason: image not found
+</code></pre></div></div>
+
+<h3 id="5-配置pyim">5 配置pyim</h3>
+<p>拷贝 librime.so 文件到 ~/.emacs.d/ 目录下，然后在 ~/.emacs 写下如下配置即可:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">setq</span> <span class="nv">load-path</span> <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="s">"~/.emacs.d/"</span><span class="p">)</span> <span class="nv">load-path</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'pyim</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'posframe</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'liberime</span><span class="p">)</span>
+
+<span class="p">(</span><span class="k">setq</span> <span class="nv">default-input-method</span> <span class="s">"pyim"</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">pyim-page-tooltip</span> <span class="ss">'posframe</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">pyim-page-length</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">liberime-start</span> <span class="s">"/Library/Input Methods/Squirrel.app/Contents/SharedSupport"</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="s">"~/.emacs.d/pyim/rime/"</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">liberime-select-schema</span> <span class="s">"luna_pinyin_simp"</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">pyim-default-scheme</span> <span class="ss">'rime-quanpin</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="6-增加rime候选词数量">6 增加RIME候选词数量</h3>
+
+<p>liberime默认只能获取5个后选词，用下面的方法可以增加RIME后端时的后选词数量。</p>
+
+<p>创建 ~/.emacs.d/pyim/rime/default.custom.yaml 文件，内容如下：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>patch:
+     <span class="s2">"menu/page_size"</span>: 100
+     <span class="s2">"speller/auto_select"</span>: <span class="nb">false</span>
+     <span class="s2">"speller/auto_select_unique_candidate"</span>: <span class="nb">false</span>
+</code></pre></div></div>
+
+<h2 id="最后">最后</h2>
+<p>上面这么长一篇的文字都是我在Emacs下用pyim配合RIME后端来进行输入的，整个过程非常流畅，长句输入也非常非常的赞。</p>
+
+<p>终于不用在Emacs中使用外部输入法了，哈哈哈哈。</p>
+:ET
