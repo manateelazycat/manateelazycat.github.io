@@ -1,0 +1,18 @@
+I"�<h3 id="代码语法块删除插件">代码语法块删除插件</h3>
+<p>一般来说我们会用 <code class="highlighter-rouge">forward-word</code> 和 <code class="highlighter-rouge">backward-word</code> 这两个命令快速在Emacs中进行单词移动。
+如果开启了 <code class="highlighter-rouge">subword-mode</code> , <code class="highlighter-rouge">forward-word</code> 和 <code class="highlighter-rouge">backward-word</code> 会在骆驼风格的单词中按子单词的范围进行移动。
+比如 FooBarExample 这个单词，移动的范围依次是 Foo Bar Example</p>
+
+<p>今天写了一个插件，主要融合 <code class="highlighter-rouge">skip-syntax-forward</code> <code class="highlighter-rouge">skip-syntax-backward</code> 和 <code class="highlighter-rouge">subword-mode</code> , 使得Emacs可以快速向左和向右进行语法块删除，同时遇到骆驼风格单词的时候可以快速删除子单词。</p>
+
+<p><img src="http://localhost:4000/pics/delete-block/delete-block.gif" alt="delete-block" /></p>
+
+<p>安装方法见<a href="https://github.com/manateelazycat/delete-block">Github</a></p>
+
+<h3 id="使用方法">使用方法</h3>
+
+<p>使用方法很简单, 绑定按键到下面几个函数:</p>
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">delete-block-forward</span>
+<span class="nv">delete-block-backward</span>
+</code></pre></div></div>
+:ET

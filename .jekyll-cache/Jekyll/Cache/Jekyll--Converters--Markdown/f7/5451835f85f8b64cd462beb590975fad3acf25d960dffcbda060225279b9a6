@@ -1,0 +1,977 @@
+I"D�<h3 id="为什么要做深度系统监视器">为什么要做深度系统监视器？</h3>
+<p>为了达到深度操作系统UI/UX大统一的‘雄伟’目标，闲来无事写了深度系统监视器，先发一张图镇楼，哈哈哈。</p>
+
+<p><img src="http://localhost:4000/pics/deepin-system-monitor/deepin-system-monitor-1.png" alt="" /></p>
+
+<p>社区的开源爱好者马上会跳出来说，深度你们又造轮子，你们造的轮子比Gnome和KDE的系统监视器好吗？</p>
+
+<p>回答当然是肯定的，如果不秒杀Gnome的系统监视器我造它干嘛呢？</p>
+
+<p>深度系统监视器首先要解决的问题是：提高用户操作的易用性
+Gnome的系统监视器默认分开了三个标签，把进程列表和资源总览分开了，看进程列表的状态就不知道资源总览的信息，看资源总览信息就不知道进程列表的状态，而且还在第三个标签提供了一个鸡肋的磁盘设备的空间，只能看啥操作都不能做，还不如放在文件管理器或者磁盘管理工具里面。</p>
+
+<p><img src="http://localhost:4000/pics/deepin-system-monitor/deepin-system-monitor-2.png" alt="" /></p>
+
+<p><img src="http://localhost:4000/pics/deepin-system-monitor/deepin-system-monitor-3.png" alt="" /></p>
+
+<p>所以针对这些不爽的设计，深度系统监视器把资源总览信息和列表的进程信息放在一起，一眼就可以知道现在电脑的整体负载，而且用户马上就可以在右边查看高资源占用的进程，再也不用来回费劲的切换标签去看这两个本来就应该在一起的信息。</p>
+
+<p>其次，深度系统监视器狠下内功，不但可以对每个进程的CPU、内存状态进行监控，还可以实时查看每个进程的磁盘IO操作和网络操作，一眼就知道哪些进程在狂写硬盘和在后台偷偷下载了。</p>
+
+<p>最后，还提供一些小贴心的功能，比如查找进程启动命令所在的位置（甚至包括Wine程序都可以轻松找到）和类似xkill的功能（点哪杀哪）。</p>
+
+<h3 id="技术原理剖析">技术原理剖析</h3>
+<p>今天主要和大家分享一下对进程信息进行监听的原理和实现。</p>
+
+<p>在Linux中，计算机的所有数据的计算都通过读取分析 /proc 文件系统来实现，Linux内核会实时把硬件的状况更新到 /proc 这个内存文件系统中。</p>
+
+<p>下面我们就针对 /proc 不同的部分进行原理和技术实现剖析：</p>
+
+<h4 id="计算总cpu数据">计算总CPU数据</h4>
+<p>得到计算机的总CPU数据比较简单，直接读取 /proc/stat 文件即可，比如在终端中执行命令</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /proc/stat
+</code></pre></div></div>
+
+<p>即可得到下面的输出：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cpu  492210 2258 105266 10955786 187778 0 4761 0 0 0
+cpu0 89150 320 19660 1276610 76551 0 3102 0 0 0
+cpu1 41252 241 10276 1403886 14385 0 350 0 0 0
+cpu2 76932 339 16603 1343444 27821 0 678 0 0 0
+cpu3 43124 243 8810 1408410 11182 0 143 0 0 0
+cpu4 78072 320 16240 1350574 20070 0 215 0 0 0
+cpu5 43333 244 8818 1407601 11858 0 77 0 0 0
+cpu6 76218 318 15967 1355511 17012 0 139 0 0 0
+cpu7 44126 230 8890 1409746 8896 0 55 0 0 0
+intr 29214339 19 61901 0 0 0 0 0 0 1 8821 0 0 9987 0 0 0 29 0 1 0 0 0 0 35 0 0 22 7383 136 199974 241715 561627 23 546066 397 746 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ctxt 92198094
+btime 1500712714
+processes 36267
+procs_running 4
+procs_blocked 0
+softirq 13122555 137 4225618 144 671154 238659 0 62530 4265310 0 3659003
+</code></pre></div></div>
+<p>第一行就是总CPU的占用率，下面的CPU1、CPU2等等表示多核CPU某个核的CPU占有率。
+第一行从左到右的数值分别表示：user, nice, system, idle, iowait, irq, softirq, steal, guest, guestnice （这些值分别代表的意义在man手册里面都有讲，今天就不展开了）
+计算总CPU的占有率，首先要计算 workTime和totalTime:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">workTime</span> <span class="o">=</span> <span class="n">user</span> <span class="o">+</span> <span class="n">nice</span> <span class="o">+</span> <span class="n">system</span><span class="p">;</span>
+<span class="n">totalTime</span> <span class="o">=</span>  <span class="k">return</span> <span class="n">user</span> <span class="o">+</span> <span class="n">nice</span> <span class="o">+</span> <span class="n">system</span> <span class="o">+</span> <span class="n">idle</span> <span class="o">+</span> <span class="n">iowait</span> <span class="o">+</span> <span class="n">irq</span> <span class="o">+</span> <span class="n">softirq</span> <span class="o">+</span> <span class="n">steal</span><span class="p">;</span>
+</code></pre></div></div>
+<p>比如我们系统监视器2秒中获取一些当前CPU时间的切片，最后计算CPU占有率的公式就是：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cpuPercent</span> <span class="o">=</span> <span class="p">(</span><span class="n">currentWorkTime</span> <span class="o">-</span> <span class="n">prevWorkTime</span><span class="p">)</span> <span class="o">*</span> <span class="mf">100.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">currentTotalTime</span> <span class="o">-</span> <span class="n">prevTotalTime</span><span class="p">)</span>
+</code></pre></div></div>
+<p>currentWorkTime和currentTotalTime表示当前的CPU时间
+prevWorkTime和prevTotalTime表示2秒前的CPU时间</p>
+
+<p>取得CPU时间的代码实现如下：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="nf">getTotalCpuTime</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="o">&amp;</span><span class="n">workTime</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">FILE</span><span class="o">*</span> <span class="n">file</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"/proc/stat"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">file</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">perror</span><span class="p">(</span><span class="s">"Could not open stat file"</span><span class="p">);</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+        <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">user</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nice</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">system</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">idle</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="c1">// added between Linux 2.5.41 and 2.6.33, see man proc(5)</span>
+        <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">iowait</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">irq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">softirq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">steal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">guest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">guestnice</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="kt">char</span><span class="o">*</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">fgets</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">file</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">perror</span><span class="p">(</span><span class="s">"Could not read stat file"</span><span class="p">);</span>
+            <span class="n">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+
+        <span class="n">sscanf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span>
+               <span class="s">"cpu  %16llu %16llu %16llu %16llu %16llu %16llu %16llu %16llu %16llu %16llu"</span><span class="p">,</span>
+               <span class="o">&amp;</span><span class="n">user</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nice</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">system</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">idle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">iowait</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">irq</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">softirq</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">steal</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">guest</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">guestnice</span><span class="p">);</span>
+
+        <span class="n">workTime</span> <span class="o">=</span> <span class="n">user</span> <span class="o">+</span> <span class="n">nice</span> <span class="o">+</span> <span class="n">system</span><span class="p">;</span>
+
+        <span class="c1">// sum everything up (except guest and guestnice since they are already included</span>
+        <span class="c1">// in user and nice, see http://unix.stackexchange.com/q/178045/20626)</span>
+        <span class="k">return</span> <span class="n">user</span> <span class="o">+</span> <span class="n">nice</span> <span class="o">+</span> <span class="n">system</span> <span class="o">+</span> <span class="n">idle</span> <span class="o">+</span> <span class="n">iowait</span> <span class="o">+</span> <span class="n">irq</span> <span class="o">+</span> <span class="n">softirq</span> <span class="o">+</span> <span class="n">steal</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<p>具体可以参考: https://github.com/manateelazycat/deepin-system-monitor/blob/master/src/utils.cpp</p>
+
+<h4 id="计算总内存数据">计算总内存数据</h4>
+<p>计算机总内存的数据保存在 /proc/meminfo 文件中，你可以通过:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /proc/meminfo
+</code></pre></div></div>
+
+<p>得到类似下面的信息：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MemTotal:        8056276 kB
+MemFree:          897868 kB
+MemAvailable:    4861656 kB
+Buffers:          143776 kB
+Cached:          4613124 kB
+SwapCached:            0 kB
+Active:          3455196 kB
+Inactive:        3220984 kB
+Active<span class="o">(</span>anon<span class="o">)</span>:    1932732 kB
+Inactive<span class="o">(</span>anon<span class="o">)</span>:   736476 kB
+Active<span class="o">(</span>file<span class="o">)</span>:    1522464 kB
+Inactive<span class="o">(</span>file<span class="o">)</span>:  2484508 kB
+Unevictable:          48 kB
+Mlocked:              48 kB
+SwapTotal:      36042872 kB
+SwapFree:       36042872 kB
+Dirty:               356 kB
+Writeback:             0 kB
+AnonPages:       1919408 kB
+Mapped:           888900 kB
+Shmem:            749924 kB
+Slab:             313304 kB
+SReclaimable:     262640 kB
+SUnreclaim:        50664 kB
+KernelStack:       12960 kB
+PageTables:        55112 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    40071008 kB
+Committed_AS:    8831548 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      233872 kB
+DirectMap2M:     8032256 kB
+DirectMap1G:           0 kB
+</code></pre></div></div>
+<p>或者通过命令 free 得到类似的输出：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>              total        used        free      shared  buff/cache   available
+Mem:        8056276     2167084      861736      756536     5027456     4826836
+Swap:      36042872           0    36042872
+</code></pre></div></div>
+
+<p>计算内存的占有就要简单的很多：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>memoryPercent <span class="o">=</span> <span class="o">(</span>total - available<span class="o">)</span> <span class="k">*</span> 100.0 / total
+</code></pre></div></div>
+
+<p>注意，当前系统使用的内存是由内存总量total减去可用内存aviailable的值来计算的，不能用</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>memoryPercent <span class="o">=</span> used <span class="k">*</span> 100.0 / total
+</code></pre></div></div>
+
+<p>因为 used 的值不包括一些被内核占用并且永不释放的缓存内存，如果用 used 的方式来计算内存百分比，会发现最终计算的结果会比实际占用的内存小 15% 左右。</p>
+
+<p>具体的代码实现，我们用 libprocps-dev 这个开发库提供的 meminfo() 函数，然后直接读取 kb_main_total 和 kb_main_available 就可以了，交换空间读取 kb_swap_used 和 kb_swap_total 这两个变量的值。
+参考代码实现如下：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">meminfo</span><span class="p">();</span>
+
+<span class="n">memoryPercent</span> <span class="o">=</span> <span class="p">(</span><span class="n">kb_main_total</span> <span class="o">-</span> <span class="n">kb_main_available</span><span class="p">)</span> <span class="o">*</span> <span class="mf">100.0</span> <span class="o">/</span> <span class="n">kb_main_total</span>
+<span class="n">swapPercent</span> <span class="o">=</span> <span class="n">kb_swap_used</span> <span class="o">*</span> <span class="mf">100.0</span> <span class="o">/</span> <span class="n">kb_swap_total</span>
+</code></pre></div></div>
+
+<h4 id="计算总网络数据">计算总网络数据</h4>
+<p>计算机总网络数据可以通过读取分析 /proc/net/dev 文件来计算, 执行命令后</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /proc/net/dev
+</code></pre></div></div>
+
+<p>可以得到类似的数据：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+enp0s25:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+    lo: 65691844  116033    0    0    0     0          0         0 65691844  116033    0    0    0     0       0          0
+wlp4s0: 1249471414  907278    0    0    0     0          0         0 88564991  428056    0    0    0     0       0          0
+</code></pre></div></div>
+
+<p>这个文件的每一行是一个网络设备，我们需要获得网络设备的第一个和第九个值，第一个值表示下载的总byte数，第九个值表示上传的总byte数。
+原理就是读取 /proc/net/dev 的网络设备的下载和上传数据，加在一起求和，同时要排除 lo 这个虚拟网络设备，具体的代码实现如下：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">getNetworkBandWidth</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">receiveBytes</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">sendBytes</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">char</span> <span class="o">*</span><span class="n">buf</span><span class="p">;</span>
+        <span class="k">static</span> <span class="kt">int</span> <span class="n">bufsize</span><span class="p">;</span>
+        <span class="kt">FILE</span> <span class="o">*</span><span class="n">devfd</span><span class="p">;</span>
+
+        <span class="n">buf</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">calloc</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">bufsize</span> <span class="o">=</span> <span class="mi">255</span><span class="p">;</span>
+        <span class="n">devfd</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"/proc/net/dev"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+
+        <span class="c1">// Ignore the first two lines of the file.</span>
+        <span class="n">fgets</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">bufsize</span><span class="p">,</span> <span class="n">devfd</span><span class="p">);</span>
+        <span class="n">fgets</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">bufsize</span><span class="p">,</span> <span class="n">devfd</span><span class="p">);</span>
+
+        <span class="n">receiveBytes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">sendBytes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="n">fgets</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">bufsize</span><span class="p">,</span> <span class="n">devfd</span><span class="p">))</span> <span class="p">{</span>
+            <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">rBytes</span><span class="p">,</span> <span class="n">sBytes</span><span class="p">;</span>
+            <span class="kt">char</span> <span class="o">*</span><span class="n">line</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+
+            <span class="kt">char</span> <span class="o">*</span><span class="n">dev</span><span class="p">;</span>
+            <span class="n">dev</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="s">":"</span><span class="p">);</span>
+
+            <span class="c1">// Filter lo (virtual network device).</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">QString</span><span class="o">::</span><span class="n">fromStdString</span><span class="p">(</span><span class="n">dev</span><span class="p">).</span><span class="n">trimmed</span><span class="p">()</span> <span class="o">!=</span> <span class="s">"lo"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">sscanf</span><span class="p">(</span><span class="n">buf</span> <span class="o">+</span> <span class="n">strlen</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"%llu %*d %*d %*d %*d %*d %*d %*d %llu"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rBytes</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sBytes</span><span class="p">);</span>
+
+                <span class="n">receiveBytes</span> <span class="o">+=</span> <span class="n">rBytes</span><span class="p">;</span>
+                <span class="n">sendBytes</span> <span class="o">+=</span> <span class="n">sBytes</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="n">free</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">fclose</span><span class="p">(</span><span class="n">devfd</span><span class="p">);</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>这样，我们只用每2秒计算一下内存的总上传和下载byte数就可以得知系统总共下载和上传的带宽，总的上传和下载速度就更简单了：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">downloadSpeed</span> <span class="o">=</span> <span class="p">(</span><span class="n">currentDownloadBytes</span> <span class="o">-</span> <span class="n">prevDownloadBytes</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1024.0</span>
+<span class="n">uploadSpeed</span> <span class="o">=</span> <span class="p">(</span><span class="n">currentUploadBytes</span> <span class="o">-</span> <span class="n">prevUploadBytes</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1024.0</span>
+</code></pre></div></div>
+
+<h4 id="计算进程的cpu和内存数据">计算进程的CPU和内存数据</h4>
+<p>计算进程的CPU比较简单，类似总CPU的计算方式，只是用进程自己的CPU值来计算， 进程自己的CPU值通过读取 /proc/pid/stat 来读取。
+进程的内存信息也是从 /proc/pid/stat 文件中读取。
+具体的代码实现请参考：https://github.com/manateelazycat/deepin-system-monitor/blob/master/src/status_monitor.cpp</p>
+
+<h4 id="计算进程的磁盘io数据">计算进程的磁盘IO数据</h4>
+<p>计算进程的磁盘IO数据主要通过读取 /proc/pid/io 文件的内容来解析， 执行命令后</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo cat</span> /proc/pid/io
+</code></pre></div></div>
+
+<p>会得到类似以下的输出：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rchar: 2511751
+wchar: 115513
+syscr: 18106
+syscw: 2864
+read_bytes: 0
+write_bytes: 0
+cancelled_write_bytes: 0
+</code></pre></div></div>
+<p>我们只用注意 rchar 和 wchar这两个值， rchar代表进程的写入字符数、wchar代表进程读取字符数，磁盘IO就很容计算：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">readKbs</span> <span class="o">=</span> <span class="p">(</span><span class="n">currentReadChar</span> <span class="o">-</span> <span class="n">prevReadChar</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">1000</span>
+<span class="n">writeKbs</span> <span class="o">=</span> <span class="p">(</span><span class="n">currentWriteChar</span> <span class="o">-</span> <span class="n">prevWriteChar</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">1000</span>
+</code></pre></div></div>
+
+<p>具体的代码实现：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kt">bool</span> <span class="nf">getProcPidIO</span><span class="p">(</span><span class="kt">int</span> <span class="n">pid</span><span class="p">,</span> <span class="n">ProcPidIO</span> <span class="o">&amp;</span><span class="n">io</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
+        <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">"/proc/"</span> <span class="o">&lt;&lt;</span> <span class="n">pid</span> <span class="o">&lt;&lt;</span> <span class="s">"/io"</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">ifs</span><span class="p">(</span> <span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">().</span><span class="n">c_str</span><span class="p">()</span> <span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">ifs</span><span class="p">.</span><span class="n">good</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="k">while</span> <span class="p">(</span> <span class="n">ifs</span><span class="p">.</span><span class="n">good</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ifs</span><span class="p">.</span><span class="n">eof</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+                <span class="n">getline</span><span class="p">(</span> <span class="n">ifs</span><span class="p">,</span> <span class="n">s</span> <span class="p">);</span>
+                <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">t</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span> <span class="n">sscanf</span><span class="p">(</span> <span class="n">s</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="s">"rchar: %lu"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="n">io</span><span class="p">.</span><span class="n">rchar</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">sscanf</span><span class="p">(</span> <span class="n">s</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="s">"wchar: %lu"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="n">io</span><span class="p">.</span><span class="n">wchar</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">sscanf</span><span class="p">(</span> <span class="n">s</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="s">"syscr: %lu"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="n">io</span><span class="p">.</span><span class="n">syscr</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">sscanf</span><span class="p">(</span> <span class="n">s</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="s">"syscw: %lu"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="n">io</span><span class="p">.</span><span class="n">syscw</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">sscanf</span><span class="p">(</span> <span class="n">s</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="s">"read_bytes: %lu"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="n">io</span><span class="p">.</span><span class="n">read_bytes</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">sscanf</span><span class="p">(</span> <span class="n">s</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="s">"write_bytes: %lu"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="n">io</span><span class="p">.</span><span class="n">write_bytes</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">sscanf</span><span class="p">(</span> <span class="n">s</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="s">"cancelled_write_bytes: %lu"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="n">io</span><span class="p">.</span><span class="n">cancelled_write_bytes</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="n">DiskStatus</span> <span class="n">StatusMonitor</span><span class="o">::</span><span class="n">getProcessDiskStatus</span><span class="p">(</span><span class="kt">int</span> <span class="n">pid</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ProcPidIO</span> <span class="n">pidIO</span><span class="p">;</span>
+    <span class="n">getProcPidIO</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">pidIO</span><span class="p">);</span>
+
+    <span class="n">DiskStatus</span> <span class="n">status</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">processWriteKbs</span><span class="o">-&gt;</span><span class="n">contains</span><span class="p">(</span><span class="n">pid</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">status</span><span class="p">.</span><span class="n">writeKbs</span> <span class="o">=</span> <span class="p">(</span><span class="n">pidIO</span><span class="p">.</span><span class="n">wchar</span> <span class="o">-</span> <span class="n">processWriteKbs</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">(</span><span class="n">pid</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">updateDuration</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">processWriteKbs</span><span class="p">)[</span><span class="n">pid</span><span class="p">]</span> <span class="o">=</span> <span class="n">pidIO</span><span class="p">.</span><span class="n">wchar</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">processReadKbs</span><span class="o">-&gt;</span><span class="n">contains</span><span class="p">(</span><span class="n">pid</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">status</span><span class="p">.</span><span class="n">readKbs</span> <span class="o">=</span> <span class="p">(</span><span class="n">pidIO</span><span class="p">.</span><span class="n">rchar</span> <span class="o">-</span> <span class="n">processReadKbs</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">(</span><span class="n">pid</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">updateDuration</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">processReadKbs</span><span class="p">)[</span><span class="n">pid</span><span class="p">]</span> <span class="o">=</span> <span class="n">pidIO</span><span class="p">.</span><span class="n">rchar</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">status</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="计算进程的网络io数据">计算进程的网络IO数据</h4>
+<p>计算每个进程的网络IO数据比较复杂，原理步骤如下：
+1、获取进程的所有TCP链接的inode, /proc/pid/fd 目录下代表当前进程所有打开的文件描述符，我们举例网易云音乐的进程，内容类似：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>andy@andy-PC:~/deepin-system-monitor/build<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-al</span> /proc/22269/fd
+总用量 0
+dr-x------ 2 andy andy  0 7月  22 17:18 <span class="nb">.</span>
+dr-xr-xr-x 9 andy andy  0 7月  22 17:11 ..
+lr-x------ 1 andy andy 64 7月  22 17:18 0 -&gt; pipe:[139620]
+l-wx------ 1 andy andy 64 7月  22 17:18 1 -&gt; /dev/null
+lrwx------ 1 andy andy 64 7月  22 17:18 10 -&gt; socket:[141559]
+lrwx------ 1 andy andy 64 7月  22 17:21 100 -&gt; socket:[564075]
+lrwx------ 1 andy andy 64 7月  22 17:18 101 -&gt; /dev/shm/.org.chromium.Chromium.NLubPR <span class="o">(</span>deleted<span class="o">)</span>
+l-wx------ 1 andy andy 64 7月  22 17:32 102 -&gt; /home/andy/.cache/netease-cloud-music/AlbumCover/4e3830fa33b1caf266bfe8ff6acd7634.tmp <span class="o">(</span>deleted<span class="o">)</span>
+l-wx------ 1 andy andy 64 7月  22 17:32 103 -&gt; /home/andy/.cache/netease-cloud-music/CachedSongs/4176388-320-7c00bba57b7a737c8047bb11bd07827d.mp3.tmp <span class="o">(</span>deleted<span class="o">)</span>
+lrwx------ 1 andy andy 64 7月  22 17:32 104 -&gt; socket:[751267]
+lrwx------ 1 andy andy 64 7月  22 17:18 105 -&gt; socket:[751268]
+lrwx------ 1 andy andy 64 7月  22 17:21 106 -&gt; socket:[756879]
+lrwx------ 1 andy andy 64 7月  22 17:18 11 -&gt; socket:[141560]
+lrwx------ 1 andy andy 64 7月  22 17:18 110 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 111 -&gt; /dev/shm/.org.chromium.Chromium.8IQyY6 <span class="o">(</span>deleted<span class="o">)</span>
+lrwx------ 1 andy andy 64 7月  22 17:18 112 -&gt; /home/andy/.cache/netease-cloud-music/Cef/Cache/Local Storage/orpheus_orpheus_0.localstorage
+lrwx------ 1 andy andy 64 7月  22 17:24 115 -&gt; socket:[753243]
+lrwx------ 1 andy andy 64 7月  22 17:18 116 -&gt; socket:[753244]
+lr-x------ 1 andy andy 64 7月  22 17:18 117 -&gt; pipe:[753245]
+lrwx------ 1 andy andy 64 7月  22 17:18 118 -&gt; anon_inode:[eventfd]
+l-wx------ 1 andy andy 64 7月  22 17:21 119 -&gt; pipe:[753245]
+lrwx------ 1 andy andy 64 7月  22 17:18 12 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 120 -&gt; socket:[753248]
+lrwx------ 1 andy andy 64 7月  22 17:18 121 -&gt; anon_inode:[eventfd]
+lr-x------ 1 andy andy 64 7月  22 17:18 122 -&gt; /dev/urandom
+lrwx------ 1 andy andy 64 7月  22 17:18 123 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 13 -&gt; anon_inode:[eventfd]
+lr-x------ 1 andy andy 64 7月  22 17:18 14 -&gt; anon_inode:inotify
+lrwx------ 1 andy andy 64 7月  22 17:18 15 -&gt; socket:[143624]
+lr-x------ 1 andy andy 64 7月  22 17:18 16 -&gt; /usr/lib/netease-cloud-music/icudtl.dat
+lr-x------ 1 andy andy 64 7月  22 17:18 17 -&gt; /usr/lib/netease-cloud-music/snapshot_blob.bin
+lr-x------ 1 andy andy 64 7月  22 17:18 18 -&gt; /usr/lib/netease-cloud-music/natives_blob.bin
+lr-x------ 1 andy andy 64 7月  22 17:18 19 -&gt; /usr/lib/netease-cloud-music/locales/zh-CN.pak
+l-wx------ 1 andy andy 64 7月  22 17:18 2 -&gt; /dev/null
+lr-x------ 1 andy andy 64 7月  22 17:18 20 -&gt; /usr/lib/netease-cloud-music/cef.pak
+lr-x------ 1 andy andy 64 7月  22 17:18 21 -&gt; /usr/lib/netease-cloud-music/cef_100_percent.pak
+lr-x------ 1 andy andy 64 7月  22 17:18 22 -&gt; /usr/lib/netease-cloud-music/cef_200_percent.pak
+lr-x------ 1 andy andy 64 7月  22 17:18 23 -&gt; anon_inode:inotify
+lr-x------ 1 andy andy 64 7月  22 17:18 24 -&gt; /usr/lib/netease-cloud-music/cef_extensions.pak
+lrwx------ 1 andy andy 64 7月  22 17:18 25 -&gt; socket:[141561]
+lrwx------ 1 andy andy 64 7月  22 17:18 26 -&gt; socket:[141562]
+lr-x------ 1 andy andy 64 7月  22 17:18 27 -&gt; pipe:[141563]
+l-wx------ 1 andy andy 64 7月  22 17:18 28 -&gt; pipe:[141563]
+lrwx------ 1 andy andy 64 7月  22 17:18 29 -&gt; socket:[141564]
+lrwx------ 1 andy andy 64 7月  22 17:18 3 -&gt; socket:[141558]
+lrwx------ 1 andy andy 64 7月  22 17:18 30 -&gt; socket:[141605]
+lr-x------ 1 andy andy 64 7月  22 17:18 31 -&gt; pipe:[140610]
+l-wx------ 1 andy andy 64 7月  22 17:18 32 -&gt; pipe:[140610]
+lrwx------ 1 andy andy 64 7月  22 17:18 33 -&gt; anon_inode:[eventpoll]
+lrwx------ 1 andy andy 64 7月  22 17:18 34 -&gt; socket:[137178]
+lrwx------ 1 andy andy 64 7月  22 17:18 35 -&gt; socket:[137179]
+lr-x------ 1 andy andy 64 7月  22 17:18 36 -&gt; pipe:[137180]
+l-wx------ 1 andy andy 64 7月  22 17:18 37 -&gt; pipe:[137180]
+lrwx------ 1 andy andy 64 7月  22 17:18 38 -&gt; socket:[137181]
+lr-x------ 1 andy andy 64 7月  22 17:18 39 -&gt; anon_inode:inotify
+lrwx------ 1 andy andy 64 7月  22 17:18 4 -&gt; anon_inode:[eventfd]
+lr-x------ 1 andy andy 64 7月  22 17:18 40 -&gt; pipe:[137189]
+l-wx------ 1 andy andy 64 7月  22 17:18 41 -&gt; pipe:[137189]
+lrwx------ 1 andy andy 64 7月  22 17:18 42 -&gt; anon_inode:[eventpoll]
+lrwx------ 1 andy andy 64 7月  22 17:18 43 -&gt; socket:[137190]
+lrwx------ 1 andy andy 64 7月  22 17:18 44 -&gt; socket:[137191]
+lr-x------ 1 andy andy 64 7月  22 17:18 45 -&gt; pipe:[137192]
+l-wx------ 1 andy andy 64 7月  22 17:18 46 -&gt; pipe:[137192]
+lrwx------ 1 andy andy 64 7月  22 17:18 47 -&gt; anon_inode:[eventpoll]
+lrwx------ 1 andy andy 64 7月  22 17:18 48 -&gt; anon_inode:[eventpoll]
+lrwx------ 1 andy andy 64 7月  22 17:18 49 -&gt; socket:[131820]
+lrwx------ 1 andy andy 64 7月  22 17:18 5 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 50 -&gt; socket:[131821]
+lrwx------ 1 andy andy 64 7月  22 17:18 51 -&gt; socket:[137193]
+lrwx------ 1 andy andy 64 7月  22 17:18 52 -&gt; socket:[137194]
+lr-x------ 1 andy andy 64 7月  22 17:18 53 -&gt; pipe:[137195]
+l-wx------ 1 andy andy 64 7月  22 17:18 54 -&gt; pipe:[137195]
+lr-x------ 1 andy andy 64 7月  22 17:18 55 -&gt; pipe:[131822]
+l-wx------ 1 andy andy 64 7月  22 17:18 56 -&gt; pipe:[131822]
+lr-x------ 1 andy andy 64 7月  22 17:18 57 -&gt; pipe:[140611]
+l-wx------ 1 andy andy 64 7月  22 17:18 58 -&gt; pipe:[140611]
+lrwx------ 1 andy andy 64 7月  22 17:18 59 -&gt; socket:[140614]
+lrwx------ 1 andy andy 64 7月  22 17:18 6 -&gt; socket:[138694]
+lrwx------ 1 andy andy 64 7月  22 17:18 60 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 61 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 62 -&gt; socket:[137196]
+lr-x------ 1 andy andy 64 7月  22 17:18 63 -&gt; /dev/urandom
+lrwx------ 1 andy andy 64 7月  22 17:18 64 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 65 -&gt; /home/andy/.cache/netease-cloud-music/Cef/Cache/Visited Links
+lrwx------ 1 andy andy 64 7月  22 17:18 66 -&gt; /home/andy/.cache/netease-cloud-music/Cef/Cache/Cookies
+l-wx------ 1 andy andy 64 7月  22 17:18 67 -&gt; /home/andy/.cache/netease-cloud-music/Logs/webview.log
+l-wx------ 1 andy andy 64 7月  22 17:18 68 -&gt; /home/andy/.cache/netease-cloud-music/Logs/web-statis.log
+lrwx------ 1 andy andy 64 7月  22 17:18 69 -&gt; socket:[143663]
+lr-x------ 1 andy andy 64 7月  22 17:18 7 -&gt; anon_inode:inotify
+lrwx------ 1 andy andy 64 7月  22 17:18 70 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 71 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 72 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 73 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 74 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 75 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 76 -&gt; /home/andy/.pki/nssdb/cert9.db
+lrwx------ 1 andy andy 64 7月  22 17:18 77 -&gt; /home/andy/.pki/nssdb/key4.db
+lrwx------ 1 andy andy 64 7月  22 17:18 78 -&gt; /home/andy/.config/netease-cloud-music/OfflineLibrary.db
+lr-x------ 1 andy andy 64 7月  22 17:18 79 -&gt; anon_inode:inotify
+lrwx------ 1 andy andy 64 7月  22 17:18 8 -&gt; anon_inode:[eventfd]
+lrwx------ 1 andy andy 64 7月  22 17:18 80 -&gt; /home/andy/.config/netease-cloud-music/OfflineLibrary.db
+lrwx------ 1 andy andy 64 7月  22 17:18 81 -&gt; socket:[141607]
+lrwx------ 1 andy andy 64 7月  22 17:18 82 -&gt; socket:[141608]
+lr-x------ 1 andy andy 64 7月  22 17:18 83 -&gt; anon_inode:inotify
+lrwx------ 1 andy andy 64 7月  22 17:18 84 -&gt; /home/andy/.config/netease-cloud-music/OnlineLibrary.db
+lrwx------ 1 andy andy 64 7月  22 17:18 85 -&gt; /dev/dri/card1
+lrwx------ 1 andy andy 64 7月  22 17:18 86 -&gt; socket:[140638]
+lrwx------ 1 andy andy 64 7月  22 17:18 87 -&gt; socket:[754448]
+lrwx------ 1 andy andy 64 7月  22 17:18 88 -&gt; socket:[140640]
+lrwx------ 1 andy andy 64 7月  22 17:18 89 -&gt; /home/andy/.cache/netease-cloud-music/Cef/Cache/index
+lrwx------ 1 andy andy 64 7月  22 17:18 9 -&gt; socket:[143622]
+lr-x------ 1 andy andy 64 7月  22 17:18 90 -&gt; /dev/shm/.org.chromium.Chromium.hjPeWY <span class="o">(</span>deleted<span class="o">)</span>
+lrwx------ 1 andy andy 64 7月  22 17:18 91 -&gt; /dev/shm/.org.chromium.Chromium.hjPeWY <span class="o">(</span>deleted<span class="o">)</span>
+lrwx------ 1 andy andy 64 7月  22 17:18 92 -&gt; /dev/shm/.org.chromium.Chromium.gSxJ28 <span class="o">(</span>deleted<span class="o">)</span>
+lrwx------ 1 andy andy 64 7月  22 17:18 93 -&gt; /dev/shm/.org.chromium.Chromium.zxWAqZ <span class="o">(</span>deleted<span class="o">)</span>
+lrwx------ 1 andy andy 64 7月  22 17:18 94 -&gt; /home/andy/.cache/netease-cloud-music/Cef/Cache/data_0
+lrwx------ 1 andy andy 64 7月  22 17:18 95 -&gt; /home/andy/.cache/netease-cloud-music/Cef/Cache/data_1
+lrwx------ 1 andy andy 64 7月  22 17:18 96 -&gt; /home/andy/.cache/netease-cloud-music/Cef/Cache/data_2
+lrwx------ 1 andy andy 64 7月  22 17:18 97 -&gt; /home/andy/.cache/netease-cloud-music/Cef/Cache/data_3
+lr-x------ 1 andy andy 64 7月  22 17:21 98 -&gt; /home/andy/.cache/netease-cloud-music/Logs/web-statis-tmp.log.zip
+lrwx------ 1 andy andy 64 7月  22 17:18 99 -&gt; anon_inode:[eventfd]
+</code></pre></div></div>
+
+<p>注意那些以 socket:[number] 的文件描述符， 这些socket开头的文件描述符就对应一个 TCP 链接，后面的数字就代表链接对应的 TCP inode。
+2、列出系统中 TCP inode 对应的链接信息，通过命令</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /proc/net/tcp
+</code></pre></div></div>
+
+<p>可以得到当前 TCP inode 对应的链接信息列表，内容类似：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  sl  local_address rem_address   st tx_queue rx_queue <span class="nb">tr </span>tm-&gt;when retrnsmt   uid  <span class="nb">timeout </span>inode
+   0: 00000000:008B 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 25701 1 ffff89bc3387a7c0 100 0 0 10 0
+   1: 0100007F:0277 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 21108 1 ffff89bc2d91e7c0 100 0 0 10 0
+   2: 0100007F:0438 00000000:0000 0A 00000000:00000000 00:00000000 00000000  1000        0 118922 1 ffff89bb9e326040 100 0 0 10 0
+   3: 00000000:01BD 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 25700 1 ffff89bc3387a040 100 0 0 10 0
+   4: DEC7A8C0:9E7E AFFD3267:20C4 01 00000000:00000000 00:00000000 00000000  1000        0 760162 1 ffff89bb9e208000 37 4 9 10 12
+   5: 0100007F:0438 0100007F:D934 01 00000000:00000000 00:00000000 00000000  1000        0 760161 1 ffff89ba60483000 20 4 4 10 <span class="nt">-1</span>
+   6: DEC7A8C0:D9A0 06C7FCDF:1773 01 00000000:00000000 02:00000B05 00000000  1000        0 564075 2 ffff89bb5aced7c0 22 4 29 10 <span class="nt">-1</span>
+   7: DEC7A8C0:9E82 AFFD3267:20C4 01 00000000:00000000 00:00000000 00000000  1000        0 758410 1 ffff89ba0fa4f7c0 57 4 32 18 13
+   8: DEC7A8C0:B9B8 7DFD1EC0:01BB 01 00000000:00000000 02:00000359 00000000  1000        0 660202 2 ffff89ba989fa800 58 4 25 10 <span class="nt">-1</span>
+   9: 0100007F:D938 0100007F:0438 01 00000000:00000000 02:000006AA 00000000  1000        0 759339 2 ffff89ba6582d800 20 4 30 10 <span class="nt">-1</span>
+  10: DEC7A8C0:A9D6 42522477:0050 01 00000000:00063C60 00:00000000 00000000  1000        0 759725 1 ffff89bbb8d87080 20 4 0 10 <span class="nt">-1</span>
+  11: DEC7A8C0:CAF0 3C011434:01BB 01 00000000:00000000 02:0000089A 00000000  1000        0 564925 2 ffff89bb7c5fd800 72 4 30 10 <span class="nt">-1</span>
+  12: DEC7A8C0:CFC6 DADCDF36:01BB 01 00000000:00000000 02:00000EB7 00000000  1000        0 565035 2 ffff89bb071aa040 22 4 28 10 <span class="nt">-1</span>
+  13: 0100007F:0438 0100007F:D938 01 00000000:00000000 00:00000000 00000000  1000        0 758409 1 ffff89ba6582d080 21 4 20 10 <span class="nt">-1</span>
+  14: 0100007F:D934 0100007F:0438 01 00000000:00000000 02:000002F2 00000000  1000        0 759243 2 ffff89bb6d885080 20 4 11 10 <span class="nt">-1</span>
+  15: DEC7A8C0:E168 5D39C834:01BB 01 00000000:00000000 02:000005E2 00000000  1000        0 565468 2 ffff89bbb8d0f780 57 4 30 10 <span class="nt">-1</span>
+  16: DEC7A8C0:D898 C5A06F3B:0050 08 00000000:00000001 02:00000734 00000000  1000        0 761352 2 ffff89ba989fa080 22 4 24 10 <span class="nt">-1</span>
+  17: DEC7A8C0:93B2 5B822879:1F92 01 00000000:00000000 02:00000226 00000000  1000        0 566332 2 ffff89bb05284780 22 4 28 10 <span class="nt">-1</span>
+</code></pre></div></div>
+<p>3、使用 libcap 抓包的方法，计算出每个TCP链接对应的网络流量后，然后反向通过步骤一的 pid &lt;-&gt; inode list 信息，最后计算出每个进程的网络流量。</p>
+
+<p>这么绕的计算方法，我觉得这个世间早以有牛人实现了，Google了一下，发现可以直接使用 libnethogs 这个库来计算每个进程的网络流量。</p>
+
+<p>具体的代码实现可以参考：https://github.com/manateelazycat/deepin-system-monitor/blob/master/src/network_traffic_filter.cpp</p>
+
+<p>nethogs这种方式只能计算出TCP链接的网络流量，无法计算UDP链接的网络流量，当然TCP流量分析已经满足了大部分应用的需求。</p>
+
+<h4 id="wine程序的网络流量">Wine程序的网络流量</h4>
+<p>上面说的方法适用于Linux原生应用的网络进城监控，但是无法直接通过监听Wine程序的网络流量，比如基于Wine运行的迅雷。
+当一个Wine程序需要进行网络上传和下载的时候， Wine会后台分配一个 wineserver.real 的进程来完成Wine程序网络代理的功能，wineserver.real 获得网络数据以后再传递给 Wine 程序。</p>
+
+<p>所以计算Wine程序的网络流量的步骤是：
+1、统计所有Wine程序运行时的环境变量，通过 GIO_LAUNCHED_DESKTOP_FILE 这个环境变量获得 Wine 程序的 desktop 文件路径；
+2、统计所有 wineserver.real 进程的环境变量，通过 GIO_LAUNCHED_DESKTOP_FILE 这个环境变量获得wineserver.real 进程 的 desktop 文件路径；
+3、分析系统的TCP链接后，找到匹配的 wineserver.real 的pid;
+4、通过 wineserver.real 匹配的 desktop 文件找到对应的 Wine 程序的 pid;
+5、最后，用 wineserver.real 进程的网络流量数据替换 Wine 程序的网络流量，并清空 wineserver.real 进程的网络流量；</p>
+
+<p>这样用户就可以在系统监视器看到Wine程序的网络流量了，如下图所示：</p>
+
+<p><img src="http://localhost:4000/pics/deepin-system-monitor/deepin-system-monitor-4.png" alt="" /></p>
+
+<p>代码参考实现：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getDesktopFileFromName</span><span class="p">(</span><span class="kt">int</span> <span class="n">pid</span><span class="p">,</span> <span class="n">QString</span> <span class="n">procName</span><span class="p">,</span> <span class="n">QString</span> <span class="n">cmdline</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">desktopfileMaps</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">cmdline</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">desktopfileMaps</span><span class="p">[</span><span class="n">cmdline</span><span class="p">].</span><span class="n">toStdString</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// Need found desktop file from process environment, if process is wine program.</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">cmdline</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">"c:</span><span class="se">\\</span><span class="s">"</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">QString</span> <span class="n">gioDesktopFile</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">::</span><span class="n">getProcessEnvironmentVariable</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="s">"GIO_LAUNCHED_DESKTOP_FILE"</span><span class="p">);</span>
+
+                <span class="k">return</span> <span class="n">gioDesktopFile</span><span class="p">.</span><span class="n">toStdString</span><span class="p">();</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">QDirIterator</span> <span class="n">dir</span><span class="p">(</span><span class="s">"/usr/share/applications"</span><span class="p">,</span> <span class="n">QDirIterator</span><span class="o">::</span><span class="n">Subdirectories</span><span class="p">);</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">desktopFile</span><span class="p">;</span>
+
+                <span class="c1">// Convert to lower characters.</span>
+                <span class="n">QString</span> <span class="n">procname</span> <span class="o">=</span> <span class="n">procName</span><span class="p">.</span><span class="n">toLower</span><span class="p">();</span>
+
+                <span class="c1">// Replace "_" instead "-", avoid some applications desktop file can't found, such as, sublime text.</span>
+                <span class="n">procname</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"_"</span><span class="p">,</span> <span class="s">"-"</span><span class="p">);</span>
+
+                <span class="c1">// Concat desktop file.</span>
+                <span class="n">QString</span> <span class="n">processFilename</span> <span class="o">=</span> <span class="n">procname</span> <span class="o">+</span> <span class="s">".desktop"</span><span class="p">;</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">GUI_BLACKLIST_MAP</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">procname</span><span class="p">)</span> <span class="o">==</span> <span class="n">GUI_BLACKLIST_MAP</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+                    <span class="k">while</span><span class="p">(</span><span class="n">dir</span><span class="p">.</span><span class="n">hasNext</span><span class="p">())</span> <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">dir</span><span class="p">.</span><span class="n">fileInfo</span><span class="p">().</span><span class="n">suffix</span><span class="p">()</span> <span class="o">==</span> <span class="s">"desktop"</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="n">dir</span><span class="p">.</span><span class="n">fileName</span><span class="p">().</span><span class="n">toLower</span><span class="p">().</span><span class="n">contains</span><span class="p">(</span><span class="n">processFilename</span><span class="p">))</span> <span class="p">{</span>
+                                <span class="n">desktopFile</span> <span class="o">=</span> <span class="n">dir</span><span class="p">.</span><span class="n">filePath</span><span class="p">().</span><span class="n">toStdString</span><span class="p">();</span>
+                                <span class="k">break</span><span class="p">;</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+                        <span class="n">dir</span><span class="p">.</span><span class="n">next</span><span class="p">();</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="k">return</span> <span class="n">desktopFile</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="n">wineApplicationDesktopMaps</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">wineServerDesktopMaps</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">i</span><span class="o">:</span><span class="n">processes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">pid</span> <span class="o">=</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">i</span><span class="p">.</span><span class="n">second</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">tid</span><span class="p">;</span>
+        <span class="n">QString</span> <span class="n">cmdline</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">::</span><span class="n">getProcessCmdline</span><span class="p">(</span><span class="n">pid</span><span class="p">);</span>
+        <span class="kt">bool</span> <span class="n">isWineProcess</span> <span class="o">=</span> <span class="n">cmdline</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">"c:</span><span class="se">\\</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">QString</span> <span class="n">name</span> <span class="o">=</span> <span class="n">getProcessName</span><span class="p">(</span><span class="o">&amp;</span><span class="n">i</span><span class="p">.</span><span class="n">second</span><span class="p">,</span> <span class="n">cmdline</span><span class="p">);</span>
+        <span class="n">QString</span> <span class="n">user</span> <span class="o">=</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">i</span><span class="p">.</span><span class="n">second</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">euser</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">cpu</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">processCpuPercents</span><span class="p">)[</span><span class="n">pid</span><span class="p">];</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">desktopFile</span> <span class="o">=</span> <span class="n">getDesktopFileFromName</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cmdline</span><span class="p">);</span>
+        <span class="n">QString</span> <span class="n">title</span> <span class="o">=</span> <span class="n">findWindowTitle</span><span class="o">-&gt;</span><span class="n">getWindowTitle</span><span class="p">(</span><span class="n">pid</span><span class="p">);</span>
+
+        <span class="kt">bool</span> <span class="n">isGui</span> <span class="o">=</span> <span class="p">(</span><span class="n">title</span> <span class="o">!=</span> <span class="s">""</span><span class="p">);</span>
+
+        <span class="c1">// Record wine application and wineserver.real desktop file.</span>
+        <span class="c1">// We need transfer wineserver.real network traffic to the corresponding wine program.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="s">"wineserver.real"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Insert pid&lt;-&gt;desktopFile to map to search in all network process list.</span>
+            <span class="n">QString</span> <span class="n">gioDesktopFile</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">::</span><span class="n">getProcessEnvironmentVariable</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="s">"GIO_LAUNCHED_DESKTOP_FILE"</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">gioDesktopFile</span> <span class="o">!=</span> <span class="s">""</span><span class="p">)</span> <span class="p">{</span>
+                <span class="p">(</span><span class="o">*</span><span class="n">wineServerDesktopMaps</span><span class="p">)[</span><span class="n">pid</span><span class="p">]</span> <span class="o">=</span> <span class="n">gioDesktopFile</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// Insert desktopFile&lt;-&gt;pid to map to search in all network process list.</span>
+            <span class="c1">// If title is empty, it's just a wine program, but not wine GUI window.</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">isWineProcess</span> <span class="o">&amp;&amp;</span> <span class="n">title</span> <span class="o">!=</span> <span class="s">""</span><span class="p">)</span> <span class="p">{</span>
+                <span class="p">(</span><span class="o">*</span><span class="n">wineApplicationDesktopMaps</span><span class="p">)[</span><span class="n">QString</span><span class="o">::</span><span class="n">fromStdString</span><span class="p">(</span><span class="n">desktopFile</span><span class="p">)]</span> <span class="o">=</span> <span class="n">pid</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">isGui</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">guiProcessNumber</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">systemProcessNumber</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kt">bool</span> <span class="n">appendItem</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">filterType</span> <span class="o">==</span> <span class="n">OnlyGUI</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">appendItem</span> <span class="o">=</span> <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="n">currentUsername</span> <span class="o">&amp;&amp;</span> <span class="n">isGui</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">filterType</span> <span class="o">==</span> <span class="n">OnlyMe</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">appendItem</span> <span class="o">=</span> <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="n">currentUsername</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">filterType</span> <span class="o">==</span> <span class="n">AllProcess</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">appendItem</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">appendItem</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">title</span> <span class="o">==</span> <span class="s">""</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">isWineProcess</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// If wine process's window title is blank, it's not GUI window process.</span>
+                    <span class="c1">// Title use process name instead.</span>
+                    <span class="n">title</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">title</span> <span class="o">=</span> <span class="n">getDisplayNameFromName</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">desktopFile</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="n">QString</span> <span class="n">displayName</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">filterType</span> <span class="o">==</span> <span class="n">AllProcess</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">displayName</span> <span class="o">=</span> <span class="n">QString</span><span class="p">(</span><span class="s">"[%1] %2"</span><span class="p">).</span><span class="n">arg</span><span class="p">(</span><span class="n">user</span><span class="p">).</span><span class="n">arg</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">displayName</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="kt">long</span> <span class="n">memory</span> <span class="o">=</span> <span class="p">((</span><span class="o">&amp;</span><span class="n">i</span><span class="p">.</span><span class="n">second</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">resident</span> <span class="o">-</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">i</span><span class="p">.</span><span class="n">second</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">share</span><span class="p">)</span> <span class="o">*</span> <span class="n">sysconf</span><span class="p">(</span><span class="n">_SC_PAGESIZE</span><span class="p">);</span>
+
+            <span class="n">QPixmap</span> <span class="n">icon</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">desktopFile</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">icon</span> <span class="o">=</span> <span class="n">findWindowTitle</span><span class="o">-&gt;</span><span class="n">getWindowIcon</span><span class="p">(</span><span class="n">findWindowTitle</span><span class="o">-&gt;</span><span class="n">getWindow</span><span class="p">(</span><span class="n">pid</span><span class="p">),</span> <span class="mi">24</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">icon</span> <span class="o">=</span> <span class="n">getDesktopFileIcon</span><span class="p">(</span><span class="n">desktopFile</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="n">ProcessItem</span> <span class="o">*</span><span class="n">item</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProcessItem</span><span class="p">(</span><span class="n">icon</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">displayName</span><span class="p">,</span> <span class="n">cpu</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">i</span><span class="p">.</span><span class="n">second</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">state</span><span class="p">);</span>
+            <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// Fill GUI processes information for continue merge action.</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">filterType</span> <span class="o">==</span> <span class="n">OnlyGUI</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">childInfoMap</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">pid</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="kt">long</span> <span class="n">memory</span> <span class="o">=</span> <span class="p">((</span><span class="o">&amp;</span><span class="n">i</span><span class="p">.</span><span class="n">second</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">resident</span> <span class="o">-</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">i</span><span class="p">.</span><span class="n">second</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">share</span><span class="p">)</span> <span class="o">*</span> <span class="n">sysconf</span><span class="p">(</span><span class="n">_SC_PAGESIZE</span><span class="p">);</span>
+                    <span class="n">childInfoMap</span><span class="p">[</span><span class="n">pid</span><span class="p">].</span><span class="n">cpu</span> <span class="o">=</span> <span class="n">cpu</span><span class="p">;</span>
+                    <span class="n">childInfoMap</span><span class="p">[</span><span class="n">pid</span><span class="p">].</span><span class="n">memory</span> <span class="o">=</span> <span class="n">memory</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Transfer wineserver.real network traffic to the corresponding wine program.</span>
+    <span class="n">QMap</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">NetworkStatus</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">networkStatusSnapshot</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">networkStatusSnapshot</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">wineServerDesktopMaps</span><span class="o">-&gt;</span><span class="n">contains</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">key</span><span class="p">()))</span> <span class="p">{</span>
+            <span class="n">QString</span> <span class="n">wineDesktopFile</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">wineServerDesktopMaps</span><span class="p">)[</span><span class="n">i</span><span class="p">.</span><span class="n">key</span><span class="p">()];</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">wineApplicationDesktopMaps</span><span class="o">-&gt;</span><span class="n">contains</span><span class="p">(</span><span class="n">wineDesktopFile</span><span class="p">))</span> <span class="p">{</span>
+                <span class="c1">// Transfer wineserver.real network traffic to the corresponding wine program.</span>
+                <span class="kt">int</span> <span class="n">wineApplicationPid</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">wineApplicationDesktopMaps</span><span class="p">)[</span><span class="n">wineDesktopFile</span><span class="p">];</span>
+                <span class="n">networkStatusSnapshot</span><span class="p">[</span><span class="n">wineApplicationPid</span><span class="p">]</span> <span class="o">=</span> <span class="n">networkStatusSnapshot</span><span class="p">[</span><span class="n">i</span><span class="p">.</span><span class="n">key</span><span class="p">()];</span>
+
+                <span class="c1">// Reset wineserver network status to zero.</span>
+                <span class="n">NetworkStatus</span> <span class="n">networkStatus</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+                <span class="n">networkStatusSnapshot</span><span class="p">[</span><span class="n">i</span><span class="p">.</span><span class="n">key</span><span class="p">()]</span> <span class="o">=</span> <span class="n">networkStatus</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="找到进程对应的名字">找到进程对应的名字</h4>
+<p>主要的名字主要有三种形式：图形窗口的标题、Desktop文件对应的本地化名称和最后的命令行名称。</p>
+
+<p>图形窗口的标题的步骤是：
+1、通过XCB分析 _NET_CLIENT_LIST_STACKING 数据列出所有图形窗口的XID
+2、通过XCB分析 _NET_WM_PID 得出每个窗口对应的 pid
+3、然后对比图形窗口的 pid list 和 process pid list, 找到所有图形窗口的 pid list
+4、最后通过XCB分析 xid 对应的 _NET_WM_NAME 来查找图形窗口的标题</p>
+
+<p>具体的代码实现参考：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QList</span><span class="o">&lt;</span><span class="n">xcb_window_t</span><span class="o">&gt;</span> <span class="n">WindowManager</span><span class="o">::</span><span class="n">getWindows</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">QList</span><span class="o">&lt;</span><span class="n">xcb_window_t</span><span class="o">&gt;</span> <span class="n">windows</span><span class="p">;</span>
+    <span class="n">xcb_get_property_reply_t</span> <span class="o">*</span><span class="n">listReply</span> <span class="o">=</span> <span class="n">getProperty</span><span class="p">(</span><span class="n">rootWindow</span><span class="p">,</span> <span class="s">"_NET_CLIENT_LIST_STACKING"</span><span class="p">,</span> <span class="n">XCB_ATOM_WINDOW</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">listReply</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">xcb_window_t</span> <span class="o">*</span><span class="n">windowList</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">xcb_window_t</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">xcb_get_property_value</span><span class="p">(</span><span class="n">listReply</span><span class="p">));</span>
+        <span class="kt">int</span> <span class="n">windowListLength</span> <span class="o">=</span> <span class="n">listReply</span><span class="o">-&gt;</span><span class="n">length</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">windowListLength</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">xcb_window_t</span> <span class="n">window</span> <span class="o">=</span> <span class="n">windowList</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+            <span class="n">foreach</span><span class="p">(</span><span class="n">QString</span> <span class="n">type</span><span class="p">,</span> <span class="n">getWindowTypes</span><span class="p">(</span><span class="n">window</span><span class="p">))</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">type</span> <span class="o">==</span> <span class="s">"_NET_WM_WINDOW_TYPE_NORMAL"</span> <span class="o">||</span>
+                    <span class="n">type</span> <span class="o">==</span> <span class="s">"_NET_WM_WINDOW_TYPE_DIALOG"</span>
+                    <span class="p">)</span> <span class="p">{</span>
+                    <span class="kt">bool</span> <span class="n">needAppend</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+                    <span class="n">QStringList</span> <span class="n">states</span> <span class="o">=</span> <span class="n">getWindowStates</span><span class="p">(</span><span class="n">window</span><span class="p">);</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">states</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span>
+                        <span class="p">(</span><span class="o">!</span><span class="n">states</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">"_NET_WM_STATE_HIDDEN"</span><span class="p">)))</span> <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">getWindowWorkspace</span><span class="p">(</span><span class="n">window</span><span class="p">)</span> <span class="o">==</span> <span class="n">getCurrentWorkspace</span><span class="p">(</span><span class="n">rootWindow</span><span class="p">))</span> <span class="p">{</span>
+                            <span class="n">needAppend</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+
+                    <span class="k">if</span> <span class="p">(</span><span class="n">needAppend</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">windows</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">window</span><span class="p">);</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">free</span><span class="p">(</span><span class="n">listReply</span><span class="p">);</span>
+
+        <span class="c1">// We need re-sort windows list from up to bottom,</span>
+        <span class="c1">// to make compare cursor with window area from up to bottom.</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">reverse</span><span class="p">(</span><span class="n">windows</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">windows</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+
+        <span class="c1">// Add desktop window.</span>
+        <span class="n">windows</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">rootWindow</span><span class="p">);</span>
+
+        <span class="c1">// Just use for debug.</span>
+        <span class="c1">// foreach (auto window, windows) {</span>
+        <span class="c1">//     qDebug() &lt;&lt; getWindowName(window);</span>
+        <span class="c1">// }</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">windows</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">WindowManager</span><span class="o">::</span><span class="n">getWindowPid</span><span class="p">(</span><span class="n">xcb_window_t</span> <span class="n">window</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">xcb_get_property_reply_t</span> <span class="o">*</span><span class="n">reply</span> <span class="o">=</span> <span class="n">getProperty</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="s">"_NET_WM_PID"</span><span class="p">,</span> <span class="n">XCB_ATOM_CARDINAL</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">pid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">reply</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">pid</span> <span class="o">=</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">xcb_get_property_value</span><span class="p">(</span><span class="n">reply</span><span class="p">));</span>
+
+        <span class="n">free</span><span class="p">(</span><span class="n">reply</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">pid</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">QString</span> <span class="n">WindowManager</span><span class="o">::</span><span class="n">getWindowName</span><span class="p">(</span><span class="n">xcb_window_t</span> <span class="n">window</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">window</span> <span class="o">==</span> <span class="n">rootWindow</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">tr</span><span class="p">(</span><span class="s">"Desktop"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">xcb_get_property_reply_t</span> <span class="o">*</span><span class="n">reply</span> <span class="o">=</span> <span class="n">getProperty</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="s">"_NET_WM_NAME"</span><span class="p">,</span> <span class="n">getAtom</span><span class="p">(</span><span class="s">"UTF8_STRING"</span><span class="p">));</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">reply</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">QString</span> <span class="n">result</span> <span class="o">=</span> <span class="n">QString</span><span class="o">::</span><span class="n">fromUtf8</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">xcb_get_property_value</span><span class="p">(</span><span class="n">reply</span><span class="p">)),</span> <span class="n">xcb_get_property_value_length</span><span class="p">(</span><span class="n">reply</span><span class="p">));</span>
+
+            <span class="n">free</span><span class="p">(</span><span class="n">reply</span><span class="p">);</span>
+
+            <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">QString</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>得到Desktop对应的名称原理：
+1、通过读取 /proc/pid/cmdline 得到进程对应的启动命令行
+2、提取 cmdline 第一个参数得到启动命令
+3、通过启动命令在 /usr/share/applications 目录下查找对应的 *.desktop 文件
+4、分析文件的 Name[locale] 字符串，得到本地化的名字， locale 在中文表示 zh_CN</p>
+
+<p>具体的代码实现参考：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QString</span> <span class="nf">getProcessCmdline</span><span class="p">(</span><span class="n">pid_t</span> <span class="n">pid</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">temp</span><span class="p">;</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">fstream</span> <span class="n">fs</span><span class="p">;</span>
+            <span class="n">fs</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"/proc/"</span><span class="o">+</span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">((</span><span class="kt">long</span><span class="p">)</span><span class="n">pid</span><span class="p">)</span><span class="o">+</span><span class="s">"/cmdline"</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">fstream</span><span class="o">::</span><span class="n">in</span><span class="p">);</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span><span class="n">temp</span><span class="p">);</span>
+            <span class="n">fs</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ifstream</span><span class="o">::</span><span class="n">failure</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s">"FAILED TO READ PROC"</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// change \0 to ' '</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">replace</span><span class="p">(</span><span class="n">temp</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">temp</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="sc">'\0'</span><span class="p">,</span><span class="sc">' '</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">temp</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">QString</span><span class="o">::</span><span class="n">fromStdString</span><span class="p">(</span><span class="n">temp</span><span class="p">).</span><span class="n">trimmed</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="n">QString</span> <span class="nf">getProcessNameFromCmdLine</span><span class="p">(</span><span class="k">const</span> <span class="n">pid_t</span> <span class="n">pid</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">cmdline</span> <span class="o">=</span> <span class="n">getProcessCmdline</span><span class="p">(</span><span class="n">pid</span><span class="p">).</span><span class="n">toStdString</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">cmdline</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Maintain linux paths.</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">replace</span><span class="p">(</span><span class="n">cmdline</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">cmdline</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="sc">'\\'</span><span class="p">,</span><span class="sc">'/'</span><span class="p">);</span>
+
+        <span class="c1">// Get cmdline arguments and first argument name.</span>
+        <span class="k">auto</span> <span class="n">args</span> <span class="o">=</span> <span class="n">explode</span><span class="p">(</span><span class="n">cmdline</span><span class="p">,</span> <span class="sc">' '</span><span class="p">);</span>
+        <span class="n">QString</span> <span class="n">name</span> <span class="o">=</span> <span class="n">QFileInfo</span><span class="p">(</span><span class="n">QString</span><span class="o">::</span><span class="n">fromStdString</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])).</span><span class="n">fileName</span><span class="p">();</span>
+
+        <span class="c1">// Get first argument that start with '/' if first argument is script program, such as 'python'.</span>
+        <span class="k">auto</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">SCRIPT_PROGRAM_MAP</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pos</span> <span class="o">!=</span> <span class="n">SCRIPT_PROGRAM_MAP</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">QString</span> <span class="n">argument</span> <span class="o">=</span> <span class="n">QString</span><span class="o">::</span><span class="n">fromStdString</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+                <span class="c1">// Return first argument that start with '/'.</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">argument</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">"/"</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="n">QFileInfo</span><span class="p">(</span><span class="n">argument</span><span class="p">).</span><span class="n">fileName</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">QString</span> <span class="n">argument</span> <span class="o">=</span> <span class="n">QString</span><span class="o">::</span><span class="n">fromStdString</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+
+                <span class="c1">// Return first argument that not start with '-'.</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">argument</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">"-"</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="n">QFileInfo</span><span class="p">(</span><span class="n">argument</span><span class="p">).</span><span class="n">fileName</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="n">QString</span> <span class="nf">getDisplayNameFromName</span><span class="p">(</span><span class="n">QString</span> <span class="n">procName</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">desktopFile</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">displayProcessName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">QString</span> <span class="n">procname</span> <span class="o">=</span> <span class="n">procName</span><span class="p">.</span><span class="n">toLower</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">processDescriptions</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">procname</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">displayProcessName</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">QString</span><span class="p">(</span><span class="s">"%1    ( %2 )"</span><span class="p">).</span><span class="n">arg</span><span class="p">(</span><span class="n">processDescriptions</span><span class="p">[</span><span class="n">procname</span><span class="p">],</span> <span class="n">procName</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">processDescriptions</span><span class="p">[</span><span class="n">procname</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">desktopFile</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">procName</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">in</span><span class="p">;</span>
+        <span class="n">in</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">desktopFile</span><span class="p">);</span>
+        <span class="n">QString</span> <span class="n">displayName</span> <span class="o">=</span> <span class="n">procName</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">in</span><span class="p">.</span><span class="n">eof</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">line</span><span class="p">;</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">in</span><span class="p">,</span><span class="n">line</span><span class="p">);</span>
+
+            <span class="n">QString</span> <span class="n">lineContent</span> <span class="o">=</span> <span class="n">QString</span><span class="o">::</span><span class="n">fromStdString</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+
+            <span class="n">QString</span> <span class="n">localNameFlag</span> <span class="o">=</span> <span class="n">QString</span><span class="p">(</span><span class="s">"Name[%1]="</span><span class="p">).</span><span class="n">arg</span><span class="p">(</span><span class="n">QLocale</span><span class="o">::</span><span class="n">system</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
+            <span class="n">QString</span> <span class="n">nameFlag</span> <span class="o">=</span> <span class="s">"Name="</span><span class="p">;</span>
+            <span class="n">QString</span> <span class="n">genericNameFlag</span> <span class="o">=</span> <span class="n">QString</span><span class="p">(</span><span class="s">"GenericName[%1]="</span><span class="p">).</span><span class="n">arg</span><span class="p">(</span><span class="n">QLocale</span><span class="o">::</span><span class="n">system</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">lineContent</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="n">localNameFlag</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">displayName</span> <span class="o">=</span> <span class="n">lineContent</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">localNameFlag</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">lineContent</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="n">genericNameFlag</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">displayName</span> <span class="o">=</span> <span class="n">lineContent</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">genericNameFlag</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">lineContent</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="n">nameFlag</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">displayName</span> <span class="o">=</span> <span class="n">lineContent</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nameFlag</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">in</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="n">displayName</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>第三种进程名的方式已经在函数 getProcessNameFromCmdLine 的代码实现中体现了。</p>
+
+<h4 id="找到进程二进制文件所在位置">找到进程二进制文件所在位置</h4>
+<p>进程管理中除了查看进程的状态，对进程进行简单的结束/暂停管理操作以外，最重要的附加功能就是，我们要知道这个软件到底是哪个命令启动的，这个命令所在的目录，这样对于我们彻底了解进程背后的软件非常有帮助。</p>
+
+<p>深度系统监视器实现了一个 ”查找命令所在位置“ 的右键功能，这个功能的实现分为两种情况：
+1、Linux原生应用进程
+2、Wine进程</p>
+
+<p>Linux原生应用进程查找二进制的步骤：
+1、读取 /proc/pid/cmdline 得到命令行参数
+2、获取 cmdline 第一个参数，即命令行路径
+3、通过 which 命令来查询命令行的绝对路径</p>
+
+<p>Wine进程查找二进制的步骤：
+1、读取 /proc/pid/cmdline 得到命令行参数，一般是 c:\xxxxxxx\xxxx.exe 的Windows路径
+2、转换 Windows 路径为： drive_c/xxxxxxx/xxx.exe 的Linux相对路径
+3、通过读取 /proc/pid/environ 路径，找到进程的环境变量列表
+4、进一步找到 WINEPREFIX 对应的值，一般是 ~/.deepinwine/xxx 的软件安装目录形式
+5、最后链接软件安装目录+相对路径的形式，得到Wine进程启动命令的绝对路径，一般是 ~/.deepinwine/xxx/drive_c/xxx/xxx.exe的形式</p>
+
+<p>具体代码参考实现：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">ProcessManager</span><span class="o">::</span><span class="n">openProcessDirectory</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">pid</span> <span class="o">:</span> <span class="o">*</span><span class="n">actionPids</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">QString</span> <span class="n">cmdline</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">::</span><span class="n">getProcessCmdline</span><span class="p">(</span><span class="n">pid</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">cmdline</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Found wine program location if cmdline starts with c://.</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">cmdline</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">"c:</span><span class="se">\\</span><span class="s">"</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">QString</span> <span class="n">winePrefix</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">::</span><span class="n">getProcessEnvironmentVariable</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="s">"WINEPREFIX"</span><span class="p">);</span>
+                <span class="n">cmdline</span> <span class="o">=</span> <span class="n">cmdline</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">"</span><span class="p">,</span> <span class="s">"/"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">"c:/"</span><span class="p">,</span> <span class="s">"/drive_c/"</span><span class="p">);</span>
+
+                <span class="n">DDesktopServices</span><span class="o">::</span><span class="n">showFileItem</span><span class="p">(</span><span class="n">winePrefix</span> <span class="o">+</span> <span class="n">cmdline</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="c1">// Else find program location through 'which' command.</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">cmdline</span> <span class="o">=</span> <span class="n">cmdline</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="n">QRegExp</span><span class="p">(</span><span class="s">"</span><span class="se">\\</span><span class="s">s"</span><span class="p">)).</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+                <span class="n">QProcess</span> <span class="n">whichProcess</span><span class="p">;</span>
+                <span class="n">QString</span> <span class="n">exec</span> <span class="o">=</span> <span class="s">"which"</span><span class="p">;</span>
+                <span class="n">QStringList</span> <span class="n">params</span><span class="p">;</span>
+                <span class="n">params</span> <span class="o">&lt;&lt;</span> <span class="n">cmdline</span><span class="p">;</span>
+                <span class="n">whichProcess</span><span class="p">.</span><span class="n">start</span><span class="p">(</span><span class="n">exec</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
+                <span class="n">whichProcess</span><span class="p">.</span><span class="n">waitForFinished</span><span class="p">();</span>
+                <span class="n">QString</span> <span class="n">output</span><span class="p">(</span><span class="n">whichProcess</span><span class="p">.</span><span class="n">readAllStandardOutput</span><span class="p">());</span>
+
+                <span class="n">QString</span> <span class="n">processPath</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+                <span class="n">DDesktopServices</span><span class="o">::</span><span class="n">showFileItem</span><span class="p">(</span><span class="n">processPath</span><span class="p">);</span>
+            <span class="p">}</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">actionPids</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">QString</span> <span class="n">getProcessEnvironmentVariable</span><span class="p">(</span><span class="n">pid_t</span> <span class="n">pid</span><span class="p">,</span> <span class="n">QString</span> <span class="n">environmentName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">temp</span><span class="p">;</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">fstream</span> <span class="n">fs</span><span class="p">;</span>
+            <span class="n">fs</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"/proc/"</span><span class="o">+</span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">((</span><span class="kt">long</span><span class="p">)</span><span class="n">pid</span><span class="p">)</span><span class="o">+</span><span class="s">"/environ"</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">fstream</span><span class="o">::</span><span class="n">in</span><span class="p">);</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span><span class="n">temp</span><span class="p">);</span>
+            <span class="n">fs</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ifstream</span><span class="o">::</span><span class="n">failure</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s">"FAILED TO READ PROC"</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// change \0 to ' '</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">replace</span><span class="p">(</span><span class="n">temp</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">temp</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="sc">'\0'</span><span class="p">,</span><span class="sc">'\n'</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">temp</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">foreach</span> <span class="p">(</span><span class="k">auto</span> <span class="n">environmentVariable</span><span class="p">,</span> <span class="n">QString</span><span class="o">::</span><span class="n">fromStdString</span><span class="p">(</span><span class="n">temp</span><span class="p">).</span><span class="n">trimmed</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">environmentVariable</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="n">environmentName</span><span class="p">))</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">environmentVariable</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">QString</span><span class="p">(</span><span class="s">"%1="</span><span class="p">).</span><span class="n">arg</span><span class="p">(</span><span class="n">environmentName</span><span class="p">).</span><span class="n">length</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="用setcap替换setuid的方式给予读取系统目录的权限">用setcap替换setuid的方式给予读取系统目录的权限</h4>
+<p>上面讲解了深度系统监视器的核心模块的原理和代码参考实现，我们会发现大部分都要读取系统目录 /proc, /proc这个目录的大部分内容只有root用户才有权限读取。</p>
+
+<p>很多初学者喜欢用setuid的方式直接赋予二进制root权限，但是这样非常危险，会造成图形前端获得过大的权限，从而产生安全漏洞。</p>
+
+<p>Linux内核针对这种情况有更好的实现方式，用 setcap 给予二进制特定的权限，保证二进制的特殊权限在最小的范围中，比如在深度系统监视器中就用命令：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>setcap cap_kill,cap_net_raw,cap_dac_read_search,cap_sys_ptrace+ep ./deepin-system-monitor
+</code></pre></div></div>
+
+<p>来给予进程相应的能力，比如：</p>
+<ul>
+  <li>cap_net_raw 对应网络文件读取权限</li>
+  <li>cap_dac_read_search 对应文件读取检查权限</li>
+  <li>cap_sys_ptrace 对应进程内存信息读取权限
+这样，在保证二进制有对应读取权限的同时，又保证了二进制最小化的权限范围，最大化的保证了应用和系统的安全。</li>
+</ul>
+
+<p>最后，深度系统监视器整个项目都遵守GPLv3许可证协议，欢迎各位大神贡献代码： <a href="https://github.com/manateelazycat/deepin-system-monitor">Github</a></p>
+:ET

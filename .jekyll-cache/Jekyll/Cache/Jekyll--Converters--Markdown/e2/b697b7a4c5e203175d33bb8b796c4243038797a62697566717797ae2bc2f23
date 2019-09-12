@@ -1,0 +1,9 @@
+I"�<h3 id="怎么设计让多后端模糊搜索性能达到极致">怎么设计让多后端模糊搜索性能达到极致？</h3>
+<p>前天发布了<a href="https://manateelazycat.github.io/emacs/2019/07/21/snails.html">Snails</a>这个新型的模糊搜索框架。
+Snails的这个项目的主要目的是：</p>
+<ol>
+  <li>交互简单易用</li>
+  <li>5分钟编写一个新的插件</li>
+  <li>搜索速度快</li>
+</ol>
+:ET

@@ -1,0 +1,309 @@
+I"�,<p>我在 2008 年开发了 thing-edit.el , 虽然这个插件平常没啥存在感, 但是几乎是天天都在用的插件.</p>
+
+<p>thing-edit.el 简单来说, 就是不用移动光标, 会自动把光标处的各种语法对象 (表达式、邮件地址、文件名、URL、单词、符号、函数定义、列表、句子、空格、段落、行、注释、括号内容等)进行识别并操作, 比如复制, 剪切或者粘贴 kill-ring 内容.</p>
+
+<p>thing-edit.el 相对于其他复制插件的优势在于你完全不用移动光标即可智能的感知语法对象并进行快速的操作. 等操作完成以后可以继续从当前的位置继续编程.</p>
+
+<p><img src="http://localhost:4000/pics/thing-edit/thing-edit.gif" alt="thing-edit.gif" /></p>
+
+<h3 id="安装方法">安装方法</h3>
+<ol>
+  <li>下载 <a href="https://github.com/manateelazycat/thing-edit">thing-edit</a> 里面的 thing-edit.el 放到 ~/elisp 目录</li>
+  <li>把下面的配置加入到 ~/.emacs 中</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(add-to-list 'load-path (expand-file-name "~/elisp"))
+(require 'thing-edit)
+</code></pre></div></div>
+
+<h3 id="使用方法">使用方法</h3>
+<p>可以把你喜欢的按键绑定下面的命令:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">命令</th>
+      <th style="text-align: left">解释</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">thing-cut-sexp</td>
+      <td style="text-align: left">cut sexp around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-sexp</td>
+      <td style="text-align: left">copy sexp around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-sexp</td>
+      <td style="text-align: left">replace sexp around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-email</td>
+      <td style="text-align: left">cut email string around cursor</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-email</td>
+      <td style="text-align: left">copy email string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-email</td>
+      <td style="text-align: left">replace email string around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-filename</td>
+      <td style="text-align: left">cut filename string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-filename</td>
+      <td style="text-align: left">copy filename string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-filename</td>
+      <td style="text-align: left">replace filename string around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-url</td>
+      <td style="text-align: left">cut url string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-url</td>
+      <td style="text-align: left">copy url string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-url</td>
+      <td style="text-align: left">replace url string around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-word</td>
+      <td style="text-align: left">cut word string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-word</td>
+      <td style="text-align: left">copy word string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-word</td>
+      <td style="text-align: left">replace word string around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-symbol</td>
+      <td style="text-align: left">cut symbol string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-symbol</td>
+      <td style="text-align: left">copy symbol string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-symbol</td>
+      <td style="text-align: left">replace symbol string around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-defun</td>
+      <td style="text-align: left">cut function string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-defun</td>
+      <td style="text-align: left">copy function string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-defun</td>
+      <td style="text-align: left">replace function string around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-list</td>
+      <td style="text-align: left">cut list string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-list</td>
+      <td style="text-align: left">copy list string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-list</td>
+      <td style="text-align: left">replace list string around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-sentence</td>
+      <td style="text-align: left">cut sentence string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-sentence</td>
+      <td style="text-align: left">copy sentence string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-sentence</td>
+      <td style="text-align: left">replace sentence string around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-whitespace</td>
+      <td style="text-align: left">cut whitespace string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-whitespace</td>
+      <td style="text-align: left">copy whitespace string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-whitespace</td>
+      <td style="text-align: left">replace whitespace string around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-page</td>
+      <td style="text-align: left">cut page string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-page</td>
+      <td style="text-align: left">copy page string around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-page</td>
+      <td style="text-align: left">replace page string around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-line</td>
+      <td style="text-align: left">cut current line.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-line</td>
+      <td style="text-align: left">copy current line.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-line</td>
+      <td style="text-align: left">replace current line with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-to-line-end</td>
+      <td style="text-align: left">cut string to end of line.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-to-line-end</td>
+      <td style="text-align: left">copy string to end of line.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-to-line-end</td>
+      <td style="text-align: left">replace string to end of line with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-to-line-beginning</td>
+      <td style="text-align: left">cut string to beginning of line.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-to-line-beginning</td>
+      <td style="text-align: left">copy string to beginning of line.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-to-line-beginning</td>
+      <td style="text-align: left">replace string to beginning of line with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-comment</td>
+      <td style="text-align: left">cut comment.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-comment</td>
+      <td style="text-align: left">copy comment.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-comment</td>
+      <td style="text-align: left">replace comment with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-paragrap</td>
+      <td style="text-align: left">cut paragraph around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-paragrap</td>
+      <td style="text-align: left">copy paragraph around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-paragrap</td>
+      <td style="text-align: left">replace paragraph around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-cut-parentheses</td>
+      <td style="text-align: left">cut parentheses around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-copy-parentheses</td>
+      <td style="text-align: left">copy parentheses around cursor.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">thing-replace-parentheses</td>
+      <td style="text-align: left">replace parentheses around cursor with content of kill-ring.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="期待发pr">期待发PR</h4>
+<p>欢迎各位黑客大佬贡献新的补丁。</p>
+
+<p>谢谢 谢鹏 同学编写的 thing-replace-* 函数, 非常的好用.</p>
+:ET

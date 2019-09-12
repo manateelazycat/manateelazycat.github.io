@@ -1,4 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-30T06:43:44+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">读《当下的力量》</title><link href="http://localhost:4000/reading/2019/08/29/reading-living-in-the-moment.html" rel="alternate" type="text/html" title="读《当下的力量》" /><published>2019-08-29T00:00:00+08:00</published><updated>2019-08-29T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/08/29/reading-living-in-the-moment</id><content type="html" xml:base="http://localhost:4000/reading/2019/08/29/reading-living-in-the-moment.html">&lt;p&gt;花了几个月时间终于把朋友推荐的这本书《当下的力量》看完，如果从篇幅看这本书我两天就可以看完，但是朋友说我以前是用脑子在读书，而不是用心在读书。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-12T15:47:24+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">在Linux版的Emacs中使用RIME输入法</title><link href="http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux.html" rel="alternate" type="text/html" title="在Linux版的Emacs中使用RIME输入法" /><published>2019-09-12T00:00:00+08:00</published><updated>2019-09-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux.html">&lt;p&gt;之前写了一篇文章&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/24/use-rime-in-emacs.html&quot;&gt;«在Mac版的Emacs中使用RIME输入法»&lt;/a&gt;详细说明了Mac OS下怎么让Emacs使用RIME输入法。最近又折腾回我最喜欢的Linux，今天讲一下怎么在Linux下配置Emacs的RIME输入法。&lt;/p&gt;
+
+&lt;p&gt;其实大多数步骤都是类似的，而且Linux下还要简单点，只不过有一些小小的坑。&lt;/p&gt;
+
+&lt;h3 id=&quot;1-更新pyim和posframe到最新版&quot;&gt;1 更新pyim和posframe到最新版&lt;/h3&gt;
+&lt;p&gt;为了支持RIME输入法需要把 &lt;a href=&quot;https://github.com/tumashu/pyim&quot;&gt;pyim&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/tumashu/posframe&quot;&gt;posframe&lt;/a&gt;这两个库更新到最新，否则有可能会报posframe的错误&lt;/p&gt;
+
+&lt;h3 id=&quot;2-安装rime输入法&quot;&gt;2 安装RIME输入法&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; fcitx-im fcitx-configtool fcitx-rime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在 ~/.xprofile 文件中写入&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GTK_IM_MODULE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fcitx
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;QT_IM_MODULE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fcitx
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;XMODIFIERS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@im=fcitx&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;重新登录&lt;/p&gt;
+
+&lt;h3 id=&quot;3-安装librime&quot;&gt;3 安装librime&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; librime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-编译liberime&quot;&gt;4 编译liberime&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://gitlab.com/liberime/liberime.git &lt;span class=&quot;nt&quot;&gt;--depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;liberime
+make liberime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;上面的命令会在 liberime/build/ 目录下生成 liberime.so 动态库&lt;/p&gt;
+
+&lt;h3 id=&quot;5-配置pyim&quot;&gt;5 配置pyim&lt;/h3&gt;
+&lt;p&gt;拷贝 liberime.so 文件到 ~/.emacs.d/ 目录下，然后在 ~/.emacs 写下如下配置即可:&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;load-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cons&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-truename&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/.emacs.d/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;load-path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'pyim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'posframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'liberime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;default-input-method&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pyim&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-page-tooltip&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'posframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-page-length&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;liberime-start&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/usr/share/rime-data/&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-truename&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/.emacs.d/pyim/rime/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;liberime-select-schema&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;luna_pinyin_simp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-default-scheme&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'rime-quanpin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;6-增加rime候选词数量&quot;&gt;6 增加RIME候选词数量&lt;/h3&gt;
+
+&lt;p&gt;liberime默认只能获取5个后选词，用下面的方法可以增加RIME后端时的后选词数量。&lt;/p&gt;
+
+&lt;p&gt;创建 ~/.emacs.d/pyim/rime/default.custom.yaml 文件，内容如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;patch:
+     &lt;span class=&quot;s2&quot;&gt;&quot;menu/page_size&quot;&lt;/span&gt;: 100
+     &lt;span class=&quot;s2&quot;&gt;&quot;speller/auto_select&quot;&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+     &lt;span class=&quot;s2&quot;&gt;&quot;speller/auto_select_unique_candidate&quot;&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;区别&quot;&gt;区别&lt;/h2&gt;
+
+&lt;p&gt;Linux版的安装步骤总体比Mac要简单很多，下面是这两个系统的区别：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Linux下直接安装librime这个包就可以了，不需要Mac去手动编译 librime.1.dylib 这个库&lt;/li&gt;
+  &lt;li&gt;Linux下 liberime.so 这个动态库，直接 make 一下就好了，不需要像Mac那样那么麻烦&lt;/li&gt;
+  &lt;li&gt;Linux下 &lt;code class=&quot;highlighter-rouge&quot;&gt;liberime-start&lt;/code&gt; 函数的第一个路径是 &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/share/rime-data/&lt;/code&gt; , Mac下是 &lt;code class=&quot;highlighter-rouge&quot;&gt;/Library/Input Methods/Squirrel.app/Contents/SharedSupport&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;主要的坑在于 Emacs 27 执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;(liberime-start &quot;/usr/share/rime-data/&quot; (file-truename &quot;~/.emacs.d/pyim/rime/&quot;))&lt;/code&gt; 的时候会崩溃，切换回 Emacs 26.3 正式版以后问题就解决了，最开始不知道是这个原因，花了十几分钟研究，最后通过 gdb 定位问题。&lt;/p&gt;
+
+&lt;p&gt;现在Linux版的Emacs也可以愉快的用RIME来输入中文了。&lt;/p&gt;</content><author><name></name></author><summary type="html">之前写了一篇文章«在Mac版的Emacs中使用RIME输入法»详细说明了Mac OS下怎么让Emacs使用RIME输入法。最近又折腾回我最喜欢的Linux，今天讲一下怎么在Linux下配置Emacs的RIME输入法。</summary></entry><entry><title type="html">读《当下的力量》</title><link href="http://localhost:4000/reading/2019/08/29/reading-living-in-the-moment.html" rel="alternate" type="text/html" title="读《当下的力量》" /><published>2019-08-29T00:00:00+08:00</published><updated>2019-08-29T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/08/29/reading-living-in-the-moment</id><content type="html" xml:base="http://localhost:4000/reading/2019/08/29/reading-living-in-the-moment.html">&lt;p&gt;花了几个月时间终于把朋友推荐的这本书《当下的力量》看完，如果从篇幅看这本书我两天就可以看完，但是朋友说我以前是用脑子在读书，而不是用心在读书。&lt;/p&gt;
 
 &lt;p&gt;所以，这几个月，每天限制只看其中一段，用心去领悟这本书告诉我的很多道理，也解惑了我原来想不明白的很多事情。&lt;/p&gt;
 
@@ -624,7 +697,7 @@ make liberime
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;5-配置pyim&quot;&gt;5 配置pyim&lt;/h3&gt;
-&lt;p&gt;拷贝 librime.so 文件到 ~/.emacs.d/ 目录下，然后在 ~/.emacs 写下如下配置即可:&lt;/p&gt;
+&lt;p&gt;拷贝 liberime.so 文件到 ~/.emacs.d/ 目录下，然后在 ~/.emacs 写下如下配置即可:&lt;/p&gt;
 
 &lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;load-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cons&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-truename&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/.emacs.d/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;load-path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
@@ -878,72 +951,4 @@ Helm到目前为止都是Emacs下最强大的模糊搜索框架。&lt;/p&gt;
         &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;世界终于清静了，但是鉴于TabNine补全的爽快，还是建议大家多多去&lt;a href=&quot;https://tabnine.com/buy&quot;&gt;购买&lt;/a&gt;TabNine的收费版本, 支持一下作者。&lt;/p&gt;</content><author><name></name></author><summary type="html">前天推荐了非常好用的TabNine</summary></entry><entry><title type="html">TabNine 利用机器学习技术来补全项目代码</title><link href="http://localhost:4000/emacs/2019/07/17/tabnine.html" rel="alternate" type="text/html" title="TabNine 利用机器学习技术来补全项目代码" /><published>2019-07-17T00:00:00+08:00</published><updated>2019-07-17T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/17/tabnine</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/17/tabnine.html">&lt;p&gt;我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。&lt;/p&gt;
-
-&lt;p&gt;今天就来推荐一个让我惊讶的技术：TabNine&lt;/p&gt;
-
-&lt;p&gt;网上对 TabNine 的评价:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;TabNine是一种基于OpenAI的语言模型（GPT-2）来实现的智能代码补全技术。
-它支持23种编程语言、5种编辑器，使用简单，效果惊艳。
-不少使用过的网友说：TabNine是他们用过的最好的代码补全工具，这是属于程序员的杀手级应用。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;我记得最开始看到TabNine的时候是一个多月前，当时以为只是无脑AI新闻，并没有太认真去看待它，认为不过是一个噱头。但是从我短时间的体验来看，我改变了看法。&lt;/p&gt;
-
-&lt;h3 id=&quot;我对tabnine的评价&quot;&gt;我对TabNine的评价&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;TabNine通过很复杂的技术来学习当前项目的源代码，
-通过研究程序员的编码习惯最终来预测接下来可能会键入的单词或长句。
-
-传统的代码补全主要是基于当前文件的抽象语法树来进行上下文语义分析，
-现在做的最好的技术就是LSP协议，这些传统的语法补全技术在补全对象的属性或者方法的时候很好用。
-
-但是TabNine完全基于一种更为开放的分析方式来实现代码补全，
-在它分析现有项目的源代码后，不管是补全模板、方法变量还是代码片段，
-TabNine会根据它自己的算法来进行智能排序, 给出它认为最佳的匹配结果。
-
-打个比方，TabNine在光标处线索不够的时候，它有点像个精神病人那样喃喃自语，
-但是一旦它预测准确以后，它可以补全非常一长串代码，
-这段代码虽然不是属性和方法名，但是一旦准确预测，
-你可以敲一下Tab键就完成当前行的代码编写。
-而且这种技术在越大的项目中，代码预测补全效果越好。
-
-整体的感觉，就像一个懂你的机器人在帮你找你自己的代码思想和代码片段，
-在必要的时候帮你敲很长很长的代码。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;说的很玄乎，举两个例子：&lt;/p&gt;
-
-&lt;h4 id=&quot;elisp代码补全&quot;&gt;Elisp代码补全&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tabnine/elisp.png&quot; alt=&quot;Elisp exampele&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;上面是我写的Emacs插件aweshell.el，当我敲击 &lt;code class=&quot;highlighter-rouge&quot;&gt;current-window&lt;/code&gt; 的时候，TabNine 的补全建议是：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;current-window (selected-window)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;current-window (selected-window)&lt;/code&gt; 不是一个正常的语法补全结构，
-但是当我敲 &lt;code class=&quot;highlighter-rouge&quot;&gt;current-window&lt;/code&gt; 这段代码的时候，脑袋里就是希望通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;(selected-window)&lt;/code&gt; 方法赋值结果给变量 &lt;code class=&quot;highlighter-rouge&quot;&gt;current-window&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;TabNine 在这个时候就让你很爽了，不管他的算法是怎么做的，这就是你想要的片段，Tab一下子就补全了。&lt;/p&gt;
-
-&lt;h4 id=&quot;javascript代码补全&quot;&gt;JavaScript代码补全&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/tabnine/js.png&quot; alt=&quot;JavaScript exampele&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;上面是一段JavaScript的项目代码，其中有一段 &lt;code class=&quot;highlighter-rouge&quot;&gt;machineDict[res.data[i].MachineId] = res.data[i].Name&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;很多时候，我们会通过编写库和函数的方式来抽象重复代码，但是真实的项目中，对于一些使用一两次的代码片段，往往没有必要写函数去过度包装。&lt;/p&gt;
-
-&lt;p&gt;所以当我在另外一个函数中写下 &lt;code class=&quot;highlighter-rouge&quot;&gt;machineDict[res.data[i].MachineId] = res.data[i]&lt;/code&gt; 然后敲击 . 的时候，TabNine 通过算法分析出，我很有可能是想写 &lt;code class=&quot;highlighter-rouge&quot;&gt;res.data[i].Name&lt;/code&gt; ， 那也正是我想要的。&lt;/p&gt;
-
-&lt;p&gt;注意这个例子中， Name 仅仅只是服务器返回的JSON结构体的一个属性值，从传统的抽象语法树补全技术看，&lt;code class=&quot;highlighter-rouge&quot;&gt;res.data[i]&lt;/code&gt; 仅仅就是临时变量，除非真实从服务器请求，否则基于属性和方法的技术来解析，根本就不知道 &lt;code class=&quot;highlighter-rouge&quot;&gt;res.data[i]&lt;/code&gt; 是什么类型的对象，更不用说代码补全了。&lt;/p&gt;
-
-&lt;p&gt;而TabNine的技术就是对传统语法补全技术的一种极好的补充，因为程序员每天大部分时间都是在重复自己以前的编程思想和代码片段，为什么不让机器来辅助人从重复的代码拷贝中解脱出来呢？&lt;/p&gt;
-
-&lt;h3 id=&quot;tabnine-emacs补全前端&quot;&gt;TabNine Emacs补全前端&lt;/h3&gt;
-&lt;p&gt;TabNine的Emacs插件在 &lt;a href=&quot;https://github.com/TommyX12/company-tabnine&quot;&gt;company-tabnine&lt;/a&gt; , 里面有详细的安装方法。&lt;/p&gt;
-
-&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-&lt;p&gt;从整体上看TabNine就是找各种token来暴力学习，所以性能的表现上比很多LSP服务器还要好，我在Emacs中使用TabNine补全，非常顺滑。&lt;/p&gt;
-
-&lt;p&gt;我希望有一天这种技术可以直接感知我的思想，这样我就不用动手了， 想一想代码就自动写完了，哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</summary></entry></feed>
+&lt;p&gt;世界终于清静了，但是鉴于TabNine补全的爽快，还是建议大家多多去&lt;a href=&quot;https://tabnine.com/buy&quot;&gt;购买&lt;/a&gt;TabNine的收费版本, 支持一下作者。&lt;/p&gt;</content><author><name></name></author><summary type="html">前天推荐了非常好用的TabNine</summary></entry></feed>
