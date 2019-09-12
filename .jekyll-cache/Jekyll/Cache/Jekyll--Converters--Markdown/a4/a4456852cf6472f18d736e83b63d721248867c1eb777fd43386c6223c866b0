@@ -1,0 +1,58 @@
+I"�<p>Mac下缺少强大的窗口管理器，而我讨厌使用鼠标低效率的切换应用，所以我使用HammerSpoon的<a href="https://github.com/manateelazycat/hammerspoon-config/blob/d741f22e8bfaa07930701cf9d6fef789693b4e3a/init.lua#L194">application.launchOrFocus</a>来实现打开或切换应用的功能：当一个应用没有打开的时候直接打开，如果一个应用已经打开了就切换到已经打开的窗口。</p>
+
+<p>最近切换回Linux的环境下，也想保持和Mac同样的使用习惯，避免在Linux和Mac切换时手指发懵。</p>
+
+<p>在Linux下实现这种功能就简单的多了，我们可以使用 wmctrl 来实现：</p>
+
+<ol>
+  <li>安装 wmctrl</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> wmctrl
+</code></pre></div></div>
+
+<ol>
+  <li>配置应用命令</li>
+</ol>
+
+<p>下面是我常用的一些命令：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Rails Path</th>
+      <th style="text-align: left">Controller action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">missions_path</td>
+      <td style="text-align: left">index</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">missions_path</td>
+      <td style="text-align: left">create</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">new_team_mission_path</td>
+      <td style="text-align: left">new</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">edit_mission_path</td>
+      <td style="text-align: left">edit</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">missions_path</td>
+      <td style="text-align: left">show</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">missions_path</td>
+      <td style="text-align: left">update</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">missions_path</td>
+      <td style="text-align: left">destroy</td>
+    </tr>
+  </tbody>
+</table>
+:ET
