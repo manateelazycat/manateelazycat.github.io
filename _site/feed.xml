@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-12T15:50:11+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">在Linux版的Emacs中使用RIME输入法</title><link href="http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux.html" rel="alternate" type="text/html" title="在Linux版的Emacs中使用RIME输入法" /><published>2019-09-12T00:00:00+08:00</published><updated>2019-09-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux.html">&lt;p&gt;之前写了一篇文章&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/24/use-rime-in-emacs.html&quot;&gt;«在Mac版的Emacs中使用RIME输入法»&lt;/a&gt;详细说明了Mac OS下怎么让Emacs使用RIME输入法。最近又折腾回我最喜欢的Linux，今天讲一下怎么在Linux下配置Emacs的RIME输入法。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-13T06:03:36+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Linux下实现打开或切换应用的功能</title><link href="http://localhost:4000/linux/2019/09/13/open-or-raise.html" rel="alternate" type="text/html" title="Linux下实现打开或切换应用的功能" /><published>2019-09-13T00:00:00+08:00</published><updated>2019-09-13T00:00:00+08:00</updated><id>http://localhost:4000/linux/2019/09/13/open-or-raise</id><content type="html" xml:base="http://localhost:4000/linux/2019/09/13/open-or-raise.html">&lt;p&gt;Mac下缺少强大的窗口管理器，而我讨厌使用鼠标低效率的切换应用，所以我使用HammerSpoon的&lt;a href=&quot;https://github.com/manateelazycat/hammerspoon-config/blob/d741f22e8bfaa07930701cf9d6fef789693b4e3a/init.lua#L194&quot;&gt;application.launchOrFocus&lt;/a&gt;来实现打开或切换应用的功能：当一个应用没有打开的时候直接打开，如果一个应用已经打开了就切换到已经打开的窗口。&lt;/p&gt;
+
+&lt;p&gt;最近切换回Linux的环境下，也想保持和Mac同样的使用习惯，避免在Linux和Mac切换时手指发懵。&lt;/p&gt;
+
+&lt;p&gt;在Linux下实现这种功能就简单的多了，我们可以使用 wmctrl 来实现：&lt;/p&gt;
+
+&lt;h3 id=&quot;安装-wmctrl&quot;&gt;安装 wmctrl&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; wmctrl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;原理&quot;&gt;原理&lt;/h3&gt;
+&lt;p&gt;然后使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a window_name || application_name&lt;/code&gt; 即可完成我们想要的功能&lt;/p&gt;
+
+&lt;p&gt;其中，&lt;code class=&quot;highlighter-rouge&quot;&gt;window_name&lt;/code&gt; 是窗口名字，&lt;code class=&quot;highlighter-rouge&quot;&gt;application_name&lt;/code&gt; 是应用的启动命令&lt;/p&gt;
+
+&lt;p&gt;wmctrl首先会根据我们提供的窗口名字尝试切换窗口，如果没有发现可以切换的窗口则调用启动命令来启动应用。&lt;/p&gt;
+
+&lt;h3 id=&quot;配置应用命令&quot;&gt;配置应用命令&lt;/h3&gt;
+
+&lt;p&gt;下面是我常用的一些命令：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Google Chrome: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a chrome || google-chrome-stable&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Emacs: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a emacs || emacs&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Deepin Terminal: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a deepin-terminal || deepin-terminal&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Netease Cloud Music: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a netease-cloud-music || netease-cloud-music&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;System Settings: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a systemsettings5 || systemsettings5&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That’s all, enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Mac下缺少强大的窗口管理器，而我讨厌使用鼠标低效率的切换应用，所以我使用HammerSpoon的application.launchOrFocus来实现打开或切换应用的功能：当一个应用没有打开的时候直接打开，如果一个应用已经打开了就切换到已经打开的窗口。</summary></entry><entry><title type="html">在Linux版的Emacs中使用RIME输入法</title><link href="http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux.html" rel="alternate" type="text/html" title="在Linux版的Emacs中使用RIME输入法" /><published>2019-09-12T00:00:00+08:00</published><updated>2019-09-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux.html">&lt;p&gt;之前写了一篇文章&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/24/use-rime-in-emacs.html&quot;&gt;«在Mac版的Emacs中使用RIME输入法»&lt;/a&gt;详细说明了Mac OS下怎么让Emacs使用RIME输入法。最近又折腾回我最喜欢的Linux，今天讲一下怎么在Linux下配置Emacs的RIME输入法。&lt;/p&gt;
 
 &lt;p&gt;其实大多数步骤都是类似的，而且Linux下还要简单点，只不过有一些小小的坑。&lt;/p&gt;
 
@@ -936,21 +966,4 @@ Helm到目前为止都是Emacs下最强大的模糊搜索框架。&lt;/p&gt;
 
 &lt;p&gt;如果你和我有同样的口味，欢迎试用。&lt;/p&gt;
 
-&lt;p&gt;如果你想玩一下Elisp，欢迎编写新的插件。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Anything, Helm, Ivy 十几年前和rubikitch、Thierry Volpiatto一起创建了Anything这个模糊搜索框架。</summary></entry><entry><title type="html">禁止TabNine不停的催我升级收费版本</title><link href="http://localhost:4000/emacs/2019/07/19/silent-tabnine.html" rel="alternate" type="text/html" title="禁止TabNine不停的催我升级收费版本" /><published>2019-07-19T00:00:00+08:00</published><updated>2019-07-19T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/19/silent-tabnine</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/19/silent-tabnine.html">&lt;p&gt;前天推荐了非常好用的&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/17/tabnine.html&quot;&gt;TabNine&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;这几天用下来，越用越喜欢，而且觉得免费版就够了, 但是TabNine在大型项目（超过400kb索引）的时候，会一直在 echo-area 催我升级收费版本，有点烦人。&lt;/p&gt;
-
-&lt;p&gt;研究了一下 company 的源代码，写了一段补丁，把下面的代码粘贴到 ~/.emacs 配置文件中， TabNine就不会在大项目中反复的提示你升级收费版本了：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;;; The free version of TabNine is good enough,&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; and below code is recommended that TabNine not always&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; prompt me to purchase a paid version in a large project.&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defadvice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-echo-show&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;around&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;disable-tabnine-upgrade-message&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;company-message-func&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ad-get-arg&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-message-func&lt;/span&gt;
-               &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;stringp&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;funcall&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-message-func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string-match&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;The free version of TabNine only indexes up to&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;funcall&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-message-func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;nv&quot;&gt;ad-do-it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;世界终于清静了，但是鉴于TabNine补全的爽快，还是建议大家多多去&lt;a href=&quot;https://tabnine.com/buy&quot;&gt;购买&lt;/a&gt;TabNine的收费版本, 支持一下作者。&lt;/p&gt;</content><author><name></name></author><summary type="html">前天推荐了非常好用的TabNine</summary></entry></feed>
+&lt;p&gt;如果你想玩一下Elisp，欢迎编写新的插件。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Anything, Helm, Ivy 十几年前和rubikitch、Thierry Volpiatto一起创建了Anything这个模糊搜索框架。</summary></entry></feed>
