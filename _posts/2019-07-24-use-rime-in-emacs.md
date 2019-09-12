@@ -109,3 +109,5 @@ patch:
 上面这么长一篇的文字都是我在Emacs下用pyim配合RIME后端来进行输入的，整个过程非常流畅，长句输入也非常非常的赞。
 
 终于不用在Emacs中使用外部输入法了，哈哈哈哈。
+
+Linux版的安装方法可以看我的另外一篇文章[<<在Linux版的Emacs中使用RIME输入法>>](https://manateelazycat.github.io/emacs/2019/09/12/make-rime-works-with-linux.html)
