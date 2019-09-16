@@ -32,5 +32,7 @@ wmctrl首先会根据我们提供的窗口名字尝试切换窗口，如果没�
 * Deepin Terminal: ```wmctrl -x -a deepin-terminal || deepin-terminal```
 * Netease Cloud Music: ```wmctrl -x -a netease-cloud-music || netease-cloud-music```
 * System Settings: ```wmctrl -x -a systemsettings5 || systemsettings5```
+* File manager: ```wmctrl -x -a dolphin || dolphin```
+* Calibre: ```wmctrl -x -a calibre-ebook-viewer || calibre```
 
 That's all, enjoy! ;)
