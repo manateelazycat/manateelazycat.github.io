@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-13T06:03:36+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Linux下实现打开或切换应用的功能</title><link href="http://localhost:4000/linux/2019/09/13/open-or-raise.html" rel="alternate" type="text/html" title="Linux下实现打开或切换应用的功能" /><published>2019-09-13T00:00:00+08:00</published><updated>2019-09-13T00:00:00+08:00</updated><id>http://localhost:4000/linux/2019/09/13/open-or-raise</id><content type="html" xml:base="http://localhost:4000/linux/2019/09/13/open-or-raise.html">&lt;p&gt;Mac下缺少强大的窗口管理器，而我讨厌使用鼠标低效率的切换应用，所以我使用HammerSpoon的&lt;a href=&quot;https://github.com/manateelazycat/hammerspoon-config/blob/d741f22e8bfaa07930701cf9d6fef789693b4e3a/init.lua#L194&quot;&gt;application.launchOrFocus&lt;/a&gt;来实现打开或切换应用的功能：当一个应用没有打开的时候直接打开，如果一个应用已经打开了就切换到已经打开的窗口。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-18T21:30:29+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Linux下实现打开或切换应用的功能</title><link href="http://localhost:4000/linux/2019/09/13/open-or-raise.html" rel="alternate" type="text/html" title="Linux下实现打开或切换应用的功能" /><published>2019-09-13T00:00:00+08:00</published><updated>2019-09-13T00:00:00+08:00</updated><id>http://localhost:4000/linux/2019/09/13/open-or-raise</id><content type="html" xml:base="http://localhost:4000/linux/2019/09/13/open-or-raise.html">&lt;p&gt;Mac下缺少强大的窗口管理器，而我讨厌使用鼠标低效率的切换应用，所以我使用HammerSpoon的&lt;a href=&quot;https://github.com/manateelazycat/hammerspoon-config/blob/d741f22e8bfaa07930701cf9d6fef789693b4e3a/init.lua#L194&quot;&gt;application.launchOrFocus&lt;/a&gt;来实现打开或切换应用的功能：当一个应用没有打开的时候直接打开，如果一个应用已经打开了就切换到已经打开的窗口。&lt;/p&gt;
 
 &lt;p&gt;最近切换回Linux的环境下，也想保持和Mac同样的使用习惯，避免在Linux和Mac切换时手指发懵。&lt;/p&gt;
 
@@ -16,6 +16,10 @@
 
 &lt;p&gt;wmctrl首先会根据我们提供的窗口名字尝试切换窗口，如果没有发现可以切换的窗口则调用启动命令来启动应用。&lt;/p&gt;
 
+&lt;h3 id=&quot;获取窗口名字&quot;&gt;获取窗口名字&lt;/h3&gt;
+
+&lt;p&gt;有时候窗口名字并不一定可以直观的猜到，可以在终端中使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;xprop WM_CLASS&lt;/code&gt; , 然后用鼠标点一下想要获取属性的窗口，就可以知道目标窗口的名字了。&lt;/p&gt;
+
 &lt;h3 id=&quot;配置应用命令&quot;&gt;配置应用命令&lt;/h3&gt;
 
 &lt;p&gt;下面是我常用的一些命令：&lt;/p&gt;
@@ -26,6 +30,8 @@
   &lt;li&gt;Deepin Terminal: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a deepin-terminal || deepin-terminal&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Netease Cloud Music: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a netease-cloud-music || netease-cloud-music&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;System Settings: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a systemsettings5 || systemsettings5&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;File manager: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a dolphin || dolphin&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Calibre: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a calibre-ebook-viewer || calibre&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;That’s all, enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Mac下缺少强大的窗口管理器，而我讨厌使用鼠标低效率的切换应用，所以我使用HammerSpoon的application.launchOrFocus来实现打开或切换应用的功能：当一个应用没有打开的时候直接打开，如果一个应用已经打开了就切换到已经打开的窗口。</summary></entry><entry><title type="html">在Linux版的Emacs中使用RIME输入法</title><link href="http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux.html" rel="alternate" type="text/html" title="在Linux版的Emacs中使用RIME输入法" /><published>2019-09-12T00:00:00+08:00</published><updated>2019-09-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux.html">&lt;p&gt;之前写了一篇文章&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/24/use-rime-in-emacs.html&quot;&gt;«在Mac版的Emacs中使用RIME输入法»&lt;/a&gt;详细说明了Mac OS下怎么让Emacs使用RIME输入法。最近又折腾回我最喜欢的Linux，今天讲一下怎么在Linux下配置Emacs的RIME输入法。&lt;/p&gt;
