@@ -9,7 +9,8 @@ categories: [Emacs]
 Emacs默认是没有选择最底部窗口的功能的，只有靠```windmove.el```这个库做最基本的四个方向选择，选择下面的窗口用 ```windmove-down``` 函数。
 
 所以，我用下面的代码来实现选中最底部窗口的功能：
-```lisp
+
+```elisp
 (ignore-errors
     (dotimes (i 50)
       (windmove-down)))
