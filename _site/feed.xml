@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-18T22:50:18+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">活在此时此刻</title><link href="http://localhost:4000/reading/2019/09/18/read-live-in-current.html" rel="alternate" type="text/html" title="活在此时此刻" /><published>2019-09-18T00:00:00+08:00</published><updated>2019-09-18T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/09/18/read-live-in-current</id><content type="html" xml:base="http://localhost:4000/reading/2019/09/18/read-live-in-current.html">&lt;p&gt;最近读了一行禅师写的《活在此时此刻》，最开始是在书店闲逛的时候看到的，回家买了Kindle版，花了一个月的时间慢慢读这本书。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-21T21:26:30+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails 新增加了当前目录文件搜索后端</title><link href="http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files.html" rel="alternate" type="text/html" title="Snails 新增加了当前目录文件搜索后端" /><published>2019-09-21T00:00:00+08:00</published><updated>2019-09-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files.html">&lt;p&gt;我们经常会做一个操作，按一个按键切换到当前buffer对应的dired模式，然后在当前目录下人工找一个文件并打开。&lt;/p&gt;
+
+&lt;p&gt;今天加了一个新的后端： &lt;a href=&quot;https://github.com/manateelazycat/snails/commit/1300f084a1e3e056efaf5f7d9fa2a24ab241a822&quot;&gt;snails-backend-directory-files.el&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这个后端会在默认搜索中开启，不需要任何前缀。&lt;/p&gt;
+
+&lt;p&gt;当你要打开当前目录下的其他文件，不用切换到的dired人工搜索，直接启动 snails 搜索即可。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;相对于 snails-backend-projectile 后端的优势是，不需要当前目录处于 git 项目中, 任何目录都可以&lt;/li&gt;
+  &lt;li&gt;相对于 snails-backend-fd/snails-backend-mdfind 后端的优势是 Emacs 内置的 &lt;code class=&quot;highlighter-rouge&quot;&gt;directory-files&lt;/code&gt; 函数因为不需要子进程的启动开销，所以速度更快&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;越来越方便了。&lt;/p&gt;</content><author><name></name></author><summary type="html">我们经常会做一个操作，按一个按键切换到当前buffer对应的dired模式，然后在当前目录下人工找一个文件并打开。</summary></entry><entry><title type="html">Emacs Application Framework支持大写字符事件了!</title><link href="http://localhost:4000/emacs/2019/09/21/support-capital-letter.html" rel="alternate" type="text/html" title="Emacs Application Framework支持大写字符事件了!" /><published>2019-09-21T00:00:00+08:00</published><updated>2019-09-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/21/support-capital-letter</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/21/support-capital-letter.html">&lt;p&gt;&lt;a href=&quot;https://manateelazycat.github.io/emacs/2018/08/06/eaf.html&quot;&gt;Emacs Application Framework&lt;/a&gt;是我为Emacs设计的新一代应用框架，可以利用PyQt5去扩展Emacs去实现任何你想实现的图形应用。&lt;/p&gt;
+
+&lt;p&gt;但是EAF发布到现在有一个非常不爽的bug就是无法输入大写字符，几个月时间都百思不得其解。&lt;/p&gt;
+
+&lt;h3 id=&quot;事件监听原理&quot;&gt;事件监听原理&lt;/h3&gt;
+&lt;p&gt;EAF 的键盘事件监听原理是：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;eaf.el 中监听Emacs端每次键盘事件敲击的钩子, 然后放到 eaf-monitor-key-event 函数中进行过滤解析&lt;/li&gt;
+  &lt;li&gt;eaf-monitor-key-event 中探测到是单字符按键的时候，通过RPC协议，发送 send_key 消息给 EAF 的Python进程&lt;/li&gt;
+  &lt;li&gt;EAF Python进程接到来自 Elisp 进程的 send_key 事件消息后，在Python进程中的 fake_key_event 函数中构造Qt键盘事件 QKeyEvent , 最后通过 QApplication.sendEvent 函数发送事件给 Python 进程的 Qt5 控件&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;通过上面的三个步骤，EAF实现了Emacs端控制PyQt5应用事件的控制逻辑。&lt;/p&gt;
+
+&lt;h3 id=&quot;问题线索&quot;&gt;问题线索&lt;/h3&gt;
+
+&lt;p&gt;每次在Emacs EAF Buffer中敲击大写字符，Emacs会报错 buffer read-only 的错误&lt;/p&gt;
+
+&lt;h3 id=&quot;重新思考&quot;&gt;重新思考&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;既然输入大写字符时候，EAF 的Python端应用没有任何反馈，证明没有接受到Elisp端发送的键盘事件。&lt;/li&gt;
+  &lt;li&gt;如果Elisp端没有发送键盘事件，一定是 eaf-monitor-key-event 这个函数没有执行&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;那每次输入大写字符时 EAF 报 read-only 的错误为什么会导致 eaf-monitor-key-event 函数没有被正常执行呢？&lt;/p&gt;
+
+&lt;p&gt;这几个月都在想这个问题，可以每次想到这个问题，都是一头雾水，百思不得其解。&lt;/p&gt;
+
+&lt;p&gt;在想这个问题的时候，我一直在反复敲击大写字符，比如我要敲击H， 左手先按 Shift ，右手按 H，左手按 Shift 的时候已经报 read-only 的错误了，突然灵光一闪…&lt;/p&gt;
+
+&lt;h3 id=&quot;大胆猜测&quot;&gt;大胆猜测&lt;/h3&gt;
+
+&lt;p&gt;因为 EAF 的buffer最开始设计的时候，只是用于传递窗口位置和大小给EAF的Python端，并不会在EAF Emacs buffer中写任何字符，所以，我把所有EAF Buffer都默认设置成 read-only 模式。&lt;/p&gt;
+
+&lt;p&gt;会不会因为左手按Shift的时候，已经触发了 read-only 的错误， 然后导致 eaf-monitor-key-event 函数无法调用，最终无法发送大写字符的事件给EAF Python端？&lt;/p&gt;
+
+&lt;h3 id=&quot;搞定&quot;&gt;搞定&lt;/h3&gt;
+
+&lt;p&gt;按照上面的猜测，首先移除了 EAF Buffer 的 read-only 模式，然后在EAF Python端的 fake_key_event 函数中根据传递事件字符串是否是大写键来给 QKeyEvent 事件添加 ShiftModifier 的修饰符。&lt;/p&gt;
+
+&lt;p&gt;重启EAF测试，哇，搞定了。&lt;/p&gt;
+
+&lt;p&gt;皇天不负有心人，这个纠缠了我几个月的Bug终于被我给解决了，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">Emacs Application Framework是我为Emacs设计的新一代应用框架，可以利用PyQt5去扩展Emacs去实现任何你想实现的图形应用。</summary></entry><entry><title type="html">选择Emacs最底部的窗口</title><link href="http://localhost:4000/emacs/2019/09/20/select-bottom-window.html" rel="alternate" type="text/html" title="选择Emacs最底部的窗口" /><published>2019-09-20T00:00:00+08:00</published><updated>2019-09-20T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/20/select-bottom-window</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/20/select-bottom-window.html">&lt;p&gt;我写的&lt;a href=&quot;https://github.com/manateelazycat/aweshell&quot;&gt;Aweshell&lt;/a&gt;插件有一个功能，在Emacs底部打开一个终端窗口，方便快速切换终端窗口用于调试代码。&lt;/p&gt;
+
+&lt;p&gt;Emacs默认是没有选择最底部窗口的功能的，只有靠&lt;code class=&quot;highlighter-rouge&quot;&gt;windmove.el&lt;/code&gt;这个库做最基本的四个方向选择，选择下面的窗口用 &lt;code class=&quot;highlighter-rouge&quot;&gt;windmove-down&lt;/code&gt; 函数。&lt;/p&gt;
+
+&lt;p&gt;所以，我用下面的代码来实现选中最底部窗口的功能：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ignore-errors&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dotimes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;windmove-down&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这段代码的作用主要是利用 &lt;code class=&quot;highlighter-rouge&quot;&gt;windmove-down&lt;/code&gt; 这个函数的一个特性：如果光标已经在最底部窗口时会报错，然后利用 &lt;code class=&quot;highlighter-rouge&quot;&gt;ignore-errors&lt;/code&gt; 宏来捕捉错误，从而停止往下面找窗口的动作。&lt;/p&gt;
+
+&lt;p&gt;一般人不会分屏50次，所以我随便写了一个 50 次循环， 哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我写的Aweshell插件有一个功能，在Emacs底部打开一个终端窗口，方便快速切换终端窗口用于调试代码。</summary></entry><entry><title type="html">活在此时此刻</title><link href="http://localhost:4000/reading/2019/09/18/read-live-in-current.html" rel="alternate" type="text/html" title="活在此时此刻" /><published>2019-09-18T00:00:00+08:00</published><updated>2019-09-18T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/09/18/read-live-in-current</id><content type="html" xml:base="http://localhost:4000/reading/2019/09/18/read-live-in-current.html">&lt;p&gt;最近读了一行禅师写的《活在此时此刻》，最开始是在书店闲逛的时候看到的，回家买了Kindle版，花了一个月的时间慢慢读这本书。&lt;/p&gt;
 
 &lt;p&gt;不知道是不是《当下的力量》这本书或者其他原因，最近很享受慢慢的去读一本书，读一段，坐在小区的长椅上，去感受周围环境的一切，不管现在的处境是好的还是坏的，心中总是抱着正念去呼吸，去感受。&lt;/p&gt;
 
@@ -33,7 +103,7 @@
 
 &lt;p&gt;现在我想明白了，人的身体也好，思想也好，本质上还是一个能量有限的个体，有它的极限，很多事情要顺其自然，累的时候就休息一下，不管外界发生任何事情，都不关自己的事情。&lt;/p&gt;
 
-&lt;p&gt;先像一行禅师那样，把洒落在内心各地的回忆，情绪，疲劳一张张的慢慢捡起来放好，给自己的内心生上一堆火，慢慢的让心平静下来。&lt;/p&gt;
+&lt;p&gt;先像一行禅师那样，把洒落在内心各处的回忆，情绪，疲劳一张张的慢慢捡起来放好，给自己的内心生上一堆火，慢慢的让心平静下来。&lt;/p&gt;
 
 &lt;p&gt;休息够了，内心不再乱了，就可以重新启航了。&lt;/p&gt;
 
@@ -52,7 +122,7 @@
     &lt;p&gt;正念修行，让自己每天知道，修行的目的不是未来某一天怎么怎么样，而是当下的每时每刻，如果不能享受当下的一切，过去和未来都毫无意义，当下才是最重要的。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;每天都是新的一天，每天遇到开心和不开心的事情再正常不过，只要保持正念，努力的学习知识和工作，能够积极的解决问题就好，知识只是工具，再广博的知识无非就是一个强大的大脑，如果没有正念的内心，人不过就是解决现实问题的机器，即使解决的再好，没有内心的一隅平静，解决完一个问题后回迎来一个更大的不满足和空虚。&lt;/p&gt;
+    &lt;p&gt;每天都是新的一天，每天遇到开心和不开心的事情再正常不过，只要保持正念，努力的学习知识和工作，能够积极的解决问题就好，知识只是工具，再广博的知识无非就是一个强大的大脑，如果没有正念的内心，人不过就是解决现实问题的机器，即使解决的再好，没有内心的一隅平静，解决完一个问题后会迎来一个更大的不满足和空虚。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;多微笑一下，不管陪伴家人，和朋友聊天还是面对客户，多笑一下，当然不是那种苦笑，而是你内心平静叠加积极乐观的心态后，发自内心的微笑，那种可以向别人传递正能量的微笑。&lt;/p&gt;
@@ -728,187 +798,4 @@ README写不好的结果往往是用户连安装都困难，更不用说将来�
 
 &lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
 
-&lt;p class=&quot;line-quote&quot;&gt;开源社区做好的本质就是：技术好、会夸人、多写文档脸皮厚&lt;/p&gt;</content><author><name></name></author><summary type="html">技术人怎么做开源社区？</summary></entry><entry><title type="html">Snails 5.0 发布了</title><link href="http://localhost:4000/emacs/2019/07/29/snails-5.0.html" rel="alternate" type="text/html" title="Snails 5.0 发布了" /><published>2019-07-29T00:00:00+08:00</published><updated>2019-07-29T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/29/snails-5.0</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/29/snails-5.0.html">&lt;p&gt;自从&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/21/snails.html&quot;&gt;Snails1.0&lt;/a&gt;发布一周后，Snails版本号不知不觉刷到5.0了，感谢社区同学积极测试和提供帮助。&lt;/p&gt;
-
-&lt;p&gt;Snails 5.0的更新如下：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;166次更新，新增5个社区贡献者，合并了9个社区补丁, 修复了超多bug&lt;/li&gt;
-  &lt;li&gt;补全窗口启动速度从 1~2 秒优化到瞬间 （插件首次加载依然需要点时间）&lt;/li&gt;
-  &lt;li&gt;采用队列渲染策略替换了抢占式渲染策略，将多后端渲染性能提升了3~5倍&lt;/li&gt;
-  &lt;li&gt;默认集成了9种搜索后端，按 “标签分组、打开文件、最近文件、书签、函数定义、当前文件全文、项目文件全文、当前目录文件、整个磁盘文件” 的优先级进行依次搜索, 已经覆盖了90%的代码搜索和导航需求&lt;/li&gt;
-  &lt;li&gt;其中当前文件全文和项目文件全文基于ripgrep来实现，特别是在超大文件的内容搜索上，要比Emacs内置的 isearch/grep 快很多&lt;/li&gt;
-  &lt;li&gt;多后端搜索时，当前选中的后选词状态保持不变，不会像1.0那样异步后端来数据后选中后选词被强制切换成第一个&lt;/li&gt;
-  &lt;li&gt;在 fuz.el 这个库安装以后，自动切换成模糊匹配算法，可以快速按照任意片段进行搜索，而不需要连续输入相邻字符&lt;/li&gt;
-  &lt;li&gt;增加了 snails-search-point 命令，方便快速搜索当前光标处的内容&lt;/li&gt;
-  &lt;li&gt;增加了很多自定义选项供大家个性化设置&lt;/li&gt;
-  &lt;li&gt;更多更新细节请查看&lt;a href=&quot;https://github.com/manateelazycat/snails/commits/master&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;虽然整个架构进行了大幅度的优化和增强，但是Snails的插件接口依然是非常简单灵活，你只用花5分钟编写20行左右的过滤函数, 即可快速完成你想要的插件。&lt;/p&gt;
-
-&lt;p&gt;Snails的&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/23/snails-framework.html&quot;&gt;架构设计&lt;/a&gt;非常简单易懂，欢迎各路高手来&lt;a href=&quot;https://github.com/manateelazycat/snails/pulls&quot;&gt;贡献你自己的插件&lt;/a&gt; !&lt;/p&gt;</content><author><name></name></author><summary type="html">自从Snails1.0发布一周后，Snails版本号不知不觉刷到5.0了，感谢社区同学积极测试和提供帮助。</summary></entry><entry><title type="html">在Mac版的Emacs中使用RIME输入法</title><link href="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html" rel="alternate" type="text/html" title="在Mac版的Emacs中使用RIME输入法" /><published>2019-07-24T00:00:00+08:00</published><updated>2019-07-24T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/24/use-rime-in-emacs.html">&lt;p&gt;做为一个资深的Emacs党，期望每件事情都用Emacs来搞定，同时做为中国人，输入中文真的是刚需。
-而&lt;a href=&quot;https://github.com/tumashu/pyim&quot;&gt;pyim&lt;/a&gt;就是一个非常牛逼的中文输入法框架。&lt;/p&gt;
-
-&lt;p&gt;虽然深爱着Emacs，即使pyim内置了词库，pyim在很多时候还是无法满足长句输入的需求，偶尔还是要切换到外部的输入法输入中文，比如写这篇博客的时候。但是外部输入法最大的问题是不知道Emacs的输入状态，所以经常需要来回切换输入法状态，非常不爽。&lt;/p&gt;
-
-&lt;p&gt;几个月前知道pyim可以直接调用RIME输入法做为后端进行输入，那时候pyim才把Linux平台搞定，自己这段时间一直用Mac，所以只能眼馋的份，今天折腾了一下终于搞定了Mac下让pyim使用RIME输入法，坑比较多，故写下此文，帮助Mac版的Emacs用户。&lt;/p&gt;
-
-&lt;p&gt;先上一张动态效果图，增强你克服困难的决心，哈哈哈哈:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/pyim/rime.gif&quot; alt=&quot;pyim-and-rime&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-更新pyim和posframe到最新版&quot;&gt;1 更新pyim和posframe到最新版&lt;/h3&gt;
-&lt;p&gt;为了支持RIME输入法需要把 &lt;a href=&quot;https://github.com/tumashu/pyim&quot;&gt;pyim&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/tumashu/posframe&quot;&gt;posframe&lt;/a&gt;这两个库更新到最新，否则有可能会报posframe的错误&lt;/p&gt;
-
-&lt;h3 id=&quot;2-安装rime输入法&quot;&gt;2 安装RIME输入法&lt;/h3&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;squirrel
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;3-下载librime源码&quot;&gt;3 下载librime源码&lt;/h3&gt;
-&lt;p&gt;下载librime源码:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone &lt;span class=&quot;nt&quot;&gt;--recursive&lt;/span&gt; https://github.com/rime/librime.git &lt;span class=&quot;nt&quot;&gt;--depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;4-编译liberime&quot;&gt;4 编译liberime&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;4.1 下载liberime源码&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://gitlab.com/liberime/liberime.git &lt;span class=&quot;nt&quot;&gt;--depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;4.2 创建librime xbuild目录&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;因为liberime动态库是需要根据librime来编译的，同时RIME输入法本身就带了librime.1.dylib，所以我们并不需要下载巨大无比的xcode去编译librime.1.dylib&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; ~/librime/xbuild/lib/Release/
-
-&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; /Library/Input&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Methods/Squirrel.app/Contents/Frameworks/librime.1.dylib ~/librime/xbuild/lib/Release/librime.dylib
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;4.3 编译liberime.so文件&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/liberime
-
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;RIME_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/librime
-
-make liberime
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;上面的命令自动会去 ~/librime/xbuild/lib/Release/ 目录下找 librime.dylib 文件，并在 ~/liberime/buid/ 目录下生成 liberime.so 动态库文件&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;4.4 把 librime.1.dylib 文件拷贝到系统lib目录&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo cp&lt;/span&gt; /Library/Input&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Methods/Squirrel.app/Contents/Frameworks/librime.1.dylib /usr/local/lib
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;否则后面 (require ‘liberime) 的时候会下面的错误&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dyld: Library not loaded: @rpath/librime.1.dylib
-  Referenced from: ...
-  Reason: image not found
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;5-配置pyim&quot;&gt;5 配置pyim&lt;/h3&gt;
-&lt;p&gt;拷贝 liberime.so 文件到 ~/.emacs.d/ 目录下，然后在 ~/.emacs 写下如下配置即可:&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;load-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cons&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-truename&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/.emacs.d/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;load-path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'pyim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'posframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'liberime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;default-input-method&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pyim&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-page-tooltip&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'posframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-page-length&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;liberime-start&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Library/Input Methods/Squirrel.app/Contents/SharedSupport&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-truename&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/.emacs.d/pyim/rime/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;liberime-select-schema&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;luna_pinyin_simp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-default-scheme&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'rime-quanpin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;6-增加rime候选词数量&quot;&gt;6 增加RIME候选词数量&lt;/h3&gt;
-
-&lt;p&gt;liberime默认只能获取5个后选词，用下面的方法可以增加RIME后端时的后选词数量。&lt;/p&gt;
-
-&lt;p&gt;创建 ~/.emacs.d/pyim/rime/default.custom.yaml 文件，内容如下：&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;patch:
-     &lt;span class=&quot;s2&quot;&gt;&quot;menu/page_size&quot;&lt;/span&gt;: 100
-     &lt;span class=&quot;s2&quot;&gt;&quot;speller/auto_select&quot;&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
-     &lt;span class=&quot;s2&quot;&gt;&quot;speller/auto_select_unique_candidate&quot;&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
-&lt;p&gt;上面这么长一篇的文字都是我在Emacs下用pyim配合RIME后端来进行输入的，整个过程非常流畅，长句输入也非常非常的赞。&lt;/p&gt;
-
-&lt;p&gt;终于不用在Emacs中使用外部输入法了，哈哈哈哈。&lt;/p&gt;
-
-&lt;p&gt;Linux版的安装方法可以看我的另外一篇文章&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/09/12/make-rime-works-with-linux.html&quot;&gt;«在Linux版的Emacs中使用RIME输入法»&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">做为一个资深的Emacs党，期望每件事情都用Emacs来搞定，同时做为中国人，输入中文真的是刚需。 而pyim就是一个非常牛逼的中文输入法框架。</summary></entry><entry><title type="html">Snails架构设计</title><link href="http://localhost:4000/emacs/2019/07/23/snails-framework.html" rel="alternate" type="text/html" title="Snails架构设计" /><published>2019-07-23T00:00:00+08:00</published><updated>2019-07-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/07/23/snails-framework</id><content type="html" xml:base="http://localhost:4000/emacs/2019/07/23/snails-framework.html">&lt;h3 id=&quot;怎么设计让多后端模糊搜索性能达到极致&quot;&gt;怎么设计让多后端模糊搜索性能达到极致？&lt;/h3&gt;
-&lt;p&gt;前天发布了&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/21/snails.html&quot;&gt;Snails&lt;/a&gt;这个新型的模糊搜索框架。
-Snails的这个项目的主要目的是：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;交互简单易用&lt;/li&gt;
-  &lt;li&gt;5分钟编写一个新的插件&lt;/li&gt;
-  &lt;li&gt;搜索速度快&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;要让Emacs快，我们首先要了解Emacs的优势和脾气，这样我们从设计上才能让Emacs更快：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;多线程不可行： Emacs的多线程设计上，每次只能运行一个线程上下文，所以不能采用像Gtk/Qt那样通过子线程的思路来解决耗时搜索时不卡界面的方法，因为一旦Emacs切换到耗时操作所在线程，耗时操作放还是会卡主Emacs。&lt;/li&gt;
-  &lt;li&gt;多进程可行：简单的搜索，比如搜索打开的文件，就放到Emacs进程中处理，耗时的搜索需要放到子进程里面处理, 这样耗时搜索的时候就不会卡主Emacs了&lt;/li&gt;
-  &lt;li&gt;避免子进程轰炸Emacs：子进程每更新一行结果不要去刷新Emacs的界面，对用户的输入流畅性干扰很大，在进程搜索完成以后再统一渲染结果，所以后端Shell命令就要选择高效率的工具，比如选 ripgrep 而不是 grep, 选 fd 而不是 find (Rust大法好，哈哈哈)&lt;/li&gt;
-  &lt;li&gt;按键缝隙不要创建子进程：一个人的输入间隔在 50ms ~ 200ms 之间，因为子进程创建一次很昂贵，所以在敲击键盘的时候就不要创建异步后端的子进程，以节省系统资源，这时候可以用 &lt;code class=&quot;highlighter-rouge&quot;&gt;run-with-idle-timer&lt;/code&gt; 函数做延迟处理，当用户手指头一松开在发愣的时候才创建搜索子进程&lt;/li&gt;
-  &lt;li&gt;尽快杀掉旧进程：当用户输入很快时，有一些子进程还在搜索旧的输入字符串，可以在新的搜索进程开始之前尽快的杀掉那些还还没有结束的旧进程，减少对系统资源的占用。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;架构设计&quot;&gt;架构设计&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/snails/framework.png&quot; alt=&quot;snails framework&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在想清楚设计思路以后，代码实现就很简单了，深入的思考和清晰的思路永远是架构设计的核心，代码不过是架构设计的表现方式而已。&lt;/p&gt;
-
-&lt;p&gt;简单一句话来概括框架：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;每次用户输入的时候框架分配一个新的 ticker ,
-后端们自己去搜索，得到结果的时候看看自己的 ticker 是不是最新的，
-最新的就能用，不是最新的就丢掉。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Snails整体架构上分为框架部分和后端实现部分。&lt;/p&gt;
-
-&lt;h4 id=&quot;框架部分的职责&quot;&gt;框架部分的职责：&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;监听用户输入，生成新的input ticker，然后给所有后端分配搜索任务&lt;/li&gt;
-  &lt;li&gt;检查后端的结果, 如果input ticker过期后抛弃后端搜索结果，如果input ticker没有过期就染后端搜索结果&lt;/li&gt;
-  &lt;li&gt;用户选择搜索结果后执行后端指定的命令&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;每次用户输入新的字符串后，都会产生一个input ticker作为标记传给后端，后端完成后需要带着标记来检查搜索结果是否过期（正在搜索的时候，用户又进行了新的搜索）&lt;/p&gt;
-
-&lt;p&gt;同步后端是在用户输入变化的时候就启动，异步后端是在用户手指头松开的一瞬间才启动。&lt;/p&gt;
-
-&lt;p&gt;这样既保证了简单搜索的及时响应，又保障了耗时操作不会卡主Emacs。&lt;/p&gt;
-
-&lt;h4 id=&quot;搜索后端的职责&quot;&gt;搜索后端的职责：&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;搜索和过滤字符串&lt;/li&gt;
-  &lt;li&gt;解析出显示名和真实的搜索结果&lt;/li&gt;
-  &lt;li&gt;用户确认后，对搜索结果调用自定义命令&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;后端在实现时不用了解框架中处理细节，只用做好搜索、过滤和自定义命令就可以了。&lt;/p&gt;
-
-&lt;p&gt;一个完整的后端实现规模在30~50行，一般在5分钟就可以写完整个后端插件的代码。&lt;/p&gt;
-
-&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
-&lt;p&gt;欢迎来贡献&lt;a href=&quot;https://github.com/manateelazycat/snails/new/master&quot;&gt;新的插件&lt;/a&gt;, 一起来构建下一代模糊搜索框架。&lt;/p&gt;</content><author><name></name></author><summary type="html">怎么设计让多后端模糊搜索性能达到极致？ 前天发布了Snails这个新型的模糊搜索框架。 Snails的这个项目的主要目的是： 交互简单易用 5分钟编写一个新的插件 搜索速度快</summary></entry></feed>
+&lt;p class=&quot;line-quote&quot;&gt;开源社区做好的本质就是：技术好、会夸人、多写文档脸皮厚&lt;/p&gt;</content><author><name></name></author><summary type="html">技术人怎么做开源社区？</summary></entry></feed>
