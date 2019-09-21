@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-21T21:26:30+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails 新增加了当前目录文件搜索后端</title><link href="http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files.html" rel="alternate" type="text/html" title="Snails 新增加了当前目录文件搜索后端" /><published>2019-09-21T00:00:00+08:00</published><updated>2019-09-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files.html">&lt;p&gt;我们经常会做一个操作，按一个按键切换到当前buffer对应的dired模式，然后在当前目录下人工找一个文件并打开。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-21T21:32:07+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails 新增加了当前目录文件搜索后端</title><link href="http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files.html" rel="alternate" type="text/html" title="Snails 新增加了当前目录文件搜索后端" /><published>2019-09-21T00:00:00+08:00</published><updated>2019-09-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files.html">&lt;p&gt;我们经常会做一个操作，按一个按键切换到当前buffer对应的dired模式，然后在当前目录下人工找一个文件并打开。&lt;/p&gt;
 
 &lt;p&gt;今天加了一个新的后端： &lt;a href=&quot;https://github.com/manateelazycat/snails/commit/1300f084a1e3e056efaf5f7d9fa2a24ab241a822&quot;&gt;snails-backend-directory-files.el&lt;/a&gt;&lt;/p&gt;
 
@@ -11,20 +11,20 @@
   &lt;li&gt;相对于 snails-backend-fd/snails-backend-mdfind 后端的优势是 Emacs 内置的 &lt;code class=&quot;highlighter-rouge&quot;&gt;directory-files&lt;/code&gt; 函数因为不需要子进程的启动开销，所以速度更快&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;越来越方便了。&lt;/p&gt;</content><author><name></name></author><summary type="html">我们经常会做一个操作，按一个按键切换到当前buffer对应的dired模式，然后在当前目录下人工找一个文件并打开。</summary></entry><entry><title type="html">Emacs Application Framework支持大写字符事件了!</title><link href="http://localhost:4000/emacs/2019/09/21/support-capital-letter.html" rel="alternate" type="text/html" title="Emacs Application Framework支持大写字符事件了!" /><published>2019-09-21T00:00:00+08:00</published><updated>2019-09-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/21/support-capital-letter</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/21/support-capital-letter.html">&lt;p&gt;&lt;a href=&quot;https://manateelazycat.github.io/emacs/2018/08/06/eaf.html&quot;&gt;Emacs Application Framework&lt;/a&gt;是我为Emacs设计的新一代应用框架，可以利用PyQt5去扩展Emacs去实现任何你想实现的图形应用。&lt;/p&gt;
+&lt;p&gt;越来越方便了。&lt;/p&gt;</content><author><name></name></author><summary type="html">我们经常会做一个操作，按一个按键切换到当前buffer对应的dired模式，然后在当前目录下人工找一个文件并打开。</summary></entry><entry><title type="html">Emacs Application Framework支持大写字符事件了!</title><link href="http://localhost:4000/emacs/2019/09/21/support-capital-letter.html" rel="alternate" type="text/html" title="Emacs Application Framework支持大写字符事件了!" /><published>2019-09-21T00:00:00+08:00</published><updated>2019-09-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/21/support-capital-letter</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/21/support-capital-letter.html">&lt;p&gt;&lt;a href=&quot;https://manateelazycat.github.io/emacs/2018/08/06/eaf.html&quot;&gt;Emacs Application Framework&lt;/a&gt;是我为Emacs设计的新一代应用框架，可以利用PyQt5去扩展Emacs, 你可以用PyQt5去实现任何你想实现的图形应用,并完美和Emacs进行无缝融合。&lt;/p&gt;
 
-&lt;p&gt;但是EAF发布到现在有一个非常不爽的bug就是无法输入大写字符，几个月时间都百思不得其解。&lt;/p&gt;
+&lt;p&gt;但是EAF从发布到现在有一个非常不爽的bug就是无法输入大写字符，几个月时间都百思不得其解。&lt;/p&gt;
 
 &lt;h3 id=&quot;事件监听原理&quot;&gt;事件监听原理&lt;/h3&gt;
 &lt;p&gt;EAF 的键盘事件监听原理是：&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;eaf.el 中监听Emacs端每次键盘事件敲击的钩子, 然后放到 eaf-monitor-key-event 函数中进行过滤解析&lt;/li&gt;
+  &lt;li&gt;eaf.el 中监听Emacs端每次键盘事件敲击的钩子, 然后放到 eaf-monitor-key-event 函数中进行键盘事件过滤解析&lt;/li&gt;
   &lt;li&gt;eaf-monitor-key-event 中探测到是单字符按键的时候，通过RPC协议，发送 send_key 消息给 EAF 的Python进程&lt;/li&gt;
   &lt;li&gt;EAF Python进程接到来自 Elisp 进程的 send_key 事件消息后，在Python进程中的 fake_key_event 函数中构造Qt键盘事件 QKeyEvent , 最后通过 QApplication.sendEvent 函数发送事件给 Python 进程的 Qt5 控件&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;通过上面的三个步骤，EAF实现了Emacs端控制PyQt5应用事件的控制逻辑。&lt;/p&gt;
+&lt;p&gt;通过上面的三个步骤，EAF实现了Emacs端控制PyQt5应用事件的完整逻辑。&lt;/p&gt;
 
 &lt;h3 id=&quot;问题线索&quot;&gt;问题线索&lt;/h3&gt;
 
@@ -41,11 +41,11 @@
 
 &lt;p&gt;这几个月都在想这个问题，可以每次想到这个问题，都是一头雾水，百思不得其解。&lt;/p&gt;
 
-&lt;p&gt;在想这个问题的时候，我一直在反复敲击大写字符，比如我要敲击H， 左手先按 Shift ，右手按 H，左手按 Shift 的时候已经报 read-only 的错误了，突然灵光一闪…&lt;/p&gt;
+&lt;p&gt;今天在想这个问题的时候，我一直在反复敲击大写字符，比如我要敲击H， 左手先按 Shift ，右手按 H，左手按 Shift 的时候已经报 read-only 的错误了，突然灵光一闪…&lt;/p&gt;
 
 &lt;h3 id=&quot;大胆猜测&quot;&gt;大胆猜测&lt;/h3&gt;
 
-&lt;p&gt;因为 EAF 的buffer最开始设计的时候，只是用于传递窗口位置和大小给EAF的Python端，并不会在EAF Emacs buffer中写任何字符，所以，我把所有EAF Buffer都默认设置成 read-only 模式。&lt;/p&gt;
+&lt;p&gt;因为 EAF 的buffer最开始设计的时候，只是用于传递窗口位置和大小给EAF的Python端，并不会在EAF Emacs buffer中敲入任何字符，所以，我把所有EAF Buffer都默认设置成 read-only 模式。&lt;/p&gt;
 
 &lt;p&gt;会不会因为左手按Shift的时候，已经触发了 read-only 的错误， 然后导致 eaf-monitor-key-event 函数无法调用，最终无法发送大写字符的事件给EAF Python端？&lt;/p&gt;
 
@@ -55,7 +55,7 @@
 
 &lt;p&gt;重启EAF测试，哇，搞定了。&lt;/p&gt;
 
-&lt;p&gt;皇天不负有心人，这个纠缠了我几个月的Bug终于被我给解决了，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">Emacs Application Framework是我为Emacs设计的新一代应用框架，可以利用PyQt5去扩展Emacs去实现任何你想实现的图形应用。</summary></entry><entry><title type="html">选择Emacs最底部的窗口</title><link href="http://localhost:4000/emacs/2019/09/20/select-bottom-window.html" rel="alternate" type="text/html" title="选择Emacs最底部的窗口" /><published>2019-09-20T00:00:00+08:00</published><updated>2019-09-20T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/20/select-bottom-window</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/20/select-bottom-window.html">&lt;p&gt;我写的&lt;a href=&quot;https://github.com/manateelazycat/aweshell&quot;&gt;Aweshell&lt;/a&gt;插件有一个功能，在Emacs底部打开一个终端窗口，方便快速切换终端窗口用于调试代码。&lt;/p&gt;
+&lt;p&gt;皇天不负有心人，这个纠缠了我几个月的Bug终于被我给解决了，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">Emacs Application Framework是我为Emacs设计的新一代应用框架，可以利用PyQt5去扩展Emacs, 你可以用PyQt5去实现任何你想实现的图形应用,并完美和Emacs进行无缝融合。</summary></entry><entry><title type="html">选择Emacs最底部的窗口</title><link href="http://localhost:4000/emacs/2019/09/20/select-bottom-window.html" rel="alternate" type="text/html" title="选择Emacs最底部的窗口" /><published>2019-09-20T00:00:00+08:00</published><updated>2019-09-20T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/20/select-bottom-window</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/20/select-bottom-window.html">&lt;p&gt;我写的&lt;a href=&quot;https://github.com/manateelazycat/aweshell&quot;&gt;Aweshell&lt;/a&gt;插件有一个功能，在Emacs底部打开一个终端窗口，方便快速切换终端窗口用于调试代码。&lt;/p&gt;
 
 &lt;p&gt;Emacs默认是没有选择最底部窗口的功能的，只有靠&lt;code class=&quot;highlighter-rouge&quot;&gt;windmove.el&lt;/code&gt;这个库做最基本的四个方向选择，选择下面的窗口用 &lt;code class=&quot;highlighter-rouge&quot;&gt;windmove-down&lt;/code&gt; 函数。&lt;/p&gt;
 
