@@ -16,3 +16,5 @@ DeepinWine 版本的微信需要安装 deepin.com.wechat2 这个包，但是这�
 3. 删除原先的微信目录rm -rf ~/.deepinwine/Deepin-WeChat
 
 这样 DeepinWine 就认为在Gnome环境下，可以正常启动 DeepinWine 微信了。
+
+同时，可以用命令 ```wmctrl -x -a wechat.exe || /opt/deepinwine/apps/Deepin-WeChat/run.sh``` 绑定快捷键进行一键启动微信或者切换微信窗口。
