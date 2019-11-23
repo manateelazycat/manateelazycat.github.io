@@ -35,6 +35,6 @@ categories: [Emacs]
 
 花了5分钟调整代码，搞定！
 
-[补丁中](https://github.com/manateelazycat/emacs-application-framework/commit/318718bf80f128ba38a678f22a11e2194816245c)增加了一些辅助代码，使得EAF可以记住每个PDF文件的反色模式，下次就不用再手动切换模式了, 舒服。
+[补丁](https://github.com/manateelazycat/emacs-application-framework/commit/318718bf80f128ba38a678f22a11e2194816245c)中增加了一些辅助代码，使得EAF可以记住每个PDF文件的反色模式，下次就不用再手动切换模式了, 舒服。
 
 BTW, 最近我自己的公司在招聘Linux编程高手，如果你像我这样热爱编程，喜欢研究开源软件，欢迎联系我: lazycat.manatee@gmail.com
