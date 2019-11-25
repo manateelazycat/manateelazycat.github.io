@@ -1,8 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-23T21:48:37+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">为EAF PDF阅读器增加夜晚模式</title><link href="http://localhost:4000/emacs/2019/11/23/eaf-pdf-support-inverted-mode.html" rel="alternate" type="text/html" title="为EAF PDF阅读器增加夜晚模式" /><published>2019-11-23T00:00:00+08:00</published><updated>2019-11-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/11/23/eaf-pdf-support-inverted-mode</id><content type="html" xml:base="http://localhost:4000/emacs/2019/11/23/eaf-pdf-support-inverted-mode.html">&lt;p&gt;最近晚上才有空看会儿书，EAF PDF阅读器默认是渲染PDF文件的原色，一般的PDF文件背景都是白色的，就像这样。
-&lt;img src=&quot;http://localhost:4000/pics/eaf-pdf-support-inverted-mode/eaf_light_mode.png&quot; alt=&quot;Light Mode&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-25T09:22:06+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">不要说自己是玩电脑的</title><link href="http://localhost:4000/linux/2019/11/25/breaking-captcha.html" rel="alternate" type="text/html" title="不要说自己是玩电脑的" /><published>2019-11-25T00:00:00+08:00</published><updated>2019-11-25T00:00:00+08:00</updated><id>http://localhost:4000/linux/2019/11/25/breaking-captcha</id><content type="html" xml:base="http://localhost:4000/linux/2019/11/25/breaking-captcha.html">&lt;p&gt;不要告诉别人自己是玩电脑的，特别是亲朋好友，他们会认为你啥都会干，特别是…&lt;/p&gt;
 
-&lt;p&gt;晚上看的时间久了眼睛就会很累，一直想添加一个模式切换的功能，晚上可以用夜晚模式来读书，就像下面这样。
-&lt;img src=&quot;http://localhost:4000/pics/eaf-pdf-support-inverted-mode/eaf_dark_mode.png&quot; alt=&quot;Dark Mode&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;周末被亲戚拉去写爬虫，苦逼啊，看了一下二维码的页面，大多数填表的工作都可以由 Selenium 来完成，唯一麻烦一点的就是验证码。&lt;/p&gt;
+
+&lt;p&gt;验证码看了一下，就是比较简单的英文和数字混合变形, 没有辅助干扰线，没有复杂背景和鼠标移动探测，应该不难。&lt;/p&gt;
+
+&lt;p&gt;一般来说，这种静态的验证码破解的思路如下：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;黑白化，去掉背景纹理干扰&lt;/li&gt;
+  &lt;li&gt;去掉孤立噪点，避免干扰线干扰&lt;/li&gt;
+  &lt;li&gt;锐化处理，让字体边缘更为清晰&lt;/li&gt;
+  &lt;li&gt;字母截取，得出独立的字符, 一般可以用图片发大5倍绝技，增加OCR识别成功率&lt;/li&gt;
+  &lt;li&gt;把很多样本截取的不同字符丢给机器学习,让机器去学习不同字符的变形情况&lt;/li&gt;
+  &lt;li&gt;最后全部连在一起，做验证码内容识别&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;玩了一会机器学习代码，和我当年写的网易有道词典Linux版的OCR识别大部分流程差不多，就是机器学习这一快比较唬人。&lt;/p&gt;
+
+&lt;p&gt;一般我到这个时候就会开始偷懒，这么成熟的产业，一定有公司干验证码破解服务的公司吧？&lt;/p&gt;
+
+&lt;p&gt;网上搜索对比了一下，https://anti-captcha.com 这家公司的服务就不错，已经在后台搭建机器学习的服务，而且支持支付宝, 能用钱解决的问题就不要浪费时间，哈哈哈哈。&lt;/p&gt;
+
+&lt;p&gt;测试了一下，成功率蛮高，99%:
+&lt;img src=&quot;http://localhost:4000/pics/breaking-captcha/breaking-captcha.png&quot; alt=&quot;Breaking Captcha&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;整体思路如下：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;用 selenium 先用 Chromium 加载网页&lt;/li&gt;
+  &lt;li&gt;通过 driver.get_screenshot_as_png() 获取网页截图&lt;/li&gt;
+  &lt;li&gt;通过 Selenium XPath 定位验证码的元素，然后通过坐标，从网页截图中切割验证码的图片&lt;/li&gt;
+  &lt;li&gt;转换 PIL Image 对象为 Byte Array 格式的数据，丢给 CaptchaSolver 这个库&lt;/li&gt;
+  &lt;li&gt;填上 anti-captcha 的API Key, 等5秒钟就会返回破解的验证码了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;selenium&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;webdriver&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PIL&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BytesIO&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;captcha_solver&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CaptchaSolver&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 通过Chromium加载网页
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;webdriver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Chrome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'http://www.xxx.com'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 获得网页截图
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;png&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_screenshot_as_png&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;im&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BytesIO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;png&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 找到验证码所在的元素，先阅读 Selenium API文档，下面这行代码需要换成实际的验证码元素
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_element_by_class_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;validimg&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 获取验证码的位置信息
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'width'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bottom&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'height'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 通过验证码坐标偏移，截取验证码的截图
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;im&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;im&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 转换图片为Byte Array格式的数据
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BytesIO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;im&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'PNG'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;byte_im&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getvalue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 通过 anti-captcha 的API key进行验证码破解工作
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;solver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CaptchaSolver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'antigate'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;api_key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'your-anti-captcha-api-key'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;captcha_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;solver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;solve_captcha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;byte_im&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 打印验证码
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;captcha_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;给一段参考的实例代码，最后我不是玩电脑的，只是一个写代码的，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">不要告诉别人自己是玩电脑的，特别是亲朋好友，他们会认为你啥都会干，特别是…</summary></entry><entry><title type="html">为EAF PDF阅读器增加夜晚模式</title><link href="http://localhost:4000/emacs/2019/11/23/eaf-pdf-support-inverted-mode.html" rel="alternate" type="text/html" title="为EAF PDF阅读器增加夜晚模式" /><published>2019-11-23T00:00:00+08:00</published><updated>2019-11-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/11/23/eaf-pdf-support-inverted-mode</id><content type="html" xml:base="http://localhost:4000/emacs/2019/11/23/eaf-pdf-support-inverted-mode.html">&lt;p&gt;最近晚上才有空看会儿书，EAF PDF阅读器默认是渲染PDF文件的原色，一般的PDF文件背景都是白色的，就像这样。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-pdf-support-inverted-mode/eaf_light_mode.png&quot; alt=&quot;Light Mode&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;晚上看的时间久了眼睛就会很累，一直想添加一个模式切换的功能，晚上可以用夜晚模式来读书，就像下面这样。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-pdf-support-inverted-mode/eaf_dark_mode.png&quot; alt=&quot;Dark Mode&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;最开始的时候读了 PyMupdf 的手册，找到API&lt;/p&gt;
 
@@ -29,7 +105,7 @@
 
 &lt;p&gt;花了5分钟调整代码，搞定！&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/318718bf80f128ba38a678f22a11e2194816245c&quot;&gt;补丁中&lt;/a&gt;增加了一些辅助代码，使得EAF可以记住每个PDF文件的反色模式，下次就不用再手动切换模式了, 舒服。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/318718bf80f128ba38a678f22a11e2194816245c&quot;&gt;补丁&lt;/a&gt;中增加了一些辅助代码，使得EAF可以记住每个PDF文件的反色模式，下次就不用再手动切换模式了, 舒服。&lt;/p&gt;
 
 &lt;p&gt;BTW, 最近我自己的公司在招聘Linux编程高手，如果你像我这样热爱编程，喜欢研究开源软件，欢迎联系我: lazycat.manatee@gmail.com&lt;/p&gt;</content><author><name></name></author><summary type="html">最近晚上才有空看会儿书，EAF PDF阅读器默认是渲染PDF文件的原色，一般的PDF文件背景都是白色的，就像这样。</summary></entry><entry><title type="html">修复微信Bad Window的问题</title><link href="http://localhost:4000/linux/2019/11/15/fix-bad-window.html" rel="alternate" type="text/html" title="修复微信Bad Window的问题" /><published>2019-11-15T00:00:00+08:00</published><updated>2019-11-15T00:00:00+08:00</updated><id>http://localhost:4000/linux/2019/11/15/fix-bad-window</id><content type="html" xml:base="http://localhost:4000/linux/2019/11/15/fix-bad-window.html">&lt;h3 id=&quot;问题&quot;&gt;问题&lt;/h3&gt;
 &lt;p&gt;Arch下 deepin-wine-wechat 这个包不是用的 deepin-wine, 而是 wine 构建的，导致有两个问题，第一个透明窗口不消失，第二个是无法输入中文，原因是 DeepinWine 的一些补丁没有推送到上游 Wine 社区。&lt;/p&gt;
@@ -319,77 +395,4 @@
   &lt;li&gt;Calibre: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a calibre-ebook-viewer || calibre&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;That’s all, enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Mac下缺少强大的窗口管理器，而我讨厌使用鼠标低效率的切换应用，所以我使用HammerSpoon的application.launchOrFocus来实现打开或切换应用的功能：当一个应用没有打开的时候直接打开，如果一个应用已经打开了就切换到已经打开的窗口。</summary></entry><entry><title type="html">在Linux版的Emacs中使用RIME输入法</title><link href="http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux.html" rel="alternate" type="text/html" title="在Linux版的Emacs中使用RIME输入法" /><published>2019-09-12T00:00:00+08:00</published><updated>2019-09-12T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/12/make-rime-works-with-linux.html">&lt;p&gt;之前写了一篇文章&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/07/24/use-rime-in-emacs.html&quot;&gt;«在Mac版的Emacs中使用RIME输入法»&lt;/a&gt;详细说明了Mac OS下怎么让Emacs使用RIME输入法。最近又折腾回我最喜欢的Linux，今天讲一下怎么在Linux下配置Emacs的RIME输入法。&lt;/p&gt;
-
-&lt;p&gt;其实大多数步骤都是类似的，而且Linux下还要简单点，只不过有一些小小的坑。&lt;/p&gt;
-
-&lt;h3 id=&quot;1-更新pyim和posframe到最新版&quot;&gt;1 更新pyim和posframe到最新版&lt;/h3&gt;
-&lt;p&gt;为了支持RIME输入法需要把 &lt;a href=&quot;https://github.com/tumashu/pyim&quot;&gt;pyim&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/tumashu/posframe&quot;&gt;posframe&lt;/a&gt;这两个库更新到最新，否则有可能会报posframe的错误&lt;/p&gt;
-
-&lt;h3 id=&quot;2-安装rime输入法&quot;&gt;2 安装RIME输入法&lt;/h3&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; fcitx-im fcitx-configtool fcitx-rime
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;在 ~/.xprofile 文件中写入&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GTK_IM_MODULE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fcitx
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;QT_IM_MODULE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fcitx
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;XMODIFIERS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@im=fcitx&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;重新登录&lt;/p&gt;
-
-&lt;h3 id=&quot;3-安装librime&quot;&gt;3 安装librime&lt;/h3&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; librime
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;4-编译liberime&quot;&gt;4 编译liberime&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://gitlab.com/liberime/liberime.git &lt;span class=&quot;nt&quot;&gt;--depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;liberime
-make liberime
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;上面的命令会在 liberime/build/ 目录下生成 liberime.so 动态库&lt;/p&gt;
-
-&lt;h3 id=&quot;5-配置pyim&quot;&gt;5 配置pyim&lt;/h3&gt;
-&lt;p&gt;拷贝 liberime.so 文件到 ~/.emacs.d/ 目录下，然后在 ~/.emacs 写下如下配置即可:&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;load-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cons&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-truename&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/.emacs.d/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;load-path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'pyim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'posframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'liberime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;default-input-method&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pyim&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-page-tooltip&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'posframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-page-length&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;liberime-start&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/usr/share/rime-data/&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-truename&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/.emacs.d/pyim/rime/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;liberime-select-schema&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;luna_pinyin_simp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pyim-default-scheme&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'rime-quanpin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;6-增加rime候选词数量&quot;&gt;6 增加RIME候选词数量&lt;/h3&gt;
-
-&lt;p&gt;liberime默认只能获取5个后选词，用下面的方法可以增加RIME后端时的后选词数量。&lt;/p&gt;
-
-&lt;p&gt;创建 ~/.emacs.d/pyim/rime/default.custom.yaml 文件，内容如下：&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;patch:
-     &lt;span class=&quot;s2&quot;&gt;&quot;menu/page_size&quot;&lt;/span&gt;: 100
-     &lt;span class=&quot;s2&quot;&gt;&quot;speller/auto_select&quot;&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
-     &lt;span class=&quot;s2&quot;&gt;&quot;speller/auto_select_unique_candidate&quot;&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;区别&quot;&gt;区别&lt;/h2&gt;
-
-&lt;p&gt;Linux版的安装步骤总体比Mac要简单很多，下面是这两个系统的区别：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Linux下直接安装librime这个包就可以了，不需要Mac去手动编译 librime.1.dylib 这个库&lt;/li&gt;
-  &lt;li&gt;Linux下 liberime.so 这个动态库，直接 make 一下就好了，不需要像Mac那样那么麻烦&lt;/li&gt;
-  &lt;li&gt;Linux下 &lt;code class=&quot;highlighter-rouge&quot;&gt;liberime-start&lt;/code&gt; 函数的第一个路径是 &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/share/rime-data/&lt;/code&gt; , Mac下是 &lt;code class=&quot;highlighter-rouge&quot;&gt;/Library/Input Methods/Squirrel.app/Contents/SharedSupport&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;主要的坑在于 Emacs 27 执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;(liberime-start &quot;/usr/share/rime-data/&quot; (file-truename &quot;~/.emacs.d/pyim/rime/&quot;))&lt;/code&gt; 的时候会崩溃，切换回 Emacs 26.3 正式版以后问题就解决了，最开始不知道是这个原因，花了十几分钟研究，最后通过 gdb 定位问题。&lt;/p&gt;
-
-&lt;p&gt;现在Linux版的Emacs也可以愉快的用RIME来输入中文了。&lt;/p&gt;</content><author><name></name></author><summary type="html">之前写了一篇文章«在Mac版的Emacs中使用RIME输入法»详细说明了Mac OS下怎么让Emacs使用RIME输入法。最近又折腾回我最喜欢的Linux，今天讲一下怎么在Linux下配置Emacs的RIME输入法。</summary></entry></feed>
+&lt;p&gt;That’s all, enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Mac下缺少强大的窗口管理器，而我讨厌使用鼠标低效率的切换应用，所以我使用HammerSpoon的application.launchOrFocus来实现打开或切换应用的功能：当一个应用没有打开的时候直接打开，如果一个应用已经打开了就切换到已经打开的窗口。</summary></entry></feed>
