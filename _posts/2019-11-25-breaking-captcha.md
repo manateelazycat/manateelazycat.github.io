@@ -37,7 +37,7 @@ categories: [Linux]
 
 为什么不用 request 请求 img 元素 src 属性呢？
 
-因为当你重新请求的时候，验证码会再次生成，所以要用截图的方式去本次的验证码图片。
+因为当你重新请求的时候，验证码会再次生成，所以要用截图的方式取本次的验证码图片。
 
 ```python
 from selenium import webdriver
