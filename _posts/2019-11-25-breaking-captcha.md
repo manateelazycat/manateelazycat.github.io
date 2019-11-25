@@ -25,6 +25,7 @@ categories: [Linux]
 网上搜索对比了一下，https://anti-captcha.com 这家公司的服务就不错，已经在后台搭建机器学习的服务，而且支持支付宝, 能用钱解决的问题就不要浪费时间，哈哈哈哈。
 
 测试了一下，成功率蛮高，99%:
+
 ![Breaking Captcha]({{site.url}}/pics/breaking-captcha/breaking-captcha.png)
 
 整体思路如下：
