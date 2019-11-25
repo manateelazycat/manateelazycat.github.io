@@ -18,7 +18,7 @@ categories: [Linux]
 5. 把很多样本截取的不同字符丢给机器学习,让机器去学习不同字符的变形情况
 6. 最后全部连在一起，做验证码内容识别
 
-玩了一会机器学习代码，和我当年写的网易有道词典Linux版的OCR识别大部分流程差不多，就是机器学习这一快比较唬人。
+玩了一会机器学习代码，和我当年写的网易有道词典Linux版的OCR识别大部分流程差不多，就是机器学习这一块比较唬人。
 
 一般我到这个时候就会开始偷懒，这么成熟的产业，一定有公司干验证码破解服务的公司吧？
 
@@ -29,11 +29,15 @@ categories: [Linux]
 ![Breaking Captcha]({{site.url}}/pics/breaking-captcha/breaking-captcha.png)
 
 整体思路如下：
-1. 用 selenium 先用 Chromium 加载网页
+1. 用 selenium 调用 Chromium 加载网页
 2. 通过 driver.get_screenshot_as_png() 获取网页截图
 3. 通过 Selenium XPath 定位验证码的元素，然后通过坐标，从网页截图中切割验证码的图片
 4. 转换 PIL Image 对象为 Byte Array 格式的数据，丢给 CaptchaSolver 这个库
 5. 填上 anti-captcha 的API Key, 等5秒钟就会返回破解的验证码了
+
+为什么不用 request 请求 img 元素 src 属性呢？
+
+因为当你重新请求的时候，验证码会再次生成，所以要用截图的方式去本次的验证码图片。
 
 ```python
 from selenium import webdriver
