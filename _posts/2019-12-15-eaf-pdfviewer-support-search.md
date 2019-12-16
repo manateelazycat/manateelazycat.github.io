@@ -10,4 +10,6 @@ categories: [Emacs]
 
 ![Search]({{site.url}}/pics/eaf-pdfviewer-search/eaf-pdfviewer-search.png)
 
+搜索关键字后，按 n 键跳到下一个关键字的位置，按 N 键跳到最后一个关键字的位置。
+
 EAF PDF Viewer越来越好用啦！
