@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-25T09:22:06+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">不要说自己是玩电脑的</title><link href="http://localhost:4000/linux/2019/11/25/breaking-captcha.html" rel="alternate" type="text/html" title="不要说自己是玩电脑的" /><published>2019-11-25T00:00:00+08:00</published><updated>2019-11-25T00:00:00+08:00</updated><id>http://localhost:4000/linux/2019/11/25/breaking-captcha</id><content type="html" xml:base="http://localhost:4000/linux/2019/11/25/breaking-captcha.html">&lt;p&gt;不要告诉别人自己是玩电脑的，特别是亲朋好友，他们会认为你啥都会干，特别是…&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-19T09:45:42+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF PDF Viewer, Jump link like Vimium</title><link href="http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-link-jump.html" rel="alternate" type="text/html" title="EAF PDF Viewer, Jump link like Vimium" /><published>2019-12-15T00:00:00+08:00</published><updated>2019-12-15T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-link-jump</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-link-jump.html">&lt;p&gt;最近重感冒，睡觉起来发现&lt;a href=&quot;https://github.com/luhuaei&quot;&gt;luhuaei&lt;/a&gt;给我发了一个补丁&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/157&quot;&gt;Jump link like Vimium&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这个功能的用法很简单，当你在EAF PDF Viewer里面按 f 键后，EAF会自动在PDF所有可以跳转的地方，画上类似 Vimium 的按键线索：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-pdfviewer-link/eaf-pdfviewer-link.png&quot; alt=&quot;Vimium Jump&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;接着输入提示按键线索后，即可通过键盘跳转到链接对应的页面，特别在阅读PDF材料翻目录的时候特别有用。&lt;/p&gt;
+
+&lt;p&gt;这个补丁有个小小的问题，用户按 Ctrl + G 终止输入的时候不会清除页面跳转的按键线索，想了5分钟，给EAF添加了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/b8cb6cb0ffa3cd0c5770b8be5da288f0c1e7f354&quot;&gt;cancel_input_message DBus接口&lt;/a&gt;, 在用户终止输入的时候自动清除页面跳转的按键线索。&lt;/p&gt;
+
+&lt;p&gt;现在在EAF里面阅读PDF的体验更完美了，听说 luhuaei 还在开发PDF搜索的功能，期待。&lt;/p&gt;
+
+&lt;p&gt;感谢luhuaei! happy hacking!&lt;/p&gt;</content><author><name></name></author><summary type="html">最近重感冒，睡觉起来发现luhuaei给我发了一个补丁Jump link like Vimium</summary></entry><entry><title type="html">EAF PDF Viewer支持搜索啦！</title><link href="http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-search.html" rel="alternate" type="text/html" title="EAF PDF Viewer支持搜索啦！" /><published>2019-12-15T00:00:00+08:00</published><updated>2019-12-15T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-search</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-search.html">&lt;p&gt;&lt;a href=&quot;https://github.com/luhuaei&quot;&gt;luhuaei&lt;/a&gt;太厉害了，今天早上给EAF PDF Viewer支持了&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/12/15/eaf-pdfviewer-support-link-jump.html&quot;&gt;Vimium Jump&lt;/a&gt;后，又加了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/a8ca34e8a04c29657507fc0733a85071cf07a3c5&quot;&gt;搜索补丁&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在EAF PDF插件中，按 s 键输入需要搜索的字符，即可在PDF显示匹配的位置，再按一下 s 按键取消关键字高亮。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-pdfviewer-search/eaf-pdfviewer-search.png&quot; alt=&quot;Search&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;搜索关键字后，按 n 键跳到下一个关键字的位置，按 N 键跳到最后一个关键字的位置。&lt;/p&gt;
+
+&lt;p&gt;EAF PDF Viewer越来越好用啦！&lt;/p&gt;</content><author><name></name></author><summary type="html">luhuaei太厉害了，今天早上给EAF PDF Viewer支持了Vimium Jump后，又加了一个搜索补丁</summary></entry><entry><title type="html">EAF支持书签啦！</title><link href="http://localhost:4000/emacs/2019/12/11/eaf-support-bookmark.html" rel="alternate" type="text/html" title="EAF支持书签啦！" /><published>2019-12-11T00:00:00+08:00</published><updated>2019-12-11T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/11/eaf-support-bookmark</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/11/eaf-support-bookmark.html">&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commits?author=clemera&quot;&gt;Clemens Radermacher&lt;/a&gt; 这个德国的黑客太凶残了，两天给我发送了无数补丁。因为时区的关系，刚好我下班，他就刚刚起床，起床就疯狂的发送各种功能补丁，重构补丁等，加上这几天感冒输液，经常在医院用手机审核补丁代码，手动捂脸。&lt;/p&gt;
+
+&lt;p&gt;今天这家伙又发送了支持标签的&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/133&quot;&gt;补丁&lt;/a&gt;, 现在EAF直接对接Emacs强大的书签功能，包括浏览器和PDF阅读器插件，可以按照以下的方式做书签操作。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;C-x r m (bookmark-set) 记录当前EAF页面到书签，手动输入自定义书签名称&lt;/li&gt;
+  &lt;li&gt;C-x r l (bookmark-bmenu-list) 列出所有书签&lt;/li&gt;
+  &lt;li&gt;在Emacs书签中按回车即可一键打开EAF对应的插件，不用手动输入Google网址或者在Dired中手动找PDF文件的路径&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;当然也可以用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-open-bookmark&lt;/code&gt; 来快速搜索书签来快速打开，其实最快的方法就是：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;C-x r m (bookmark-set) 记录当前EAF页面到书签，手动输入自定义书签名称&lt;/li&gt;
+  &lt;li&gt;启动&lt;a href=&quot;https://github.com/manateelazycat/snails&quot;&gt;Snails&lt;/a&gt;, 直接搜索书签名字即可快速打开书签&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;现在在Emacs里面 EAF + Bookmark + Snails 组合的效率杠杠的。&lt;/p&gt;
+
+&lt;p&gt;感谢牛逼的德国战车，补丁刷刷的，我估计明天早上起床他刚好下班，估计又一堆幸福的补丁发来。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Clemens Radermacher 这个德国的黑客太凶残了，两天给我发送了无数补丁。因为时区的关系，刚好我下班，他就刚刚起床，起床就疯狂的发送各种功能补丁，重构补丁等，加上这几天感冒输液，经常在医院用手机审核补丁代码，手动捂脸。</summary></entry><entry><title type="html">想新写一个LSP Mode!</title><link href="http://localhost:4000/emacs/2019/12/05/want-write-new-lsp-mode.html" rel="alternate" type="text/html" title="想新写一个LSP Mode!" /><published>2019-12-05T00:00:00+08:00</published><updated>2019-12-05T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/05/want-write-new-lsp-mode</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/05/want-write-new-lsp-mode.html">&lt;p&gt;今年过年好早，准备等公司放假了，想重新写一个LSP Mode, 满足以下几个目标：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;零配置，就像TabNine那样，打开文件就可以补全，自动识别Project项目和Python这种单文件，不要让用户吭哧吭哧的配置，lsp-mode那样复杂的配置好烦;&lt;/li&gt;
+  &lt;li&gt;极致的速度，准备用Rust撸一个中转桥动态模块，专门用于和LSP Server进行通讯，解析LSP Server返回的协议内容，Rust中转桥只和 Emacs的Company Mode沟通，这样性能应该是足够流畅的;&lt;/li&gt;
+  &lt;li&gt;专注于键盘操作，那些花哨的档眼睛的UI控件不要有，太花哨而且做的不好用，eldoc文档提示和yasnippet参数模板补全的配合可以有;&lt;/li&gt;
+  &lt;li&gt;稳定，如果有一些补全高级功能没法做稳定，宁愿不要提供也不要有bug, 不稳定太烦人了。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;公司最近好忙，最近肯定没时间的，可以先和大家吹吹牛讨论下，等我闲的时候写，就像半年前写Snails 的节奏，先讨论需求，需求讨论清楚好撸代码。&lt;/p&gt;
+
+&lt;p&gt;感兴趣的Emacs Hacker欢迎一起讨论或者发邮件给我 lazycat.manatee@gmail.com&lt;/p&gt;</content><author><name></name></author><summary type="html">今年过年好早，准备等公司放假了，想重新写一个LSP Mode, 满足以下几个目标：</summary></entry><entry><title type="html">在Elisp端定制EAF选项值</title><link href="http://localhost:4000/emacs/2019/11/27/modify-eaf-variable-on-elisp-side.html" rel="alternate" type="text/html" title="在Elisp端定制EAF选项值" /><published>2019-11-27T00:00:00+08:00</published><updated>2019-11-27T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/11/27/modify-eaf-variable-on-elisp-side</id><content type="html" xml:base="http://localhost:4000/emacs/2019/11/27/modify-eaf-variable-on-elisp-side.html">&lt;p&gt;感谢社区大神今天发送的这个补丁&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/86/files&quot;&gt;New API, eaf-set on the Emacs side&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;现在我们可以使用 eaf-set 这个函数在Elisp端设置EAF插件的变量了，不需要修改EAF插件的Python代码即可定制EAF插件的行为。&lt;/p&gt;
+
+&lt;h3 id=&quot;举一个简单的例子&quot;&gt;举一个简单的例子：&lt;/h3&gt;
+
+&lt;p&gt;在Elisp端，我们使用 eaf-set 设置了 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-camera-save-path&lt;/code&gt; 这个变量的值&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Elisp&quot;&gt;(eaf-set 'eaf-camera-save-path &quot;~/Downloads&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;eaf-set 会自动更新 EAF Python 端 buffer 中的字典 &lt;code class=&quot;highlighter-rouge&quot;&gt;emacs_var_dict&lt;/code&gt; 对应的 key, 最终我们在 EAF Python 端可以通过下面的代码来获取刚刚我们通过 eaf-set 设置的变量 eaf-camera-save-path 的值。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;self.emacs_var_dict[&quot;eaf-camera-save-path&quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样所有的变量定义都可以在 Elisp 端通过配置灵活自定义了。&lt;/p&gt;</content><author><name></name></author><summary type="html">感谢社区大神今天发送的这个补丁New API, eaf-set on the Emacs side</summary></entry><entry><title type="html">不要说自己是玩电脑的</title><link href="http://localhost:4000/linux/2019/11/25/breaking-captcha.html" rel="alternate" type="text/html" title="不要说自己是玩电脑的" /><published>2019-11-25T00:00:00+08:00</published><updated>2019-11-25T00:00:00+08:00</updated><id>http://localhost:4000/linux/2019/11/25/breaking-captcha</id><content type="html" xml:base="http://localhost:4000/linux/2019/11/25/breaking-captcha.html">&lt;p&gt;不要告诉别人自己是玩电脑的，特别是亲朋好友，他们会认为你啥都会干，特别是…&lt;/p&gt;
 
 &lt;p&gt;周末被亲戚拉去写爬虫，苦逼啊，看了一下二维码的页面，大多数填表的工作都可以由 Selenium 来完成，唯一麻烦一点的就是验证码。&lt;/p&gt;
 
@@ -14,23 +80,28 @@
   &lt;li&gt;最后全部连在一起，做验证码内容识别&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;玩了一会机器学习代码，和我当年写的网易有道词典Linux版的OCR识别大部分流程差不多，就是机器学习这一快比较唬人。&lt;/p&gt;
+&lt;p&gt;玩了一会机器学习代码，和我当年写的网易有道词典Linux版的OCR识别大部分流程差不多，就是机器学习这一块比较唬人。&lt;/p&gt;
 
 &lt;p&gt;一般我到这个时候就会开始偷懒，这么成熟的产业，一定有公司干验证码破解服务的公司吧？&lt;/p&gt;
 
 &lt;p&gt;网上搜索对比了一下，https://anti-captcha.com 这家公司的服务就不错，已经在后台搭建机器学习的服务，而且支持支付宝, 能用钱解决的问题就不要浪费时间，哈哈哈哈。&lt;/p&gt;
 
-&lt;p&gt;测试了一下，成功率蛮高，99%:
-&lt;img src=&quot;http://localhost:4000/pics/breaking-captcha/breaking-captcha.png&quot; alt=&quot;Breaking Captcha&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;测试了一下，成功率蛮高，99%:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/breaking-captcha/breaking-captcha.png&quot; alt=&quot;Breaking Captcha&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;整体思路如下：&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;用 selenium 先用 Chromium 加载网页&lt;/li&gt;
+  &lt;li&gt;用 selenium 调用 Chromium 加载网页&lt;/li&gt;
   &lt;li&gt;通过 driver.get_screenshot_as_png() 获取网页截图&lt;/li&gt;
   &lt;li&gt;通过 Selenium XPath 定位验证码的元素，然后通过坐标，从网页截图中切割验证码的图片&lt;/li&gt;
   &lt;li&gt;转换 PIL Image 对象为 Byte Array 格式的数据，丢给 CaptchaSolver 这个库&lt;/li&gt;
   &lt;li&gt;填上 anti-captcha 的API Key, 等5秒钟就会返回破解的验证码了&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;为什么不用 request 请求 img 元素 src 属性呢？&lt;/p&gt;
+
+&lt;p&gt;因为当你重新请求的时候，验证码会再次生成，所以要用截图的方式取本次的验证码图片。&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;selenium&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;webdriver&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PIL&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;
@@ -204,195 +275,4 @@
 &lt;h4 id=&quot;3-添加脚本到启动服务中&quot;&gt;3. 添加脚本到启动服务中&lt;/h4&gt;
 &lt;p&gt;把脚本 wechat_window_monitor.py 拷贝到 /usr/local/bin/ 后，通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;chmod +x wechat_window_monitor.py&lt;/code&gt; 来赋予脚本执行权限后，添加到开机启动脚本。&lt;/p&gt;
 
-&lt;p class=&quot;line-quote&quot;&gt;程序员的世界好可怕，只要想得到，就可以解决任何问题。&lt;/p&gt;</content><author><name></name></author><summary type="html">问题 在Linux下用微信最好的方式还是需要用DeepinWine来运行Windows版的微信客户端，DeepinWine对Wine打了很多私有补丁，这些私有补丁因为解决问题的角度不够优雅没法被Wine上游接受，所以很多Windows程序只能在DDE下配合DeepinWine才能完美运行，比如说我们今天聊的微信客户端。</summary></entry><entry><title type="html">Snails 新增加了当前目录文件搜索后端</title><link href="http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files.html" rel="alternate" type="text/html" title="Snails 新增加了当前目录文件搜索后端" /><published>2019-09-21T00:00:00+08:00</published><updated>2019-09-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/21/snails-backend-directory-files.html">&lt;p&gt;我们经常会做一个操作，按一个按键切换到当前buffer对应的dired模式，然后在当前目录下人工找一个文件并打开。&lt;/p&gt;
-
-&lt;p&gt;今天加了一个新的后端： &lt;a href=&quot;https://github.com/manateelazycat/snails/commit/1300f084a1e3e056efaf5f7d9fa2a24ab241a822&quot;&gt;snails-backend-directory-files.el&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;这个后端会在默认搜索中开启，不需要任何前缀。&lt;/p&gt;
-
-&lt;p&gt;当你要打开当前目录下的其他文件，不用切换到的dired人工搜索，直接启动 snails 搜索即可。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;相对于 snails-backend-projectile 后端的优势是，不需要当前目录处于 git 项目中, 任何目录都可以&lt;/li&gt;
-  &lt;li&gt;相对于 snails-backend-fd/snails-backend-mdfind 后端的优势是 Emacs 内置的 &lt;code class=&quot;highlighter-rouge&quot;&gt;directory-files&lt;/code&gt; 函数因为不需要子进程的启动开销，所以速度更快&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;越来越方便了。&lt;/p&gt;</content><author><name></name></author><summary type="html">我们经常会做一个操作，按一个按键切换到当前buffer对应的dired模式，然后在当前目录下人工找一个文件并打开。</summary></entry><entry><title type="html">Emacs Application Framework支持大写字符事件了!</title><link href="http://localhost:4000/emacs/2019/09/21/support-capital-letter.html" rel="alternate" type="text/html" title="Emacs Application Framework支持大写字符事件了!" /><published>2019-09-21T00:00:00+08:00</published><updated>2019-09-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/21/support-capital-letter</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/21/support-capital-letter.html">&lt;p&gt;&lt;a href=&quot;https://manateelazycat.github.io/emacs/2018/08/06/eaf.html&quot;&gt;Emacs Application Framework&lt;/a&gt;是我为Emacs设计的新一代应用框架，可以利用PyQt5去扩展Emacs, 你可以用PyQt5去实现任何你想实现的图形应用,并完美和Emacs进行无缝融合。&lt;/p&gt;
-
-&lt;p&gt;但是EAF从发布到现在有一个非常不爽的bug就是无法输入大写字符，几个月时间都百思不得其解。&lt;/p&gt;
-
-&lt;h3 id=&quot;事件监听原理&quot;&gt;事件监听原理&lt;/h3&gt;
-&lt;p&gt;EAF 的键盘事件监听原理是：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;eaf.el 中监听Emacs端每次键盘事件敲击的钩子, 然后放到 eaf-monitor-key-event 函数中进行键盘事件过滤解析&lt;/li&gt;
-  &lt;li&gt;eaf-monitor-key-event 中探测到是单字符按键的时候，通过RPC协议，发送 send_key 消息给 EAF 的Python进程&lt;/li&gt;
-  &lt;li&gt;EAF Python进程接到来自 Elisp 进程的 send_key 事件消息后，在Python进程中的 fake_key_event 函数中构造Qt键盘事件 QKeyEvent , 最后通过 QApplication.sendEvent 函数发送事件给 Python 进程的 Qt5 控件&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;通过上面的三个步骤，EAF实现了Emacs端控制PyQt5应用事件的完整逻辑。&lt;/p&gt;
-
-&lt;h3 id=&quot;问题线索&quot;&gt;问题线索&lt;/h3&gt;
-
-&lt;p&gt;每次在Emacs EAF Buffer中敲击大写字符，Emacs会报错 buffer read-only 的错误&lt;/p&gt;
-
-&lt;h3 id=&quot;重新思考&quot;&gt;重新思考&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;既然输入大写字符时候，EAF 的Python端应用没有任何反馈，证明没有接受到Elisp端发送的键盘事件。&lt;/li&gt;
-  &lt;li&gt;如果Elisp端没有发送键盘事件，一定是 eaf-monitor-key-event 这个函数没有执行&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;那每次输入大写字符时 EAF 报 read-only 的错误为什么会导致 eaf-monitor-key-event 函数没有被正常执行呢？&lt;/p&gt;
-
-&lt;p&gt;这几个月都在想这个问题，可是每次想到这个问题，都是一头雾水，百思不得其解。&lt;/p&gt;
-
-&lt;p&gt;今天在想这个问题的时候，我一直在反复敲击大写字符，比如我要敲击H， 左手先按 Shift ，右手按 H，左手按 Shift 的时候已经报 read-only 的错误了，突然灵光一闪…&lt;/p&gt;
-
-&lt;h3 id=&quot;大胆猜测&quot;&gt;大胆猜测&lt;/h3&gt;
-
-&lt;p&gt;因为 EAF 的buffer最开始设计的时候，只是用于传递窗口位置和大小给EAF的Python端，并不会在EAF Emacs buffer中敲入任何字符，所以，我把所有EAF Buffer都默认设置成 read-only 模式。&lt;/p&gt;
-
-&lt;p&gt;会不会因为左手按Shift的时候，已经触发了 read-only 的错误， 然后导致 eaf-monitor-key-event 函数无法调用，最终无法发送大写字符的事件给EAF Python端？&lt;/p&gt;
-
-&lt;h3 id=&quot;搞定&quot;&gt;搞定&lt;/h3&gt;
-
-&lt;p&gt;按照上面的猜测，首先移除了 EAF Buffer 的 read-only 模式，然后在EAF Python端的 fake_key_event 函数中根据传递事件字符串是否是大写键来给 QKeyEvent 事件添加 ShiftModifier 的修饰符。&lt;/p&gt;
-
-&lt;p&gt;重启EAF测试，哇，搞定了。&lt;/p&gt;
-
-&lt;p&gt;皇天不负有心人，这个纠缠了我几个月的Bug终于被我给解决了，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">Emacs Application Framework是我为Emacs设计的新一代应用框架，可以利用PyQt5去扩展Emacs, 你可以用PyQt5去实现任何你想实现的图形应用,并完美和Emacs进行无缝融合。</summary></entry><entry><title type="html">选择Emacs最底部的窗口</title><link href="http://localhost:4000/emacs/2019/09/20/select-bottom-window.html" rel="alternate" type="text/html" title="选择Emacs最底部的窗口" /><published>2019-09-20T00:00:00+08:00</published><updated>2019-09-20T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/09/20/select-bottom-window</id><content type="html" xml:base="http://localhost:4000/emacs/2019/09/20/select-bottom-window.html">&lt;p&gt;我写的&lt;a href=&quot;https://github.com/manateelazycat/aweshell&quot;&gt;Aweshell&lt;/a&gt;插件有一个功能，在Emacs底部打开一个终端窗口，方便快速切换终端窗口用于调试代码。&lt;/p&gt;
-
-&lt;p&gt;Emacs默认是没有选择最底部窗口的功能的，只有靠&lt;code class=&quot;highlighter-rouge&quot;&gt;windmove.el&lt;/code&gt;这个库做最基本的四个方向选择，选择下面的窗口用 &lt;code class=&quot;highlighter-rouge&quot;&gt;windmove-down&lt;/code&gt; 函数。&lt;/p&gt;
-
-&lt;p&gt;所以，我用下面的代码来实现选中最底部窗口的功能：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ignore-errors&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dotimes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;windmove-down&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这段代码的作用主要是利用 &lt;code class=&quot;highlighter-rouge&quot;&gt;windmove-down&lt;/code&gt; 这个函数的一个特性：如果光标已经在最底部窗口时会报错，然后利用 &lt;code class=&quot;highlighter-rouge&quot;&gt;ignore-errors&lt;/code&gt; 宏来捕捉错误，从而停止往下面找窗口的动作。&lt;/p&gt;
-
-&lt;p&gt;一般人不会分屏50次，所以我随便写了一个 50 次循环， 哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">我写的Aweshell插件有一个功能，在Emacs底部打开一个终端窗口，方便快速切换终端窗口用于调试代码。</summary></entry><entry><title type="html">活在此时此刻</title><link href="http://localhost:4000/reading/2019/09/18/read-live-in-current.html" rel="alternate" type="text/html" title="活在此时此刻" /><published>2019-09-18T00:00:00+08:00</published><updated>2019-09-18T00:00:00+08:00</updated><id>http://localhost:4000/reading/2019/09/18/read-live-in-current</id><content type="html" xml:base="http://localhost:4000/reading/2019/09/18/read-live-in-current.html">&lt;p&gt;最近读了一行禅师写的《活在此时此刻》，最开始是在书店闲逛的时候看到的，回家买了Kindle版，花了一个月的时间慢慢读这本书。&lt;/p&gt;
-
-&lt;p&gt;不知道是不是《当下的力量》这本书或者其他原因，最近很享受慢慢的去读一本书，读一段，坐在小区的长椅上，去感受周围环境的一切，不管现在的处境是好的还是坏的，心中总是抱着正念去呼吸，去感受。&lt;/p&gt;
-
-&lt;p&gt;当怀着正念思考的时候，即使遇到非常棘手的事情，再也不会抱怨，焦虑和愤怒了，因为正念告诉我自己，要善待这个世界，负面的情绪不能给我任何力量。也正是因此，现在遇到的很多困难，在以前看起来几乎不可能解决的事情，现在反而非常容易解决，困难反而因为锻炼自己的正念而变成一件我生活中更加可贵的经历。&lt;/p&gt;
-
-&lt;h3 id=&quot;风中居所&quot;&gt;风中居所&lt;/h3&gt;
-&lt;p&gt;读这本书的时候，特别喜欢里面一个叫【风中居所】的一段：&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;大约三十年前，我独自一人在我们静修处修行。我的静修处是芳云庵，在法国北部的奥德森林里。我喜欢在树林里静坐、行走。一个非常美丽的早晨，我决定一整天都待在树林里。于是，我带上一碗饭、一些芝麻和一瓶水，便出门了。我计划在外面待上一整天，但在下午三点左右，乌云就开始布满天空。那天早晨离开居所前，我将门和所有的窗户都敞开了，好让阳光和新鲜空气进去。但此时，开始刮起大风，我知道我必须回去收拾好静修处。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;回去之后，我发现居所里一片狼藉。阵阵狂风将我桌上的文件吹得到处都是，周围变得又黑又暗。我做的第一件事便是把门和所有的窗户都关上，不让风再继续肆虐。然后，我在壁炉里生了火，等火慢慢烧起来后，我便开始收拾地上的一张张纸，将它们一起放在桌子上，并在上面放了一块小砖，随后便准备将居所里收拾得整洁有序。很快，火让一切变得温暖、快乐和惬意。我在火堆旁坐下，烤着双手，听着外面的风雨声。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;总有些日子让你感觉不是你的日子，一切都不顺利，并且你越努力，情况就变得越加糟糕，每个人都会有那样的日子。而那就说明，是时候停下一切，回家去，关上所有的窗户，回归自己的内心。当你感觉一切都成了一团乱麻时，眼睛、耳朵、鼻子、舌头、身体和思惟便是你关闭心识的六扇窗户。关闭一切，以阻止强风吹进来，让你受苦。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;关闭窗户，关闭门，生一堆火。通过练习正念呼吸，营造一个温暖、安逸、舒适的感觉。重新布置一切—你的感觉、你的认知、你的情绪—它们散落在各处，这是你内心的混乱。认识和拥抱每一种情绪，像我收集散落在居所各处的纸张一样收集它们；练习正念和专注，将内心的一切清理整洁。这些将会帮助你恢复平静和安宁。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;如果我们仅依赖外部条件，那么我们就会迷失。我们需要一个可以一直依赖的庇护所、一座内心的岛屿。只要牢牢地安顿在内在岛屿上，我们就会非常安全。我们可以花时间重新发现、重新恢复自我，变得更加强壮，直到我们准备好再次出行。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;即便你非常年轻，也可以找到自己内心的岛屿。一旦你苦不堪言，感觉没有一件事情顺心，不妨停下一切，径直前往那座岛屿。只要你有需要，不妨回归到内心的岛屿里。可以是五分钟、十分钟、十五分钟，也可以是半个小时。你将感觉自己变得更加强大，内心更加安逸。&lt;/p&gt;
-
-&lt;p&gt;看完一行禅师这个故事，我想我更理解佛教的理念了。&lt;/p&gt;
-
-&lt;p&gt;我们做技术的，或者做互联网的特别讲究套路，我们总是期望找到一本绝世秘籍，然后期望通过秘籍去解决我们生活中遇到的所有问题。&lt;/p&gt;
-
-&lt;p&gt;人生也好，工作也好，生意也好，其实还是要回归内心，当你向内深入的越多，越朴素，剩下的事情其实很简单，就是努力工作，热爱生活，真诚对待他人，这就足够了。当你做到这几点，不用对生活有所期待，生活会按照最美好的方式对待你的。;)&lt;/p&gt;
-
-&lt;p&gt;当我第一次反复读这一段的时候，心中充满了力量：&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;回去之后，我发现居所里一片狼藉。阵阵狂风将我桌上的文件吹得到处都是，周围变得又黑又暗。我做的第一件事便是把门和所有的窗户都关上，不让风再继续肆虐。然后，我在壁炉里生了火，等火慢慢烧起来后，我便开始收拾地上的一张张纸，将它们一起放在桌子上，并在上面放了一块小砖，随后便准备将居所里收拾得整洁有序。很快，火让一切变得温暖、快乐和惬意。我在火堆旁坐下，烤着双手，听着外面的风雨声。&lt;/p&gt;
-
-&lt;p&gt;当时我就想啊，也许我之前的人生受尼采的“超人哲学”影响很大，很多事情只有一个标准，就是做到极致，即使自己的身体已经远远超过极限了，还在逼迫自己坚持，即使身体通过各种维度告诉我 ”我已经受不了了“ ，还在通过思想去谴责自己的 ‘软弱’ 。&lt;/p&gt;
-
-&lt;p&gt;现在我想明白了，人的身体也好，思想也好，本质上还是一个能量有限的个体，有它的极限，很多事情要顺其自然，累的时候就休息一下，不管外界发生任何事情，都不关自己的事情。&lt;/p&gt;
-
-&lt;p&gt;先像一行禅师那样，把洒落在内心各处的回忆，情绪，疲劳一张张的慢慢捡起来放好，给自己的内心生上一堆火，慢慢的让心平静下来。&lt;/p&gt;
-
-&lt;p&gt;休息够了，内心不再乱了，就可以重新启航了。&lt;/p&gt;
-
-&lt;h3 id=&quot;第一次花开&quot;&gt;第一次花开&lt;/h3&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;正念是我修行的基本。正念意味着安住于此时此刻，并觉知万事万物—在我们之内和之外的所有积极和消极的因素。我们学习滋养积极因素，学习认识、拥抱和改变消极因素。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;我们可以快乐地安住于此时此刻。我们可以每天提醒自己，这样的修习并不是为了到达某地或获得某物。修习本身就是在寻找的快乐和平静，修习就是终点。&lt;/p&gt;
-
-&lt;p&gt;以前有很长一段时间，看了很多各种各样的书，总是提醒自己要多学习各种各样的知识，然后才能在未来变成更好的自我，即使当时的我已经非常好了，也会从未来穿越回来告诉自己现在还不够好，长此以往，自己便陷入每天都对自己不满意的焦虑中，即使今天什么事情都没有，还是对自己不满意。&lt;/p&gt;
-
-&lt;p&gt;现在明白了生活分为三个部分：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;正念修行，让自己每天知道，修行的目的不是未来某一天怎么怎么样，而是当下的每时每刻，如果不能享受当下的一切，过去和未来都毫无意义，当下才是最重要的。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;每天都是新的一天，每天遇到开心和不开心的事情再正常不过，只要保持正念，努力的学习知识和工作，能够积极的解决问题就好，知识只是工具，再广博的知识无非就是一个强大的大脑，如果没有正念的内心，人不过就是解决现实问题的机器，即使解决的再好，没有内心的一隅平静，解决完一个问题后会迎来一个更大的不满足和空虚。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;多微笑一下，不管陪伴家人，和朋友聊天还是面对客户，多笑一下，当然不是那种苦笑，而是你内心平静叠加积极乐观的心态后，发自内心的微笑，那种可以向别人传递正能量的微笑。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;现在我明白了，佛教不再是我以前理解的，要在当世忍受一切去寻求来世的那种虚幻，真正的修行是在当下，活在此时此刻就是平静，活在此时此刻就是修行的终点，不是过去，也不是未来。我们不需要对未来有任何期待即可获得平静。&lt;/p&gt;
-
-&lt;h3 id=&quot;谷歌普莱克斯&quot;&gt;谷歌普莱克斯&lt;/h3&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;2013年，我在加利福尼亚谷歌总部—他们称之为“谷歌普莱克斯”—带领谷歌员工进行一天正念修习。我们团体有七十多名僧尼，而那天报名的谷歌员工有七百多人。我们一早就开始了，带领大家静坐、行禅、正念饮食和放松禅—与我们在梅村禅修中心的正念日完全一致。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;这些谷歌人年轻聪颖，富有创造力，我们能看出来他们将自己的全身心都投入到了修习当中。他们非常专注，修习得非常好。我想，他们之所以如此用心修习，是因为他们所遭受的痛苦。他们对能帮助他们减轻痛苦的精神修习如饥似渴。我们知道他们一直非常努力地工作。所有的公司都为“成功”而奋斗，人人都希望成为“第一”。正因如此，许多年轻人倾尽所有时间和精力于工作和公司，没有时间照顾自己的身体、感受、情绪和关系。即便有时间，他们可能也不知道如何利用那些时间来真正地照料身体和心灵。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;我为大家分享了如何行禅，随后，我们便围绕园区慢慢地、正念地、安静地行走，开始这一天。差不多十五分钟后，我们安静地坐下来，一声不响。我双手举着我的茶，一边享用，一边等着大家到来，等着他们全都坐下并跟随自己的呼吸。我们在那儿平静地坐了很久，享受着清晨的寂静和宁谧。与此同时，许多员工陆陆续续前来上班，每次有人来到角落附近时，他们都会突然惊呆。他们看到了异样：许多人坐在地上，什么也不做，只是呼吸着。实在太安静！这完全是新鲜和意想不到的事情！时间胜过金钱，时间就是平和，时间就是生命。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;我们中的许多人太忙碌，工作太努力，以致于没有时间生活。我们的工作占据了我们所有的生命。我们甚至可能沉迷工作，不仅因为我们需要金钱，更因为我们不知该如何处理内心的痛苦与孤独，所以我们在工作中寻找庇护。有时，我们不知该拿内心的孤独、痛苦和绝望怎么办。我们试着寻找某个事物来将它掩盖。我们检查邮件，我们拿起报纸，我们收听新闻，只要能忘掉内心的孤独和痛苦。我们的身体不得安宁，我们的心灵不得安宁，而我们却不知道该做什么。我们试着坐下，但一坐下，却又像坐在燃烧的煤炭上一样。我们可能会散散步，但一散步，却好像走在火焰上一样。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;当不安的力量表现出来时，我们就不得不认识到正在发生的一切，然后说：“你好，我的‘不安’。我知道你在那里，我会好好照顾你的。”然后，我们开始修习正念呼吸，将我们的心带回我们的身体。当身心合而为一时，你就安住在此时此地，你便可以触碰到生命，并照料内心的感受。世界里有种种奇迹，如果继续如此卖力地工作，我们就没有足够的时间生活，没有足够的时间去接触生命的奇迹，去获得我们所需的滋养和治疗。我们必须有这样的见悟，以将我们自己从不安中释放出来。在“此刻”这个国度里，我们将接受我们所需的治疗。&lt;/p&gt;
-
-&lt;p&gt;我想这就是我在深度最后几年的状态吧，每天都不安。&lt;/p&gt;
-
-&lt;p&gt;当我放下过去的一切，现在用心写下我想的每一句话，每个标点，让内心的思绪从指间流淌在键盘上，变成比特流顺着因特网传递到你眼前时，现在的我，感谢过去经历的精彩和痛苦，现在的我无比的平静，无比的享受这种写作的心流状态，我内心无比的快乐 ;)&lt;/p&gt;
-
-&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;教育不单单是讲授，更在于你如何过自己的生活。我的人生就是我的教育，我的人生就是我的讯息。&lt;/p&gt;
-
-&lt;p&gt;这句话也是《活在此时此刻》这本书的最后一句话，人，我们自己当下的一言一行就是最好的自己，最好的教育以及对别人最好的激励。&lt;/p&gt;
-
-&lt;p&gt;当下我们的状态才是最好的教育，而不是知识，学识，作品…&lt;/p&gt;</content><author><name></name></author><summary type="html">最近读了一行禅师写的《活在此时此刻》，最开始是在书店闲逛的时候看到的，回家买了Kindle版，花了一个月的时间慢慢读这本书。</summary></entry><entry><title type="html">Linux下实现打开或切换应用的功能</title><link href="http://localhost:4000/linux/2019/09/13/open-or-raise.html" rel="alternate" type="text/html" title="Linux下实现打开或切换应用的功能" /><published>2019-09-13T00:00:00+08:00</published><updated>2019-09-13T00:00:00+08:00</updated><id>http://localhost:4000/linux/2019/09/13/open-or-raise</id><content type="html" xml:base="http://localhost:4000/linux/2019/09/13/open-or-raise.html">&lt;p&gt;Mac下缺少强大的窗口管理器，而我讨厌使用鼠标低效率的切换应用，所以我使用HammerSpoon的&lt;a href=&quot;https://github.com/manateelazycat/hammerspoon-config/blob/d741f22e8bfaa07930701cf9d6fef789693b4e3a/init.lua#L194&quot;&gt;application.launchOrFocus&lt;/a&gt;来实现打开或切换应用的功能：当一个应用没有打开的时候直接打开，如果一个应用已经打开了就切换到已经打开的窗口。&lt;/p&gt;
-
-&lt;p&gt;最近切换回Linux的环境下，也想保持和Mac同样的使用习惯，避免在Linux和Mac切换时手指发懵。&lt;/p&gt;
-
-&lt;p&gt;在Linux下实现这种功能就简单的多了，我们可以使用 wmctrl 来实现：&lt;/p&gt;
-
-&lt;h3 id=&quot;安装-wmctrl&quot;&gt;安装 wmctrl&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; wmctrl
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;原理&quot;&gt;原理&lt;/h3&gt;
-&lt;p&gt;然后使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a window_name || application_name&lt;/code&gt; 即可完成我们想要的功能&lt;/p&gt;
-
-&lt;p&gt;其中，&lt;code class=&quot;highlighter-rouge&quot;&gt;window_name&lt;/code&gt; 是窗口名字，&lt;code class=&quot;highlighter-rouge&quot;&gt;application_name&lt;/code&gt; 是应用的启动命令&lt;/p&gt;
-
-&lt;p&gt;wmctrl首先会根据我们提供的窗口名字尝试切换窗口，如果没有发现可以切换的窗口则调用启动命令来启动应用。&lt;/p&gt;
-
-&lt;h3 id=&quot;获取窗口名字&quot;&gt;获取窗口名字&lt;/h3&gt;
-
-&lt;p&gt;有时候窗口名字并不一定可以直观的猜到，可以在终端中使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;xprop WM_CLASS&lt;/code&gt; , 然后用鼠标点一下想要获取属性的窗口，就可以知道目标窗口的名字了。&lt;/p&gt;
-
-&lt;h3 id=&quot;配置应用命令&quot;&gt;配置应用命令&lt;/h3&gt;
-
-&lt;p&gt;下面是我常用的一些命令：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Google Chrome: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a chrome || google-chrome-stable&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Emacs: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a emacs || emacs&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Deepin Terminal: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a deepin-terminal || deepin-terminal&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Netease Cloud Music: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a netease-cloud-music || netease-cloud-music&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;System Settings: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a systemsettings5 || systemsettings5&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;File manager: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a dolphin || dolphin&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Calibre: &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a calibre-ebook-viewer || calibre&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That’s all, enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Mac下缺少强大的窗口管理器，而我讨厌使用鼠标低效率的切换应用，所以我使用HammerSpoon的application.launchOrFocus来实现打开或切换应用的功能：当一个应用没有打开的时候直接打开，如果一个应用已经打开了就切换到已经打开的窗口。</summary></entry></feed>
+&lt;p class=&quot;line-quote&quot;&gt;程序员的世界好可怕，只要想得到，就可以解决任何问题。&lt;/p&gt;</content><author><name></name></author><summary type="html">问题 在Linux下用微信最好的方式还是需要用DeepinWine来运行Windows版的微信客户端，DeepinWine对Wine打了很多私有补丁，这些私有补丁因为解决问题的角度不够优雅没法被Wine上游接受，所以很多Windows程序只能在DDE下配合DeepinWine才能完美运行，比如说我们今天聊的微信客户端。</summary></entry></feed>

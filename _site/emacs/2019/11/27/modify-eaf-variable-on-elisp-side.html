@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>在Elisp端定制EAF选项值</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                在Elisp端定制EAF选项值
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数407 2019-11-27
+            </div>
+            <div class="content">
+                <p>感谢社区大神今天发送的这个补丁<a href="https://github.com/manateelazycat/emacs-application-framework/pull/86/files">New API, eaf-set on the Emacs side</a></p>
+
+<p>现在我们可以使用 eaf-set 这个函数在Elisp端设置EAF插件的变量了，不需要修改EAF插件的Python代码即可定制EAF插件的行为。</p>
+
+<h3 id="举一个简单的例子">举一个简单的例子：</h3>
+
+<p>在Elisp端，我们使用 eaf-set 设置了 <code class="highlighter-rouge">eaf-camera-save-path</code> 这个变量的值</p>
+
+<pre><code class="language-Elisp">(eaf-set 'eaf-camera-save-path "~/Downloads")
+</code></pre>
+
+<p>eaf-set 会自动更新 EAF Python 端 buffer 中的字典 <code class="highlighter-rouge">emacs_var_dict</code> 对应的 key, 最终我们在 EAF Python 端可以通过下面的代码来获取刚刚我们通过 eaf-set 设置的变量 eaf-camera-save-path 的值。</p>
+
+<pre><code class="language-Python">self.emacs_var_dict["eaf-camera-save-path"]
+</code></pre>
+
+<p>这样所有的变量定义都可以在 Elisp 端通过配置灵活自定义了。</p>
+
+            </div>
+        </div>
+    </body>
+</html>
