@@ -173,11 +173,14 @@ blockquote p {
     margin-top: 40px;
 }
 
-.line-quote {
-    white-space: normal;
-    padding: 10px;
-    background-color: #FFF0C6;
-    border-radius: 5px;
+.line-quote:before {
+    content: '\FF62';
+    margin-right: 10px;
+}
+
+.line-quote:after {
+    content: '\FF63';
+    margin-left: 10px;
 }
 
 .text-quote {
@@ -211,4 +214,3 @@ blockquote p {
 h1, h2, h3, h4, h5, h6, h7, h8, h9, h10 {
     margin-top: 40px;
 }
-
