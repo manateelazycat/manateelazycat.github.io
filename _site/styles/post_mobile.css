@@ -173,6 +173,10 @@ blockquote p {
     margin-top: 40px;
 }
 
+.line-quote {
+    color: #FF9500;
+}
+
 .line-quote:before {
     content: '\FF62';
     margin-right: 10px;
