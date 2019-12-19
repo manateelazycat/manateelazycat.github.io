@@ -51,7 +51,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数1533 2019-11-25
+                字数1599 2019-11-25
             </div>
             <div class="content">
                 <p>不要告诉别人自己是玩电脑的，特别是亲朋好友，他们会认为你啥都会干，特别是…</p>
@@ -70,23 +70,28 @@
   <li>最后全部连在一起，做验证码内容识别</li>
 </ol>
 
-<p>玩了一会机器学习代码，和我当年写的网易有道词典Linux版的OCR识别大部分流程差不多，就是机器学习这一快比较唬人。</p>
+<p>玩了一会机器学习代码，和我当年写的网易有道词典Linux版的OCR识别大部分流程差不多，就是机器学习这一块比较唬人。</p>
 
 <p>一般我到这个时候就会开始偷懒，这么成熟的产业，一定有公司干验证码破解服务的公司吧？</p>
 
 <p>网上搜索对比了一下，https://anti-captcha.com 这家公司的服务就不错，已经在后台搭建机器学习的服务，而且支持支付宝, 能用钱解决的问题就不要浪费时间，哈哈哈哈。</p>
 
-<p>测试了一下，成功率蛮高，99%:
-<img src="http://localhost:4000/pics/breaking-captcha/breaking-captcha.png" alt="Breaking Captcha" /></p>
+<p>测试了一下，成功率蛮高，99%:</p>
+
+<p><img src="http://localhost:4000/pics/breaking-captcha/breaking-captcha.png" alt="Breaking Captcha" /></p>
 
 <p>整体思路如下：</p>
 <ol>
-  <li>用 selenium 先用 Chromium 加载网页</li>
+  <li>用 selenium 调用 Chromium 加载网页</li>
   <li>通过 driver.get_screenshot_as_png() 获取网页截图</li>
   <li>通过 Selenium XPath 定位验证码的元素，然后通过坐标，从网页截图中切割验证码的图片</li>
   <li>转换 PIL Image 对象为 Byte Array 格式的数据，丢给 CaptchaSolver 这个库</li>
   <li>填上 anti-captcha 的API Key, 等5秒钟就会返回破解的验证码了</li>
 </ol>
+
+<p>为什么不用 request 请求 img 元素 src 属性呢？</p>
+
+<p>因为当你重新请求的时候，验证码会再次生成，所以要用截图的方式取本次的验证码图片。</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>

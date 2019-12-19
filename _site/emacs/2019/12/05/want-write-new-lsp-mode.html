@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>想新写一个LSP Mode!</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                想新写一个LSP Mode!
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数459 2019-12-05
+            </div>
+            <div class="content">
+                <p>今年过年好早，准备等公司放假了，想重新写一个LSP Mode, 满足以下几个目标：</p>
+
+<ol>
+  <li>零配置，就像TabNine那样，打开文件就可以补全，自动识别Project项目和Python这种单文件，不要让用户吭哧吭哧的配置，lsp-mode那样复杂的配置好烦;</li>
+  <li>极致的速度，准备用Rust撸一个中转桥动态模块，专门用于和LSP Server进行通讯，解析LSP Server返回的协议内容，Rust中转桥只和 Emacs的Company Mode沟通，这样性能应该是足够流畅的;</li>
+  <li>专注于键盘操作，那些花哨的档眼睛的UI控件不要有，太花哨而且做的不好用，eldoc文档提示和yasnippet参数模板补全的配合可以有;</li>
+  <li>稳定，如果有一些补全高级功能没法做稳定，宁愿不要提供也不要有bug, 不稳定太烦人了。</li>
+</ol>
+
+<p>公司最近好忙，最近肯定没时间的，可以先和大家吹吹牛讨论下，等我闲的时候写，就像半年前写Snails 的节奏，先讨论需求，需求讨论清楚好撸代码。</p>
+
+<p>感兴趣的Emacs Hacker欢迎一起讨论或者发邮件给我 lazycat.manatee@gmail.com</p>
+
+            </div>
+        </div>
+    </body>
+</html>
