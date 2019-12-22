@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-21T02:57:45+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">觉醒和一个新世界</title><link href="http://localhost:4000/life/2019/12/21/wake-and-new-world.html" rel="alternate" type="text/html" title="觉醒和一个新世界" /><published>2019-12-21T00:00:00+08:00</published><updated>2019-12-21T00:00:00+08:00</updated><id>http://localhost:4000/life/2019/12/21/wake-and-new-world</id><content type="html" xml:base="http://localhost:4000/life/2019/12/21/wake-and-new-world.html">&lt;p&gt;最近在读《一个新世界》这本书，是《当下的力量》作者的新著，书中描绘的理念其实是一样的，只是《一个新世界》这本书写的更加透彻，也更加难以理解了。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-22T23:06:50+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF PDF Viewer支持文本选择了。</title><link href="http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select.html" rel="alternate" type="text/html" title="EAF PDF Viewer支持文本选择了。" /><published>2019-12-22T00:00:00+08:00</published><updated>2019-12-22T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select.html">&lt;p&gt;&lt;a href=&quot;https://github.com/luhuaei&quot;&gt;luhuaei&lt;/a&gt;大神周末发了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/157&quot;&gt;补丁&lt;/a&gt;，可以让EAF PDF支持文本选择了。&lt;/p&gt;
+
+&lt;p&gt;现在只需要在PDF Viewer里面双击，然后移动鼠标选择区域，最后按一下 Alt + W 键即可从PDF复制文本到Emacs Keyring.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-pdfviewer-support-select/eaf-pdfviewer-support-select.gif&quot; alt=&quot;Select Text&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;有了这个功能为基础，估计以后可以做到选择PDF文档时，自动把标注内容备份到Org-Mode中，甚至可以在PDF和Org-Mode之间进行联动，反复对学习材料进行复习温故。&lt;/p&gt;
+
+&lt;p&gt;EAF PDF Viewer从功能上已经是Emacs里面最强大的PDF阅读器了，没有之一。&lt;/p&gt;
+
+&lt;p&gt;继续加油！&lt;/p&gt;</content><author><name></name></author><summary type="html">luhuaei大神周末发了一个补丁，可以让EAF PDF支持文本选择了。</summary></entry><entry><title type="html">觉醒和一个新世界</title><link href="http://localhost:4000/life/2019/12/21/wake-and-new-world.html" rel="alternate" type="text/html" title="觉醒和一个新世界" /><published>2019-12-21T00:00:00+08:00</published><updated>2019-12-21T00:00:00+08:00</updated><id>http://localhost:4000/life/2019/12/21/wake-and-new-world</id><content type="html" xml:base="http://localhost:4000/life/2019/12/21/wake-and-new-world.html">&lt;p&gt;最近在读《一个新世界》这本书，是《当下的力量》作者的新著，书中描绘的理念其实是一样的，只是《一个新世界》这本书写的更加透彻，也更加难以理解了。&lt;/p&gt;
 
 &lt;p&gt;我有一个读书的习惯，对于特别难懂的书，会在读懂以后，用我自己的语言在把自己所学的东西写出来，这样可以加深印象（温故而知新）。&lt;/p&gt;
 
@@ -288,19 +298,4 @@
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/318718bf80f128ba38a678f22a11e2194816245c&quot;&gt;补丁&lt;/a&gt;中增加了一些辅助代码，使得EAF可以记住每个PDF文件的反色模式，下次就不用再手动切换模式了, 舒服。&lt;/p&gt;
 
-&lt;p&gt;BTW, 最近我自己的公司在招聘Linux编程高手，如果你像我这样热爱编程，喜欢研究开源软件，欢迎联系我: lazycat.manatee@gmail.com&lt;/p&gt;</content><author><name></name></author><summary type="html">最近晚上才有空看会儿书，EAF PDF阅读器默认是渲染PDF文件的原色，一般的PDF文件背景都是白色的，就像这样。</summary></entry><entry><title type="html">修复微信Bad Window的问题</title><link href="http://localhost:4000/linux/2019/11/15/fix-bad-window.html" rel="alternate" type="text/html" title="修复微信Bad Window的问题" /><published>2019-11-15T00:00:00+08:00</published><updated>2019-11-15T00:00:00+08:00</updated><id>http://localhost:4000/linux/2019/11/15/fix-bad-window</id><content type="html" xml:base="http://localhost:4000/linux/2019/11/15/fix-bad-window.html">&lt;h3 id=&quot;问题&quot;&gt;问题&lt;/h3&gt;
-&lt;p&gt;Arch下 deepin-wine-wechat 这个包不是用的 deepin-wine, 而是 wine 构建的，导致有两个问题，第一个透明窗口不消失，第二个是无法输入中文，原因是 DeepinWine 的一些补丁没有推送到上游 Wine 社区。&lt;/p&gt;
-
-&lt;p&gt;DeepinWine 版本的微信需要安装 deepin.com.wechat2 这个包，但是这个版本的微信启动会显示 X BadWindow 的错误。
-原因是当时 DeepinWine 编写代码时只允许在 DDE 或者 Gnome 环境下运行。&lt;/p&gt;
-
-&lt;h3 id=&quot;解决思路&quot;&gt;解决思路&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;安装依赖 &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pacman -S gnome-settings-daemon&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;/opt/deepinwine/apps/Deepin-WeChat/run.sh&lt;/code&gt; 在开头插入一行 &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/lib/gsd-xsettings &amp;amp;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;删除原先的微信目录 &lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf ~/.deepinwine/Deepin-WeChat&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;这样 DeepinWine 就认为在Gnome环境下，可以正常启动 DeepinWine 版本的微信了。&lt;/p&gt;
-
-&lt;p&gt;同时，可以用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;wmctrl -x -a wechat.exe || /opt/deepinwine/apps/Deepin-WeChat/run.sh&lt;/code&gt; 绑定快捷键进行一键启动微信或者切换微信窗口。&lt;/p&gt;</content><author><name></name></author><summary type="html">问题 Arch下 deepin-wine-wechat 这个包不是用的 deepin-wine, 而是 wine 构建的，导致有两个问题，第一个透明窗口不消失，第二个是无法输入中文，原因是 DeepinWine 的一些补丁没有推送到上游 Wine 社区。</summary></entry></feed>
+&lt;p&gt;BTW, 最近我自己的公司在招聘Linux编程高手，如果你像我这样热爱编程，喜欢研究开源软件，欢迎联系我: lazycat.manatee@gmail.com&lt;/p&gt;</content><author><name></name></author><summary type="html">最近晚上才有空看会儿书，EAF PDF阅读器默认是渲染PDF文件的原色，一般的PDF文件背景都是白色的，就像这样。</summary></entry></feed>
