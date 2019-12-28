@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-22T23:06:50+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF PDF Viewer支持文本选择了。</title><link href="http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select.html" rel="alternate" type="text/html" title="EAF PDF Viewer支持文本选择了。" /><published>2019-12-22T00:00:00+08:00</published><updated>2019-12-22T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select.html">&lt;p&gt;&lt;a href=&quot;https://github.com/luhuaei&quot;&gt;luhuaei&lt;/a&gt;大神周末发了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/157&quot;&gt;补丁&lt;/a&gt;，可以让EAF PDF支持文本选择了。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-29T07:26:24+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF浏览器支持Vimium的键盘跳转功能了！</title><link href="http://localhost:4000/emacs/2019/12/29/eaf-vimium.html" rel="alternate" type="text/html" title="EAF浏览器支持Vimium的键盘跳转功能了！" /><published>2019-12-29T00:00:00+08:00</published><updated>2019-12-29T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/29/eaf-vimium</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/29/eaf-vimium.html">&lt;p&gt;周末在外出差，本来定的7点起床闹钟，6:30的时候接到 &lt;a href=&quot;https://github.com/MatthewZMD&quot;&gt;MatthewZMD&lt;/a&gt; 的微信说Vimium搞定了。不是做梦吧？赶紧弹起来，review 了一下，没毛病，合并补丁！&lt;/p&gt;
+
+&lt;p&gt;试用了一下&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/179&quot;&gt; Vimium 的功能&lt;/a&gt; , 哇，太好用了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-vimium/eaf-vimium.png&quot; alt=&quot;Vimium&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;十几年前还是Emacs菜鸟的时候，梦想有一天可以Live in Emacs中，完全用Emacs做所有工作…&lt;/p&gt;
+
+&lt;p&gt;从最开始用Haskell折腾的&lt;a href=&quot;https://wiki.haskell.org/Manatee&quot;&gt; Manatee &lt;/a&gt;，到前几年折腾用Vala折腾的&lt;a href=&quot;https://github.com/manateelazycat/mrkeyboard&quot;&gt; Mr.Keyboard &lt;/a&gt;, 终有一天恍然悔悟了，当初真不应该以Emacs不能支持多线程/GUI而离开Emacs，再去用别的技术再去造一个Emacs。&lt;/p&gt;
+
+&lt;p&gt;这个世界上支持多线程和GUI的技术有很多，但是像Emacs这样把编辑功能做到极致的编辑器却很少有，即使我在多线程和GUI上作出点特色，那只不过是给这个世界又造了一个普通的工具。在文本编辑方面，Emacs这种全世界黑客一起努力的编辑生态可能是我一辈子都无法逾越的大山。&lt;/p&gt;
+
+&lt;p&gt;最后想通了，Emacs在文本编辑和协作一致性上已经做到登峰造极，我只需把PDF阅读，浏览器等Emacs并不擅长的多媒体功能做好并集成到Emacs即可，这就是去年完成的 &lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;Emacs Application Framework&lt;/a&gt; 图形应用框架。&lt;/p&gt;
+
+&lt;p&gt;今天EAF终于可以像Chromium那样使用Vimium插件那样，快速用键盘打开浏览器页面的任意链接，离 Live in Emacs 又近了一步！&lt;/p&gt;
+
+&lt;p&gt;Happy hacking and Merry Christmas, MatthewZMD! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">周末在外出差，本来定的7点起床闹钟，6:30的时候接到 MatthewZMD 的微信说Vimium搞定了。不是做梦吧？赶紧弹起来，review 了一下，没毛病，合并补丁！</summary></entry><entry><title type="html">EAF PDF Viewer支持文本选择了。</title><link href="http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select.html" rel="alternate" type="text/html" title="EAF PDF Viewer支持文本选择了。" /><published>2019-12-22T00:00:00+08:00</published><updated>2019-12-22T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select.html">&lt;p&gt;&lt;a href=&quot;https://github.com/luhuaei&quot;&gt;luhuaei&lt;/a&gt;大神周末发了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/157&quot;&gt;补丁&lt;/a&gt;，可以让EAF PDF支持文本选择了。&lt;/p&gt;
 
 &lt;p&gt;现在只需要在PDF Viewer里面双击，然后移动鼠标选择区域，最后按一下 Alt + W 键即可从PDF复制文本到Emacs Keyring.&lt;/p&gt;
 
@@ -12,7 +28,7 @@
 
 &lt;p&gt;我有一个读书的习惯，对于特别难懂的书，会在读懂以后，用我自己的语言在把自己所学的东西写出来，这样可以加深印象（温故而知新）。&lt;/p&gt;
 
-&lt;p&gt;但是这两本书非常难以写读后感的原因在于，如果你真的要理解这两本书，你首先要放下“逻辑思考”，用心去感受书中描述的心理场景，只有用心思考才能理解书中寓意。最难的是最后要通过”大脑”这个工具来梳理书中的道理，从感觉到思考的转换其实是非常难的，因为心理感受可以很丰富，很真实贴切，而逻辑思维却非常严密和干涸，很难在准确表达感受的同时不再次进入思维的困境中，一旦我们又进入“强迫性的逻辑推理”的状态后，就更难理解那种内在觉醒的感觉了。&lt;/p&gt;
+&lt;p&gt;但是这两本书非常难以写读后感的原因在于，如果你真的要理解这两本书，你首先要放下“逻辑思考”，用心去感受书中描述的心理场景，只有用心感受才能理解书中寓意。最难的是最后要通过”大脑”这个工具来梳理书中的道理，从感觉到思考的转换其实是非常难的，因为心理感受可以很丰富，很真实贴切，而逻辑思维却非常严密和干涸，很难在准确表达感受的同时不再次进入思维的困境中，一旦我们又进入“强迫性的逻辑推理”的状态后，就更难理解那种内在觉醒的感觉了。&lt;/p&gt;
 
 &lt;h3 id=&quot;辨别小我&quot;&gt;辨别小我&lt;/h3&gt;
 
@@ -263,39 +279,4 @@
 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;captcha_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;给一段参考的实例代码，最后我不是玩电脑的，只是一个写代码的，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">不要告诉别人自己是玩电脑的，特别是亲朋好友，他们会认为你啥都会干，特别是…</summary></entry><entry><title type="html">为EAF PDF阅读器增加夜晚模式</title><link href="http://localhost:4000/emacs/2019/11/23/eaf-pdf-support-inverted-mode.html" rel="alternate" type="text/html" title="为EAF PDF阅读器增加夜晚模式" /><published>2019-11-23T00:00:00+08:00</published><updated>2019-11-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/11/23/eaf-pdf-support-inverted-mode</id><content type="html" xml:base="http://localhost:4000/emacs/2019/11/23/eaf-pdf-support-inverted-mode.html">&lt;p&gt;最近晚上才有空看会儿书，EAF PDF阅读器默认是渲染PDF文件的原色，一般的PDF文件背景都是白色的，就像这样。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-pdf-support-inverted-mode/eaf_light_mode.png&quot; alt=&quot;Light Mode&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;晚上看的时间久了眼睛就会很累，一直想添加一个模式切换的功能，晚上可以用夜晚模式来读书，就像下面这样。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-pdf-support-inverted-mode/eaf_dark_mode.png&quot; alt=&quot;Dark Mode&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最开始的时候读了 PyMupdf 的手册，找到API&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getPixmap(matrix=fitz.Identity, colorspace=fitz.csRGB, clip=None, alpha=False, annots=True)&lt;/code&gt; ,&lt;/p&gt;
-
-&lt;p&gt;最开始的想法是直接把 alpha 这个参数设置为 True, 然后PDF页面渲染的时候先画任意颜色背景，因为PDF页面是透明的，这样就可以通过背景颜色渲染来控制PDF的背景颜色。&lt;/p&gt;
-
-&lt;p&gt;理想很丰满，因为页面缩放的原因，page.getPixmap 的缩放矩阵参数 matrix 结合 alpha 参数，就会导致PDF页面图片透明的时候，同时影响到文字的渲染和变形，最终导致 alpha 参数为 True 的时候，页面渲染文字模糊扭曲。&lt;/p&gt;
-
-&lt;p&gt;第一次尝试以失败告终，看来这条路不行，因为即使解决了文字扭曲的问题，上面的方法只是不绘制背景，如果黑色的背景叠加黑色的文字什么就看不到了，如果PDF文件里有其他颜色的文字，这样背景和文字的对比处理就更复杂了。&lt;/p&gt;
-
-&lt;p&gt;想不通问题的时候就先把问题放一放，遛完狗回来，漫无目的的看着一些技术文章，看着看着突然想到了PDF 阅读器的本质就是获取PDF页面信息，通过缩放和位置控制来绘制图片，图片的对象就是pixmap, 既然PyMupdf的Page API无法处理这种情况，为什么不从 pixmap 着手？&lt;/p&gt;
-
-&lt;p&gt;马上搜索了一下 pixmap 的API, 看到了这个：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;invertIRect([irect])&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;看着原理可以行得通，构思一下解决思路：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;获取 PDF 的图像数据: pixmap = page.getPixmap(matrix=trans, alpha=False)&lt;/li&gt;
-  &lt;li&gt;反色模式的时候执行：pixmap.invertIRect(pixmap.irect)&lt;/li&gt;
-  &lt;li&gt;最终转换成图片进行渲染：img = QImage(pixmap.samples, pixmap.width, pixmap.height, pixmap.stride, QImage.Format_RGB888)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;花了5分钟调整代码，搞定！&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/318718bf80f128ba38a678f22a11e2194816245c&quot;&gt;补丁&lt;/a&gt;中增加了一些辅助代码，使得EAF可以记住每个PDF文件的反色模式，下次就不用再手动切换模式了, 舒服。&lt;/p&gt;
-
-&lt;p&gt;BTW, 最近我自己的公司在招聘Linux编程高手，如果你像我这样热爱编程，喜欢研究开源软件，欢迎联系我: lazycat.manatee@gmail.com&lt;/p&gt;</content><author><name></name></author><summary type="html">最近晚上才有空看会儿书，EAF PDF阅读器默认是渲染PDF文件的原色，一般的PDF文件背景都是白色的，就像这样。</summary></entry></feed>
+&lt;p&gt;给一段参考的实例代码，最后我不是玩电脑的，只是一个写代码的，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">不要告诉别人自己是玩电脑的，特别是亲朋好友，他们会认为你啥都会干，特别是…</summary></entry></feed>
