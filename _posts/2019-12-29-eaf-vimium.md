@@ -18,6 +18,6 @@ categories: [Emacs]
 
 最后想通了，Emacs在文本编辑和协作一致性上已经做到登峰造极，我只需把PDF阅读，浏览器等Emacs并不擅长的多媒体功能做好并集成到Emacs即可，这就是去年完成的 [Emacs Application Framework](https://github.com/manateelazycat/emacs-application-framework) 图形应用框架。
 
-今天EAF终于可以像Chromium那样使用Vimium插件那样，快速用键盘打开浏览器页面的任意链接，离 Live in Emacs 又近了一步！
+今天EAF浏览器终于可以像Chromium的Vimium插件那样，快速用键盘打开浏览器页面的任意链接，离 Live in Emacs 又近了一步！
 
 Happy hacking and Merry Christmas, MatthewZMD! ;)
