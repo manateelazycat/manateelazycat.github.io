@@ -76,7 +76,7 @@
 <h4 id="3-设置-rbenv-的path环境变量">3. 设置 rbenv 的PATH环境变量</h4>
 <p>把下面代码加入你的 .bashrc 或者 .zshrc 中, 重启终端</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/Users/andy/.rbenv/shims:</span><span class="nv">$PATH</span><span class="s2">"</span>
-<span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>rbenv init -<span class="k">)</span><span class="s2">"</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>rbenv init -<span class="si">)</span><span class="s2">"</span>
 </code></pre></div></div>
 <p>注意 /Users/andy/.rbenv/shims 换成你用户目录下的 rbenv bin 路径.</p>
 
@@ -84,7 +84,7 @@
 
 <h4 id="4-使用中国镜像源">4. 使用中国镜像源</h4>
 <p>用下面命令来使用 ruby-china.com 作为更新源, 加速更新速度:</p>
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/andorchen/rbenv-china-mirror.git <span class="s2">"</span><span class="k">$(</span>rbenv root<span class="k">)</span><span class="s2">"</span>/plugins/rbenv-china-mirror
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/andorchen/rbenv-china-mirror.git <span class="s2">"</span><span class="si">$(</span>rbenv root<span class="si">)</span><span class="s2">"</span>/plugins/rbenv-china-mirror
 </code></pre></div></div>
 
 <h4 id="5-安装-ruby">5. 安装 ruby</h4>
