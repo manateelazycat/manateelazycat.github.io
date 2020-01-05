@@ -45,14 +45,15 @@ title: ManateeLazyCat
     <li class="post-line">
         <a
             class="post-title"
-            href="{{ site.baseurl }}{{ post.url }}"
-        >
+            href="{{ site.baseurl }}{{ post.url }}">
             {{ post.title }}
         </a>
 
-        <div class="post-summary">
-            {{ post.content | strip_html | truncate: 80, " ..." }}
-        </div>
+        <a href="{{ site.baseurl }}{{ post.url }}">
+            <div class="post-summary">
+                {{ post.content | strip_html | truncate: 80, " ..." }}
+            </div>
+        </a>
         <div class="post-info">
             <div class="category-area">
                 {% for category in post.categories %}
