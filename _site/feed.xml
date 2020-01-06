@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-05T18:01:11+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF 内置RSS Reader啦!</title><link href="http://localhost:4000/emacs/2020/01/02/eaf-rss-reader.html" rel="alternate" type="text/html" title="EAF 内置RSS Reader啦!" /><published>2020-01-02T00:00:00+08:00</published><updated>2020-01-02T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/02/eaf-rss-reader</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/02/eaf-rss-reader.html">&lt;p&gt;Emacs无法像其他现代图形库那样天然支持多线程编程，导致Emacs非常不适合做大量数据计算的工作，数据计算时间太久就会卡住Emacs。
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-06T21:12:11+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails + EAF 快速搜索PDF目录跳转</title><link href="http://localhost:4000/emacs/2020/01/06/snails-and-eaf.html" rel="alternate" type="text/html" title="Snails + EAF 快速搜索PDF目录跳转" /><published>2020-01-06T00:00:00+08:00</published><updated>2020-01-06T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/06/snails-and-eaf</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/06/snails-and-eaf.html">&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;EAF&lt;/a&gt;内置的PDF Viewer已经是Emacs里面性能最高的PDF阅读器。平常编程时我都用&lt;a href=&quot;https://github.com/manateelazycat/snails&quot;&gt;Snails&lt;/a&gt;来全局搜索。&lt;/p&gt;
+
+&lt;p&gt;如果Snails遇到EAF会发生什么美妙的化学反应呢？&lt;/p&gt;
+
+&lt;p&gt;那就是今天的 &lt;a href=&quot;https://github.com/manateelazycat/snails/blob/master/snails-backend-eaf-pdf-table.el&quot;&gt;snails-backend-eaf-pdf-table&lt;/a&gt; 插件：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;当你在用EAF阅读PDF材料的时候，用快捷键唤起 snails&lt;/li&gt;
+  &lt;li&gt;随便输入任意目录的字符，snails会用模糊算法匹配你输入的目录关键字&lt;/li&gt;
+  &lt;li&gt;回车即可跳转到对应目录的位置&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这在阅读文档到中间位置的时候特别有用，我们不需要回到目录页面，然后手动去查找目录的标题和页码信息，在阅读到文档的任何地方都可以快速搜索目录标题并跳转。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/snails-and-eaf/snails-and-eaf.gif&quot; alt=&quot;Snails and EAF&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;实现原理：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;首先给EAF打一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/db85cdc2cfc8407c5cdfe5d308fa6b48d7715e43&quot;&gt;保存目录信息的补丁&lt;/a&gt;, PDF文件打开的时候，计算PDF文件路径的MD5值，并保存目录信息到MD5文件中, 避免大量的数据在Emacs和EAF两个进程之间传递&lt;/li&gt;
+  &lt;li&gt;其次给Snails打一个&lt;a href=&quot;https://github.com/manateelazycat/snails/commit/7abde5048fd3af3d0807133bb3e2eb8620ee66c4&quot;&gt;PDF目录搜索的补丁&lt;/a&gt;, snails启动时探测到用户在查看PDF文件，就从MD5文件中读取当前PDF文件的目录信息&lt;/li&gt;
+  &lt;li&gt;最后Snails结合用户输入的关键字和目录信息进行模糊对比过滤出用户想查找的目录标题&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Live in Emacs又近了一步, 哈哈哈！&lt;/p&gt;</content><author><name></name></author><summary type="html">EAF内置的PDF Viewer已经是Emacs里面性能最高的PDF阅读器。平常编程时我都用Snails来全局搜索。</summary></entry><entry><title type="html">EAF 内置RSS Reader啦!</title><link href="http://localhost:4000/emacs/2020/01/02/eaf-rss-reader.html" rel="alternate" type="text/html" title="EAF 内置RSS Reader啦!" /><published>2020-01-02T00:00:00+08:00</published><updated>2020-01-02T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/02/eaf-rss-reader</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/02/eaf-rss-reader.html">&lt;p&gt;Emacs无法像其他现代图形库那样天然支持多线程编程，导致Emacs非常不适合做大量数据计算的工作，数据计算时间太久就会卡住Emacs。
 虽然Emacs也有异步子进程编程模型，但是如果子进程返回数据太大，在主进程中处理数据的时间超过Emacs单线程中一个界面绘制的周期，也会导致卡Emacs界面。&lt;/p&gt;
 
 &lt;p&gt;真正的图形多线程的原理是把所有耗时的操作都放到子线程中去处理，只有数据处理完成以后才把结果发送到主线程进行绘制，这样数据计算和数据处理的工作永远不占用图形绘制主线程，所以不管多久的数据计算和大多的数据处理都不会让用户感觉到界面卡顿。&lt;/p&gt;
@@ -257,20 +281,4 @@
 
 &lt;p&gt;公司最近好忙，最近肯定没时间的，可以先和大家吹吹牛讨论下，等我闲的时候写，就像半年前写Snails 的节奏，先讨论需求，需求讨论清楚好撸代码。&lt;/p&gt;
 
-&lt;p&gt;感兴趣的Emacs Hacker欢迎一起讨论或者发邮件给我 lazycat.manatee@gmail.com&lt;/p&gt;</content><author><name></name></author><summary type="html">今年过年好早，准备等公司放假了，想重新写一个LSP Mode, 满足以下几个目标：</summary></entry><entry><title type="html">在Elisp端定制EAF选项值</title><link href="http://localhost:4000/emacs/2019/11/27/modify-eaf-variable-on-elisp-side.html" rel="alternate" type="text/html" title="在Elisp端定制EAF选项值" /><published>2019-11-27T00:00:00+08:00</published><updated>2019-11-27T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/11/27/modify-eaf-variable-on-elisp-side</id><content type="html" xml:base="http://localhost:4000/emacs/2019/11/27/modify-eaf-variable-on-elisp-side.html">&lt;p&gt;感谢社区大神今天发送的这个补丁&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/86/files&quot;&gt;New API, eaf-set on the Emacs side&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;现在我们可以使用 eaf-set 这个函数在Elisp端设置EAF插件的变量了，不需要修改EAF插件的Python代码即可定制EAF插件的行为。&lt;/p&gt;
-
-&lt;h3 id=&quot;举一个简单的例子&quot;&gt;举一个简单的例子：&lt;/h3&gt;
-
-&lt;p&gt;在Elisp端，我们使用 eaf-set 设置了 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-camera-save-path&lt;/code&gt; 这个变量的值&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-Elisp&quot;&gt;(eaf-set 'eaf-camera-save-path &quot;~/Downloads&quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;eaf-set 会自动更新 EAF Python 端 buffer 中的字典 &lt;code class=&quot;highlighter-rouge&quot;&gt;emacs_var_dict&lt;/code&gt; 对应的 key, 最终我们在 EAF Python 端可以通过下面的代码来获取刚刚我们通过 eaf-set 设置的变量 eaf-camera-save-path 的值。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;self.emacs_var_dict[&quot;eaf-camera-save-path&quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这样所有的变量定义都可以在 Elisp 端通过配置灵活自定义了。&lt;/p&gt;</content><author><name></name></author><summary type="html">感谢社区大神今天发送的这个补丁New API, eaf-set on the Emacs side</summary></entry></feed>
+&lt;p&gt;感兴趣的Emacs Hacker欢迎一起讨论或者发邮件给我 lazycat.manatee@gmail.com&lt;/p&gt;</content><author><name></name></author><summary type="html">今年过年好早，准备等公司放假了，想重新写一个LSP Mode, 满足以下几个目标：</summary></entry></feed>
