@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>Snails + EAF 快速搜索PDF目录跳转</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                Snails + EAF 快速搜索PDF目录跳转
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数496 2020-01-06
+            </div>
+            <div class="content">
+                <p><a href="https://github.com/manateelazycat/emacs-application-framework">EAF</a>内置的PDF Viewer已经是Emacs里面性能最高的PDF阅读器。平常编程时我都用<a href="https://github.com/manateelazycat/snails">Snails</a>来全局搜索。</p>
+
+<p>如果Snails遇到EAF会发生什么美妙的化学反应呢？</p>
+
+<p>那就是今天的 <a href="https://github.com/manateelazycat/snails/blob/master/snails-backend-eaf-pdf-table.el">snails-backend-eaf-pdf-table</a> 插件：</p>
+
+<ol>
+  <li>当你在用EAF阅读PDF材料的时候，用快捷键唤起 snails</li>
+  <li>随便输入任意目录的字符，snails会用模糊算法匹配你输入的目录关键字</li>
+  <li>回车即可跳转到对应目录的位置</li>
+</ol>
+
+<p>这在阅读文档到中间位置的时候特别有用，我们不需要回到目录页面，然后手动去查找目录的标题和页码信息，在阅读到文档的任何地方都可以快速搜索目录标题并跳转。</p>
+
+<p><img src="http://localhost:4000/pics/snails-and-eaf/snails-and-eaf.gif" alt="Snails and EAF" /></p>
+
+<p>实现原理：</p>
+
+<ol>
+  <li>首先给EAF打一个<a href="https://github.com/manateelazycat/emacs-application-framework/commit/db85cdc2cfc8407c5cdfe5d308fa6b48d7715e43">保存目录信息的补丁</a>, PDF文件打开的时候，计算PDF文件路径的MD5值，并保存目录信息到MD5文件中, 避免大量的数据在Emacs和EAF两个进程之间传递</li>
+  <li>其次给Snails打一个<a href="https://github.com/manateelazycat/snails/commit/7abde5048fd3af3d0807133bb3e2eb8620ee66c4">PDF目录搜索的补丁</a>, snails启动时探测到用户在查看PDF文件，就从MD5文件中读取当前PDF文件的目录信息</li>
+  <li>最后Snails结合用户输入的关键字和目录信息进行模糊对比过滤出用户想查找的目录标题</li>
+</ol>
+
+<p>Live in Emacs又近了一步, 哈哈哈！</p>
+
+            </div>
+        </div>
+    </body>
+</html>
