@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-06T21:12:11+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails + EAF 快速搜索PDF目录跳转</title><link href="http://localhost:4000/emacs/2020/01/06/snails-and-eaf.html" rel="alternate" type="text/html" title="Snails + EAF 快速搜索PDF目录跳转" /><published>2020-01-06T00:00:00+08:00</published><updated>2020-01-06T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/06/snails-and-eaf</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/06/snails-and-eaf.html">&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;EAF&lt;/a&gt;内置的PDF Viewer已经是Emacs里面性能最高的PDF阅读器。平常编程时我都用&lt;a href=&quot;https://github.com/manateelazycat/snails&quot;&gt;Snails&lt;/a&gt;来全局搜索。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-08T06:54:58+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF渲染邮件客户端的HTML内容</title><link href="http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html.html" rel="alternate" type="text/html" title="EAF渲染邮件客户端的HTML内容" /><published>2020-01-08T00:00:00+08:00</published><updated>2020-01-08T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html.html">&lt;p&gt;一个星期前&lt;a href=&quot;https://github.com/JulienMasson&quot;&gt;JulienMasson&lt;/a&gt;在这个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/issues/181&quot;&gt;issue&lt;/a&gt;里面讨论EAF是否可以作为Emacs Buffer的一部分嵌入邮件客户端用于渲染HTML的邮件内容？&lt;/p&gt;
+
+&lt;p&gt;回答:&lt;/p&gt;
+
+&lt;p&gt;EAF其实是用XReparent技术把PyQt5的窗口粘贴到Emacs Buffer的区域，EAF原理上并不是把PyQt5的内容混合到Emacs的Buffer渲染结果中，所以没法做到嵌入到Emacs邮件客户端Buffer的效果。&lt;/p&gt;
+
+&lt;p&gt;但是我们可以自动提取Emacs邮件客户端中HTML邮件的内容，发送给EAF，在新的EAF Buffer里面渲染HTML邮件的内容。&lt;/p&gt;
+
+&lt;p&gt;今天JulienMasson发送了一个新的&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/9ddfacfb95b81e793b33d41eaf527839b54a715d&quot;&gt;补丁&lt;/a&gt;来实现这个功能。&lt;/p&gt;
+
+&lt;p&gt;现在可以在Emacs邮件客户端中调用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-open-mail-as-html&lt;/code&gt; ，用EAF浏览器来渲染HTML的邮件内容了，支持的邮件客户端有Gnus、mu4e、notmuch。&lt;/p&gt;
+
+&lt;p&gt;看了一下JulienMasson的Github, 发现他是一个X/Wayland黑客，开发了自己的窗口管理器，非常厉害，希望越来越多的图形Emacs黑客加入EAF开源社区中。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">一个星期前JulienMasson在这个issue里面讨论EAF是否可以作为Emacs Buffer的一部分嵌入邮件客户端用于渲染HTML的邮件内容？</summary></entry><entry><title type="html">Snails + EAF 快速搜索PDF目录跳转</title><link href="http://localhost:4000/emacs/2020/01/06/snails-and-eaf.html" rel="alternate" type="text/html" title="Snails + EAF 快速搜索PDF目录跳转" /><published>2020-01-06T00:00:00+08:00</published><updated>2020-01-06T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/06/snails-and-eaf</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/06/snails-and-eaf.html">&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;EAF&lt;/a&gt;内置的PDF Viewer已经是Emacs里面性能最高的PDF阅读器。平常编程时我都用&lt;a href=&quot;https://github.com/manateelazycat/snails&quot;&gt;Snails&lt;/a&gt;来全局搜索。&lt;/p&gt;
 
 &lt;p&gt;如果Snails遇到EAF会发生什么美妙的化学反应呢？&lt;/p&gt;
 
@@ -270,15 +282,4 @@
 
 &lt;p&gt;现在在Emacs里面 EAF + Bookmark + Snails 组合的效率杠杠的。&lt;/p&gt;
 
-&lt;p&gt;感谢牛逼的德国战车，补丁刷刷的，我估计明天早上起床他刚好下班，估计又一堆幸福的补丁发来。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Clemens Radermacher 这个德国的黑客太凶残了，两天给我发送了无数补丁。因为时区的关系，刚好我下班，他就刚刚起床，起床就疯狂的发送各种功能补丁，重构补丁等，加上这几天感冒输液，经常在医院用手机审核补丁代码，手动捂脸。</summary></entry><entry><title type="html">想新写一个LSP Mode!</title><link href="http://localhost:4000/emacs/2019/12/05/want-write-new-lsp-mode.html" rel="alternate" type="text/html" title="想新写一个LSP Mode!" /><published>2019-12-05T00:00:00+08:00</published><updated>2019-12-05T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/05/want-write-new-lsp-mode</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/05/want-write-new-lsp-mode.html">&lt;p&gt;今年过年好早，准备等公司放假了，想重新写一个LSP Mode, 满足以下几个目标：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;零配置，就像TabNine那样，打开文件就可以补全，自动识别Project项目和Python这种单文件，不要让用户吭哧吭哧的配置，lsp-mode那样复杂的配置好烦;&lt;/li&gt;
-  &lt;li&gt;极致的速度，准备用Rust撸一个中转桥动态模块，专门用于和LSP Server进行通讯，解析LSP Server返回的协议内容，Rust中转桥只和 Emacs的Company Mode沟通，这样性能应该是足够流畅的;&lt;/li&gt;
-  &lt;li&gt;专注于键盘操作，那些花哨的档眼睛的UI控件不要有，太花哨而且做的不好用，eldoc文档提示和yasnippet参数模板补全的配合可以有;&lt;/li&gt;
-  &lt;li&gt;稳定，如果有一些补全高级功能没法做稳定，宁愿不要提供也不要有bug, 不稳定太烦人了。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;公司最近好忙，最近肯定没时间的，可以先和大家吹吹牛讨论下，等我闲的时候写，就像半年前写Snails 的节奏，先讨论需求，需求讨论清楚好撸代码。&lt;/p&gt;
-
-&lt;p&gt;感兴趣的Emacs Hacker欢迎一起讨论或者发邮件给我 lazycat.manatee@gmail.com&lt;/p&gt;</content><author><name></name></author><summary type="html">今年过年好早，准备等公司放假了，想重新写一个LSP Mode, 满足以下几个目标：</summary></entry></feed>
+&lt;p&gt;感谢牛逼的德国战车，补丁刷刷的，我估计明天早上起床他刚好下班，估计又一堆幸福的补丁发来。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Clemens Radermacher 这个德国的黑客太凶残了，两天给我发送了无数补丁。因为时区的关系，刚好我下班，他就刚刚起床，起床就疯狂的发送各种功能补丁，重构补丁等，加上这几天感冒输液，经常在医院用手机审核补丁代码，手动捂脸。</summary></entry></feed>
