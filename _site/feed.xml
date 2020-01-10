@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-08T06:54:58+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF渲染邮件客户端的HTML内容</title><link href="http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html.html" rel="alternate" type="text/html" title="EAF渲染邮件客户端的HTML内容" /><published>2020-01-08T00:00:00+08:00</published><updated>2020-01-08T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html.html">&lt;p&gt;一个星期前&lt;a href=&quot;https://github.com/JulienMasson&quot;&gt;JulienMasson&lt;/a&gt;在这个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/issues/181&quot;&gt;issue&lt;/a&gt;里面讨论EAF是否可以作为Emacs Buffer的一部分嵌入邮件客户端用于渲染HTML的邮件内容？&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-10T22:36:11+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails可以直接搜索EAF浏览器历史了!</title><link href="http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser.html" rel="alternate" type="text/html" title="Snails可以直接搜索EAF浏览器历史了!" /><published>2020-01-10T00:00:00+08:00</published><updated>2020-01-10T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser.html">&lt;p&gt;前几天写了&lt;a href=&quot;https://manateelazycat.github.io/emacs/2020/01/06/snails-and-eaf.html&quot;&gt;Snails PDF Backend&lt;/a&gt;支持Snails直接搜索PDF目录快速跳转。&lt;/p&gt;
+
+&lt;p&gt;今天用了同样的原理实现了Snails直接搜索浏览器历史的功能：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/snails-and-eaf-browser/snails-and-eaf-browser.gif&quot; alt=&quot;Snails and EAF Browser&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;启动Snails&lt;/li&gt;
+  &lt;li&gt;搜索网址或者关键字&lt;/li&gt;
+  &lt;li&gt;搜索浏览器历史并用EAF打开浏览器&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;因为Snails用了&lt;a href=&quot;https://github.com/rustify-emacs/fuz.el&quot;&gt;fuz.el&lt;/a&gt;的模糊算法，所以搜索浏览器历史的模糊算法堪比Google Chrome的搜索体验。&lt;/p&gt;
+
+&lt;p&gt;Happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">前几天写了Snails PDF Backend支持Snails直接搜索PDF目录快速跳转。</summary></entry><entry><title type="html">EAF渲染邮件客户端的HTML内容</title><link href="http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html.html" rel="alternate" type="text/html" title="EAF渲染邮件客户端的HTML内容" /><published>2020-01-08T00:00:00+08:00</published><updated>2020-01-08T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html.html">&lt;p&gt;一个星期前&lt;a href=&quot;https://github.com/JulienMasson&quot;&gt;JulienMasson&lt;/a&gt;在这个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/issues/181&quot;&gt;issue&lt;/a&gt;里面讨论EAF是否可以作为Emacs Buffer的一部分嵌入邮件客户端用于渲染HTML的邮件内容？&lt;/p&gt;
 
 &lt;p&gt;回答:&lt;/p&gt;
 
@@ -263,23 +277,4 @@
 
 &lt;p&gt;搜索关键字后，按 n 键跳到下一个关键字的位置，按 N 键跳到最后一个关键字的位置。&lt;/p&gt;
 
-&lt;p&gt;EAF PDF Viewer越来越好用啦！&lt;/p&gt;</content><author><name></name></author><summary type="html">luhuaei太厉害了，今天早上给EAF PDF Viewer支持了Vimium Jump后，又加了一个搜索补丁</summary></entry><entry><title type="html">EAF支持书签啦！</title><link href="http://localhost:4000/emacs/2019/12/11/eaf-support-bookmark.html" rel="alternate" type="text/html" title="EAF支持书签啦！" /><published>2019-12-11T00:00:00+08:00</published><updated>2019-12-11T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/11/eaf-support-bookmark</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/11/eaf-support-bookmark.html">&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commits?author=clemera&quot;&gt;Clemens Radermacher&lt;/a&gt; 这个德国的黑客太凶残了，两天给我发送了无数补丁。因为时区的关系，刚好我下班，他就刚刚起床，起床就疯狂的发送各种功能补丁，重构补丁等，加上这几天感冒输液，经常在医院用手机审核补丁代码，手动捂脸。&lt;/p&gt;
-
-&lt;p&gt;今天这家伙又发送了支持标签的&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/133&quot;&gt;补丁&lt;/a&gt;, 现在EAF直接对接Emacs强大的书签功能，包括浏览器和PDF阅读器插件，可以按照以下的方式做书签操作。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;C-x r m (bookmark-set) 记录当前EAF页面到书签，手动输入自定义书签名称&lt;/li&gt;
-  &lt;li&gt;C-x r l (bookmark-bmenu-list) 列出所有书签&lt;/li&gt;
-  &lt;li&gt;在Emacs书签中按回车即可一键打开EAF对应的插件，不用手动输入Google网址或者在Dired中手动找PDF文件的路径&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;当然也可以用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-open-bookmark&lt;/code&gt; 来快速搜索书签来快速打开，其实最快的方法就是：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;C-x r m (bookmark-set) 记录当前EAF页面到书签，手动输入自定义书签名称&lt;/li&gt;
-  &lt;li&gt;启动&lt;a href=&quot;https://github.com/manateelazycat/snails&quot;&gt;Snails&lt;/a&gt;, 直接搜索书签名字即可快速打开书签&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;现在在Emacs里面 EAF + Bookmark + Snails 组合的效率杠杠的。&lt;/p&gt;
-
-&lt;p&gt;感谢牛逼的德国战车，补丁刷刷的，我估计明天早上起床他刚好下班，估计又一堆幸福的补丁发来。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Clemens Radermacher 这个德国的黑客太凶残了，两天给我发送了无数补丁。因为时区的关系，刚好我下班，他就刚刚起床，起床就疯狂的发送各种功能补丁，重构补丁等，加上这几天感冒输液，经常在医院用手机审核补丁代码，手动捂脸。</summary></entry></feed>
+&lt;p&gt;EAF PDF Viewer越来越好用啦！&lt;/p&gt;</content><author><name></name></author><summary type="html">luhuaei太厉害了，今天早上给EAF PDF Viewer支持了Vimium Jump后，又加了一个搜索补丁</summary></entry></feed>
