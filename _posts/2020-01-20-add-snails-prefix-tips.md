@@ -19,4 +19,4 @@ categories: [Emacs]
 
 今天写了一个新的[补丁](https://github.com/manateelazycat/snails/commit/b87b981cc4cb909b01a7deb882898c5d891d70d2), 在搜索框下面增加了一行搜索前缀提醒，以后再也不会忘记自己写的搜索前缀了，哈哈哈哈。
 
-![Snails prefix]({{site.url}}/pics/add-snails-prefix/add-snals-prefix.png)
+![Snails prefix]({{site.url}}/pics/add-snails-prefix/add-snails-prefix.png)
