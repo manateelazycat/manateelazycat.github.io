@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>Snails增加了搜索前缀提示</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                Snails增加了搜索前缀提示
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数492 2020-01-20
+            </div>
+            <div class="content">
+                <p><a href="https://manateelazycat.github.io/emacs/2019/08/25/snails-6.0.html">Snails 6.0</a>发布的时候，添加了搜索前缀：</p>
+
+<ul>
+  <li>Snails启动后，默认在标签分组、缓存列表、最近访问文件、书签这些最高频的后端中进行搜索，以快速切换正在使用的文件</li>
+  <li>当输入中包含前缀 &gt; 时，Snails搜索所有可以执行的命令</li>
+  <li>当输入中包含前缀 @ 时，Snails只在函数或变量定义中进行搜索，方便快速进行定义跳转</li>
+  <li>当输入中包含前缀 # 时，Snails使用 ripgrep 搜索当前文件的内容</li>
+  <li>当输入中包含前缀 ! 时，Snails使用 ripgrep 搜索当前项目里所有文件的内容</li>
+  <li>当输入中包含前缀 ? 时，Snails使用 fd、projectile、mdfind、everything 等后端进行全局文件名搜索，以快速找到并打开磁盘中的文件</li>
+</ul>
+
+<p>通过搜索前缀的方式，Snails可以同时满足绝大多数用户的使用习惯，又不会因为默认加入太多的后端，导致搜索信息过多的问题。</p>
+
+<p>尴尬的是，像我这样的老年人经常忘记这些搜索前缀信息，真的要用某个搜索后端的时候，还要去Snails源代码去看看对应的前缀是啥, 反而降低了搜索效率。</p>
+
+<p>今天写了一个新的<a href="https://github.com/manateelazycat/snails/commit/b87b981cc4cb909b01a7deb882898c5d891d70d2">补丁</a>, 在搜索框下面增加了一行搜索前缀提醒，以后再也不会忘记自己写的搜索前缀了，哈哈哈哈。</p>
+
+<p><img src="http://localhost:4000/pics/add-snails-prefix/add-snails-prefix.png" alt="Snails prefix" /></p>
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>研究Share SSH over Web</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                研究Share SSH over Web
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数1990 2020-01-21
+            </div>
+            <div class="content">
+                <h3 id="研究方向">研究方向</h3>
+<p>目前为止EAF的终端插件是基于<a href="https://github.com/lxqt/qtermwidget">qtermwidget</a>控件, 但是qtermwidget的实现现在只是一个哑终端，导致无法运行很多命令行程序，比如emacs和vi, 哈哈哈。</p>
+
+<p>最近在研究怎么给<a href="https://github.com/manateelazycat/emacs-application-framework">EAF</a>重新做一个完美的终端模拟器插件, 有几个研究方向：</p>
+
+<ol>
+  <li>利用现有的终端模拟器控件: 现在的qtermwidget控件虽然可用，但是不完美，<a href="https://github.com/GNOME/vte">VTE</a>虽然是现在最完美的终端模拟器控件(深度系统的深度终端就是我2016年基于VTE控件开发的)，但是VTE控件只能嵌入Gtk程序，EAF是基于Qt开发的，很难在Qt程序里面直接嵌入VTE的控件来实现终端模拟器；</li>
+  <li>重新实现一个Qt全功能的终端模拟器控件：这条很快Pass，主要我太懒，深度终端打磨了2年多，不想再浪费我的时间在终端这种没有挑战性的工作上；</li>
+  <li>基于Web技术来实现：2018年曾经用过VSCode一个多月，对里面的终端模拟器印象深刻，因为EAF的浏览器支持非常好，这条路也许可行…</li>
+</ol>
+
+<h3 id="ssh-over-web的原理">SSH over Web的原理</h3>
+<p>Web实现终端模拟器的原理很简单：</p>
+
+<ol>
+  <li>后台跑一个tty的守护进程，用于处理终端逻辑，可以用任何语言来跑这个守护进程，比如python, golang, node, rust;</li>
+  <li>通过WebSocket把tty的所有输出传递给浏览器, 浏览器可以用<a href="https://github.com/xtermjs/xterm.js/">xterm.js</a>来渲染终端的字符序列;</li>
+  <li>xterm.js接受用户事件通过WebSocket传递给后台的tty程序，完整整个终端模拟器的逻辑流程。</li>
+</ol>
+
+<h3 id="现有项目横向对比">现有项目横向对比</h3>
+<p>基于Share SSH over Web的技术原理，Google了一些现有项目: <a href="https://github.com/yudai/gotty">gotty</a>, <a href="https://tsl0922.github.io/ttyd/">ttyd</a>, <a href="https://github.com/fubarnetes/webterm">webterm</a>, <a href="https://github.com/butlerx/wetty">wetty</a> , 对这些项目做了深入的横向对比：</p>
+
+<ol>
+  <li>gotty: 这个项目最著名，性能非常好，而且对中文的支持也非常好，但是有一个问题，就是终端的输出无法自适应浏览器窗口的大小，在浏览器中只能显示固定的小窗口，折腾了半天，放弃；</li>
+  <li>ttyd: 这个项目是gotty项目C语言的移植版本, 作者也是中国人，功能非常完整，对中文支持很好，就是性能太差了，打字符卡半天，看了一下 issue, 估计和最近版本的libwebsocket的版本引起的性能问题，折腾后放弃；</li>
+  <li>webterm: 一想到性能问题，就想到在全世界造轮子的rust, 想着一定有rust版本的gotty，一搜还真有，但是折腾了半天，很失望，没法跑bash这种交互程序；</li>
+  <li>wetty: 最后折腾了最老牌的一个项目wetty, gotty也是基于wetty的原理用golang重新实现的，这个项目最开始尝试的时候，差点就准备放弃，因为在交互易用性上有几个很不爽的问题。</li>
+</ol>
+
+<h3 id="折腾wetty">折腾wetty</h3>
+<p>wetty最开始折腾，主要有这几个问题很烦：</p>
+
+<ul>
+  <li>默认 <code class="highlighter-rouge">127.0.0.1:3000</code> 显示 “Cannot GET /” 的错误；</li>
+  <li>登录的时候强制要输入用户名和密码，对于远程链接是非常正常的，但是对于本地终端非常不方便；</li>
+  <li>ls命令后无法正常显示中文。</li>
+</ul>
+
+<p>今天在天门山玩了一天，开长途到酒店后，好好的研究了一下wetty, 终于解决了现在这些问题：</p>
+
+<ul>
+  <li>wetty默认启动的路径在 <code class="highlighter-rouge">127.0.0.1:3000/wetty/</code> 路径下，所以root路径下会出现无法访问的问题，用 <code class="highlighter-rouge">--base /</code> 参数来指定访问路径在root路径，然后就可以用 <code class="highlighter-rouge">127.0.0.1</code> 来直接访问了；</li>
+  <li>默认输入密码的问题，可以先用命令 <code class="highlighter-rouge">ssh-keygen</code> 生成公钥文件 <code class="highlighter-rouge">~/.ssh/id_rsa.pub</code>，再用命令 <code class="highlighter-rouge">cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys</code> 加入到授权密钥文件中，最后用 <code class="highlighter-rouge">--sshuser="($whoami)" --sshauth=publickey</code> 参数即可启用自动登录;</li>
+  <li>在 <code class="highlighter-rouge">~/.bashrc</code> 文件中加入 <code class="highlighter-rouge">export LANG=zh_CN.UTF-8</code> 配置，即可保证bash输出的中文字符显示正常。</li>
+</ul>
+
+<h3 id="完整的命令">完整的命令</h3>
+
+<p>下面是折腾wetty过后，完整的Shell命令</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 设置LANG环境变量，保证中文信息显示</span>
+<span class="nb">echo</span> <span class="s1">'export LANG=zh_CN.UTF-8'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+
+<span class="c"># 自动登录wetty</span>
+ssh-keygen
+<span class="nb">cp</span> ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+
+<span class="c"># 安装wetty</span>
+<span class="nb">sudo </span>yarn global add wetty
+
+<span class="c"># 启动wetty</span>
+wetty <span class="nt">-p</span> 8081 <span class="nt">--base</span> / <span class="nt">--sshuser</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span><span class="s2">"</span> <span class="nt">--sshauth</span><span class="o">=</span>publickey <span class="nt">-c</span> bash
+</code></pre></div></div>
+
+<p>启动后，浏览器直接访问 <code class="highlighter-rouge">127.0.0.1:8081</code> 地址，SSH over Web的效果图如下，得益于xterm.js的渲染技术，终端显示和交互的功能非常完整：</p>
+
+<p><img src="http://localhost:4000/pics/ssh-over-web/ssh-over-web.png" alt="SSH over Web" /></p>
+
+<h3 id="敬请期待eaf完美版终端模拟器">敬请期待EAF完美版终端模拟器</h3>
+<p>既然浏览器可以完美运行，剩下的就是做一个随机端口生成的功能，然后结合EAF的浏览器功能就可以完成非常完美的终端模拟器，并集成到Emacs的集成工作流中。</p>
+
+<p>哈哈哈，敬请期待。</p>
+
+            </div>
+        </div>
+    </body>
+</html>
