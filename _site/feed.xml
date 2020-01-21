@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-10T22:36:11+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Snails可以直接搜索EAF浏览器历史了!</title><link href="http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser.html" rel="alternate" type="text/html" title="Snails可以直接搜索EAF浏览器历史了!" /><published>2020-01-10T00:00:00+08:00</published><updated>2020-01-10T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser.html">&lt;p&gt;前几天写了&lt;a href=&quot;https://manateelazycat.github.io/emacs/2020/01/06/snails-and-eaf.html&quot;&gt;Snails PDF Backend&lt;/a&gt;支持Snails直接搜索PDF目录快速跳转。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-21T23:28:42+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">研究Share SSH over Web</title><link href="http://localhost:4000/emacs/2020/01/21/research-web-ssh.html" rel="alternate" type="text/html" title="研究Share SSH over Web" /><published>2020-01-21T00:00:00+08:00</published><updated>2020-01-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/21/research-web-ssh</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/21/research-web-ssh.html">&lt;h3 id=&quot;研究方向&quot;&gt;研究方向&lt;/h3&gt;
+&lt;p&gt;目前为止EAF的终端插件是基于&lt;a href=&quot;https://github.com/lxqt/qtermwidget&quot;&gt;qtermwidget&lt;/a&gt;控件, 但是qtermwidget的实现现在只是一个哑终端，导致无法运行很多命令行程序，比如emacs和vi, 哈哈哈。&lt;/p&gt;
+
+&lt;p&gt;最近在研究怎么给&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;EAF&lt;/a&gt;重新做一个完美的终端模拟器插件, 有几个研究方向：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;利用现有的终端模拟器控件: 现在的qtermwidget控件虽然可用，但是不完美，&lt;a href=&quot;https://github.com/GNOME/vte&quot;&gt;VTE&lt;/a&gt;虽然是现在最完美的终端模拟器控件(深度系统的深度终端就是我2016年基于VTE控件开发的)，但是VTE控件只能嵌入Gtk程序，EAF是基于Qt开发的，很难在Qt程序里面直接嵌入VTE的控件来实现终端模拟器；&lt;/li&gt;
+  &lt;li&gt;重新实现一个Qt全功能的终端模拟器控件：这条很快Pass，主要我太懒，深度终端打磨了2年多，不想再浪费我的时间在终端这种没有挑战性的工作上；&lt;/li&gt;
+  &lt;li&gt;基于Web技术来实现：2018年曾经用过VSCode一个多月，对里面的终端模拟器印象深刻，因为EAF的浏览器支持非常好，这条路也许可行…&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;ssh-over-web的原理&quot;&gt;SSH over Web的原理&lt;/h3&gt;
+&lt;p&gt;Web实现终端模拟器的原理很简单：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;后台跑一个tty的守护进程，用于处理终端逻辑，可以用任何语言来跑这个守护进程，比如python, golang, node, rust;&lt;/li&gt;
+  &lt;li&gt;通过WebSocket把tty的所有输出传递给浏览器, 浏览器可以用&lt;a href=&quot;https://github.com/xtermjs/xterm.js/&quot;&gt;xterm.js&lt;/a&gt;来渲染终端的字符序列;&lt;/li&gt;
+  &lt;li&gt;xterm.js接受用户事件通过WebSocket传递给后台的tty程序，完整整个终端模拟器的逻辑流程。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;现有项目横向对比&quot;&gt;现有项目横向对比&lt;/h3&gt;
+&lt;p&gt;基于Share SSH over Web的技术原理，Google了一些现有项目: &lt;a href=&quot;https://github.com/yudai/gotty&quot;&gt;gotty&lt;/a&gt;, &lt;a href=&quot;https://tsl0922.github.io/ttyd/&quot;&gt;ttyd&lt;/a&gt;, &lt;a href=&quot;https://github.com/fubarnetes/webterm&quot;&gt;webterm&lt;/a&gt;, &lt;a href=&quot;https://github.com/butlerx/wetty&quot;&gt;wetty&lt;/a&gt; , 对这些项目做了深入的横向对比：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gotty: 这个项目最著名，性能非常好，而且对中文的支持也非常好，但是有一个问题，就是终端的输出无法自适应浏览器窗口的大小，在浏览器中只能显示固定的小窗口，折腾了半天，放弃；&lt;/li&gt;
+  &lt;li&gt;ttyd: 这个项目是gotty项目C语言的移植版本, 作者也是中国人，功能非常完整，对中文支持很好，就是性能太差了，打字符卡半天，看了一下 issue, 估计和最近版本的libwebsocket的版本引起的性能问题，折腾后放弃；&lt;/li&gt;
+  &lt;li&gt;webterm: 一想到性能问题，就想到在全世界造轮子的rust, 想着一定有rust版本的gotty，一搜还真有，但是折腾了半天，很失望，没法跑bash这种交互程序；&lt;/li&gt;
+  &lt;li&gt;wetty: 最后折腾了最老牌的一个项目wetty, gotty也是基于wetty的原理用golang重新实现的，这个项目最开始尝试的时候，差点就准备放弃，因为在交互易用性上有几个很不爽的问题。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;折腾wetty&quot;&gt;折腾wetty&lt;/h3&gt;
+&lt;p&gt;wetty最开始折腾，主要有这几个问题很烦：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;默认 &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:3000&lt;/code&gt; 显示 “Cannot GET /” 的错误；&lt;/li&gt;
+  &lt;li&gt;登录的时候强制要输入用户名和密码，对于远程链接是非常正常的，但是对于本地终端非常不方便；&lt;/li&gt;
+  &lt;li&gt;ls命令后无法正常显示中文。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今天在天门山玩了一天，开长途到酒店后，好好的研究了一下wetty, 终于解决了现在这些问题：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;wetty默认启动的路径在 &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:3000/wetty/&lt;/code&gt; 路径下，所以root路径下会出现无法访问的问题，用 &lt;code class=&quot;highlighter-rouge&quot;&gt;--base /&lt;/code&gt; 参数来指定访问路径在root路径，然后就可以用 &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1&lt;/code&gt; 来直接访问了；&lt;/li&gt;
+  &lt;li&gt;默认输入密码的问题，可以先用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh-keygen&lt;/code&gt; 生成公钥文件 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.ssh/id_rsa.pub&lt;/code&gt;，再用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys&lt;/code&gt; 加入到授权密钥文件中，最后用 &lt;code class=&quot;highlighter-rouge&quot;&gt;--sshuser=&quot;($whoami)&quot; --sshauth=publickey&lt;/code&gt; 参数即可启用自动登录;&lt;/li&gt;
+  &lt;li&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bashrc&lt;/code&gt; 文件中加入 &lt;code class=&quot;highlighter-rouge&quot;&gt;export LANG=zh_CN.UTF-8&lt;/code&gt; 配置，即可保证bash输出的中文字符显示正常。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;完整的命令&quot;&gt;完整的命令&lt;/h3&gt;
+
+&lt;p&gt;下面是折腾wetty过后，完整的Shell命令&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 设置LANG环境变量，保证中文信息显示&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export LANG=zh_CN.UTF-8'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+
+&lt;span class=&quot;c&quot;&gt;# 自动登录wetty&lt;/span&gt;
+ssh-keygen
+&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+
+&lt;span class=&quot;c&quot;&gt;# 安装wetty&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;yarn global add wetty
+
+&lt;span class=&quot;c&quot;&gt;# 启动wetty&lt;/span&gt;
+wetty &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8081 &lt;span class=&quot;nt&quot;&gt;--base&lt;/span&gt; / &lt;span class=&quot;nt&quot;&gt;--sshuser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;whoami&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--sshauth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;publickey &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;启动后，浏览器直接访问 &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:8081&lt;/code&gt; 地址，SSH over Web的效果图如下，得益于xterm.js的渲染技术，终端显示和交互的功能非常完整：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/ssh-over-web/ssh-over-web.png&quot; alt=&quot;SSH over Web&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;敬请期待eaf完美版终端模拟器&quot;&gt;敬请期待EAF完美版终端模拟器&lt;/h3&gt;
+&lt;p&gt;既然浏览器可以完美运行，剩下的就是做一个随机端口生成的功能，然后结合EAF的浏览器功能就可以完成非常完美的终端模拟器，并集成到Emacs的集成工作流中。&lt;/p&gt;
+
+&lt;p&gt;哈哈哈，敬请期待。&lt;/p&gt;</content><author><name></name></author><summary type="html">研究方向 目前为止EAF的终端插件是基于qtermwidget控件, 但是qtermwidget的实现现在只是一个哑终端，导致无法运行很多命令行程序，比如emacs和vi, 哈哈哈。</summary></entry><entry><title type="html">Snails增加了搜索前缀提示</title><link href="http://localhost:4000/emacs/2020/01/20/add-snails-prefix-tips.html" rel="alternate" type="text/html" title="Snails增加了搜索前缀提示" /><published>2020-01-20T00:00:00+08:00</published><updated>2020-01-20T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/20/add-snails-prefix-tips</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/20/add-snails-prefix-tips.html">&lt;p&gt;&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/08/25/snails-6.0.html&quot;&gt;Snails 6.0&lt;/a&gt;发布的时候，添加了搜索前缀：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Snails启动后，默认在标签分组、缓存列表、最近访问文件、书签这些最高频的后端中进行搜索，以快速切换正在使用的文件&lt;/li&gt;
+  &lt;li&gt;当输入中包含前缀 &amp;gt; 时，Snails搜索所有可以执行的命令&lt;/li&gt;
+  &lt;li&gt;当输入中包含前缀 @ 时，Snails只在函数或变量定义中进行搜索，方便快速进行定义跳转&lt;/li&gt;
+  &lt;li&gt;当输入中包含前缀 # 时，Snails使用 ripgrep 搜索当前文件的内容&lt;/li&gt;
+  &lt;li&gt;当输入中包含前缀 ! 时，Snails使用 ripgrep 搜索当前项目里所有文件的内容&lt;/li&gt;
+  &lt;li&gt;当输入中包含前缀 ? 时，Snails使用 fd、projectile、mdfind、everything 等后端进行全局文件名搜索，以快速找到并打开磁盘中的文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;通过搜索前缀的方式，Snails可以同时满足绝大多数用户的使用习惯，又不会因为默认加入太多的后端，导致搜索信息过多的问题。&lt;/p&gt;
+
+&lt;p&gt;尴尬的是，像我这样的老年人经常忘记这些搜索前缀信息，真的要用某个搜索后端的时候，还要去Snails源代码去看看对应的前缀是啥, 反而降低了搜索效率。&lt;/p&gt;
+
+&lt;p&gt;今天写了一个新的&lt;a href=&quot;https://github.com/manateelazycat/snails/commit/b87b981cc4cb909b01a7deb882898c5d891d70d2&quot;&gt;补丁&lt;/a&gt;, 在搜索框下面增加了一行搜索前缀提醒，以后再也不会忘记自己写的搜索前缀了，哈哈哈哈。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/add-snails-prefix/add-snails-prefix.png&quot; alt=&quot;Snails prefix&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Snails 6.0发布的时候，添加了搜索前缀：</summary></entry><entry><title type="html">Snails可以直接搜索EAF浏览器历史了!</title><link href="http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser.html" rel="alternate" type="text/html" title="Snails可以直接搜索EAF浏览器历史了!" /><published>2020-01-10T00:00:00+08:00</published><updated>2020-01-10T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser.html">&lt;p&gt;前几天写了&lt;a href=&quot;https://manateelazycat.github.io/emacs/2020/01/06/snails-and-eaf.html&quot;&gt;Snails PDF Backend&lt;/a&gt;支持Snails直接搜索PDF目录快速跳转。&lt;/p&gt;
 
 &lt;p&gt;今天用了同样的原理实现了Snails直接搜索浏览器历史的功能：&lt;/p&gt;
 
@@ -257,24 +346,4 @@
   &lt;li&gt;按 Ctrl + g 取消搜索&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;社区的大神们都好厉害，每天发好多补丁，多的我有时候都看不过来了。&lt;/p&gt;</content><author><name></name></author><summary type="html">社区大神提交了一个新的补丁</summary></entry><entry><title type="html">EAF PDF Viewer, Jump link like Vimium</title><link href="http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-link-jump.html" rel="alternate" type="text/html" title="EAF PDF Viewer, Jump link like Vimium" /><published>2019-12-15T00:00:00+08:00</published><updated>2019-12-15T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-link-jump</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-link-jump.html">&lt;p&gt;最近重感冒，睡觉起来发现&lt;a href=&quot;https://github.com/luhuaei&quot;&gt;luhuaei&lt;/a&gt;给我发了一个补丁&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/157&quot;&gt;Jump link like Vimium&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;这个功能的用法很简单，当你在EAF PDF Viewer里面按 f 键后，EAF会自动在PDF所有可以跳转的地方，画上类似 Vimium 的按键线索：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-pdfviewer-link/eaf-pdfviewer-link.png&quot; alt=&quot;Vimium Jump&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;接着输入提示按键线索后，即可通过键盘跳转到链接对应的页面，特别在阅读PDF材料翻目录的时候特别有用。&lt;/p&gt;
-
-&lt;p&gt;这个补丁有个小小的问题，用户按 Ctrl + G 终止输入的时候不会清除页面跳转的按键线索，想了5分钟，给EAF添加了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/b8cb6cb0ffa3cd0c5770b8be5da288f0c1e7f354&quot;&gt;cancel_input_message DBus接口&lt;/a&gt;, 在用户终止输入的时候自动清除页面跳转的按键线索。&lt;/p&gt;
-
-&lt;p&gt;现在在EAF里面阅读PDF的体验更完美了，听说 luhuaei 还在开发PDF搜索的功能，期待。&lt;/p&gt;
-
-&lt;p&gt;感谢luhuaei! happy hacking!&lt;/p&gt;</content><author><name></name></author><summary type="html">最近重感冒，睡觉起来发现luhuaei给我发了一个补丁Jump link like Vimium</summary></entry><entry><title type="html">EAF PDF Viewer支持搜索啦！</title><link href="http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-search.html" rel="alternate" type="text/html" title="EAF PDF Viewer支持搜索啦！" /><published>2019-12-15T00:00:00+08:00</published><updated>2019-12-15T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-search</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/15/eaf-pdfviewer-support-search.html">&lt;p&gt;&lt;a href=&quot;https://github.com/luhuaei&quot;&gt;luhuaei&lt;/a&gt;太厉害了，今天早上给EAF PDF Viewer支持了&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/12/15/eaf-pdfviewer-support-link-jump.html&quot;&gt;Vimium Jump&lt;/a&gt;后，又加了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/a8ca34e8a04c29657507fc0733a85071cf07a3c5&quot;&gt;搜索补丁&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;在EAF PDF插件中，按 s 键输入需要搜索的字符，即可在PDF显示匹配的位置，再按一下 s 按键取消关键字高亮。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-pdfviewer-search/eaf-pdfviewer-search.png&quot; alt=&quot;Search&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;搜索关键字后，按 n 键跳到下一个关键字的位置，按 N 键跳到最后一个关键字的位置。&lt;/p&gt;
-
-&lt;p&gt;EAF PDF Viewer越来越好用啦！&lt;/p&gt;</content><author><name></name></author><summary type="html">luhuaei太厉害了，今天早上给EAF PDF Viewer支持了Vimium Jump后，又加了一个搜索补丁</summary></entry></feed>
+&lt;p&gt;社区的大神们都好厉害，每天发好多补丁，多的我有时候都看不过来了。&lt;/p&gt;</content><author><name></name></author><summary type="html">社区大神提交了一个新的补丁</summary></entry></feed>
