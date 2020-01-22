@@ -18,7 +18,7 @@ Web实现终端模拟器的原理很简单：
 
 1. 后台跑一个tty的守护进程，用于处理终端逻辑，可以用任何语言来跑这个守护进程，比如python, golang, node, rust;
 2. 通过WebSocket把tty的所有输出传递给浏览器, 浏览器可以用[xterm.js](https://github.com/xtermjs/xterm.js/)来渲染终端的字符序列;
-3. xterm.js接受用户事件通过WebSocket传递给后台的tty程序，完整整个终端模拟器的逻辑流程。
+3. xterm.js接受用户事件通过WebSocket传递给后台的tty程序，完成整个终端模拟器的逻辑流程。
 
 ### 现有项目横向对比
 基于Share SSH over Web的技术原理，Google了一些现有项目: [gotty](https://github.com/yudai/gotty), [ttyd](https://tsl0922.github.io/ttyd/), [webterm](https://github.com/fubarnetes/webterm), [wetty](https://github.com/butlerx/wetty) , 对这些项目做了深入的横向对比：
