@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-21T23:28:42+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">研究Share SSH over Web</title><link href="http://localhost:4000/emacs/2020/01/21/research-web-ssh.html" rel="alternate" type="text/html" title="研究Share SSH over Web" /><published>2020-01-21T00:00:00+08:00</published><updated>2020-01-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/21/research-web-ssh</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/21/research-web-ssh.html">&lt;h3 id=&quot;研究方向&quot;&gt;研究方向&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-28T02:19:19+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF, Wetty and XTerm.js</title><link href="http://localhost:4000/emacs/2020/01/28/eaf-and-wetty.html" rel="alternate" type="text/html" title="EAF, Wetty and XTerm.js" /><published>2020-01-28T00:00:00+08:00</published><updated>2020-01-28T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/28/eaf-and-wetty</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/28/eaf-and-wetty.html">&lt;h3 id=&quot;基于wetty--xtermjs的终端模拟器方案&quot;&gt;基于Wetty + XTerm.js的终端模拟器方案&lt;/h3&gt;
+
+&lt;p&gt;今天写了一个新的补丁&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/ac3cebabe360d3e7cceefefc7f694a6057126c33&quot;&gt;Use wetty as terminal backend&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;用Wetty + XTerm.js的方案替代了EAF原来的QTermWidget后端，基于XTerm.js的先进特性，新的终端模拟器可以像VTE那样完整的模拟图形化命令行工具，比如htop，cmatrix, sl，甚至Emacs和Vi也可以在里面正常运行。&lt;/p&gt;
+
+&lt;h3 id=&quot;和emacs现有终端模拟器方案的横向对比&quot;&gt;和Emacs现有终端模拟器方案的横向对比:&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;终端模拟器方案&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;终端文本操作效率&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;图形命令行工具支撑能力&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Shell可编程扩展能力&lt;/th&gt;
+      &lt;th&gt;优势&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;term.el/multi-term.el&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;文本操作效率中等，可以使用Emacs光标移动命令，但是很多时候需要 term-send-* 命令才能正常发送命令给Shell&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;图形命令行工具支撑能力中等，但是cmartrix这种复杂的没法运行&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Shell可编程扩展差, 功能和Bash/Zsh的能力一致&lt;/td&gt;
+      &lt;td&gt;功能比较均衡&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;EAF Terminal&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;文本操作效率差，无法使用Emacs光标移动命令，效率和外部图形终端模拟器一样低&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;图形命令行工具支撑优秀，可以支撑世面上所有图形命令行工具&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Shell可编程扩展差, 功能和Bash/Zsh的能力一致&lt;/td&gt;
+      &lt;td&gt;图形命令行工具支撑能力优秀&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;eshell/aweshell&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;文本操作效率优秀，可以使用Emacs光标移动命令&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;图形命令行工具支撑能力差，无法运行图形命令行工具&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Shell可编程扩展优秀，可以完全自定义Shell功能&lt;/td&gt;
+      &lt;td&gt;Shell可编程扩展优秀&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;我的终端使用习惯&quot;&gt;我的终端使用习惯&lt;/h3&gt;
+&lt;p&gt;2018年前，我一直在用自己写的&lt;a href=&quot;https://github.com/manateelazycat/multi-term&quot;&gt;multi-term.el&lt;/a&gt;, 偶尔配合一下外部的图形终端模拟器&lt;a href=&quot;https://github.com/manateelazycat/deepin-terminal&quot;&gt;Deepin Terminal&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2018年以后，主要使用我新造的&lt;a href=&quot;https://github.com/manateelazycat/aweshell&quot;&gt;Aweshell&lt;/a&gt;, 偶尔使用Deepin Terminal&lt;/p&gt;
+
+&lt;p&gt;现在我的日常终端模拟器依然是Aweshell, 因为Aweshell的文本编辑能力和编程可扩展能力最强，随着EAF的完善，我会逐步用EAF Terminal减少Deepin Terminal的使用比例。但是我不会完全弃用Deepin Terminal, 因为我经常编写Emacs插件，需要不断的重启Emacs以验证插件在干净Emacs环境下的表现。&lt;/p&gt;
+
+&lt;p&gt;以下是EAF终端模拟器的测试效果：&lt;/p&gt;
+
+&lt;h4 id=&quot;htop命令&quot;&gt;htop命令&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-and-wetty/eaf-and-wetty.gif&quot; alt=&quot;EAF and Wetty&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;sl命令&quot;&gt;sl命令&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-and-wetty/eaf-and-wetty-1.gif&quot; alt=&quot;EAF and Wetty&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">基于Wetty + XTerm.js的终端模拟器方案</summary></entry><entry><title type="html">研究Share SSH over Web</title><link href="http://localhost:4000/emacs/2020/01/21/research-web-ssh.html" rel="alternate" type="text/html" title="研究Share SSH over Web" /><published>2020-01-21T00:00:00+08:00</published><updated>2020-01-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/21/research-web-ssh</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/21/research-web-ssh.html">&lt;h3 id=&quot;研究方向&quot;&gt;研究方向&lt;/h3&gt;
 &lt;p&gt;目前为止EAF的终端插件是基于&lt;a href=&quot;https://github.com/lxqt/qtermwidget&quot;&gt;qtermwidget&lt;/a&gt;控件, 但是qtermwidget的实现现在只是一个哑终端，导致无法运行很多命令行程序，比如emacs和vi, 哈哈哈。&lt;/p&gt;
 
 &lt;p&gt;最近在研究怎么给&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;EAF&lt;/a&gt;重新做一个完美的终端模拟器插件, 有几个研究方向：&lt;/p&gt;
@@ -15,7 +73,7 @@
 &lt;ol&gt;
   &lt;li&gt;后台跑一个tty的守护进程，用于处理终端逻辑，可以用任何语言来跑这个守护进程，比如python, golang, node, rust;&lt;/li&gt;
   &lt;li&gt;通过WebSocket把tty的所有输出传递给浏览器, 浏览器可以用&lt;a href=&quot;https://github.com/xtermjs/xterm.js/&quot;&gt;xterm.js&lt;/a&gt;来渲染终端的字符序列;&lt;/li&gt;
-  &lt;li&gt;xterm.js接受用户事件通过WebSocket传递给后台的tty程序，完整整个终端模拟器的逻辑流程。&lt;/li&gt;
+  &lt;li&gt;xterm.js接受用户事件通过WebSocket传递给后台的tty程序，完成整个终端模拟器的逻辑流程。&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;现有项目横向对比&quot;&gt;现有项目横向对比&lt;/h3&gt;
@@ -335,15 +393,4 @@ wetty &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8081 &lt;span class=&quot
 
 &lt;p&gt;最后以这本书我最喜欢的一句话结尾，这句话要经常读，才能真正的保持在当下。&lt;/p&gt;
 
-&lt;p class=&quot;line-quote&quot;&gt;This, too, will past…&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在读《一个新世界》这本书，是《当下的力量》作者的新著，书中描绘的理念其实是一样的，只是《一个新世界》这本书写的更加透彻，也更加难以理解了。</summary></entry><entry><title type="html">EAF Browser支持Emacs风格的搜索啦！</title><link href="http://localhost:4000/emacs/2019/12/19/eaf-browser-support-search.html" rel="alternate" type="text/html" title="EAF Browser支持Emacs风格的搜索啦！" /><published>2019-12-19T00:00:00+08:00</published><updated>2019-12-19T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/19/eaf-browser-support-search</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/19/eaf-browser-support-search.html">&lt;p&gt;社区大神提交了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/f5526b01c90d7ac2df22d5f4d06a98f2ad4d76d9&quot;&gt;新的补丁&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-browser-support-search/eaf-browser-support-search.png&quot; alt=&quot;Search&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;现在可以直接在EAF Browser里面按 Ctrl + s 或者 Ctrl + r 进行浏览器页面内容搜索了，所有的搜索细节都和Emacs细节保持一致：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;第一次按 Ctrl + s 或 Ctrl + r 键进入搜索模式，输入搜索关键字&lt;/li&gt;
-  &lt;li&gt;第二次按 Ctrl + s 或 Ctrl + r 键的时候，继续搜索&lt;/li&gt;
-  &lt;li&gt;按 Ctrl + g 取消搜索&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;社区的大神们都好厉害，每天发好多补丁，多的我有时候都看不过来了。&lt;/p&gt;</content><author><name></name></author><summary type="html">社区大神提交了一个新的补丁</summary></entry></feed>
+&lt;p class=&quot;line-quote&quot;&gt;This, too, will past…&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在读《一个新世界》这本书，是《当下的力量》作者的新著，书中描绘的理念其实是一样的，只是《一个新世界》这本书写的更加透彻，也更加难以理解了。</summary></entry></feed>
