@@ -71,7 +71,7 @@
 <ol>
   <li>后台跑一个tty的守护进程，用于处理终端逻辑，可以用任何语言来跑这个守护进程，比如python, golang, node, rust;</li>
   <li>通过WebSocket把tty的所有输出传递给浏览器, 浏览器可以用<a href="https://github.com/xtermjs/xterm.js/">xterm.js</a>来渲染终端的字符序列;</li>
-  <li>xterm.js接受用户事件通过WebSocket传递给后台的tty程序，完整整个终端模拟器的逻辑流程。</li>
+  <li>xterm.js接受用户事件通过WebSocket传递给后台的tty程序，完成整个终端模拟器的逻辑流程。</li>
 </ol>
 
 <h3 id="现有项目横向对比">现有项目横向对比</h3>
