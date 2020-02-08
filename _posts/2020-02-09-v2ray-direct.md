@@ -48,11 +48,11 @@ v2ray客户端的路由规则匹配下面的原则:
         "domain:github.com"
     ],
     "type": "field",
-    "outboundTag": "vmess"
+    "outboundTag": "proxy"
 }
 ```
 
-这样github.com这个网站就可以强制走代理了。
+注意，因为 ```outboundTag``` 使用的是 ```proxy```, 所以要给 ```outbound``` 默认的vmess协议增加 ```"tag": "proxy",``` 字段，这样github.com这个网站就可以强制走代理了。
 
 ### 客户端配置文件参考
 
@@ -90,6 +90,7 @@ v2ray客户端的路由规则匹配下面的原则:
                 }
             ]
         },
+        "tag": "proxy",
         "mux": {
             "enabled": true
         }
@@ -118,7 +119,7 @@ v2ray客户端的路由规则匹配下面的原则:
                         "domain:github.com"
                     ],
                     "type": "field",
-                    "outboundTag": "vmess"
+                    "outboundTag": "proxy"
                 },
                 {
                     "type": "field",
