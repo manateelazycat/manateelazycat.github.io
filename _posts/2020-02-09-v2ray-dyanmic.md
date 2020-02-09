@@ -1,7 +1,7 @@
 ---
 layout: post
 title: v2ray error - failed to find an available destination
-categories: [Linux]
+categories: [Proxy]
 ---
 
 ### 访问错误
