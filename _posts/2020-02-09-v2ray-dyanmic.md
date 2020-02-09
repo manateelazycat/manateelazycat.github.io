@@ -8,7 +8,10 @@ categories: [Proxy]
 今天代理访问网站的时候，发现访问Google时返回错误:
 
 ```bash
-[Warning] failed to handler mux client connection > v2ray.com/core/proxy/vmess/outbound: failed to find an available destination > v2ray.com/core/common/retry: [dial tcp ip:port: connect: connection refused] > v2ray.com/core/common/retry: all retry attempts failed
+[Warning] failed to handler mux client connection >
+v2ray.com/core/proxy/vmess/outbound: failed to find an available destination >
+v2ray.com/core/common/retry: [dial tcp ip:port: connect: connection refused] >
+v2ray.com/core/common/retry: all retry attempts failed
 ```
 
 查了很多资料，应该是长期使用一个端口号，被GFW识别了，把服务器和客户端的 ```port``` 字段替换一个新的端口号后，问题解决。
