@@ -1,7 +1,7 @@
 ---
 layout: post
 title: v2ray设置路由
-categories: [Linux]
+categories: [Proxy]
 ---
 
 ### TCP阻断
