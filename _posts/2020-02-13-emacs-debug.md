@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Emacs调试高级技巧
-categories: [Proxy]
+categories: [Emacs]
 ---
 
 ### 常规调试方法
