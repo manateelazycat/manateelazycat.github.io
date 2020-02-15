@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EAF 内置RSS Reader啦!
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 Emacs无法像其他现代图形库那样天然支持多线程编程，导致Emacs非常不适合做大量数据计算的工作，数据计算时间太久就会卡住Emacs。

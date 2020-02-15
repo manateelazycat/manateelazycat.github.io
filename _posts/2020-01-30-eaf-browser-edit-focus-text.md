@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 用Emacs编辑EAF浏览器输入框的内容
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 ### EAF原理

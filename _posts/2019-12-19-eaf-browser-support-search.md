@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EAF Browser支持Emacs风格的搜索啦！
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 社区大神提交了一个[新的补丁](https://github.com/manateelazycat/emacs-application-framework/commit/f5526b01c90d7ac2df22d5f4d06a98f2ad4d76d9)

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在Elisp端定制EAF选项值
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 感谢社区大神今天发送的这个补丁[New API, eaf-set on the Emacs side](https://github.com/manateelazycat/emacs-application-framework/pull/86/files)

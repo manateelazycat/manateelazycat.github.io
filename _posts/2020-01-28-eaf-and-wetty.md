@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EAF, Wetty and XTerm.js
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 ### 基于Wetty + XTerm.js的终端模拟器方案

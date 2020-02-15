@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EAF支持书签啦！
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 [Clemens Radermacher](https://github.com/manateelazycat/emacs-application-framework/commits?author=clemera) 这个德国的黑客太凶残了，两天给我发送了无数补丁。因为时区的关系，刚好我下班，他就刚刚起床，起床就疯狂的发送各种功能补丁，重构补丁等，加上这几天感冒输液，经常在医院用手机审核补丁代码，手动捂脸。
