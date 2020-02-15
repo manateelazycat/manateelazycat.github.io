@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Emacs Application Framework支持大写字符事件了!
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 [Emacs Application Framework](https://manateelazycat.github.io/emacs/2018/08/06/eaf.html)是我为Emacs设计的新一代应用框架，可以利用PyQt5去扩展Emacs, 你可以用PyQt5去实现任何你想实现的图形应用,并完美和Emacs进行无缝融合。

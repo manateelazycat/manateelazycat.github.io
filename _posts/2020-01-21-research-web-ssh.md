@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 研究Share SSH over Web
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 ### 研究方向

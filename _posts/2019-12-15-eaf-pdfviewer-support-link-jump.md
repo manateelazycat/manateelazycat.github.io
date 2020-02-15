@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EAF PDF Viewer, Jump link like Vimium
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 最近重感冒，睡觉起来发现[luhuaei](https://github.com/luhuaei)给我发了一个补丁[Jump link like Vimium](https://github.com/manateelazycat/emacs-application-framework/pull/157)

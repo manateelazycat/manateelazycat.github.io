@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EAF PDF Viewer支持搜索啦！
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 [luhuaei](https://github.com/luhuaei)太厉害了，今天早上给EAF PDF Viewer支持了[Vimium Jump](https://manateelazycat.github.io/emacs/2019/12/15/eaf-pdfviewer-support-link-jump.html)后，又加了一个[搜索补丁](https://github.com/manateelazycat/emacs-application-framework/commit/a8ca34e8a04c29657507fc0733a85071cf07a3c5)

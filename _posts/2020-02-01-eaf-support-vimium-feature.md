@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EAF浏览器完成Vimium所有功能
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 最新版的EAF浏览器已经支持了所有的Vimium的功能，主要的功能列表如下：

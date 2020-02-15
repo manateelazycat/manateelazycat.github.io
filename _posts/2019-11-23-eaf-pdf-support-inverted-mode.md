@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 为EAF PDF阅读器增加夜晚模式
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 最近晚上才有空看会儿书，EAF PDF阅读器默认是渲染PDF文件的原色，一般的PDF文件背景都是白色的，就像这样。

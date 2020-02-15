@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EAF渲染邮件客户端的HTML内容
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 一个星期前[JulienMasson](https://github.com/JulienMasson)在这个[issue](https://github.com/manateelazycat/emacs-application-framework/issues/181)里面讨论EAF是否可以作为Emacs Buffer的一部分嵌入邮件客户端用于渲染HTML的邮件内容？

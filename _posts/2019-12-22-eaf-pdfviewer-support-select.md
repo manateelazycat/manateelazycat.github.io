@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EAF PDF Viewer支持文本选择了。
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 [luhuaei](https://github.com/luhuaei)大神周末发了一个[补丁](https://github.com/manateelazycat/emacs-application-framework/pull/157)，可以让EAF PDF支持文本选择了。

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EAF浏览器支持Vimium的键盘跳转功能了！
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 周末在外出差，本来定的7点起床闹钟，6:30的时候接到 [MatthewZMD](https://github.com/MatthewZMD) 的微信说Vimium搞定了。不是做梦吧？赶紧弹起来，review 了一下，没毛病，合并补丁！

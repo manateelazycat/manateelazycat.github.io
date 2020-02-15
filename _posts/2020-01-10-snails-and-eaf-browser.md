@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Snails可以直接搜索EAF浏览器历史了!
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 前几天写了[Snails PDF Backend](https://manateelazycat.github.io/emacs/2020/01/06/snails-and-eaf.html)支持Snails直接搜索PDF目录快速跳转。

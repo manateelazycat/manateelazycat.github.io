@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Snails + EAF 快速搜索PDF目录跳转
-categories: [Emacs]
+categories: [Emacs, EAF]
 ---
 
 [EAF](https://github.com/manateelazycat/emacs-application-framework)内置的PDF Viewer已经是Emacs里面性能最高的PDF阅读器。平常编程时我都用[Snails](https://github.com/manateelazycat/snails)来全局搜索。
