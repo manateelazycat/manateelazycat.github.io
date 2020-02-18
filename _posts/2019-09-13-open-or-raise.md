@@ -32,7 +32,7 @@ wmctrl首先会根据我们提供的窗口名字尝试切换窗口，如果没�
 下面是我常用的一些命令：
 
 * Google Chrome: ```wmctrl -x -a chrome || google-chrome-stable```
-* Emacs: ```wmctrl -x -a emacs || /usr/bin/emacs``` (用 /usr/bin/emacs 因为不用让Emacs读 ~/.emacs.d/emacs.desktop 文件，启动要一点)
+* Emacs: ```wmctrl -x -a emacs || /usr/bin/emacs``` (用 /usr/bin/emacs 因为不用让Emacs读 ~/.emacs.d/emacs.desktop 文件，启动要快一点)
 * Deepin Terminal: ```wmctrl -x -a deepin-terminal || deepin-terminal```
 * Netease Cloud Music: ```wmctrl -x -a netease-cloud-music || netease-cloud-music```
 * System Settings: ```wmctrl -x -a systemsettings5 || systemsettings5```
