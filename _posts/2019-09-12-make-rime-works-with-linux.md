@@ -33,7 +33,7 @@ sudo pacman -S librime
 ### 4 编译liberime
 
 ```bash
-git clone https://gitlab.com/liberime/liberime.git --depth=1
+git clone https://github.com/merrickluo/liberime --depth=1
 cd liberime
 make liberime
 ```
@@ -57,19 +57,6 @@ make liberime
 (liberime-start "/usr/share/rime-data/" (file-truename "~/.emacs.d/pyim/rime/"))
 (liberime-select-schema "luna_pinyin_simp")
 (setq pyim-default-scheme 'rime-quanpin)
-```
-
-### 6 增加RIME候选词数量
-
-liberime默认只能获取5个后选词，用下面的方法可以增加RIME后端时的后选词数量。
-
-创建 ~/.emacs.d/pyim/rime/default.custom.yaml 文件，内容如下：
-
-```bash
-patch:
-     "menu/page_size": 100
-     "speller/auto_select": false
-     "speller/auto_select_unique_candidate": false
 ```
 
 ## 区别
