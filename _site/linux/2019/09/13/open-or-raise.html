@@ -51,7 +51,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数859 2019-09-13
+                字数929 2019-09-13
             </div>
             <div class="content">
                 <p>Mac下缺少强大的窗口管理器，而我讨厌使用鼠标低效率的切换应用，所以我使用HammerSpoon的<a href="https://github.com/manateelazycat/hammerspoon-config/blob/d741f22e8bfaa07930701cf9d6fef789693b4e3a/init.lua#L194">application.launchOrFocus</a>来实现打开或切换应用的功能：当一个应用没有打开的时候直接打开，如果一个应用已经打开了就切换到已经打开的窗口。</p>
@@ -82,7 +82,7 @@
 
 <ul>
   <li>Google Chrome: <code class="highlighter-rouge">wmctrl -x -a chrome || google-chrome-stable</code></li>
-  <li>Emacs: <code class="highlighter-rouge">wmctrl -x -a emacs || emacs</code></li>
+  <li>Emacs: <code class="highlighter-rouge">wmctrl -x -a emacs || /usr/bin/emacs</code> (用 /usr/bin/emacs 因为不用让Emacs读 ~/.emacs.d/emacs.desktop 文件，启动要快一点)</li>
   <li>Deepin Terminal: <code class="highlighter-rouge">wmctrl -x -a deepin-terminal || deepin-terminal</code></li>
   <li>Netease Cloud Music: <code class="highlighter-rouge">wmctrl -x -a netease-cloud-music || netease-cloud-music</code></li>
   <li>System Settings: <code class="highlighter-rouge">wmctrl -x -a systemsettings5 || systemsettings5</code></li>
