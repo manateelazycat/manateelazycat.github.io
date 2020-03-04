@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>EAF, Wetty and XTerm.js</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                EAF, Wetty and XTerm.js
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                
+                <a href="http://localhost:4000/tags.html#EAF">
+                    <div class="category">
+                        EAF
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数921 2020-01-28
+            </div>
+            <div class="content">
+                <h3 id="基于wetty--xtermjs的终端模拟器方案">基于Wetty + XTerm.js的终端模拟器方案</h3>
+
+<p>今天写了一个新的补丁<a href="https://github.com/manateelazycat/emacs-application-framework/commit/ac3cebabe360d3e7cceefefc7f694a6057126c33">Use wetty as terminal backend</a></p>
+
+<p>用Wetty + XTerm.js的方案替代了EAF原来的QTermWidget后端，基于XTerm.js的先进特性，新的终端模拟器可以像VTE那样完整的模拟图形化命令行工具，比如htop，cmatrix, sl，甚至Emacs和Vi也可以在里面正常运行。</p>
+
+<h3 id="和emacs现有终端模拟器方案的横向对比">和Emacs现有终端模拟器方案的横向对比:</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">终端模拟器方案</th>
+      <th style="text-align: left">终端文本操作效率</th>
+      <th style="text-align: left">图形命令行工具支撑能力</th>
+      <th style="text-align: left">Shell可编程扩展能力</th>
+      <th>优势</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">term.el/multi-term.el</td>
+      <td style="text-align: left">文本操作效率中等，可以使用Emacs光标移动命令，但是很多时候需要 term-send-* 命令才能正常发送命令给Shell</td>
+      <td style="text-align: left">图形命令行工具支撑能力中等，但是cmartrix这种复杂的没法运行</td>
+      <td style="text-align: left">Shell可编程扩展差, 功能和Bash/Zsh的能力一致</td>
+      <td>功能比较均衡</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">EAF Terminal</td>
+      <td style="text-align: left">文本操作效率差，无法使用Emacs光标移动命令，效率和外部图形终端模拟器一样低</td>
+      <td style="text-align: left">图形命令行工具支撑优秀，可以支撑世面上所有图形命令行工具</td>
+      <td style="text-align: left">Shell可编程扩展差, 功能和Bash/Zsh的能力一致</td>
+      <td>图形命令行工具支撑能力优秀</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">eshell/aweshell</td>
+      <td style="text-align: left">文本操作效率优秀，可以使用Emacs光标移动命令</td>
+      <td style="text-align: left">图形命令行工具支撑能力差，无法运行图形命令行工具</td>
+      <td style="text-align: left">Shell可编程扩展优秀，可以完全自定义Shell功能</td>
+      <td>Shell可编程扩展优秀</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="我的终端使用习惯">我的终端使用习惯</h3>
+<p>2018年前，我一直在用自己写的<a href="https://github.com/manateelazycat/multi-term">multi-term.el</a>, 偶尔配合一下外部的图形终端模拟器<a href="https://github.com/manateelazycat/deepin-terminal">Deepin Terminal</a></p>
+
+<p>2018年以后，主要使用我新造的<a href="https://github.com/manateelazycat/aweshell">Aweshell</a>, 偶尔使用Deepin Terminal</p>
+
+<p>现在我的日常终端模拟器依然是Aweshell, 因为Aweshell的文本编辑能力和编程可扩展能力最强，随着EAF的完善，我会逐步用EAF Terminal减少Deepin Terminal的使用比例。但是我不会完全弃用Deepin Terminal, 因为我经常编写Emacs插件，需要不断的重启Emacs以验证插件在干净Emacs环境下的表现。</p>
+
+<p>以下是EAF终端模拟器的测试效果：</p>
+
+<h4 id="htop命令">htop命令</h4>
+
+<p><img src="http://localhost:4000/pics/eaf-and-wetty/eaf-and-wetty.gif" alt="EAF and Wetty" /></p>
+
+<h4 id="sl命令">sl命令</h4>
+
+<p><img src="http://localhost:4000/pics/eaf-and-wetty/eaf-and-wetty-1.gif" alt="EAF and Wetty" /></p>
+
+            </div>
+        </div>
+    </body>
+</html>

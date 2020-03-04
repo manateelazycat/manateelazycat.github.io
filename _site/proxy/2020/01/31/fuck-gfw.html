@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>Git代理设置</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                Git代理设置
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Proxy">
+                    <div class="category">
+                        Proxy
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数490 2020-01-31
+            </div>
+            <div class="content">
+                <h3 id="准备工作">准备工作</h3>
+
+<ol>
+  <li>购买VPS;</li>
+  <li>在服务器VPS上安装v2ray server (请自行Google);</li>
+  <li>在本机安装v2ray client, 利用v2ray client开启socks5代理 (请自行Google)。</li>
+</ol>
+
+<h3 id="配置git-httphttps代理">配置Git HTTP/HTTPS代理</h3>
+
+<p>在 ~/.gitconfig 文件中加入以下配置:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>http]
+	proxy <span class="o">=</span> socks5://127.0.0.1:1080
+<span class="o">[</span>https]
+	proxy <span class="o">=</span> socks5://127.0.0.1:1080
+</code></pre></div></div>
+
+<h3 id="配置git-ssh代理">配置Git SSH代理</h3>
+
+<p>在 ~/.ssh/config 文件中加入以下配置:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host github.com
+HostName github.com
+User git
+Port 22
+ProxyCommand /usr/bin/ncat <span class="nt">--proxy</span> 127.0.0.1:1080 <span class="nt">--proxy-type</span> socks5 %h %p
+</code></pre></div></div>
+
+<h3 id="把githubcom加入v2ray代理路由">把github.com加入v2ray代理路由</h3>
+
+<p>上面两个配置只是让HTTPS/SSH访问走本地Socks5代理，但是并不能保证一定可以连接上Github。</p>
+
+<p>需要把github.com加入v2ray的路由中，具体请看<a href="https://manateelazycat.github.io/proxy/2020/02/09/v2ray-direct.html">v2ray设置路由</a></p>
+
+<p>Fuck GFW, waste my time. ;)</p>
+
+            </div>
+        </div>
+    </body>
+</html>

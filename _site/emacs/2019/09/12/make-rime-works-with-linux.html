@@ -51,7 +51,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数1587 2019-09-12
+                字数1382 2019-09-12
             </div>
             <div class="content">
                 <p>之前写了一篇文章<a href="https://manateelazycat.github.io/emacs/2019/07/24/use-rime-in-emacs.html">«在Mac版的Emacs中使用RIME输入法»</a>详细说明了Mac OS下怎么让Emacs使用RIME输入法。最近又折腾回我最喜欢的Linux，今天讲一下怎么在Linux下配置Emacs的RIME输入法。</p>
@@ -79,7 +79,7 @@
 
 <h3 id="4-编译liberime">4 编译liberime</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://gitlab.com/liberime/liberime.git <span class="nt">--depth</span><span class="o">=</span>1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/merrickluo/liberime <span class="nt">--depth</span><span class="o">=</span>1
 <span class="nb">cd </span>liberime
 make liberime
 </code></pre></div></div>
@@ -102,18 +102,6 @@ make liberime
 <span class="p">(</span><span class="nv">liberime-start</span> <span class="s">"/usr/share/rime-data/"</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="s">"~/.emacs.d/pyim/rime/"</span><span class="p">))</span>
 <span class="p">(</span><span class="nv">liberime-select-schema</span> <span class="s">"luna_pinyin_simp"</span><span class="p">)</span>
 <span class="p">(</span><span class="k">setq</span> <span class="nv">pyim-default-scheme</span> <span class="ss">'rime-quanpin</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="6-增加rime候选词数量">6 增加RIME候选词数量</h3>
-
-<p>liberime默认只能获取5个后选词，用下面的方法可以增加RIME后端时的后选词数量。</p>
-
-<p>创建 ~/.emacs.d/pyim/rime/default.custom.yaml 文件，内容如下：</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>patch:
-     <span class="s2">"menu/page_size"</span>: 100
-     <span class="s2">"speller/auto_select"</span>: <span class="nb">false</span>
-     <span class="s2">"speller/auto_select_unique_candidate"</span>: <span class="nb">false</span>
 </code></pre></div></div>
 
 <h2 id="区别">区别</h2>

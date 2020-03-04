@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>设置浏览器UserAgent以支持Google站点登录</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                设置浏览器UserAgent以支持Google站点登录
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Linux">
+                    <div class="category">
+                        Linux
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数517 2020-02-07
+            </div>
+            <div class="content">
+                <p>当用Qt开发浏览器时，虽然Qt5的WebEngine就是基于Chromium内核开发的，但是用Qt开发的浏览器却无法登录Google站点。</p>
+
+<p>在登录Google站点时，会检测到自制浏览器，提示只有Chrome, Sarfri, Firefox, IE才能登录，说其他浏览器都不安全，哈哈哈哈。</p>
+
+<p>最开始尝试用Chrome的UserAgent来设置Qt浏览器，设置后还是无法登录，猜测Chrome浏览器有私有协议和Google的服务器通讯来避免开发者的自制浏览器通过UserAgent来伪造Chrome浏览器。</p>
+
+<p>既然Chrome UserAgent不行，尝试一下Firefox的UserAgent，最后通过下面代码把Qt浏览器的UserAgent设置成Firefox的就可以登录Google站点了:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">webview</span> <span class="o">=</span> <span class="n">QWebEngineView</span><span class="p">()</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">QWebEngineProfile</span><span class="p">(</span><span class="n">webview</span><span class="p">)</span>
+<span class="n">profile</span><span class="o">.</span><span class="n">defaultProfile</span><span class="p">()</span><span class="o">.</span><span class="n">setHttpUserAgent</span><span class="p">(</span><span class="s">"Mozilla/5.0 (X11; Linux i586; rv:31.0) Gecko/20100101 Firefox/72.0"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Happy hacking! ;)</p>
+
+            </div>
+        </div>
+    </body>
+</html>

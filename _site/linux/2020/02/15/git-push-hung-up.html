@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>修复Git远端意外挂断</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                修复Git远端意外挂断
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Linux">
+                    <div class="category">
+                        Linux
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数332 2020-02-15
+            </div>
+            <div class="content">
+                <p>今天在执行命令 <code class="highlighter-rouge">git push</code> 时，终端报了下面的错误:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>枚举对象: 35, 完成.
+对象计数中: 100% <span class="o">(</span>35/35<span class="o">)</span>, 完成.
+使用 4 个线程进行压缩
+压缩对象中: 100% <span class="o">(</span>30/30<span class="o">)</span>, 完成.
+写入对象中: 100% <span class="o">(</span>30/30<span class="o">)</span>, 341.28 KiB | 976.00 KiB/s, 完成.
+总共 30 （差异 10），复用 0 （差异 0）
+Connection to github.com closed by remote host.
+fatal: 远端意外挂断了
+fatal: 远端意外挂断了
+</code></pre></div></div>
+
+<p>Google了一下，应该是Buffer太小的原因，使用下面的命令修复后就可以正常 <code class="highlighter-rouge">git push</code> 了。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config http.postBuffer 100000000
+git config ssh.postBuffer 100000000
+</code></pre></div></div>
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -51,7 +51,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数2081 2019-07-24
+                字数1876 2019-07-24
             </div>
             <div class="content">
                 <p>做为一个资深的Emacs党，期望每件事情都用Emacs来搞定，同时做为中国人，输入中文真的是刚需。
@@ -84,7 +84,7 @@
   <li>4.1 下载liberime源码</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://gitlab.com/liberime/liberime.git <span class="nt">--depth</span><span class="o">=</span>1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/merrickluo/liberime <span class="nt">--depth</span><span class="o">=</span>1
 </code></pre></div></div>
 
 <ul>
@@ -140,18 +140,6 @@ make liberime
 <span class="p">(</span><span class="nv">liberime-start</span> <span class="s">"/Library/Input Methods/Squirrel.app/Contents/SharedSupport"</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="s">"~/.emacs.d/pyim/rime/"</span><span class="p">))</span>
 <span class="p">(</span><span class="nv">liberime-select-schema</span> <span class="s">"luna_pinyin_simp"</span><span class="p">)</span>
 <span class="p">(</span><span class="k">setq</span> <span class="nv">pyim-default-scheme</span> <span class="ss">'rime-quanpin</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="6-增加rime候选词数量">6 增加RIME候选词数量</h3>
-
-<p>liberime默认只能获取5个后选词，用下面的方法可以增加RIME后端时的后选词数量。</p>
-
-<p>创建 ~/.emacs.d/pyim/rime/default.custom.yaml 文件，内容如下：</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>patch:
-     <span class="s2">"menu/page_size"</span>: 100
-     <span class="s2">"speller/auto_select"</span>: <span class="nb">false</span>
-     <span class="s2">"speller/auto_select_unique_candidate"</span>: <span class="nb">false</span>
 </code></pre></div></div>
 
 <h2 id="最后">最后</h2>

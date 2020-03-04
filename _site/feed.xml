@@ -1,396 +1,461 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-28T02:19:19+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF, Wetty and XTerm.js</title><link href="http://localhost:4000/emacs/2020/01/28/eaf-and-wetty.html" rel="alternate" type="text/html" title="EAF, Wetty and XTerm.js" /><published>2020-01-28T00:00:00+08:00</published><updated>2020-01-28T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/28/eaf-and-wetty</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/28/eaf-and-wetty.html">&lt;h3 id=&quot;基于wetty--xtermjs的终端模拟器方案&quot;&gt;基于Wetty + XTerm.js的终端模拟器方案&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-04T14:34:28+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">读《成果管理》</title><link href="http://localhost:4000/reading/2020/03/04/reading-rbm.html" rel="alternate" type="text/html" title="读《成果管理》" /><published>2020-03-04T00:00:00+08:00</published><updated>2020-03-04T00:00:00+08:00</updated><id>http://localhost:4000/reading/2020/03/04/reading-rbm</id><content type="html" xml:base="http://localhost:4000/reading/2020/03/04/reading-rbm.html">&lt;p&gt;因为武汉疫情的原因，被封闭在老家，难得很长的空闲时间，每天除了完成工作外，主要就是在读《成果管理》这本书。
+这本书主要讲的是企业的战略，原来对企业战略的认识很模糊，看完以后，战略两个字在我眼里栩栩如生：&lt;/p&gt;
 
-&lt;p&gt;今天写了一个新的补丁&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/ac3cebabe360d3e7cceefefc7f694a6057126c33&quot;&gt;Use wetty as terminal backend&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;line-quote&quot;&gt;战略本质就是基于创始人对自己本身和市场理解的前提下，面向客户的需求，进行资源和成本管理的一系列系统的方法和原则。&lt;/p&gt;
 
-&lt;p&gt;用Wetty + XTerm.js的方案替代了EAF原来的QTermWidget后端，基于XTerm.js的先进特性，新的终端模拟器可以像VTE那样完整的模拟图形化命令行工具，比如htop，cmatrix, sl，甚至Emacs和Vi也可以在里面正常运行。&lt;/p&gt;
+&lt;p&gt;书中的很多观点对于创始人思考企业的战略还是非常有指导性的，而不仅仅只是一个流行的口头禅，以下是我读完书的一些思考：&lt;/p&gt;
 
-&lt;h3 id=&quot;和emacs现有终端模拟器方案的横向对比&quot;&gt;和Emacs现有终端模拟器方案的横向对比:&lt;/h3&gt;
+&lt;h3 id=&quot;关于成本&quot;&gt;关于成本&lt;/h3&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;终端模拟器方案&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;终端文本操作效率&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;图形命令行工具支撑能力&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Shell可编程扩展能力&lt;/th&gt;
-      &lt;th&gt;优势&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;term.el/multi-term.el&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;文本操作效率中等，可以使用Emacs光标移动命令，但是很多时候需要 term-send-* 命令才能正常发送命令给Shell&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;图形命令行工具支撑能力中等，但是cmartrix这种复杂的没法运行&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Shell可编程扩展差, 功能和Bash/Zsh的能力一致&lt;/td&gt;
-      &lt;td&gt;功能比较均衡&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EAF Terminal&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;文本操作效率差，无法使用Emacs光标移动命令，效率和外部图形终端模拟器一样低&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;图形命令行工具支撑优秀，可以支撑世面上所有图形命令行工具&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Shell可编程扩展差, 功能和Bash/Zsh的能力一致&lt;/td&gt;
-      &lt;td&gt;图形命令行工具支撑能力优秀&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;eshell/aweshell&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;文本操作效率优秀，可以使用Emacs光标移动命令&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;图形命令行工具支撑能力差，无法运行图形命令行工具&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Shell可编程扩展优秀，可以完全自定义Shell功能&lt;/td&gt;
-      &lt;td&gt;Shell可编程扩展优秀&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;从经济的角度看，我们企业包括创始人和团队在内的所有人都是成本，而不是我们潜意识认为的我们自己是创造产品，企业的成本和大多数事务没有太多关系，特别是软件开发团队，主要的成本就是人力成本，而且和时间有关，而不是和产量和产品数量有关。&lt;/p&gt;
 
-&lt;h3 id=&quot;我的终端使用习惯&quot;&gt;我的终端使用习惯&lt;/h3&gt;
-&lt;p&gt;2018年前，我一直在用自己写的&lt;a href=&quot;https://github.com/manateelazycat/multi-term&quot;&gt;multi-term.el&lt;/a&gt;, 偶尔配合一下外部的图形终端模拟器&lt;a href=&quot;https://github.com/manateelazycat/deepin-terminal&quot;&gt;Deepin Terminal&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;关于节省成本，其实很多企业都在小成本上斤斤计较，而且为了小成本的节省，往往以牺牲人的生产力为前提的，企业最大的成本浪费在于，没有把人才资源投入到真正的商业机会中，而是根据团队规模进行雨露均沾的资源投入，最后所有的资源在团队堡垒争夺下，自动分配给很多碌碌无为的活动，而不是创造价值的机会中。&lt;/p&gt;
 
-&lt;p&gt;2018年以后，主要使用我新造的&lt;a href=&quot;https://github.com/manateelazycat/aweshell&quot;&gt;Aweshell&lt;/a&gt;, 偶尔使用Deepin Terminal&lt;/p&gt;
+&lt;h3 id=&quot;关于资源&quot;&gt;关于资源&lt;/h3&gt;
 
-&lt;p&gt;现在我的日常终端模拟器依然是Aweshell, 因为Aweshell的文本编辑能力和编程可扩展能力最强，随着EAF的完善，我会逐步用EAF Terminal减少Deepin Terminal的使用比例。但是我不会完全弃用Deepin Terminal, 因为我经常编写Emacs插件，需要不断的重启Emacs以验证插件在干净Emacs环境下的表现。&lt;/p&gt;
+&lt;p&gt;特别是研发背景的创业团队容易犯的错误是，认为只要开发出能够解决问题或者提供高效率的工具就是好的产品。但是企业真正要做的是先了解客户，经济成果获取靠的是挖掘新的商业机会，而不是靠解决问题。最好的企业运营方式应该是把资源投入到商业机会上，并远离问题。这里说的并不是不解决问题，而是解决问题的前提是客户认可的问题，而不是你自己认为的问题。高质量的产品不是技术上最精巧的东西，而是在满足客户核心痛点下成本尽量的低稳定产品。&lt;/p&gt;
 
-&lt;p&gt;以下是EAF终端模拟器的测试效果：&lt;/p&gt;
+&lt;h3 id=&quot;关于客户&quot;&gt;关于客户&lt;/h3&gt;
 
-&lt;h4 id=&quot;htop命令&quot;&gt;htop命令&lt;/h4&gt;
+&lt;p&gt;创新的点只要有一个核心点能够满足市场需求即可，其他80%的功能都不是用户所会关心的。客户购买的往往不是企业卖给他们的产品，他们不会为了产品掏腰包，他们买的是产品销售过程中，由产品技术和服务带来的满足感。这两个点我理解的特别深刻，现在世界最差的其实不是信息和知识，高水平的客户也会自己去学习，客户真正需要的是你对他的重视，彻底的研究他们的痛点，通过沟通交流在解决他们问题的前提下形成更为广泛的商业信任。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-and-wetty/eaf-and-wetty.gif&quot; alt=&quot;EAF and Wetty&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;只有你和客户之间形成了类似朋友之间的商务信任以后，企业开展的商务，销售，研发和服务才会有效果，才是面向机会的经济行为。&lt;/p&gt;
 
-&lt;h4 id=&quot;sl命令&quot;&gt;sl命令&lt;/h4&gt;
+&lt;h3 id=&quot;关于管理&quot;&gt;关于管理&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-and-wetty/eaf-and-wetty-1.gif&quot; alt=&quot;EAF and Wetty&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">基于Wetty + XTerm.js的终端模拟器方案</summary></entry><entry><title type="html">研究Share SSH over Web</title><link href="http://localhost:4000/emacs/2020/01/21/research-web-ssh.html" rel="alternate" type="text/html" title="研究Share SSH over Web" /><published>2020-01-21T00:00:00+08:00</published><updated>2020-01-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/21/research-web-ssh</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/21/research-web-ssh.html">&lt;h3 id=&quot;研究方向&quot;&gt;研究方向&lt;/h3&gt;
-&lt;p&gt;目前为止EAF的终端插件是基于&lt;a href=&quot;https://github.com/lxqt/qtermwidget&quot;&gt;qtermwidget&lt;/a&gt;控件, 但是qtermwidget的实现现在只是一个哑终端，导致无法运行很多命令行程序，比如emacs和vi, 哈哈哈。&lt;/p&gt;
+&lt;p&gt;多思考客户要求背后的痛点现状，重视机会的最大化，而不是风险的最小化，如果一味追求最小的风险，最后企业面临的无所作为最大的风险。&lt;/p&gt;</content><author><name></name></author><summary type="html">因为武汉疫情的原因，被封闭在老家，难得很长的空闲时间，每天除了完成工作外，主要就是在读《成果管理》这本书。 这本书主要讲的是企业的战略，原来对企业战略的认识很模糊，看完以后，战略两个字在我眼里栩栩如生：</summary></entry><entry><title type="html">QWebEngine进程生命周期研究</title><link href="http://localhost:4000/linux/eaf/2020/03/01/webengine-debug.html" rel="alternate" type="text/html" title="QWebEngine进程生命周期研究" /><published>2020-03-01T00:00:00+08:00</published><updated>2020-03-01T00:00:00+08:00</updated><id>http://localhost:4000/linux/eaf/2020/03/01/webengine-debug</id><content type="html" xml:base="http://localhost:4000/linux/eaf/2020/03/01/webengine-debug.html">&lt;p&gt;最近在写EAF浏览器功能时，发现QWebEngineView页面退出后，QtWebEngineProcess进程并没有退出，产生内存泄漏的问题。&lt;/p&gt;
 
-&lt;p&gt;最近在研究怎么给&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;EAF&lt;/a&gt;重新做一个完美的终端模拟器插件, 有几个研究方向：&lt;/p&gt;
+&lt;p&gt;随即详细研究了一下QWebEngine的进程模型:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/webengine/webengine.png&quot; alt=&quot;WebEngine&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在讲进程模型之前，需要明白Qt WebEngine的组成结构:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;利用现有的终端模拟器控件: 现在的qtermwidget控件虽然可用，但是不完美，&lt;a href=&quot;https://github.com/GNOME/vte&quot;&gt;VTE&lt;/a&gt;虽然是现在最完美的终端模拟器控件(深度系统的深度终端就是我2016年基于VTE控件开发的)，但是VTE控件只能嵌入Gtk程序，EAF是基于Qt开发的，很难在Qt程序里面直接嵌入VTE的控件来实现终端模拟器；&lt;/li&gt;
-  &lt;li&gt;重新实现一个Qt全功能的终端模拟器控件：这条很快Pass，主要我太懒，深度终端打磨了2年多，不想再浪费我的时间在终端这种没有挑战性的工作上；&lt;/li&gt;
-  &lt;li&gt;基于Web技术来实现：2018年曾经用过VSCode一个多月，对里面的终端模拟器印象深刻，因为EAF的浏览器支持非常好，这条路也许可行…&lt;/li&gt;
+  &lt;li&gt;QWebEngineView就是一个Qt控件，专注于绘制网页内容;&lt;/li&gt;
+  &lt;li&gt;QWebEnginePage才是真正管理核心资源的模块，包括历史、动作、设置、脚本和Cookie等功能。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;ssh-over-web的原理&quot;&gt;SSH over Web的原理&lt;/h3&gt;
-&lt;p&gt;Web实现终端模拟器的原理很简单：&lt;/p&gt;
+&lt;p&gt;进程模型我们其实只用理解三个概念：&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;后台跑一个tty的守护进程，用于处理终端逻辑，可以用任何语言来跑这个守护进程，比如python, golang, node, rust;&lt;/li&gt;
-  &lt;li&gt;通过WebSocket把tty的所有输出传递给浏览器, 浏览器可以用&lt;a href=&quot;https://github.com/xtermjs/xterm.js/&quot;&gt;xterm.js&lt;/a&gt;来渲染终端的字符序列;&lt;/li&gt;
-  &lt;li&gt;xterm.js接受用户事件通过WebSocket传递给后台的tty程序，完成整个终端模拟器的逻辑流程。&lt;/li&gt;
+  &lt;li&gt;QWebEngineView只是Qt的图形控件，当销毁QWebEngineView时，只是销毁控件的图形区域和内存空间，并不影响renderer进程;&lt;/li&gt;
+  &lt;li&gt;每个QWebEnginePage对象对应一个renderer进程，生死与共；&lt;/li&gt;
+  &lt;li&gt;浏览器启动之前, QWebEngine会为所有的renderer的进程准备两个zygote进程，用于资源初始化。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;现有项目横向对比&quot;&gt;现有项目横向对比&lt;/h3&gt;
-&lt;p&gt;基于Share SSH over Web的技术原理，Google了一些现有项目: &lt;a href=&quot;https://github.com/yudai/gotty&quot;&gt;gotty&lt;/a&gt;, &lt;a href=&quot;https://tsl0922.github.io/ttyd/&quot;&gt;ttyd&lt;/a&gt;, &lt;a href=&quot;https://github.com/fubarnetes/webterm&quot;&gt;webterm&lt;/a&gt;, &lt;a href=&quot;https://github.com/butlerx/wetty&quot;&gt;wetty&lt;/a&gt; , 对这些项目做了深入的横向对比：&lt;/p&gt;
+&lt;p&gt;理解上面的模型关系后，解决内存泄漏的问题就很简单了，只需在销毁QWebEngineView之前，手动的销毁QWebEnginePage对象，就可以自动退出对应的renderer进程。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;gotty: 这个项目最著名，性能非常好，而且对中文的支持也非常好，但是有一个问题，就是终端的输出无法自适应浏览器窗口的大小，在浏览器中只能显示固定的小窗口，折腾了半天，放弃；&lt;/li&gt;
-  &lt;li&gt;ttyd: 这个项目是gotty项目C语言的移植版本, 作者也是中国人，功能非常完整，对中文支持很好，就是性能太差了，打字符卡半天，看了一下 issue, 估计和最近版本的libwebsocket的版本引起的性能问题，折腾后放弃；&lt;/li&gt;
-  &lt;li&gt;webterm: 一想到性能问题，就想到在全世界造轮子的rust, 想着一定有rust版本的gotty，一搜还真有，但是折腾了半天，很失望，没法跑bash这种交互程序；&lt;/li&gt;
-  &lt;li&gt;wetty: 最后折腾了最老牌的一个项目wetty, gotty也是基于wetty的原理用golang重新实现的，这个项目最开始尝试的时候，差点就准备放弃，因为在交互易用性上有几个很不爽的问题。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;折腾wetty&quot;&gt;折腾wetty&lt;/h3&gt;
-&lt;p&gt;wetty最开始折腾，主要有这几个问题很烦：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;默认 &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:3000&lt;/code&gt; 显示 “Cannot GET /” 的错误；&lt;/li&gt;
-  &lt;li&gt;登录的时候强制要输入用户名和密码，对于远程链接是非常正常的，但是对于本地终端非常不方便；&lt;/li&gt;
-  &lt;li&gt;ls命令后无法正常显示中文。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;今天在天门山玩了一天，开长途到酒店后，好好的研究了一下wetty, 终于解决了现在这些问题：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;wetty默认启动的路径在 &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:3000/wetty/&lt;/code&gt; 路径下，所以root路径下会出现无法访问的问题，用 &lt;code class=&quot;highlighter-rouge&quot;&gt;--base /&lt;/code&gt; 参数来指定访问路径在root路径，然后就可以用 &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1&lt;/code&gt; 来直接访问了；&lt;/li&gt;
-  &lt;li&gt;默认输入密码的问题，可以先用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh-keygen&lt;/code&gt; 生成公钥文件 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.ssh/id_rsa.pub&lt;/code&gt;，再用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys&lt;/code&gt; 加入到授权密钥文件中，最后用 &lt;code class=&quot;highlighter-rouge&quot;&gt;--sshuser=&quot;($whoami)&quot; --sshauth=publickey&lt;/code&gt; 参数即可启用自动登录;&lt;/li&gt;
-  &lt;li&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bashrc&lt;/code&gt; 文件中加入 &lt;code class=&quot;highlighter-rouge&quot;&gt;export LANG=zh_CN.UTF-8&lt;/code&gt; 配置，即可保证bash输出的中文字符显示正常。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;完整的命令&quot;&gt;完整的命令&lt;/h3&gt;
-
-&lt;p&gt;下面是折腾wetty过后，完整的Shell命令&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 设置LANG环境变量，保证中文信息显示&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export LANG=zh_CN.UTF-8'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
-
-&lt;span class=&quot;c&quot;&gt;# 自动登录wetty&lt;/span&gt;
-ssh-keygen
-&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
-
-&lt;span class=&quot;c&quot;&gt;# 安装wetty&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;yarn global add wetty
-
-&lt;span class=&quot;c&quot;&gt;# 启动wetty&lt;/span&gt;
-wetty &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 8081 &lt;span class=&quot;nt&quot;&gt;--base&lt;/span&gt; / &lt;span class=&quot;nt&quot;&gt;--sshuser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;whoami&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--sshauth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;publickey &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; bash
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web_page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deleteLater&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deleteLater&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;启动后，浏览器直接访问 &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:8081&lt;/code&gt; 地址，SSH over Web的效果图如下，得益于xterm.js的渲染技术，终端显示和交互的功能非常完整：&lt;/p&gt;
+&lt;p&gt;上面是EAF浏览器删除页面时的参考代码。&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在写EAF浏览器功能时，发现QWebEngineView页面退出后，QtWebEngineProcess进程并没有退出，产生内存泄漏的问题。</summary></entry><entry><title type="html">EAF预览Office文件</title><link href="http://localhost:4000/emacs/eaf/2020/02/29/eaf-doc.html" rel="alternate" type="text/html" title="EAF预览Office文件" /><published>2020-02-29T00:00:00+08:00</published><updated>2020-02-29T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/02/29/eaf-doc</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/02/29/eaf-doc.html">&lt;p&gt;偶尔我们需要阅读一下Office文档资料，只要不用编辑，我们就可以不用打开笨重的Office专业软件。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/ssh-over-web/ssh-over-web.png&quot; alt=&quot;SSH over Web&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;今天给EAF增加了一个新的命令&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/19f5874c7d3c61fcacce57c70d9449da3efcb3cc&quot;&gt;eaf-open-office&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;敬请期待eaf完美版终端模拟器&quot;&gt;敬请期待EAF完美版终端模拟器&lt;/h3&gt;
-&lt;p&gt;既然浏览器可以完美运行，剩下的就是做一个随机端口生成的功能，然后结合EAF的浏览器功能就可以完成非常完美的终端模拟器，并集成到Emacs的集成工作流中。&lt;/p&gt;
+&lt;p&gt;当EAF打开Office文件的时候，会调用libreoffice转换Office文件为pdf格式，再用EAF的PDF阅读器打开查阅:&lt;/p&gt;
 
-&lt;p&gt;哈哈哈，敬请期待。&lt;/p&gt;</content><author><name></name></author><summary type="html">研究方向 目前为止EAF的终端插件是基于qtermwidget控件, 但是qtermwidget的实现现在只是一个哑终端，导致无法运行很多命令行程序，比如emacs和vi, 哈哈哈。</summary></entry><entry><title type="html">Snails增加了搜索前缀提示</title><link href="http://localhost:4000/emacs/2020/01/20/add-snails-prefix-tips.html" rel="alternate" type="text/html" title="Snails增加了搜索前缀提示" /><published>2020-01-20T00:00:00+08:00</published><updated>2020-01-20T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/20/add-snails-prefix-tips</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/20/add-snails-prefix-tips.html">&lt;p&gt;&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/08/25/snails-6.0.html&quot;&gt;Snails 6.0&lt;/a&gt;发布的时候，添加了搜索前缀：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-doc/eaf-doc.gif&quot; alt=&quot;EAF Doc&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;通过这个方式，可以无缝的把Office文档查阅和Emacs协作起来，还可以用Emacs的方式实时搜索Office文档内容，非常方便。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">偶尔我们需要阅读一下Office文档资料，只要不用编辑，我们就可以不用打开笨重的Office专业软件。</summary></entry><entry><title type="html">EAF增加了思维导图插件</title><link href="http://localhost:4000/emacs/eaf/2020/02/28/eaf-mindmap.html" rel="alternate" type="text/html" title="EAF增加了思维导图插件" /><published>2020-02-28T00:00:00+08:00</published><updated>2020-02-28T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/02/28/eaf-mindmap</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/02/28/eaf-mindmap.html">&lt;p&gt;平常写项目文档经常用到思维导图帮助梳理思路，最近下班后用EAF结合jsMind这个库自己写了一个思维导图软件:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-mindmap/eaf-mindmap.gif&quot; alt=&quot;EAF Mindmap&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个思维导图插件主要的功能有：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;全键盘操作：像Vim那样支持单按键操作，能够自动识别命令模式还是编辑模
+式, 操作效率超高;&lt;/li&gt;
+  &lt;li&gt;支持目录导出：思维导图可以直接导出成 org-mode 文件，直接在编辑导出的目录结构，继续填充文章内容;&lt;/li&gt;
+  &lt;li&gt;支持Emacs编辑：文字可以用Emacs编辑，文字编辑效率更高;&lt;/li&gt;
+  &lt;li&gt;和Emacs协作：可以和Emacs的插件生态协作，不用在Emacs和思维导图之间来
+回切换;&lt;/li&gt;
+  &lt;li&gt;其他常用功能：像保存文件，导出图片，缩放，切换节点等功能一应俱全。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;快捷键&quot;&gt;快捷键&lt;/h4&gt;
+&lt;p&gt;| 快捷键  | 命令                   |
+| :—— | :——–              |
+| TAB     | 添加子节点             |
+| RET     | 添加兄弟节点           |
+| Delete  | 删除节点               |
+| d       | 删除节点               |
+| D       | 删除中间节点               |
+| i       | 增加中间节点               |
+| f       | 更新节点内容           |
+| j       | 插入或者选择下面的节点 |
+| k       | 插入或者选择上面的节点 |
+| h       | 插入或者选择左边的节点 |
+| l       | 插入或者选择右边的节点 |
+| w       | 拷贝节点内容           |
+| y       | 粘贴节点内容           |
+| W       | 剪切节点树             |
+| Y       | 粘贴节点树             |
+| t       | 隐藏子节点             |
+| -       | 缩小                   |
+| =       | 放大                   |
+| 0       | 默认大小               |
+| b       | 增加节点背景图         |
+| 1       | 保存截图               |
+| 2       | 保存文件               |
+| 3       | 保存为org格式          |
+| M-r     | 刷新页面               |&lt;/p&gt;
+
+&lt;p&gt;终于不用付费购买专业的思维导图软件就能享受到高级功能，自己动手，丰衣足
+食。&lt;/p&gt;</content><author><name></name></author><summary type="html">平常写项目文档经常用到思维导图帮助梳理思路，最近下班后用EAF结合jsMind这个库自己写了一个思维导图软件:</summary></entry><entry><title type="html">EAF浏览器 + Aria2</title><link href="http://localhost:4000/emacs/eaf/2020/02/15/eaf-aria2.html" rel="alternate" type="text/html" title="EAF浏览器 + Aria2" /><published>2020-02-15T00:00:00+08:00</published><updated>2020-02-15T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/02/15/eaf-aria2</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/02/15/eaf-aria2.html">&lt;h3 id=&quot;eaf浏览器--aria2下载客户端&quot;&gt;EAF浏览器 + Aria2下载客户端&lt;/h3&gt;
+&lt;p&gt;今天写了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/c026064067d9c6100fbfe9f983a0486b8aea9627&quot;&gt;EAF+Aria2&lt;/a&gt;补丁。&lt;/p&gt;
+
+&lt;p&gt;只要安装了&lt;code class=&quot;highlighter-rouge&quot;&gt;aria2c&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;aria2p&lt;/code&gt;这两个命令，EAF浏览器就可以直接使用aria2来下载文件了。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; aria2
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;aria2p
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;并且在EAF浏览器中按 i 键，可以直接打开Aria2的网页客户端，用来管理文件的下载，暂停，删除并查看下载速度等详细信息：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-aria2/eaf-aria2.png&quot; alt=&quot;EAF + Aria2&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;自定义下载目录&quot;&gt;自定义下载目录&lt;/h3&gt;
+&lt;p&gt;EAF的默认下载目录在 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/Downloads&lt;/code&gt;, 我们可以通过下面的代码修改下载文件保存目录，比如 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/Documents&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;eaf-setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf-browser-download-path&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/Documents&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;给aria2添加下载代理&quot;&gt;给Aria2添加下载代理&lt;/h3&gt;
+&lt;p&gt;在国内，代理是必备的设置。&lt;/p&gt;
+
+&lt;p&gt;我本地有Socks5代理，但是Aria2只支持HTTP代理, 所以我们需要通过 privoxy 来转换Socks5代理成HTTP代理:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; privoxy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后设置 /etc/privoxy/config 配置文件，比如添加下面代码到配置文件中，把在1080端口的Socks5代理转换成9888端口的HTTP代理:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;forward-socks5t / 127.0.0.1:1080 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+listen-address 127.0.0.1:9888
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;最后通过下面的代码来设置Aria2代理:&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;eaf-setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf-browser-aria2-proxy-host&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;eaf-setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf-browser-aria2-proxy-port&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;9888&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这样Aria2所有的下载连接都会通过代理来下载文件了, happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">EAF浏览器 + Aria2下载客户端 今天写了一个EAF+Aria2补丁。</summary></entry><entry><title type="html">修复Git远端意外挂断</title><link href="http://localhost:4000/linux/2020/02/15/git-push-hung-up.html" rel="alternate" type="text/html" title="修复Git远端意外挂断" /><published>2020-02-15T00:00:00+08:00</published><updated>2020-02-15T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/02/15/git-push-hung-up</id><content type="html" xml:base="http://localhost:4000/linux/2020/02/15/git-push-hung-up.html">&lt;p&gt;今天在执行命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; 时，终端报了下面的错误:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;枚举对象: 35, 完成.
+对象计数中: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;35/35&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, 完成.
+使用 4 个线程进行压缩
+压缩对象中: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;30/30&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, 完成.
+写入对象中: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;30/30&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, 341.28 KiB | 976.00 KiB/s, 完成.
+总共 30 （差异 10），复用 0 （差异 0）
+Connection to github.com closed by remote host.
+fatal: 远端意外挂断了
+fatal: 远端意外挂断了
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Google了一下，应该是Buffer太小的原因，使用下面的命令修复后就可以正常 &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; 了。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config http.postBuffer 100000000
+git config ssh.postBuffer 100000000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">今天在执行命令 git push 时，终端报了下面的错误:</summary></entry><entry><title type="html">修复Arch升级后内核启动失败的问题</title><link href="http://localhost:4000/linux/2020/02/14/fix-arch-boot-failed.html" rel="alternate" type="text/html" title="修复Arch升级后内核启动失败的问题" /><published>2020-02-14T00:00:00+08:00</published><updated>2020-02-14T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/02/14/fix-arch-boot-failed</id><content type="html" xml:base="http://localhost:4000/linux/2020/02/14/fix-arch-boot-failed.html">&lt;h3 id=&quot;问题&quot;&gt;问题&lt;/h3&gt;
+&lt;p&gt;今天升级Arch系统后，启动显示 &lt;code class=&quot;highlighter-rouge&quot;&gt;error: file /boot/vmlinuz-5.3-x86_64 not found&lt;/code&gt; 的错误。&lt;/p&gt;
+
+&lt;p&gt;每次Arch升级内核，都会因为Grub内核版本号不升级导致这种问题。&lt;/p&gt;
+
+&lt;h3 id=&quot;修复方法&quot;&gt;修复方法&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;从Grub菜单，按C键进入命令行&lt;/li&gt;
+  &lt;li&gt;输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt; 命令看磁盘信息，比如显示 &lt;code class=&quot;highlighter-rouge&quot;&gt;(hd0,msdos1)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;set root=(hd0,msdos1)&lt;/code&gt; 命令设置根分区&lt;/li&gt;
+  &lt;li&gt;输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;ls /boot&lt;/code&gt; 查看系统的内核文件版本号, 比如版本号5.4&lt;/li&gt;
+  &lt;li&gt;重启系统后, 在Grub菜单按E键编辑Grub配置文件，把内核版本从5.3改成5.4后，按Ctrl+X快捷键启动系统&lt;/li&gt;
+  &lt;li&gt;输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo sed -i 's/5.3/5.4/g' /boot/grub/grub.cfg&lt;/code&gt; 替换配置文件的内核版本号&lt;/li&gt;
+  &lt;li&gt;重启系统，应该就没有问题了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;不知道为啥Arch不在内核升级后执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;grub update&lt;/code&gt; 命令自动更新grub配置文件来避免这种问题?&lt;/p&gt;</content><author><name></name></author><summary type="html">问题 今天升级Arch系统后，启动显示 error: file /boot/vmlinuz-5.3-x86_64 not found 的错误。</summary></entry><entry><title type="html">Emacs调试高级技巧</title><link href="http://localhost:4000/emacs/2020/02/13/emacs-debug.html" rel="alternate" type="text/html" title="Emacs调试高级技巧" /><published>2020-02-13T00:00:00+08:00</published><updated>2020-02-13T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/02/13/emacs-debug</id><content type="html" xml:base="http://localhost:4000/emacs/2020/02/13/emacs-debug.html">&lt;h3 id=&quot;常规调试方法&quot;&gt;常规调试方法&lt;/h3&gt;
+
+&lt;p&gt;一般Emacs在崩溃或者出现错误的时候，可以用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;toggle-debug-on-error&lt;/code&gt; 来打开Emacs调试器，当Emacs或者插件出错时，Emacs会自动在 &lt;code class=&quot;highlighter-rouge&quot;&gt;*Backtrace*&lt;/code&gt; buffer中显示错误堆栈，方便开发者定位错误。&lt;/p&gt;
+
+&lt;h3 id=&quot;高级调试方法&quot;&gt;高级调试方法&lt;/h3&gt;
+
+&lt;p&gt;Emacs还有一些高级调试方法用于非错误场景的调试，举个例子：&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;sdcv.el基于posframe来实现翻译窗口的弹出，但是有个小问题，每次EAF网页中弹出翻译窗口的时候，鼠标都会跳到Emacs的左上角，翻译以后要重新移动光标, 非常的不方便。&lt;/p&gt;
+
+&lt;p&gt;但是这时候我们往往不知道到底是哪个Emacs插件引入的这种行为, 一个一个的排查非常消耗时，但是我知道Emacs底层API中设置光标位置的函数是 &lt;code class=&quot;highlighter-rouge&quot;&gt;set-mouse-position&lt;/code&gt;, 所以这时候可以调用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;(debug-on-entry 'set-mouse-position)&lt;/code&gt; 来设置当Emacs调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;set-mouse-position&lt;/code&gt; 函数的时候弹出堆栈，方便开发者定位Emacs运行时的函数调用堆栈。&lt;/p&gt;
+
+&lt;p&gt;这时，只要调用翻译函数，一旦光标被插件移动后，就会弹出类似下面的堆栈信息：&lt;/p&gt;
+
+&lt;div class=&quot;language-lisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;Debugger&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;entered--entering&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;function:&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;set-mouse-position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;&amp;lt;frame&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emacs@manjaro&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;0x11bbc30&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;progn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;set-mouse-position&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;frame&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;posframe-mouse-banish&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;equal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cdr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mouse-position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;quote&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;progn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;set-mouse-position&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;frame&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;posframe--mouse-banish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;&amp;lt;frame&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emacs@manjaro&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;0x11bbc30&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;通过上面的堆栈信息，定位到是 &lt;code class=&quot;highlighter-rouge&quot;&gt;posframe--mouse-banish&lt;/code&gt; 函数来设置的光标位置，最后通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;(setq posframe-mouse-banish nil)&lt;/code&gt; 来解决posframe弹出时移动光标的问题。&lt;/p&gt;
+
+&lt;p&gt;解决问题后可以通过命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;(cancel-debug-on-entry 'set-mouse-position)&lt;/code&gt; 取消运行时调试。&lt;/p&gt;
+
+&lt;p&gt;Happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">常规调试方法</summary></entry><entry><title type="html">配置Trojan代理</title><link href="http://localhost:4000/proxy/2020/02/10/trojan.html" rel="alternate" type="text/html" title="配置Trojan代理" /><published>2020-02-10T00:00:00+08:00</published><updated>2020-02-10T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/02/10/trojan</id><content type="html" xml:base="http://localhost:4000/proxy/2020/02/10/trojan.html">&lt;h3 id=&quot;变态的gfw&quot;&gt;变态的GFW&lt;/h3&gt;
+
+&lt;p&gt;GFW最近的功力大增，我的v2ray端口号每天都要被阻断，只能每天换一个端口号才能上网，但是每天都换端口号这种游击战也不是一个办法。&lt;/p&gt;
+
+&lt;p&gt;今天研究了一下 trojan-gfw 这个项目，通过 trojan-gfw 替换 v2ray 来提供稳定的FQ服务。&lt;/p&gt;
+
+&lt;h3 id=&quot;准备工作&quot;&gt;准备工作&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Snails启动后，默认在标签分组、缓存列表、最近访问文件、书签这些最高频的后端中进行搜索，以快速切换正在使用的文件&lt;/li&gt;
-  &lt;li&gt;当输入中包含前缀 &amp;gt; 时，Snails搜索所有可以执行的命令&lt;/li&gt;
-  &lt;li&gt;当输入中包含前缀 @ 时，Snails只在函数或变量定义中进行搜索，方便快速进行定义跳转&lt;/li&gt;
-  &lt;li&gt;当输入中包含前缀 # 时，Snails使用 ripgrep 搜索当前文件的内容&lt;/li&gt;
-  &lt;li&gt;当输入中包含前缀 ! 时，Snails使用 ripgrep 搜索当前项目里所有文件的内容&lt;/li&gt;
-  &lt;li&gt;当输入中包含前缀 ? 时，Snails使用 fd、projectile、mdfind、everything 等后端进行全局文件名搜索，以快速找到并打开磁盘中的文件&lt;/li&gt;
+  &lt;li&gt;一台境外的VPS, 不需要购买域名和配置证书&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;通过搜索前缀的方式，Snails可以同时满足绝大多数用户的使用习惯，又不会因为默认加入太多的后端，导致搜索信息过多的问题。&lt;/p&gt;
+&lt;h3 id=&quot;vps安装debian-9&quot;&gt;VPS安装Debian 9&lt;/h3&gt;
 
-&lt;p&gt;尴尬的是，像我这样的老年人经常忘记这些搜索前缀信息，真的要用某个搜索后端的时候，还要去Snails源代码去看看对应的前缀是啥, 反而降低了搜索效率。&lt;/p&gt;
+&lt;p&gt;一般VPS都有操作系统安装服务，安装Debian 9以后，替换 /etc/apt/sources.list 文件内容为163镜像源，提升软件安装速度:&lt;/p&gt;
 
-&lt;p&gt;今天写了一个新的&lt;a href=&quot;https://github.com/manateelazycat/snails/commit/b87b981cc4cb909b01a7deb882898c5d891d70d2&quot;&gt;补丁&lt;/a&gt;, 在搜索框下面增加了一行搜索前缀提醒，以后再也不会忘记自己写的搜索前缀了，哈哈哈哈。&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;deb http://mirrors.163.com/debian/ stretch main non-free contrib
+deb http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+deb http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+deb http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/add-snails-prefix/add-snails-prefix.png&quot; alt=&quot;Snails prefix&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Snails 6.0发布的时候，添加了搜索前缀：</summary></entry><entry><title type="html">Snails可以直接搜索EAF浏览器历史了!</title><link href="http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser.html" rel="alternate" type="text/html" title="Snails可以直接搜索EAF浏览器历史了!" /><published>2020-01-10T00:00:00+08:00</published><updated>2020-01-10T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/10/snails-and-eaf-browser.html">&lt;p&gt;前几天写了&lt;a href=&quot;https://manateelazycat.github.io/emacs/2020/01/06/snails-and-eaf.html&quot;&gt;Snails PDF Backend&lt;/a&gt;支持Snails直接搜索PDF目录快速跳转。&lt;/p&gt;
+&lt;h3 id=&quot;安装trojan服务端&quot;&gt;安装trojan服务端&lt;/h3&gt;
 
-&lt;p&gt;今天用了同样的原理实现了Snails直接搜索浏览器历史的功能：&lt;/p&gt;
+&lt;p&gt;通过命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh root@your_vps_ip&lt;/code&gt; 登录VPS服务器后，执行下面脚本自动安装和配置trojan服务端:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/snails-and-eaf-browser/snails-and-eaf-browser.gif&quot; alt=&quot;Snails and EAF Browser&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-check-certificate&lt;/span&gt; https://raw.githubusercontent.com/mark-hans/trojan-wiz/master/ins.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x ins.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; bash ins.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;启动Snails&lt;/li&gt;
-  &lt;li&gt;搜索网址或者关键字&lt;/li&gt;
-  &lt;li&gt;搜索浏览器历史并用EAF打开浏览器&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;安装过程中提示“请选择证书模式”，选择”使用IP自签发证书”的模式。&lt;/p&gt;
 
-&lt;p&gt;因为Snails用了&lt;a href=&quot;https://github.com/rustify-emacs/fuz.el&quot;&gt;fuz.el&lt;/a&gt;的模糊算法，所以搜索浏览器历史的模糊算法堪比Google Chrome的搜索体验。&lt;/p&gt;
+&lt;h3 id=&quot;启动trojan服务端&quot;&gt;启动trojan服务端&lt;/h3&gt;
 
-&lt;p&gt;Happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">前几天写了Snails PDF Backend支持Snails直接搜索PDF目录快速跳转。</summary></entry><entry><title type="html">EAF渲染邮件客户端的HTML内容</title><link href="http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html.html" rel="alternate" type="text/html" title="EAF渲染邮件客户端的HTML内容" /><published>2020-01-08T00:00:00+08:00</published><updated>2020-01-08T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/08/eaf-open-mail-as-html.html">&lt;p&gt;一个星期前&lt;a href=&quot;https://github.com/JulienMasson&quot;&gt;JulienMasson&lt;/a&gt;在这个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/issues/181&quot;&gt;issue&lt;/a&gt;里面讨论EAF是否可以作为Emacs Buffer的一部分嵌入邮件客户端用于渲染HTML的邮件内容？&lt;/p&gt;
+&lt;p&gt;安装完成后，使用命令&lt;code class=&quot;highlighter-rouge&quot;&gt;systemctl start trojan-gfw&lt;/code&gt; 启动trojan服务端, 同时可以用命令&lt;code class=&quot;highlighter-rouge&quot;&gt;systemctl status trojan-gfw&lt;/code&gt;来检查trojan服务端的状态，如果状态为&lt;code class=&quot;highlighter-rouge&quot;&gt;active(running)&lt;/code&gt;, 证明trojan服务端已经启动。&lt;/p&gt;
 
-&lt;p&gt;回答:&lt;/p&gt;
+&lt;h3 id=&quot;拷贝服务端配置文件&quot;&gt;拷贝服务端配置文件&lt;/h3&gt;
 
-&lt;p&gt;EAF其实是用XReparent技术把PyQt5的窗口粘贴到Emacs Buffer的区域，EAF原理上并不是把PyQt5的内容混合到Emacs的Buffer渲染结果中，所以没法做到嵌入到Emacs邮件客户端Buffer的效果。&lt;/p&gt;
+&lt;p&gt;trojan服务端配置成功以后会在VPS的/home/trojan/目录下生成client.json和ca-cert.pem两个文件:&lt;/p&gt;
 
-&lt;p&gt;但是我们可以自动提取Emacs邮件客户端中HTML邮件的内容，发送给EAF，在新的EAF Buffer里面渲染HTML邮件的内容。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;client.json 是客户端配置文件，已经按照VPS IP配置好&lt;/li&gt;
+  &lt;li&gt;ca-cert.pem 是证书文件，已经按照VPS配置好&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;今天JulienMasson发送了一个新的&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/9ddfacfb95b81e793b33d41eaf527839b54a715d&quot;&gt;补丁&lt;/a&gt;来实现这个功能。&lt;/p&gt;
+&lt;p&gt;比如你的VPS IP为 xxx.xxx.xxx.xxx，使用下面的命令来完成拷贝服务端配置文件到本机：&lt;/p&gt;
 
-&lt;p&gt;现在可以在Emacs邮件客户端中调用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-open-mail-as-html&lt;/code&gt; ，用EAF浏览器来渲染HTML的邮件内容了，支持的邮件客户端有Gnus、mu4e、notmuch。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scp root@xxx.xxx.xxx.xxx:/home/trojan/ca-cert.pem ./&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;看了一下JulienMasson的Github, 发现他是一个X/Wayland黑客，开发了自己的窗口管理器，非常厉害，希望越来越多的图形Emacs黑客加入EAF开源社区中。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">一个星期前JulienMasson在这个issue里面讨论EAF是否可以作为Emacs Buffer的一部分嵌入邮件客户端用于渲染HTML的邮件内容？</summary></entry><entry><title type="html">Snails + EAF 快速搜索PDF目录跳转</title><link href="http://localhost:4000/emacs/2020/01/06/snails-and-eaf.html" rel="alternate" type="text/html" title="Snails + EAF 快速搜索PDF目录跳转" /><published>2020-01-06T00:00:00+08:00</published><updated>2020-01-06T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/06/snails-and-eaf</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/06/snails-and-eaf.html">&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;EAF&lt;/a&gt;内置的PDF Viewer已经是Emacs里面性能最高的PDF阅读器。平常编程时我都用&lt;a href=&quot;https://github.com/manateelazycat/snails&quot;&gt;Snails&lt;/a&gt;来全局搜索。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scp root@xxx.xxx.xxx.xxx:/home/trojan/client.json ./&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;如果Snails遇到EAF会发生什么美妙的化学反应呢？&lt;/p&gt;
+&lt;h3 id=&quot;下载trojan客户端&quot;&gt;下载trojan客户端&lt;/h3&gt;
 
-&lt;p&gt;那就是今天的 &lt;a href=&quot;https://github.com/manateelazycat/snails/blob/master/snails-backend-eaf-pdf-table.el&quot;&gt;snails-backend-eaf-pdf-table&lt;/a&gt; 插件：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;首先在VPS使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ping github.com&lt;/code&gt;, 获取 github.com 的ip地址, 比如是 192.30.253.112&lt;/li&gt;
+  &lt;li&gt;在本机 /etc/hosts 文件中加入 &lt;code class=&quot;highlighter-rouge&quot;&gt;192.30.253.112 github.com&lt;/code&gt; , 这样访问github页面就暂时不需要FQ&lt;/li&gt;
+  &lt;li&gt;重启本机网络服务: &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo systemctl restart NetworkManager&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;下载trojan客户端: &lt;code class=&quot;highlighter-rouge&quot;&gt;wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;当你在用EAF阅读PDF材料的时候，用快捷键唤起 snails&lt;/li&gt;
-  &lt;li&gt;随便输入任意目录的字符，snails会用模糊算法匹配你输入的目录关键字&lt;/li&gt;
-  &lt;li&gt;回车即可跳转到对应目录的位置&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;下载trojan-1.14.1-linux-amd64.tar.xz后，解压文件，把ca-cert.pem和client.json拷贝到 trojan 目录下。&lt;/p&gt;
 
-&lt;p&gt;这在阅读文档到中间位置的时候特别有用，我们不需要回到目录页面，然后手动去查找目录的标题和页码信息，在阅读到文档的任何地方都可以快速搜索目录标题并跳转。&lt;/p&gt;
+&lt;h3 id=&quot;启动trojan客户端&quot;&gt;启动trojan客户端&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/snails-and-eaf/snails-and-eaf.gif&quot; alt=&quot;Snails and EAF&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./trojan -c client.json&lt;/code&gt; 即可在 127.0.0.1:1080 建立本地代理连接，最后通过Chrome SwitchyOmega来配置浏览器的代理设置。&lt;/p&gt;
 
-&lt;p&gt;实现原理：&lt;/p&gt;
+&lt;p&gt;在浏览器验证可以FQ以后，你可以清除刚刚在本机 /etc/hosts 的github设置。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;首先给EAF打一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/db85cdc2cfc8407c5cdfe5d308fa6b48d7715e43&quot;&gt;保存目录信息的补丁&lt;/a&gt;, PDF文件打开的时候，计算PDF文件路径的MD5值，并保存目录信息到MD5文件中, 避免大量的数据在Emacs和EAF两个进程之间传递&lt;/li&gt;
-  &lt;li&gt;其次给Snails打一个&lt;a href=&quot;https://github.com/manateelazycat/snails/commit/7abde5048fd3af3d0807133bb3e2eb8620ee66c4&quot;&gt;PDF目录搜索的补丁&lt;/a&gt;, snails启动时探测到用户在查看PDF文件，就从MD5文件中读取当前PDF文件的目录信息&lt;/li&gt;
-  &lt;li&gt;最后Snails结合用户输入的关键字和目录信息进行模糊对比过滤出用户想查找的目录标题&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Happy hacking!!!&lt;/p&gt;</content><author><name></name></author><summary type="html">变态的GFW</summary></entry><entry><title type="html">v2ray设置路由</title><link href="http://localhost:4000/proxy/2020/02/09/v2ray-direct.html" rel="alternate" type="text/html" title="v2ray设置路由" /><published>2020-02-09T00:00:00+08:00</published><updated>2020-02-09T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/02/09/v2ray-direct</id><content type="html" xml:base="http://localhost:4000/proxy/2020/02/09/v2ray-direct.html">&lt;h3 id=&quot;tcp阻断&quot;&gt;TCP阻断&lt;/h3&gt;
+&lt;p&gt;因为EAF浏览器设置QNetProxy代理后，默认所有网站请求都是通过v2ray代理来连接的。&lt;/p&gt;
 
-&lt;p&gt;Live in Emacs又近了一步, 哈哈哈！&lt;/p&gt;</content><author><name></name></author><summary type="html">EAF内置的PDF Viewer已经是Emacs里面性能最高的PDF阅读器。平常编程时我都用Snails来全局搜索。</summary></entry><entry><title type="html">EAF 内置RSS Reader啦!</title><link href="http://localhost:4000/emacs/2020/01/02/eaf-rss-reader.html" rel="alternate" type="text/html" title="EAF 内置RSS Reader啦!" /><published>2020-01-02T00:00:00+08:00</published><updated>2020-01-02T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/01/02/eaf-rss-reader</id><content type="html" xml:base="http://localhost:4000/emacs/2020/01/02/eaf-rss-reader.html">&lt;p&gt;Emacs无法像其他现代图形库那样天然支持多线程编程，导致Emacs非常不适合做大量数据计算的工作，数据计算时间太久就会卡住Emacs。
-虽然Emacs也有异步子进程编程模型，但是如果子进程返回数据太大，在主进程中处理数据的时间超过Emacs单线程中一个界面绘制的周期，也会导致卡Emacs界面。&lt;/p&gt;
+&lt;p&gt;最近v2ray的TCP连接经常被Qiang阻断，直接导致EAF的浏览器所有页面的打不开。
+即使bing.com这种可以直接连接的网站临时搜索点东西都不行，因为v2ray的连接被掐断了。&lt;/p&gt;
 
-&lt;p&gt;真正的图形多线程的原理是把所有耗时的操作都放到子线程中去处理，只有数据处理完成以后才把结果发送到主线程进行绘制，这样数据计算和数据处理的工作永远不占用图形绘制主线程，所以不管多久的数据计算和大多的数据处理都不会让用户感觉到界面卡顿。&lt;/p&gt;
+&lt;h3 id=&quot;v2ray路由规则&quot;&gt;V2ray路由规则&lt;/h3&gt;
+&lt;p&gt;本来准备给EAF浏览器写一个PAC动态代理的功能，但是折腾半天太复杂准备放弃的时候，看到了v2ray手册的路由功能。&lt;/p&gt;
 
-&lt;p&gt;但是要让Emacs支持真正的多线程模型，那要修改的代码就太多了，不光是底层图形库的更新，还有核心绘制代码的更新，最麻烦的是多线程引入后对所有Elisp现有插件带来的巨大兼容性破坏，这些都是Emacs的历史包袱，已经很难再对Emacs进行大手术了。&lt;/p&gt;
-
-&lt;p&gt;最新版EAF已经内置了RSS Reader, 利用PyQt的QThread，RSS Reader所有耗时的抓取种子工作都在后台子线程中运行，不管多慢的网络还是多大的新闻数据都不会卡Emacs一毫秒。&lt;/p&gt;
-
-&lt;p&gt;看新闻的基本功能已经完全没有问题了，相对于Emacs现有其他新闻阅读器除了优秀的性能外，对新闻网页的渲染也是其他新闻阅读器无法媲美的。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-rss-reader/eaf-rss-reader.gif&quot; alt=&quot;RSS Reader&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;现在已经支持如下操作：&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;按键&lt;/th&gt;
-      &lt;th&gt;操作&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;a&lt;/td&gt;
-      &lt;td&gt;添加订阅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;n&lt;/td&gt;
-      &lt;td&gt;查看下一个订阅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;p&lt;/td&gt;
-      &lt;td&gt;查看上一个订阅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;N&lt;/td&gt;
-      &lt;td&gt;查看最后一个订阅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;P&lt;/td&gt;
-      &lt;td&gt;查看第一个订阅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;j&lt;/td&gt;
-      &lt;td&gt;选择下一篇文章&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;k&lt;/td&gt;
-      &lt;td&gt;选择上一篇文章&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;J&lt;/td&gt;
-      &lt;td&gt;选择最后一篇文章&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;K&lt;/td&gt;
-      &lt;td&gt;选择第一篇文章&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;还有一些产品细节需要社区开发者一起协助开发：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;支持删除订阅的操作，除了从左边订阅列表中删除，还需要更新 ~/.emacs.d/eaf/rss-reader/feeds.json 中的数据&lt;/li&gt;
-  &lt;li&gt;因为QGraphicsScene的原因导致QListWidget的滚动事件还有点问题，原因未知，结果是翻文章的时候，右边的文章列表无法正常滚动&lt;/li&gt;
-  &lt;li&gt;浏览器的高级功能代码下沉到 core/browser.py 模块里，这样新闻阅读器中的浏览器可以享受很多高级功能，比如vimium跳转和搜索功能&lt;/li&gt;
-  &lt;li&gt;快捷键支持右边新闻网页的上下滚动，避免用鼠标&lt;/li&gt;
-  &lt;li&gt;修改 ~/.emacs.d/eaf/rss-reader/feeds.json 数据结构和界面代码，支持已读和未读操作的区分, 避免重复阅读&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;EAF&lt;/a&gt;是一种新型的Emacs应用框架，可以让你用Python和Qt5无限扩展Emacs的多媒体功能的同时又保留Emacs原汁原味的Elisp黑客文化。&lt;/p&gt;
-
-&lt;p&gt;RSS Reader只是给大家演示一种可能性，EAF不仅仅是对Emacs网页浏览和PDF阅读功能的扩展，EAF可以开发任何你想开发的多媒体应用扩展，唯一的限制就是你的想象力。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">Emacs无法像其他现代图形库那样天然支持多线程编程，导致Emacs非常不适合做大量数据计算的工作，数据计算时间太久就会卡住Emacs。 虽然Emacs也有异步子进程编程模型，但是如果子进程返回数据太大，在主进程中处理数据的时间超过Emacs单线程中一个界面绘制的周期，也会导致卡Emacs界面。</summary></entry><entry><title type="html">EAF浏览器支持Vimium的键盘跳转功能了！</title><link href="http://localhost:4000/emacs/2019/12/29/eaf-vimium.html" rel="alternate" type="text/html" title="EAF浏览器支持Vimium的键盘跳转功能了！" /><published>2019-12-29T00:00:00+08:00</published><updated>2019-12-29T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/29/eaf-vimium</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/29/eaf-vimium.html">&lt;p&gt;周末在外出差，本来定的7点起床闹钟，6:30的时候接到 &lt;a href=&quot;https://github.com/MatthewZMD&quot;&gt;MatthewZMD&lt;/a&gt; 的微信说Vimium搞定了。不是做梦吧？赶紧弹起来，review 了一下，没毛病，合并补丁！&lt;/p&gt;
-
-&lt;p&gt;试用了一下&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/179&quot;&gt; Vimium 的功能&lt;/a&gt; , 哇，太好用了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-vimium/eaf-vimium.png&quot; alt=&quot;Vimium&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;十几年前还是Emacs菜鸟的时候，梦想有一天可以Live in Emacs中，完全用Emacs做所有工作…&lt;/p&gt;
-
-&lt;p&gt;从最开始用Haskell折腾的&lt;a href=&quot;https://wiki.haskell.org/Manatee&quot;&gt; Manatee &lt;/a&gt;，到前几年折腾用Vala折腾的&lt;a href=&quot;https://github.com/manateelazycat/mrkeyboard&quot;&gt; Mr.Keyboard &lt;/a&gt;, 终有一天恍然悔悟了，当初真不应该以Emacs不能支持多线程/GUI而离开Emacs，再去用别的技术再去造一个Emacs。&lt;/p&gt;
-
-&lt;p&gt;这个世界上支持多线程和GUI的技术有很多，但是像Emacs这样把编辑功能做到极致的编辑器却很少有，即使我在多线程和GUI上作出点特色，那只不过是给这个世界又造了一个普通的工具。在文本编辑方面，Emacs这种全世界黑客一起努力的编辑生态可能是我一辈子都无法逾越的大山。&lt;/p&gt;
-
-&lt;p&gt;最后想通了，Emacs在文本编辑和协作一致性上已经做到登峰造极，我只需把PDF阅读，浏览器等Emacs并不擅长的多媒体功能做好并集成到Emacs即可，这就是去年完成的 &lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;Emacs Application Framework&lt;/a&gt; 图形应用框架。&lt;/p&gt;
-
-&lt;p&gt;今天EAF浏览器终于可以像Chromium的Vimium插件那样，快速用键盘打开浏览器页面的任意链接，离 Live in Emacs 又近了一步！&lt;/p&gt;
-
-&lt;p&gt;Happy hacking and Merry Christmas, MatthewZMD! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">周末在外出差，本来定的7点起床闹钟，6:30的时候接到 MatthewZMD 的微信说Vimium搞定了。不是做梦吧？赶紧弹起来，review 了一下，没毛病，合并补丁！</summary></entry><entry><title type="html">EAF PDF Viewer支持文本选择了。</title><link href="http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select.html" rel="alternate" type="text/html" title="EAF PDF Viewer支持文本选择了。" /><published>2019-12-22T00:00:00+08:00</published><updated>2019-12-22T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select</id><content type="html" xml:base="http://localhost:4000/emacs/2019/12/22/eaf-pdfviewer-support-select.html">&lt;p&gt;&lt;a href=&quot;https://github.com/luhuaei&quot;&gt;luhuaei&lt;/a&gt;大神周末发了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/pull/157&quot;&gt;补丁&lt;/a&gt;，可以让EAF PDF支持文本选择了。&lt;/p&gt;
-
-&lt;p&gt;现在只需要在PDF Viewer里面双击，然后移动鼠标选择区域，最后按一下 Alt + W 键即可从PDF复制文本到Emacs Keyring.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-pdfviewer-support-select/eaf-pdfviewer-support-select.gif&quot; alt=&quot;Select Text&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;有了这个功能为基础，估计以后可以做到选择PDF文档时，自动把标注内容备份到Org-Mode中，甚至可以在PDF和Org-Mode之间进行联动，反复对学习材料进行复习温故。&lt;/p&gt;
-
-&lt;p&gt;EAF PDF Viewer从功能上已经是Emacs里面最强大的PDF阅读器了，没有之一。&lt;/p&gt;
-
-&lt;p&gt;继续加油！&lt;/p&gt;</content><author><name></name></author><summary type="html">luhuaei大神周末发了一个补丁，可以让EAF PDF支持文本选择了。</summary></entry><entry><title type="html">觉醒和一个新世界</title><link href="http://localhost:4000/life/2019/12/21/wake-and-new-world.html" rel="alternate" type="text/html" title="觉醒和一个新世界" /><published>2019-12-21T00:00:00+08:00</published><updated>2019-12-21T00:00:00+08:00</updated><id>http://localhost:4000/life/2019/12/21/wake-and-new-world</id><content type="html" xml:base="http://localhost:4000/life/2019/12/21/wake-and-new-world.html">&lt;p&gt;最近在读《一个新世界》这本书，是《当下的力量》作者的新著，书中描绘的理念其实是一样的，只是《一个新世界》这本书写的更加透彻，也更加难以理解了。&lt;/p&gt;
-
-&lt;p&gt;我有一个读书的习惯，对于特别难懂的书，会在读懂以后，用我自己的语言在把自己所学的东西写出来，这样可以加深印象（温故而知新）。&lt;/p&gt;
-
-&lt;p&gt;但是这两本书非常难以写读后感的原因在于，如果你真的要理解这两本书，你首先要放下“逻辑思考”，用心去感受书中描述的心理场景，只有用心感受才能理解书中寓意。最难的是最后要通过”大脑”这个工具来梳理书中的道理，从感觉到思考的转换其实是非常难的，因为心理感受可以很丰富，很真实贴切，而逻辑思维却非常严密和干涸，很难在准确表达感受的同时不再次进入思维的困境中，一旦我们又进入“强迫性的逻辑推理”的状态后，就更难理解那种内在觉醒的感觉了。&lt;/p&gt;
-
-&lt;h3 id=&quot;辨别小我&quot;&gt;辨别小我&lt;/h3&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;人这一生最大的错误就是愿意用健康去换那些身外之物&lt;/p&gt;
-
-&lt;p&gt;我们之所以有痛苦，就是因为两件事情： “恐惧” 和 “欲望”，因为这两样东西，我们陷入了 “追悔沉迷过去，盲目期望未来” 的怪圈中，再加上国内浮躁和充满戾气的大环境，每个人都因为各自在社会上的地位进行角色扮演。&lt;/p&gt;
-
-&lt;p&gt;大多数人之间交流不是从内在的善良和真诚来交流，大家为了各自的目的，带上各自应该有的角色面具去说角色扮演应该说的话，每个人都在小我或集体角色扮演的游戏中无法自拔。在这种基础之上，即使通过奋斗，努力后带来物质的满足，也会最终因为小我这种长期角色扮演的“知行不合一”给自己和别人带去更多的痛苦。&lt;/p&gt;
-
-&lt;p&gt;这也是为什么现在社会进入了一种矛盾的社会怪圈： “没能力和没钱的时候，抱怨社会，自我焦虑；有能力和有钱的时候，不知道自己要什么，反而更痛苦” 。&lt;/p&gt;
-
-&lt;p&gt;所以，小我的基于恐惧和欲望的角色扮演是我们在痛苦的漩涡无法自拔的根本原因。&lt;/p&gt;
-
-&lt;h3 id=&quot;怎么进入当下&quot;&gt;怎么进入当下？&lt;/h3&gt;
-
-&lt;p&gt;2018年5月，我从自己创建的公司离职后很长一段时间，我都在读书和静修，问自己过去怎么了？怎么让自己摆脱痛苦？&lt;/p&gt;
-
-&lt;p&gt;曾经有段时间我读了很多书，寄希望于别人的经验来解决 “怎么放下过去？” 和 “我到底要的是什么？” 这两个问题。&lt;/p&gt;
-
-&lt;p&gt;残酷的是道理我都懂，但是每个人成长的环境和经历不一样，看完书懂道理是一回事，但是真正的放下又是另一回事，直到我读完《当下的力量》这本书，我明白下面这些道理：&lt;/p&gt;
+&lt;p&gt;v2ray客户端的路由规则匹配下面的原则:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;人首先是一种动物，面对大自然，人的快乐来源于能吃饱并感受这个世界的美，这就是快乐的全部！&lt;/li&gt;
-  &lt;li&gt;大脑，思维和事物的规律这些都是工具，他们是帮助我们进入当下的外在工具，但思维和逻辑这些并不是我们的内在目标&lt;/li&gt;
-  &lt;li&gt;不要去用思维的方式 “寻找自我”，你永远无法通过思维的方式在未来找到自我，自我就是你的身体活着并能够感受这个世界，不需要寻找，你已经是你了&lt;/li&gt;
-  &lt;li&gt;世事无常是这个世界的规律，没有任何科学的方法可以让所有事情完全按照我们的期望去运行，也不要因为世事不如意而自我折磨&lt;/li&gt;
-  &lt;li&gt;感受内心的关键就是呼吸，通过呼吸感受最最真实的本我&lt;/li&gt;
+  &lt;li&gt;默认代理规则(VMess): {浏览器} &amp;lt;–(socks)–&amp;gt; {V2Ray 客户端 inbound &amp;lt;-&amp;gt; V2Ray 客户端 outbound} &amp;lt;–(VMess)–&amp;gt;  {V2Ray 服务器 inbound &amp;lt;-&amp;gt; V2Ray 服务器 outbound} &amp;lt;–(Freedom)–&amp;gt; {目标网站}&lt;/li&gt;
+  &lt;li&gt;例外的直连规则(freedom): {浏览器} &amp;lt;–(socks)–&amp;gt; {V2Ray 客户端 inbound &amp;lt;-&amp;gt; V2Ray 客户端 outbound} &amp;lt;–(Freedom)–&amp;gt; {目标网站}&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;用《一个新世界里面》的话来总结：&lt;/p&gt;
+&lt;h3 id=&quot;直接连接白名单规则&quot;&gt;直接连接白名单规则&lt;/h3&gt;
+&lt;p&gt;在客户端默认配置文件 vpoint_socks_vmess.json 中, outbound的默认走的是VMess代理协议，其实我们只用在配置文件的 routing/settings/rules节点下加入一段下面的JSON配置即可增加一些直接访问网站的白名单，比如 bing.com:&lt;/p&gt;
 
-&lt;p class=&quot;line-quote&quot;&gt;在禅宗里他们说:“不要寻找真理。只要停止重视(cherish)意见就好了。”这是什么意思?放下对心智的认同,那么你超越心智的本质就会自动浮现。&lt;/p&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;domain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:bing.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:163.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:163yun.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:126.net&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:jd.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:youku.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:baidu.com&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundTag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;direct&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;我们小的时候还不懂那么多道理的时候，吃饱了就和小伙伴们疯跑，感受大自然，我觉得那是人最简单的快乐，就像很多动物一样，只要生存下去就好了。随着长大和责任，我们越来越多的给自己更多的压力和虚幻的目标，反而忘记了小时候那种最简单的快乐是什么感觉了。&lt;/p&gt;
+&lt;p&gt;这样即使v2ray的代理流量被Qiang阻断了TCP连接，白名单的网站因为是直接访问而没有经过v2ray的代理VPS服务器，所以还是可以临时用一下的。&lt;/p&gt;
 
-&lt;p&gt;我看了那么多书，寻寻觅觅，想要找到解密这个世界真理的钥匙，期望通过科学思考的方式去找到自我。&lt;/p&gt;
+&lt;h3 id=&quot;强制代理白名单规则&quot;&gt;强制代理白名单规则&lt;/h3&gt;
+&lt;p&gt;当然，如果你要手动添加一个网站来强制代理的话，可以在 routing/settings/rules 节点下，在列表第一个位置插入以下配置：&lt;/p&gt;
 
-&lt;p&gt;其实活在当下的秘密就是 “专注呼吸”，当我们不要去想，不要进入无时无刻强迫自己去思考，逼迫自己去找自己，我们立即就进入当下了。&lt;/p&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;domain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:github.com&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundTag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;proxy&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;为什么？&lt;/p&gt;
+&lt;p&gt;注意，因为 &lt;code class=&quot;highlighter-rouge&quot;&gt;outboundTag&lt;/code&gt; 使用的是 &lt;code class=&quot;highlighter-rouge&quot;&gt;proxy&lt;/code&gt;, 所以要给 &lt;code class=&quot;highlighter-rouge&quot;&gt;outbound&lt;/code&gt; 默认的vmess协议增加 &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;tag&quot;: &quot;proxy&quot;,&lt;/code&gt; 字段，这样github.com这个网站就可以强制走代理了。&lt;/p&gt;
 
-&lt;p&gt;因为人的大脑无法在你深入呼吸感受身体的时候去进行思考，因为人的本体首先是这具动物的躯壳，思维只是大脑的工具，先有身体才有大脑，当我们深入呼吸感受身体的时候，人的机制决定了这时候我们无法思考，当我们无法思考的时候，我们的感受就是这个世界最真实的一切。&lt;/p&gt;
+&lt;h3 id=&quot;客户端配置文件参考&quot;&gt;客户端配置文件参考&lt;/h3&gt;
 
-&lt;p&gt;基于这个原理，为什么很多人还做不到？&lt;/p&gt;
+&lt;p&gt;下面是我的v2ray配置文件参考，服务器的IP地址，端口号以及Id值需要换成你自己v2ray服务端的配置。&lt;/p&gt;
 
-&lt;p&gt;因为我们不懂的怎么呼吸，因为我们呼吸的时候大脑还在工作，还在漂浮各种思绪，这样表面是在呼吸，其实还是在思考 “呼吸这种动作到底有没有用？” 的问题。&lt;/p&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;log&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;loglevel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;warning&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;inbound&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1080&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;listen&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;protocol&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;socks&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;settings&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;auth&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;noauth&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;udp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ip&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outbound&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;protocol&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;vmess&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;settings&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;vnext&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;address&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;your_v2ray_vps_ip&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;your_v&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ray_vps_port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;users&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;your_v2ray_vps_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;alterId&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;security&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;auto&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;tag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;proxy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;mux&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;enabled&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundDetour&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;protocol&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;freedom&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;settings&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;tag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;direct&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;dns&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;servers&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;8.8.8.8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;8.8.4.4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;localhost&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;routing&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;strategy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;settings&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;domainStrategy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;IPIfNonMatch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;rules&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;domain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:github.com&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundTag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;proxy&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1-52&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundTag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;direct&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;54-79&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundTag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;direct&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;81-442&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundTag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;direct&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;444-65535&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundTag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;direct&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;chinasites&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundTag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;direct&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ip&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0.0.0.0/8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;10.0.0.0/8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;100.64.0.0/10&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;127.0.0.0/8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;169.254.0.0/16&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;172.16.0.0/12&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;192.0.0.0/24&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;192.0.2.0/24&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;192.168.0.0/16&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;198.18.0.0/15&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;198.51.100.0/24&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;203.0.113.0/24&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;::1/128&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;fc00::/7&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;fe80::/10&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundTag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;direct&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;chinaip&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundTag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;direct&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;domain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:bing.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:163.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:163yun.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:126.net&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:jd.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:youku.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;domain:baidu.com&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;outboundTag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;direct&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;怎么呼吸？&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;坐在凳子上，脚和腿正常放好，背挺直保持警觉（不要睡着了），闭上眼睛，慢慢的吸气的时候，让自己的肚子涨大，然后感受气体从鼻子，呼吸道进入肚子里面的感觉，保持一秒钟，然后用更慢的方式把气从肚子里面缓缓的放出去，呼气完毕后，停一秒感受身体安定的状态，再周而复始。&lt;/p&gt;
-
-&lt;p&gt;最开始的时候，我们在呼吸的时候，大脑还没有停止工作，不用管大脑，继续上面的动作，什么时候你完全专注到自己的身体呼吸细节，你就能体会呼气完毕后的那种安定的状态，在那种安定的状态，你会立即体会到身体给你反馈的快乐和喜悦。这种发自身体的快乐的原因不是别的，而是当你专注呼吸的时候，大脑停止工作了，身体变得更敏感了，大脑停止工作，痛苦也就消失了。&lt;/p&gt;
-
-&lt;p&gt;就这么简单，只要我们专注呼吸，身体会自动关停大脑，只要大脑停止喋喋不休的自言自语，过去的回忆，未来的幻想，小我的角色扮演通通都会消失。&lt;/p&gt;
-
-&lt;p&gt;最开始的时候，你大多数情况还是被大脑控制着进行强迫性思考，每天可能只会偶尔进入安定状态，大多数还是会被社会的喜怒哀乐影响，但是没关系，一旦你可以通过腹式呼吸方式感受内在的安定，就相当于撕开一道通往内心的口子，你只需有一次进入安定的体验，你以后会越来越自然的通过身体控制进入安定的状态。&lt;/p&gt;
-
-&lt;p&gt;当遇到不公平境地，被人言语攻击等情况我们会因为本能进入强烈情绪，这时深呼吸的目的不是让我们强制忘记痛苦委屈自己，而是通过呼吸进入内在的安定，只要内在安定了，大脑就关闭了。大脑关闭后，大脑就不会因为这些外在的情况产生巨大的情绪，继续伤害别人和伤害自己。&lt;/p&gt;
-
-&lt;p&gt;书中有一个故事：&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;苏菲教派有一个古老的故事:有位住在中东地区的国王,老是在快乐与绝望的情绪中摆荡。一点小事就会让他勃然大怒或是引起剧烈的情绪反应,使得他的快乐像昙花一现般地转变成失望,甚至绝望。终于有一天,国王对自己和自己的生活感到厌烦了,想要寻求出路。他派人去找一位国土中受人尊崇而且据说已经开悟的智者。当智者到来后,国王对他说:“我要变成和你一样。请你给我一个可以为我的生活带来平衡、祥和以及智慧的东西好吗?我可以付出任何代价。”智者说:“我也许可以帮你,但是这个代价太巨大了,你的整个王国都不够付。所以,如果你能珍惜它的话,我就把它当礼物送给你。”国王承诺他会好好地珍惜这份礼物,于是智者就离开了。几个星期以后,智者回来,交给国王一个装饰精美的玉雕盒子。国王打开它,看到里面有一只很简单的金戒指。戒指上刻了一句话: “这个,同样地,也会过去。” (This,too, will past.)  “这是什么意思?”国王问。智者说:“经常戴着它,不管发生什么事,在你评断那件事是好或坏之前,触摸这个戒指,然后念上面刻的文字,这样,你就会永远在平安之中。” “这个,同样地,也会过去。”&lt;/p&gt;
-
-&lt;p&gt;到底是什么使得这简单的几个字这么有威力?只从表面上来看,当不好的情况发生时,这些字似乎可以提供一些安慰,但同样地,它们也会降低我们对生活中美好事物的享受。因为:“别太得意了,它不会长久的。”这好像是当好事出现时,这些字的含义。&lt;/p&gt;
-
-&lt;p&gt;这个金戒指的故事则指出了“无常”的事实,当我们能认识到“无常”时,就能够做到“不执著”。不抗拒、不评断、不执著,就是真正自由和开悟生活的三个面相。刻在戒指上的字不是说不应该享受生活中美好的一切,也不是仅仅在你受苦的时候给你一些安慰而已。&lt;/p&gt;
-
-&lt;p&gt;它们还有更深一层的任务:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;让你觉知到,不管是好是坏,由于一切事物的无常本质,所有的事物都是稍纵即逝的;&lt;/li&gt;
-  &lt;li&gt;当你觉知到事物的无常之后,你对它们的执著就会减少,同时你对它们的认同程度也会减低;&lt;/li&gt;
-  &lt;li&gt;不执著并不表示你不能享受这个世界所提供的美好事物,事实上,你可以更加地享受它们。因为,一旦你看清并接纳万物的无常和不断变化的必然性之后,你可以在它们存在的时候好好享受其中的乐趣,而不会担心或焦虑将来会失去它们;&lt;/li&gt;
-  &lt;li&gt;当不执著时,你获得了一个站在制高点上综观全局的优势,而不会陷在生活事件当中。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;领悟到“这个,同样地,也会过去”能够为你带来不执著,而不执著会让你进入生命中另外一个向度:内在空间。经由不执著,还有不评断、内在不抗拒,你获得了进入那个向度的途径。当不再完全地认同于有形世界(form)之后,意识,也就是真正的你,就从有形世界的牢狱中解脱了。这份自由,就是内在空间的升起。&lt;/p&gt;
-
-&lt;p&gt;有一种特别强而有力方式就是:有意识地允许小我被缩减,而不试图去修复它。我建议你不妨经常实验一下。比方说,当有人批评、责怪或是辱骂你的时候,先不要立刻还以颜色或急着为自己辩护,试着什么都别做。让自我形象维持在被缩减的状态,全神贯注在内心深处此时的感受。一开始几秒钟的时间,你可能觉得很不舒服,好像自己的尺寸缩小了似的。然后,你也许会感觉到内在有一种非常鲜活的开阔感。其实你完全没有被缩减,事实上,你扩展了。然后,你会很惊讶地发觉:当在看似被缩减的状况下,而丝毫不加以抗拒和反应时(不仅是外表,内在也是),你会发现根本没有什么实质的东西被缩减了。而经由变得“较少”,你变得更多了。当不再护卫或是试图强化自己的外在形相时,你便从对外在形相和心理自我形象的认同中跳脱。经由变得较少(就小我的观点而言),实际上你经历了一次扩展,并且创造了空间让本体得以显露。&lt;/p&gt;
-
-&lt;p&gt;真正的力量,也就是你超越形相的本来面目,就可以从外表看似被减弱的形相中闪耀出来。这就是耶稣所说,“否认你自己”,或是“将你的另一边脸让他打”的真正含义。当然,这并不是说,你可以允许自己被虐待,或是让自己遭受无意识人们的侵害。有时候,在某些情况下,你必须要很笃定地阻吓别人的某些行为。少了小我的防卫心作祟,你的话语会带着力量,但没有过度反应的蛮力。必要的时候,你也可以坚定地、清楚地对某人说“不”!而这正是我所谓的“高质量的不”,不含任何的负面心态。&lt;/p&gt;
-
-&lt;h3 id=&quot;享受当下&quot;&gt;享受当下&lt;/h3&gt;
-&lt;p&gt;当我们明白怎么进入当下后，我们接着会遇到的问题是，我们不可能光靠身体体验不干活，如果不在这个世界劳动，就会没饭吃，没饭吃就会被饿死，当下也就毫无意义。&lt;/p&gt;
-
-&lt;p&gt;当我读完《一个新世界》后，我觉得我个人已经比较清晰了：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;接纳&lt;/strong&gt;：接受这个世界无常的本质，当困难和不顺来临的时候，我们无法改变，完全接纳无常，不要对抗无常，去做一些我们力所能及的事情；&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;安定&lt;/strong&gt;：通过呼吸进入当下的临在，从强迫性思考中分离出来，感受内心的安定；&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;享受&lt;/strong&gt;：找到自己真正喜欢的事情，去做好每件小事，享受当下心流的每一刻即可，至于将来怎么样？谁知道呢…&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;最后以这本书我最喜欢的一句话结尾，这句话要经常读，才能真正的保持在当下。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;This, too, will past…&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在读《一个新世界》这本书，是《当下的力量》作者的新著，书中描绘的理念其实是一样的，只是《一个新世界》这本书写的更加透彻，也更加难以理解了。</summary></entry></feed>
+&lt;p&gt;通过v2ray客户端的路由功能，变相的实现类似Chrome SwitchyOmeg插件的路由功能，这些就不用写复杂的Qt QNetworkProxy代码了，又可以偷懒了，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">TCP阻断 因为EAF浏览器设置QNetProxy代理后，默认所有网站请求都是通过v2ray代理来连接的。</summary></entry></feed>
