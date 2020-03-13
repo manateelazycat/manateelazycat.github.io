@@ -1,0 +1,23 @@
+<p>前几天写了一个 <a href="https://www.jianshu.com/p/ee5b87940f46">flex.el</a> , 今天看了一下 bison-mode.el 的代码, 也太陈旧了, 顺手再写一个 <a href="https://github.com/manateelazycat/bison">bison.el</a></p>
+
+<p><img src="http://localhost:4000/pics/bison/bison.png" alt="bison mode" /></p>
+
+<p><a href="https://github.com/manateelazycat/bison">bison</a> 支持 bison 的标记定义和规则代码区域的语法高亮.</p>
+
+<h3 id="安装方法">安装方法</h3>
+
+<ol>
+  <li>下载 <a href="https://github.com/manateelazycat/bison">bison</a> 里面的 bison.el 放到 ~/elisp 目录</li>
+  <li>把下面的配置加入到 ~/.emacs 中</li>
+</ol>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'load-path</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">"~/elisp"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'bison</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'auto-mode-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">"\\.y$"</span> <span class="o">.</span> <span class="nv">bison-mode</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">autoload</span> <span class="ss">'bison-mode</span> <span class="s">"bison"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="使用">使用</h3>
+<p>打开 *.y 结尾的 bison 文件, 会自动加载 bison-mode 并进行语法高亮, 直接编辑文件即可.</p>

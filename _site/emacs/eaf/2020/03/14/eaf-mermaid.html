@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>使用Markdown来自动生成流程图</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                使用Markdown来自动生成流程图
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                
+                <a href="http://localhost:4000/tags.html#EAF">
+                    <div class="category">
+                        EAF
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数798 2020-03-14
+            </div>
+            <div class="content">
+                <h3 id="发现新大陆">发现新大陆</h3>
+<p>在Emacs-China论坛闲逛时发现了 mermaid.js 这个图形库，这个图形库的最大优势是，你可以直接编写 markdown 文本，他会自动生成流程图、饼状图、干特图、类型图、序列图等逻辑图形。</p>
+
+<p>今天花了1个多小时写了个新的<a href="https://github.com/manateelazycat/emacs-application-framework/commit/ca52b4b383385a89ea070f1729899404d4a10003">补丁</a>把Mermaid.js集成到EAF框架中。</p>
+
+<p>通过这个补丁，Emacs可以直接编辑Markdown文档，EAF做实时同步渲染，特别是制作技术文章配图的时候，直接修改文本的效率是鼠标拖拽图形的10倍以上，再也不会遇到以前复杂图形改动时越理越乱的问题了。</p>
+
+<h3 id="安装使用">安装使用</h3>
+<ol>
+  <li>更新到最新版EAF</li>
+  <li>通过pip3或者pacman安装pyinotify、markdown这两个Python库</li>
+  <li>新建扩展名为 mmd 的文件</li>
+</ol>
+
+<p>然后参照 <a href="https://mermaidjs.github.io/#/">Mermaid文档</a> 来创建你自己的逻辑图吧！</p>
+
+<p>EAF会自动处理刷新的问题，当你在左边修改逻辑图文本内容时，EAF会自动在右边刷新文本对应的逻辑图。</p>
+
+<p><img src="http://localhost:4000/pics/eaf-mermaid/eaf-mermaid.gif" alt="EAF Mermaid" /></p>
+
+<h3 id="实验">实验</h3>
+<p>只需要短短的几行文本就可以自动生成EAF Mermaid插件的流程图：</p>
+
+<p><img src="http://localhost:4000/pics/eaf-mermaid/eaf-mermaid.png" alt="EAF Mermaid" /></p>
+
+<pre>
+```mermaid
+graph TD
+    A(Emacs) --&gt;|传递Markdown文件路径| B
+    B(EAF Pyton端) --&gt; |inotify监听Markdown文件更新| C
+    C(Markdown格式转换器) --&gt; |转换Markdown文本为Html格式| D
+    D(PyQt WebEngine) --&gt; |调用Mermaid.js| E
+    E(渲染Markdown对应的逻辑图) --&gt; |下一次循环| B
+    style C fill:gold,stroke:#BB0
+    linkStyle default stroke:#333, fill:none
+```
+</pre>
+
+<p>通过这种方式，我们只需要关心逻辑图的内容和相互关系就可以了，不用关心逻辑图的布局问题，mermaid.js会自动搞定，节省了大量鼠标拖拽图形的时间。</p>
+
+<p>现在EAF可以直接制作思维导图和流程图，真的太方便了，哈哈哈哈。</p>
+
+            </div>
+        </div>
+    </body>
+</html>

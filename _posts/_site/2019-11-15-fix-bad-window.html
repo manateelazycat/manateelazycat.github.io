@@ -1,0 +1,16 @@
+<h3 id="问题">问题</h3>
+<p>Arch下 deepin-wine-wechat 这个包不是用的 deepin-wine, 而是 wine 构建的，导致有两个问题，第一个透明窗口不消失，第二个是无法输入中文，原因是 DeepinWine 的一些补丁没有推送到上游 Wine 社区。</p>
+
+<p>DeepinWine 版本的微信需要安装 deepin.com.wechat2 这个包，但是这个版本的微信启动会显示 X BadWindow 的错误。
+原因是当时 DeepinWine 编写代码时只允许在 DDE 或者 Gnome 环境下运行。</p>
+
+<h3 id="解决思路">解决思路</h3>
+<ol>
+  <li>安装依赖 <code class="highlighter-rouge">sudo pacman -S gnome-settings-daemon</code></li>
+  <li>修改 <code class="highlighter-rouge">/opt/deepinwine/apps/Deepin-WeChat/run.sh</code> 在开头插入一行 <code class="highlighter-rouge">/usr/lib/gsd-xsettings &amp;</code></li>
+  <li>删除原先的微信目录 <code class="highlighter-rouge">rm -rf ~/.deepinwine/Deepin-WeChat</code></li>
+</ol>
+
+<p>这样 DeepinWine 就认为在Gnome环境下，可以正常启动 DeepinWine 版本的微信了。</p>
+
+<p>同时，可以用命令 <code class="highlighter-rouge">wmctrl -x -a wechat.exe || /opt/deepinwine/apps/Deepin-WeChat/run.sh</code> 绑定快捷键进行一键启动微信或者切换微信窗口。</p>

@@ -1,0 +1,69 @@
+<p>我好久没有推荐过一款Emacs插件了，感觉大部分的Emacs插件只是设计的非常贴心，但是真的让我惊讶的Emacs插件真的很少了。</p>
+
+<p>今天就来推荐一个让我惊讶的技术：TabNine</p>
+
+<p>网上对 TabNine 的评价:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TabNine是一种基于OpenAI的语言模型（GPT-2）来实现的智能代码补全技术。
+它支持23种编程语言、5种编辑器，使用简单，效果惊艳。
+不少使用过的网友说：TabNine是他们用过的最好的代码补全工具，这是属于程序员的杀手级应用。
+</code></pre></div></div>
+
+<p>我记得最开始看到TabNine的时候是一个多月前，当时以为只是无脑AI新闻，并没有太认真去看待它，认为不过是一个噱头。但是从我短时间的体验来看，我改变了看法。</p>
+
+<h3 id="我对tabnine的评价">我对TabNine的评价</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TabNine通过很复杂的技术来学习当前项目的源代码，
+通过研究程序员的编码习惯最终来预测接下来可能会键入的单词或长句。
+
+传统的代码补全主要是基于当前文件的抽象语法树来进行上下文语义分析，
+现在做的最好的技术就是LSP协议，这些传统的语法补全技术在补全对象的属性或者方法的时候很好用。
+
+但是TabNine完全基于一种更为开放的分析方式来实现代码补全，
+在它分析现有项目的源代码后，不管是补全模板、方法变量还是代码片段，
+TabNine会根据它自己的算法来进行智能排序, 给出它认为最佳的匹配结果。
+
+打个比方，TabNine在光标处线索不够的时候，它有点像个精神病人那样喃喃自语，
+但是一旦它预测准确以后，它可以补全非常一长串代码，
+这段代码虽然不是属性和方法名，但是一旦准确预测，
+你可以敲一下Tab键就完成当前行的代码编写。
+而且这种技术在越大的项目中，代码预测补全效果越好。
+
+整体的感觉，就像一个懂你的机器人在帮你找你自己的代码思想和代码片段，
+在必要的时候帮你敲很长很长的代码。
+</code></pre></div></div>
+
+<p>说的很玄乎，举两个例子：</p>
+
+<h4 id="elisp代码补全">Elisp代码补全</h4>
+<p><img src="http://localhost:4000/pics/tabnine/elisp.png" alt="Elisp exampele" /></p>
+
+<p>上面是我写的Emacs插件aweshell.el，当我敲击 <code class="highlighter-rouge">current-window</code> 的时候，TabNine 的补全建议是：</p>
+
+<p><code class="highlighter-rouge">current-window (selected-window)</code></p>
+
+<p><code class="highlighter-rouge">current-window (selected-window)</code> 不是一个正常的语法补全结构，
+但是当我敲 <code class="highlighter-rouge">current-window</code> 这段代码的时候，脑袋里就是希望通过 <code class="highlighter-rouge">(selected-window)</code> 方法赋值结果给变量 <code class="highlighter-rouge">current-window</code></p>
+
+<p>TabNine 在这个时候就让你很爽了，不管他的算法是怎么做的，这就是你想要的片段，Tab一下子就补全了。</p>
+
+<h4 id="javascript代码补全">JavaScript代码补全</h4>
+<p><img src="http://localhost:4000/pics/tabnine/js.png" alt="JavaScript exampele" /></p>
+
+<p>上面是一段JavaScript的项目代码，其中有一段 <code class="highlighter-rouge">machineDict[res.data[i].MachineId] = res.data[i].Name</code></p>
+
+<p>很多时候，我们会通过编写库和函数的方式来抽象重复代码，但是真实的项目中，对于一些使用一两次的代码片段，往往没有必要写函数去过度包装。</p>
+
+<p>所以当我在另外一个函数中写下 <code class="highlighter-rouge">machineDict[res.data[i].MachineId] = res.data[i]</code> 然后敲击 . 的时候，TabNine 通过算法分析出，我很有可能是想写 <code class="highlighter-rouge">res.data[i].Name</code> ， 那也正是我想要的。</p>
+
+<p>注意这个例子中， Name 仅仅只是服务器返回的JSON结构体的一个属性值，从传统的抽象语法树补全技术看，<code class="highlighter-rouge">res.data[i]</code> 仅仅就是临时变量，除非真实从服务器请求，否则基于属性和方法的技术来解析，根本就不知道 <code class="highlighter-rouge">res.data[i]</code> 是什么类型的对象，更不用说代码补全了。</p>
+
+<p>而TabNine的技术就是对传统语法补全技术的一种极好的补充，因为程序员每天大部分时间都是在重复自己以前的编程思想和代码片段，为什么不让机器来辅助人从重复的代码拷贝中解脱出来呢？</p>
+
+<h3 id="tabnine-emacs补全前端">TabNine Emacs补全前端</h3>
+<p>TabNine的Emacs插件在 <a href="https://github.com/TommyX12/company-tabnine">company-tabnine</a> , 里面有详细的安装方法。</p>
+
+<h3 id="最后">最后</h3>
+<p>从整体上看TabNine就是找各种token来暴力学习，所以性能的表现上比很多LSP服务器还要好，我在Emacs中使用TabNine补全，非常顺滑。</p>
+
+<p>我希望有一天这种技术可以直接感知我的思想，这样我就不用动手了， 想一想代码就自动写完了，哈哈哈。</p>

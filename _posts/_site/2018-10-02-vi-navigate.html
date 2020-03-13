@@ -1,0 +1,121 @@
+<p>作为 Emacs 的忠实粉丝, 还是喜欢默认 Emacs 的按键风格, 不喜欢 Vi 那种频繁切换模式的玩法.</p>
+
+<p>不过如果Emacs buffer是只读模式时(比如 help mode, pdf view mode 等), 用单键进行导航还是比较方便的.</p>
+
+<p>原来一直用 lazy-set-key.el 配合 key-alist 来实现类似的功能, 今天把这些配置文件重新整理成一个独立的插件 <a href="https://github.com/manateelazycat/vi-navigate">vi-navigate</a> 即可享受同样的便利.</p>
+
+<h3 id="安装方法">安装方法</h3>
+<ol>
+  <li>下载 <a href="https://github.com/manateelazycat/vi-navigate">vi-navigate</a> 里面的 vi-navigate.el 放到 ~/elisp 目录</li>
+  <li>把下面的配置加入到 ~/.emacs 中</li>
+</ol>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'load-path</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">"~/elisp"</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'vi-navigate</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">vi-navigate-load-keys</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="使用">使用</h3>
+<p><code class="highlighter-rouge">vi-navigate-hook-list</code> 这个变量的值是</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">'</span><span class="p">(</span><span class="nv">eww-mode-hook</span>
+    <span class="nv">help-mode-hook</span>
+    <span class="nv">package-menu-mode-hook</span>
+    <span class="nv">top-mode-hook</span>
+    <span class="nv">benchmark-init/tabulated-mode-hook</span>
+    <span class="nv">benchmark-init/tree-mode-hook</span>
+    <span class="nv">emms-playlist-mode-hook</span>
+    <span class="nv">emms-browser-mode-hook</span>
+    <span class="nv">emms-stream-mode-hook</span>
+    <span class="nv">apt-utils-mode-hook</span>
+    <span class="nv">man-mode-hook</span>
+    <span class="nv">apropos-mode-hook</span>
+    <span class="nv">less-minor-mode-hook</span>
+    <span class="nv">info-mode-hook</span>
+    <span class="nv">doc-view-mode-hook</span>
+    <span class="nv">w3m-mode-hook</span>
+    <span class="nv">pdf-view-mode-hook</span>
+    <span class="nv">irfc-mode-hook</span>
+    <span class="p">)</span>
+</code></pre></div></div>
+
+<p>当Emacs打开上述模式的buffer时, vi-navigate 会自动加载, 并可立即使用下面单键进行操作:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">按键</th>
+      <th style="text-align: left">按键解释</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">j</td>
+      <td style="text-align: left">下一行</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">k</td>
+      <td style="text-align: left">上一行</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">h</td>
+      <td style="text-align: left">向后移动一个字符</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">l</td>
+      <td style="text-align: left">向前移动一个字符</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">J</td>
+      <td style="text-align: left">向上滚动一行</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">K</td>
+      <td style="text-align: left">向下滚动一行</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">H</td>
+      <td style="text-align: left">向后移动一个单词</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">L</td>
+      <td style="text-align: left">向前移动一个单词</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">e</td>
+      <td style="text-align: left">向下滚动一屏</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SPC</td>
+      <td style="text-align: left">向上滚动一屏</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">y</td>
+      <td style="text-align: left">用 tooltip 显示当前光标的翻译 (需要安装 sdcv 插件)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Y</td>
+      <td style="text-align: left">用 buffer 显示当前光标的翻译 (需要安装 sdcv 插件)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">i</td>
+      <td style="text-align: left">用 tooltip 显示输入的翻译 (需要安装 sdcv 插件)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">I</td>
+      <td style="text-align: left">用 buffer 显示输入的翻译 (需要安装 sdcv 插件)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">f</td>
+      <td style="text-align: left">显示下一个 help 历史 (只在 help mode 有效)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">b</td>
+      <td style="text-align: left">显示上一个 help 历史 (只在 help mode 有效)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TAB</td>
+      <td style="text-align: left">跳转到下一个帮助连接 (只在 help mode 有效)</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,190 @@
+<p>Emacs的isearch一般都是激活以后直接搜索字符并上下跳转, 但是我们编程的时候, 往往搜索的内容就是当前光标处的符号, 如果每次都敲一遍符号字符串效率就会非常低.</p>
+
+<p>2008年的时候, 写了插件 lazy-search.el, 主要的目的是, 自动激活当前光标处的符号, 然后直接按 s 或者 r 就可以在匹配的字符中快速跳转, 跳转到目标位置后按q退出搜索继续编程</p>
+
+<p><img src="http://localhost:4000/pics/lazy-search/lazy-search.png" alt="lazy-search.el" /></p>
+
+<p>但是这个插件依赖我的另一个插件 one-key.el , on-key 是一个针对快捷键的菜单导航系统, one-key.el 虽然强大但是配置还是比较折腾的.</p>
+
+<p>所以, 今天把 lazy-search.el 重新调整了一下:</p>
+<ul>
+  <li>移除了对 one-key.el 的依赖</li>
+  <li>移除了很多不用的mark函数, 因为用的最多的就是标记光标处的符号或者选区内容</li>
+  <li>重构了一些代码和名字, 使得更容易理解</li>
+</ul>
+
+<h3 id="安装">安装</h3>
+<ol>
+  <li>下载 <a href="https://github.com/manateelazycat/lazy-search">lazy-search.el</a> 里面的 lazy-search.el 放到 ~/elisp 目录</li>
+  <li>把下面的配置加入到 ~/.emacs 中</li>
+</ol>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'load-path</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">"~/elisp"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'lazy-search</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"M-s"</span><span class="p">)</span> <span class="ss">'lazy-search</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="使用方法">使用方法</h3>
+<ol>
+  <li>把光标移动到想要搜索的符号位置</li>
+  <li>按 Alt + S 激活 lazy-search 模式</li>
+  <li>按照下面的按键跳转, 或者按 q 退出 lazy-search 模式</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">按键</th>
+      <th style="text-align: left">命令</th>
+      <th style="text-align: left">解释</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">s</td>
+      <td style="text-align: left">lazy-search-jump-to-next-match</td>
+      <td style="text-align: left">跳转到下一个匹配位置</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">r</td>
+      <td style="text-align: left">lazy-search-jump-to-previous-match</td>
+      <td style="text-align: left">跳转到上一个匹配位置</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">.</td>
+      <td style="text-align: left">lazy-search-jump-to-first-match</td>
+      <td style="text-align: left">跳转到第一个匹配位置</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">,</td>
+      <td style="text-align: left">lazy-search-jump-to-last-match</td>
+      <td style="text-align: left">跳转到最后一个匹配位置</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">i</td>
+      <td style="text-align: left">lazy-search-jump-to-init</td>
+      <td style="text-align: left">跳转到开始搜索的位置</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">j</td>
+      <td style="text-align: left">lazy-search-view-next-line</td>
+      <td style="text-align: left">移动到下一行</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">k</td>
+      <td style="text-align: left">lazy-search-view-previous-line</td>
+      <td style="text-align: left">移动到上一行</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">h</td>
+      <td style="text-align: left">lazy-search-view-backward-char</td>
+      <td style="text-align: left">移动到前一个字符</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">l</td>
+      <td style="text-align: left">lazy-search-view-forward-char</td>
+      <td style="text-align: left">移动到下一个字符</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">H</td>
+      <td style="text-align: left">lazy-search-view-line-beginning</td>
+      <td style="text-align: left">移动到行首</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">L</td>
+      <td style="text-align: left">lazy-search-view-line-end</td>
+      <td style="text-align: left">移动到行尾</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">J</td>
+      <td style="text-align: left">lazy-search-scroll-up-one-line</td>
+      <td style="text-align: left">向上滚动一行</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">K</td>
+      <td style="text-align: left">lazy-search-scroll-down-one-line</td>
+      <td style="text-align: left">向下滚动一行</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">e</td>
+      <td style="text-align: left">lazy-search-scroll-down-one-page</td>
+      <td style="text-align: left">向上滚动一屏</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Space</td>
+      <td style="text-align: left">lazy-search-scroll-up-one-page</td>
+      <td style="text-align: left">向下滚动一屏</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">S</td>
+      <td style="text-align: left">lazy-search-mark-symbol-or-region</td>
+      <td style="text-align: left">用光标处的符号重新搜索</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">w</td>
+      <td style="text-align: left">lazy-search-copy-object</td>
+      <td style="text-align: left">拷贝搜索对象</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">E</td>
+      <td style="text-align: left">lazy-search-edit-object</td>
+      <td style="text-align: left">编辑搜索对象并重新搜索</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">c</td>
+      <td style="text-align: left">lazy-search-search-previous-cache</td>
+      <td style="text-align: left">搜索上次搜索对象</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Y</td>
+      <td style="text-align: left">lazy-search-search-yank</td>
+      <td style="text-align: left">搜索yank内容</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">t</td>
+      <td style="text-align: left">lazy-search-to-isearch</td>
+      <td style="text-align: left">切换到 isearch 模式</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">q</td>
+      <td style="text-align: left">lazy-search-quit</td>
+      <td style="text-align: left">退出 lazy-search 模式</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,62 @@
+<p>Emacs的作者就是大名鼎鼎的 <a href="https://zh.wikipedia.org/wiki/%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E6%96%AF%E6%89%98%E6%9B%BC">Richard Stallman</a>, 教主一生强调使用软件的自由， 所以Emacs默认有很多反人类的配置让众多用户撞墙， 加上Emacs社区的黑客开发节奏非常快， 真正要把Emacs用爽还是要大量修改默认配置和添加新的插件。</p>
+
+<p>Emacs应该是Linux社区折腾最凶的自由软件了， 甚至折腾力度远远超过众多Linux发行版， 大多数Emacs用户之所有放弃Emacs是因为在网上拷贝了一段自己都不懂的Elisp代码然后扔到 ~/.emacs 里面后导致Emacs启动不了， 自己又不知道错误原因也看不懂天书一般的Elisp代码， 所以在我们真正玩 Emacs 之前要先了解一些 Emacs 的基本知识和排错技巧， 一旦掌握了这些技巧以后， 折腾 Emacs 将不再痛苦， 而是非常过瘾的探险之旅。</p>
+
+<h4 id="emacs-的启动顺序">Emacs 的启动顺序</h4>
+<p>Emacs 读取配置文件的地方有两个：</p>
+<ol>
+  <li>/usr/share/emacs/common/share/emacs/site-lisp/site-start.el</li>
+  <li>~/.emacs</li>
+</ol>
+
+<p>Emacs 在启动的时候会从系统目录读取 site-start.el 的配置， 然后再读取 ~/.emacs 文件的配置。
+一般来说系统级别的 site-start.el 是用于定制 Emacs 的版本用的（比如我为 Deepin 团队定制的 deepin-emacs) 防止受到用户级别的 ~/.emacs 的配置文件干扰。
+一般来说玩 Emacs 只用把个人的配置文件丢到 ~/.emacs 就可以了</p>
+
+<h4 id="玩新配置和新插件的正确姿势">玩新配置和新插件的正确姿势</h4>
+<p>我看到很多Emacs新手喜欢从网上搜索各种帖子的 Elisp 代码， 不管是否理解还是这段代码是否有用， 一股脑全部扔到 ~/.emacs ， 当某段配置文件有错误时导致 Emacs 启动不了以后， 他也不知道到底哪段代码出现问题了， 然后就在 ~/.emacs 中胡乱改， 越改越挂， 最后失去耐心放弃了。</p>
+
+<p>我自己玩 300+ 的插件， 很多插件经常代码都是互相影响， 所以自己写了下面一段代码用于加载制定目录的 Elisp 插件， 平常新加的配置和插件代码都按照目录方式分类存放， 一旦真的出错或者自己都搞不定， 就先删除出问题的插件子目录， 避免新的配置影响现有配置导致没法使用 Emacs：</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">defun</span> <span class="nv">add-subdirs-to-load-path</span> <span class="p">(</span><span class="nv">dir</span><span class="p">)</span>
+  <span class="s">"Recursive add directories to 'load-path'."</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">default-directory</span> <span class="p">(</span><span class="nv">file-name-as-directory</span> <span class="nv">dir</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'load-path</span> <span class="nv">dir</span><span class="p">)</span>
+   <span class="p">(</span><span class="nv">normal-top-level-add-subdirs-to-load-path</span><span class="p">)))</span>
+<span class="p">(</span><span class="nv">add-subdirs-to-load-path</span> <span class="s">"/home/user/.emacs-config"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>在折腾Emacs之前， 你先把上面代码拷贝到你的 ~/.emacs 文件中保存， 把 /home/user/.emacs-config 中的 user 换成你的用户名， 然后在主目录新建 .emacs-config 目录。
+以后有新的插件就在 ~/.emacs-config 目录下新建子目录， 然后把配置文件扔进去， 一旦发生错误就直接子目录就可以快速恢复到上次正常的状态。</p>
+
+<p>比如今天我在网络上看到 auto-complete 这个插件很牛逼， 我直接在 ~/.emacs-config 目录下新建一个 auto-complete 子目录， 然后把网上拷贝的配置文件全部都到 auto-complete 子目录下。
+下次 Emacs 重启的时候就会递归的扫描 ~/.emacs-config 所有文件并进行加载， 如果 auto-complete 插件有任何配置不对的地方， 直接删除 ~/.emacs-config/auto-complete 目录即可继续折腾了。</p>
+
+<p>注意这个方法并不是保证你在网络上拷贝的任何插件不会出问题， 也不会降低哪怕一分的折腾工作， 他只是提供一种良好的习惯， 让你在折腾插件的过程中通过删除有问题插件的目录来快速恢复上次正常状态， 避免初学者被打击够失去耐心。</p>
+
+<h4 id="emacs-出错信息打印">Emacs 出错信息打印</h4>
+<p>插件出错以后， 好一点的是 Emacs 会什么都不显示， 但是就是没法正常工作， 运气差一点的Emacs会在启动过程中快速崩溃消失。</p>
+
+<p>所以在折腾任何Emacs插件时， 首先要得到 Emacs 的出错信息， 只有得到出错信心才能快速的去寻找解决方案，这个技能很简单， 就是在 Emacs 启动的时候加一个  –debug-init 参数， 比如像下面这样启动Emacs：</p>
+
+<p><code class="highlighter-rouge">emacs --debug-init</code></p>
+
+<p>这样Emacs在加载配置文件的时候就会启用调试器， 一旦发生错误后， Emacs不会崩溃一闪而过， 而是在调试器中告诉你在加载配置文件的哪一个函数出现了的具体问题信息， 然后我们就可以拿着问题的信息去研究修复了。</p>
+
+<p>因为很多初学者对Emacs不是非常熟悉， 经常不知道 Emacs 默认的行为是什么， 甚至无从判断问题是 Emacs 本身就有问题还是自己添加的配置有问题， 其实只用在启动的时候添加 -Q 参数就可以了， 像这样：</p>
+
+<p><code class="highlighter-rouge">emacs -Q</code></p>
+
+<p>这样Emacs就不会加载任何配置文件， 你可以对比Emacs默认的行为来判断是否真的是因为配置文件引起的问题。</p>
+
+<h4 id="善用-emacswikigoogle-邮件列表和irc">善用 EmacsWiki、Google 、邮件列表和IRC</h4>
+<p>上面我们已经可以通过 –debug-init 选项可以定位到配置出错的问题， 国内很多用户粘贴了几屏的出错信息， 然后扔到论坛， 一句跪求的帖子， 也不说自己原来干了什么， 折腾的过程， 直接就是错误信息就期待高手马上出来帮他解决问题， 这种方法不但在国内， 即使在世界上所有地方都是不欢迎的。</p>
+
+<p>一般我们得到错误信息以后， 我们要把最上面一行出错信息拷贝出来， 先在 <a href="http://www.emacswiki.org">EmacsWiki</a> 和 Google 上搜索一下是否有其他问题也有相同的问题？ 如果有相同的问题， 一般都已经有解决方案了， 如果能够自己搜索、理解和解决问题就不要当伸手党， 这是学习提高的必备过程， 也是折腾的乐趣之一。</p>
+
+<p>如果实在找不到解决方案， 就把出错信息最上面一行开始往下拷贝20行左右的上下文， 然后把自己折腾插件的过程（从什么地方下载的插件、怎么加载配置文件的、遇到的错误信息、自己尝试解决方案的思路， 比如已经在 EmacsWiki 和 Google 搜索过了）粘贴到 <a href="https://lists.gnu.org/mailman/listinfo/help-gnu-emacs">Emacs 邮件列表</a> 和 Emacs IRC频道 (#emacs 6667 irc.freenode.net)（ IRC频道历来规矩就是避免粘贴大段文字到频道中， IRC 频道建议先粘贴到 <a href="http://paste2.org/">paste2.org</a> 这种粘贴分享网站， 再把分享地址粘贴到 IRC 频道， 以尊重 IRC 频道其他人）， 然后等待社区高手的帮助， 只要你自己是动脑筋， 即使你的能力差一点很多热心的高手都愿意帮助， 千万千万不要做一个大爷姿态的伸手党， 尤其你面对的是全世界的顶尖高手。</p>
+
+<h4 id="enjoy">Enjoy</h4>
+<p>只要你掌握上面的基本要点， 再加上持之以恒， 你总有一天会变成一位非常厉害的编程高手的…</p>
+
+<p>更多 Emacs hacking 技巧请见下回分晓.</p>

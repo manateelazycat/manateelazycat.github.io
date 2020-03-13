@@ -1,0 +1,199 @@
+<h3 id="应用场景">应用场景</h3>
+<p>开发应用程序的过程本质就是通过图形库获得用户的输入事件（鼠标、键盘或者触摸屏等）和数据以后，对这些用户的事件和数据进行处理后，通过界面或其他交互形式展现给用户结果。</p>
+
+<p>应用程序完成后，拥有美观的界面和简洁易用的使用逻辑，让用户在使用过程中感到舒服和爽快，这样的应用程序我们就可以称为交互体验优秀的产品。</p>
+
+<p>一般来说，应用程序窗口的所有事件都可以通过图形库(Gtk+、Qt等）自己来获取的，但是有时候我们需要一种技术来获取整个操作系统的事件，来满足以下场景：</p>
+<ul>
+  <li>监听用户输入的鼠标事件，比如屏幕取词</li>
+  <li>监听用户输入的键盘事件，比如全局快捷键</li>
+</ul>
+
+<p>这时候Gtk＋和Qt就无法做到，需要X11相关的技术才能做到对系统的事件进行监听。
+X11相关的技术有两种方案：</p>
+<ul>
+  <li>通过 <a href="https://tronche.com/gui/x/xlib/input/XGrabPointer.html">XGrabPointer</a> 和 <a href="https://tronche.com/gui/x/xlib/input/XGrabKeyboard.html">XGrabKeyboard</a> 抓取系统的焦点后监听全局事件</li>
+  <li>通过 <a href="https://www.x.org/releases/X11R7.6/doc/libXtst/recordlib.html">XRecord Extension</a> 非侵入式的监听全局事件</li>
+</ul>
+
+<p>XGrabPointer 和 XGrabKeyboard 一般主要用于菜单的实现，而且这种方法必须要抢占用户的鼠标或键盘焦点，导致一旦焦点被抢占时，别的程序就无法正常使用（比如菜单弹出时，其他程序就无法输入字符或响应鼠标事件了）。</p>
+
+<p>大部分应用程序监听事件时往往并不需要抢占系统的事件焦点，希望在监听事件的时候用户可以正常操作系统。所以，今天讲解一下怎么用 XRecord 这个X11的扩展库来进行鼠标事件以及键盘事件的监听。</p>
+
+<h3 id="技术原理">技术原理</h3>
+<p>X11是Linux下最古老和通用的技术，不论用户的输入事件还是最后画到屏幕的绘制动作其实都是 XServer 来实现的。</p>
+
+<p>Linux下所有图形应用的底层消息顺序都是按照下面的顺序来执行的：
+硬件产生事件→XServer发送输入事件给图形库→图形库(X Client)包装输入事件传递给应用程序→应用根据输入事件产生绘制命令→图形库（X Client)根据应用绘制命令产生绘制消息→XServer接受绘制消息→绘制图形到屏幕上。</p>
+
+<p>上面顺序中的 X Client 就是我们通常说的 Gtk+、Qt这些图形库，通过 xcb/xlib 和 XServer 进行输入输出通讯，保证输入事件和输出绘制都可以及时响应，同时图形开发库提供高级的API封装，让开发的同学不用直接编写复杂的Xcb/Xlib 通讯代码和参数细节。</p>
+
+<p>而 XRecord 就是一个 XServer 端的扩展，你可以想象 XRecord 就像一条寄生虫寄生到 XServer 里面，只要 XServer 从硬件那里接收到所有输入事件都会告诉一下 XRecord, 我们只需把对应的代码挂到 XRecord 循环中，只有系统一有输入事件产生，XServer就会告诉XRecord, XRecord接着就通过事件循环告诉我们写的应用程序，我们的应用程序再利用实时截获到的输入事件进行处理。</p>
+
+<p>这一切都发生的悄无声息，既监听了系统上所有的输入事件又不会影响系统中的任何应用，是不是听着很邪恶？（刀能切菜也能伤害别人，千万不要做坏事哟）</p>
+
+<h3 id="代码讲解">代码讲解</h3>
+<p>输入事件监听的核心代码都在 <a href="https://github.com/WHLUG/xrecord-example/blob/master/src/event_monitor.cpp">event_monitor.cpp</a> 中，下面我一个一个函数的讲解：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 因为 XRecord 的事件循环会堵塞当前线程，避免监听事件的时候应用程序卡主</span>
+<span class="c1">// 我们建立一个继承于 QThread 的EventMonitor类，通过子线程进行事件监听操作</span>
+<span class="n">EventMonitor</span><span class="o">::</span><span class="n">EventMonitor</span><span class="p">(</span><span class="n">QObject</span> <span class="o">*</span><span class="n">parent</span><span class="p">)</span> <span class="o">:</span> <span class="n">QThread</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="err">　</span><span class="c1">// 鼠标按下标志位，用于识别鼠标的拖拽操作</span>
+    <span class="n">isPress</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">EventMonitor</span><span class="o">::</span><span class="n">run</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 创建记录 XRecord 协议的 X 专用连接</span>
+    <span class="n">Display</span><span class="o">*</span> <span class="n">display</span> <span class="o">=</span> <span class="n">XOpenDisplay</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// 连接打开检查</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">display</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"unable to open display</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 初始化 XRecordCreateContext 所需的 XRecordClientSpec 参数</span>
+    <span class="c1">// XRecordAllClients 的意思是 "记录所有 X Client" 的事件</span>
+    <span class="n">XRecordClientSpec</span> <span class="n">clients</span> <span class="o">=</span> <span class="n">XRecordAllClients</span><span class="p">;</span>
+
+    <span class="c1">// 创建 XRecordRange 变量，XRecordRange 用于控制记录事件的范围</span>
+    <span class="n">XRecordRange</span><span class="o">*</span> <span class="n">range</span> <span class="o">=</span> <span class="n">XRecordAllocRange</span><span class="p">();</span>
+
+    <span class="c1">// 记录事件范围检查</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">range</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"unable to allocate XRecordRange</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 初始化记录事件范围，范围开头设置成 KeyPress, 范围结尾设置成 MotionNotify 后</span>
+    <span class="c1">// 事件的类型就包括 KeyPress、KeyRelase、ButtonPress、ButtonRelease、MotionNotify五种事件</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">range</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XRecordRange</span><span class="p">));</span>
+    <span class="n">range</span><span class="o">-&gt;</span><span class="n">device_events</span><span class="p">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">KeyPress</span><span class="p">;</span>
+    <span class="n">range</span><span class="o">-&gt;</span><span class="n">device_events</span><span class="p">.</span><span class="n">last</span>  <span class="o">=</span> <span class="n">MotionNotify</span><span class="p">;</span>
+
+    <span class="c1">// 根据上面的记录客户端类型和记录事件范围来创建　“记录上下文”</span>
+    <span class="c1">// 然后把 XRecordContext 传递给 XRecordEnableContext 函数来开启事件记录循环</span>
+    <span class="n">XRecordContext</span> <span class="n">context</span> <span class="o">=</span> <span class="n">XRecordCreateContext</span> <span class="p">(</span><span class="n">display</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">clients</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">range</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">context</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"XRecordCreateContext failed</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 释放 range 指针</span>
+    <span class="n">XFree</span><span class="p">(</span><span class="n">range</span><span class="p">);</span>
+
+    <span class="c1">// XSync 的作用就是把上面的 X 代码立即发给 X Server</span>
+    <span class="c1">// 这样 X Server 接受到事件以后会立即发送给 XRecord 的 Client 连接</span>
+    <span class="n">XSync</span><span class="p">(</span><span class="n">display</span><span class="p">,</span> <span class="n">True</span><span class="p">);</span>
+
+    <span class="c1">// 建立一个专门读取 XRecord 协议数据的 X 链接</span>
+    <span class="n">Display</span><span class="o">*</span> <span class="n">display_datalink</span> <span class="o">=</span> <span class="n">XOpenDisplay</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+    <span class="c1">// 连接打开检查</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">display_datalink</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"unable to open second display</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 调用 XRecordEnableContext 函数建立 XRecord 上下文</span>
+    <span class="c1">// XRecordEnableContext 函数一旦调用就开始进入堵塞时的事件循环，直到线程或所属进程结束</span>
+    <span class="c1">// X Server 事件一旦发生就传递给事件处理回调函数</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">XRecordEnableContext</span><span class="p">(</span><span class="n">display_datalink</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span>  <span class="n">callback</span><span class="p">,</span> <span class="p">(</span><span class="n">XPointer</span><span class="p">)</span> <span class="k">this</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"XRecordEnableContext() failed</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// handleRecordEvent 函数的wrapper，避免 XRecord 代码编译不过的问题</span>
+<span class="kt">void</span> <span class="n">EventMonitor</span><span class="o">::</span><span class="n">callback</span><span class="p">(</span><span class="n">XPointer</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">XRecordInterceptData</span><span class="o">*</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">((</span><span class="n">EventMonitor</span> <span class="o">*</span><span class="p">)</span> <span class="n">ptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">handleRecordEvent</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 真实处理 X 事件监听的回调函数</span>
+<span class="kt">void</span> <span class="n">EventMonitor</span><span class="o">::</span><span class="n">handleRecordEvent</span><span class="p">(</span><span class="n">XRecordInterceptData</span><span class="o">*</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="o">-&gt;</span><span class="n">category</span> <span class="o">==</span> <span class="n">XRecordFromServer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 得到 xEvent 对象</span>
+        <span class="n">xEvent</span> <span class="o">*</span> <span class="n">event</span> <span class="o">=</span> <span class="p">(</span><span class="n">xEvent</span> <span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">event</span><span class="o">-&gt;</span><span class="n">u</span><span class="p">.</span><span class="n">u</span><span class="p">.</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">ButtonPress</span><span class="p">:</span>
+            <span class="c1">// 过滤掉滚轮事件后，发送 buttonPress 信号</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">filterWheelEvent</span><span class="p">(</span><span class="n">event</span><span class="o">-&gt;</span><span class="n">u</span><span class="p">.</span><span class="n">u</span><span class="p">.</span><span class="n">detail</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">isPress</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                <span class="n">emit</span> <span class="n">buttonPress</span><span class="p">(</span>
+                    <span class="n">event</span><span class="o">-&gt;</span><span class="n">u</span><span class="p">.</span><span class="n">keyButtonPointer</span><span class="p">.</span><span class="n">rootX</span><span class="p">,</span>
+                    <span class="n">event</span><span class="o">-&gt;</span><span class="n">u</span><span class="p">.</span><span class="n">keyButtonPointer</span><span class="p">.</span><span class="n">rootY</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">MotionNotify</span><span class="p">:</span>
+            <span class="c1">// 只有在按下鼠标的时候移动，才发送 buttonDrag 信号</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">isPress</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">emit</span> <span class="n">buttonDrag</span><span class="p">(</span>
+                    <span class="n">event</span><span class="o">-&gt;</span><span class="n">u</span><span class="p">.</span><span class="n">keyButtonPointer</span><span class="p">.</span><span class="n">rootX</span><span class="p">,</span>
+                    <span class="n">event</span><span class="o">-&gt;</span><span class="n">u</span><span class="p">.</span><span class="n">keyButtonPointer</span><span class="p">.</span><span class="n">rootY</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">ButtonRelease</span><span class="p">:</span>
+            <span class="c1">// 过滤掉滚轮事件后，发送 buttonRelase 信号</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">filterWheelEvent</span><span class="p">(</span><span class="n">event</span><span class="o">-&gt;</span><span class="n">u</span><span class="p">.</span><span class="n">u</span><span class="p">.</span><span class="n">detail</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">isPress</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+                <span class="n">emit</span> <span class="n">buttonRelease</span><span class="p">(</span>
+                    <span class="n">event</span><span class="o">-&gt;</span><span class="n">u</span><span class="p">.</span><span class="n">keyButtonPointer</span><span class="p">.</span><span class="n">rootX</span><span class="p">,</span>
+                    <span class="n">event</span><span class="o">-&gt;</span><span class="n">u</span><span class="p">.</span><span class="n">keyButtonPointer</span><span class="p">.</span><span class="n">rootY</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">KeyPress</span><span class="p">:</span>
+            <span class="c1">// 发送 keyPress 信号，附带按键的 code</span>
+            <span class="n">emit</span> <span class="n">keyPress</span><span class="p">(((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)[</span><span class="mi">1</span><span class="p">]);</span>
+
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">KeyRelease</span><span class="p">:</span>
+            <span class="c1">// 发送 keyRelease 信号，附带按键的 code</span>
+            <span class="n">emit</span> <span class="n">keyRelease</span><span class="p">(((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)[</span><span class="mi">1</span><span class="p">]);</span>
+
+            <span class="k">break</span><span class="p">;</span>
+        <span class="nl">default:</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 资源释放</span>
+    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+    <span class="n">XRecordFreeData</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 过滤滚轮事件</span>
+<span class="kt">bool</span> <span class="n">EventMonitor</span><span class="o">::</span><span class="n">filterWheelEvent</span><span class="p">(</span><span class="kt">int</span> <span class="n">detail</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">detail</span> <span class="o">!=</span> <span class="n">WheelUp</span> <span class="o">&amp;&amp;</span> <span class="n">detail</span> <span class="o">!=</span> <span class="n">WheelDown</span> <span class="o">&amp;&amp;</span> <span class="n">detail</span> <span class="o">!=</span> <span class="n">WheelLeft</span> <span class="o">&amp;&amp;</span> <span class="n">detail</span> <span class="o">!=</span> <span class="n">WheelRight</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="代码下载">代码下载</h3>
+<p>可编译的代码请在 https://github.com/WHLUG/xrecord-example 下载后，执行下面的命令来测试：</p>
+<blockquote>
+  <p>mkdir build
+cd build
+qmake ..
+make
+./xrecord-example</p>
+</blockquote>
+
+<p>编译完成以后，会弹出一个Qt窗口，可以实时查看鼠标和键盘的事件信息，大家可以基于上面的代码进行改造，以融合到自己的项目中。</p>
+
+<p><img src="http://localhost:4000/pics/global-event-monitor/global-event-monitor.png" alt="全局事件监听" /></p>
+
+<p>我对开发者的学习一项新技术的建议是：</p>
+<blockquote>
+  <p>先拷贝现有代码→精简提炼出核心代码→融合到自己的项目中，先会用→用的熟练以后再研究API和每一个参数细节→最后查看底层库源代码</p>
+</blockquote>
+
+<p>只有先实践才能真正理解开源项目的原作者为什么这么写，最后才能真正吸收这些技术，做好开源贡献。</p>

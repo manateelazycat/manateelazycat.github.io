@@ -1,0 +1,15 @@
+<p>前几天写了<a href="https://manateelazycat.github.io/emacs/2020/01/06/snails-and-eaf.html">Snails PDF Backend</a>支持Snails直接搜索PDF目录快速跳转。</p>
+
+<p>今天用了同样的原理实现了Snails直接搜索浏览器历史的功能：</p>
+
+<p><img src="http://localhost:4000/pics/snails-and-eaf-browser/snails-and-eaf-browser.gif" alt="Snails and EAF Browser" /></p>
+
+<ol>
+  <li>启动Snails</li>
+  <li>搜索网址或者关键字</li>
+  <li>搜索浏览器历史并用EAF打开浏览器</li>
+</ol>
+
+<p>因为Snails用了<a href="https://github.com/rustify-emacs/fuz.el">fuz.el</a>的模糊算法，所以搜索浏览器历史的模糊算法堪比Google Chrome的搜索体验。</p>
+
+<p>Happy hacking! ;)</p>

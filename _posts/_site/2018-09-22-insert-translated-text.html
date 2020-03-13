@@ -1,0 +1,104 @@
+<p>对于我这种英语渣来说, 有时候给一个函数或者变量取一个适当的名字还是比较麻烦的, 一般都要打开 Google 翻译, 翻译一段中文, 然后拷贝到 Emacs 中做各种修改, 改成下划线或者骆驼风格的形式.</p>
+
+<p>今天给Emacs写了一个小插件 <a href="https://github.com/manateelazycat/insert-translated-name">insert-translated-name</a></p>
+
+<ol>
+  <li>执行 <code class="highlighter-rouge">Code</code>
+<code class="highlighter-rouge">insert-translated-name-insert</code>` 命令进入输入激活模式</li>
+  <li>正常输入中文</li>
+  <li>中文后输入空格自动查询翻译并替换成符合当前语言风格的变量名(或函数名)</li>
+</ol>
+
+<p><img src="http://localhost:4000/pics/insert-translated-text/insert-translated-text-1.gif" alt="insert translated name" /></p>
+
+<p>如果当前光标在注释或者字符串区域, 会自动插入英文注释:</p>
+<ol>
+  <li>执行 <code class="highlighter-rouge">insert-translated-name-insert</code> 命令进入输入激活模式</li>
+  <li>正常输入中文</li>
+  <li>中文后输入空格自动查询翻译并替换成英文注释</li>
+</ol>
+
+<p><img src="http://localhost:4000/pics/insert-translated-text/insert-translated-text-2.gif" alt="insert english comment" /></p>
+
+<p>如果你安装了 <a href="https://github.com/tumashu/pyim">pyim</a> 输入法，写英文注释的时候会自动激活切换输入法：</p>
+<ol>
+  <li>执行 <code class="highlighter-rouge">insert-translated-name-insert</code> 命令进入输入激活模式，并自动激活中文（不用手动切换中文输入法）</li>
+  <li>正常输入中文</li>
+  <li>中文后输入空格自动查询翻译并替换成英文注释（并自动切换成英文输入状态）</li>
+</ol>
+
+<p><img src="http://localhost:4000/pics/insert-translated-text/insert-translated-text-3.gif" alt="pyim" /></p>
+
+<h3 id="安装">安装</h3>
+
+<ol>
+  <li>下载 <a href="https://github.com/manateelazycat/insert-translated-name">insert-translated-name</a> 里面的 insert-translated-name.el 放到 ~/elisp 目录</li>
+  <li>把下面的配置加入到 ~/.emacs 中</li>
+</ol>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'load-path</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">"~/elisp"</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'insert-translated-name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="使用">使用</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">命令</th>
+      <th style="text-align: left">描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">insert-translated-name-insert</td>
+      <td style="text-align: left">按照当前语言风格自动插入翻译后的名字</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">insert-translated-name-insert-with-underline</td>
+      <td style="text-align: left">按照下划线风格自动插入翻译后的名字</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">insert-translated-name-insert-with-camel</td>
+      <td style="text-align: left">按照骆驼风格自动插入翻译后的名字</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">insert-translated-name-insert-with-line</td>
+      <td style="text-align: left">按照连接线风格自动插入翻译后的名字</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">insert-translated-name-replace</td>
+      <td style="text-align: left">按照当前语言风格自动替换中文为翻译后的名字</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">insert-translated-name-replace-with-underline</td>
+      <td style="text-align: left">按照下划线风格自动替换中文为翻译后的名字</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">insert-translated-name-replace-with-camel</td>
+      <td style="text-align: left">按照骆驼风格自动替换中文为翻译后的名字</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">insert-translated-name-replace-with-line</td>
+      <td style="text-align: left">按照连接线风格自动替换中文为翻译后的名字</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>下面是各种语言预定的风格, 如果你不喜欢默认风格, 可以定制以下变量的内容:</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">defvar</span> <span class="nv">insert-translated-name-line-style-mode-list</span>
+  <span class="o">'</span><span class="p">(</span><span class="nv">web-mode</span> <span class="nv">emacs-lisp-mode</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">defvar</span> <span class="nv">insert-translated-name-camel-style-mode-list</span>
+  <span class="o">'</span><span class="p">(</span><span class="nv">js-mode</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">defvar</span> <span class="nv">insert-translated-name-underline-style-mode-list</span>
+  <span class="o">'</span><span class="p">(</span><span class="nv">ruby-mode</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="自定义">自定义</h3>
+<p>默认使用 google.cn 翻译(不需要梯子), 如果你更喜欢有道, 修改 <code class="highlighter-rouge">insert-translated-name-translate-engine</code> 的值为 “youdao” 即可.
+Google 的长句翻译更加准确一点.</p>
+
+<p>自己拯救自己的英语, 哒哒.</p>

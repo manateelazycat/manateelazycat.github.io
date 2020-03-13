@@ -1,0 +1,62 @@
+<h3 id="访问错误">访问错误</h3>
+<p>今天代理访问网站的时候，发现访问Google时返回错误:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>Warning] failed to handler mux client connection <span class="o">&gt;</span>
+v2ray.com/core/proxy/vmess/outbound: failed to find an available destination <span class="o">&gt;</span>
+v2ray.com/core/common/retry: <span class="o">[</span>dial tcp ip:port: connect: connection refused] <span class="o">&gt;</span>
+v2ray.com/core/common/retry: all retry attempts failed
+</code></pre></div></div>
+
+<p>查了很多资料，应该是长期使用一个端口号，被GFW识别了，把服务器和客户端的 <code class="highlighter-rouge">port</code> 字段替换一个新的端口号后，问题解决。</p>
+
+<h3 id="动态端口">动态端口</h3>
+<p>为了避免新的端口号再次被识别，配置了一下v2ray的动态端口功能:</p>
+
+<p class="line-quote">服务器 inbound 的端口作为主端口，在 inboundDetour 开动态监听的端口，客户端不用额外设定，客户端会先与服务器的主端口通信协商下一个使用的端口号。</p>
+
+<p>需要在服务端编辑 /etc/v2ray/config.json 文件:</p>
+
+<ul>
+  <li>在 inbounds/settings 节点下增加 <code class="highlighter-rouge">detour</code> 动态端口的设置</li>
+  <li>在 inbounds 节点下增加动态端口的详细配置</li>
+</ul>
+
+<p>详细可参考一下我的服务端配置文件</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"inbounds"</span><span class="p">:[</span><span class="w">
+  </span><span class="p">{</span><span class="w"> </span><span class="err">//主端口配置</span><span class="w">
+      </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">37192</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vmess"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"clients"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d17a1af7-efa5-42ca-b7e9-6a35282d737f"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"alterId"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"detour"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//绕行配置，即指示客户端使用</span><span class="w"> </span><span class="err">dynamicPort</span><span class="w"> </span><span class="err">的配置通信</span><span class="w">
+          </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dynamicPort"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vmess"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000-20000"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">端口范围</span><span class="w">
+      </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dynamicPort"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">与上面的</span><span class="w"> </span><span class="err">detour</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">相同</span><span class="w">
+      </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"alterId"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"allocate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">            </span><span class="err">//</span><span class="w"> </span><span class="err">分配模式</span><span class="w">
+        </span><span class="nl">"strategy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"random"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">随机开启</span><span class="w">
+        </span><span class="nl">"concurrency"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">同时开放两个端口</span><span class="p">,</span><span class="err">这个值最大不能超过端口范围的</span><span class="w"> </span><span class="mi">1</span><span class="err">/</span><span class="mi">3</span><span class="w">
+        </span><span class="nl">"refresh"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">           </span><span class="err">//</span><span class="w"> </span><span class="err">每三分钟刷新一次</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>GFW越来越厉害了，看来有时间要研究新的对抗方式，没有Google太难受了。</p>
