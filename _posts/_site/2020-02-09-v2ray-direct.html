@@ -1,0 +1,185 @@
+<h3 id="tcp阻断">TCP阻断</h3>
+<p>因为EAF浏览器设置QNetProxy代理后，默认所有网站请求都是通过v2ray代理来连接的。</p>
+
+<p>最近v2ray的TCP连接经常被Qiang阻断，直接导致EAF的浏览器所有页面的打不开。
+即使bing.com这种可以直接连接的网站临时搜索点东西都不行，因为v2ray的连接被掐断了。</p>
+
+<h3 id="v2ray路由规则">V2ray路由规则</h3>
+<p>本来准备给EAF浏览器写一个PAC动态代理的功能，但是折腾半天太复杂准备放弃的时候，看到了v2ray手册的路由功能。</p>
+
+<p>v2ray客户端的路由规则匹配下面的原则:</p>
+
+<ol>
+  <li>默认代理规则(VMess): {浏览器} &lt;–(socks)–&gt; {V2Ray 客户端 inbound &lt;-&gt; V2Ray 客户端 outbound} &lt;–(VMess)–&gt;  {V2Ray 服务器 inbound &lt;-&gt; V2Ray 服务器 outbound} &lt;–(Freedom)–&gt; {目标网站}</li>
+  <li>例外的直连规则(freedom): {浏览器} &lt;–(socks)–&gt; {V2Ray 客户端 inbound &lt;-&gt; V2Ray 客户端 outbound} &lt;–(Freedom)–&gt; {目标网站}</li>
+</ol>
+
+<h3 id="直接连接白名单规则">直接连接白名单规则</h3>
+<p>在客户端默认配置文件 vpoint_socks_vmess.json 中, outbound的默认走的是VMess代理协议，其实我们只用在配置文件的 routing/settings/rules节点下加入一段下面的JSON配置即可增加一些直接访问网站的白名单，比如 bing.com:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"domain:bing.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"domain:163.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"domain:163yun.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"domain:126.net"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"domain:jd.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"domain:youku.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"domain:baidu.com"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"outboundTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>这样即使v2ray的代理流量被Qiang阻断了TCP连接，白名单的网站因为是直接访问而没有经过v2ray的代理VPS服务器，所以还是可以临时用一下的。</p>
+
+<h3 id="强制代理白名单规则">强制代理白名单规则</h3>
+<p>当然，如果你要手动添加一个网站来强制代理的话，可以在 routing/settings/rules 节点下，在列表第一个位置插入以下配置：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"domain:github.com"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"outboundTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proxy"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>注意，因为 <code class="highlighter-rouge">outboundTag</code> 使用的是 <code class="highlighter-rouge">proxy</code>, 所以要给 <code class="highlighter-rouge">outbound</code> 默认的vmess协议增加 <code class="highlighter-rouge">"tag": "proxy",</code> 字段，这样github.com这个网站就可以强制走代理了。</p>
+
+<h3 id="客户端配置文件参考">客户端配置文件参考</h3>
+
+<p>下面是我的v2ray配置文件参考，服务器的IP地址，端口号以及Id值需要换成你自己v2ray服务端的配置。</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"log"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"loglevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"warning"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"inbound"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">1080</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"listen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"socks"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"noauth"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"udp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"outbound"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vmess"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"vnext"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your_v2ray_vps_ip"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="err">your_v</span><span class="mi">2</span><span class="err">ray_vps_port</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your_v2ray_vps_id"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"alterId"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"security"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proxy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mux"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"outboundDetour"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"freedom"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"dns"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"servers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"8.8.8.8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"8.8.4.4"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"localhost"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"routing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"strategy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rules"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"domainStrategy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IPIfNonMatch"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"domain:github.com"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"outboundTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proxy"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-52"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"outboundTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54-79"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"outboundTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"81-442"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"outboundTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"444-65535"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"outboundTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chinasites"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"outboundTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"0.0.0.0/8"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"10.0.0.0/8"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"100.64.0.0/10"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"127.0.0.0/8"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"169.254.0.0/16"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"172.16.0.0/12"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"192.0.0.0/24"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"192.0.2.0/24"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"192.168.0.0/16"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"198.18.0.0/15"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"198.51.100.0/24"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"203.0.113.0/24"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"::1/128"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"fc00::/7"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"fe80::/10"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"outboundTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chinaip"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"outboundTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"domain:bing.com"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"domain:163.com"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"domain:163yun.com"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"domain:126.net"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"domain:jd.com"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"domain:youku.com"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"domain:baidu.com"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"outboundTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>通过v2ray客户端的路由功能，变相的实现类似Chrome SwitchyOmeg插件的路由功能，这些就不用写复杂的Qt QNetworkProxy代码了，又可以偷懒了，哈哈哈哈。</p>

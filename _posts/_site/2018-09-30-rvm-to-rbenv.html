@@ -1,0 +1,57 @@
+<p>最近一直被同事们取笑为什么要用 rvm ? 而不是 rbenv ?</p>
+
+<p>因为很多Rails项目会限制 ruby 和 gem bundle 的版本, 在系统中存在多个 ruby 版本时, rails 项目执行 bundle install 命令会产生很多因为 C API 和 gem bundle 不兼容的问题, 比如 Rails 项目需要 ruby-2.3.7 的版本, rvm 则会返回 2.5.1 版本的 gem 路径.</p>
+
+<p>以下是从 rvm 切换到 rbenv 的方式:</p>
+
+<h4 id="1-清理-rvm">1. 清理 rvm</h4>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rvm implode
+<span class="nv">$ </span><span class="nb">sudo rm</span> <span class="nt">-rf</span> ~/.rvm
+</code></pre></div></div>
+<p>然后把 .bashrc/.zshrc 里面的 rvm PATH 都删除了</p>
+
+<h4 id="2-安装-rbenv">2. 安装 rbenv</h4>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew doctor
+<span class="nv">$ </span>brew update
+<span class="nv">$ </span>brew <span class="nb">install </span>rbenv
+<span class="nv">$ </span>brew <span class="nb">install </span>ruby-build
+</code></pre></div></div>
+
+<h4 id="3-设置-rbenv-的path环境变量">3. 设置 rbenv 的PATH环境变量</h4>
+<p>把下面代码加入你的 .bashrc 或者 .zshrc 中, 重启终端</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/Users/andy/.rbenv/shims:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>rbenv init -<span class="si">)</span><span class="s2">"</span>
+</code></pre></div></div>
+<p>注意 /Users/andy/.rbenv/shims 换成你用户目录下的 rbenv bin 路径.</p>
+
+<p>最开始写的是 /Users/andy/.rbenv/bin , 最后发现 rbenv 装在 Mac 上以后, bin 目录居然叫 shims 而不是 bin, 坑死我啦.</p>
+
+<h4 id="4-使用中国镜像源">4. 使用中国镜像源</h4>
+<p>用下面命令来使用 ruby-china.com 作为更新源, 加速更新速度:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/andorchen/rbenv-china-mirror.git <span class="s2">"</span><span class="si">$(</span>rbenv root<span class="si">)</span><span class="s2">"</span>/plugins/rbenv-china-mirror
+</code></pre></div></div>
+
+<h4 id="5-安装-ruby">5. 安装 ruby</h4>
+<p>开发用的是 2.3.7 版本, 你可以安装你喜欢的ruby版本:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rbenv <span class="nb">install</span> <span class="nt">-l</span>
+rbenv <span class="nb">install </span>2.3.7
+rbenv global 2.3.7
+</code></pre></div></div>
+
+<h4 id="6-安装-bundler">6. 安装 bundler</h4>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"gem: --no-document"</span> <span class="o">&gt;</span> ~/.gemrc
+gem <span class="nb">install </span>bundler
+</code></pre></div></div>
+
+<h4 id="7-确认安装目录">7. 确认安装目录</h4>
+<p>安装完成后 gem 和 bundle 的路径一定要确认一下, 要不会发生 gem 安装在用户目录成功, bundle 却调用的是系统目录下的 gem 路径.</p>
+
+<p>使用 gem env home 来确认 gem 安装目录, 一般都是在 ~/.rbenv 下, 我的输出为:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Users/andy/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0
+</code></pre></div></div>
+
+<p>使用 which bundle 确认 bundle 文件的路径, 我的输出为</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Users/andy/.rbenv/shims/gem
+</code></pre></div></div>

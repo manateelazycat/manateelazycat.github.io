@@ -1,0 +1,419 @@
+<h1 id="为什么要重新造一个listview控件">为什么要重新造一个ListView控件？</h1>
+<p>在开发应用程序的过程中，经常会使用到列表来展现内容（比如音乐播放器的播放列表和系统监视器的进程列表），而制作列表内容不能像传统的VBoxLayout来添加子控件，因为每个子控件都代表一个 XWindow， 当成百上千的子控件堆砌在一起的时候就会造成巨大的性能瓶颈。</p>
+
+<p>开发了很多Gtk+和Qt的程序，对于Gtk+和Qt内置的ListView的控件易用性非常不满意，因为当开发者初次学习这些控件时，会被Gtk+/Qt的MVC模型和各种API绕晕，不是说MVC的模型不容易理解，而是在理解MVC模型后，要通过查看API就可以快速开发出符合产品要求的ListView非常非常的困难，经常要看现有的例子，然后把所有接口的细节都小心翼翼的组装才能正常工作，因为Gtk+/Qt的ListView的API设计的非常复杂，如果每一行还是复杂的自定义渲染内容时，实现会更加复杂难懂。</p>
+
+<p>所以，我在写深度系统监视器的时候，大部分的工作都在创造 DTK Simple ListView, 希望ListView在设计上不但要满足极高的渲染性能，还要能够绘制各种复杂的自绘内容，最后要求创造控件的开发难度降到最低，做到一看就懂，一通百通。</p>
+
+<h1 id="dtk-simple-listview-设计理念">DTK Simple ListView 设计理念</h1>
+<p>DTK Simple ListView的设计理念是，MV模型：</p>
+<ul>
+  <li>DSimpleListView 提供列表行高度和列宽度的控制、列表滚动位置和选择状态的维护和传递 QPainter 给 DSimpleListItem, DSimpleListView 本身不进行任何行内容的绘制，它只是把所有 DSimpleListItem 绘制的内容整合在一起进行管理</li>
+  <li>DSimpleListItem 得到 DSimpleListView 传递过来的 QPainter、列信息、表格矩形数据后，由开发者完全控制行内容的绘制</li>
+</ul>
+
+<p>这样设计的好处是，开发者只要懂得怎么使用 QPainter 进行图形绘制，开发者就可以在 DSimpleListItem 中绘制任意行内容，包括文本、图片、任意控件甚至每行都可以画一个小电影，而代码的复杂度不会随着绘制行内容而发生变化，所有的行内容都源于怎么使用 QPainter。</p>
+
+<p>一旦理解了DSimpleListView/DSimpleItem的设计理念，看了两个小例子，任何复杂的产品列表需求都可以快速满足。</p>
+
+<h1 id="安装开发版本-dtk">安装开发版本 DTK</h1>
+<p>在讲解代码用例之前，需要先安装 DTK 开发版本，Deepin用户可以直接从 <a href="https://ci.deepin.io/job/dtkwidget-ci/">DTK Deb包</a> 下载 libdtkwidget-dev_.deb 和 libdtkwidget2_.deb 两个包。</p>
+
+<p>其他Linux发行版的开发者需要自行从源码进行编译: <a href="https://github.com/linuxdeepin/dtkwidget/blob/master/README.md">DTK源码编译手册</a></p>
+
+<h1 id="dtk-simple-listview-用例讲解">DTK Simple ListView 用例讲解</h1>
+<h3 id="单列列表">单列列表</h3>
+<p>入门例子：做一个最简单的例子，显示只有一列的文本。</p>
+
+<p>首先，得基于 DSimpleListView/DSimpleListItem 创建两个子类， ListView很简单，直接继承 DSimpleListView 就可以了， ListItem 只要实现三个非常简单的接口函数 (sameAs, drawBackground, drawForeground)即可:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// singlelistview.h</span>
+<span class="cp">#ifndef SINGLELISTVIEW_H
+#define SINGLELISTVIEW_H
+</span>
+<span class="cp">#include &lt;DSimpleListView&gt;
+</span>
+<span class="n">DWIDGET_USE_NAMESPACE</span>  <span class="c1">// 这句话主要强调使用 dtkwidget 的命名空间，以使用其控件</span>
+
+<span class="k">class</span> <span class="nc">SingleListView</span> <span class="o">:</span> <span class="k">public</span> <span class="n">DSimpleListView</span>
+<span class="p">{</span>
+    <span class="n">Q_OBJECT</span>
+
+<span class="nl">public:</span>
+    <span class="n">SingleListView</span><span class="p">(</span><span class="n">DSimpleListView</span> <span class="o">*</span><span class="n">parent</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="cp">#endif
+</span>
+<span class="c1">// singlelistitem.h</span>
+<span class="cp">#ifndef SINGLELISTITEM_H
+#define SINGLELISTITEM_H
+</span>
+<span class="cp">#include &lt;DSimpleListItem&gt;
+</span>
+<span class="n">DWIDGET_USE_NAMESPACE</span>
+
+<span class="k">class</span> <span class="nc">SingleListItem</span> <span class="o">:</span> <span class="k">public</span> <span class="n">DSimpleListItem</span>
+<span class="p">{</span>
+    <span class="n">Q_OBJECT</span>
+
+<span class="nl">public:</span>
+    <span class="n">SingleListItem</span><span class="p">(</span><span class="n">QString</span> <span class="n">itemName</span><span class="p">);</span>
+
+    <span class="c1">// DSimpleListItem 接口函数，用于区分两个Item是否是同一个Item?</span>
+    <span class="kt">bool</span> <span class="n">sameAs</span><span class="p">(</span><span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item</span><span class="p">);</span>
+
+    <span class="c1">// 绘制Item背景的接口函数，参数依次为表格矩形、绘制QPainter对象、行索引、当前行是否选中？</span>
+    <span class="kt">void</span> <span class="n">drawBackground</span><span class="p">(</span><span class="n">QRect</span> <span class="n">rect</span><span class="p">,</span> <span class="n">QPainter</span> <span class="o">*</span><span class="n">painter</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isSelect</span><span class="p">);</span>
+
+    <span class="c1">// 绘制Item前景的接口函数，参数依次为表格矩形、绘制QPainter对象、行索引、当前行是否选中？</span>
+    <span class="kt">void</span> <span class="n">drawForeground</span><span class="p">(</span><span class="n">QRect</span> <span class="n">rect</span><span class="p">,</span> <span class="n">QPainter</span> <span class="o">*</span><span class="n">painter</span><span class="p">,</span> <span class="kt">int</span> <span class="n">column</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isSelect</span><span class="p">);</span>
+
+    <span class="c1">// 名字属性，这里用于绘制文本列的内容</span>
+    <span class="n">QString</span> <span class="n">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cp">#endif
+</span></code></pre></div></div>
+
+<p>其次，实现 singlelistview.cpp, 看看超级简单吧？ 只需根据 QString 创建一个 DSimpleListItem ，然后通过函数添加Item到ListView即可:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// singlelistview.cpp</span>
+<span class="cp">#include "singlelistview.h"
+#include "singlelistitem.h"
+</span>
+<span class="n">DWIDGET_USE_NAMESPACE</span>
+
+<span class="n">SingleListView</span><span class="o">::</span><span class="n">SingleListView</span><span class="p">(</span><span class="n">DSimpleListView</span> <span class="o">*</span><span class="n">parent</span><span class="p">)</span> <span class="o">:</span> <span class="n">DSimpleListView</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">QStringList</span> <span class="n">rockStars</span><span class="p">;</span>
+    <span class="n">rockStars</span> <span class="o">&lt;&lt;</span> <span class="s">"Bob Dylan"</span> <span class="o">&lt;&lt;</span> <span class="s">"Neil Young"</span> <span class="o">&lt;&lt;</span> <span class="s">"Eric Clapton"</span> <span class="o">&lt;&lt;</span> <span class="s">"John Lennon"</span><span class="p">;</span>
+
+    <span class="n">QList</span><span class="o">&lt;</span><span class="n">DSimpleListItem</span><span class="o">*&gt;</span> <span class="n">items</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">rockStarName</span> <span class="o">:</span> <span class="n">rockStars</span><span class="p">){</span>
+        <span class="n">SingleListItem</span> <span class="o">*</span><span class="n">item</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SingleListItem</span><span class="p">(</span><span class="n">rockStarName</span><span class="p">);</span>
+        <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">addItems</span><span class="p">(</span><span class="n">items</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>DTK Simple ListView 设计理念是，开发者只需要把所有精力专注于 DSimpleListItem 的接口函数上，就可以实现任意复杂的界面效果， DSimpleListView 不用过多关心，开发者的附加门槛非常非常低。</p>
+
+<p>下面我们就看一下实现上图中的单列列表的 DSimpleListItem 的实现细节：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// singlelistitem.cpp</span>
+<span class="cp">#include "singlelistitem.h"
+#include &lt;QColor&gt;
+</span>
+<span class="n">DWIDGET_USE_NAMESPACE</span>
+
+<span class="n">SingleListItem</span><span class="o">::</span><span class="n">SingleListItem</span><span class="p">(</span><span class="n">QString</span> <span class="n">itemName</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 初始化文本属性</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">itemName</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">SingleListItem</span><span class="o">::</span><span class="n">sameAs</span><span class="p">(</span><span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 根据两个Item的属性来判断两个Item是否是相同的？</span>
+    <span class="c1">// DSimpleListView 内部都是按照 DSimpleListItem 类型来处理的，sameAS 中需要用 static_cast 进行一下类型转换</span>
+    <span class="k">return</span> <span class="n">name</span> <span class="o">==</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">SingleListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SingleListItem</span><span class="o">::</span><span class="n">drawBackground</span><span class="p">(</span><span class="n">QRect</span> <span class="n">rect</span><span class="p">,</span> <span class="n">QPainter</span> <span class="o">*</span><span class="n">painter</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isSelect</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 初始化绘制背景所需的行矩形对象</span>
+    <span class="n">QPainterPath</span> <span class="n">path</span><span class="p">;</span>
+    <span class="n">path</span><span class="p">.</span><span class="n">addRect</span><span class="p">(</span><span class="n">QRectF</span><span class="p">(</span><span class="n">rect</span><span class="p">));</span>
+
+    <span class="c1">// 当行选中时绘制蓝色背景，没有选中时绘制灰色背景</span>
+    <span class="n">painter</span><span class="o">-&gt;</span><span class="n">setOpacity</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isSelect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">painter</span><span class="o">-&gt;</span><span class="n">fillPath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">QColor</span><span class="p">(</span><span class="s">"#2CA7F8"</span><span class="p">));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">painter</span><span class="o">-&gt;</span><span class="n">fillPath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">QColor</span><span class="p">(</span><span class="s">"#D8D8D8"</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SingleListItem</span><span class="o">::</span><span class="n">drawForeground</span><span class="p">(</span><span class="n">QRect</span> <span class="n">rect</span><span class="p">,</span> <span class="n">QPainter</span> <span class="o">*</span><span class="n">painter</span><span class="p">,</span> <span class="kt">int</span> <span class="n">column</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isSelect</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 当行选中时使用白色文字，没有选中时使用黑色文字</span>
+    <span class="n">painter</span><span class="o">-&gt;</span><span class="n">setOpacity</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isSelect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">painter</span><span class="o">-&gt;</span><span class="n">setPen</span><span class="p">(</span><span class="n">QPen</span><span class="p">(</span><span class="n">QColor</span><span class="p">(</span><span class="s">"#FFFFFF"</span><span class="p">)));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">painter</span><span class="o">-&gt;</span><span class="n">setPen</span><span class="p">(</span><span class="n">QPen</span><span class="p">(</span><span class="n">QColor</span><span class="p">(</span><span class="s">"#000000"</span><span class="p">)));</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 绘制文字，左对齐，纵向居中对齐，文字左边留10像素的空白</span>
+    <span class="kt">int</span> <span class="n">padding</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">painter</span><span class="o">-&gt;</span><span class="n">drawText</span><span class="p">(</span><span class="n">QRect</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> <span class="n">padding</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">y</span><span class="p">(),</span> <span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">()</span> <span class="o">-</span> <span class="n">padding</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">()),</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignLeft</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignVCenter</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+<p>是不是非常非常的简单？ 最终效果图如下：
+<img src="http://localhost:4000/pics/dtk/dtk-1.gif" alt="单列列表" /></p>
+
+<h3 id="多列列表">多列列表</h3>
+<p>多列列表的原理也非常简单，直接看代码：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// multilistview.cpp</span>
+<span class="cp">#include "multilistview.h"
+#include "multilistitem.h"
+</span>
+<span class="n">DWIDGET_USE_NAMESPACE</span>
+
+<span class="n">MultiListView</span><span class="o">::</span><span class="n">MultiListView</span><span class="p">(</span><span class="n">DSimpleListView</span> <span class="o">*</span><span class="n">parent</span><span class="p">)</span> <span class="o">:</span> <span class="n">DSimpleListView</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">QList</span><span class="o">&lt;</span><span class="n">DSimpleListItem</span><span class="o">*&gt;</span> <span class="n">items</span><span class="p">;</span>
+    <span class="n">MultiListItem</span> <span class="o">*</span><span class="n">item1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MultiListItem</span><span class="p">(</span><span class="s">"Bob Dylan"</span><span class="p">,</span> <span class="s">"Like A Rolling Stone"</span><span class="p">,</span> <span class="s">"5:56"</span><span class="p">);</span>
+    <span class="n">MultiListItem</span> <span class="o">*</span><span class="n">item2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MultiListItem</span><span class="p">(</span><span class="s">"Neil Young"</span><span class="p">,</span> <span class="s">"Old Man"</span><span class="p">,</span> <span class="s">"4:08"</span><span class="p">);</span>
+    <span class="n">MultiListItem</span> <span class="o">*</span><span class="n">item3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MultiListItem</span><span class="p">(</span><span class="s">"Eric Clapton"</span><span class="p">,</span> <span class="s">"Tears In Heaven"</span><span class="p">,</span> <span class="s">"4:34"</span><span class="p">);</span>
+    <span class="n">MultiListItem</span> <span class="o">*</span><span class="n">item4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MultiListItem</span><span class="p">(</span><span class="s">"John Lennon"</span><span class="p">,</span> <span class="s">"Imagine"</span><span class="p">,</span> <span class="s">"3:56"</span><span class="p">);</span>
+
+    <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item1</span><span class="p">;</span>
+    <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item2</span><span class="p">;</span>
+    <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item3</span><span class="p">;</span>
+    <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">item4</span><span class="p">;</span>
+
+    <span class="c1">// 初始化标题列的名字</span>
+    <span class="n">QList</span><span class="o">&lt;</span><span class="n">QString</span><span class="o">&gt;</span> <span class="n">titles</span><span class="p">;</span>
+    <span class="n">titles</span> <span class="o">&lt;&lt;</span> <span class="s">"Artist"</span> <span class="o">&lt;&lt;</span> <span class="s">"Song"</span> <span class="o">&lt;&lt;</span> <span class="s">"Length"</span><span class="p">;</span>
+
+    <span class="c1">// 初始化每一列的宽度，-1表示当前列自动撑开，其他数字表示固定像素值，一个列表只允许有一个自动撑开的列</span>
+    <span class="n">QList</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">widths</span><span class="p">;</span>
+    <span class="n">widths</span> <span class="o">&lt;&lt;</span> <span class="mi">100</span> <span class="o">&lt;&lt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span><span class="p">;</span>
+
+    <span class="c1">// 设置列表的标题、宽度和标题栏的高度</span>
+    <span class="n">setColumnTitleInfo</span><span class="p">(</span><span class="n">titles</span><span class="p">,</span> <span class="n">widths</span><span class="p">,</span> <span class="mi">36</span><span class="p">);</span>
+
+    <span class="n">addItems</span><span class="p">(</span><span class="n">items</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>多列的 ListView 也非常简单，唯一多了 setColumnTitleInfo 函数，因为列表有多个列，需要告诉 DSimpleListView 每一列的标题、宽度和最终标题栏的高度，如果不想显示标题栏，可以把标题栏的高度设置0像素即可。</p>
+
+<p>multilistviewitem.cpp 的实现非常类似单列列表的Item实现:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// multilistitem.cpp</span>
+<span class="cp">#include "multilistitem.h"
+#include &lt;QColor&gt;
+</span>
+<span class="n">DWIDGET_USE_NAMESPACE</span>
+
+<span class="n">MultiListItem</span><span class="o">::</span><span class="n">MultiListItem</span><span class="p">(</span><span class="n">QString</span> <span class="n">artistName</span><span class="p">,</span> <span class="n">QString</span> <span class="n">songName</span><span class="p">,</span> <span class="n">QString</span> <span class="n">songLength</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">artist</span> <span class="o">=</span> <span class="n">artistName</span><span class="p">;</span>
+    <span class="n">song</span> <span class="o">=</span> <span class="n">songName</span><span class="p">;</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">songLength</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">MultiListItem</span><span class="o">::</span><span class="n">sameAs</span><span class="p">(</span><span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">artist</span> <span class="o">==</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">MultiListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">artist</span> <span class="o">&amp;&amp;</span> <span class="n">song</span> <span class="o">==</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">MultiListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">song</span> <span class="o">&amp;&amp;</span> <span class="n">length</span> <span class="o">==</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">MultiListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">length</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">MultiListItem</span><span class="o">::</span><span class="n">drawBackground</span><span class="p">(</span><span class="n">QRect</span> <span class="n">rect</span><span class="p">,</span> <span class="n">QPainter</span> <span class="o">*</span><span class="n">painter</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isSelect</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">QPainterPath</span> <span class="n">path</span><span class="p">;</span>
+    <span class="n">path</span><span class="p">.</span><span class="n">addRect</span><span class="p">(</span><span class="n">QRectF</span><span class="p">(</span><span class="n">rect</span><span class="p">));</span>
+
+    <span class="n">painter</span><span class="o">-&gt;</span><span class="n">setOpacity</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isSelect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">painter</span><span class="o">-&gt;</span><span class="n">fillPath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">QColor</span><span class="p">(</span><span class="s">"#2CA7F8"</span><span class="p">));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">painter</span><span class="o">-&gt;</span><span class="n">fillPath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">QColor</span><span class="p">(</span><span class="s">"#D8D8D8"</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">MultiListItem</span><span class="o">::</span><span class="n">drawForeground</span><span class="p">(</span><span class="n">QRect</span> <span class="n">rect</span><span class="p">,</span> <span class="n">QPainter</span> <span class="o">*</span><span class="n">painter</span><span class="p">,</span> <span class="kt">int</span> <span class="n">column</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isSelect</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">padding</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">painter</span><span class="o">-&gt;</span><span class="n">setOpacity</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">isSelect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">painter</span><span class="o">-&gt;</span><span class="n">setPen</span><span class="p">(</span><span class="n">QPen</span><span class="p">(</span><span class="n">QColor</span><span class="p">(</span><span class="s">"#FFFFFF"</span><span class="p">)));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">painter</span><span class="o">-&gt;</span><span class="n">setPen</span><span class="p">(</span><span class="n">QPen</span><span class="p">(</span><span class="n">QColor</span><span class="p">(</span><span class="s">"#000000"</span><span class="p">)));</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">column</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">painter</span><span class="o">-&gt;</span><span class="n">drawText</span><span class="p">(</span><span class="n">QRect</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> <span class="n">padding</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">y</span><span class="p">(),</span> <span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">()</span> <span class="o">-</span> <span class="n">padding</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">()),</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignLeft</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignVCenter</span><span class="p">,</span> <span class="n">artist</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">column</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">painter</span><span class="o">-&gt;</span><span class="n">drawText</span><span class="p">(</span><span class="n">QRect</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> <span class="n">padding</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">y</span><span class="p">(),</span> <span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">()</span> <span class="o">-</span> <span class="n">padding</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">()),</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignLeft</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignVCenter</span><span class="p">,</span> <span class="n">song</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">column</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">painter</span><span class="o">-&gt;</span><span class="n">drawText</span><span class="p">(</span><span class="n">QRect</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> <span class="n">padding</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">y</span><span class="p">(),</span> <span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">()</span> <span class="o">-</span> <span class="n">padding</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">()),</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignRight</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignVCenter</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>唯一的变化，就是 drawForeground 的时候，利用了 column 参数，根据不同的列索引，绘制不同的列文字，最终的效果图如下：
+<img src="http://localhost:4000/pics/dtk/dtk-2.gif" alt="多列列表" /></p>
+
+<p>是不是很简单？
+更复杂的自绘内容，只需使用 QPainter 进行不同的内容绘制即可，代码复杂度不会增加，原理都一样：</p>
+<ul>
+  <li>绘制图标时，把 painter-&gt;drawText 替换成 painter-&gt;drawPixmap</li>
+  <li>绘制进度条时，把 painter-&gt;drawText 替换成 painter-&gt;drawRect</li>
+  <li>…</li>
+</ul>
+
+<h3 id="设置边框和圆角">设置边框和圆角</h3>
+<p>有时候设计师更青睐对列表有一个圆角的边线，以更加优雅的显示界面细节, 直接在DSimpleListView子类中调用下面两行代码即可实现：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// 设置为true时绘制边框</span>
+    <span class="n">setFrame</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+    <span class="c1">// 设置边框的圆角是 8像素</span>
+    <span class="n">setClipRadius</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+</code></pre></div></div>
+<p>如果要控制边线的颜色和边线透明度，也非常简单：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">setFrame</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="n">QColor</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="http://localhost:4000/pics/dtk/dtk-3.png" alt="圆角边框效果" /></p>
+
+<h3 id="弹出右键菜单">弹出右键菜单</h3>
+<p>当用户在列表中右键时往往希望弹出右键菜单，连接信号 rightClickItems 即可。</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">rightClickItems</span><span class="p">(</span><span class="n">QPoint</span> <span class="n">pos</span><span class="p">,</span> <span class="n">QList</span><span class="o">&lt;</span><span class="n">DSimpleListItem</span><span class="o">*&gt;</span> <span class="n">items</span><span class="p">);</span>
+</code></pre></div></div>
+<ul>
+  <li>参数 pos 表示用户右键点击的位置</li>
+  <li>参数 items 表示所有选中的 items</li>
+</ul>
+
+<p>以上面的多列列表为例，右键菜单响应的实例代码如下：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 在 multilistview.h 中声明 popupMenu slots 用于处理 rightClickItems 信号</span>
+<span class="k">public</span> <span class="n">slots</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="nf">popupMenu</span><span class="p">(</span><span class="n">QPoint</span> <span class="n">pos</span><span class="p">,</span> <span class="n">QList</span><span class="o">&lt;</span><span class="n">DSimpleListItem</span><span class="o">*&gt;</span> <span class="n">items</span><span class="p">);</span>
+
+<span class="p">...</span>
+
+<span class="c1">// 连接信号 rightClickItems 到 popupMenu 槽</span>
+<span class="n">connect</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">MultiListView</span><span class="o">::</span><span class="n">rightClickItems</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">MultiListView</span><span class="o">::</span><span class="n">popupMenu</span><span class="p">,</span> <span class="n">Qt</span><span class="o">::</span><span class="n">QueuedConnection</span><span class="p">);</span>
+
+<span class="p">...</span>
+
+<span class="kt">void</span> <span class="n">MultiListView</span><span class="o">::</span><span class="n">popupMenu</span><span class="p">(</span><span class="n">QPoint</span> <span class="n">pos</span><span class="p">,</span> <span class="n">QList</span><span class="o">&lt;</span><span class="n">DSimpleListItem</span><span class="o">*&gt;</span> <span class="n">items</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 构建菜单，为了便于演示，只取选中的第一个 item，用于菜单内容展示</span>
+    <span class="n">QMenu</span> <span class="o">*</span><span class="n">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QMenu</span><span class="p">();</span>
+    <span class="n">MultiListItem</span> <span class="o">*</span><span class="n">item</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">MultiListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="n">QAction</span> <span class="o">*</span><span class="n">artistAction</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QAction</span><span class="p">(</span><span class="n">item</span><span class="o">-&gt;</span><span class="n">artist</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+    <span class="n">QAction</span> <span class="o">*</span><span class="n">songAction</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QAction</span><span class="p">(</span><span class="n">item</span><span class="o">-&gt;</span><span class="n">song</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+    <span class="n">QAction</span> <span class="o">*</span><span class="n">lengthAction</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QAction</span><span class="p">(</span><span class="n">item</span><span class="o">-&gt;</span><span class="n">length</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+
+    <span class="n">menu</span><span class="o">-&gt;</span><span class="n">addAction</span><span class="p">(</span><span class="n">artistAction</span><span class="p">);</span>
+    <span class="n">menu</span><span class="o">-&gt;</span><span class="n">addAction</span><span class="p">(</span><span class="n">songAction</span><span class="p">);</span>
+    <span class="n">menu</span><span class="o">-&gt;</span><span class="n">addAction</span><span class="p">(</span><span class="n">lengthAction</span><span class="p">);</span>
+
+    <span class="c1">// 在用户右键的坐标弹出菜单</span>
+    <span class="n">menu</span><span class="o">-&gt;</span><span class="n">exec</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><img src="http://localhost:4000/pics/dtk/dtk-4.gif" alt="弹出右键菜单" /></p>
+
+<h3 id="设置列的排序算法">设置列的排序算法</h3>
+<p>多列列表中最常用的操作就是排序，在 DSimpleListView 实现排序非常简单。
+首先在 DSimpleListItem 的子类中实现静态的排序函数，以上面的 multilistitem.h 为例：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// multilistview.h</span>
+    <span class="k">static</span> <span class="kt">bool</span> <span class="nf">sortByArtist</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">);</span>
+    <span class="k">static</span> <span class="kt">bool</span> <span class="nf">sortBySong</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">);</span>
+    <span class="k">static</span> <span class="kt">bool</span> <span class="nf">sortByLength</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">);</span>
+
+<span class="c1">// multilistview.cpp</span>
+<span class="kt">bool</span> <span class="n">MultiListItem</span><span class="o">::</span><span class="n">sortByArtist</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Init.</span>
+    <span class="n">QString</span> <span class="n">artist1</span> <span class="o">=</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">MultiListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">item1</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">artist</span><span class="p">;</span>
+    <span class="n">QString</span> <span class="n">artist2</span> <span class="o">=</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">MultiListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">item2</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">artist</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">sortOrder</span> <span class="o">=</span> <span class="n">artist1</span> <span class="o">&gt;</span> <span class="n">artist2</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">descendingSort</span> <span class="o">?</span> <span class="n">sortOrder</span> <span class="o">:</span> <span class="o">!</span><span class="n">sortOrder</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">MultiListItem</span><span class="o">::</span><span class="n">sortBySong</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Init.</span>
+    <span class="n">QString</span> <span class="n">song1</span> <span class="o">=</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">MultiListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">item1</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">song</span><span class="p">;</span>
+    <span class="n">QString</span> <span class="n">song2</span> <span class="o">=</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">MultiListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">item2</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">song</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">sortOrder</span> <span class="o">=</span> <span class="n">song1</span> <span class="o">&gt;</span> <span class="n">song2</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">descendingSort</span> <span class="o">?</span> <span class="n">sortOrder</span> <span class="o">:</span> <span class="o">!</span><span class="n">sortOrder</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">MultiListItem</span><span class="o">::</span><span class="n">sortByLength</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item1</span><span class="p">,</span> <span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item2</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Init.</span>
+    <span class="n">QString</span> <span class="n">length1</span> <span class="o">=</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">MultiListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">item1</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">length</span><span class="p">;</span>
+    <span class="n">QString</span> <span class="n">length2</span> <span class="o">=</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">MultiListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">item2</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">length</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">sortOrder</span> <span class="o">=</span> <span class="n">length1</span> <span class="o">&gt;</span> <span class="n">length2</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">descendingSort</span> <span class="o">?</span> <span class="n">sortOrder</span> <span class="o">:</span> <span class="o">!</span><span class="n">sortOrder</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>上面三个静态排序函数分别对 artist、song、length三列提供排序算法， 参数 descendingSort 表示排序是否是升序还是降序。</p>
+
+<p>然后在 DSimpleListView 的子类中调用 setColumnSortingAlgorithms 函数即可：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">QList</span><span class="o">&lt;</span><span class="n">SortAlgorithm</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">alorithms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QList</span><span class="o">&lt;</span><span class="n">SortAlgorithm</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">alorithms</span><span class="o">-&gt;</span><span class="n">append</span><span class="p">(</span><span class="o">&amp;</span><span class="n">MultiListItem</span><span class="o">::</span><span class="n">sortByArtist</span><span class="p">);</span>
+    <span class="n">alorithms</span><span class="o">-&gt;</span><span class="n">append</span><span class="p">(</span><span class="o">&amp;</span><span class="n">MultiListItem</span><span class="o">::</span><span class="n">sortBySong</span><span class="p">);</span>
+    <span class="n">alorithms</span><span class="o">-&gt;</span><span class="n">append</span><span class="p">(</span><span class="o">&amp;</span><span class="n">MultiListItem</span><span class="o">::</span><span class="n">sortByLength</span><span class="p">);</span>
+    <span class="n">setColumnSortingAlgorithms</span><span class="p">(</span><span class="n">alorithms</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">setColumnSortingAlgorithms</span><span class="p">(</span><span class="n">QList</span><span class="o">&lt;</span><span class="n">SortAlgorithm</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">algorithms</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sortColumn</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">descendingSort</span><span class="o">=</span><span class="nb">false</span><span class="p">);</span>
+</code></pre></div></div>
+<p>setColumnSortingAlgorithms 列排序接口的参数依次表示：</p>
+<ul>
+  <li>algorithms 列对应的静态排序函数，长度必须和列的数量保持一致</li>
+  <li>sortColumn 默认排序的列，设置成 0 表示第一列</li>
+  <li>descendingSort 是否是降序排列？</li>
+</ul>
+
+<p>最终的排序效果如下图：
+<img src="http://localhost:4000/pics/dtk/dtk-5.gif" alt="列表排序" /></p>
+
+<h3 id="搜索列表">搜索列表</h3>
+<p>搜索列表的实现原理，现在 DSimpleListItem 子类构建搜索函数:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">bool</span> <span class="nf">search</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item</span><span class="p">,</span> <span class="n">QString</span> <span class="n">searchContent</span><span class="p">);</span>
+
+<span class="kt">bool</span> <span class="n">MultiListItem</span><span class="o">::</span><span class="n">search</span><span class="p">(</span><span class="k">const</span> <span class="n">DSimpleListItem</span> <span class="o">*</span><span class="n">item</span><span class="p">,</span> <span class="n">QString</span> <span class="n">searchContent</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="n">MultiListItem</span> <span class="o">*</span><span class="n">item</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">MultiListItem</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">item</span><span class="o">-&gt;</span><span class="n">artist</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">searchContent</span><span class="p">)</span> <span class="o">||</span> <span class="n">item</span><span class="o">-&gt;</span><span class="n">song</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">searchContent</span><span class="p">)</span> <span class="o">||</span> <span class="n">item</span><span class="o">-&gt;</span><span class="n">length</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">searchContent</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+<p>然后在调用 DSimpleListView 子类的setSearchAlgorithm 函数即可设置列表的搜索函数，注意，DTK Simple ListView 所有干活的函数其实都是 DSimpleListItem 各种接口去实现的， DSimpleListView 只提供框架实现</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">setSearchAlgorithm</span><span class="p">(</span><span class="o">&amp;</span><span class="n">MultiListItem</span><span class="o">::</span><span class="n">search</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>最后，每次在 DSimpleListView 调用 search 函数的时候，DSimpleListView 自动会根据 setSearchAlgorithm 设置的搜索算法对列表的行进行过滤显示：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">search</span><span class="p">(</span><span class="n">QString</span> <span class="n">searchContent</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>搜索效果如下图（盗用深度监视器的效果）：
+<img src="http://localhost:4000/pics/dtk/dtk-6.gif" alt="搜索列表" /></p>
+
+<h3 id="隐藏指定列">隐藏指定列</h3>
+<p>DSimpleListView 的 setColumnHideFlags 接口可以用于控制列表中置顶列的是否显示</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">setColumnHideFlags</span><span class="p">(</span><span class="n">QList</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">toggleHideFlags</span><span class="p">,</span> <span class="kt">int</span> <span class="n">alwaysVisibleColumn</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+<ul>
+  <li>参数 toggleHideFlags 表示对应列的隐藏状态， true 表示显示， false 表示隐藏</li>
+  <li>参数 alwaysVisibleColumn 表示永远显示的一列，默认 -1 表示所有列都可以隐藏</li>
+</ul>
+
+<p>具体的效果如下图：
+<img src="http://localhost:4000/pics/dtk/dtk-7.gif" alt="隐藏列" /></p>

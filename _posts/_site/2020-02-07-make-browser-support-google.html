@@ -1,0 +1,14 @@
+<p>当用Qt开发浏览器时，虽然Qt5的WebEngine就是基于Chromium内核开发的，但是用Qt开发的浏览器却无法登录Google站点。</p>
+
+<p>在登录Google站点时，会检测到自制浏览器，提示只有Chrome, Sarfri, Firefox, IE才能登录，说其他浏览器都不安全，哈哈哈哈。</p>
+
+<p>最开始尝试用Chrome的UserAgent来设置Qt浏览器，设置后还是无法登录，猜测Chrome浏览器有私有协议和Google的服务器通讯来避免开发者的自制浏览器通过UserAgent来伪造Chrome浏览器。</p>
+
+<p>既然Chrome UserAgent不行，尝试一下Firefox的UserAgent，最后通过下面代码把Qt浏览器的UserAgent设置成Firefox的就可以登录Google站点了:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">webview</span> <span class="o">=</span> <span class="n">QWebEngineView</span><span class="p">()</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">QWebEngineProfile</span><span class="p">(</span><span class="n">webview</span><span class="p">)</span>
+<span class="n">profile</span><span class="o">.</span><span class="n">defaultProfile</span><span class="p">()</span><span class="o">.</span><span class="n">setHttpUserAgent</span><span class="p">(</span><span class="s">"Mozilla/5.0 (X11; Linux i586; rv:31.0) Gecko/20100101 Firefox/72.0"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Happy hacking! ;)</p>

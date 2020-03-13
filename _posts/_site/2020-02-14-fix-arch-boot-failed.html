@@ -1,0 +1,18 @@
+<h3 id="问题">问题</h3>
+<p>今天升级Arch系统后，启动显示 <code class="highlighter-rouge">error: file /boot/vmlinuz-5.3-x86_64 not found</code> 的错误。</p>
+
+<p>每次Arch升级内核，都会因为Grub内核版本号不升级导致这种问题。</p>
+
+<h3 id="修复方法">修复方法</h3>
+
+<ol>
+  <li>从Grub菜单，按C键进入命令行</li>
+  <li>输入 <code class="highlighter-rouge">ls</code> 命令看磁盘信息，比如显示 <code class="highlighter-rouge">(hd0,msdos1)</code></li>
+  <li>输入 <code class="highlighter-rouge">set root=(hd0,msdos1)</code> 命令设置根分区</li>
+  <li>输入 <code class="highlighter-rouge">ls /boot</code> 查看系统的内核文件版本号, 比如版本号5.4</li>
+  <li>重启系统后, 在Grub菜单按E键编辑Grub配置文件，把内核版本从5.3改成5.4后，按Ctrl+X快捷键启动系统</li>
+  <li>输入 <code class="highlighter-rouge">sudo sed -i 's/5.3/5.4/g' /boot/grub/grub.cfg</code> 替换配置文件的内核版本号</li>
+  <li>重启系统，应该就没有问题了</li>
+</ol>
+
+<p>不知道为啥Arch不在内核升级后执行 <code class="highlighter-rouge">grub update</code> 命令自动更新grub配置文件来避免这种问题?</p>

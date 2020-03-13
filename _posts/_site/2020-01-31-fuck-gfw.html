@@ -1,0 +1,36 @@
+<h3 id="准备工作">准备工作</h3>
+
+<ol>
+  <li>购买VPS;</li>
+  <li>在服务器VPS上安装v2ray server (请自行Google);</li>
+  <li>在本机安装v2ray client, 利用v2ray client开启socks5代理 (请自行Google)。</li>
+</ol>
+
+<h3 id="配置git-httphttps代理">配置Git HTTP/HTTPS代理</h3>
+
+<p>在 ~/.gitconfig 文件中加入以下配置:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>http]
+	proxy <span class="o">=</span> socks5://127.0.0.1:1080
+<span class="o">[</span>https]
+	proxy <span class="o">=</span> socks5://127.0.0.1:1080
+</code></pre></div></div>
+
+<h3 id="配置git-ssh代理">配置Git SSH代理</h3>
+
+<p>在 ~/.ssh/config 文件中加入以下配置:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host github.com
+HostName github.com
+User git
+Port 22
+ProxyCommand /usr/bin/ncat <span class="nt">--proxy</span> 127.0.0.1:1080 <span class="nt">--proxy-type</span> socks5 %h %p
+</code></pre></div></div>
+
+<h3 id="把githubcom加入v2ray代理路由">把github.com加入v2ray代理路由</h3>
+
+<p>上面两个配置只是让HTTPS/SSH访问走本地Socks5代理，但是并不能保证一定可以连接上Github。</p>
+
+<p>需要把github.com加入v2ray的路由中，具体请看<a href="https://manateelazycat.github.io/proxy/2020/02/09/v2ray-direct.html">v2ray设置路由</a></p>
+
+<p>Fuck GFW, waste my time. ;)</p>

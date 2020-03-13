@@ -1,0 +1,147 @@
+<h3 id="anything-helm-ivy">Anything, Helm, Ivy</h3>
+<p>十几年前和<a href="http://rubikitch.com/">rubikitch</a>、<a href="https://sachachua.com/blog/2018/09/interview-with-thierry-volpiatto/">Thierry Volpiatto</a>一起创建了Anything这个模糊搜索框架。</p>
+
+<p>Anything做为当时第一个模糊搜索框架，因为其多后端搜索和强大的框架设计，比当时 ido 的效率要快很多，特别是当你要模糊搜索多个后端，却不想记一堆快捷键的时候，Anything真的很爽。</p>
+
+<p>后来我和rubikitch都忙于工作，Thierry Volpiatto十几年坚持不懈的做了很多代码改进和重构，以至于后来创建了更为健壮和模块化的<a href="https://github.com/emacs-helm/helm">Helm</a>,
+Helm到目前为止都是Emacs下最强大的模糊搜索框架。</p>
+
+<p>最近几年，超级黑客<a href="https://oremacs.com/">Oleh Krehel</a>创建的<a href="https://github.com/abo-abo/swiper">Ivy</a>, 以其简洁的交互和超快的速度，俘获了大批Emacser的青睐。</p>
+
+<h3 id="snails一个超快的现代化和易于扩展的模糊搜索框架">Snails一个超快的、现代化和易于扩展的模糊搜索框架</h3>
+<p>我曾经也尝试过Ivy, 非常简洁，而且速度超快，一点都不卡，但是Ivy有一个和我习惯冲突的设计是，Ivy一次只能搜索一个后端，对于我这种常年用Anything/Helm的老年人来说，让我按照分类来记住不同的搜索后端快捷键，真的很麻烦。</p>
+
+<p>同时，Helm发展了十几年的时间，虽然非常成熟和强大，但是想要基于Helm写一个新的插件，都要看半天文档和小心各种细节。</p>
+
+<p>所以，我有时候在想，我能否重新设计一个新的模糊搜索框架，兼具Helm和Ivy的优点呢？</p>
+
+<ol>
+  <li>像Helm那样支持多个后端同时搜索，特别是最近文件 + 已经打开的文件 + 本地磁盘全局搜索三个后端配合一起搜索的时候，几乎不存在找不到的文件</li>
+  <li>像Ivy那样快，不管怎么搜索都是秒开，而且搜索的过程中不要让Emacs变得卡顿</li>
+  <li>界面像 Sublime/VSCode 那样，弹出一个单独的固定窗口，不要像Helm那样破坏窗口布局，也不要像Ivy那样在minibuffer上随着输入来回跳动</li>
+  <li>交互易用，就是输入搜索字符，上下移动后，按回车就行了，没有其他复杂操作</li>
+  <li>插件门槛的编写达到最低，只要会基本的Elisp语法，会写过滤函数，任何插件都应该在5分钟之内完成</li>
+</ol>
+
+<p>所以我创建了<a href="https://github.com/manateelazycat/snails">Snails</a>这个全新的模糊搜索插件来满足我上面的全部要求, 发一张效果图。</p>
+
+<p><img src="http://localhost:4000/pics/snails/snails.png" alt="snails" /></p>
+
+<h3 id="安装">安装</h3>
+<p>因为这个插件还在活跃开发中，安装和使用文档请见 <a href="https://github.com/manateelazycat/snails">Github</a></p>
+
+<h3 id="插件介绍">插件介绍</h3>
+<p>编写Snails的插件真的超级简单，只要你会基本的Elisp语法，会编写列表过滤函数，你可以在5分钟之内编写完一个新的插件！</p>
+
+<p>Snails从分类上有两种插件语法：同步插件和异步插件</p>
+
+<ul>
+  <li>同步插件适用于那些马上可以获取补全列表信息的，比如获取打开的文件，最近浏览的文件这种</li>
+  <li>异步插件适用于那些需要耗时搜索的操作，比如grep目录，在整个磁盘找文件这种</li>
+</ul>
+
+<h4 id="编写同步插件">编写同步插件</h4>
+<p>我们用内置的<code class="highlighter-rouge">snails-backend-recentf</code>插件来讲解怎么编写同步插件：</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">require</span> <span class="ss">'snails-core</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'recentf</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">recentf-mode</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">snails-create-sync-backend</span>
+ <span class="ss">:name</span>
+ <span class="s">"RECENTF"</span>
+
+ <span class="ss">:candidate-filter</span>
+ <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nv">input</span><span class="p">)</span>
+   <span class="p">(</span><span class="k">let</span> <span class="p">(</span><span class="nv">candidates</span><span class="p">)</span>
+     <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">file</span> <span class="nv">recentf-list</span><span class="p">)</span>
+       <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">or</span>
+              <span class="p">(</span><span class="nb">string-equal</span> <span class="nv">input</span> <span class="s">""</span><span class="p">)</span>
+              <span class="p">(</span><span class="nv">string-match-p</span> <span class="p">(</span><span class="nv">regexp-quote</span> <span class="nv">input</span><span class="p">)</span> <span class="nv">file</span><span class="p">))</span>
+         <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'candidates</span>
+                      <span class="p">(</span><span class="nb">list</span>
+                       <span class="p">(</span><span class="nv">snails-wrap-file-icon</span> <span class="nv">file</span><span class="p">)</span>
+                       <span class="nv">file</span><span class="p">)</span>
+                      <span class="no">t</span><span class="p">)))</span>
+     <span class="nv">candidates</span><span class="p">))</span>
+
+ <span class="ss">:candiate-do</span>
+ <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nv">candidate</span><span class="p">)</span>
+   <span class="p">(</span><span class="nv">find-file</span> <span class="nv">candidate</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nb">provide</span> <span class="ss">'snails-backend-recentf</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>:name 参数是插件的名字，请为你的插件取一个不同的名字，Snails根据插件的名字来插入搜索结果</p>
+  </li>
+  <li>
+    <p>:candidate-filter 是一个过滤函数, <code class="highlighter-rouge">input</code> 参数指用户输入的字符串, 你需要返回一个候选词列表，列表的每一项是一个格式为 <code class="highlighter-rouge">(list display-name candidate-content)</code>的对象, 对象的第一个元素 <code class="highlighter-rouge">display-name</code> 是显示给用户的候选名字, 对象的第二个元素<code class="highlighter-rouge">candidate-content</code> 是真实的补全结果，后面会传给回调函数 <code class="highlighter-rouge">candidate-do</code>. 如果什么没有搜索到，可以返回nil，Snails框架会在结果中隐藏返回nil的后端。</p>
+  </li>
+  <li>
+    <p>:candidate-do 是一个确认函数，当你按 Ctrl+m 的时候执行这个函数，函数内容你可以自由发挥。</p>
+  </li>
+</ul>
+
+<p>以上面这段插件代码，它的意思是，如果用户什么都没有输入，显示所有最近浏览的文件，如果有输入，根据用户输入来过滤最近浏览的文件，用户确认后，用 <code class="highlighter-rouge">find-file</code> 这个命令打开文件。</p>
+
+<h4 id="编写异步插件">编写异步插件</h4>
+<p>我们用内置的<code class="highlighter-rouge">snails-backend-mdfind</code>插件来讲解怎么编写异步插件：</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">require</span> <span class="ss">'snails-core</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">snails-create-async-backend</span>
+ <span class="ss">:name</span>
+ <span class="s">"MDFIND"</span>
+
+ <span class="ss">:build-command</span>
+ <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nv">input</span><span class="p">)</span>
+   <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nv">featurep</span> <span class="ss">'cocoa</span><span class="p">)</span>
+              <span class="p">(</span><span class="nb">&gt;</span> <span class="p">(</span><span class="nb">length</span> <span class="nv">input</span><span class="p">)</span> <span class="mi">5</span><span class="p">))</span>
+     <span class="p">(</span><span class="nb">list</span> <span class="s">"mdfind"</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"'%s'"</span> <span class="nv">input</span><span class="p">))))</span>
+
+ <span class="ss">:candidate-filter</span>
+ <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nv">candidate-list</span><span class="p">)</span>
+   <span class="p">(</span><span class="k">let</span> <span class="p">(</span><span class="nv">candidates</span><span class="p">)</span>
+     <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">candidate</span> <span class="nv">candidate-list</span><span class="p">)</span>
+       <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'candidates</span>
+                    <span class="p">(</span><span class="nb">list</span>
+                     <span class="p">(</span><span class="nv">snails-wrap-file-icon</span> <span class="nv">candidate</span><span class="p">)</span>
+                     <span class="nv">candidate</span><span class="p">)</span>
+                    <span class="no">t</span><span class="p">))</span>
+     <span class="nv">candidates</span><span class="p">))</span>
+
+ <span class="ss">:candiate-do</span>
+ <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nv">candidate</span><span class="p">)</span>
+   <span class="p">(</span><span class="nv">find-file</span> <span class="nv">candidate</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nb">provide</span> <span class="ss">'snails-backend-mdfind</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>:name 参数是插件的名字，请为你的插件取一个不同的名字，Snails根据插件的名字来插入搜索结果</p>
+  </li>
+  <li>
+    <p>:build-command 是一个命令行参数构建函数，<code class="highlighter-rouge">input</code> 是用户输入的字符串, 你需要返回一个字符串列表，列表第一个是调用的Shell工具的名字，列表剩下的字符串是传递给Shell工具的参数。如果你不想进一步搜索，可以直接返回nil。Snails会在结果中隐藏返回nil的后端。</p>
+  </li>
+  <li>
+    <p>:candidate-filter 是一个过滤函数, <code class="highlighter-rouge">candidate-list</code> 是Shell命令返回的字符串列表, 你需要返回一个候选词列表，列表的每一项是一个格式为 <code class="highlighter-rouge">(list display-name candidate-content)</code>的对象, 对象的第一个元素 <code class="highlighter-rouge">display-name</code> 是显示给用户的候选名字, 对象的第二个元素<code class="highlighter-rouge">candidate-content</code> 是真实的补全结果，后面会传给回调函数 <code class="highlighter-rouge">candidate-do</code>. 如果什么没有搜索到，可以返回nil，Snails框架会在结果中隐藏返回nil的后端。</p>
+  </li>
+  <li>
+    <p>:candidate-do 是一个确认函数，当你按 Ctrl+m 的时候执行这个函数，函数内容你可以自由发挥。</p>
+  </li>
+</ul>
+
+<p>以上面这段插件代码举例，如果用户输入 <code class="highlighter-rouge">awesome</code>, 他会构建一个命令字符串列表 <code class="highlighter-rouge">(list "mdfind" "'awesome'")</code> 用于创建搜索子进程，当子进程完成时，进程返回候选列表给candidate-fitler过滤函数, 过滤函数过滤Shell命令返回的结果进行候选词渲染。用户确认后，用 <code class="highlighter-rouge">find-file</code> 这个命令打开文件。</p>
+
+<p>Snails非常智能，它会管理所有异步后端的子进程，当用户修改输入时，Snails会自动创建新的子进程继续搜索，同时把那些旧的子进程杀掉。不管用户输入多快，都不会卡主Emacs。</p>
+
+<h3 id="最后">最后</h3>
+<p>Snails插件编写简单吧？</p>
+
+<p>如果你和我有同样的口味，欢迎试用。</p>
+
+<p>如果你想玩一下Elisp，欢迎编写新的插件。;)</p>

@@ -1,0 +1,72 @@
+<h3 id="变态的gfw">变态的GFW</h3>
+
+<p>GFW最近的功力大增，我的v2ray端口号每天都要被阻断，只能每天换一个端口号才能上网，但是每天都换端口号这种游击战也不是一个办法。</p>
+
+<p>今天研究了一下 trojan-gfw 这个项目，通过 trojan-gfw 替换 v2ray 来提供稳定的FQ服务。</p>
+
+<h3 id="准备工作">准备工作</h3>
+
+<ul>
+  <li>一台境外的VPS, 不需要购买域名和配置证书</li>
+</ul>
+
+<h3 id="vps安装debian-9">VPS安装Debian 9</h3>
+
+<p>一般VPS都有操作系统安装服务，安装Debian 9以后，替换 /etc/apt/sources.list 文件内容为163镜像源，提升软件安装速度:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deb http://mirrors.163.com/debian/ stretch main non-free contrib
+deb http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+deb http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+deb http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+</code></pre></div></div>
+
+<h3 id="安装trojan服务端">安装trojan服务端</h3>
+
+<p>通过命令 <code class="highlighter-rouge">ssh root@your_vps_ip</code> 登录VPS服务器后，执行下面脚本自动安装和配置trojan服务端:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-N</span> <span class="nt">--no-check-certificate</span> https://raw.githubusercontent.com/mark-hans/trojan-wiz/master/ins.sh <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> +x ins.sh <span class="o">&amp;&amp;</span> bash ins.sh
+</code></pre></div></div>
+
+<p>安装过程中提示“请选择证书模式”，选择”使用IP自签发证书”的模式。</p>
+
+<h3 id="启动trojan服务端">启动trojan服务端</h3>
+
+<p>安装完成后，使用命令<code class="highlighter-rouge">systemctl start trojan-gfw</code> 启动trojan服务端, 同时可以用命令<code class="highlighter-rouge">systemctl status trojan-gfw</code>来检查trojan服务端的状态，如果状态为<code class="highlighter-rouge">active(running)</code>, 证明trojan服务端已经启动。</p>
+
+<h3 id="拷贝服务端配置文件">拷贝服务端配置文件</h3>
+
+<p>trojan服务端配置成功以后会在VPS的/home/trojan/目录下生成client.json和ca-cert.pem两个文件:</p>
+
+<ul>
+  <li>client.json 是客户端配置文件，已经按照VPS IP配置好</li>
+  <li>ca-cert.pem 是证书文件，已经按照VPS配置好</li>
+</ul>
+
+<p>比如你的VPS IP为 xxx.xxx.xxx.xxx，使用下面的命令来完成拷贝服务端配置文件到本机：</p>
+
+<p><code class="highlighter-rouge">scp root@xxx.xxx.xxx.xxx:/home/trojan/ca-cert.pem ./</code></p>
+
+<p><code class="highlighter-rouge">scp root@xxx.xxx.xxx.xxx:/home/trojan/client.json ./</code></p>
+
+<h3 id="下载trojan客户端">下载trojan客户端</h3>
+
+<ul>
+  <li>首先在VPS使用命令 <code class="highlighter-rouge">ping github.com</code>, 获取 github.com 的ip地址, 比如是 192.30.253.112</li>
+  <li>在本机 /etc/hosts 文件中加入 <code class="highlighter-rouge">192.30.253.112 github.com</code> , 这样访问github页面就暂时不需要FQ</li>
+  <li>重启本机网络服务: <code class="highlighter-rouge">sudo systemctl restart NetworkManager</code></li>
+  <li>下载trojan客户端: <code class="highlighter-rouge">wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz</code></li>
+</ul>
+
+<p>下载trojan-1.14.1-linux-amd64.tar.xz后，解压文件，把ca-cert.pem和client.json拷贝到 trojan 目录下。</p>
+
+<h3 id="启动trojan客户端">启动trojan客户端</h3>
+
+<p><code class="highlighter-rouge">./trojan -c client.json</code> 即可在 127.0.0.1:1080 建立本地代理连接，最后通过Chrome SwitchyOmega来配置浏览器的代理设置。</p>
+
+<p>在浏览器验证可以FQ以后，你可以清除刚刚在本机 /etc/hosts 的github设置。</p>
+
+<p>Happy hacking!!!</p>

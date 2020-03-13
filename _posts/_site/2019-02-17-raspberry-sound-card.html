@@ -1,0 +1,69 @@
+<p>树莓派自身的版卡都带了博通的声卡设备, 但是遇到树莓派 zero 这种没有3.5mm插口的时候就比较郁闷.</p>
+
+<p>一般我们用下面方式去禁用树莓派的板载声卡:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /boot/config.txt
+</code></pre></div></div>
+<p>把文件中的 dtparam=audio=on 改成 dtparam=audio=off</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /proc/asound/cards
+</code></pre></div></div>
+<p>这个命令查询声卡 id, 比如我们需要声卡 id 为1 的声卡设备, 记录备用</p>
+
+<p>修改 ~/.asoundrc 配置
+文件的内容如下, card id 为 1</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pcm.!default <span class="o">{</span>
+        <span class="nb">type </span>hw
+        card 1
+<span class="o">}</span>
+
+ctl.!default <span class="o">{</span>
+        <span class="nb">type </span>hw
+        card 1
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>修改 alsa.conf 配置
+替换 /usr/share/alsa/alsa.conf 文件中的</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>defaults.ctl.card 0
+defaults.pcm.card 0
+</code></pre></div></div>
+
+<p>改成</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>defaults.ctl.card 1
+defaults.pcm.card 1
+</code></pre></div></div>
+
+<p>这样就可以让树莓派指定使用id为1的声卡设备去播放声音了, 但是坑爹的事情还没有完, 因为Linux设备如果插拔和重启的时候, 声卡设备的 id 分配是完全靠内核心情的, 你这次调用的是 id 1的声卡设备, 下次就有可能变成 0 和 2等其他 id. 遇到这种情况, 如果声卡设备只有麦克风而没有扬声器(比如USB摄像头), 就会报 jack server 的错误, 无法正常发出声音.</p>
+
+<p>怎么办?</p>
+
+<p>/proc/asound/pcm 文件中会有所有声卡设备的 “设备号-序列号” 的信息, 我们只用</p>
+<ol>
+  <li>打开 /proc/asound/pcm 文件, 过滤出具有 playback 1 的设备</li>
+  <li>提取出 “设备号-序列号” 的信息</li>
+  <li>通过 mpg123 指定 设备号-序列号 信息, 即可播放指定声卡硬件播放声音</li>
+</ol>
+
+<p>示例代码如下:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_sound_card_id</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"/proc/asound/pcm"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">):</span>
+                <span class="k">if</span> <span class="s">"playback 1"</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                    <span class="n">number</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"-"</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="p">(</span><span class="s">"</span><span class="si">%</span><span class="s">s,</span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">"0,0"</span>
+
+<span class="k">def</span> <span class="nf">play_sound</span><span class="p">(</span><span class="n">sound_file</span><span class="p">):</span>
+    <span class="n">sound_card_id</span> <span class="o">=</span> <span class="n">get_sound_card_id</span><span class="p">()</span>
+
+    <span class="n">play_command</span> <span class="o">=</span> <span class="s">"mpg123 -o alsa -a hw:</span><span class="si">%</span><span class="s">s </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">sound_card_id</span><span class="p">,</span> <span class="n">sound_file</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">play_command</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>玩树莓派还是Python好啊, 轻描淡写几行代码就搞定了.</p>

@@ -1,0 +1,38 @@
+<p>很痛快的写完CSS以后, 最郁闷的是还要排序CSS属性, 而且大家推崇的 <a href="http://alloyteam.github.io/CodeGuide/#css-declaration-order">CSS排序规范</a> 还贼长, 人工调整CSS属性是非常痛苦的.</p>
+
+<p>今天把原来的css代码重新整理了一下, 写了一个新的插件 <a href="https://github.com/manateelazycat/css-sort">css-sort.el</a> , 顾名思义, 就是自动给CSS/SCSS文件中的属性排序.</p>
+
+<p>主要完成几个功能:</p>
+<ol>
+  <li>不需要选中排序区域, 直接在CSS/SCSS文件中, 执行一个命令就会自动排序</li>
+  <li>完全按照 <a href="http://alloyteam.github.io/CodeGuide/#css-declaration-order">CSS排序规范</a> 严格排序的, 不用人工一个一个对比顺序</li>
+  <li>自动跳过以 @ 开头的函数定义区域, 比如 @function , @mixin 等</li>
+  <li>智能识别 @include 属性, 并把 @include 属性排列在属性区域的顶部</li>
+</ol>
+
+<h3 id="关键技术">关键技术</h3>
+<p>特别是一些非常复杂的 SCSS 文件, 如果不能智能的识别出 @include 多行代码块的语法区域, 排序功能就无法使用.</p>
+
+<p>今天想了一个巧妙的方法, 先把光标移动到 @include 行的开头, 然后执行 forward-sexp 函数1万次, 当Emacs遇到 @include 语句结尾的时候, 会自动停下来, 这样就能智能的识别 @include 语句结尾的位置了, 不管你 @include 语句后面函数是否有参数, 甚至是你写不写分号结尾都能智能识别, 哈哈哈哈.</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">defun</span> <span class="nv">css-sort-end-of-include-sexp</span> <span class="p">()</span>
+  <span class="p">(</span><span class="nv">save-excursion</span>
+    <span class="p">(</span><span class="nb">ignore-errors</span>
+      <span class="p">(</span><span class="nv">forward-sexp</span> <span class="mi">10000</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">point</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<h3 id="安装方法">安装方法</h3>
+<ol>
+  <li>下载 <a href="https://github.com/manateelazycat/css-sort">css-sort</a> 里面的 css-sort.el 放到 ~/elisp 目录</li>
+  <li>把下面的配置加入到 ~/.emacs 中</li>
+</ol>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'load-path</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">"~/elisp"</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'css-sort</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="使用">使用</h3>
+<p>M-x css-sort</p>
+
+<p>That’s all! ;)</p>
