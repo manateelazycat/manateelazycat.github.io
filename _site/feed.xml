@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-14T04:37:12+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">使用Markdown来自动生成流程图</title><link href="http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid.html" rel="alternate" type="text/html" title="使用Markdown来自动生成流程图" /><published>2020-03-14T00:00:00+08:00</published><updated>2020-03-14T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid.html">&lt;h3 id=&quot;发现新大陆&quot;&gt;发现新大陆&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-15T06:45:39+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">登入终端后自动切换目录</title><link href="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html" rel="alternate" type="text/html" title="登入终端后自动切换目录" /><published>2020-03-15T00:00:00+08:00</published><updated>2020-03-15T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell</id><content type="html" xml:base="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html">&lt;p&gt;如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：&lt;/p&gt;
+
+&lt;div class=&quot;language-vala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;spawn_sync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pty_flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;spawn_flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* child setup */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;child_pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* cancellable */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;但是像Wetty这种没有对外API的库，怎么让Shell登录后直接切换到制定的目录呢？&lt;/p&gt;
+
+&lt;p&gt;研究了一下，答案非常简单，直接把下面的命令传递给Wetty的 –command 参数即可：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;bash &lt;span class=&quot;nt&quot;&gt;--login&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;上面的命令是在登录Shell之前就切换了目录，这样Shell打开的时候会自动切换到当前的目录。&lt;/p&gt;</content><author><name></name></author><summary type="html">如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：</summary></entry><entry><title type="html">使用Markdown来自动生成流程图</title><link href="http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid.html" rel="alternate" type="text/html" title="使用Markdown来自动生成流程图" /><published>2020-03-14T00:00:00+08:00</published><updated>2020-03-14T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid.html">&lt;h3 id=&quot;发现新大陆&quot;&gt;发现新大陆&lt;/h3&gt;
 &lt;p&gt;在Emacs-China论坛闲逛时发现了 mermaid.js 这个图形库，这个图形库的最大优势是，你可以直接编写 markdown 文本，他会自动生成流程图、饼状图、干特图、类型图、序列图等逻辑图形。&lt;/p&gt;
 
 &lt;p&gt;今天花了1个多小时写了个新的&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/ca52b4b383385a89ea070f1729899404d4a10003&quot;&gt;补丁&lt;/a&gt;把Mermaid.js集成到EAF框架中。&lt;/p&gt;
@@ -246,75 +265,4 @@ git config ssh.postBuffer 100000000
 
 &lt;p&gt;解决问题后可以通过命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;(cancel-debug-on-entry 'set-mouse-position)&lt;/code&gt; 取消运行时调试。&lt;/p&gt;
 
-&lt;p&gt;Happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">常规调试方法</summary></entry><entry><title type="html">配置Trojan代理</title><link href="http://localhost:4000/proxy/2020/02/10/trojan.html" rel="alternate" type="text/html" title="配置Trojan代理" /><published>2020-02-10T00:00:00+08:00</published><updated>2020-02-10T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/02/10/trojan</id><content type="html" xml:base="http://localhost:4000/proxy/2020/02/10/trojan.html">&lt;h3 id=&quot;变态的gfw&quot;&gt;变态的GFW&lt;/h3&gt;
-
-&lt;p&gt;GFW最近的功力大增，我的v2ray端口号每天都要被阻断，只能每天换一个端口号才能上网，但是每天都换端口号这种游击战也不是一个办法。&lt;/p&gt;
-
-&lt;p&gt;今天研究了一下 trojan-gfw 这个项目，通过 trojan-gfw 替换 v2ray 来提供稳定的FQ服务。&lt;/p&gt;
-
-&lt;h3 id=&quot;准备工作&quot;&gt;准备工作&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;一台境外的VPS, 不需要购买域名和配置证书&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;vps安装debian-9&quot;&gt;VPS安装Debian 9&lt;/h3&gt;
-
-&lt;p&gt;一般VPS都有操作系统安装服务，安装Debian 9以后，替换 /etc/apt/sources.list 文件内容为163镜像源，提升软件安装速度:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;deb http://mirrors.163.com/debian/ stretch main non-free contrib
-deb http://mirrors.163.com/debian/ stretch-updates main non-free contrib
-deb http://mirrors.163.com/debian/ stretch-backports main non-free contrib
-deb-src http://mirrors.163.com/debian/ stretch main non-free contrib
-deb-src http://mirrors.163.com/debian/ stretch-updates main non-free contrib
-deb-src http://mirrors.163.com/debian/ stretch-backports main non-free contrib
-deb http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
-deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;安装trojan服务端&quot;&gt;安装trojan服务端&lt;/h3&gt;
-
-&lt;p&gt;通过命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh root@your_vps_ip&lt;/code&gt; 登录VPS服务器后，执行下面脚本自动安装和配置trojan服务端:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-check-certificate&lt;/span&gt; https://raw.githubusercontent.com/mark-hans/trojan-wiz/master/ins.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x ins.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; bash ins.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;安装过程中提示“请选择证书模式”，选择”使用IP自签发证书”的模式。&lt;/p&gt;
-
-&lt;h3 id=&quot;启动trojan服务端&quot;&gt;启动trojan服务端&lt;/h3&gt;
-
-&lt;p&gt;安装完成后，使用命令&lt;code class=&quot;highlighter-rouge&quot;&gt;systemctl start trojan-gfw&lt;/code&gt; 启动trojan服务端, 同时可以用命令&lt;code class=&quot;highlighter-rouge&quot;&gt;systemctl status trojan-gfw&lt;/code&gt;来检查trojan服务端的状态，如果状态为&lt;code class=&quot;highlighter-rouge&quot;&gt;active(running)&lt;/code&gt;, 证明trojan服务端已经启动。&lt;/p&gt;
-
-&lt;h3 id=&quot;拷贝服务端配置文件&quot;&gt;拷贝服务端配置文件&lt;/h3&gt;
-
-&lt;p&gt;trojan服务端配置成功以后会在VPS的/home/trojan/目录下生成client.json和ca-cert.pem两个文件:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;client.json 是客户端配置文件，已经按照VPS IP配置好&lt;/li&gt;
-  &lt;li&gt;ca-cert.pem 是证书文件，已经按照VPS配置好&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;比如你的VPS IP为 xxx.xxx.xxx.xxx，使用下面的命令来完成拷贝服务端配置文件到本机：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scp root@xxx.xxx.xxx.xxx:/home/trojan/ca-cert.pem ./&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scp root@xxx.xxx.xxx.xxx:/home/trojan/client.json ./&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;下载trojan客户端&quot;&gt;下载trojan客户端&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;首先在VPS使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ping github.com&lt;/code&gt;, 获取 github.com 的ip地址, 比如是 192.30.253.112&lt;/li&gt;
-  &lt;li&gt;在本机 /etc/hosts 文件中加入 &lt;code class=&quot;highlighter-rouge&quot;&gt;192.30.253.112 github.com&lt;/code&gt; , 这样访问github页面就暂时不需要FQ&lt;/li&gt;
-  &lt;li&gt;重启本机网络服务: &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo systemctl restart NetworkManager&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;下载trojan客户端: &lt;code class=&quot;highlighter-rouge&quot;&gt;wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;下载trojan-1.14.1-linux-amd64.tar.xz后，解压文件，把ca-cert.pem和client.json拷贝到 trojan 目录下。&lt;/p&gt;
-
-&lt;h3 id=&quot;启动trojan客户端&quot;&gt;启动trojan客户端&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./trojan -c client.json&lt;/code&gt; 即可在 127.0.0.1:1080 建立本地代理连接，最后通过Chrome SwitchyOmega来配置浏览器的代理设置。&lt;/p&gt;
-
-&lt;p&gt;在浏览器验证可以FQ以后，你可以清除刚刚在本机 /etc/hosts 的github设置。&lt;/p&gt;
-
-&lt;p&gt;Happy hacking!!!&lt;/p&gt;</content><author><name></name></author><summary type="html">变态的GFW</summary></entry></feed>
+&lt;p&gt;Happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">常规调试方法</summary></entry></feed>
