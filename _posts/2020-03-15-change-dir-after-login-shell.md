@@ -26,3 +26,4 @@ cd dir && exec bash --login
 ```
 
 上面的命令是在登录Shell之前就切换了目录，这样Shell打开的时候会自动切换到当前的目录。
+

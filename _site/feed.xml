@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-15T06:45:39+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">登入终端后自动切换目录</title><link href="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html" rel="alternate" type="text/html" title="登入终端后自动切换目录" /><published>2020-03-15T00:00:00+08:00</published><updated>2020-03-15T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell</id><content type="html" xml:base="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html">&lt;p&gt;如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-15T07:48:52+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">登入终端后自动切换目录</title><link href="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html" rel="alternate" type="text/html" title="登入终端后自动切换目录" /><published>2020-03-15T00:00:00+08:00</published><updated>2020-03-15T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell</id><content type="html" xml:base="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html">&lt;p&gt;如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：&lt;/p&gt;
 
 &lt;div class=&quot;language-vala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;spawn_sync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pty_flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -17,7 +17,54 @@
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;bash &lt;span class=&quot;nt&quot;&gt;--login&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;上面的命令是在登录Shell之前就切换了目录，这样Shell打开的时候会自动切换到当前的目录。&lt;/p&gt;</content><author><name></name></author><summary type="html">如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：</summary></entry><entry><title type="html">使用Markdown来自动生成流程图</title><link href="http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid.html" rel="alternate" type="text/html" title="使用Markdown来自动生成流程图" /><published>2020-03-14T00:00:00+08:00</published><updated>2020-03-14T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid.html">&lt;h3 id=&quot;发现新大陆&quot;&gt;发现新大陆&lt;/h3&gt;
+&lt;p&gt;上面的命令是在登录Shell之前就切换了目录，这样Shell打开的时候会自动切换到当前的目录。&lt;/p&gt;</content><author><name></name></author><summary type="html">如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：</summary></entry><entry><title type="html">创作、开源和经济发展</title><link href="http://localhost:4000/opensource/2020/03/15/creation-and-surroundings.html" rel="alternate" type="text/html" title="创作、开源和经济发展" /><published>2020-03-15T00:00:00+08:00</published><updated>2020-03-15T00:00:00+08:00</updated><id>http://localhost:4000/opensource/2020/03/15/creation-and-surroundings</id><content type="html" xml:base="http://localhost:4000/opensource/2020/03/15/creation-and-surroundings.html">&lt;p&gt;早上解决了&lt;a href=&quot;https://manateelazycat.github.io/linux/2020/03/15/change-dir-after-login-shell.html&quot;&gt;登入终端后自动切换目录&lt;/a&gt;这个问题。&lt;/p&gt;
+
+&lt;p&gt;根据这么多年的研发经验，解决这个问题过程中的灵光一闪的情况时常发生，现在回头看，其实很多复杂的技术问题总是遵循这样的规律：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;这个问题太难了，看着就复杂, 第一把搞不定&lt;/li&gt;
+  &lt;li&gt;我就不信了，持续死瞌很久，第N把还是搞不定&lt;/li&gt;
+  &lt;li&gt;放弃了，不搞了，不搞了&lt;/li&gt;
+  &lt;li&gt;去学习其他知识，潜意识保持关注&lt;/li&gt;
+  &lt;li&gt;在某一个安静的清晨，天微微亮，小鸟婉转悠扬的鸣啼声下，进入放松和专注的心流状态&lt;/li&gt;
+  &lt;li&gt;突然，灵光一闪，哦，原来这么简单，搞定了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;其实，问题变化了吗？没有。&lt;/p&gt;
+
+&lt;p&gt;那什么发生变化了呢？
+是知识积累和心境发生了变化，当时你解决不了问题的关键是解决方案需要多个知识模块产生连接才能解决，你当时的知识体系是不完善的，在缺少对某块知识的掌握下，无法对多个知识模块产生连接，从而创造出解决问题的方案。&lt;/p&gt;
+
+&lt;p&gt;所以，短暂的放下很重要，放下并不代表不解决问题，而是放下问题去做知识积累，潜意识关注的目的是让大脑在休息的时候帮你整理知识和建立知识之间的连接，大脑这个工具很神奇，只要你保持关注，它会自动在后台思考运转，不需要增加你的思考负担。&lt;/p&gt;
+
+&lt;p&gt;所有的创造工作，特别是脑力创造领域，都需要极度的放松，因为只有极度的放松，大脑才会进入毫无杂念的专注心流。&lt;/p&gt;
+
+&lt;p&gt;最后创作成果其实等价于这个公式：&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;创作成果 = 知识积累 + 潜意识关注 ＋ 放松的环境 ＋ 专注的心流。&lt;/p&gt;
+
+&lt;p&gt;这种规律和模式也能解释为什么开源社区的先进技术大多数都是国外开发者创造的？&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;基本物质条件好：不为基本生存担忧，研发环境就相对宽松&lt;/li&gt;
+  &lt;li&gt;长时间专注一件事情：长时间专注的心流，大脑会进行广泛的知识积累和低成本的知识整理过程&lt;/li&gt;
+  &lt;li&gt;放松的心态：在宽松的环境和专注的思考下，就相对容易进入放松的状态，为多个知识模块产生连接准备创作机会&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;大多数开源项目并不是超多核心技术堆叠的，大多数开源项目都遵循下面的模式：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;项目创作阶段：通过多维度知识连接攻克了核心技术&lt;/li&gt;
+  &lt;li&gt;现实对接阶段：根据项目的应用场景，不断增加工程化代码满足现实，这部分代码数量巨大，但是难度并不高，只是增加了代码的复杂度&lt;/li&gt;
+  &lt;li&gt;成熟发展阶段：通过现实的总结，最后从单独功能衍生出围绕核心功能的API、SDK和生态&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;从我对国内开源环境的了解，我们在应用场景响应和生态建设能力并不差，差就差创作阶段，究其本源，还是我们国家的经济发展水平不够高，大多数研发人才都在生存线上挣扎，因为神经时刻都在对危机做应急响应，我们无法给自己准备好创作所需的宽松环境和放松心态，导致在核心技术的多维度知识连接方面缺乏深度思考，最后也很难利用多维度的知识连接创作出解决问题的核心技术。&lt;/p&gt;
+
+&lt;p&gt;我们现在已经在某些领域创造出开源核心技术，但是创作的数量依然不如国外，本质原因还是国家的经济水平和研发环境还需要进一步发展。&lt;/p&gt;
+
+&lt;p&gt;做了开源十多年，年轻的时候想不清楚的问题现在想清楚了：&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;开源技术和生态的发展和国家的经济发展水平息息相关，经济好了，人就懒散了，人放松了，创作能力自然就提高了。&lt;/p&gt;</content><author><name></name></author><summary type="html">早上解决了登入终端后自动切换目录这个问题。</summary></entry><entry><title type="html">使用Markdown来自动生成流程图</title><link href="http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid.html" rel="alternate" type="text/html" title="使用Markdown来自动生成流程图" /><published>2020-03-14T00:00:00+08:00</published><updated>2020-03-14T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/03/14/eaf-mermaid.html">&lt;h3 id=&quot;发现新大陆&quot;&gt;发现新大陆&lt;/h3&gt;
 &lt;p&gt;在Emacs-China论坛闲逛时发现了 mermaid.js 这个图形库，这个图形库的最大优势是，你可以直接编写 markdown 文本，他会自动生成流程图、饼状图、干特图、类型图、序列图等逻辑图形。&lt;/p&gt;
 
 &lt;p&gt;今天花了1个多小时写了个新的&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/ca52b4b383385a89ea070f1729899404d4a10003&quot;&gt;补丁&lt;/a&gt;把Mermaid.js集成到EAF框架中。&lt;/p&gt;
@@ -239,30 +286,4 @@ git config ssh.postBuffer 100000000
   &lt;li&gt;重启系统，应该就没有问题了&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;不知道为啥Arch不在内核升级后执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;grub update&lt;/code&gt; 命令自动更新grub配置文件来避免这种问题?&lt;/p&gt;</content><author><name></name></author><summary type="html">问题 今天升级Arch系统后，启动显示 error: file /boot/vmlinuz-5.3-x86_64 not found 的错误。</summary></entry><entry><title type="html">Emacs调试高级技巧</title><link href="http://localhost:4000/emacs/2020/02/13/emacs-debug.html" rel="alternate" type="text/html" title="Emacs调试高级技巧" /><published>2020-02-13T00:00:00+08:00</published><updated>2020-02-13T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/02/13/emacs-debug</id><content type="html" xml:base="http://localhost:4000/emacs/2020/02/13/emacs-debug.html">&lt;h3 id=&quot;常规调试方法&quot;&gt;常规调试方法&lt;/h3&gt;
-
-&lt;p&gt;一般Emacs在崩溃或者出现错误的时候，可以用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;toggle-debug-on-error&lt;/code&gt; 来打开Emacs调试器，当Emacs或者插件出错时，Emacs会自动在 &lt;code class=&quot;highlighter-rouge&quot;&gt;*Backtrace*&lt;/code&gt; buffer中显示错误堆栈，方便开发者定位错误。&lt;/p&gt;
-
-&lt;h3 id=&quot;高级调试方法&quot;&gt;高级调试方法&lt;/h3&gt;
-
-&lt;p&gt;Emacs还有一些高级调试方法用于非错误场景的调试，举个例子：&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;sdcv.el基于posframe来实现翻译窗口的弹出，但是有个小问题，每次EAF网页中弹出翻译窗口的时候，鼠标都会跳到Emacs的左上角，翻译以后要重新移动光标, 非常的不方便。&lt;/p&gt;
-
-&lt;p&gt;但是这时候我们往往不知道到底是哪个Emacs插件引入的这种行为, 一个一个的排查非常消耗时，但是我知道Emacs底层API中设置光标位置的函数是 &lt;code class=&quot;highlighter-rouge&quot;&gt;set-mouse-position&lt;/code&gt;, 所以这时候可以调用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;(debug-on-entry 'set-mouse-position)&lt;/code&gt; 来设置当Emacs调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;set-mouse-position&lt;/code&gt; 函数的时候弹出堆栈，方便开发者定位Emacs运行时的函数调用堆栈。&lt;/p&gt;
-
-&lt;p&gt;这时，只要调用翻译函数，一旦光标被插件移动后，就会弹出类似下面的堆栈信息：&lt;/p&gt;
-
-&lt;div class=&quot;language-lisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;Debugger&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;entered--entering&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;function:&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;set-mouse-position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;&amp;lt;frame&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emacs@manjaro&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;0x11bbc30&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;progn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;set-mouse-position&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;frame&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;posframe-mouse-banish&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;equal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cdr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mouse-position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;quote&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;progn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;set-mouse-position&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;frame&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;posframe--mouse-banish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;&amp;lt;frame&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emacs@manjaro&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;0x11bbc30&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;通过上面的堆栈信息，定位到是 &lt;code class=&quot;highlighter-rouge&quot;&gt;posframe--mouse-banish&lt;/code&gt; 函数来设置的光标位置，最后通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;(setq posframe-mouse-banish nil)&lt;/code&gt; 来解决posframe弹出时移动光标的问题。&lt;/p&gt;
-
-&lt;p&gt;解决问题后可以通过命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;(cancel-debug-on-entry 'set-mouse-position)&lt;/code&gt; 取消运行时调试。&lt;/p&gt;
-
-&lt;p&gt;Happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">常规调试方法</summary></entry></feed>
+&lt;p&gt;不知道为啥Arch不在内核升级后执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;grub update&lt;/code&gt; 命令自动更新grub配置文件来避免这种问题?&lt;/p&gt;</content><author><name></name></author><summary type="html">问题 今天升级Arch系统后，启动显示 error: file /boot/vmlinuz-5.3-x86_64 not found 的错误。</summary></entry></feed>
