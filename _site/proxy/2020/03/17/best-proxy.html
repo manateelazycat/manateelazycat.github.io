@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>最佳代理实践(2020-03-17)</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                最佳代理实践(2020-03-17)
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Proxy">
+                    <div class="category">
+                        Proxy
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数2851 2020-03-17
+            </div>
+            <div class="content">
+                <h2 id="不断变化的gfw">不断变化的GFW</h2>
+<p>GFW不断在变化，而我们的代理策略也要一直更新，今天把自己的代理设置全部集成写一遍，方便自己和看我博客的同学参考。</p>
+
+<h2 id="配置trojan代理客户端">配置Trojan代理客户端</h2>
+
+<h3 id="准备工作">准备工作</h3>
+
+<ul>
+  <li>一台境外的VPS, 不需要购买域名和配置证书</li>
+</ul>
+
+<h3 id="vps安装debian-9">VPS安装Debian 9</h3>
+
+<p>一般VPS都有操作系统安装服务，安装Debian 9以后，替换 /etc/apt/sources.list 文件内容为163镜像源，提升软件安装速度:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deb http://mirrors.163.com/debian/ stretch main non-free contrib
+deb http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+deb http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+deb http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+</code></pre></div></div>
+
+<h3 id="安装trojan服务端">安装Trojan服务端</h3>
+
+<p>通过命令 <code class="highlighter-rouge">ssh root@your_vps_ip</code> 登录VPS服务器后，执行下面脚本自动安装和配置Trojan服务端:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-N</span> <span class="nt">--no-check-certificate</span> https://raw.githubusercontent.com/mark-hans/trojan-wiz/master/ins.sh <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> +x ins.sh <span class="o">&amp;&amp;</span> bash ins.sh
+</code></pre></div></div>
+
+<p>安装过程中提示“请选择证书模式”，选择”使用IP自签发证书”的模式。</p>
+
+<h3 id="启动trojan服务端">启动Trojan服务端</h3>
+
+<p>安装完成后，使用命令<code class="highlighter-rouge">systemctl start trojan-gfw</code> 启动trojan服务端, 同时可以用命令<code class="highlighter-rouge">systemctl status trojan-gfw</code>来检查trojan服务端的状态，如果状态为<code class="highlighter-rouge">active(running)</code>, 证明trojan服务端已经启动。</p>
+
+<h3 id="拷贝服务端配置文件">拷贝服务端配置文件</h3>
+
+<p>trojan服务端配置成功以后会在VPS的/home/trojan/目录下生成client.json和ca-cert.pem两个文件:</p>
+
+<ul>
+  <li>client.json 是客户端配置文件，已经按照VPS IP配置好</li>
+  <li>ca-cert.pem 是证书文件，已经按照VPS配置好</li>
+</ul>
+
+<p>比如你的VPS IP为 xxx.xxx.xxx.xxx，使用下面的命令来完成拷贝服务端配置文件到本机：</p>
+
+<p><code class="highlighter-rouge">scp root@xxx.xxx.xxx.xxx:/home/trojan/ca-cert.pem ./</code></p>
+
+<p><code class="highlighter-rouge">scp root@xxx.xxx.xxx.xxx:/home/trojan/client.json ./</code></p>
+
+<h3 id="下载trojan客户端">下载Trojan客户端</h3>
+
+<ul>
+  <li>首先在VPS使用命令 <code class="highlighter-rouge">ping github.com</code>, 获取 github.com 的ip地址, 比如是 192.30.253.112</li>
+  <li>在本机 /etc/hosts 文件中加入 <code class="highlighter-rouge">192.30.253.112 github.com</code> , 这样访问github页面就暂时不需要FQ</li>
+  <li>重启本机网络服务: <code class="highlighter-rouge">sudo systemctl restart NetworkManager</code></li>
+  <li>下载Trojan客户端: <code class="highlighter-rouge">wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz</code></li>
+</ul>
+
+<p>下载trojan-1.14.1-linux-amd64.tar.xz后，解压文件，把ca-cert.pem和client.json拷贝到 trojan 目录下。</p>
+
+<h3 id="启动trojan客户端">启动Trojan客户端</h3>
+
+<p><code class="highlighter-rouge">./trojan -c client.json</code> 即可在 127.0.0.1:1080 建立本地代理连接，最后通过Chrome SwitchyOmega来配置浏览器的代理设置。</p>
+
+<p>在浏览器验证可以FQ以后，你可以清除刚刚在本机 /etc/hosts 的github设置。</p>
+
+<h2 id="配置git代理">配置Git代理</h2>
+
+<h3 id="配置git-httphttps代理">配置Git HTTP/HTTPS代理</h3>
+
+<p>在 ~/.gitconfig 文件中加入以下配置:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>http]
+	proxy <span class="o">=</span> socks5://127.0.0.1:1080
+</code></pre></div></div>
+
+<p>注意，上明配置等同于命令 <code class="highlighter-rouge">git config --global http.proxy 'socks5://127.0.0.1:1080'</code></p>
+
+<p>Git不认https.proxy，设置http.proxy就可以支持 https 了。</p>
+
+<h3 id="配置git-ssh代理">配置Git SSH代理</h3>
+
+<p>在 ~/.ssh/config 文件中加入以下配置:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host github.com
+HostName github.com
+User git
+Port 22
+ProxyCommand /usr/bin/ncat <span class="nt">--proxy</span> 127.0.0.1:1080 <span class="nt">--proxy-type</span> socks5 %h %p
+</code></pre></div></div>
+
+<h2 id="配置aria2代理">配置Aria2代理</h2>
+<p>我们上面已经配置了Socks5代理，但是Aria2只支持HTTP代理, 所以我们需要通过 privoxy 来转换Socks5代理成HTTP代理:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> privoxy
+</code></pre></div></div>
+
+<p>然后设置 /etc/privoxy/config 配置文件，比如添加下面代码到配置文件中，把在1080端口的Socks5代理转换成9888端口的HTTP代理:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>forward-socks5t / 127.0.0.1:1080 <span class="nb">.</span>
+listen-address 127.0.0.1:9888
+</code></pre></div></div>
+
+<p>这样aria2就可以直接用 <code class="highlighter-rouge">127.0.0.1:9888</code> 这个Http代理来下载东西了。</p>
+
+<h2 id="配置npm代理">配置npm代理</h2>
+
+<p>上面配置好 HTTP 代理，可以通过下面的命令来加速npm的下载速度：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm config <span class="nb">set </span><span class="nv">proxy</span><span class="o">=</span>http://127.0.0.1:9888
+npm config <span class="nb">set </span><span class="nv">registry</span><span class="o">=</span>http://registry.npmjs.org
+</code></pre></div></div>
+
+<h2 id="配置youtube-dl代理">配置youtube-dl代理</h2>
+
+<p>youtube-dl 这个工具非常方便下载一些YouTube视频，可以使用下面的命令来通过代理下载视频：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>youtube-dl <span class="nt">--proxy</span> socks5://127.0.0.1:1080 video_url <span class="nt">-o</span> /download_dir/%<span class="o">(</span>title<span class="o">)</span>s-%<span class="o">(</span><span class="nb">id</span><span class="o">)</span>s.%<span class="o">(</span>ext<span class="o">)</span>s
+</code></pre></div></div>
+
+<h2 id="最后">最后</h2>
+<p>上面就是系统中大部分工具所需的代理设置，也是到目前为止我探索的代理最佳实践，我会定期保持更新的。</p>
+
+            </div>
+        </div>
+    </body>
+</html>
