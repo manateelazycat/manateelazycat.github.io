@@ -51,7 +51,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数490 2020-01-31
+                字数558 2020-01-31
             </div>
             <div class="content">
                 <h3 id="准备工作">准备工作</h3>
@@ -68,9 +68,11 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>http]
 	proxy <span class="o">=</span> socks5://127.0.0.1:1080
-<span class="o">[</span>https]
-	proxy <span class="o">=</span> socks5://127.0.0.1:1080
 </code></pre></div></div>
+
+<p>注意，上明配置等同于命令 <code class="highlighter-rouge">git config --global http.proxy 'socks5://127.0.0.1:1080'</code></p>
+
+<p>Git不认https.proxy，设置http.proxy就可以支持 https 了。</p>
 
 <h3 id="配置git-ssh代理">配置Git SSH代理</h3>
 
