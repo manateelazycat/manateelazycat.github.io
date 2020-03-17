@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-17T11:12:20+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">最佳代理实践(2020-03-17)</title><link href="http://localhost:4000/proxy/2020/03/17/best-proxy.html" rel="alternate" type="text/html" title="最佳代理实践(2020-03-17)" /><published>2020-03-17T00:00:00+08:00</published><updated>2020-03-17T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/03/17/best-proxy</id><content type="html" xml:base="http://localhost:4000/proxy/2020/03/17/best-proxy.html">&lt;h2 id=&quot;不断变化的gfw&quot;&gt;不断变化的GFW&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-17T14:41:20+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">最佳代理实践(2020-03-17)</title><link href="http://localhost:4000/proxy/2020/03/17/best-proxy.html" rel="alternate" type="text/html" title="最佳代理实践(2020-03-17)" /><published>2020-03-17T00:00:00+08:00</published><updated>2020-03-17T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/03/17/best-proxy</id><content type="html" xml:base="http://localhost:4000/proxy/2020/03/17/best-proxy.html">&lt;h2 id=&quot;不断变化的gfw&quot;&gt;不断变化的GFW&lt;/h2&gt;
 &lt;p&gt;GFW不断在变化，而我们的代理策略也要一直更新，今天把自己的代理设置全部集成写一遍，方便自己和看我博客的同学参考。&lt;/p&gt;
 
 &lt;h2 id=&quot;配置trojan代理客户端&quot;&gt;配置Trojan代理客户端&lt;/h2&gt;
@@ -123,7 +123,110 @@ npm config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
-&lt;p&gt;上面就是系统中大部分工具所需的代理设置，也是到目前为止我探索的代理最佳实践，我会定期保持更新的。&lt;/p&gt;</content><author><name></name></author><summary type="html">不断变化的GFW GFW不断在变化，而我们的代理策略也要一直更新，今天把自己的代理设置全部集成写一遍，方便自己和看我博客的同学参考。</summary></entry><entry><title type="html">登入终端后自动切换目录</title><link href="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html" rel="alternate" type="text/html" title="登入终端后自动切换目录" /><published>2020-03-15T00:00:00+08:00</published><updated>2020-03-15T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell</id><content type="html" xml:base="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html">&lt;p&gt;如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：&lt;/p&gt;
+&lt;p&gt;上面就是系统中大部分工具所需的代理设置，也是到目前为止我探索的代理最佳实践，我会定期保持更新的。&lt;/p&gt;</content><author><name></name></author><summary type="html">不断变化的GFW GFW不断在变化，而我们的代理策略也要一直更新，今天把自己的代理设置全部集成写一遍，方便自己和看我博客的同学参考。</summary></entry><entry><title type="html">用Nginx配置Vue.js开发的网站</title><link href="http://localhost:4000/web/2020/03/17/vuejs-nginx.html" rel="alternate" type="text/html" title="用Nginx配置Vue.js开发的网站" /><published>2020-03-17T00:00:00+08:00</published><updated>2020-03-17T00:00:00+08:00</updated><id>http://localhost:4000/web/2020/03/17/vuejs-nginx</id><content type="html" xml:base="http://localhost:4000/web/2020/03/17/vuejs-nginx.html">&lt;h3 id=&quot;vuejs&quot;&gt;Vue.js&lt;/h3&gt;
+
+&lt;p&gt;Vue.js的组件化设计，写网站非常的方便，今天讲一下怎么用Nginx配置Vue.js开发的网站。&lt;/p&gt;
+
+&lt;h3 id=&quot;准备&quot;&gt;准备&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;VPS&lt;/li&gt;
+  &lt;li&gt;域名 (域名购买及指向VPS IP请自行Google)&lt;/li&gt;
+  &lt;li&gt;网站的Git仓库&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;在服务器安装依赖&quot;&gt;在服务器安装依赖&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh root@your_vps_ip&lt;/code&gt; 登入你的VPS服务器&lt;/li&gt;
+  &lt;li&gt;安装nvm: &lt;code class=&quot;highlighter-rouge&quot;&gt;curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;安装node: &lt;code class=&quot;highlighter-rouge&quot;&gt;nvm install 12.16.1&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;使用node: &lt;code class=&quot;highlighter-rouge&quot;&gt;nvm use 12.16.1&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;替换备注:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;your_vps_ip&lt;/code&gt; 是你网站的公网IP地址&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;构建网站&quot;&gt;构建网站&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;下载网站源码: &lt;code class=&quot;highlighter-rouge&quot;&gt;git clone your_website_git&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;安装网站依赖: &lt;code class=&quot;highlighter-rouge&quot;&gt;cd your_website_git &amp;amp;&amp;amp; npm install&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;构建网站: &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run build&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;替换备注:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;your_website_git&lt;/code&gt; 是你网站的git名字&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;安装nginx&quot;&gt;安装Nginx&lt;/h3&gt;
+
+&lt;p&gt;安装nginx: &lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get install nginx&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;配置nginx&quot;&gt;配置Nginx&lt;/h3&gt;
+
+&lt;p&gt;创建网站配置文件：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;touch&lt;/span&gt; /etc/nginx/sites-available/vue_project
+&lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /etc/nginx/sites-available/vue_project /etc/nginx/sites-enabled/vue_project
+nano /etc/nginx/sites-available/vue_project
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;编辑配置文件: /etc/nginx/sites-available/vue_project&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    listen 80&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    server_name  your_domain
+
+    client_max_body_size 20m&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    charset utf-8&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    root /root/your_website_git/dist&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    index index.html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    location / &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        try_files &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt;/ @rewrites&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    location @rewrites &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        rewrite ^&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;.+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;/index.html last&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    location ~ .&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;gif|jpg|jpeg|png|bmp|swf|js|css|svg|ttf|otf|eot|woff|woff2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        expires      30d&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;把Nginx用户加入到网站访问权限：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gpasswd &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; www-data root
+&lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;g+x /root
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;替换备注:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;your_domain&lt;/code&gt; 是你网站注册的域名&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/root/your_website_git/dist&lt;/code&gt; 是你网站dist目录在服务器上的绝对路径&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;启动nginx&quot;&gt;启动Nginx&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nginx &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt;
+service nginx restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;用浏览器访问 http://your_domain 就可以了。&lt;/p&gt;</content><author><name></name></author><summary type="html">Vue.js</summary></entry><entry><title type="html">登入终端后自动切换目录</title><link href="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html" rel="alternate" type="text/html" title="登入终端后自动切换目录" /><published>2020-03-15T00:00:00+08:00</published><updated>2020-03-15T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell</id><content type="html" xml:base="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html">&lt;p&gt;如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：&lt;/p&gt;
 
 &lt;div class=&quot;language-vala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;spawn_sync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pty_flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -377,21 +480,4 @@ listen-address 127.0.0.1:9888
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;eaf-setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf-browser-aria2-proxy-port&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;9888&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;这样Aria2所有的下载连接都会通过代理来下载文件了, happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">EAF浏览器 + Aria2下载客户端 今天写了一个EAF+Aria2补丁。</summary></entry><entry><title type="html">修复Git远端意外挂断</title><link href="http://localhost:4000/linux/2020/02/15/git-push-hung-up.html" rel="alternate" type="text/html" title="修复Git远端意外挂断" /><published>2020-02-15T00:00:00+08:00</published><updated>2020-02-15T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/02/15/git-push-hung-up</id><content type="html" xml:base="http://localhost:4000/linux/2020/02/15/git-push-hung-up.html">&lt;p&gt;今天在执行命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; 时，终端报了下面的错误:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;枚举对象: 35, 完成.
-对象计数中: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;35/35&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, 完成.
-使用 4 个线程进行压缩
-压缩对象中: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;30/30&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, 完成.
-写入对象中: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;30/30&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, 341.28 KiB | 976.00 KiB/s, 完成.
-总共 30 （差异 10），复用 0 （差异 0）
-Connection to github.com closed by remote host.
-fatal: 远端意外挂断了
-fatal: 远端意外挂断了
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Google了一下，应该是Buffer太小的原因，使用下面的命令修复后就可以正常 &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; 了。&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config http.postBuffer 100000000
-git config ssh.postBuffer 100000000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">今天在执行命令 git push 时，终端报了下面的错误:</summary></entry></feed>
+&lt;p&gt;这样Aria2所有的下载连接都会通过代理来下载文件了, happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">EAF浏览器 + Aria2下载客户端 今天写了一个EAF+Aria2补丁。</summary></entry></feed>
