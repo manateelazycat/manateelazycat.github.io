@@ -97,3 +97,7 @@ service nginx restart
 ```
 
 用浏览器访问 http://your_domain 就可以了。
+
+### 更新网站版本
+
+如果要更新网站，直接切换到服务器的网站目录，执行 ```git pull && npm run build``` 命令然后在浏览器端刷新即可，不用重启Nginx服务器。
