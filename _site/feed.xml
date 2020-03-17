@@ -1,4 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-17T10:56:24+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">登入终端后自动切换目录</title><link href="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html" rel="alternate" type="text/html" title="登入终端后自动切换目录" /><published>2020-03-15T00:00:00+08:00</published><updated>2020-03-15T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell</id><content type="html" xml:base="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html">&lt;p&gt;如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-17T11:12:20+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">最佳代理实践(2020-03-17)</title><link href="http://localhost:4000/proxy/2020/03/17/best-proxy.html" rel="alternate" type="text/html" title="最佳代理实践(2020-03-17)" /><published>2020-03-17T00:00:00+08:00</published><updated>2020-03-17T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/03/17/best-proxy</id><content type="html" xml:base="http://localhost:4000/proxy/2020/03/17/best-proxy.html">&lt;h2 id=&quot;不断变化的gfw&quot;&gt;不断变化的GFW&lt;/h2&gt;
+&lt;p&gt;GFW不断在变化，而我们的代理策略也要一直更新，今天把自己的代理设置全部集成写一遍，方便自己和看我博客的同学参考。&lt;/p&gt;
+
+&lt;h2 id=&quot;配置trojan代理客户端&quot;&gt;配置Trojan代理客户端&lt;/h2&gt;
+
+&lt;h3 id=&quot;准备工作&quot;&gt;准备工作&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一台境外的VPS, 不需要购买域名和配置证书&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;vps安装debian-9&quot;&gt;VPS安装Debian 9&lt;/h3&gt;
+
+&lt;p&gt;一般VPS都有操作系统安装服务，安装Debian 9以后，替换 /etc/apt/sources.list 文件内容为163镜像源，提升软件安装速度:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;deb http://mirrors.163.com/debian/ stretch main non-free contrib
+deb http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+deb http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+deb http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;安装trojan服务端&quot;&gt;安装Trojan服务端&lt;/h3&gt;
+
+&lt;p&gt;通过命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh root@your_vps_ip&lt;/code&gt; 登录VPS服务器后，执行下面脚本自动安装和配置Trojan服务端:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-check-certificate&lt;/span&gt; https://raw.githubusercontent.com/mark-hans/trojan-wiz/master/ins.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x ins.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; bash ins.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;安装过程中提示“请选择证书模式”，选择”使用IP自签发证书”的模式。&lt;/p&gt;
+
+&lt;h3 id=&quot;启动trojan服务端&quot;&gt;启动Trojan服务端&lt;/h3&gt;
+
+&lt;p&gt;安装完成后，使用命令&lt;code class=&quot;highlighter-rouge&quot;&gt;systemctl start trojan-gfw&lt;/code&gt; 启动trojan服务端, 同时可以用命令&lt;code class=&quot;highlighter-rouge&quot;&gt;systemctl status trojan-gfw&lt;/code&gt;来检查trojan服务端的状态，如果状态为&lt;code class=&quot;highlighter-rouge&quot;&gt;active(running)&lt;/code&gt;, 证明trojan服务端已经启动。&lt;/p&gt;
+
+&lt;h3 id=&quot;拷贝服务端配置文件&quot;&gt;拷贝服务端配置文件&lt;/h3&gt;
+
+&lt;p&gt;trojan服务端配置成功以后会在VPS的/home/trojan/目录下生成client.json和ca-cert.pem两个文件:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;client.json 是客户端配置文件，已经按照VPS IP配置好&lt;/li&gt;
+  &lt;li&gt;ca-cert.pem 是证书文件，已经按照VPS配置好&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;比如你的VPS IP为 xxx.xxx.xxx.xxx，使用下面的命令来完成拷贝服务端配置文件到本机：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scp root@xxx.xxx.xxx.xxx:/home/trojan/ca-cert.pem ./&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scp root@xxx.xxx.xxx.xxx:/home/trojan/client.json ./&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;下载trojan客户端&quot;&gt;下载Trojan客户端&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首先在VPS使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ping github.com&lt;/code&gt;, 获取 github.com 的ip地址, 比如是 192.30.253.112&lt;/li&gt;
+  &lt;li&gt;在本机 /etc/hosts 文件中加入 &lt;code class=&quot;highlighter-rouge&quot;&gt;192.30.253.112 github.com&lt;/code&gt; , 这样访问github页面就暂时不需要FQ&lt;/li&gt;
+  &lt;li&gt;重启本机网络服务: &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo systemctl restart NetworkManager&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;下载Trojan客户端: &lt;code class=&quot;highlighter-rouge&quot;&gt;wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;下载trojan-1.14.1-linux-amd64.tar.xz后，解压文件，把ca-cert.pem和client.json拷贝到 trojan 目录下。&lt;/p&gt;
+
+&lt;h3 id=&quot;启动trojan客户端&quot;&gt;启动Trojan客户端&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./trojan -c client.json&lt;/code&gt; 即可在 127.0.0.1:1080 建立本地代理连接，最后通过Chrome SwitchyOmega来配置浏览器的代理设置。&lt;/p&gt;
+
+&lt;p&gt;在浏览器验证可以FQ以后，你可以清除刚刚在本机 /etc/hosts 的github设置。&lt;/p&gt;
+
+&lt;h2 id=&quot;配置git代理&quot;&gt;配置Git代理&lt;/h2&gt;
+
+&lt;h3 id=&quot;配置git-httphttps代理&quot;&gt;配置Git HTTP/HTTPS代理&lt;/h3&gt;
+
+&lt;p&gt;在 ~/.gitconfig 文件中加入以下配置:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;http]
+	proxy &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; socks5://127.0.0.1:1080
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意，上明配置等同于命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;git config --global http.proxy 'socks5://127.0.0.1:1080'&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Git不认https.proxy，设置http.proxy就可以支持 https 了。&lt;/p&gt;
+
+&lt;h3 id=&quot;配置git-ssh代理&quot;&gt;配置Git SSH代理&lt;/h3&gt;
+
+&lt;p&gt;在 ~/.ssh/config 文件中加入以下配置:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Host github.com
+HostName github.com
+User git
+Port 22
+ProxyCommand /usr/bin/ncat &lt;span class=&quot;nt&quot;&gt;--proxy&lt;/span&gt; 127.0.0.1:1080 &lt;span class=&quot;nt&quot;&gt;--proxy-type&lt;/span&gt; socks5 %h %p
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;配置aria2代理&quot;&gt;配置Aria2代理&lt;/h2&gt;
+&lt;p&gt;我们上面已经配置了Socks5代理，但是Aria2只支持HTTP代理, 所以我们需要通过 privoxy 来转换Socks5代理成HTTP代理:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; privoxy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后设置 /etc/privoxy/config 配置文件，比如添加下面代码到配置文件中，把在1080端口的Socks5代理转换成9888端口的HTTP代理:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;forward-socks5t / 127.0.0.1:1080 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+listen-address 127.0.0.1:9888
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这样aria2就可以直接用 &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:9888&lt;/code&gt; 这个Http代理来下载东西了。&lt;/p&gt;
+
+&lt;h2 id=&quot;配置npm代理&quot;&gt;配置npm代理&lt;/h2&gt;
+
+&lt;p&gt;上面配置好 HTTP 代理，可以通过下面的命令来加速npm的下载速度：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://127.0.0.1:9888
+npm config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;registry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://registry.npmjs.org
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;配置youtube-dl代理&quot;&gt;配置youtube-dl代理&lt;/h2&gt;
+
+&lt;p&gt;youtube-dl 这个工具非常方便下载一些YouTube视频，可以使用下面的命令来通过代理下载视频：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;youtube-dl &lt;span class=&quot;nt&quot;&gt;--proxy&lt;/span&gt; socks5://127.0.0.1:1080 video_url &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; /download_dir/%&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;title&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;s-%&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;s.%&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ext&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+&lt;p&gt;上面就是系统中大部分工具所需的代理设置，也是到目前为止我探索的代理最佳实践，我会定期保持更新的。&lt;/p&gt;</content><author><name></name></author><summary type="html">不断变化的GFW GFW不断在变化，而我们的代理策略也要一直更新，今天把自己的代理设置全部集成写一遍，方便自己和看我博客的同学参考。</summary></entry><entry><title type="html">登入终端后自动切换目录</title><link href="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html" rel="alternate" type="text/html" title="登入终端后自动切换目录" /><published>2020-03-15T00:00:00+08:00</published><updated>2020-03-15T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell</id><content type="html" xml:base="http://localhost:4000/linux/2020/03/15/change-dir-after-login-shell.html">&lt;p&gt;如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：&lt;/p&gt;
 
 &lt;div class=&quot;language-vala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;spawn_sync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pty_flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -269,21 +394,4 @@ fatal: 远端意外挂断了
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config http.postBuffer 100000000
 git config ssh.postBuffer 100000000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">今天在执行命令 git push 时，终端报了下面的错误:</summary></entry><entry><title type="html">修复Arch升级后内核启动失败的问题</title><link href="http://localhost:4000/linux/2020/02/14/fix-arch-boot-failed.html" rel="alternate" type="text/html" title="修复Arch升级后内核启动失败的问题" /><published>2020-02-14T00:00:00+08:00</published><updated>2020-02-14T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/02/14/fix-arch-boot-failed</id><content type="html" xml:base="http://localhost:4000/linux/2020/02/14/fix-arch-boot-failed.html">&lt;h3 id=&quot;问题&quot;&gt;问题&lt;/h3&gt;
-&lt;p&gt;今天升级Arch系统后，启动显示 &lt;code class=&quot;highlighter-rouge&quot;&gt;error: file /boot/vmlinuz-5.3-x86_64 not found&lt;/code&gt; 的错误。&lt;/p&gt;
-
-&lt;p&gt;每次Arch升级内核，都会因为Grub内核版本号不升级导致这种问题。&lt;/p&gt;
-
-&lt;h3 id=&quot;修复方法&quot;&gt;修复方法&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;从Grub菜单，按C键进入命令行&lt;/li&gt;
-  &lt;li&gt;输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt; 命令看磁盘信息，比如显示 &lt;code class=&quot;highlighter-rouge&quot;&gt;(hd0,msdos1)&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;set root=(hd0,msdos1)&lt;/code&gt; 命令设置根分区&lt;/li&gt;
-  &lt;li&gt;输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;ls /boot&lt;/code&gt; 查看系统的内核文件版本号, 比如版本号5.4&lt;/li&gt;
-  &lt;li&gt;重启系统后, 在Grub菜单按E键编辑Grub配置文件，把内核版本从5.3改成5.4后，按Ctrl+X快捷键启动系统&lt;/li&gt;
-  &lt;li&gt;输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo sed -i 's/5.3/5.4/g' /boot/grub/grub.cfg&lt;/code&gt; 替换配置文件的内核版本号&lt;/li&gt;
-  &lt;li&gt;重启系统，应该就没有问题了&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;不知道为啥Arch不在内核升级后执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;grub update&lt;/code&gt; 命令自动更新grub配置文件来避免这种问题?&lt;/p&gt;</content><author><name></name></author><summary type="html">问题 今天升级Arch系统后，启动显示 error: file /boot/vmlinuz-5.3-x86_64 not found 的错误。</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">今天在执行命令 git push 时，终端报了下面的错误:</summary></entry></feed>
