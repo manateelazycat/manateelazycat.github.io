@@ -51,7 +51,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数4870 2019-07-14
+                字数5108 2019-07-14
             </div>
             <div class="content">
                 <h3 id="vuejs是计算机发展的趋势使然">Vue.js是计算机发展的趋势使然</h3>
@@ -305,6 +305,25 @@
 </code></pre></div></div>
 
 <p>这段代码的意思是，当页面销毁时注销事件回调，当页面创建时再注册事件回调，这样就解决 EventBus 回调调用两次的诡异问题。</p>
+
+<h3 id="路由跳转时页面滚动到顶部">路由跳转时页面滚动到顶部</h3>
+<p>Vue.js 路由切换的时候，如果当前页面不在顶部，一旦路由发生变化后，新的页面依然是当前滚动的位置，而不是最顶部，这样的设定不符合用户的心理预期。</p>
+
+<p>其实Vue.js已经内置这样的功能：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VueRouter</span><span class="p">({</span>
+    <span class="nx">scrollBehavior</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">0</span> <span class="p">};</span>
+    <span class="p">},</span>
+    <span class="na">routes</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="na">path</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+        <span class="p">},</span>
+   <span class="p">]</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>只需在 <code class="highlighter-rouge">VueRouter</code> 中添加 <code class="highlighter-rouge">scrollBehavior</code> 的函数即可，这样页面切换的时候会自动滚动页面顶部。</p>
 
 <h3 id="最后">最后</h3>
 <p>虽然上面写了这么多，但是从整体上看，一旦你熟悉了Vue.js的使用方式，Vue.js已经算同等规模开源项目里面坑比较少的项目，用起来还是非常省心和好用的。</p>
