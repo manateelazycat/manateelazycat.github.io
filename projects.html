@@ -1,0 +1,561 @@
+---
+layout: projects
+title: Projects
+---
+
+<div class="project-list">
+    <div class="project-category">强烈推荐的项目</div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/emacs-application-framework"
+            class="project-name">
+            emacs-application-framework
+        </a>
+        <div class="project-intro">
+            EAF使用了X11 XReparent技术和PyQt5实现了嵌入任意图形程序到Emacs的窗口中，并与Emacs现有生态形成协作，实现我多年Live in Emacs的小梦想。
+            Emacs的框架和历史包袱使其无法很好的支持多线程和多媒体应用，EAF这种无侵入的技术，在给Emacs带来多媒体能力的情况下，保留了Emacs Elisp现有的插件生态和黑客文化。
+        </div>
+    </div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/aweshell"
+            class="project-name">
+            aweshell
+        </a>
+        <div class="project-intro">
+            基于eshell开发的终端管理器插件，包括Shell命令补全、ZSH风格提示符、底部固定终端、Fish风格最佳匹配建议、语法高亮Cat命令、命令状态提示等高级功能。现在是我最长用的终端插件。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/snails"
+            class="project-name">
+            snails
+        </a>
+        <div class="project-intro">
+            作为资深的Helm开发者，觉得Helm越来越臃肿，而且经常卡顿，加之异常讨厌ivy在minibuffer跳上跳下晃眼睛的设计。自己重新设计了类似VSCode的弹出式补全框架：集成了VSCode的交互行为、Helm多后端集成搜索、Ivy的速度，而且默认行为只有一个，输入关键字按回车，没有复杂的其他操作。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/color-rg"
+            class="project-name">
+            color-rg
+        </a>
+        <div class="project-intro">
+            原来一直使用color-moccur.el做项目智能重构工具，但是一直有很多小问题，在随州大银杏树旁写了color-rg.el，这个插件主要基于ripgrep实现了项目、目录和单文件的快速搜索，并集成了批量替换和快速过滤等方便的功能。每天我都极度依赖这个插件进行源码分析和重构工作。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/awesome-pair"
+            class="project-name">
+            awesome-pair
+        </a>
+        <div class="project-intro">
+            集成于 paredit.el，针对非Lisp环境，特别是Web环境和前端Vue.js增加了大量贴心的结构化编辑功能：比如标签属性结构化编辑、Vue.js多模式区域智能识别编辑。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/awesome-tab"
+            class="project-name">
+            awesome-tab
+        </a>
+        <div class="project-intro">
+            tabbar.el默认的界面太丑而且难用，awesome-tab基于原版的tabbar.el进行了大量功能增强：包括按照项目和自定义规则分组、增加文件图标显示、标签外形美化等工作。
+        </div>
+    </div>
+
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/awesome-tray"
+            class="project-name">
+            awesome-tray
+        </a>
+        <div class="project-intro">
+            Emacs的Mode-Line太多冗余信息，其实日常用只需要光标位置、当前位置和模式、电源和时间状态。awesome-tray隐藏了Mode-Line，只把必备信息显示在Minibuffer右侧，既节省纵向代码阅读空间又不会影响Minibuffer正常消息显示。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/lazy-load"
+            class="project-name">
+            lazy-load
+        </a>
+        <div class="project-intro">
+            lazy-load主要通过define-key和autoload技术事先把快捷键和命令建立关联，在运行时通过按键动态加插件。因为每个插件的加载速度都在1秒之内完成，通过lazy-load技术可以实现1秒启动Emacs、减少不用插件的内存占用、动态加载插件的效果。我几百个插件启动速度最终可以控制在1秒内加载完毕。
+        </div>
+    </div>
+
+    <div class="project-category">英语学习插件</div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/sdcv"
+            class="project-name">
+            sdcv
+        </a>
+        <div class="project-intro">
+            基于星际译王命令行工具开发的光标翻译软件，可以自动提取当前光标的单词或选中文字，并通过弹出菜单的形式显示翻译，英语学习翻译利器。
+        </div>
+    </div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/company-english-helper"
+            class="project-name">
+            company-english-helper
+        </a>
+        <div class="project-intro">
+            通过company-mode和星际译王词典，实现英文单词单词和词语补全，并同步显示每个单词和词语的中文翻译。因为整个词典默认都加载到内存，整个补全流程异常流畅舒适。
+        </div>
+    </div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/insert-translated-name"
+            class="project-name">
+            insert-translated-name
+        </a>
+        <div class="project-intro">
+            作为一个中国程序员，世界上最难的事情不是写好一个算法，而是在纷繁的现实逻辑中取一个恰当的名称。这个插件会让你直接输入中文，按下空格自动翻译，因为它能够识别你是写文档还是某个编程语言的语境，基本上按了空格，变量、函数名和注释区域都可以直接生成对应的英文。
+        </div>
+    </div>
+
+    <div class="project-category">实用小插件</div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/auto-save"
+            class="project-name">
+            auto-save
+        </a>
+        <div class="project-intro">
+            我记得很多年前在成都写程序，因为停电导致写了几天的源代码全部丢失，而且Emacs默认的备份文件太不好用。随即写了这个自动保存插件，当手指头一松，Emacs会趁你思考的空隙自动保存文件，至此十多年期间再也没有丢过源代码。
+        </div>
+    </div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/thing-edit"
+            class="project-name">
+            thing-edit
+        </a>
+        <div class="project-intro">
+            我们经常要复制很多东西，比如符号、单词、文件名、链接、括号内内容、当前行、段落等内容，如果每个内容，我们都需要手动移动光标来选中开始和结束区域，效率会非常低。thing-edit.el提供了大量内置的复制和剪切命令，不用移动光标，只用调用响应的命令即可快速复制和剪切当前光标下的对象。每天使用上白次的必备插件。
+        </div>
+    </div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/move-text"
+            class="project-name">
+            move-text
+        </a>
+        <div class="project-intro">
+            简单直接，移动当前行或选中内容，快速进行上下移动，不用傻傻的粘贴复制，提高代码编写效率。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/duplicate-line"
+            class="project-name">
+            duplicate-line
+        </a>
+        <div class="project-intro">
+            快速复制当前行和选中内容，特别在你要快速修改当前行，实验其他参数的时候，特别方便，新代码不行，还可以快速恢复旧代码。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/open-newline"
+            class="project-name">
+            open-newline
+        </a>
+        <div class="project-intro">
+            有时候，我们需要从当前行快速跳出，并在当前行上面和下面自动缩进后继续写代码，open-newline这个插件可以节省你大量跳到行尾按回车的时间，非常方便。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/vi-navigate"
+            class="project-name">
+            vi-navigate
+        </a>
+        <div class="project-intro">
+            在阅读代码时，VI类似的单按键要比Ctrl + n/Ctrl + p更加方便快捷，vi-navigate提供了临时进入只读状态模式，并用单按键进行光标操作，非常适合只想简单切换到只读模式阅读代码，又不想花巨大成本学习evil插件的同学。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/grep-dired"
+            class="project-name">
+            grep-dired
+        </a>
+        <div class="project-intro">
+            我们经常有在项目文件中递归查找特定文件的需求，Emacs默认的grep插件是同步模式设计的，当项目非常大的时候，Emacs会卡住直到搜索完所有文件。这个插件通过异步模式设计，可以边搜索边显示，再大的文件都不会卡住Emacs。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/instant-rename-tag"
+            class="project-name">
+            instant-rename-tag
+        </a>
+        <div class="project-intro">
+            在Html编码时，经常有换Tag的需求，这个插件通过overlay的技术，进入重命名模式后，Tag的开始和结束标签可以同步更改，因为使用overlay技术，不会因为修改过程中语法结果的变化而导致重命名失败的问题，是同类功能中最稳定的一款插件。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/delete-block"
+            class="project-name">
+            delete-block
+        </a>
+        <div class="project-intro">
+            语法删除光标前后的单词，和Emacs内置的删除功能不同的是，支持骆驼风格的单词删除，比如C++/Java的函数和变量名字，有时候我们只想替换名字中的一部分单词，而不是把整个骆驼风格的名字给删除了。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/watch-other-window"
+            class="project-name">
+            watch-other-window
+        </a>
+        <div class="project-intro">
+            当我们分屏时，希望光标留在当前Buffer，同时通过快捷键来滚动另外一个窗口的内容进行阅读，这个插件的目标就是帮助我们提升这种场景下的效率的。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/css-sort"
+            class="project-name">
+            css-sort
+        </a>
+        <div class="project-intro">
+            当我们自由风格的完成Web项目时，想对CSS代码进行重构时，这个插件就派上用场了，它不但可以一键排序CSS属性，还可以支持嵌套SCSS样式，10倍以上提升重构CSS/SCSS文件的效率。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/smart-align"
+            class="project-name">
+            smart-align
+        </a>
+        <div class="project-intro">
+            不用动光标，就可以快速把光标出上下行的代码按照赋值符号自动对齐的插件，写网页代码的时候非常方便。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/find-define"
+            class="project-name">
+            fined-define
+        </a>
+        <div class="project-intro">
+            集成了 elisp-def、jedi、godef-jump、dumb-jump等插件对不同的编程语言提供源码跳转和快速返回的功能。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/highlight-matching-tag"
+            class="project-name">
+            highlight-matching-tag
+        </a>
+        <div class="project-intro">
+            实时高亮Tag匹配的位置，方便阅读HTML源代码，可以可视化的感知Tag语法块的区。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/cache-path-from-shell"
+            class="project-name">
+            cache-path-from-shell
+        </a>
+        <div class="project-intro">
+            Mac用户会经常使用 ```exec-path-from-shell``` 这个插件来加载二进制的路径，但是这个插件的效率比较差，如果多个地方使用就会大大增加Emacs的启动时间。cache-path-from-shell 这个插件通过缓存机制保证即使exec-path-from-shell被调用多次，也只执行一次，提升Mac用户的启动时间。
+            大量使用了lazy-load.el的技术来实现延迟加载和按键触发插件动态加载，几百个插件在1秒内启动完毕。
+        </div>
+    </div>
+
+    <div class="project-category">桌面应用</div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deepin-terminal"
+            class="project-name">
+            deepin-terminal
+        </a>
+        <div class="project-intro">
+            Vala和VTE编写的终端应用，作为第一款提供类似Chrome标签体验的终端模拟器，还提供包括任意分屏、远程登录管理、文件上传下载自动穿透、搜索引擎集成和主题套件等功能。得益于Vala的手感和C一样的运行效率，在添加很多功能的前提下，启动时间保持在200ms左右，运行速度非常快。
+        </div>
+    </div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deepin-system-monitor"
+            class="project-name">
+            deepin-system-monitor
+        </a>
+        <div class="project-intro">
+            Qt5/C++编写的系统监视器，主要是把CPU、网络、磁盘放在一个标签中统一展示，不用来回切换，并且能够自动识别Chrome分组进程、Wine进程和FlatPak等特殊进程的信息收集和管理功能。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deepin-screen-recorder"
+            class="project-name">
+            deepin-screen-recorder
+        </a>
+        <div class="project-intro">
+            像我最开始写的深度截图一样，智能识别窗口和桌面区域，自由拖拽即可实现gif和mp4的录制。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deepin-pinyin-assistant"
+            class="project-name">
+            deepin-pyin-assistant
+        </a>
+        <div class="project-intro">
+            小朋友上小学一年级的时候，每天对我的灵魂拷问就是：“爸爸，这个词怎么写啊？”，花了一下午时间，利用讯飞的API和桌面显示技术，小朋友只用对着屏幕说话，就会在屏幕上显示正确的汉字和对应的拼音。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deepin-picker"
+            class="project-name">
+            deepin-picker
+        </a>
+        <div class="project-intro">
+            屏幕取色器，可以快速取色并保存成多种颜色格式。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deepin-editor"
+            class="project-name">
+            deepin-editor
+        </a>
+        <div class="project-intro">
+            一款简单的编辑器，实现了很多Emacs的高级操作。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deepin-voice-recorder"
+            class="project-name">
+            deepin-voice-recorder
+        </a>
+        <div class="project-intro">
+            一款简单的声音录制软件。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deepin-desktop-monitor"
+            class="project-name">
+            deepin-desktop-monitor
+        </a>
+        <div class="project-intro">
+            deepin-system-monitor的衍生产品，可以直接把CPU、内存和硬盘信息绘制在桌面上，当时只是实验Idea，产品完成度欠佳。
+        </div>
+    </div>
+
+    <div class="project-category">实验性插件</div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/manatee"
+            class="project-name">
+            manatee
+        </a>
+        <div class="project-intro">
+            最早的目标是用Haskell配合Gtk2hs来实现的一个多媒体Emacs，来替换Emacs，当年止步于符合MVC的浏览器同步显示技术。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/mrkeyboard"
+            class="project-name">
+            mrkeyboard
+        </a>
+        <div class="project-intro">
+            用Vala实现的，类似Manatee的项目，攻克了MVC浏览器同步显示技术。最后还是放弃了，因为像EAF那样嵌入Emacs是更好的思路和实现方法。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/flex"
+            class="project-name">
+            flex
+        </a>
+        <div class="project-intro">
+            利用动态overlay技术实现的flex文件语法高亮。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/bison"
+            class="project-name">
+            bison
+        </a>
+        <div class="project-intro">
+            利用动态overlay技术实现的bison文件语法高亮。
+        </div>
+    </div>
+
+
+
+
+
+    <div class="project-category">个人项目</div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/lazycat-emacs"
+            class="project-name">
+            lazycat-emacs
+        </a>
+        <div class="project-intro">
+            我个人的Emacs配置，主要使用 git submodule 进行插件管理，最朴实的Elisp配置方式，没有使用复杂的use-package语法。
+            大量使用了lazy-load.el的技术来实现延迟加载和按键触发插件动态加载，几百个插件在1秒内启动完毕。这个项目还包涵了我写的数百个小插件，我会定期把里面我积累的插件分离出来发布到github上，方便Emacs的同学单独使用。
+        </div>
+    </div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/lazycat-emacs-time-machine"
+            class="project-name">
+            lazycat-emacs-time-machine
+        </a>
+        <div class="project-intro">
+            随着Emacs社区的快速发展，很多我以前的个人配置被社区大牛开发的新插件取代，为了留作纪念和方便给他人参考，把lazycat-emacs很多不用的插件和配置都保留到这个项目中。
+        </div>
+    </div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/lazycat-theme"
+            class="project-name">
+            lazycat-theme
+        </a>
+        <div class="project-intro">
+            我的极客风格的Emacs，主要特色是满屏幕的绿色，整体风格偏old-school风，喜欢doom-emacs主题的同学可能不适应，我换了很多主题还是换回来了，时间久了还是喜欢这种怀旧的感觉。
+        </div>
+    </div>
+
+
+    <div class="project-category">其他项目</div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/hammerspoon-config"
+            class="project-name">
+            hammerspoon-config
+        </a>
+        <div class="project-intro">
+            通过HammerSpoon把Mac变成一个平铺窗口管理器，具有快速分屏、快速启动和切换程序、自动切换不同应用输入法状态、自动管理代理等功能。用了很长一段时间，直到把MacBook的键盘敲坏两个，直接换回最皮实的ThinkPad和我钟爱的Linux。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/html-to-word"
+            class="project-name">
+            html-to-word
+        </a>
+        <div class="project-intro">
+            基于ROR的后台转换工具，通过CHM格式，直接把带图片、表格和高级布局的网页直接转换成Word文档，我去朋友公司Tower.im打酱油的那段时间开发了Tower在线文档导出Office的功能。
+        </div>
+    </div>
+
+
+
+
+    <div class="project-category">不再开发的项目</div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/lazy-search"
+            class="project-name">
+            lazy-search
+        </a>
+        <div class="project-intro">
+            很早开发的快速识别光标下单词并一键搜索跳转的插件，现在自己换成了 symbol-overlay 这个插件，这个插件不再继续维护。
+        </div>
+    </div>
+
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/multi-term"
+            class="project-name">
+            multi-term
+        </a>
+        <div class="project-intro">
+            Emacs最早也是最著名的终端插件，主要解决了多终端管理、底部固定终端和关闭后自动退出等问题，现在用的最多的是我的 aweshell.el 插件，遇到图形要求高的，就搭配EAF终端插件来使用。这个插件已经不再继续维护和开发了。
+        </div>
+    </div>
+
+    <div class="project-category">年代久远的项目</div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deepin-software-center"
+            class="project-name">
+            deepin-software-center
+        </a>
+        <div class="project-intro">
+            最早的深度应用商店，起源于2011年2月份，使用的是PyGtk来开发的，也是最早实现Linux换肤等技术软件。
+        </div>
+    </div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deepin-gnome-shell-3.4.1"
+            class="project-name">
+            deepin-gnome-shell
+        </a>
+        <div class="project-intro">
+            最早的深度桌面环境是基于Gnome3开发的，里面包括了我一万多行JS插件，那段时光几乎是边写代码边骂Gnome。
+        </div>
+    </div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deepin-translate-tool"
+            class="project-name">
+            deepin-translate-tool
+        </a>
+        <div class="project-intro">
+            深度翻译，Linux最早的OCR识别和翻译应用，有道词典Linux版的核心取词功能来源于这个项目。
+        </div>
+    </div>
+    <div class="project-item">
+        <a
+            href="https://github.com/manateelazycat/deb2po"
+            class="project-name">
+            deb2po
+        </a>
+        <div class="project-intro">
+            一个自动从Deb提取po文件的小工具，专门用于2011年中文化项目，当时组织全国爱好者翻译了3000多款社区软件。
+        </div>
+    </div>
+
+
+</div>
