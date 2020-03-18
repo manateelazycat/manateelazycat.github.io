@@ -13,7 +13,6 @@
 }
 
 .navigatebar-button {
-    margin-left: 10px;
     margin-right: 10px;
     color: #888;
     font-size: 20px;
@@ -35,9 +34,9 @@
 
 .navigatebar-mine {
     flex: 1;
-    margin-left: 28px;
+    margin-left: 10px;
 }
 
 .navigatebar-about {
-    margin-right: 20px;
+    margin-right: 10px;
 }
