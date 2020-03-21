@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-18T16:10:32+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">最佳代理实践(2020-03-17)</title><link href="http://localhost:4000/proxy/2020/03/17/best-proxy.html" rel="alternate" type="text/html" title="最佳代理实践(2020-03-17)" /><published>2020-03-17T00:00:00+08:00</published><updated>2020-03-17T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/03/17/best-proxy</id><content type="html" xml:base="http://localhost:4000/proxy/2020/03/17/best-proxy.html">&lt;h2 id=&quot;不断变化的gfw&quot;&gt;不断变化的GFW&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-21T10:28:14+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">纪念900颗星的日子</title><link href="http://localhost:4000/emacs/eaf/2020/03/21/900-stars.html" rel="alternate" type="text/html" title="纪念900颗星的日子" /><published>2020-03-21T00:00:00+08:00</published><updated>2020-03-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/03/21/900-stars</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/03/21/900-stars.html">&lt;p&gt;630天，全球18个开发者、15个应用、1104个改动、153个社区补丁，目前为止900颗星，继续推进 Live in Emacs 计划。&lt;/p&gt;
+
+&lt;p&gt;特别感谢MatthewZDM同学，生活在加拿大和我倒时差协作，无数个清晨，都是我起床后，你已经审核完补丁合并入主分支。&lt;/p&gt;
+
+&lt;p&gt;喜欢开源社区这种松散有创造力的合作模式。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/900-stars/900-stars.png&quot; alt=&quot;900 Stars&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">630天，全球18个开发者、15个应用、1104个改动、153个社区补丁，目前为止900颗星，继续推进 Live in Emacs 计划。</summary></entry><entry><title type="html">最佳代理实践(2020-03-17)</title><link href="http://localhost:4000/proxy/2020/03/17/best-proxy.html" rel="alternate" type="text/html" title="最佳代理实践(2020-03-17)" /><published>2020-03-17T00:00:00+08:00</published><updated>2020-03-17T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/03/17/best-proxy</id><content type="html" xml:base="http://localhost:4000/proxy/2020/03/17/best-proxy.html">&lt;h2 id=&quot;不断变化的gfw&quot;&gt;不断变化的GFW&lt;/h2&gt;
 &lt;p&gt;GFW不断在变化，而我们的代理策略也要一直更新，今天把自己的代理设置全部集成写一遍，方便自己和看我博客的同学参考。&lt;/p&gt;
 
 &lt;h2 id=&quot;配置trojan代理客户端&quot;&gt;配置Trojan代理客户端&lt;/h2&gt;
@@ -92,6 +98,17 @@ User git
 Port 22
 ProxyCommand /usr/bin/ncat &lt;span class=&quot;nt&quot;&gt;--proxy&lt;/span&gt; 127.0.0.1:1080 &lt;span class=&quot;nt&quot;&gt;--proxy-type&lt;/span&gt; socks5 %h %p
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;配置yay代理&quot;&gt;配置yay代理&lt;/h2&gt;
+
+&lt;p&gt;yay 代理有两种方式，一种是设置代理环境变量，一种是通过安装 gcc-go 替换 go 来支持 &lt;code class=&quot;highlighter-rouge&quot;&gt;proxychains4 yay&lt;/code&gt; 的代理操作。
+因为 gccgo 很多实现和 go 都有很大的差别，为了不影响其他 go 程序，选择第一种方式。&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bashrc&lt;/code&gt; 文件中添加如下的代理配置：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;export http_proxy=socks5://127.0.0.1:1080
+export https_proxy=socks5://127.0.0.1:1080
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&quot;配置aria2代理&quot;&gt;配置Aria2代理&lt;/h2&gt;
 &lt;p&gt;我们上面已经配置了Socks5代理，但是Aria2只支持HTTP代理, 所以我们需要通过 privoxy 来转换Socks5代理成HTTP代理:&lt;/p&gt;
@@ -445,43 +462,4 @@ graph TD
 | M-r     | 刷新页面               |&lt;/p&gt;
 
 &lt;p&gt;终于不用付费购买专业的思维导图软件就能享受到高级功能，自己动手，丰衣足
-食。&lt;/p&gt;</content><author><name></name></author><summary type="html">平常写项目文档经常用到思维导图帮助梳理思路，最近下班后用EAF结合jsMind这个库自己写了一个思维导图软件:</summary></entry><entry><title type="html">EAF浏览器 + Aria2</title><link href="http://localhost:4000/emacs/eaf/2020/02/15/eaf-aria2.html" rel="alternate" type="text/html" title="EAF浏览器 + Aria2" /><published>2020-02-15T00:00:00+08:00</published><updated>2020-02-15T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/02/15/eaf-aria2</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/02/15/eaf-aria2.html">&lt;h3 id=&quot;eaf浏览器--aria2下载客户端&quot;&gt;EAF浏览器 + Aria2下载客户端&lt;/h3&gt;
-&lt;p&gt;今天写了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/c026064067d9c6100fbfe9f983a0486b8aea9627&quot;&gt;EAF+Aria2&lt;/a&gt;补丁。&lt;/p&gt;
-
-&lt;p&gt;只要安装了&lt;code class=&quot;highlighter-rouge&quot;&gt;aria2c&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;aria2p&lt;/code&gt;这两个命令，EAF浏览器就可以直接使用aria2来下载文件了。&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; aria2
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;aria2p
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;并且在EAF浏览器中按 i 键，可以直接打开Aria2的网页客户端，用来管理文件的下载，暂停，删除并查看下载速度等详细信息：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-aria2/eaf-aria2.png&quot; alt=&quot;EAF + Aria2&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;自定义下载目录&quot;&gt;自定义下载目录&lt;/h3&gt;
-&lt;p&gt;EAF的默认下载目录在 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/Downloads&lt;/code&gt;, 我们可以通过下面的代码修改下载文件保存目录，比如 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/Documents&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;eaf-setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf-browser-download-path&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/Documents&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;给aria2添加下载代理&quot;&gt;给Aria2添加下载代理&lt;/h3&gt;
-&lt;p&gt;在国内，代理是必备的设置。&lt;/p&gt;
-
-&lt;p&gt;我本地有Socks5代理，但是Aria2只支持HTTP代理, 所以我们需要通过 privoxy 来转换Socks5代理成HTTP代理:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; privoxy
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;然后设置 /etc/privoxy/config 配置文件，比如添加下面代码到配置文件中，把在1080端口的Socks5代理转换成9888端口的HTTP代理:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;forward-socks5t / 127.0.0.1:1080 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-listen-address 127.0.0.1:9888
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;最后通过下面的代码来设置Aria2代理:&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;eaf-setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf-browser-aria2-proxy-host&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;eaf-setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf-browser-aria2-proxy-port&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;9888&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这样Aria2所有的下载连接都会通过代理来下载文件了, happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">EAF浏览器 + Aria2下载客户端 今天写了一个EAF+Aria2补丁。</summary></entry></feed>
+食。&lt;/p&gt;</content><author><name></name></author><summary type="html">平常写项目文档经常用到思维导图帮助梳理思路，最近下班后用EAF结合jsMind这个库自己写了一个思维导图软件:</summary></entry></feed>
