@@ -54,7 +54,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数1243 2020-03-17
+                字数1252 2020-03-17
             </div>
             <div class="content">
                 <h3 id="vuejs">Vue.js</h3>
@@ -92,6 +92,13 @@
   <li>构建网站: <code class="highlighter-rouge">npm run build</code></li>
 </ol>
 
+<p>注意：下面Nginx的配置只对应Vue.js的History模式，Vue.js的History模式通过下面的方式来设置：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VueRouter</span><span class="p">({</span>
+    <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">history</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
 <p>替换备注:</p>
 
 <ul>
@@ -113,28 +120,17 @@ nano /etc/nginx/sites-available/vue_project
 
 <p>编辑配置文件: /etc/nginx/sites-available/vue_project</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server <span class="o">{</span>
-    listen 80<span class="p">;</span>
-    server_name  your_domain
-
-    client_max_body_size 20m<span class="p">;</span>
-    charset utf-8<span class="p">;</span>
-
-    root /root/your_website_git/dist<span class="p">;</span>
-    index index.html<span class="p">;</span>
-
-    location / <span class="o">{</span>
-        try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ @rewrites<span class="p">;</span>
-    <span class="o">}</span>
-    location @rewrites <span class="o">{</span>
-        rewrite ^<span class="o">(</span>.+<span class="o">)</span><span class="nv">$ </span>/index.html last<span class="p">;</span>
-    <span class="o">}</span>
-
-    location ~ .<span class="k">*</span><span class="se">\.</span><span class="o">(</span>gif|jpg|jpeg|png|bmp|swf|js|css|svg|ttf|otf|eot|woff|woff2<span class="o">)</span><span class="err">$</span>
-    <span class="o">{</span>
-        expires      30d<span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
+  <span class="kn">listen</span>  <span class="mi">80</span><span class="p">;</span>
+  <span class="kn">server_name</span>  <span class="s">www.linakesi.com</span> <span class="s">linakesi.com</span><span class="p">;</span>
+  <span class="kn">gzip</span> <span class="no">on</span><span class="p">;</span>
+  <span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>
+    <span class="kn">add_header</span> <span class="s">Cache-Control</span> <span class="s">'private,</span> <span class="s">no-store,</span> <span class="s">max-age=0'</span><span class="p">;</span>
+    <span class="kn">root</span>  <span class="n">/root/your_website_git/dist</span><span class="p">;</span>
+    <span class="kn">index</span>  <span class="s">index.html</span><span class="p">;</span>
+    <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri</span><span class="n">/</span> <span class="n">/index.html</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>把Nginx用户加入到网站访问权限：</p>

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-21T10:28:14+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">纪念900颗星的日子</title><link href="http://localhost:4000/emacs/eaf/2020/03/21/900-stars.html" rel="alternate" type="text/html" title="纪念900颗星的日子" /><published>2020-03-21T00:00:00+08:00</published><updated>2020-03-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/03/21/900-stars</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/03/21/900-stars.html">&lt;p&gt;630天，全球18个开发者、15个应用、1104个改动、153个社区补丁，目前为止900颗星，继续推进 Live in Emacs 计划。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-21T14:58:52+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">纪念900颗星的日子</title><link href="http://localhost:4000/emacs/eaf/2020/03/21/900-stars.html" rel="alternate" type="text/html" title="纪念900颗星的日子" /><published>2020-03-21T00:00:00+08:00</published><updated>2020-03-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/03/21/900-stars</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/03/21/900-stars.html">&lt;p&gt;630天，全球18个开发者、15个应用、1104处改动、153个社区补丁，目前为止900颗星，继续推进 Live in Emacs 计划。&lt;/p&gt;
 
 &lt;p&gt;特别感谢MatthewZDM同学，生活在加拿大和我倒时差协作，无数个清晨，都是我起床后，你已经审核完补丁合并入主分支。&lt;/p&gt;
 
 &lt;p&gt;喜欢开源社区这种松散有创造力的合作模式。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/900-stars/900-stars.png&quot; alt=&quot;900 Stars&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">630天，全球18个开发者、15个应用、1104个改动、153个社区补丁，目前为止900颗星，继续推进 Live in Emacs 计划。</summary></entry><entry><title type="html">最佳代理实践(2020-03-17)</title><link href="http://localhost:4000/proxy/2020/03/17/best-proxy.html" rel="alternate" type="text/html" title="最佳代理实践(2020-03-17)" /><published>2020-03-17T00:00:00+08:00</published><updated>2020-03-17T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/03/17/best-proxy</id><content type="html" xml:base="http://localhost:4000/proxy/2020/03/17/best-proxy.html">&lt;h2 id=&quot;不断变化的gfw&quot;&gt;不断变化的GFW&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/900-stars/900-stars.png&quot; alt=&quot;900 Stars&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">630天，全球18个开发者、15个应用、1104处改动、153个社区补丁，目前为止900颗星，继续推进 Live in Emacs 计划。</summary></entry><entry><title type="html">最佳代理实践(2020-03-17)</title><link href="http://localhost:4000/proxy/2020/03/17/best-proxy.html" rel="alternate" type="text/html" title="最佳代理实践(2020-03-17)" /><published>2020-03-17T00:00:00+08:00</published><updated>2020-03-17T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/03/17/best-proxy</id><content type="html" xml:base="http://localhost:4000/proxy/2020/03/17/best-proxy.html">&lt;h2 id=&quot;不断变化的gfw&quot;&gt;不断变化的GFW&lt;/h2&gt;
 &lt;p&gt;GFW不断在变化，而我们的代理策略也要一直更新，今天把自己的代理设置全部集成写一遍，方便自己和看我博客的同学参考。&lt;/p&gt;
 
 &lt;h2 id=&quot;配置trojan代理客户端&quot;&gt;配置Trojan代理客户端&lt;/h2&gt;
@@ -175,6 +175,13 @@ npm config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quo
   &lt;li&gt;构建网站: &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run build&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;p&gt;注意：下面Nginx的配置只对应Vue.js的History模式，Vue.js的History模式通过下面的方式来设置：&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;VueRouter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;history&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;替换备注:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -196,28 +203,17 @@ nano /etc/nginx/sites-available/vue_project
 
 &lt;p&gt;编辑配置文件: /etc/nginx/sites-available/vue_project&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    listen 80&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    server_name  your_domain
-
-    client_max_body_size 20m&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    charset utf-8&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    root /root/your_website_git/dist&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    index index.html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    location / &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        try_files &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt;/ @rewrites&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    location @rewrites &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        rewrite ^&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;.+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;/index.html last&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    location ~ .&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;gif|jpg|jpeg|png|bmp|swf|js|css|svg|ttf|otf|eot|woff|woff2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        expires      30d&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;div class=&quot;language-nginx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;server_name&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;www.linakesi.com&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;linakesi.com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;gzip&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;add_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Cache-Control&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'private,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;no-store,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;max-age=0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;root&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;/root/your_website_git/dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;index&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;index.html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;try_files&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/index.html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;把Nginx用户加入到网站访问权限：&lt;/p&gt;

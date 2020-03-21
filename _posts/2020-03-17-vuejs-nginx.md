@@ -31,6 +31,14 @@ Vue.js的组件化设计，写网站非常的方便，今天讲一下怎么用Ng
 2. 安装网站依赖: ```cd your_website_git && npm install```
 3. 构建网站: ```npm run build```
 
+注意：下面Nginx的配置只对应Vue.js的History模式，Vue.js的History模式通过下面的方式来设置：
+
+```javascript
+let router = new VueRouter({
+    mode: 'history',
+});
+```
+
 替换备注:
 
 * ```your_website_git``` 是你网站的git名字
@@ -51,28 +59,17 @@ nano /etc/nginx/sites-available/vue_project
 
 编辑配置文件: /etc/nginx/sites-available/vue_project
 
-```bash
+```nginx
 server {
-    listen 80;
-    server_name  your_domain
-
-    client_max_body_size 20m;
-    charset utf-8;
-
-    root /root/your_website_git/dist;
-    index index.html;
-
-    location / {
-        try_files $uri $uri/ @rewrites;
-    }
-    location @rewrites {
-        rewrite ^(.+)$ /index.html last;
-    }
-
-    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|js|css|svg|ttf|otf|eot|woff|woff2)$
-    {
-        expires      30d;
-    }
+  listen  80;
+  server_name  www.linakesi.com linakesi.com;
+  gzip on;
+  location / {
+    add_header Cache-Control 'private, no-store, max-age=0';
+    root  /root/your_website_git/dist;
+    index  index.html;
+    try_files $uri $uri/ /index.html;
+  }
 }
 ```
 
