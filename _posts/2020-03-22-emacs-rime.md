@@ -91,6 +91,17 @@ patch:
     - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
 ```
 
+#### 添加搜狗词库
+
+网上搜索文件 luna_pinyin.sogou.dict.yaml，放到目录 ~/.config/fcitx/rime 下
+然后在 ~/.config/fcitx/rime/default.custom.yaml 文件中添加下面配置：
+
+```yaml
+translator/dictionary: luna_pinyin.sogou
+```
+
+重新部署即可体验词库。
+
 ### 安装依赖
 
 因为[posframe](https://github.com/tumashu/posframe)可以让后选词显示在光标处，所以建议安装
