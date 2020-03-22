@@ -47,6 +47,50 @@ patch:
   "menu/page_size": 9
 ```
 
+#### 配置模糊音
+
+像我这种拼音发音不标准的人，可以在 ~/.config/fcitx/rime/default.custom.yaml 配置文件中继续追加下面配置
+
+```yaml
+  'speller/algebra':
+    - erase/^xx$/                      # 第一行保留
+
+    # 模糊音定義
+    - derive/^([zcs])h/$1/             # zh, ch, sh => z, c, s
+    - derive/^([zcs])([^h])/$1h$2/     # z, c, s => zh, ch, sh
+
+    - derive/^n/l/                     # n => l
+    - derive/^l/n/                     # l => n
+
+    # 這兩組一般是單向的
+    #- derive/^r/l/                     # r => l
+
+    - derive/^ren/yin/                 # ren => yin, reng => ying
+    #- derive/^r/y/                     # r => y
+
+    # 下面 hu <=> f 這組寫法複雜一些，分情況討論
+    #- derive/^hu$/fu/                  # hu => fu
+    #- derive/^hong$/feng/              # hong => feng
+    #- derive/^hu([in])$/fe$1/          # hui => fei, hun => fen
+    #- derive/^hu([ao])/f$1/            # hua => fa, ...
+
+    #- derive/^fu$/hu/                  # fu => hu
+    #- derive/^feng$/hong/              # feng => hong
+    #- derive/^fe([in])$/hu$1/          # fei => hui, fen => hun
+    #- derive/^f([ao])/hu$1/            # fa => hua, ...
+
+    # 模糊音定義先於簡拼定義，方可令簡拼支持以上模糊音
+    - abbrev/^([a-z]).+$/$1/           # 簡拼（首字母）
+    - abbrev/^([zcs]h).+$/$1/          # 簡拼（zh, ch, sh）
+
+    # 自動糾正一些常見的按鍵錯誤
+    - derive/([aeiou])ng$/$1gn/        # dagn => dang
+    - derive/([dtngkhrzcs])o(u|ng)$/$1o/  # zho => zhong|zhou
+    - derive/ong$/on/                  # zhonguo => zhong guo
+    - derive/ao$/oa/                   # hoa => hao
+    - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
+```
+
 ### 安装依赖
 
 因为[posframe](https://github.com/tumashu/posframe)可以让后选词显示在光标处，所以建议安装
