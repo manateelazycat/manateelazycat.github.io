@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-21T14:58:52+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">纪念900颗星的日子</title><link href="http://localhost:4000/emacs/eaf/2020/03/21/900-stars.html" rel="alternate" type="text/html" title="纪念900颗星的日子" /><published>2020-03-21T00:00:00+08:00</published><updated>2020-03-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/03/21/900-stars</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/03/21/900-stars.html">&lt;p&gt;630天，全球18个开发者、15个应用、1104处改动、153个社区补丁，目前为止900颗星，继续推进 Live in Emacs 计划。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-22T15:47:31+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">折腾emacs-rime</title><link href="http://localhost:4000/emacs/2020/03/22/emacs-rime.html" rel="alternate" type="text/html" title="折腾emacs-rime" /><published>2020-03-22T00:00:00+08:00</published><updated>2020-03-22T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/03/22/emacs-rime</id><content type="html" xml:base="http://localhost:4000/emacs/2020/03/22/emacs-rime.html">&lt;p&gt;半年前在&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/09/12/make-rime-works-with-linux.html&quot;&gt;在Linux版的Emacs中使用RIME输入法&lt;/a&gt;这篇文章中详细讲述了怎么在Emacs使用RIME输入法。&lt;/p&gt;
+
+&lt;p&gt;今天讲的仍然是在Emacs配置RIME输入法，只不过主角从&lt;a href=&quot;https://github.com/tumashu/pyim&quot;&gt;pyim&lt;/a&gt;换成了&lt;a href=&quot;https://github.com/DogLooksGood/emacs-rime&quot;&gt;emacs-rime&lt;/a&gt;。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;pyim是一个强大的Emacs输入法，不但整套输入法，还支持RIME作为输入法后端输入&lt;/li&gt;
+  &lt;li&gt;emacs-rime是RIME输入法的Emacs UI前端，所有行为都通过RIME配置文件来配置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;安装rime输入法&quot;&gt;安装RIME输入法&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; fcitx-rime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;配置rime输入法&quot;&gt;配置RIME输入法&lt;/h3&gt;
+
+&lt;h4 id=&quot;默认使用简体&quot;&gt;默认使用简体&lt;/h4&gt;
+
+&lt;p&gt;创建配置文件 ~/.config/fcitx/rime/luna_pinyin.custom.yaml，内容填上：&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# luna_pinyin.custom.yaml&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;patch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;switches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;# 注意缩进&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ascii_mode&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# reset 0 的作用是当从其他输入法切换到本输入法重设为指定状态&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;states&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;中文&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;西文&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# 选择输入方案后通常需要立即输入中文，故重设 ascii_mode = 0&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;full_shape&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;states&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;半角&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;全角&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# 而全／半角则可沿用之前方案的用法。&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;simplification&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# 增加这一行：默认启用「繁→簡」转换。&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;states&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;漢字&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;汉字&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;修改默认后选词数量&quot;&gt;修改默认后选词数量&lt;/h4&gt;
+
+&lt;p&gt;创建配置文件 ~/.config/fcitx/rime/default.custom.yaml，内容填上：&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;patch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;menu/page_size&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;安装依赖&quot;&gt;安装依赖&lt;/h3&gt;
+
+&lt;p&gt;因为&lt;a href=&quot;https://github.com/tumashu/posframe&quot;&gt;posframe&lt;/a&gt;可以让后选词显示在光标处，所以建议安装&lt;/p&gt;
+
+&lt;h3 id=&quot;安装emacs-rime&quot;&gt;安装emacs-rime&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/DogLooksGood/emacs-rime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;把 emacs-rime 目录放到 &lt;code class=&quot;highlighter-rouge&quot;&gt;load-path&lt;/code&gt; 下，增加下面配置:&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'rime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;;; Code:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rime-user-data-dir&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/home/andy/.config/fcitx/rime&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rime-posframe-properties&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:background-color&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;#333333&quot;&lt;/span&gt;
+            &lt;span class=&quot;ss&quot;&gt;:foreground-color&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;#dcdccc&quot;&lt;/span&gt;
+            &lt;span class=&quot;ss&quot;&gt;:font&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;WenQuanYi Micro Hei Mono-14&quot;&lt;/span&gt;
+            &lt;span class=&quot;ss&quot;&gt;:internal-border-width&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;default-input-method&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;rime&quot;&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;rime-show-candidate&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'posframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;上面的配置分别设置emacs-rime读取RIME配置的路径、UI细节和使用posframe来显示候选词。&lt;/p&gt;
+
+&lt;h3 id=&quot;emacs-rime的优点&quot;&gt;emacs-rime的优点&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;安装相对pyim+rime要简单不少，基本就是下载拷贝就可以了，动态库编译和加载自动解决。&lt;/li&gt;
+  &lt;li&gt;只是RIME的前端，代码量比较小，有问题还可以提交个补丁；&lt;/li&gt;
+  &lt;li&gt;中英文混合输入的体验很好，英文输入完成后，按回车或者空格就可以继续输入中文；&lt;/li&gt;
+  &lt;li&gt;UI默认配色不错，看着很现代；&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">半年前在在Linux版的Emacs中使用RIME输入法这篇文章中详细讲述了怎么在Emacs使用RIME输入法。</summary></entry><entry><title type="html">纪念900颗星的日子</title><link href="http://localhost:4000/emacs/eaf/2020/03/21/900-stars.html" rel="alternate" type="text/html" title="纪念900颗星的日子" /><published>2020-03-21T00:00:00+08:00</published><updated>2020-03-21T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/03/21/900-stars</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/03/21/900-stars.html">&lt;p&gt;630天，全球18个开发者、15个应用、1104处改动、153个社区补丁，目前为止900颗星，继续推进 Live in Emacs 计划。&lt;/p&gt;
 
 &lt;p&gt;特别感谢MatthewZDM同学，生活在加拿大和我倒时差协作，无数个清晨，都是我起床后，你已经审核完补丁合并入主分支。&lt;/p&gt;
 
@@ -413,49 +490,4 @@ graph TD
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-doc/eaf-doc.gif&quot; alt=&quot;EAF Doc&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;通过这个方式，可以无缝的把Office文档查阅和Emacs协作起来，还可以用Emacs的方式实时搜索Office文档内容，非常方便。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">偶尔我们需要阅读一下Office文档资料，只要不用编辑，我们就可以不用打开笨重的Office专业软件。</summary></entry><entry><title type="html">EAF增加了思维导图插件</title><link href="http://localhost:4000/emacs/eaf/2020/02/28/eaf-mindmap.html" rel="alternate" type="text/html" title="EAF增加了思维导图插件" /><published>2020-02-28T00:00:00+08:00</published><updated>2020-02-28T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/02/28/eaf-mindmap</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/02/28/eaf-mindmap.html">&lt;p&gt;平常写项目文档经常用到思维导图帮助梳理思路，最近下班后用EAF结合jsMind这个库自己写了一个思维导图软件:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-mindmap/eaf-mindmap.gif&quot; alt=&quot;EAF Mindmap&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这个思维导图插件主要的功能有：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;全键盘操作：像Vim那样支持单按键操作，能够自动识别命令模式还是编辑模
-式, 操作效率超高;&lt;/li&gt;
-  &lt;li&gt;支持目录导出：思维导图可以直接导出成 org-mode 文件，直接在编辑导出的目录结构，继续填充文章内容;&lt;/li&gt;
-  &lt;li&gt;支持Emacs编辑：文字可以用Emacs编辑，文字编辑效率更高;&lt;/li&gt;
-  &lt;li&gt;和Emacs协作：可以和Emacs的插件生态协作，不用在Emacs和思维导图之间来
-回切换;&lt;/li&gt;
-  &lt;li&gt;其他常用功能：像保存文件，导出图片，缩放，切换节点等功能一应俱全。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;快捷键&quot;&gt;快捷键&lt;/h4&gt;
-&lt;p&gt;| 快捷键  | 命令                   |
-| :—— | :——–              |
-| TAB     | 添加子节点             |
-| RET     | 添加兄弟节点           |
-| Delete  | 删除节点               |
-| d       | 删除节点               |
-| D       | 删除中间节点               |
-| i       | 增加中间节点               |
-| f       | 更新节点内容           |
-| j       | 插入或者选择下面的节点 |
-| k       | 插入或者选择上面的节点 |
-| h       | 插入或者选择左边的节点 |
-| l       | 插入或者选择右边的节点 |
-| w       | 拷贝节点内容           |
-| y       | 粘贴节点内容           |
-| W       | 剪切节点树             |
-| Y       | 粘贴节点树             |
-| t       | 隐藏子节点             |
-| -       | 缩小                   |
-| =       | 放大                   |
-| 0       | 默认大小               |
-| b       | 增加节点背景图         |
-| 1       | 保存截图               |
-| 2       | 保存文件               |
-| 3       | 保存为org格式          |
-| M-r     | 刷新页面               |&lt;/p&gt;
-
-&lt;p&gt;终于不用付费购买专业的思维导图软件就能享受到高级功能，自己动手，丰衣足
-食。&lt;/p&gt;</content><author><name></name></author><summary type="html">平常写项目文档经常用到思维导图帮助梳理思路，最近下班后用EAF结合jsMind这个库自己写了一个思维导图软件:</summary></entry></feed>
+&lt;p&gt;通过这个方式，可以无缝的把Office文档查阅和Emacs协作起来，还可以用Emacs的方式实时搜索Office文档内容，非常方便。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">偶尔我们需要阅读一下Office文档资料，只要不用编辑，我们就可以不用打开笨重的Office专业软件。</summary></entry></feed>
