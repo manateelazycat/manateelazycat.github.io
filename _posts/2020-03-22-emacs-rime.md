@@ -63,7 +63,7 @@ git clone https://github.com/DogLooksGood/emacs-rime
 (require 'rime)
 
 ;;; Code:
-(setq rime-user-data-dir "/home/andy/.config/fcitx/rime")
+(setq rime-user-data-dir "~/.config/fcitx/rime")
 
 (setq rime-posframe-properties
       (list :background-color "#333333"
