@@ -54,7 +54,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数1235 2020-03-22
+                字数2374 2020-03-22
             </div>
             <div class="content">
                 <p>半年前在<a href="https://manateelazycat.github.io/emacs/2019/09/12/make-rime-works-with-linux.html">在Linux版的Emacs中使用RIME输入法</a>这篇文章中详细讲述了怎么在Emacs使用RIME输入法。</p>
@@ -99,6 +99,59 @@
   <span class="s2">"</span><span class="s">menu/page_size"</span><span class="pi">:</span> <span class="m">9</span>
 </code></pre></div></div>
 
+<h4 id="配置模糊音">配置模糊音</h4>
+
+<p>像我这种拼音发音不标准的人，可以在 ~/.config/fcitx/rime/default.custom.yaml 配置文件中继续追加下面配置</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="s1">'</span><span class="s">speller/algebra'</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">erase/^xx$/</span>                      <span class="c1"># 第一行保留</span>
+
+    <span class="c1"># 模糊音定義</span>
+    <span class="pi">-</span> <span class="s">derive/^([zcs])h/$1/</span>             <span class="c1"># zh, ch, sh =&gt; z, c, s</span>
+    <span class="pi">-</span> <span class="s">derive/^([zcs])([^h])/$1h$2/</span>     <span class="c1"># z, c, s =&gt; zh, ch, sh</span>
+
+    <span class="pi">-</span> <span class="s">derive/^n/l/</span>                     <span class="c1"># n =&gt; l</span>
+    <span class="pi">-</span> <span class="s">derive/^l/n/</span>                     <span class="c1"># l =&gt; n</span>
+
+    <span class="c1"># 這兩組一般是單向的</span>
+    <span class="c1">#- derive/^r/l/                     # r =&gt; l</span>
+
+    <span class="pi">-</span> <span class="s">derive/^ren/yin/</span>                 <span class="c1"># ren =&gt; yin, reng =&gt; ying</span>
+    <span class="c1">#- derive/^r/y/                     # r =&gt; y</span>
+
+    <span class="c1"># 下面 hu &lt;=&gt; f 這組寫法複雜一些，分情況討論</span>
+    <span class="c1">#- derive/^hu$/fu/                  # hu =&gt; fu</span>
+    <span class="c1">#- derive/^hong$/feng/              # hong =&gt; feng</span>
+    <span class="c1">#- derive/^hu([in])$/fe$1/          # hui =&gt; fei, hun =&gt; fen</span>
+    <span class="c1">#- derive/^hu([ao])/f$1/            # hua =&gt; fa, ...</span>
+
+    <span class="c1">#- derive/^fu$/hu/                  # fu =&gt; hu</span>
+    <span class="c1">#- derive/^feng$/hong/              # feng =&gt; hong</span>
+    <span class="c1">#- derive/^fe([in])$/hu$1/          # fei =&gt; hui, fen =&gt; hun</span>
+    <span class="c1">#- derive/^f([ao])/hu$1/            # fa =&gt; hua, ...</span>
+
+    <span class="c1"># 模糊音定義先於簡拼定義，方可令簡拼支持以上模糊音</span>
+    <span class="pi">-</span> <span class="s">abbrev/^([a-z]).+$/$1/</span>           <span class="c1"># 簡拼（首字母）</span>
+    <span class="pi">-</span> <span class="s">abbrev/^([zcs]h).+$/$1/</span>          <span class="c1"># 簡拼（zh, ch, sh）</span>
+
+    <span class="c1"># 自動糾正一些常見的按鍵錯誤</span>
+    <span class="pi">-</span> <span class="s">derive/([aeiou])ng$/$1gn/</span>        <span class="c1"># dagn =&gt; dang</span>
+    <span class="pi">-</span> <span class="s">derive/([dtngkhrzcs])o(u|ng)$/$1o/</span>  <span class="c1"># zho =&gt; zhong|zhou</span>
+    <span class="pi">-</span> <span class="s">derive/ong$/on/</span>                  <span class="c1"># zhonguo =&gt; zhong guo</span>
+    <span class="pi">-</span> <span class="s">derive/ao$/oa/</span>                   <span class="c1"># hoa =&gt; hao</span>
+    <span class="pi">-</span> <span class="s">derive/([iu])a(o|ng?)$/a$1$2/</span>    <span class="c1"># tain =&gt; tian</span>
+</code></pre></div></div>
+
+<h4 id="添加搜狗词库">添加搜狗词库</h4>
+
+<p>网上搜索文件 luna_pinyin.sogou.dict.yaml，放到目录 ~/.config/fcitx/rime 下
+然后在 ~/.config/fcitx/rime/default.custom.yaml 文件中添加下面配置：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">translator/dictionary</span><span class="pi">:</span> <span class="s">luna_pinyin.sogou</span>
+</code></pre></div></div>
+
+<p>重新部署即可体验词库。</p>
+
 <h3 id="安装依赖">安装依赖</h3>
 
 <p>因为<a href="https://github.com/tumashu/posframe">posframe</a>可以让后选词显示在光标处，所以建议安装</p>
@@ -113,7 +166,7 @@
 <div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">require</span> <span class="ss">'rime</span><span class="p">)</span>
 
 <span class="c1">;;; Code:</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">rime-user-data-dir</span> <span class="s">"/home/andy/.config/fcitx/rime"</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">rime-user-data-dir</span> <span class="s">"~/.config/fcitx/rime"</span><span class="p">)</span>
 
 <span class="p">(</span><span class="k">setq</span> <span class="nv">rime-posframe-properties</span>
       <span class="p">(</span><span class="nb">list</span> <span class="ss">:background-color</span> <span class="s">"#333333"</span>
