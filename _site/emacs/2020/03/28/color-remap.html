@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>Emacs Trick -- 颜色重定向</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                Emacs Trick -- 颜色重定向
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数480 2020-03-28
+            </div>
+            <div class="content">
+                <p><a href="https://github.com/manateelazycat/snails">Snails</a> 的输入框是无背景设计，整体设计感更好一点。</p>
+
+<p>但是用户如果设置了 <code class="highlighter-rouge">hl-line</code> 这个Face，会导致snails的输入框是有两种背景颜色，非常丑。</p>
+
+<p>最开始准备使用临时变量，在进入 snails 的时候保存一下 <code class="highlighter-rouge">hl-line</code> 背景颜色，进入 snails 取消 <code class="highlighter-rouge">hl-line</code> 背景， snails 消失的时候重新恢复 <code class="highlighter-rouge">hl-line</code> 背景。</p>
+
+<p>想了想，这样做太脆弱了，一旦出问题还会导致用户的 <code class="highlighter-rouge">hl-line</code> 样式损坏。</p>
+
+<p>Google了一下Emacs关于 local face 的文章，发现可以像下面这种方式来临时设置某一个 face 的样式。</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">face-remap-add-relative</span> <span class="ss">'hl-line</span> <span class="ss">:background</span> <span class="p">(</span><span class="nv">face-background</span> <span class="ss">'snails-input-buffer-face</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>上面代码的意思是，把 <code class="highlighter-rouge">hl-line</code> 的 background 属性重定向到 <code class="highlighter-rouge">snails-input-buffer-face</code> 背景色，这样既可以保证snails输入框的无背景设计，实现又非常健壮，不会因为意外对用户的主题产生副作用。</p>
+
+<p>Emacs还是博大精深啊，学了这么多年，还有很多东西都不懂。</p>
+
+
+            </div>
+        </div>
+    </body>
+</html>
