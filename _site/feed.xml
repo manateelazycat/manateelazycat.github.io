@@ -1,4 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-28T09:52:07+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Emacs Trick – 颜色重定向</title><link href="http://localhost:4000/emacs/2020/03/28/color-remap.html" rel="alternate" type="text/html" title="Emacs Trick -- 颜色重定向" /><published>2020-03-28T00:00:00+08:00</published><updated>2020-03-28T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/03/28/color-remap</id><content type="html" xml:base="http://localhost:4000/emacs/2020/03/28/color-remap.html">&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/snails&quot;&gt;Snails&lt;/a&gt; 的输入框是无背景设计，整体设计感更好一点。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-29T05:54:50+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Nox - 轻量级LSP客户端</title><link href="http://localhost:4000/emacs/2020/03/29/nox.html" rel="alternate" type="text/html" title="Nox - 轻量级LSP客户端" /><published>2020-03-29T00:00:00+08:00</published><updated>2020-03-29T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/03/29/nox</id><content type="html" xml:base="http://localhost:4000/emacs/2020/03/29/nox.html">&lt;h3 id=&quot;lsp&quot;&gt;LSP&lt;/h3&gt;
+&lt;p&gt;Emacs，因其丰富的插件生态和高度一致的协同环境，不论敲代码还是写文章都有行云流水的感觉。
+一直以来Emacs的短板都在智能语法补全上，不能像VSCode那样非常智能的补全代码。&lt;/p&gt;
+
+&lt;p&gt;随着VSCode的流行和微软在开源社区的发力，LSP（编程语言服务器协议）逐渐发展成为代码智能补全领域的佼佼者。
+通过标准的LSP协议，只用为编辑器或IDE开发一款LSP客户端，即可对所有的编
+程语言提供智能补全支持，以解决原来众多编辑器（N）和补全后端（M）相互组
+合产生的 M x N 问题，避免了大家反复造轮子，可以集中社区更多的资源在语
+言服务器后端的开发和优化上。&lt;/p&gt;
+
+&lt;h3 id=&quot;协议研究&quot;&gt;协议研究&lt;/h3&gt;
+&lt;p&gt;Emacs目前也有两个LSP客户端: &lt;a href=&quot;https://github.com/emacs-lsp/lsp-mode&quot;&gt;lsp-mode&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/joaotavora/eglot&quot;&gt;eglot&lt;/a&gt;, 但是这两个客户端的性能却不是很好，特别是lsp-mode, 写一会代码就会卡一下，非常影响编程思路。&lt;/p&gt;
+
+&lt;p&gt;周末完整的研读了LSP的&lt;a href=&quot;https://microsoft.github.io/language-server-protocol/specifications/specification-current/&quot;&gt;协议规范细节&lt;/a&gt;, 并调研了Rust, Golang和Python的JSONRPC库用法，最后决定用Python来实现一个新的LSP代理客户端，因为Python有完整的多线程支持，所以不会出现预想的LSP数据流堵塞Emacs输入的问题。&lt;/p&gt;
+
+&lt;p&gt;经过昨天一天的研究和调试，发现其实LSP Server在代码补全时返回的数据并不
+大，为什么lsp-mode和eglot还会卡住Emacs呢？难道不是之前猜想的Elisp解析JSON慢的问题？&lt;/p&gt;
+
+&lt;p&gt;为了弄明白性能瓶颈，随即裁剪了Eglot进行对比测试，主要针对代码补全以外的功能进行裁剪&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;用posframe替代eldoc来显示文档，避免每次输入一个单词就从服务器请求一次文档&lt;/li&gt;
+  &lt;li&gt;去掉了所有LSP Server返回的代码诊断消息和处理函数，并从Eglot中移除
+flymake相关的代码&lt;/li&gt;
+  &lt;li&gt;默认只补全符号，并禁止补全代码模板，因为yasnippet的参数选中状态很容易消
+失，一旦模板代码写错了，要修改调整反而效率更低&lt;/li&gt;
+  &lt;li&gt;去掉 documentHighlight 协议，没啥用，反而经常通过overlay污染代码空间&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;通过上面的裁剪过后，Eglot居然异常流畅，真是喜出望外啊。&lt;/p&gt;
+
+&lt;h3 id=&quot;nox&quot;&gt;Nox&lt;/h3&gt;
+&lt;p&gt;在Eglot的代码基础之上，今天发布了新的Emacs LSP客户端 – &lt;a href=&quot;https://github.com/manateelazycat/nox&quot;&gt;Nox&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;目前Nox已经支持以下编程语言：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Javascript: &lt;a href=&quot;https://github.com/sourcegraph/javascript-typescript-langserver&quot;&gt;javascript-typescript-stdio&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Rust: &lt;a href=&quot;https://github.com/rust-lang-nursery/rls&quot;&gt;rls&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Python: &lt;a href=&quot;https://github.com/palantir/python-language-server&quot;&gt;pyls&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ruby: &lt;a href=&quot;https://github.com/castwide/solargraph&quot;&gt;solargraph&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Java: &lt;a href=&quot;https://github.com/eclipse/eclipse.jdt.ls&quot;&gt;Eclipse JDT Language Server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Bash: &lt;a href=&quot;https://github.com/mads-hartmann/bash-language-server&quot;&gt;bash-language-server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;PHP: &lt;a href=&quot;https://github.com/felixfbecker/php-language-server&quot;&gt;php-language-server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;C/C++: &lt;a href=&quot;https://github.com/MaskRay/ccls&quot;&gt;ccls&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Haskell: &lt;a href=&quot;https://github.com/haskell/haskell-ide-engine&quot;&gt;IDE engine&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Elm: &lt;a href=&quot;https://github.com/elm-tooling/elm-language-server&quot;&gt;elm-language-server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Kotlin: &lt;a href=&quot;https://github.com/fwcd/KotlinLanguageServer&quot;&gt;kotlin-language-server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Go: &lt;a href=&quot;https://github.com/golang/go/wiki/gopls&quot;&gt;gopls&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ocaml: &lt;a href=&quot;https://github.com/freebroccolo/ocaml-language-server&quot;&gt;ocaml-language-server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;R: &lt;a href=&quot;https://cran.r-project.org/package=languageserver&quot;&gt;languageserver&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Dart: &lt;a href=&quot;https://github.com/natebosch/dart_language_server&quot;&gt;dart_language_server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Elixir: &lt;a href=&quot;https://github.com/JakeBecker/elixir-ls&quot;&gt;elixir-ls&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ada: &lt;a href=&quot;https://github.com/AdaCore/ada_language_server&quot;&gt;ada_language_server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Scala: &lt;a href=&quot;http://scalameta.org/metals/&quot;&gt;metals&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;TeX/LaTeX: &lt;a href=&quot;https://github.com/astoff/digestif&quot;&gt;Digestif&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Dockerfile: &lt;a href=&quot;https://github.com/rcjsuen/dockerfile-language-server-nodejs&quot;&gt;dockerfile_language_server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;HTML &lt;a href=&quot;https://github.com/Microsoft/vscode/tree/master/extensions/html-language-features/server&quot;&gt;html_language_server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;CSS: &lt;a href=&quot;https://github.com/Microsoft/vscode/tree/master/extensions/css-language-features/server&quot;&gt;css_language_server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;JSON: &lt;a href=&quot;https://www.npmjs.com/package/vscode-json-languageserver&quot;&gt;json_language_server&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/nox/nox.png&quot; alt=&quot;Nox&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nox的项目目标主要有三个：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;功能上：只提供代码补全、代码定义跳转、代码引用和重命名功能这四个最核心的功能&lt;/li&gt;
+  &lt;li&gt;设计上：保持界面交互简洁无打扰, 不会像 lsp-ui 提供花里胡哨的功能，减少对用户专注力的干扰&lt;/li&gt;
+  &lt;li&gt;性能上：裁剪无用功能, 优化代码效率，保证代码补全时的流畅手感&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;在我看来，像语法检测和代码模板，flycheck以及yasnippet这些插件的资源占
+用率更低，也更为专业。&lt;/p&gt;
+
+&lt;p&gt;如果你追求LSP所有功能，lsp-mode和Eglot是更好的选择，如果你追求极致的编
+码流畅度，Nox肯定是目前用户体验和性能最好的LSP客户端。&lt;/p&gt;
+
+&lt;h3 id=&quot;安装&quot;&gt;安装&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;先安装依赖组件 &lt;a href=&quot;https://github.com/company-mode/company-mode&quot;&gt;company-mode&lt;/a&gt;和&lt;a href=&quot;https://github.com/tumashu/posframe&quot;&gt;posframe&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;拷贝&lt;a href=&quot;https://github.com/manateelazycat/nox&quot;&gt;Nox&lt;/a&gt;代码到Emacs的 load-path 路径&lt;/li&gt;
+  &lt;li&gt;把下面的配置加到 ~/.emacs 中&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'nox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dolist&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;hook&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;
+               &lt;span class=&quot;ss&quot;&gt;'js-mode-hook&lt;/span&gt;
+               &lt;span class=&quot;ss&quot;&gt;'rust-mode-hook&lt;/span&gt;
+               &lt;span class=&quot;ss&quot;&gt;'python-mode-hook&lt;/span&gt;
+               &lt;span class=&quot;ss&quot;&gt;'ruby-mode-hook&lt;/span&gt;
+               &lt;span class=&quot;ss&quot;&gt;'java-mode-hook&lt;/span&gt;
+               &lt;span class=&quot;ss&quot;&gt;'sh-mode-hook&lt;/span&gt;
+               &lt;span class=&quot;ss&quot;&gt;'php-mode-hook&lt;/span&gt;
+               &lt;span class=&quot;ss&quot;&gt;'c-mode-common-hook&lt;/span&gt;
+               &lt;span class=&quot;ss&quot;&gt;'c-mode-hook&lt;/span&gt;
+               &lt;span class=&quot;ss&quot;&gt;'c++-mode-hook&lt;/span&gt;
+               &lt;span class=&quot;ss&quot;&gt;'haskell-mode-hook&lt;/span&gt;
+               &lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-hook&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hook&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;nox-ensure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;安装配置好以后，打开源码文件，即可享受流畅的智能补全体验。&lt;/p&gt;
+
+&lt;h3 id=&quot;常用命令&quot;&gt;常用命令&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;命令&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;解释&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;nox&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;启动Nox客户端&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;nox-reconnect&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;重新链接LSP服务器&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;nox-shutdown&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;终止LSP服务器&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;nox-show-doc&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;显示光标处符号的文档&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;nox-rename&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;项目范围内批量重命名&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;nox-format&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;格式化当前文件或选中区域&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;xref-find-definitions&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;查找光标处符号定义&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;xref-find-definitions-other-window&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;在其他窗口中查找光标处符号定义&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;xref-pop-marker-stack&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;返回定义跳转前的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;xref-find-references&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;查找光标处符号的所有引用&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;nox-event-buffer&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;切换到LSP消息文件，查看LSP协议消息&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;nox-stderr-buffer&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;切换到子进程管道文件，查看通讯细节和排错信息&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;更多命令和设置选项可以查看&lt;a href=&quot;https://github.com/manateelazycat/nox&quot;&gt;Nox&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;Enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">LSP Emacs，因其丰富的插件生态和高度一致的协同环境，不论敲代码还是写文章都有行云流水的感觉。 一直以来Emacs的短板都在智能语法补全上，不能像VSCode那样非常智能的补全代码。</summary></entry><entry><title type="html">Emacs Trick – 颜色重定向</title><link href="http://localhost:4000/emacs/2020/03/28/color-remap.html" rel="alternate" type="text/html" title="Emacs Trick -- 颜色重定向" /><published>2020-03-28T00:00:00+08:00</published><updated>2020-03-28T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/03/28/color-remap</id><content type="html" xml:base="http://localhost:4000/emacs/2020/03/28/color-remap.html">&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/snails&quot;&gt;Snails&lt;/a&gt; 的输入框是无背景设计，整体设计感更好一点。&lt;/p&gt;
 
 &lt;p&gt;但是用户如果设置了 &lt;code class=&quot;highlighter-rouge&quot;&gt;hl-line&lt;/code&gt; 这个Face，会导致snails的输入框是有两种背景颜色，非常丑。&lt;/p&gt;
 
@@ -522,32 +687,4 @@ graph TD
 &lt;p&gt;多思考客户要求背后的痛点现状，重视机会的最大化，而不是风险的最小化，如果一味追求最小的风险，最后企业面临的却是无所作为带来的最大风险。管理者第一责任是让外行人了解企业所做的，可以做的和应当做的事情。&lt;/p&gt;
 
 &lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-&lt;p&gt;这本书信息量非常大，作者还经常在理论下附带很多现实例子的讲解，让我深刻的理解了企业的战略并不是一句虚无缥缈的概念，而是围绕着机会和资源，随着市场不断调整的科学思考方法体系。&lt;/p&gt;</content><author><name></name></author><summary type="html">因为武汉疫情的原因，被封闭在老家，难得很长的空闲时间，每天除了完成工作外，主要就是在读《成果管理》这本书。 这本书主要讲的是企业的战略，原来对企业战略的认识很模糊，看完以后，战略两个字在我眼里栩栩如生：</summary></entry><entry><title type="html">QWebEngine进程生命周期研究</title><link href="http://localhost:4000/linux/eaf/2020/03/01/webengine-debug.html" rel="alternate" type="text/html" title="QWebEngine进程生命周期研究" /><published>2020-03-01T00:00:00+08:00</published><updated>2020-03-01T00:00:00+08:00</updated><id>http://localhost:4000/linux/eaf/2020/03/01/webengine-debug</id><content type="html" xml:base="http://localhost:4000/linux/eaf/2020/03/01/webengine-debug.html">&lt;p&gt;最近在写EAF浏览器功能时，发现QWebEngineView页面退出后，QtWebEngineProcess进程并没有退出，产生内存泄漏的问题。&lt;/p&gt;
-
-&lt;p&gt;随即详细研究了一下QWebEngine的进程模型:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/webengine/webengine.png&quot; alt=&quot;WebEngine&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在讲进程模型之前，需要明白Qt WebEngine的组成结构:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;QWebEngineView就是一个Qt控件，专注于绘制网页内容;&lt;/li&gt;
-  &lt;li&gt;QWebEnginePage才是真正管理核心资源的模块，包括历史、动作、设置、脚本和Cookie等功能。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;进程模型我们其实只用理解三个概念：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;QWebEngineView只是Qt的图形控件，当销毁QWebEngineView时，只是销毁控件的图形区域和内存空间，并不影响renderer进程;&lt;/li&gt;
-  &lt;li&gt;每个QWebEnginePage对象对应一个renderer进程，生死与共；&lt;/li&gt;
-  &lt;li&gt;浏览器启动之前, QWebEngine会为所有的renderer的进程准备两个zygote进程，用于资源初始化。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;理解上面的模型关系后，解决内存泄漏的问题就很简单了，只需在销毁QWebEngineView之前，手动的销毁QWebEnginePage对象，就可以自动退出对应的renderer进程。&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web_page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deleteLater&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deleteLater&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;上面是EAF浏览器删除页面时的参考代码。&lt;/p&gt;</content><author><name></name></author><summary type="html">最近在写EAF浏览器功能时，发现QWebEngineView页面退出后，QtWebEngineProcess进程并没有退出，产生内存泄漏的问题。</summary></entry></feed>
+&lt;p&gt;这本书信息量非常大，作者还经常在理论下附带很多现实例子的讲解，让我深刻的理解了企业的战略并不是一句虚无缥缈的概念，而是围绕着机会和资源，随着市场不断调整的科学思考方法体系。&lt;/p&gt;</content><author><name></name></author><summary type="html">因为武汉疫情的原因，被封闭在老家，难得很长的空闲时间，每天除了完成工作外，主要就是在读《成果管理》这本书。 这本书主要讲的是企业的战略，原来对企业战略的认识很模糊，看完以后，战略两个字在我眼里栩栩如生：</summary></entry></feed>
