@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>Nox内建对微软Python Language Server的支持</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                Nox内建对微软Python Language Server的支持
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                
+                <a href="http://localhost:4000/tags.html#Nox">
+                    <div class="category">
+                        Nox
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数946 2020-03-30
+            </div>
+            <div class="content">
+                <p>微软的VSCode之所以好用，除了LSP协议的标准化外，微软自家的语言服务器在质量和性能也比社区实现的语言服务器要好得多。</p>
+
+<p>今天通过<a href="https://github.com/manateelazycat/nox/commit/02708ca6db62993b6611d662348af5f91b369234">这个补丁</a>实现了 intelephense 对PHP语法补全的支持，而intelephense正是VSCode内置的PHP语言服务器。</p>
+
+<p>在Python领域，开源社区的<a href="https://github.com/palantir/python-language-server">Python Language Server</a>主要是基于jedi这个库来实现的，对于大型的Python计算库，比如补全numpy的时候就会卡一下。</p>
+
+<p>微软自己的Python Language Server – <a href="https://github.com/microsoft/python-language-server">mspyls</a>主要是用C#实现的，性能上要比pyls好很多。</p>
+
+<p>今天晚上给Nox写了一个补丁<a href="https://github.com/manateelazycat/nox/commit/7e2502ba2f7afe90de7f86b477247eb8858d19a5">Use mspyls as default Python Language Server</a>，实现内建对mspyls的支持。</p>
+
+<h4 id="体验mspyls">体验mspyls</h4>
+<ol>
+  <li>下载和安装<a href="https://github.com/manateelazycat/nox">Nox</a></li>
+  <li>执行 <code class="highlighter-rouge">nox-print-mspyls-download-url</code> 命令，打印当前操作系统安装包的下载地址</li>
+  <li>下载并解压文件到 ~/.emacs.d/nox/mspyls 目录下，保证目录的根位置有 Microsoft.Python.LanguageServer 这个文件</li>
+  <li>给mspyls索引权限: <code class="highlighter-rouge">sudo chmod +x  ~/.emacs.d/nox/mspyls</code></li>
+  <li>直接打开 python 文件，即可快速进行语法补全</li>
+</ol>
+
+<h4 id="注意">注意</h4>
+
+<ul>
+  <li>mspyls在语法补全之前会索引项目的文件，请不要直接在 HOME 目录下创建单文件进行语法补全测试，如果你的 HOME 目录文件很多，索引甚至会持续10多分钟</li>
+  <li>测试建议在HOME下建立一个test的空文件夹，然后再在test文件夹里面创建单文件来测试</li>
+</ul>
+
+<h4 id="mspyls-和-pyls-的优缺点">mspyls 和 pyls 的优缺点</h4>
+
+<ul>
+  <li>pyls: 基于jedi实现的，不建索引，大型Python库的语法补全比较慢</li>
+  <li>mspyls: 用C# 实现的，补全速度快，但是在巨型目录下，首次索引比较慢</li>
+</ul>
+
+<p>Nox默认使用mspyls作为Python的默认语言服务器，如果要切换回开源社区的 pyls ，直接修改默认服务器的设置即可：</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">setq</span> <span class="nv">nox-python-server</span> <span class="err">“</span><span class="nv">pyls</span><span class="err">”</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="感谢">感谢</h4>
+<p>感谢Emacs-China和Github社区朋友的帮助，让我这个老年人可以早点睡觉, 特别是 <a href="https://github.com/theFool32">theFool32</a>和<a href="https://github.com/seagle0128">seagle0128</a>的支持，在我解题解到山穷水尽时，给我柳暗花明的灵感和帮助。;)</p>
+
+            </div>
+        </div>
+    </body>
+</html>
