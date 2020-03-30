@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-29T05:54:50+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Nox - 轻量级LSP客户端</title><link href="http://localhost:4000/emacs/2020/03/29/nox.html" rel="alternate" type="text/html" title="Nox - 轻量级LSP客户端" /><published>2020-03-29T00:00:00+08:00</published><updated>2020-03-29T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/03/29/nox</id><content type="html" xml:base="http://localhost:4000/emacs/2020/03/29/nox.html">&lt;h3 id=&quot;lsp&quot;&gt;LSP&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-31T00:20:14+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Nox内建对微软Python Language Server的支持</title><link href="http://localhost:4000/emacs/nox/2020/03/30/nox-support-microsoft-server.html" rel="alternate" type="text/html" title="Nox内建对微软Python Language Server的支持" /><published>2020-03-30T00:00:00+08:00</published><updated>2020-03-30T00:00:00+08:00</updated><id>http://localhost:4000/emacs/nox/2020/03/30/nox-support-microsoft-server</id><content type="html" xml:base="http://localhost:4000/emacs/nox/2020/03/30/nox-support-microsoft-server.html">&lt;p&gt;微软的VSCode之所以好用，除了LSP协议的标准化外，微软自家的语言服务器在质量和性能也比社区实现的语言服务器要好得多。&lt;/p&gt;
+
+&lt;p&gt;今天通过&lt;a href=&quot;https://github.com/manateelazycat/nox/commit/02708ca6db62993b6611d662348af5f91b369234&quot;&gt;这个补丁&lt;/a&gt;实现了 intelephense 对PHP语法补全的支持，而intelephense正是VSCode内置的PHP语言服务器。&lt;/p&gt;
+
+&lt;p&gt;在Python领域，开源社区的&lt;a href=&quot;https://github.com/palantir/python-language-server&quot;&gt;Python Language Server&lt;/a&gt;主要是基于jedi这个库来实现的，对于大型的Python计算库，比如补全numpy的时候就会卡一下。&lt;/p&gt;
+
+&lt;p&gt;微软自己的Python Language Server – &lt;a href=&quot;https://github.com/microsoft/python-language-server&quot;&gt;mspyls&lt;/a&gt;主要是用C#实现的，性能上要比pyls好很多。&lt;/p&gt;
+
+&lt;p&gt;今天晚上给Nox写了一个补丁&lt;a href=&quot;https://github.com/manateelazycat/nox/commit/7e2502ba2f7afe90de7f86b477247eb8858d19a5&quot;&gt;Use mspyls as default Python Language Server&lt;/a&gt;，实现内建对mspyls的支持。&lt;/p&gt;
+
+&lt;h4 id=&quot;体验mspyls&quot;&gt;体验mspyls&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;下载和安装&lt;a href=&quot;https://github.com/manateelazycat/nox&quot;&gt;Nox&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;nox-print-mspyls-download-url&lt;/code&gt; 命令，打印当前操作系统安装包的下载地址&lt;/li&gt;
+  &lt;li&gt;下载并解压文件到 ~/.emacs.d/nox/mspyls 目录下，保证目录的根位置有 Microsoft.Python.LanguageServer 这个文件&lt;/li&gt;
+  &lt;li&gt;给mspyls索引权限: &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo chmod +x  ~/.emacs.d/nox/mspyls&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;直接打开 python 文件，即可快速进行语法补全&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;注意&quot;&gt;注意&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;mspyls在语法补全之前会索引项目的文件，请不要直接在 HOME 目录下创建单文件进行语法补全测试，如果你的 HOME 目录文件很多，索引甚至会持续10多分钟&lt;/li&gt;
+  &lt;li&gt;测试建议在HOME下建立一个test的空文件夹，然后再在test文件夹里面创建单文件来测试&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;mspyls-和-pyls-的优缺点&quot;&gt;mspyls 和 pyls 的优缺点&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;pyls: 基于jedi实现的，不建索引，大型Python库的语法补全比较慢&lt;/li&gt;
+  &lt;li&gt;mspyls: 用C# 实现的，补全速度快，但是在巨型目录下，首次索引比较慢&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nox默认使用mspyls作为Python的默认语言服务器，如果要切换回开源社区的 pyls ，直接修改默认服务器的设置即可：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nox-python-server&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;pyls&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;感谢&quot;&gt;感谢&lt;/h4&gt;
+&lt;p&gt;感谢Emacs-China和Github社区朋友的帮助，让我这个老年人可以早点睡觉, 特别是 &lt;a href=&quot;https://github.com/theFool32&quot;&gt;theFool32&lt;/a&gt;和&lt;a href=&quot;https://github.com/seagle0128&quot;&gt;seagle0128&lt;/a&gt;的支持，在我解题解到山穷水尽时，给我柳暗花明的灵感和帮助。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">微软的VSCode之所以好用，除了LSP协议的标准化外，微软自家的语言服务器在质量和性能也比社区实现的语言服务器要好得多。</summary></entry><entry><title type="html">Nox - 轻量级LSP客户端</title><link href="http://localhost:4000/emacs/nox/2020/03/29/nox.html" rel="alternate" type="text/html" title="Nox - 轻量级LSP客户端" /><published>2020-03-29T00:00:00+08:00</published><updated>2020-03-29T00:00:00+08:00</updated><id>http://localhost:4000/emacs/nox/2020/03/29/nox</id><content type="html" xml:base="http://localhost:4000/emacs/nox/2020/03/29/nox.html">&lt;h3 id=&quot;lsp&quot;&gt;LSP&lt;/h3&gt;
 &lt;p&gt;Emacs，因其丰富的插件生态和高度一致的协同环境，不论敲代码还是写文章都有行云流水的感觉。
 一直以来Emacs的短板都在智能语法补全上，不能像VSCode那样非常智能的补全代码。&lt;/p&gt;
 
@@ -659,32 +698,4 @@ graph TD
 
 &lt;p&gt;通过这种方式，我们只需要关心逻辑图的内容和相互关系就可以了，不用关心逻辑图的布局问题，mermaid.js会自动搞定，节省了大量鼠标拖拽图形的时间。&lt;/p&gt;
 
-&lt;p&gt;现在EAF可以直接制作思维导图和流程图，真的太方便了，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">发现新大陆 在Emacs-China论坛闲逛时发现了 mermaid.js 这个图形库，这个图形库的最大优势是，你可以直接编写 markdown 文本，他会自动生成流程图、饼状图、干特图、类型图、序列图等逻辑图形。</summary></entry><entry><title type="html">读《成果管理》</title><link href="http://localhost:4000/reading/2020/03/04/reading-rbm.html" rel="alternate" type="text/html" title="读《成果管理》" /><published>2020-03-04T00:00:00+08:00</published><updated>2020-03-04T00:00:00+08:00</updated><id>http://localhost:4000/reading/2020/03/04/reading-rbm</id><content type="html" xml:base="http://localhost:4000/reading/2020/03/04/reading-rbm.html">&lt;p&gt;因为武汉疫情的原因，被封闭在老家，难得很长的空闲时间，每天除了完成工作外，主要就是在读《成果管理》这本书。
-这本书主要讲的是企业的战略，原来对企业战略的认识很模糊，看完以后，战略两个字在我眼里栩栩如生：&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;战略本质就是基于创始人对自己本身和市场理解的前提下，面向客户的需求，进行资源和成本管理的一系列系统的方法和原则。&lt;/p&gt;
-
-&lt;p&gt;书中的很多观点对于创始人思考企业的战略还是非常有指导性的，而不仅仅只是一个流行的口头禅，以下是我读完书的一些思考：&lt;/p&gt;
-
-&lt;h3 id=&quot;关于成本&quot;&gt;关于成本&lt;/h3&gt;
-
-&lt;p&gt;从经济的角度看，我们企业包括创始人和团队在内的所有人都是成本，而不是我们潜意识认为的我们自己是创造产品，企业的成本和大多数事务没有太多关系，特别是软件开发团队，主要的成本就是人力成本，而且和时间有关，而不是和产量和产品数量有关。&lt;/p&gt;
-
-&lt;p&gt;关于节省成本，其实很多企业都在小成本上斤斤计较，而且为了小成本的节省，往往以牺牲人的生产力为前提的，企业最大的成本浪费在于，没有把人才资源投入到真正的商业机会中，而是根据团队规模进行雨露均沾的资源投入，最后所有的资源在团队堡垒争夺下，自动分配给很多碌碌无为的活动，而不是创造价值的机会中。&lt;/p&gt;
-
-&lt;h3 id=&quot;关于资源&quot;&gt;关于资源&lt;/h3&gt;
-
-&lt;p&gt;特别是研发背景的创业团队容易犯的错误是，认为只要开发出能够解决问题或者提供高效率的工具就是好的产品。但是企业真正要做的是先了解客户，经济成果获取靠的是挖掘新的商业机会，而不是靠解决问题。最好的企业运营方式应该是把资源投入到商业机会上，并远离问题。这里说的并不是不解决问题，而是解决的是客户认可的问题，而不是你自己认为的问题。高质量的产品不是技术上最精巧的东西，而是在满足客户核心痛点下成本尽量低同时稳定的产品。&lt;/p&gt;
-
-&lt;h3 id=&quot;关于客户&quot;&gt;关于客户&lt;/h3&gt;
-
-&lt;p&gt;创新是把已经存在的因素转化成为一个更有效的有机体，创新点越小越好。创新的点只要有一个核心点能够满足市场需求即可，其他80%的功能都不是用户所会关心的。客户购买的往往不是企业卖给他们的产品，他们不会为了产品掏腰包，他们买的是产品销售过程中，由产品技术和服务带来的满足感。&lt;/p&gt;
-
-&lt;p&gt;这两个点我理解的特别深刻，现在世界最差的其实不是信息和知识，高水平的客户也会自己去学习，客户真正需要的是你对他的重视，彻底的研究他们的痛点，通过沟通交流在解决他们问题的前提下形成更为广泛的商业信任。只有你和客户之间形成了类似朋友之间的商务信任以后，企业开展的商务，销售，研发和服务才会有效果，才是面向机会的经济行为。&lt;/p&gt;
-
-&lt;h3 id=&quot;关于管理&quot;&gt;关于管理&lt;/h3&gt;
-
-&lt;p&gt;多思考客户要求背后的痛点现状，重视机会的最大化，而不是风险的最小化，如果一味追求最小的风险，最后企业面临的却是无所作为带来的最大风险。管理者第一责任是让外行人了解企业所做的，可以做的和应当做的事情。&lt;/p&gt;
-
-&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-&lt;p&gt;这本书信息量非常大，作者还经常在理论下附带很多现实例子的讲解，让我深刻的理解了企业的战略并不是一句虚无缥缈的概念，而是围绕着机会和资源，随着市场不断调整的科学思考方法体系。&lt;/p&gt;</content><author><name></name></author><summary type="html">因为武汉疫情的原因，被封闭在老家，难得很长的空闲时间，每天除了完成工作外，主要就是在读《成果管理》这本书。 这本书主要讲的是企业的战略，原来对企业战略的认识很模糊，看完以后，战略两个字在我眼里栩栩如生：</summary></entry></feed>
+&lt;p&gt;现在EAF可以直接制作思维导图和流程图，真的太方便了，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><summary type="html">发现新大陆 在Emacs-China论坛闲逛时发现了 mermaid.js 这个图形库，这个图形库的最大优势是，你可以直接编写 markdown 文本，他会自动生成流程图、饼状图、干特图、类型图、序列图等逻辑图形。</summary></entry></feed>
