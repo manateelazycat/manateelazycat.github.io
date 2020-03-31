@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>高效创作 Mindmap -> Org-Mode -> Word</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                高效创作 Mindmap -> Org-Mode -> Word
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Linux">
+                    <div class="category">
+                        Linux
+                    </div>
+                </a>
+                
+                <a href="http://localhost:4000/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数1362 2020-04-01
+            </div>
+            <div class="content">
+                <p>作为Emacser，最享受在Emacs高效的处理文字，特别是在Emacs中编辑Markdown和Org文件，完全就是一种行云流水的感觉。
+但是我们无法让所有的朋友和同事都使用Emacs，特别是有时候要发送公司文件给客户，客户一般都用Word。</p>
+
+<p>今天就介绍一种在Emacs中编写Org-Mode文件，然后通过Pandoc这个工具导出成Word文档的方法。</p>
+
+<ol>
+  <li>首先创建一个 test.org 文件，第一行加入Org格式的标题字符串 <code class="highlighter-rouge">#+TITLE: 文档标题</code>, 然后按照Org-Mode格式写文件内容</li>
+  <li>执行命令: <code class="highlighter-rouge">pandoc test.org -o test.docx --reference-doc=template.docx</code> 生成Word文档</li>
+</ol>
+
+<p>template.docx 模板文件包含了各种样式细节，它会指导Pandoc按照模板文件相同的样式来转换Word文档，测试时可以下载我的<a href="https://github.com/manateelazycat/lazycat-emacs/blob/master/site-lisp/template/template.docx">template.docx</a>文件。</p>
+
+<h3 id="为什么不直接在office中编辑">为什么不直接在Office中编辑？</h3>
+<p>内容用Org创作，再转换成Word文档，这样做的好处是：</p>
+<ol>
+  <li>文本操作效率高：可以利用Emacs强大的编辑命令快速编辑文件内容，而不是在Word中笨拙的操作光标</li>
+  <li>利用Emacs生态：Emacs有很多插件，纯文本的方式非常适合Emacs快速进行搜索和替换等操作</li>
+  <li>利用Org生态：比如切换缩进、按照章节移动、快速修复错误序号等问题都可以通过Org生态工具快速完成，而Word光选择一个大型的段落都要操作好久</li>
+</ol>
+
+<h3 id="生成模板文件">生成模板文件</h3>
+<p>上面的命令中提到控制Word样式的模板文件，其实最简单创建模板的方法是:</p>
+
+<ol>
+  <li>先用命令 <code class="highlighter-rouge">pandoc test.org -o template.docx</code> 生成一个带Pandoc默认样式的Word文档</li>
+  <li>用Office软件打开 template.docx 文件，修改样式成你喜欢的模样</li>
+  <li>保存 template.docx 文件即可</li>
+</ol>
+
+<h3 id="emacs中操作">Emacs中操作</h3>
+
+<p>Emacs用户可以用我下面的Elisp函数来实现一键自动转换的功能：</p>
+
+<div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">defun</span> <span class="nv">org-export-docx</span> <span class="p">()</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">docx-file</span> <span class="p">(</span><span class="nv">concat</span> <span class="p">(</span><span class="nv">file-name-sans-extension</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">))</span> <span class="s">".docx"</span><span class="p">))</span>
+           <span class="p">(</span><span class="nv">template-file</span> <span class="s">"/path/template.docx"</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">shell-command</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"pandoc %s -o %s --reference-doc=%s"</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">)</span> <span class="nv">docx-file</span> <span class="nv">template-file</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">message</span> <span class="s">"Convert finish: %s"</span> <span class="nv">docx-file</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p>注意，需要替换上面代码中的 <code class="highlighter-rouge">/path/template.docx</code> 路径需要替换成你生成模板文件的真实路径。</p>
+
+<h3 id="高效创作">高效创作</h3>
+<p>我平常写文档的实践步骤是</p>
+<ol>
+  <li>理清思路：用EAF思维导图工具做大纲</li>
+  <li>填充内容：EAF思维导图导出Org格式大纲后，填充内容</li>
+  <li>转换格式：Org内容写完后，导出成Word文档给客户</li>
+</ol>
+
+<p>同样的文档篇幅，Office软件需要编辑2个小时，通过这些工具链的协作，一般只需要半个小时就可以完成。</p>
+
+<p>因为给客户的文档都是非常规范的，只需要一次性设置好模板文件的样式，文档大纲和内容样式都可以通过工具自动生成，工具会帮合我们节省大量手动排版的时间，创作时只有关心内容即可，所以效率非常高。</p>
+
+            </div>
+        </div>
+    </body>
+</html>
