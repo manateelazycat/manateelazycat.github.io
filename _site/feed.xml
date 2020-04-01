@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-01T01:59:09+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">高效创作 Mindmap -&amp;gt; Org-Mode -&amp;gt; Word</title><link href="http://localhost:4000/linux/emacs/2020/04/01/org-to-docx.html" rel="alternate" type="text/html" title="高效创作 Mindmap -&gt; Org-Mode -&gt; Word" /><published>2020-04-01T00:00:00+08:00</published><updated>2020-04-01T00:00:00+08:00</updated><id>http://localhost:4000/linux/emacs/2020/04/01/org-to-docx</id><content type="html" xml:base="http://localhost:4000/linux/emacs/2020/04/01/org-to-docx.html">&lt;p&gt;作为Emacser，最享受在Emacs高效的处理文字，特别是在Emacs中编辑Markdown和Org文件，完全就是一种行云流水的感觉。
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-02T00:23:06+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Org-Mode 表格对齐设置</title><link href="http://localhost:4000/emacs/2020/04/02/org-font.html" rel="alternate" type="text/html" title="Org-Mode 表格对齐设置" /><published>2020-04-02T00:00:00+08:00</published><updated>2020-04-02T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/04/02/org-font</id><content type="html" xml:base="http://localhost:4000/emacs/2020/04/02/org-font.html">&lt;h3 id=&quot;org-mode表格对齐&quot;&gt;Org-Mode表格对齐&lt;/h3&gt;
+&lt;p&gt;Emacs的Org-Mode表格功能是大杀器，但对于中文用户来说，比较不爽的是因为中英字体不等宽导致Org-Mode表格无法对齐显示。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/tumashu/cnfonts&quot;&gt;cnfonts&lt;/a&gt;是针对这种问题的一种解决方案，通过找到匹配的中英文字体搭配来解决Org-Mode表格不对齐的问题，但是这种方法有一个最显著的副作用是，为了让Org-Mode表格对齐，会造成默认字体的英文字符太窄了，影响编码中字符的识别。虽然cnfonts也可以单独配置Org-Mode的字体，但是折腾也比较复杂。&lt;/p&gt;
+
+&lt;h3 id=&quot;新的方法&quot;&gt;新的方法&lt;/h3&gt;
+&lt;p&gt;其实更简单的做法是，利用更纱黑体这个字体来解决表格对齐的问题，因为更纱黑体字体通过融合现有字体实现中文字符的宽度刚好是英文字符宽度的两倍，以此来解决表格对齐的问题。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;首先通过命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pacman -S ttf-sarasa-gothic wqy-microhei&lt;/code&gt; 安装好字体&lt;/li&gt;
+  &lt;li&gt;然后把下面的配置放入 ~/.emacs 中即可&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emacs-font-size&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emacs-font-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;WenQuanYi Micro Hei Mono&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;set-frame-font&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;%s-%s&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emacs-font-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emacs-font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;set-fontset-font&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;frame-parameter&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'unicode&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emacs-font-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with-eval-after-load&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'org&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;org-buffer-face-mode-variable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;interactive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;make-face&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'width-font-face&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;set-face-attribute&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'width-font-face&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:font&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;等距更纱黑体 SC 15&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;buffer-face-mode-face&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'width-font-face&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;buffer-face-mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-hook&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'org-mode-hook&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'org-buffer-face-mode-variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;上面配置的意思是，默认Emacs使用文泉驿字体，Org-Mode使用更纱黑体字体，这样既可以解决Org-Mode表格对齐问题，又避免对Emacs其他模式产生影响。&lt;/p&gt;</content><author><name></name></author><summary type="html">Org-Mode表格对齐 Emacs的Org-Mode表格功能是大杀器，但对于中文用户来说，比较不爽的是因为中英字体不等宽导致Org-Mode表格无法对齐显示。</summary></entry><entry><title type="html">高效创作 Mindmap -&amp;gt; Org-Mode -&amp;gt; Word</title><link href="http://localhost:4000/linux/emacs/2020/04/01/org-to-docx.html" rel="alternate" type="text/html" title="高效创作 Mindmap -&gt; Org-Mode -&gt; Word" /><published>2020-04-01T00:00:00+08:00</published><updated>2020-04-01T00:00:00+08:00</updated><id>http://localhost:4000/linux/emacs/2020/04/01/org-to-docx</id><content type="html" xml:base="http://localhost:4000/linux/emacs/2020/04/01/org-to-docx.html">&lt;p&gt;作为Emacser，最享受在Emacs高效的处理文字，特别是在Emacs中编辑Markdown和Org文件，完全就是一种行云流水的感觉。
 但是我们无法让所有的朋友和同事都使用Emacs，特别是有时候要发送公司文件给客户，客户一般都用Word。&lt;/p&gt;
 
 &lt;p&gt;今天就介绍一种在Emacs中编写Org-Mode文件，然后通过Pandoc这个工具导出成Word文档的方法。&lt;/p&gt;
@@ -664,51 +693,4 @@ service nginx restart
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;bash &lt;span class=&quot;nt&quot;&gt;--login&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;上面的命令是在登录Shell之前就切换了目录，这样Shell打开的时候会自动切换到当前的目录。&lt;/p&gt;</content><author><name></name></author><summary type="html">如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：</summary></entry><entry><title type="html">创作、开源和经济发展</title><link href="http://localhost:4000/opensource/2020/03/15/creation-and-surroundings.html" rel="alternate" type="text/html" title="创作、开源和经济发展" /><published>2020-03-15T00:00:00+08:00</published><updated>2020-03-15T00:00:00+08:00</updated><id>http://localhost:4000/opensource/2020/03/15/creation-and-surroundings</id><content type="html" xml:base="http://localhost:4000/opensource/2020/03/15/creation-and-surroundings.html">&lt;p&gt;早上解决了&lt;a href=&quot;https://manateelazycat.github.io/linux/2020/03/15/change-dir-after-login-shell.html&quot;&gt;登入终端后自动切换目录&lt;/a&gt;这个问题。&lt;/p&gt;
-
-&lt;p&gt;根据这么多年的研发经验，解决这个问题过程中的灵光一闪的情况时常发生，现在回头看，其实很多复杂的技术问题总是遵循这样的规律：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;这个问题太难了，看着就复杂, 第一把搞不定&lt;/li&gt;
-  &lt;li&gt;我就不信了，持续死瞌很久，第N把还是搞不定&lt;/li&gt;
-  &lt;li&gt;放弃了，不搞了，不搞了&lt;/li&gt;
-  &lt;li&gt;去学习其他知识，潜意识保持关注&lt;/li&gt;
-  &lt;li&gt;在某一个安静的清晨，天微微亮，小鸟婉转悠扬的鸣啼声下，进入放松和专注的心流状态&lt;/li&gt;
-  &lt;li&gt;突然，灵光一闪，哦，原来这么简单，搞定了&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;其实，问题变化了吗？没有。&lt;/p&gt;
-
-&lt;p&gt;那什么发生变化了呢？
-是知识积累和心境发生了变化，当时你解决不了问题的关键是解决方案需要多个知识模块产生连接才能解决，你当时的知识体系是不完善的，在缺少对某块知识的掌握下，无法对多个知识模块产生连接，从而创造出解决问题的方案。&lt;/p&gt;
-
-&lt;p&gt;所以，短暂的放下很重要，放下并不代表不解决问题，而是放下问题去做知识积累，潜意识关注的目的是让大脑在休息的时候帮你整理知识和建立知识之间的连接，大脑这个工具很神奇，只要你保持关注，它会自动在后台思考运转，不需要增加你的思考负担。&lt;/p&gt;
-
-&lt;p&gt;所有的创造工作，特别是脑力创造领域，都需要极度的放松，因为只有极度的放松，大脑才会进入毫无杂念的专注心流。&lt;/p&gt;
-
-&lt;p&gt;最后创作成果其实等价于这个公式：&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;创作成果 = 知识积累 + 潜意识关注 ＋ 放松的环境 ＋ 专注的心流。&lt;/p&gt;
-
-&lt;p&gt;这种规律和模式也能解释为什么开源社区的先进技术大多数都是国外开发者创造的？&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;基本物质条件好：不为基本生存担忧，研发环境就相对宽松&lt;/li&gt;
-  &lt;li&gt;长时间专注一件事情：长时间专注的心流，大脑会进行广泛的知识积累和低成本的知识整理过程&lt;/li&gt;
-  &lt;li&gt;放松的心态：在宽松的环境和专注的思考下，就相对容易进入放松的状态，为多个知识模块产生连接准备创作机会&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;大多数开源项目并不是超多核心技术堆叠的，大多数开源项目都遵循下面的模式：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;项目创作阶段：通过多维度知识连接攻克了核心技术&lt;/li&gt;
-  &lt;li&gt;现实对接阶段：根据项目的应用场景，不断增加工程化代码满足现实，这部分代码数量巨大，但是难度并不高，只是增加了代码的复杂度&lt;/li&gt;
-  &lt;li&gt;成熟发展阶段：通过现实的总结，最后从单独功能衍生出围绕核心功能的API、SDK和生态&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;从我对国内开源环境的了解，我们在应用场景响应和生态建设能力并不差，差就差在创作阶段，究其本源，还是我们国家的经济发展水平不够高，大多数研发人才都在生存线上挣扎，因为神经时刻都在对危机做应急响应，我们无法给自己准备好创作所需的宽松环境和放松心态，导致在核心技术的多维度知识连接方面缺乏深度思考，最后也很难利用多维度的知识连接创作出解决问题的核心技术。&lt;/p&gt;
-
-&lt;p&gt;我们现在已经在某些领域创造出开源核心技术，但是创作的数量依然不如国外，本质原因还是国家的经济水平和研发环境还需要进一步发展。&lt;/p&gt;
-
-&lt;p&gt;做了开源十多年，年轻的时候想不清楚的问题现在想清楚了：&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;开源技术和生态的发展和国家的经济发展水平息息相关，经济好了，人就懒散了，人放松了，创作能力自然就提高了。&lt;/p&gt;</content><author><name></name></author><summary type="html">早上解决了登入终端后自动切换目录这个问题。</summary></entry></feed>
+&lt;p&gt;上面的命令是在登录Shell之前就切换了目录，这样Shell打开的时候会自动切换到当前的目录。&lt;/p&gt;</content><author><name></name></author><summary type="html">如果我们用VTE这种专业的终端控件，可以直接利用VTE的API进行SHELL登录后切换到制定的工作目录：</summary></entry></feed>
