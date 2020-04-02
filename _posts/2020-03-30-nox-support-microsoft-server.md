@@ -18,7 +18,7 @@ categories: [Emacs, Nox]
 1. 下载和安装[Nox](https://github.com/manateelazycat/nox)
 2. 执行 ```nox-print-mspyls-download-url``` 命令，打印当前操作系统安装包的下载地址
 3. 下载并解压文件到 ~/.emacs.d/nox/mspyls 目录下，保证目录的根位置有 Microsoft.Python.LanguageServer 这个文件
-4. 给mspyls索引权限: ```sudo chmod +x  ~/.emacs.d/nox/mspyls```
+4. 给mspyls索引权限: ```sudo chmod +x -R  ~/.emacs.d/nox/mspyls```
 5. 直接打开 python 文件，即可快速进行语法补全
 
 #### 注意
