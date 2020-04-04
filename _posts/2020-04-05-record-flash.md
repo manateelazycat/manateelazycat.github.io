@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 解决KDE下FFmpeg录制视频屏幕闪烁的问题
-categories: [Emacs]
+categories: [Linux]
 ---
 
 KDE下，我使用我写的深度录屏录制程序的时候，发现录制出来的视频一直有闪烁，原来还以为是我代码哪里写错了。
