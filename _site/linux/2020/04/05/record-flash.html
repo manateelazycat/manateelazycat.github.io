@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>解决KDE下FFmpeg录制视频屏幕闪烁的问题</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-slogan">
+        「生活可以更简单, 欢迎来到我的开源世界」
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                解决KDE下FFmpeg录制视频屏幕闪烁的问题
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Linux">
+                    <div class="category">
+                        Linux
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数175 2020-04-05
+            </div>
+            <div class="content">
+                <p>KDE下，我使用我写的深度录屏录在制程序的时候，发现录制出来的视频一直有闪烁问题，最开始还以为是我代码哪里写错了。</p>
+
+<p>今天搜索了一下，原来是KDE自己的锅，按照下面的方式设置一下就可以解决这个问题：</p>
+
+<ol>
+  <li>打开KDE系统设置</li>
+  <li>点击 “显示和监控”</li>
+  <li>点击 “混合器”</li>
+  <li>找到 “避免撕裂（垂直同步）” 选项，从下拉菜单中选择 “从不”</li>
+  <li>保存</li>
+</ol>
+
+<p>搞定，哪天有空了，录制一下EAF的使用视频。</p>
+
+            </div>
+        </div>
+    </body>
+</html>
