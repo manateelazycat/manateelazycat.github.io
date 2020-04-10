@@ -39,4 +39,6 @@ wmctrl首先会根据我们提供的窗口名字尝试切换窗口，如果没�
 * File manager: ```wmctrl -x -a dolphin || dolphin```
 * Calibre: ```wmctrl -x -a calibre-ebook-viewer || calibre```
 
+如果是 Gnome3 的快捷键设置，上面的所有命令需要改成 ```bash -c "wmctrl -x -a app || app"``` 的形式才能生效。
+
 That's all, enjoy! ;)
