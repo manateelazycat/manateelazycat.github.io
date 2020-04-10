@@ -11,9 +11,10 @@ DeepinWine 版本的微信需要安装 deepin.com.wechat2 这个包，但是这�
 原因是当时 DeepinWine 编写代码时只允许在 DDE 或者 Gnome 环境下运行。
 
 ### 解决思路
-1. 安装依赖 ```sudo pacman -S gnome-settings-daemon```
-2. 修改 ```/opt/deepinwine/apps/Deepin-WeChat/run.sh``` 在开头插入一行 ```/usr/lib/gsd-xsettings &```
-3. 删除原先的微信目录 ```rm -rf ~/.deepinwine/Deepin-WeChat```
+1. 安装Gnome Settings Daemon ```sudo pacman -S gnome-settings-daemon```
+2. 安装微信 ```yay -S deepin.com.wechat2```
+3. 添加 ```/usr/lib/gsd-xsettings``` 到桌面环境启动项
+4. 删除原先的微信目录 ```rm -rf ~/.deepinwine/Deepin-WeChat```
 
 这样 DeepinWine 就认为在Gnome环境下，可以正常启动 DeepinWine 版本的微信了。
 
