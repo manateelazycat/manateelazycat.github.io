@@ -54,7 +54,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数525 2019-11-15
+                字数524 2019-11-15
             </div>
             <div class="content">
                 <h3 id="问题">问题</h3>
@@ -65,8 +65,9 @@
 
 <h3 id="解决思路">解决思路</h3>
 <ol>
-  <li>安装依赖 <code class="highlighter-rouge">sudo pacman -S gnome-settings-daemon</code></li>
-  <li>修改 <code class="highlighter-rouge">/opt/deepinwine/apps/Deepin-WeChat/run.sh</code> 在开头插入一行 <code class="highlighter-rouge">/usr/lib/gsd-xsettings &amp;</code></li>
+  <li>安装Gnome Settings Daemon <code class="highlighter-rouge">sudo pacman -S gnome-settings-daemon</code></li>
+  <li>安装微信 <code class="highlighter-rouge">yay -S deepin.com.wechat2</code></li>
+  <li>添加 <code class="highlighter-rouge">/usr/lib/gsd-xsettings</code> 到桌面环境启动项</li>
   <li>删除原先的微信目录 <code class="highlighter-rouge">rm -rf ~/.deepinwine/Deepin-WeChat</code></li>
 </ol>
 
