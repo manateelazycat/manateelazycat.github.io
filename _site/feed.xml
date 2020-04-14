@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-08T19:23:48+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">快速拷贝网页中的代码片段</title><link href="http://localhost:4000/emacs/eaf/2020/04/08/eaf-copy-code.html" rel="alternate" type="text/html" title="快速拷贝网页中的代码片段" /><published>2020-04-08T00:00:00+08:00</published><updated>2020-04-08T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/04/08/eaf-copy-code</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/04/08/eaf-copy-code.html">&lt;p&gt;我们平常在研究技术的时候，经常需要复制网上的代码做实验。遇到代码特别多的时候，需要用鼠标上下拖动来拷贝代码，而且经常容易拷贝出错，非常影响效率。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-14T20:22:23+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Gnome3的一些设置</title><link href="http://localhost:4000/linux/2020/04/14/switch-to-gnome.html" rel="alternate" type="text/html" title="Gnome3的一些设置" /><published>2020-04-14T00:00:00+08:00</published><updated>2020-04-14T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/04/14/switch-to-gnome</id><content type="html" xml:base="http://localhost:4000/linux/2020/04/14/switch-to-gnome.html">&lt;p&gt;最近EAF通过QWindow::setParent替换了X11 Reparent技术实现跨进程粘贴后，EAF现在已经可以支持Wayland。&lt;/p&gt;
+
+&lt;p&gt;同时也把桌面环境从KDE切换至Gnome3，虽然Gnome3很多地方的交互设计还是一如既往的脑残，但是总体上还是简洁不少。&lt;/p&gt;
+
+&lt;p&gt;Gnome3方面坑很多，各方面稍微调整了一下，方便下次重装系统参考。&lt;/p&gt;
+
+&lt;h4 id=&quot;去掉一些快捷键&quot;&gt;去掉一些快捷键&lt;/h4&gt;
+&lt;p&gt;我主要用Emacs和EAF，Chrome浏览器都不用，所以Gnome3很多内置快捷键会和EAF冲突, 而且这些快捷键无法通过Gnome3的设置面板中定制，需要 dconf-editor 来解决。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;安装 dconf-editor&lt;/li&gt;
+  &lt;li&gt;根据目录 org-&amp;gt;gnome-&amp;gt;shell-&amp;gt;keybindings 打开内置按键设置界面&lt;/li&gt;
+  &lt;li&gt;修改按键值为 [], 去掉内置快捷键占用&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;顺便图槽一下Gnome3的返回上级的交互设计，一个返回按钮和Backspace按键可以搞定的事情，非要通过弹出单选菜单的方式进行返回，真是脑残的设计。&lt;/p&gt;
+
+&lt;h4 id=&quot;输入法配置&quot;&gt;输入法配置&lt;/h4&gt;
+
+&lt;p&gt;Fcitx 没法直接在Wayland上运行，首先需要在文件 /etc/environment 中写入配置:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;GTK_IM_MODULE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fcitx
+&lt;span class=&quot;nv&quot;&gt;QT_IM_MODULE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fcitx
+&lt;span class=&quot;nv&quot;&gt;XMODIFIERS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;@im&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fcitx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后通过命令
+&lt;code class=&quot;highlighter-rouge&quot;&gt;gsettings set org.gnome.settings-daemon.plugins.xsettings overrides &quot;{'Gtk/IMModule':&amp;lt;'fcitx'&amp;gt;}&quot;&lt;/code&gt;
+来设置输入法启动快捷键&lt;/p&gt;
+
+&lt;h4 id=&quot;gnome-shell插件&quot;&gt;Gnome Shell插件&lt;/h4&gt;
+
+&lt;p&gt;默认安装了几个插件来定制Gnome Shell：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Hide Top Bar: 默认隐藏顶部栏&lt;/li&gt;
+  &lt;li&gt;NoAnnoyance: 避免弹出 “窗口已经准备好” 的无聊通知&lt;/li&gt;
+  &lt;li&gt;TopIcons Plus: 把托盘区域放到顶部面板中&lt;/li&gt;
+  &lt;li&gt;User Themes: 可以加载第三方主题&lt;/li&gt;
+  &lt;li&gt;Walkpaper：每个工作区不同的桌面壁纸，Gnome3本身没有这种设计支持，通过切换工作区换壁纸的方式来实现&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Gnome3默认分组的Alt + Tab设计也是脑残至极，好的是，现在可以直接在Gnome3设置面板通过设置 “窗口切换” 命令来回归传统的Alt + Tab切换功能。&lt;/p&gt;
+
+&lt;h4 id=&quot;gnome-shell主题&quot;&gt;Gnome Shell主题&lt;/h4&gt;
+
+&lt;p&gt;主题找了一下 Flat-Remix 主题，解压到 ~/.themes 目录下后，通过下面命令来设置主题&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gsettings set org.gnome.shell.extensions.user-theme name &quot;Flat-Remix-Dark-fullPanel&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;快速切换应用&quot;&gt;快速切换应用&lt;/h4&gt;
+
+&lt;p&gt;我在&lt;a href=&quot;https://manateelazycat.github.io/linux/2019/09/13/open-or-raise.html&quot;&gt;Linux下实现打开或切换应用的功能&lt;/a&gt;文章中写了怎么快速切换应用，原理是一样的，只不过 Gnome3 的快捷键设置需要在所有命令增加 bash -c 的参数才能生效。&lt;/p&gt;
+
+&lt;p&gt;That’s all!&lt;/p&gt;</content><author><name></name></author><summary type="html">最近EAF通过QWindow::setParent替换了X11 Reparent技术实现跨进程粘贴后，EAF现在已经可以支持Wayland。</summary></entry><entry><title type="html">快速拷贝网页中的代码片段</title><link href="http://localhost:4000/emacs/eaf/2020/04/08/eaf-copy-code.html" rel="alternate" type="text/html" title="快速拷贝网页中的代码片段" /><published>2020-04-08T00:00:00+08:00</published><updated>2020-04-08T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/04/08/eaf-copy-code</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/04/08/eaf-copy-code.html">&lt;p&gt;我们平常在研究技术的时候，经常需要复制网上的代码做实验。遇到代码特别多的时候，需要用鼠标上下拖动来拷贝代码，而且经常容易拷贝出错，非常影响效率。&lt;/p&gt;
 
 &lt;p&gt;今天写了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/018ec8bbadbf8bf3a8ae607fe092c89863cc8302&quot;&gt;补丁&lt;/a&gt; ， 可以做如下操作来快速拷贝网页中的代码片段：&lt;/p&gt;
 
@@ -459,140 +513,4 @@ flymake相关的代码&lt;/li&gt;
 
 &lt;p&gt;喜欢开源社区这种松散有创造力的合作模式。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/900-stars/900-stars.png&quot; alt=&quot;900 Stars&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">630天，全球18个开发者、15个应用、1104处改动、153个社区补丁，目前为止900颗星，继续推进 Live in Emacs 计划。</summary></entry><entry><title type="html">最佳代理实践(2020-03-17)</title><link href="http://localhost:4000/proxy/2020/03/17/best-proxy.html" rel="alternate" type="text/html" title="最佳代理实践(2020-03-17)" /><published>2020-03-17T00:00:00+08:00</published><updated>2020-03-17T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/03/17/best-proxy</id><content type="html" xml:base="http://localhost:4000/proxy/2020/03/17/best-proxy.html">&lt;h2 id=&quot;不断变化的gfw&quot;&gt;不断变化的GFW&lt;/h2&gt;
-&lt;p&gt;GFW不断在变化，而我们的代理策略也要一直更新，今天把自己的代理设置全部集成写一遍，方便自己和看我博客的同学参考。&lt;/p&gt;
-
-&lt;h2 id=&quot;配置trojan代理客户端&quot;&gt;配置Trojan代理客户端&lt;/h2&gt;
-
-&lt;h3 id=&quot;准备工作&quot;&gt;准备工作&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;一台境外的VPS, 不需要购买域名和配置证书&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;vps安装debian-9&quot;&gt;VPS安装Debian 9&lt;/h3&gt;
-
-&lt;p&gt;一般VPS都有操作系统安装服务，安装Debian 9以后，替换 /etc/apt/sources.list 文件内容为163镜像源，提升软件安装速度:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;deb http://mirrors.163.com/debian/ stretch main non-free contrib
-deb http://mirrors.163.com/debian/ stretch-updates main non-free contrib
-deb http://mirrors.163.com/debian/ stretch-backports main non-free contrib
-deb-src http://mirrors.163.com/debian/ stretch main non-free contrib
-deb-src http://mirrors.163.com/debian/ stretch-updates main non-free contrib
-deb-src http://mirrors.163.com/debian/ stretch-backports main non-free contrib
-deb http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
-deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;安装trojan服务端&quot;&gt;安装Trojan服务端&lt;/h3&gt;
-
-&lt;p&gt;通过命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh root@your_vps_ip&lt;/code&gt; 登录VPS服务器后，执行下面脚本自动安装和配置Trojan服务端:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-check-certificate&lt;/span&gt; https://raw.githubusercontent.com/mark-hans/trojan-wiz/master/ins.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x ins.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; bash ins.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;安装过程中提示“请选择证书模式”，选择”使用IP自签发证书”的模式。&lt;/p&gt;
-
-&lt;h3 id=&quot;启动trojan服务端&quot;&gt;启动Trojan服务端&lt;/h3&gt;
-
-&lt;p&gt;安装完成后，使用命令&lt;code class=&quot;highlighter-rouge&quot;&gt;systemctl start trojan-gfw&lt;/code&gt; 启动trojan服务端, 同时可以用命令&lt;code class=&quot;highlighter-rouge&quot;&gt;systemctl status trojan-gfw&lt;/code&gt;来检查trojan服务端的状态，如果状态为&lt;code class=&quot;highlighter-rouge&quot;&gt;active(running)&lt;/code&gt;, 证明trojan服务端已经启动。&lt;/p&gt;
-
-&lt;h3 id=&quot;拷贝服务端配置文件&quot;&gt;拷贝服务端配置文件&lt;/h3&gt;
-
-&lt;p&gt;trojan服务端配置成功以后会在VPS的/home/trojan/目录下生成client.json和ca-cert.pem两个文件:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;client.json 是客户端配置文件，已经按照VPS IP配置好&lt;/li&gt;
-  &lt;li&gt;ca-cert.pem 是证书文件，已经按照VPS配置好&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;比如你的VPS IP为 xxx.xxx.xxx.xxx，使用下面的命令来完成拷贝服务端配置文件到本机：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scp root@xxx.xxx.xxx.xxx:/home/trojan/ca-cert.pem ./&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scp root@xxx.xxx.xxx.xxx:/home/trojan/client.json ./&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;下载trojan客户端&quot;&gt;下载Trojan客户端&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;首先在VPS使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ping github.com&lt;/code&gt;, 获取 github.com 的ip地址, 比如是 192.30.253.112&lt;/li&gt;
-  &lt;li&gt;在本机 /etc/hosts 文件中加入 &lt;code class=&quot;highlighter-rouge&quot;&gt;192.30.253.112 github.com&lt;/code&gt; , 这样访问github页面就暂时不需要FQ&lt;/li&gt;
-  &lt;li&gt;重启本机网络服务: &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo systemctl restart NetworkManager&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;下载Trojan客户端: &lt;code class=&quot;highlighter-rouge&quot;&gt;wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;下载trojan-1.14.1-linux-amd64.tar.xz后，解压文件，把ca-cert.pem和client.json拷贝到 trojan 目录下。&lt;/p&gt;
-
-&lt;h3 id=&quot;启动trojan客户端&quot;&gt;启动Trojan客户端&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./trojan -c client.json&lt;/code&gt; 即可在 127.0.0.1:1080 建立本地代理连接，最后通过Chrome SwitchyOmega来配置浏览器的代理设置。&lt;/p&gt;
-
-&lt;p&gt;在浏览器验证可以FQ以后，你可以清除刚刚在本机 /etc/hosts 的github设置。&lt;/p&gt;
-
-&lt;h2 id=&quot;配置git代理&quot;&gt;配置Git代理&lt;/h2&gt;
-
-&lt;h3 id=&quot;配置git-httphttps代理&quot;&gt;配置Git HTTP/HTTPS代理&lt;/h3&gt;
-
-&lt;p&gt;在 ~/.gitconfig 文件中加入以下配置:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;http]
-	proxy &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; socks5://127.0.0.1:1080
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;注意，上明配置等同于命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;git config --global http.proxy 'socks5://127.0.0.1:1080'&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Git不认https.proxy，设置http.proxy就可以支持 https 了。&lt;/p&gt;
-
-&lt;h3 id=&quot;配置git-ssh代理&quot;&gt;配置Git SSH代理&lt;/h3&gt;
-
-&lt;p&gt;在 ~/.ssh/config 文件中加入以下配置:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Host github.com
-HostName github.com
-User git
-Port 22
-ProxyCommand /usr/bin/ncat &lt;span class=&quot;nt&quot;&gt;--proxy&lt;/span&gt; 127.0.0.1:1080 &lt;span class=&quot;nt&quot;&gt;--proxy-type&lt;/span&gt; socks5 %h %p
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;配置yay代理&quot;&gt;配置yay代理&lt;/h2&gt;
-
-&lt;p&gt;yay 代理有两种方式，一种是设置代理环境变量，一种是通过安装 gcc-go 替换 go 来支持 &lt;code class=&quot;highlighter-rouge&quot;&gt;proxychains4 yay&lt;/code&gt; 的代理操作。
-因为 gccgo 很多实现和 go 都有很大的差别，为了不影响其他 go 程序，选择第一种方式。&lt;/p&gt;
-
-&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bashrc&lt;/code&gt; 文件中添加如下的代理配置：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;export http_proxy=socks5://127.0.0.1:1080
-export https_proxy=socks5://127.0.0.1:1080
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;配置aria2代理&quot;&gt;配置Aria2代理&lt;/h2&gt;
-&lt;p&gt;我们上面已经配置了Socks5代理，但是Aria2只支持HTTP代理, 所以我们需要通过 privoxy 来转换Socks5代理成HTTP代理:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; privoxy
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;然后设置 /etc/privoxy/config 配置文件，比如添加下面代码到配置文件中，把在1080端口的Socks5代理转换成9888端口的HTTP代理:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;forward-socks5t / 127.0.0.1:1080 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-listen-address 127.0.0.1:9888
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这样aria2就可以直接用 &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:9888&lt;/code&gt; 这个Http代理来下载东西了。&lt;/p&gt;
-
-&lt;h2 id=&quot;配置npm代理&quot;&gt;配置npm代理&lt;/h2&gt;
-
-&lt;p&gt;上面配置好 HTTP 代理，可以通过下面的命令来加速npm的下载速度：&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://127.0.0.1:9888
-npm config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;registry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://registry.npmjs.org
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;配置youtube-dl代理&quot;&gt;配置youtube-dl代理&lt;/h2&gt;
-
-&lt;p&gt;youtube-dl 这个工具非常方便下载一些YouTube视频，可以使用下面的命令来通过代理下载视频：&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;youtube-dl &lt;span class=&quot;nt&quot;&gt;--proxy&lt;/span&gt; socks5://127.0.0.1:1080 video_url &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; /download_dir/%&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;title&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;s-%&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;s.%&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ext&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;s
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
-&lt;p&gt;上面就是系统中大部分工具所需的代理设置，也是到目前为止我探索的代理最佳实践，我会定期保持更新的。&lt;/p&gt;</content><author><name></name></author><summary type="html">不断变化的GFW GFW不断在变化，而我们的代理策略也要一直更新，今天把自己的代理设置全部集成写一遍，方便自己和看我博客的同学参考。</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/900-stars/900-stars.png&quot; alt=&quot;900 Stars&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">630天，全球18个开发者、15个应用、1104处改动、153个社区补丁，目前为止900颗星，继续推进 Live in Emacs 计划。</summary></entry></feed>
