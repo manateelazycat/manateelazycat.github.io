@@ -31,7 +31,7 @@ XMODIFIERS=@im=fcitx
 
 然后通过命令
 ```gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"```
-来设置输入法启动快捷键
+来设置Fcitx为输入法引擎
 
 #### Gnome Shell插件
 
