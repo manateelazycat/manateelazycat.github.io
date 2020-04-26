@@ -24,21 +24,44 @@ a {
     margin-bottom: 20px;
 }
 
+.tag-box {
+    display: flex;
+    flex-direction: column;
+}
+
 .categories-area {
-    display: none;
+    order: 1;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.categories-area-title {
+    margin-bottom: 20px;
+}
+
+.category-item {
+    display: inline-block;
+    font-size: 18px;
+    vertical-align: bottom;
 }
 
 .category-name {
-    margin-left: 10px;
-    margin-right: 10px;
-    display: inline;
+    margin-left: 15px;
+    display: inline-block;
     line-height: 30px;
-    font-weight: bold;
     color: #666;
+}
+
+.category-number {
+    display: inline-block;
+    color: #666;
+    font-size: 16px;
 }
 
 #archives {
     width: 100%;
+    order: 2;
 }
 
 .archive-group {
