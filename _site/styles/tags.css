@@ -41,6 +41,10 @@ a:hover {
     padding-left: 20px;
 }
 
+.categories-area-title {
+    display: none;
+}
+
 .category-item {
     display: flex;
     flex-direction: row;

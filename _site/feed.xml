@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-14T20:22:23+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Gnome3的一些设置</title><link href="http://localhost:4000/linux/2020/04/14/switch-to-gnome.html" rel="alternate" type="text/html" title="Gnome3的一些设置" /><published>2020-04-14T00:00:00+08:00</published><updated>2020-04-14T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/04/14/switch-to-gnome</id><content type="html" xml:base="http://localhost:4000/linux/2020/04/14/switch-to-gnome.html">&lt;p&gt;最近EAF通过QWindow::setParent替换了X11 Reparent技术实现跨进程粘贴后，EAF现在已经可以支持Wayland。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-26T17:35:42+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Gnome3的一些设置</title><link href="http://localhost:4000/linux/2020/04/14/switch-to-gnome.html" rel="alternate" type="text/html" title="Gnome3的一些设置" /><published>2020-04-14T00:00:00+08:00</published><updated>2020-04-14T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/04/14/switch-to-gnome</id><content type="html" xml:base="http://localhost:4000/linux/2020/04/14/switch-to-gnome.html">&lt;p&gt;最近EAF通过QWindow::setParent替换了X11 Reparent技术实现跨进程粘贴后，EAF现在已经可以支持Wayland。&lt;/p&gt;
 
 &lt;p&gt;同时也把桌面环境从KDE切换至Gnome3，虽然Gnome3很多地方的交互设计还是一如既往的脑残，但是总体上还是简洁不少。&lt;/p&gt;
 
@@ -26,7 +26,7 @@
 
 &lt;p&gt;然后通过命令
 &lt;code class=&quot;highlighter-rouge&quot;&gt;gsettings set org.gnome.settings-daemon.plugins.xsettings overrides &quot;{'Gtk/IMModule':&amp;lt;'fcitx'&amp;gt;}&quot;&lt;/code&gt;
-来设置输入法启动快捷键&lt;/p&gt;
+来设置Fcitx为输入法引擎&lt;/p&gt;
 
 &lt;h4 id=&quot;gnome-shell插件&quot;&gt;Gnome Shell插件&lt;/h4&gt;
 

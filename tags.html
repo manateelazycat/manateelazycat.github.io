@@ -23,6 +23,10 @@ title: Categories
     </div>
 
     <div class="categories-area">
+        <div class="categories-area-title">
+            [Tags]
+        </div>
+
         {% for category in site.categories %}
         {% capture category_name %}{{ category | first }}{% endcapture %}
         <a
