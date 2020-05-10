@@ -5,7 +5,7 @@ categories: [EAF, Emacs]
 ---
 
 ### 欢迎加入EAF社区
-[中国开源之夏](https://isrc.iscas.ac.cn/summer2020/#/)的同学们，欢迎加入EAF开源社区！
+[2020 中国开源之夏](https://isrc.iscas.ac.cn/summer2020/#/)的同学们，欢迎加入EAF开源社区！
 
 EAF开源社区在本次中国开源之夏活动中属于高难度的开源社区项目，你需要快速学会Elisp、Python、Qt甚至是JavaScript才能挑战EAF社区中的任务。
 
@@ -221,6 +221,14 @@ def get_foo(self):
 
 ```eaf--buffer-id``` 是EAF Buffer的局部变量，你按照上面的格式写代码，EAF框架会自动找到EAF应用对应的 ```get_foo``` 方法，并返回Python函数执行结果到Emacs进程。
 
+##### 在Elisp端调用Python方法，附带参数
+
+如果需要在调用Python函数时传递参数，可以用 ```call_function_with_args``` 接口来替代:
+
+```elisp
+(eaf-call "call_function_with_args" eaf--buffer-id "function_name" "function_args")
+```
+
 ##### 在Python端读取用户的输入
 从Python端读取Emacs的输入，可以先看下面的示例代码:
 
@@ -350,6 +358,6 @@ EAF是一个多语言的高难度项目，你需要同时具备Elisp、Python、
 
 如果你上面的知识都掌握了，恭喜你，你现在可以开始挑战[EAF开发任务](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)了。
 
-关于EAF开发任务的详细需求和核心技术细节，可以随时请教EAF社区导师[Matthew Zeng](https://github.com/MatthewZMD), 也可以把问题发送到[Issue页面](https://github.com/manateelazycat/emacs-application-framework/issues), EAF社区大神会尽快回复你。
+关于EAF开发任务的详细需求和更多核心技术细节，可以随时请教EAF社区导师[Matthew Zeng](https://github.com/MatthewZMD), 也可以把问题发送到[Issue页面](https://github.com/manateelazycat/emacs-application-framework/issues), EAF社区大神会尽快回复你。
 
 祝各位同学暑假快乐，Happy hacking! ;)
