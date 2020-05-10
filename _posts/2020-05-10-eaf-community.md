@@ -353,6 +353,7 @@ EAF是一个多语言的高难度项目，你需要同时具备Elisp、Python、
 * Python材料：《Python核心编程》这本书足够你精通Python语言
 * PyQt5材料：http://zetcode.com/gui/pyqt5/ 这是我找到最简单的Qt入门教程
 * JavaScript材料: Google和Github是你学习JavaScript最好的导师
+* EAF: 建议先用熟练EAF后，直接阅读源代码来学习，最好的方法就是看app目录下的现有应用源码依葫芦画瓢 ;)
 
 ### 有哪些挑战性的任务？
 
