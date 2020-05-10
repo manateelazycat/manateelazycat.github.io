@@ -1,44 +1,511 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-04T19:27:23+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">最美人间烟火气</title><link href="http://localhost:4000/reading/2020/05/04/reading-12-rules.html" rel="alternate" type="text/html" title="最美人间烟火气" /><published>2020-05-04T00:00:00+08:00</published><updated>2020-05-04T00:00:00+08:00</updated><id>http://localhost:4000/reading/2020/05/04/reading-12-rules</id><content type="html" xml:base="http://localhost:4000/reading/2020/05/04/reading-12-rules.html">&lt;p&gt;去年在微博上看了乔丹·彼得森的一场TED演讲，当时被这个严肃到近乎真诚的人深深吸引，作为一位临床心理学家，他从心理学的实践出发，研究了大量现代人的心理问题，并对这些心理问题进行深入观察、感受和理解，拨开由痛苦和情绪彼此纠缠形成的迷雾，他最终把自己的感悟写成了一部巨著《人生十二法则》。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-10T11:21:15+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">欢迎加入EAF社区</title><link href="http://localhost:4000/eaf/emacs/2020/05/10/eaf-community.html" rel="alternate" type="text/html" title="欢迎加入EAF社区" /><published>2020-05-10T00:00:00+08:00</published><updated>2020-05-10T00:00:00+08:00</updated><id>http://localhost:4000/eaf/emacs/2020/05/10/eaf-community</id><content type="html" xml:base="http://localhost:4000/eaf/emacs/2020/05/10/eaf-community.html">&lt;h3 id=&quot;欢迎加入eaf社区&quot;&gt;欢迎加入EAF社区&lt;/h3&gt;
+&lt;p&gt;中国开源之夏的同学们，欢迎加入EAF开源社区！&lt;/p&gt;
 
-&lt;p&gt;第一次翻开《人生十二法则》的时候，看着目录真的很像一大本鸡汤，每章都有明确的鸡汤法则，但是当你真的沉下心去抚摸每段文字的时候，你会发现，这是一本从融合作者各学科知识和实践感悟的大百科全书，作者通过自己的亲身感悟，把现代人遇到的问题杂糅综合到各个章节中，然后通过对这些烦恼的现象和根源进行详细阐述，最终告诉你怎么正确的认识生活中的各种问题，并给出作者自己的启发性方案。&lt;/p&gt;
+&lt;p&gt;EAF社区在本次中国开源之夏活动中属于高难度的开源社区项目，你需要快速学会Elisp、Python、Qt甚至是JavaScript才能挑战EAF社区中的任务。为了帮助同学们快速入门EAF开发，我们已经为同学们准备了详细的技术文档和导师指导，即使是这样，在短短的暑期时间内，EAF依然是顶级黑客才能涉足的领域，请同学们量力而行！&lt;/p&gt;
 
-&lt;p&gt;作者本身也是一位硬核教授，为了生存，做过洗碗工、加油站员工、厨师、养蜂人、油田工人、铁路工人、特技飞行员，最终以心理学教授为职业。这么丰富人生经历的人写的书非常难以读懂，因为书里的每段话的信息量都非常大，既充满严谨简洁的学术用语，同时又面向普通人生活的点点滴滴。所以，我每天只能读一段话，然后去体会把玩这段话的寓意，就这样断断续续，我花了半年时间终于读完这本书。&lt;/p&gt;
+&lt;p&gt;如果你本身就是Emacs黑客，并熟悉Qt或JavaScript图形开发，最高的项目奖金基本上是手到擒来。&lt;/p&gt;
 
-&lt;p&gt;读的过程很难说出那种感觉是什么，不仅仅是高密集哲理，也不仅仅是时常读完后的感慨，感觉这本书就是一个压缩作者一生的百科全书，难有读其他书的畅快感，直到昨天和好朋友聊了几个小时，最终发现不是书的问题，而是我读书后面的目的，我是以一个”求学者”的身份去读这本书的，总是功利的吸纳这本书的每滴经验，可是每个章节并不像我们通常认为的是一个体系的，而是杂糅的，对，就是这种杂糅混乱而又充满哲理的感觉和我总是想通过一整套知识体系的读法产生了不小的冲突。当我和好朋友聊完天，合上这本书的最后一页后，终于明白，这本书讲的不就是 “人间烟火气” 吗？我们从小的教育洗脑总是希望通过教授一整套意识体系和知识体系，期望通过唯物的方式去理解这个世界，当我真的进入这个世界去接触形形色色的人和事后，发现我们理解和具备的知识和个人是多么的渺小，在这个世界上该遇到的坑和错误一个都少不了。当我合上书，以 “人间烟火气” 的方式去回顾这本书时，一切都明亮了，作者将的是人生，分享的是他自己生活这么多年后对人生的感悟，而不仅仅是功利的法则。&lt;/p&gt;
+&lt;p&gt;EAF属于自由软件，遵循GPL3许可证，当你贡献EAF代码时也就必须赞同自由软件精神和GPL3协议约束。&lt;/p&gt;
 
-&lt;p&gt;希望看我博客的同学，有空的时候通读一遍这本书，我相信不论你是懵懂的少年还是沉沦的老年人，都会从书中得到很多。下面我分享一下我个人读这本书后的感悟。&lt;/p&gt;
+&lt;h3 id=&quot;什么是eaf&quot;&gt;什么是EAF?&lt;/h3&gt;
+&lt;p&gt;EAF是Emacs Application Framework的缩写，EAF是新一代的Emacs应用框架，通过EAF框架，你可以使用Qt来任意扩展Emacs的多媒体能力。&lt;/p&gt;
+
+&lt;p&gt;目前EAF已经开发了如下应用：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;全键盘操作的黑客浏览器&lt;/li&gt;
+  &lt;li&gt;Markdown和Org-Mode实时预览器&lt;/li&gt;
+  &lt;li&gt;图片浏览器&lt;/li&gt;
+  &lt;li&gt;全功能视频播放器&lt;/li&gt;
+  &lt;li&gt;Emacs中性能最好的PDF阅读器&lt;/li&gt;
+  &lt;li&gt;摄像头应用&lt;/li&gt;
+  &lt;li&gt;移动设备文件共享插件&lt;/li&gt;
+  &lt;li&gt;基于Xterm.js的终端模拟器，你可以在里面运行VI，哈哈哈哈&lt;/li&gt;
+  &lt;li&gt;RSS&amp;amp;Atom新闻阅读器&lt;/li&gt;
+  &lt;li&gt;Aria2下载客户端&lt;/li&gt;
+  &lt;li&gt;全键盘操作的思维导图软件&lt;/li&gt;
+  &lt;li&gt;基于文本的复杂流程图实时生成工具&lt;/li&gt;
+  &lt;li&gt;基于浏览器和Org-Mode的笔记管理应用&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;通过EAF框架，顶级黑客可以全键盘做所有事情，你不再需要平铺式窗口管理器和外部应用就可以用统一的键盘操作来操作所有应用。&lt;/p&gt;
+
+&lt;h3 id=&quot;eaf愿景&quot;&gt;EAF愿景&lt;/h3&gt;
+&lt;p&gt;Emacs距今已经有45年的发展历史，在这45年内，全世界最顶级的黑客在贡献自己的智慧和想象力，一起构建了Emacs这个伟大的开发者生态工具。
+当你是一个会十几门编程语言的黑客和键盘流信仰者，Emacs绝对是你的不二之选。&lt;/p&gt;
+
+&lt;p&gt;Emacs的劣势也是因为它太古老了，导致在多线程和图形扩展能力已经无法跟上时代的步伐，在很多地方发展落后于IDEA和VSCode。&lt;/p&gt;
+
+&lt;p&gt;EAF的愿景是在保留Emacs古老的黑客文化和庞大的开发者插件生态前提下，通过EAF框架扩展Emacs的多线程和图形渲染能力，实现Live In Emacs的理想。&lt;/p&gt;
+
+&lt;h3 id=&quot;eaf架构设计&quot;&gt;EAF架构设计&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-community/framework.png&quot; alt=&quot;EAF 架构图&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;用最通俗的话来讲, EAF其实做的工作和手机贴膜差不多, 就是先把 PyQt5 的图形程序运行起来, 然后通过QWindow::setParent 的技术把PyQt5的窗口粘贴到Emacs窗口对应的位置。&lt;/p&gt;
+
+&lt;p&gt;EAF整体架构的关键技术有以下几点:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;通过 QtGraphicsView/QtGraphicsSence 来实现实时图形混合, 多个窗口可以共用一个进程的绘制内容, 这样就可以适应 Emacs 的 Window/Buffer 窗口模型设计, 从而最终让 PyQt5 窗口可以像 Emacs Elisp Buffer 那样集成和管理&lt;/li&gt;
+  &lt;li&gt;通过QWindow::setParent技术, 粘贴 PyQt5 的窗口到 Emacs EAF Buffer 的坐标上, 实现多个进程的窗口看起来是一个程序里面的不同部分, 不清楚QWindow::setParent技术的同学, 可以想象一下 Google Chrome 的多进程架构设计. QWindow::setParent的技术除了达到跨进程粘贴的作用外, 还变相的实现了多进程沙箱的设计, EAF图形化的程序运行在单独的进程中, 即使出现了意外崩溃的情况, 也不会影响Emacs本身的稳定性&lt;/li&gt;
+  &lt;li&gt;在Emacs端实现了一个事件监听循环, 当用户在 EAF Buffer按下任何按键, 都会通过 DBus 发送事件消息给 Python 进程, Python 进程再伪造相应的事件来模拟Emacs端用户的键盘输入&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;通过EAF架构可以实现Elisp、Python和JavaScript这三种语言相互混合调用，EAF黑客可以通过Python和JavaScript无限扩展Emacs的能力。&lt;/p&gt;
+
+&lt;h3 id=&quot;eaf安装&quot;&gt;EAF安装&lt;/h3&gt;
+&lt;p&gt;因为EAF开发者本身都在用Arch Linux, 所以Arch Linux是最容易安装EAF的开发环境。&lt;/p&gt;
+
+&lt;p&gt;请按照下面方式安装EAF：&lt;/p&gt;
+
+&lt;h4 id=&quot;1-安装eaf依赖&quot;&gt;1. 安装EAF依赖&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; python-pyqt5 python-pyqt5-sip python-pyqtwebengine python-qrcode python-feedparser python-dbus python-pyinotify python-markdown nodejs aria2 libreoffice filebrowser
+yay &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; python-pymupdf python-grip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;2-下载eaf代码&quot;&gt;2. 下载EAF代码&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/manateelazycat/emacs-application-framework.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;拷贝代码到 ~/.emacs.d 目录下&lt;/p&gt;
+
+&lt;h4 id=&quot;3-加载eaf&quot;&gt;3. 加载EAF&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;defun add-subdirs-to-load-path &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;Recursive add directories to &lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;load-path&lt;span class=&quot;s1&quot;&gt;'.&quot;
+  (let ((default-directory (file-name-as-directory dir)))
+    (add-to-list '&lt;/span&gt;load-path &lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;normal-top-level-add-subdirs-to-load-path&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;add-subdirs-to-load-path &lt;span class=&quot;s2&quot;&gt;&quot;~/.emacs.d/&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;require &lt;span class=&quot;s1&quot;&gt;'eaf)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;把上面配置写入 ~/.emacs 文件中，重启Emacs即可&lt;/p&gt;
+
+&lt;h3 id=&quot;体验eaf&quot;&gt;体验EAF&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;应用名称&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;启动命令&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;浏览器&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-browser&lt;/code&gt; 在浏览器中打开或搜索&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-browser-with-history&lt;/code&gt; 搜索历史或者打开URL&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;HTML邮件渲染&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-mail-as-html&lt;/code&gt; 在 &lt;code class=&quot;highlighter-rouge&quot;&gt;gnus&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;mu4e&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;notmuch&lt;/code&gt; 等邮件客户端中执行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;PDF阅读器&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入PDF文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;视频播放器&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入视频文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;图片浏览器&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入图片文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Markdown预览&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入Markdown文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Org预览&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入Org文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;摄像头程序&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-camera&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;终端模拟器&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-terminal&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;二维码下载文件&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-file-sender-qrcode&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-file-sender-qrcode-in-dired&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;二维码在线浏览器&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-file-browser-qrcode&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;无线分享&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-airshare&lt;/code&gt; 输入要分享给手机的字符串&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;RSS新闻阅读器&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-rss-reader&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;思维导图&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-create-mindmap&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-mindmap&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;办公文档阅读器&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-office&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;流程图&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入 mmd 格式文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;演示程序&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-demo&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;eaf应用开发手册&quot;&gt;EAF应用开发手册&lt;/h3&gt;
+
+&lt;h4 id=&quot;eaf目录结构说明&quot;&gt;EAF目录结构说明&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;目录&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;目录说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;app&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;EAF应用目录，保持 app/app_name/buffer.py 的目录结构，每个应用的入口文件都是 buffer.py&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;core&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;EAF的核心模块&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;core/buffer.py&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;EAF应用的抽象接口文件，包括应用的IPC调用、事件转发和消息处理都通过这个接口文件来定义，如果你要扩展EAF核心功能，请仔细研究这个文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;core/view.py&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;EAF应用的显示接口文件，包括应用的跨进程粘贴、显示和缩放都通过这个接口文件来定义，在大多数情况下，EAF黑客都可以不用研究这个文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;core/browser.py&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;EAF的浏览器模块，所有浏览器的核心代码都在这个文件中，方便你通过浏览器模块结合JavaScript库快速开发应用，Python和JavaScript相互调用的方法可以重点看这个文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;core/pyaria2.py&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;aria2 库文件，主要作用是让浏览器可以直接调用这个库发送RPC下载命令给 aria2 daemon&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;core/utils.py&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;一些常用的工具库，比如创建文件、获取新端口等，和应用无关的工具库代码可以放到这里，用于减少基础函数的重复代码&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;docker&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Dockerfile, 主要用于构建EAF的Docker镜像，除非你用Docker来运行EAF，请直接忽视这个文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;screenshot&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;EAF各个应用截图效果&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;eaf.el&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;EAF Elisp进程部分，主要定义EAF应用的快捷键、监听Emacs窗口变化和事件，并通过DBus IPC发送消息给EAF的Python进程&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;eaf.py&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;EAF Python进程部分，用于启动EAF进程和接收Emacs消息，如果你要增加Emacs和EAF之间的通讯接口，需要重点研究这个文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;LICENSE&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GPLv3许可证文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;README.md&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;英文README&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;README.zh-CN.md&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;中文README&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;setup.py&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;python项目设置和工程文件，请直接忽视它&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;eaf应用开发入门&quot;&gt;EAF应用开发入门&lt;/h4&gt;
+&lt;p&gt;在EAF项目中有一个最简单的示例应用 app/demo/buffer.py&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PyQt5.QtGui&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QColor&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PyQt5.QtWidgets&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QPushButton&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;core.buffer&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AppBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emacs_var_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emacs_var_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_widget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;QPushButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, EAF hacker, it's working!!!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setStyleSheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;font-size: 100px&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;你可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-open-demo&lt;/code&gt; 命令来打开这个示例应用，示例应用是在Emacs中打开一个Qt窗口，Qt窗口只有一个可以点击的按钮，简单吧？&lt;/p&gt;
+
+&lt;p&gt;AppBuffer就是开发EAF应用所需要的入口类，它继承于Buffer类，Buffer类定义于 core/buffer.py 中。&lt;/p&gt;
+
+&lt;p&gt;当你开发一个新的EAF应用时，你只需要下面的操作即可完成:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在app目录下新建一个应用的子目录，拷贝 app/demo/buffer.py 到应用子目录下面；&lt;/li&gt;
+  &lt;li&gt;新建一个Qt控件类，然后通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;self.add_widget&lt;/code&gt; 接口进行添加新的控件&lt;/li&gt;
+  &lt;li&gt;基于 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-open&lt;/code&gt; 接口创建一个打开EAF应用的Elisp函数，具体可以参考 eaf.el 文件中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-open-demo&lt;/code&gt; 代码实现&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;eaf应用开发接口说明&quot;&gt;EAF应用开发接口说明&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PyQt5.QtGui&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QColor&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PyQt5.QtWidgets&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QPushButton&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;core.buffer&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AppBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emacs_var_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emacs_var_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_widget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;QPushButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, EAF hacker, it's working!!!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setStyleSheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;font-size: 100px&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;buffer_id: 是Emacs传递过来的唯一ID，用于辨别每个EAF应用对象&lt;/li&gt;
+  &lt;li&gt;url: EAF应用的路径，可以是网页地址，也可以是PDF文件路径等，具体的形式取决于EAF的应用方向&lt;/li&gt;
+  &lt;li&gt;config_dir: EAF配置保存的目录, 用于存储EAF应用数据，比如Cookie、PDF阅读位置等&lt;/li&gt;
+  &lt;li&gt;arguments: EAF应用除了url外，从Emacs端传递的额外自定义数据, 比如app/browser应用，可以传递 temp_html_file 参数表示渲染HTML邮件后删除临时HTML文件&lt;/li&gt;
+  &lt;li&gt;emacs_var_dict: Emacs端的配置字典，比如Emacs端设置的代理配置等&lt;/li&gt;
+  &lt;li&gt;module_path: 应用的模块路径，比如 app.browser.buffer app.pdf-viewer.buffer 用于区分当前运行的应用, 在基于浏览器开发的EAF应用中比较有用&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;在python端反馈消息给用户&quot;&gt;在Python端反馈消息给用户&lt;/h5&gt;
+&lt;p&gt;如果你想发送消息给Emacs，告诉用户状态，可以在 AppBuffer 类下调用下面的接口即可发送消息给Emacs:&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;self.message_to_emacs.emit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello from eaf&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;在python端设置emacs变量&quot;&gt;在Python端设置Emacs变量&lt;/h5&gt;
+&lt;p&gt;你可以通过下面的接口，直接在Python进程中设置Emacs的任意变量:&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;self.set_emacs_var.emit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;var-name&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;var-value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;在python端执行emacs代码&quot;&gt;在Python端执行Emacs代码&lt;/h5&gt;
+&lt;p&gt;如果你想在Python端执行Elisp代码，可以用下面的方式来实现:&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;self.eval_in_emacs.emit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;在elisp端调用python方法&quot;&gt;在Elisp端调用Python方法&lt;/h5&gt;
+&lt;p&gt;在Emacs调用Python方法，稍微复杂点，你需要在AppBuffer定义也方法，比如:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Python Result&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;call_function&lt;/code&gt; 接口来实现对Python方法的调用:&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;temp-var&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;eaf-call&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;call_function&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf--buffer-id&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;get_foo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;eaf--buffer-id&lt;/code&gt; 是EAF Buffer的局部变量，你按照上面的格式写代码，EAF框架会自动找到EAF应用对应的 &lt;code class=&quot;highlighter-rouge&quot;&gt;get_foo&lt;/code&gt; 方法，并返回Python函数执行结果到Emacs进程。&lt;/p&gt;
+
+&lt;h5 id=&quot;在python端读取用户的输入&quot;&gt;在Python端读取用户的输入&lt;/h5&gt;
+&lt;p&gt;从Python端读取Emacs的输入，可以先看下面的示例代码:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AppBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_widget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PdfViewerWidget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_jump_page_message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_jump_page_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;send_jump_page_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_input_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Jump to: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;jump_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handle_input_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result_content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result_type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;jump_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jump_to_page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result_content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cacel_input_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result_type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;jump_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;首先在Python端，调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;self.send_input_message&lt;/code&gt; 接口发送用户输入提示字符和消息ID给Emacs&lt;/li&gt;
+  &lt;li&gt;用户通过Emacs Minibuffer输入数据后，会通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;handle_input_message&lt;/code&gt; 接口返回消息给Python回调函数&lt;/li&gt;
+  &lt;li&gt;如果用户取消了输入，你依然可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;cancel_input_message&lt;/code&gt; 接口，根据消息类型做一些清理工作&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;在python端调用javascript函数&quot;&gt;在Python端调用JavaScript函数&lt;/h5&gt;
+&lt;p&gt;如果你的EAF应用基于浏览器和JavaScript库来开发，建议你先看一下 app/mindmap/buffer.py 的代码，你可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;eval_js&lt;/code&gt; 接口来实现Python直接调用浏览器中的JavaScript代码：&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eval_js&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;js_function(js_argument)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;在python端读取javascript函数的返回结果&quot;&gt;在Python端读取JavaScript函数的返回结果&lt;/h5&gt;
+&lt;p&gt;获取JavaScript函数返回的结果和 &lt;code class=&quot;highlighter-rouge&quot;&gt;eval_js&lt;/code&gt; 接口类似，只不过接口换成 &lt;code class=&quot;highlighter-rouge&quot;&gt;execute_js&lt;/code&gt; 的形式，下面是从浏览器中获取选中文本的示例:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;execute_js&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;get_selection();&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;在python端改变标题&quot;&gt;在Python端改变标题&lt;/h5&gt;
+&lt;p&gt;改变当前EAF的标题很简单，直接调用接口 &lt;code class=&quot;highlighter-rouge&quot;&gt;self.change_title(&quot;new_title&quot;)&lt;/code&gt; 即可&lt;/p&gt;
+
+&lt;h5 id=&quot;保存和恢复应用数据&quot;&gt;保存和恢复应用数据&lt;/h5&gt;
+
+&lt;p&gt;保存数据直接调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;save_session_data&lt;/code&gt; 接口，恢复数据接口用 &lt;code class=&quot;highlighter-rouge&quot;&gt;result_session_data&lt;/code&gt;，下面是视频播放器保存和恢复视频观看位置的示例代码，存储方式就是任意字符串。&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;save_session_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;media_player&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;restore_session_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;session_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;media_player&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setPosition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;全屏接口&quot;&gt;全屏接口&lt;/h5&gt;
+&lt;p&gt;一些应用，比如浏览器需要切换全屏应用，直接调用下面三个接口即可实现全屏的控制：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;toggle_fullscreen: 切换全屏&lt;/li&gt;
+  &lt;li&gt;enable_fullscreen: 开启全屏&lt;/li&gt;
+  &lt;li&gt;disable_fullscreen: 退出全屏&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;在elisp端发送按键事件给python进程&quot;&gt;在Elisp端发送按键事件给Python进程&lt;/h5&gt;
+&lt;p&gt;有时候，我们需要直接从Emacs端发送按键给EAF Python进程，比如我想在浏览器中按 Win + m 实现回车的操作，可以先定义一个Elisp函数：&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf-send-return-key&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;Directly send return key to EAF Python side.&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;interactive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;eaf-call&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;send_key&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf--buffer-id&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;RET&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后在Emacs中通过定义 eaf-*-keybinding 变量来实现 Win + m 快捷键发送回车事件。&lt;/p&gt;
+
+&lt;h5 id=&quot;在elisp段增加eaf应用配置项&quot;&gt;在Elisp段增加EAF应用配置项&lt;/h5&gt;
+&lt;p&gt;如果你需要增加一些自定义选项以配置你的EAF应用，可以直接在 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-var-list&lt;/code&gt; 变量中增加新的自定义字段，&lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-var-list&lt;/code&gt; 定义在 eaf.el 文件中。&lt;/p&gt;
+
+&lt;h5 id=&quot;eaf应用退出清理接口&quot;&gt;EAF应用退出清理接口&lt;/h5&gt;
+&lt;p&gt;如果你的EAF应用有后台进程，你可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;destroy_buffer&lt;/code&gt; 接口在EAF应用 Buffer 被关闭之前做一些清理工作，下面是终端浏览器在推出之前杀掉 NodeJs 后台进程的示例代码：&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;destroy_buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;background_process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGKILL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# NOTE: We need delete QWebEnginePage manual, otherwise QtWebEngineProcess won't quit.
+&lt;/span&gt;        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web_page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deleteLater&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deleteLater&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;eaf调试技巧&quot;&gt;EAF调试技巧&lt;/h4&gt;
+
+&lt;p&gt;下面分享有一些调试方法，方便你快速开发EAF应用：&lt;/p&gt;
+
+&lt;h5 id=&quot;查看python-print代码的结果&quot;&gt;查看Python Print代码的结果&lt;/h5&gt;
+&lt;p&gt;如果你在EAF Python端添加了 print 代码，你可以在Emacs中切换到 &lt;code class=&quot;highlighter-rouge&quot;&gt;*eaf*&lt;/code&gt; buffer来观察运行时的print结果。&lt;/p&gt;
+
+&lt;h5 id=&quot;不用重启测试eaf应用代码&quot;&gt;不用重启测试EAF应用代码&lt;/h5&gt;
+&lt;p&gt;第一次调用EAF应用后，EAF会在后台启动一个Python进程，如果你更新了 Python 代码，请先调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-stop-process&lt;/code&gt; 命令，这个命令会杀掉老版本的Python后台进程，然后你再重新调用EAF函数即可测试新版EAF代码。&lt;/p&gt;
+
+&lt;p&gt;这个方法你掌握后，你不需要每次更新Python代码都要重启Emacs，极大提高了EAF的开发效率。&lt;/p&gt;
+
+&lt;h5 id=&quot;调试段错误代码&quot;&gt;调试段错误代码&lt;/h5&gt;
+
+&lt;p&gt;如果你在开发中遇到了段错误，可以按照下面的方式调试段错误：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;先在Emacs中执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;(setq eaf-enable-debug t)&lt;/code&gt; 命令打开调试选项&lt;/li&gt;
+  &lt;li&gt;调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-stop-process&lt;/code&gt; 命令杀掉EAF Python后台进程&lt;/li&gt;
+  &lt;li&gt;继续调试，当发生段错误时， EAF会自动在 &lt;code class=&quot;highlighter-rouge&quot;&gt;*eaf*&lt;/code&gt; Buffer中打印段错误的堆栈信息&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;eaf学习资料&quot;&gt;EAF学习资料&lt;/h4&gt;
+
+&lt;p&gt;EAF是一个多语言的高难度项目，你需要同时具备Elisp、Python、Qt甚至JavaScript开发技能才能任意Hacking EAF，下面是一些我收集的学习资料帮助你快速学习：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Emacs/Elisp学习：http://ergoemacs.org/emacs/elisp.html&lt;/li&gt;
+  &lt;li&gt;Python学习：《Python核心编程》这本书足够你精通Python语言&lt;/li&gt;
+  &lt;li&gt;PyQt5学习：http://zetcode.com/gui/pyqt5/ 这是我找到最简单的Qt入门教程&lt;/li&gt;
+  &lt;li&gt;JavaScript: Google和Github是你学习JavaScript最好的导师&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;有哪些挑战性的任务&quot;&gt;有哪些挑战性的任务？&lt;/h3&gt;
+
+&lt;p&gt;如果你上面的知识都掌握了，恭喜你，你可以开始挑战&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List&quot;&gt;EAF开发任务&lt;/a&gt;了。&lt;/p&gt;
+
+&lt;p&gt;关于EAF开发任务的需求和核心技术细节，可以请教EAF社区导师&lt;a href=&quot;https://github.com/MatthewZMD&quot;&gt;Matthew Zeng&lt;/a&gt;, 也可以把问题发送到&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/issues&quot;&gt;Issue页面&lt;/a&gt;, EAF社区大神会尽快回复你。&lt;/p&gt;
+
+&lt;p&gt;祝各位同学暑假快乐，Happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">欢迎加入EAF社区 中国开源之夏的同学们，欢迎加入EAF开源社区！</summary></entry><entry><title type="html">最美不过人间烟火气</title><link href="http://localhost:4000/reading/2020/05/04/reading-12-rules.html" rel="alternate" type="text/html" title="最美不过人间烟火气" /><published>2020-05-04T00:00:00+08:00</published><updated>2020-05-04T00:00:00+08:00</updated><id>http://localhost:4000/reading/2020/05/04/reading-12-rules</id><content type="html" xml:base="http://localhost:4000/reading/2020/05/04/reading-12-rules.html">&lt;p&gt;去年在微博上看了乔丹·彼得森的一场TED演讲，当时被这个严肃到近乎真诚的人深深吸引，作为一位临床心理学家，他从心理学的实践出发，研究了大量现代人的心理问题，并对这些心理问题进行深入观察、感受和理解，拨开由痛苦和情绪彼此纠缠形成的迷雾，他最终把自己的感悟写成了一部巨著《人生十二法则》。&lt;/p&gt;
+
+&lt;p&gt;第一次翻开《人生十二法则》的时候，看着目录真的很像一大本鸡汤，每章都有明确的鸡汤法则，但是当你真的沉下心去抚摸每段文字的时候，你会发现，这是一本融合作者各学科知识和实践感悟的大百科全书，作者通过自己的亲身感悟，把现代人遇到的问题和解决方案融合到每个章节中，然后通过对这些烦恼的现象和根源进行分析阐述，最终告诉你怎么正确的认知生活中的各种问题，并给出作者自己启发性的方案。&lt;/p&gt;
+
+&lt;p&gt;作者本身也是一位硬核教授，为了生存，做过洗碗工、加油站员工、厨师、养蜂人、油田工人、铁路工人、特技飞行员，最终以心理学教授为职业。这么丰富人生经历的人写的书非常难以读懂，因为书里的每段话的信息量都非常大，既充满严谨简洁的学术用语，同时内容又面向普通人生活的点点滴滴。所以为了理解书中内容，我每天只能读一段话，然后体会把玩这段话的寓意，就这样断断续续，我大概花了半年时间终于读完这本书。&lt;/p&gt;
+
+&lt;p&gt;读这本书就像看一本生活的百科全书一样，读着读着经常感慨万分，鲜有读其他书的畅快感。&lt;/p&gt;
+
+&lt;p&gt;这本书之所以难以读懂的原因是我开始是以一个”求学者”的身份去读这本书的，总是功利的吸纳这本书的每滴经验，可是每个章节并不像我们通常认为的是一个体系的，而是分散杂糅的。就是这种杂糅混乱而又充满哲理的感觉和我总是想通过一整套知识体系的读法产生了不小的冲突。&lt;/p&gt;
+
+&lt;p&gt;我们从小的教育洗脑总是希望通过一整套意识体系和知识体系，然后唯物地去理解这个世界，当我真的进入这个世界去接触形形色色的人和事后，发现我们的知识和个人力量是多么的渺小，在这个世界上该遇到的坑和错误一个都少不了。&lt;/p&gt;
+
+&lt;p&gt;当我合上这本书的最后一页后，终于明白，这本书讲的不就是 “人间烟火气” 吗？当我再以 “人间烟火气” 的方式去回顾这本书时，一切都明亮了，作者讲的其实是人生，分享的是他自己生活这么多年后对人生真诚的感悟，而不仅仅是一条条法则。&lt;/p&gt;
+
+&lt;p&gt;希望看我博客的同学，有空的时候通读一遍这本书，我相信不论你是懵懂的少年还是感慨的老年人，都会从书中学到很多。下面我分享一下我个人读这本书后的感悟。&lt;/p&gt;
 
 &lt;h3 id=&quot;关于焦虑和幸福感&quot;&gt;关于焦虑和幸福感&lt;/h3&gt;
 &lt;p&gt;在现在的社会中，大家总是在技能、金钱和社会地位上进行无穷无止的比较，是功利的攀比也好，还是在缺乏安全感下的学习进步也好，不断的跑，越跑越快，跑到筋疲力尽，终于有一天跑到中途弦断了，跑不动了，坐在地上望着远方不知在何方的目的地…&lt;/p&gt;
 
-&lt;p&gt;此时，我们自己不但没有解决恐惧和焦虑，反而凭增了怨恨和迷茫，不知道未来应该怎么走。&lt;/p&gt;
+&lt;p&gt;此时，我们自己不但没有解决恐惧和焦虑，反而凭增了不少怨恨和迷茫，也不知道未来的路应该怎么走。&lt;/p&gt;
 
 &lt;p&gt;要避免自己陷入无穷的焦虑和恐惧，其实很容易，只是很少人做到：&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;睡眠要好&lt;/strong&gt;，因为我们首先是人，而不是机器，人一旦陷入疲惫后，就没有足够的能量去清晰的理清楚复杂的现状，而大多数人拖着疲惫的身体不注重睡眠和休息，第一步就进入了自我折磨和自我否定的负面情绪中，而负面情绪的调节系统和维持有序的生物钟有关。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;清理自己的房间&lt;/strong&gt;，这里的房间不仅仅指的是物理房间的整洁，而是你心里乱麻般的思绪，此时的心绪乱如毛线团，不要一剪刀下去，那解决不了问题，我们需要在理心绪团的过程中，和自己真诚的对话，这一团如麻的心绪团中，哪些是自己认同的，哪些是外界强加给自己的，哪些是自己不认识的，没关系，一点一点的拆开每个令你困惑无比的心绪结，等你真的全部理清楚后，很多事情自然就迎刃而解了, 因为对抗复杂世界的唯一武器就是简单的内心，复杂的内心只会进入自以为是的状态，内心简单就会进入谦逊的状态，以不变应对存在的复杂性。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;多观察这个世界的美好&lt;/strong&gt;，这个世界有很多好的人和事情，也有非常多坏的人和事情，但是这个世界是客观的，它就像一切物理规律那样，矗立在那里，不受好和坏的影响，而我们有时候看得这个世界上的很多令我们恐惧和焦虑的事其实并不会让我们恐惧和焦虑，大多数坏的人和事情并不能真正的伤害到我们，真正伤害我们的往往是我们想改变坏的人和事情而改变不了的挫败感，既然我们改变不了别人，别人也伤害不了我们，我们应该做的是把精力到这个世界真正美好的细节中，去感受那些美好的事情，避免世界变成我们 “想象力虚构的恐怖世界”，你有多久没有看到花朵的色彩和花瓣的形状？你有多久没有看到清晨阳光撒到草地上，透过露珠带来的希望？你有多久没有看到湖边日落的晚霞？这些普普通通的美好每天都在等着你去体验，感受生活的美，现在就下楼去体验吧。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;睡眠要好&lt;/strong&gt;，因为我们首先是人，而不是机器，人一旦陷入疲惫后，就没有足够的能量去理清楚复杂的现实，而大多数人拖着疲惫的身体不注重睡眠和休息，第一步就进入了自我折磨和自我否定的负面情绪中，而负面情绪的调节系统和维持有序的生物钟紧密相连。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;清理自己的房间&lt;/strong&gt;，这里的房间不仅仅指物理房间的整洁，而是你心里乱麻般的思绪，此时的心绪乱如毛线团，不要一剪刀下去，那解决不了问题，我们需要在理心绪团的过程中，和自己真诚的对话，这一团如麻的心绪团中，哪些是自己认同的，哪些是外界强加给自己的，哪些是自己不认同的，没关系，一点一点的拆开每个令你困惑无比的心绪结，等你真的全部理清楚后，很多事情自然就迎刃而解了, 因为对抗复杂世界的唯一武器就是简单的内心，复杂的内心只会进入自以为是的状态，内心简单就会进入谦逊的状态，以不变应对现实存在的复杂性。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;多观察这个世界的美好&lt;/strong&gt;，这个世界有很多好的人和事情，也有非常多坏的人和事情，但是这个世界是客观的，它就像一切物理规律那样，矗立在那里，不受好和坏的影响，而我们有时候看到这个世界上的很多令我们恐惧和焦虑的事其实并不会让我们恐惧和焦虑，大多数坏的人和事情并不能真正的伤害到我们，真正伤害我们的往往是我们想改变坏的人和事情而改变不了的挫败感，既然我们改变不了别人，别人也很难真的伤害我们，我们应该做的是把精力放到这个世界真正美好的细节中，去感受那些美好的事情，避免世界变成我们 “想象力虚构的恐怖世界”，你有多久没有看到花朵的色彩和花蕊的形状？你有多久没有看到清晨阳光撒到草地上，透过露珠带来的希望？你有多久没有看到湖边日落的晚霞？这些普普通通的美好每天都在等着你去体验，感受生活的美，现在就下楼去体验吧。&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;看清楚未来，一件件去做&lt;/strong&gt;, 当你理清楚自己的房间，重新感受到这个世界的美好时，你会发现你拥有了两件最强大的东西，平静的内心和充满希望的喜悦，即使你现在在技能和金钱等身外之物上离自己的目标还有不少距离，但是你却拥有了最好的能力，就是你对自己的真诚、强大而平静的内心，拥有这两样，你将来做什么都会非常好的未来，接下来要做的事情非常非常简单，定一个小目标，一件一件的去探索和学习，这样既可以平衡对未知的恐惧，同时又能保持兴奋和投入的状态。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;每天留出一些时间应对危机，其他时间忘掉这些&lt;/strong&gt;, 即使我们做到上面说的所有要求，我们依然无法完全去掉恐惧和焦虑，因为这个世界复杂到超出每个人的认知和预料，所以恐惧和焦虑永远都没法消除，人生最差的状况就是 “让恐惧和焦虑填充我们的每分每秒，我们却无可奈何”。我们首先要有正确的认识，既然无法消除，我们每天只需要抽出很小一部分时间去应对恐惧和焦虑即可，剩下的时间就忘掉这些恐惧和焦虑去体验生活，因为人生本来就像在高速公路上驾驶一样，你无法消除旁边的危险，只能适时对危险保持关注，剩下的大部分时间应该放松肩膀专注车前方。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;每天留出一些时间应对危机，其他时间忘掉这些&lt;/strong&gt;, 即使我们做到上面说的所有要求，我们依然无法完全去掉恐惧和焦虑，因为这个世界复杂到超出每个人的认知和预料，所以恐惧和焦虑永远都没法消除，人生最差的状况是 “让恐惧和焦虑填充我们的每分每秒，我们却无可奈何”。我们首先要有正确的认识，既然无法消除恐惧和焦虑，我们每天只需要抽出很小一部分时间去应对恐惧和焦虑即可，剩下的时间就忘掉这些恐惧和焦虑，放心的体验生活。因为人生本来就像在高速公路上驾驶一样，你无法消除旁边的危险，只能适时对危险保持关注，剩下的大部分时间应该放松肩膀专注车前方。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;用一句话来说，你需要先处理好自己的痛苦，再去担心他人。这样你才能够强化自己，承担起存在的重担，使生活重新焕发。&lt;/p&gt;
+&lt;p&gt;用一句话来说，你需要先处理好自己的痛苦，再去担心他人。这样你才能够强化自己，承担起存在的重担，使生活重新焕发希望。&lt;/p&gt;
 
 &lt;h3 id=&quot;关于生活的节奏&quot;&gt;关于生活的节奏&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;任何时候，不要在一次战斗中耗尽所有精力&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;原来年轻的时候，总是看准一个目标后，用尽全部精力去战斗，经常熬夜和不睡觉去解决问题，比如在创建深度操作系统团队时，最多有连续三周不眠不休的写代码，虽然在很多产品和项目中获得了战术的成功，但是从长远看，耗尽所有精力不是骄傲的胜利，而是牺牲其他重要的东西换来的，比如自己的健康和家庭的和睦，所以，当年再次进入正向奋斗的状态，切忌不要在任何一场战斗中耗费所有精力，保存实力，人生很漫长，慢慢奋斗，慢慢品人生。&lt;/p&gt;
+&lt;p&gt;原来年轻的时候，总是看准一个目标后，用尽全部精力去战斗，经常熬夜和不睡觉去解决问题，比如在创建深度操作系统团队时，最多有连续三周不眠不休的写代码，虽然在很多产品和项目中获得了战术的成功，但是从长远看，耗尽所有精力的结果不是骄傲的胜利，而是牺牲其他重要的东西换来的，比如自己的健康和家庭的和睦，所以，当你再次进入正向奋斗的状态，切忌不要在任何一场战斗中耗费所有精力，保存实力，人生很漫长，慢慢奋斗，慢慢品人生。&lt;/p&gt;
 
 &lt;h3 id=&quot;关于家庭矛盾&quot;&gt;关于家庭矛盾&lt;/h3&gt;
 &lt;p&gt;人到中年，外面会面对复杂的世界，回家会面临家庭的责任，我花了十五年时间明白一个家庭和睦的道理就是 “不要和老婆大人讲道理，她就是道理” ， 这个是我实践的家庭和睦第一法则，今天我看完《人生十二法则》我明白了背后的原因：&lt;/p&gt;
 
 &lt;p&gt;“女性讨论问题的目的便是为了更清晰地理解问题，她们需要有人聆听和提问，然后再着手去解决”&lt;/p&gt;
 
-&lt;p&gt;也就是说，她们现有用情感去理解事情的经过，你首先要耐心的听她们讲完整个事情的经过，帮她们理顺思路以后，她们自然会赞同你的解决方案，她们需要的是过程中的沟通和理解，过程中良好的沟通远远比你直接告诉她 “什么是最好的结果” 重要的多。&lt;/p&gt;
+&lt;p&gt;也就是说，女性是用情感去理解事情的经过，你首先要耐心的听她们讲完整个事情的经过，帮她们理顺思路以后，她们自然会赞同你的解决方案，她们需要的是过程中的沟通和理解，过程中良好的沟通远远比你直接告诉她 “什么是最好的结果” 重要的多。&lt;/p&gt;
 
-&lt;p&gt;对和错对于家庭来说真的不重要，越争对错的家庭矛盾越大, 因为当你选择故步自封成为对的一方时，你的伴侣就会因为吵架输了而变成错的一方，这也无法为你带来和平，若这样的情况反复出现，婚姻就会破裂。如果要和平，你就需要寻找问题的真相，而不是试图成为对的人，这样，你才能打破自己的顽固。&lt;/p&gt;
+&lt;p&gt;对和错对于家庭来说真的不重要，越争对错的家庭矛盾越大, 因为当你选择固步自封成为对的一方时，你的伴侣就会因为吵架输了而变成错的一方，这也无法为你带来和平，若这样的情况反复出现，婚姻就会破裂。如果要和平，你就需要寻找问题的真相，而不是试图成为对的人，这样，你才能打破自己的顽固。&lt;/p&gt;
 
-&lt;p&gt;所以解决家庭问题的核心是，首先要作为一个安静的聆听探讨者，不论对于夫妻双方还是孩子，良好的聆听，通过聆听寻求共同的家庭和平，而不是争论谁对谁错，因为家庭组建的基石是包容对方的缺点、信任对方、共同面对生活。&lt;/p&gt;
+&lt;p&gt;所以解决家庭问题的核心是，首先要做一个安静的聆听探讨者，不论对于夫妻双方还是孩子，良好的聆听，通过聆听寻求共同的家庭和平，而不是争论谁对谁错，因为家庭组建的基石是包容对方的缺点、信任对方、共同面对生活。&lt;/p&gt;
 
 &lt;h3 id=&quot;关于同情和怨恨&quot;&gt;关于同情和怨恨&lt;/h3&gt;
 &lt;p&gt;以前在IT界有一个金句 “一个人离职要不是钱没给够，要不就是受憋屈了，要不就是两者皆有”， 所有离职的人根源就是这两个原因。&lt;/p&gt;
@@ -49,7 +516,7 @@
 
 &lt;p&gt;有时候，我们在受到委屈的时候，我们会以为这是悲伤的泪水，其实很多时候这些都是因为怨恨引起的愤怒的泪水。&lt;/p&gt;
 
-&lt;p&gt;所以，当我们在工作和生活中，遇到不公的待遇时，不要假设对方知道自己遭受到的不公，不要憋着不说，知道自己要什么，直白的提出自己想要的东西和解决方案，只有这样，我们才不会因为求而不得，最终产生怨恨伤害自己, 因为当你感受怨恨而渴求 “为什么会这样” 的时候，往往对方都不关心你，你也没有必要自我折磨。&lt;/p&gt;
+&lt;p&gt;所以，当我们在工作和生活中，遇到不公的待遇时，不要假设对方知道自己遭受到的不公，不要憋着不说，知道自己要什么，直白的提出自己想要的东西和解决方案，只有这样，我们才不会因为求而不得，最终产生怨恨伤害自己, 因为当你感受怨恨而渴求 “为什么会这样?” 的时候，往往对方都不关心你，你也没有必要自我折磨。&lt;/p&gt;
 
 &lt;p&gt;做自己，不要因为迎合别人丢失自我，不要因为怨恨进入受害者模式，伤害自己，不值得。&lt;/p&gt;
 
@@ -472,134 +939,4 @@ flymake相关的代码&lt;/li&gt;
 
 &lt;p&gt;上面代码的意思是，把 &lt;code class=&quot;highlighter-rouge&quot;&gt;hl-line&lt;/code&gt; 的 background 属性重定向到 &lt;code class=&quot;highlighter-rouge&quot;&gt;snails-input-buffer-face&lt;/code&gt; 背景色，这样既可以保证snails输入框的无背景设计，实现又非常健壮，不会因为意外对用户的主题产生副作用。&lt;/p&gt;
 
-&lt;p&gt;Emacs还是博大精深啊，学了这么多年，还有很多东西都不懂。&lt;/p&gt;</content><author><name></name></author><summary type="html">Snails 的输入框是无背景设计，整体设计感更好一点。</summary></entry><entry><title type="html">折腾emacs-rime</title><link href="http://localhost:4000/emacs/2020/03/22/emacs-rime.html" rel="alternate" type="text/html" title="折腾emacs-rime" /><published>2020-03-22T00:00:00+08:00</published><updated>2020-03-22T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/03/22/emacs-rime</id><content type="html" xml:base="http://localhost:4000/emacs/2020/03/22/emacs-rime.html">&lt;p&gt;半年前在&lt;a href=&quot;https://manateelazycat.github.io/emacs/2019/09/12/make-rime-works-with-linux.html&quot;&gt;在Linux版的Emacs中使用RIME输入法&lt;/a&gt;这篇文章中详细讲述了怎么在Emacs使用RIME输入法。&lt;/p&gt;
-
-&lt;p&gt;今天讲的仍然是在Emacs配置RIME输入法，只不过主角从&lt;a href=&quot;https://github.com/tumashu/pyim&quot;&gt;pyim&lt;/a&gt;换成了&lt;a href=&quot;https://github.com/DogLooksGood/emacs-rime&quot;&gt;emacs-rime&lt;/a&gt;。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;pyim是一个强大的Emacs输入法，不但整套输入法，还支持RIME作为输入法后端输入&lt;/li&gt;
-  &lt;li&gt;emacs-rime是RIME输入法的Emacs UI前端，所有行为都通过RIME配置文件来配置&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;安装rime输入法&quot;&gt;安装RIME输入法&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; fcitx-rime
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;配置rime输入法&quot;&gt;配置RIME输入法&lt;/h3&gt;
-
-&lt;h4 id=&quot;默认使用简体&quot;&gt;默认使用简体&lt;/h4&gt;
-
-&lt;p&gt;创建配置文件 ~/.config/fcitx/rime/luna_pinyin.custom.yaml，内容填上：&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# luna_pinyin.custom.yaml&lt;/span&gt;
-
-&lt;span class=&quot;na&quot;&gt;patch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;switches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;# 注意缩进&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ascii_mode&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# reset 0 的作用是当从其他输入法切换到本输入法重设为指定状态&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;states&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;中文&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;西文&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# 选择输入方案后通常需要立即输入中文，故重设 ascii_mode = 0&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;full_shape&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;states&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;半角&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;全角&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# 而全／半角则可沿用之前方案的用法。&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;simplification&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# 增加这一行：默认启用「繁→簡」转换。&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;states&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;漢字&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;汉字&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;修改默认后选词数量&quot;&gt;修改默认后选词数量&lt;/h4&gt;
-
-&lt;p&gt;创建配置文件 ~/.config/fcitx/rime/default.custom.yaml，内容填上：&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;patch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;menu/page_size&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;配置模糊音&quot;&gt;配置模糊音&lt;/h4&gt;
-
-&lt;p&gt;像我这种拼音发音不标准的人，可以在 ~/.config/fcitx/rime/default.custom.yaml 配置文件中继续追加下面配置&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;speller/algebra'&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;erase/^xx$/&lt;/span&gt;                      &lt;span class=&quot;c1&quot;&gt;# 第一行保留&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# 模糊音定義&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;derive/^([zcs])h/$1/&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;# zh, ch, sh =&amp;gt; z, c, s&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;derive/^([zcs])([^h])/$1h$2/&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# z, c, s =&amp;gt; zh, ch, sh&lt;/span&gt;
-
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;derive/^n/l/&lt;/span&gt;                     &lt;span class=&quot;c1&quot;&gt;# n =&amp;gt; l&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;derive/^l/n/&lt;/span&gt;                     &lt;span class=&quot;c1&quot;&gt;# l =&amp;gt; n&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# 這兩組一般是單向的&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#- derive/^r/l/                     # r =&amp;gt; l&lt;/span&gt;
-
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;derive/^ren/yin/&lt;/span&gt;                 &lt;span class=&quot;c1&quot;&gt;# ren =&amp;gt; yin, reng =&amp;gt; ying&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#- derive/^r/y/                     # r =&amp;gt; y&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# 下面 hu &amp;lt;=&amp;gt; f 這組寫法複雜一些，分情況討論&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#- derive/^hu$/fu/                  # hu =&amp;gt; fu&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#- derive/^hong$/feng/              # hong =&amp;gt; feng&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#- derive/^hu([in])$/fe$1/          # hui =&amp;gt; fei, hun =&amp;gt; fen&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#- derive/^hu([ao])/f$1/            # hua =&amp;gt; fa, ...&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;#- derive/^fu$/hu/                  # fu =&amp;gt; hu&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#- derive/^feng$/hong/              # feng =&amp;gt; hong&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#- derive/^fe([in])$/hu$1/          # fei =&amp;gt; hui, fen =&amp;gt; hun&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#- derive/^f([ao])/hu$1/            # fa =&amp;gt; hua, ...&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# 模糊音定義先於簡拼定義，方可令簡拼支持以上模糊音&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;abbrev/^([a-z]).+$/$1/&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;# 簡拼（首字母）&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;abbrev/^([zcs]h).+$/$1/&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;# 簡拼（zh, ch, sh）&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# 自動糾正一些常見的按鍵錯誤&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;derive/([aeiou])ng$/$1gn/&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;# dagn =&amp;gt; dang&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;derive/([dtngkhrzcs])o(u|ng)$/$1o/&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# zho =&amp;gt; zhong|zhou&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;derive/ong$/on/&lt;/span&gt;                  &lt;span class=&quot;c1&quot;&gt;# zhonguo =&amp;gt; zhong guo&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;derive/ao$/oa/&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;# hoa =&amp;gt; hao&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;derive/([iu])a(o|ng?)$/a$1$2/&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# tain =&amp;gt; tian&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;添加搜狗词库&quot;&gt;添加搜狗词库&lt;/h4&gt;
-
-&lt;p&gt;网上搜索文件 luna_pinyin.sogou.dict.yaml，放到目录 ~/.config/fcitx/rime 下
-然后在 ~/.config/fcitx/rime/default.custom.yaml 文件中添加下面配置：&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;translator/dictionary&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;luna_pinyin.sogou&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;重新部署即可体验词库。&lt;/p&gt;
-
-&lt;h3 id=&quot;安装依赖&quot;&gt;安装依赖&lt;/h3&gt;
-
-&lt;p&gt;因为&lt;a href=&quot;https://github.com/tumashu/posframe&quot;&gt;posframe&lt;/a&gt;可以让后选词显示在光标处，所以建议安装&lt;/p&gt;
-
-&lt;h3 id=&quot;安装emacs-rime&quot;&gt;安装emacs-rime&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/DogLooksGood/emacs-rime
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;把 emacs-rime 目录放到 &lt;code class=&quot;highlighter-rouge&quot;&gt;load-path&lt;/code&gt; 下，增加下面配置:&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'rime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;;;; Code:&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rime-user-data-dir&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~/.config/fcitx/rime&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rime-posframe-properties&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:background-color&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;#333333&quot;&lt;/span&gt;
-            &lt;span class=&quot;ss&quot;&gt;:foreground-color&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;#dcdccc&quot;&lt;/span&gt;
-            &lt;span class=&quot;ss&quot;&gt;:font&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;WenQuanYi Micro Hei Mono-14&quot;&lt;/span&gt;
-            &lt;span class=&quot;ss&quot;&gt;:internal-border-width&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;default-input-method&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;rime&quot;&lt;/span&gt;
-      &lt;span class=&quot;nv&quot;&gt;rime-show-candidate&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'posframe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;上面的配置分别设置emacs-rime读取RIME配置的路径、UI细节和使用posframe来显示候选词。&lt;/p&gt;
-
-&lt;h3 id=&quot;emacs-rime的优点&quot;&gt;emacs-rime的优点&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;安装相对pyim+rime要简单不少，基本就是下载拷贝就可以了，动态库编译和加载自动解决。&lt;/li&gt;
-  &lt;li&gt;只是RIME的前端，代码量比较小，有问题还可以提交个补丁；&lt;/li&gt;
-  &lt;li&gt;中英文混合输入的体验很好，英文输入完成后，按回车或者空格就可以继续输入中文；&lt;/li&gt;
-  &lt;li&gt;UI默认配色不错，看着很现代；&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">半年前在在Linux版的Emacs中使用RIME输入法这篇文章中详细讲述了怎么在Emacs使用RIME输入法。</summary></entry></feed>
+&lt;p&gt;Emacs还是博大精深啊，学了这么多年，还有很多东西都不懂。&lt;/p&gt;</content><author><name></name></author><summary type="html">Snails 的输入框是无背景设计，整体设计感更好一点。</summary></entry></feed>
