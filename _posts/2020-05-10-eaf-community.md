@@ -22,14 +22,14 @@ EAF是Emacs Application Framework的缩写，EAF是新一代的Emacs应用框架
 1. 全键盘操作的黑客浏览器
 2. Markdown和Org-Mode实时预览器
 3. 图片浏览器
-4. 全功能视频播放器
+4. 基于plyr.js的全功能视频播放器
 5. Emacs中性能最好的PDF阅读器
 6. 摄像头应用
 7. 移动设备文件共享插件
 8. 基于Xterm.js的终端模拟器，你可以在里面运行VI，哈哈哈哈
 9. RSS&Atom新闻阅读器
-10. Aria2下载客户端
-11. 全键盘操作的思维导图软件
+10. Aria2图形下载客户端
+11. 全键盘操作的思维导图软件, 支持Org-Mode和Markdown文件导出
 12. 基于文本语法的复杂流程图实时生成工具
 13. 基于浏览器和Org-Mode的笔记管理应用
 
