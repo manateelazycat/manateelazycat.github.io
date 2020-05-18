@@ -4,10 +4,10 @@ title: 欢迎加入EAF开源社区
 categories: [EAF, Emacs]
 ---
 
-### 欢迎加入EAF社区
+### 欢迎加入EAF
 [2020 中国开源之夏](https://isrc.iscas.ac.cn/summer2020/#/)的同学们，欢迎加入EAF开源社区！
 
-EAF开源社区在本次中国开源之夏活动中属于高难度的开源社区项目，你需要快速学会Elisp、Python、Qt甚至是JavaScript才能挑战EAF社区中的任务。
+EAF开源社区在本次中国开源之夏活动中属于高难度的开源社区项目，你需要快速学会Elisp、Python、Qt甚至是JavaScript才能挑战EAF中的任务。
 
 为了帮助同学们快速入门EAF开发，我们已经为同学们准备了详细的技术文档和导师指导，即使是这样，在短短的暑期时间内，EAF依然是顶级黑客才能涉足的领域，请同学们量力而行！
 
@@ -355,10 +355,25 @@ EAF是一个多语言的高难度项目，你需要同时具备Elisp、Python、
 * JavaScript材料: Google和Github是你学习JavaScript最好的导师
 * EAF: 建议先用熟练EAF后，直接阅读源代码来学习，最好的方法就是看app目录下的现有应用源码依葫芦画瓢 ;)
 
-### 有哪些挑战性的任务？
+### 任务描述
 
-如果你上面的知识都掌握了，恭喜你，你现在可以开始挑战[EAF开发任务](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)了。
+为EAF乃至Emacs贡献的有趣之处便是，Emacs作为程序员的工具与工作环境，任何改进都可以被改进者直观的感受到享用到，从而激发自身的满足感与成就感并产生良性循环。EAF作为一个涵盖多个应用的框架，更是有许多大大小小可以改进的地方。开源社区不像学校老师布置作业学生完成作业那般死板，学生通过使用EAF探索它的能力并研究它的缺点，然后翻阅[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)寻找自己有兴趣下手的项目。学生甚至可以与导师沟通过的前提下往[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)添加上面不存在但有意义的项目并就此开展工作。有些只需要很基础的技术背景并增改几行代码便可完成，而有些需要多种语言概念的相互运用并开发出API。这些难度不同的项目全部列在[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)上面，只要学生愿意，则随时可以挑战。这便是开源社区的自由与魅力。
+* 项目难度：中～高（根据完成[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)的质量与数量判定）
+* 项目产出要求：
+  完成指通过GitHub Review并merge入master的代码贡献。
+  - 中：
+    1. 完成代码英文文档。
+    2. 完成所有需要基础语言与技术概念的小项目（[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)标注难度为**低**）。
+    3. 完成10个需要多个语言与技术概念的小项目（[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)标注难度为**中**）。
+  - 高（进阶）：
+    1. 在完成中级难度的基础上完成1个[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)标注难度为**高**的小项目。
+* 项目技术要求：
+  - 日常使用Linux和GNU Emacs
+  - 熟悉 Emacs Lisp 或熟练使用任意Lisp方言
+  - 熟练使用Python与PyQt5以及JavaScript
+  - 熟悉DBus API
+  - 合格的书面英语沟通能力
 
-关于EAF开发任务的详细需求和更多核心技术细节，可以随时请教EAF社区导师[Matthew Zeng](https://github.com/MatthewZMD), 也可以把问题发送到[Issue页面](https://github.com/manateelazycat/emacs-application-framework/issues), EAF社区大神会尽快回复你。
+关于EAF开发任务的详细需求和更多核心技术细节，可以随时请教EAF导师[曾明德/Matthew](https://github.com/MatthewZMD), 也可以把问题发送到[Issue页面](https://github.com/manateelazycat/emacs-application-framework/issues), EAF大神会尽快回复你。
 
-祝各位同学暑假快乐，Happy hacking! ;)
+祝各位同学暑假快乐，Happy Hacking! ;)
