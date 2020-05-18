@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 欢迎加入EAF开源社区
+title: 欢迎加入EAF
 categories: [EAF, Emacs]
 ---
 
 ### 欢迎加入EAF
-[2020 中国开源之夏](https://isrc.iscas.ac.cn/summer2020/#/)的同学们，欢迎加入EAF开源社区！
+[2020 中国开源之夏](https://isrc.iscas.ac.cn/summer2020/#/)的同学们，欢迎加入Emacs开源社区并参与EAF项目！
 
-EAF开源社区在本次中国开源之夏活动中属于高难度的开源社区项目，你需要快速学会Elisp、Python、Qt甚至是JavaScript才能挑战EAF中的任务。
+EAF在本次中国开源之夏活动中属于中～高难度的开源社区项目，你需要快速学会Elisp、Python、Qt甚至是JavaScript才能挑战EAF中的任务。
 
 为了帮助同学们快速入门EAF开发，我们已经为同学们准备了详细的技术文档和导师指导，即使是这样，在短短的暑期时间内，EAF依然是顶级黑客才能涉足的领域，请同学们量力而行！
 
