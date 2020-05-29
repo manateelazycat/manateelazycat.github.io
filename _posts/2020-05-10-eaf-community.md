@@ -362,9 +362,8 @@ EAF是一个多语言的高难度项目，你需要同时具备Elisp、Python、
 * 项目产出要求：
   完成指通过GitHub Review并merge入master的代码贡献。
   - 中：
-    1. 完成代码英文文档。
-    2. 完成所有需要基础语言与技术概念的小项目（[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)标注难度为**低**）。
-    3. 完成10个需要多个语言与技术概念的小项目（[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)标注难度为**中**）。
+    1. 完成所有需要基础技术概念的小项目（[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)标注难度为**低**）。
+    2. 完成7个需要较为复杂的技术概念的小项目（[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)标注难度为**中**）。
   - 高（进阶）：
     1. 在完成中级难度的基础上完成1个[Todo-List](https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List)标注难度为**高**的小项目。
 * 项目技术要求：
