@@ -21,13 +21,13 @@ sudo pacman -Rs $(pacman -Qsq fcitx)
 安装Fcitx5软件包：
 
 ```bash
-sudo pacman -S fcitx5-chinese-addons fcitx5-git fcitx5-gtk fcitx5-qt5 fcitx5-pinyin-zhwiki kcm-fcitx5
+sudo pacman -S fcitx5-chinese-addons fcitx5-git fcitx5-gtk fcitx5-qt fcitx5-pinyin-zhwiki kcm-fcitx5
 ```
 
 * fcitx5: 输入法基础框架主程序
 * fcitx5-chinese-addons: 简体中文输入的支持，云拼音
 * fcitx5-gtk: GTK程序的支持
-* fcitx5-qt5: QT5程序的支持
+* fcitx5-qt: QT5程序的支持
 * fcitx5-pinyin-zhwiki: 肥猫制作的维基百万词库，没有版权风险, 放心使用
 * kcm-fcitx5: KDE桌面环境的支持
 
