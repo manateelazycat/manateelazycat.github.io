@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 配置Fcitx5输入法
+title: 配置Fcitx5输入法, 肥猫百万词库就是赞
 categories: [Linux]
 ---
 
