@@ -66,7 +66,7 @@ Layout=
 
 ```bash
 GTK_IM_MODULE=fcitx5
-XMODIFIERS=@im=fcitx
+XMODIFIERS=@im=fcitx5
 QT_IM_MODULE=fcitx5
 ```
 
@@ -103,6 +103,6 @@ Theme=Material-Color-Blue
 ```
 
 ## 使用感受
-原来使用Fcitx4配合RIME输入法的时候，因为总是配置不好RIME的词库，导致实际使用的体验并不是非常流畅，手速更不上思维的速度。
+原来使用Fcitx4配合RIME输入法的时候，因为总是配置不好RIME的词库，导致实际使用的体验并不是非常流畅，手速跟不上思维的速度。
 
 今天配置好Fcitx5和RIME输入法做了横向对比后，只能说老K重写的这版Fcitx真的非常流畅，肥猫的百万词库简直太赞了！
