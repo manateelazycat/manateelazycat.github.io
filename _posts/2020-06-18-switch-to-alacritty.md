@@ -10,7 +10,7 @@ categories: [Linux]
 
 分享下折腾细节：
 
-1. 修改终端切换命令
+### 1. 修改终端切换命令
 
 终端启动和切换命令换成了
 
@@ -18,13 +18,13 @@ categories: [Linux]
 wmctrl -x -a  alacritty ||  alacritty
 ```
 
-2. 终端窗口默认屏幕居中
+### 2. 终端窗口默认屏幕居中
 
 在KDE设置->窗口管理->窗口规则中，添加 "Initial placement" 配置，强制默认居中。
 
 这样Alacritty启动的时候不会显示在屏幕左上角了。
 
-3. 配置Alacritty
+### 3. 配置Alacritty
 
 Alacritty的配置文件在路径 ~/.config/alacritty/alacritty.yml，具体的配置如下:
 
