@@ -7,7 +7,7 @@ categories: [Emacs, EAF]
 牛逼哄哄的 HollowMan6 同学写了一个补丁 https://github.com/manateelazycat/emacs-application-framework/pull/345
 更新[EAF](https://github.com/manateelazycat/emacs-application-framework)最新版，EAF浏览器允许在Emacs里面用键盘选中文本了：
 
-* b : 在页面中激活标记，用于跳转到需要选择的文本模块
+* c : 在页面中激活标记，用于跳转到需要选择的文本模块
 * j : 键盘移动到下一行
 * k : 键盘移动到上一行
 * h : 键盘移动到前一个字符
