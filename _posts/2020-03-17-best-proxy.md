@@ -99,9 +99,9 @@ ProxyCommand /usr/bin/ncat --proxy 127.0.0.1:1080 --proxy-type socks5 %h %p
 
 ## yay和代理
 yay会经常从 aur.archlinux.org 上 git clone 源码，但是不要在 bashrc 中设置 http_proxy 和 https_proxy 环境变量。
-会导致 yay 在 git clone 时报 ```OpenSSL SSL_connection: SSL_ERROR_SYSCALL``` 的错误，原因是设置代理后， https 变成了 http。
+会导致 yay 在 git clone 时报 ```OpenSSL SSL_connection: SSL_ERROR_SYSCALL``` 的错误，原因是设置代理后 https 变成了 http。
 
-注意， .gitconfig 里设置代理也会导致 yay 报上面的错，yay 
+注意， .gitconfig 里设置代理也会导致 yay 报上面的错，yay安装软件时可以临时注释掉 .gitconfig 文件中关于代理的配置。
 
 ## 配置Aria2代理
 我们上面已经配置了Socks5代理，但是Aria2只支持HTTP代理, 所以我们需要通过 privoxy 来转换Socks5代理成HTTP代理:
