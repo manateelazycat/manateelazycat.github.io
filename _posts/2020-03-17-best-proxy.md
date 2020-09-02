@@ -97,17 +97,11 @@ Port 22
 ProxyCommand /usr/bin/ncat --proxy 127.0.0.1:1080 --proxy-type socks5 %h %p
 ```
 
-## 配置yay代理
+## yay和代理
+yay会经常从 aur.archlinux.org 上 git clone 源码，但是不要在 bashrc 中设置 http_proxy 和 https_proxy 环境变量。
+会导致 yay 在 git clone 时报 ```OpenSSL SSL_connection: SSL_ERROR_SYSCALL``` 的错误，原因是设置代理后， https 变成了 http。
 
-yay 代理有两种方式，一种是设置代理环境变量，一种是通过安装 gcc-go 替换 go 来支持 ```proxychains4 yay``` 的代理操作。
-因为 gccgo 很多实现和 go 都有很大的差别，为了不影响其他 go 程序，选择第一种方式。
-
-在 ```~/.bashrc``` 文件中添加如下的代理配置：
-
-```Bash
-export http_proxy=socks5://127.0.0.1:1080
-export https_proxy=socks5://127.0.0.1:1080
-```
+注意， .gitconfig 里设置代理也会导致 yay 报上面的错，yay 
 
 ## 配置Aria2代理
 我们上面已经配置了Socks5代理，但是Aria2只支持HTTP代理, 所以我们需要通过 privoxy 来转换Socks5代理成HTTP代理:
