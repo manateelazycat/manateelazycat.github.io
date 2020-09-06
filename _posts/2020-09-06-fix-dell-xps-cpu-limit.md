@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 修复 Dell XPS 13 CPU频率限制的Bug
-categories: [Reading]
+categories: [Hardware]
 ---
 
 这几天用Dell XPS的时候，经常出现待机后开机电脑巨卡的问题，有时候都让我怀疑买的是不是一款新电脑？
