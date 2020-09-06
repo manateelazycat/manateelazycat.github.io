@@ -28,7 +28,7 @@ You need to shutdown the PC, then open the bottom lid up (unscrew 10 torx t5 scr
 #### 背面照
 ![背面照]({{site.url}}/pics/fix-dell-xps-cpu-limit/3.jpg)
 
-后盖是八颗六角螺丝，用T4螺丝头拧下后，用指甲或者塑料片撬开吕后盖和键盘黑色框架的中间缝隙，后盖内部有卡扣，转半圈会自然打开，不要暴力掰，防止后盖卡扣断裂。
+后盖是八颗六角螺丝，用T4螺丝头拧下后，用指甲或者塑料片撬开铝后盖和键盘黑色框架的中间缝隙，后盖内部有卡扣，转半圈会自然打开，不要暴力掰，防止后盖卡扣断裂。
 
 #### 内部结构
 ![内部结构]({{site.url}}/pics/fix-dell-xps-cpu-limit/2.jpg)
