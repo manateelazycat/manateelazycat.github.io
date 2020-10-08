@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -59,7 +56,7 @@
             <div class="content">
                 <h3 id="常规调试方法">常规调试方法</h3>
 
-<p>一般Emacs在崩溃或者出现错误的时候，可以用命令 <code class="highlighter-rouge">toggle-debug-on-error</code> 来打开Emacs调试器，当Emacs或者插件出错时，Emacs会自动在 <code class="highlighter-rouge">*Backtrace*</code> buffer中显示错误堆栈，方便开发者定位错误。</p>
+<p>一般Emacs在崩溃或者出现错误的时候，可以用命令 <code class="language-plaintext highlighter-rouge">toggle-debug-on-error</code> 来打开Emacs调试器，当Emacs或者插件出错时，Emacs会自动在 <code class="language-plaintext highlighter-rouge">*Backtrace*</code> buffer中显示错误堆栈，方便开发者定位错误。</p>
 
 <h3 id="高级调试方法">高级调试方法</h3>
 
@@ -67,7 +64,7 @@
 
 <p class="line-quote">sdcv.el基于posframe来实现翻译窗口的弹出，但是有个小问题，每次EAF网页中弹出翻译窗口的时候，鼠标都会跳到Emacs的左上角，翻译以后要重新移动光标, 非常的不方便。</p>
 
-<p>但是这时候我们往往不知道到底是哪个Emacs插件引入的这种行为, 一个一个的排查非常消耗时，但是我知道Emacs底层API中设置光标位置的函数是 <code class="highlighter-rouge">set-mouse-position</code>, 所以这时候可以调用命令 <code class="highlighter-rouge">(debug-on-entry 'set-mouse-position)</code> 来设置当Emacs调用 <code class="highlighter-rouge">set-mouse-position</code> 函数的时候弹出堆栈，方便开发者定位Emacs运行时的函数调用堆栈。</p>
+<p>但是这时候我们往往不知道到底是哪个Emacs插件引入的这种行为, 一个一个的排查非常消耗时，但是我知道Emacs底层API中设置光标位置的函数是 <code class="language-plaintext highlighter-rouge">set-mouse-position</code>, 所以这时候可以调用命令 <code class="language-plaintext highlighter-rouge">(debug-on-entry 'set-mouse-position)</code> 来设置当Emacs调用 <code class="language-plaintext highlighter-rouge">set-mouse-position</code> 函数的时候弹出堆栈，方便开发者定位Emacs运行时的函数调用堆栈。</p>
 
 <p>这时，只要调用翻译函数，一旦光标被插件移动后，就会弹出类似下面的堆栈信息：</p>
 
@@ -79,9 +76,9 @@
   <span class="o">...</span>
 </code></pre></div></div>
 
-<p>通过上面的堆栈信息，定位到是 <code class="highlighter-rouge">posframe--mouse-banish</code> 函数来设置的光标位置，最后通过 <code class="highlighter-rouge">(setq posframe-mouse-banish nil)</code> 来解决posframe弹出时移动光标的问题。</p>
+<p>通过上面的堆栈信息，定位到是 <code class="language-plaintext highlighter-rouge">posframe--mouse-banish</code> 函数来设置的光标位置，最后通过 <code class="language-plaintext highlighter-rouge">(setq posframe-mouse-banish nil)</code> 来解决posframe弹出时移动光标的问题。</p>
 
-<p>解决问题后可以通过命令 <code class="highlighter-rouge">(cancel-debug-on-entry 'set-mouse-position)</code> 取消运行时调试。</p>
+<p>解决问题后可以通过命令 <code class="language-plaintext highlighter-rouge">(cancel-debug-on-entry 'set-mouse-position)</code> 取消运行时调试。</p>
 
 <p>Happy hacking! ;)</p>
 

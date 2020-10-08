@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -66,7 +63,7 @@ v2ray.com/core/common/retry: <span class="o">[</span>dial tcp ip:port: connect: 
 v2ray.com/core/common/retry: all retry attempts failed
 </code></pre></div></div>
 
-<p>查了很多资料，应该是长期使用一个端口号，被GFW识别了，把服务器和客户端的 <code class="highlighter-rouge">port</code> 字段替换一个新的端口号后，问题解决。</p>
+<p>查了很多资料，应该是长期使用一个端口号，被GFW识别了，把服务器和客户端的 <code class="language-plaintext highlighter-rouge">port</code> 字段替换一个新的端口号后，问题解决。</p>
 
 <h3 id="动态端口">动态端口</h3>
 <p>为了避免新的端口号再次被识别，配置了一下v2ray的动态端口功能:</p>
@@ -76,7 +73,7 @@ v2ray.com/core/common/retry: all retry attempts failed
 <p>需要在服务端编辑 /etc/v2ray/config.json 文件:</p>
 
 <ul>
-  <li>在 inbounds/settings 节点下增加 <code class="highlighter-rouge">detour</code> 动态端口的设置</li>
+  <li>在 inbounds/settings 节点下增加 <code class="language-plaintext highlighter-rouge">detour</code> 动态端口的设置</li>
   <li>在 inbounds 节点下增加动态端口的详细配置</li>
 </ul>
 

@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -97,7 +94,7 @@
 <p>wetty最开始折腾，主要有这几个问题很烦：</p>
 
 <ul>
-  <li>默认 <code class="highlighter-rouge">127.0.0.1:3000</code> 显示 “Cannot GET /” 的错误；</li>
+  <li>默认 <code class="language-plaintext highlighter-rouge">127.0.0.1:3000</code> 显示 “Cannot GET /” 的错误；</li>
   <li>登录的时候强制要输入用户名和密码，对于远程链接是非常正常的，但是对于本地终端非常不方便；</li>
   <li>ls命令后无法正常显示中文。</li>
 </ul>
@@ -105,9 +102,9 @@
 <p>今天在天门山玩了一天，开长途到酒店后，好好的研究了一下wetty, 终于解决了现在这些问题：</p>
 
 <ul>
-  <li>wetty默认启动的路径在 <code class="highlighter-rouge">127.0.0.1:3000/wetty/</code> 路径下，所以root路径下会出现无法访问的问题，用 <code class="highlighter-rouge">--base /</code> 参数来指定访问路径在root路径，然后就可以用 <code class="highlighter-rouge">127.0.0.1</code> 来直接访问了；</li>
-  <li>默认输入密码的问题，可以先用命令 <code class="highlighter-rouge">ssh-keygen</code> 生成公钥文件 <code class="highlighter-rouge">~/.ssh/id_rsa.pub</code>，再用命令 <code class="highlighter-rouge">cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys</code> 加入到授权密钥文件中，最后用 <code class="highlighter-rouge">--sshuser="($whoami)" --sshauth=publickey</code> 参数即可启用自动登录;</li>
-  <li>在 <code class="highlighter-rouge">~/.bashrc</code> 文件中加入 <code class="highlighter-rouge">export LANG=zh_CN.UTF-8</code> 配置，即可保证bash输出的中文字符显示正常。</li>
+  <li>wetty默认启动的路径在 <code class="language-plaintext highlighter-rouge">127.0.0.1:3000/wetty/</code> 路径下，所以root路径下会出现无法访问的问题，用 <code class="language-plaintext highlighter-rouge">--base /</code> 参数来指定访问路径在root路径，然后就可以用 <code class="language-plaintext highlighter-rouge">127.0.0.1</code> 来直接访问了；</li>
+  <li>默认输入密码的问题，可以先用命令 <code class="language-plaintext highlighter-rouge">ssh-keygen</code> 生成公钥文件 <code class="language-plaintext highlighter-rouge">~/.ssh/id_rsa.pub</code>，再用命令 <code class="language-plaintext highlighter-rouge">cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys</code> 加入到授权密钥文件中，最后用 <code class="language-plaintext highlighter-rouge">--sshuser="($whoami)" --sshauth=publickey</code> 参数即可启用自动登录;</li>
+  <li>在 <code class="language-plaintext highlighter-rouge">~/.bashrc</code> 文件中加入 <code class="language-plaintext highlighter-rouge">export LANG=zh_CN.UTF-8</code> 配置，即可保证bash输出的中文字符显示正常。</li>
 </ul>
 
 <h3 id="完整的命令">完整的命令</h3>
@@ -128,7 +125,7 @@ ssh-keygen
 wetty <span class="nt">-p</span> 8081 <span class="nt">--base</span> / <span class="nt">--sshuser</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span><span class="s2">"</span> <span class="nt">--sshauth</span><span class="o">=</span>publickey <span class="nt">-c</span> bash
 </code></pre></div></div>
 
-<p>启动后，浏览器直接访问 <code class="highlighter-rouge">127.0.0.1:8081</code> 地址，SSH over Web的效果图如下，得益于xterm.js的渲染技术，终端显示和交互的功能非常完整：</p>
+<p>启动后，浏览器直接访问 <code class="language-plaintext highlighter-rouge">127.0.0.1:8081</code> 地址，SSH over Web的效果图如下，得益于xterm.js的渲染技术，终端显示和交互的功能非常完整：</p>
 
 <p><img src="http://localhost:4000/pics/ssh-over-web/ssh-over-web.png" alt="SSH over Web" /></p>
 

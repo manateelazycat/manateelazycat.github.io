@@ -1,942 +1,489 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-10T11:21:15+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">欢迎加入EAF社区</title><link href="http://localhost:4000/eaf/emacs/2020/05/10/eaf-community.html" rel="alternate" type="text/html" title="欢迎加入EAF社区" /><published>2020-05-10T00:00:00+08:00</published><updated>2020-05-10T00:00:00+08:00</updated><id>http://localhost:4000/eaf/emacs/2020/05/10/eaf-community</id><content type="html" xml:base="http://localhost:4000/eaf/emacs/2020/05/10/eaf-community.html">&lt;h3 id=&quot;欢迎加入eaf社区&quot;&gt;欢迎加入EAF社区&lt;/h3&gt;
-&lt;p&gt;中国开源之夏的同学们，欢迎加入EAF开源社区！&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-08T21:52:08+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">皖南318川藏线</title><link href="http://localhost:4000/travel/2020/10/08/wannan-318.html" rel="alternate" type="text/html" title="皖南318川藏线" /><published>2020-10-08T00:00:00+08:00</published><updated>2020-10-08T00:00:00+08:00</updated><id>http://localhost:4000/travel/2020/10/08/wannan-318</id><content type="html" xml:base="http://localhost:4000/travel/2020/10/08/wannan-318.html">&lt;p&gt;这次十一去常州办事情，办完事情，顺便刷一下传说中的皖南318川藏线。
+因为是国庆出游，人流量特别大，所以这次旅游最重要的事情就是想办法怎么避开人流，人多了，再好的风景都索然无味。&lt;/p&gt;
 
-&lt;p&gt;EAF社区在本次中国开源之夏活动中属于高难度的开源社区项目，你需要快速学会Elisp、Python、Qt甚至是JavaScript才能挑战EAF社区中的任务。为了帮助同学们快速入门EAF开发，我们已经为同学们准备了详细的技术文档和导师指导，即使是这样，在短短的暑期时间内，EAF依然是顶级黑客才能涉足的领域，请同学们量力而行！&lt;/p&gt;
+&lt;h4 id=&quot;避开人流&quot;&gt;避开人流&lt;/h4&gt;
 
-&lt;p&gt;如果你本身就是Emacs黑客，并熟悉Qt或JavaScript图形开发，最高的项目奖金基本上是手到擒来。&lt;/p&gt;
-
-&lt;p&gt;EAF属于自由软件，遵循GPL3许可证，当你贡献EAF代码时也就必须赞同自由软件精神和GPL3协议约束。&lt;/p&gt;
-
-&lt;h3 id=&quot;什么是eaf&quot;&gt;什么是EAF?&lt;/h3&gt;
-&lt;p&gt;EAF是Emacs Application Framework的缩写，EAF是新一代的Emacs应用框架，通过EAF框架，你可以使用Qt来任意扩展Emacs的多媒体能力。&lt;/p&gt;
-
-&lt;p&gt;目前EAF已经开发了如下应用：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;全键盘操作的黑客浏览器&lt;/li&gt;
-  &lt;li&gt;Markdown和Org-Mode实时预览器&lt;/li&gt;
-  &lt;li&gt;图片浏览器&lt;/li&gt;
-  &lt;li&gt;全功能视频播放器&lt;/li&gt;
-  &lt;li&gt;Emacs中性能最好的PDF阅读器&lt;/li&gt;
-  &lt;li&gt;摄像头应用&lt;/li&gt;
-  &lt;li&gt;移动设备文件共享插件&lt;/li&gt;
-  &lt;li&gt;基于Xterm.js的终端模拟器，你可以在里面运行VI，哈哈哈哈&lt;/li&gt;
-  &lt;li&gt;RSS&amp;amp;Atom新闻阅读器&lt;/li&gt;
-  &lt;li&gt;Aria2下载客户端&lt;/li&gt;
-  &lt;li&gt;全键盘操作的思维导图软件&lt;/li&gt;
-  &lt;li&gt;基于文本的复杂流程图实时生成工具&lt;/li&gt;
-  &lt;li&gt;基于浏览器和Org-Mode的笔记管理应用&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;通过EAF框架，顶级黑客可以全键盘做所有事情，你不再需要平铺式窗口管理器和外部应用就可以用统一的键盘操作来操作所有应用。&lt;/p&gt;
-
-&lt;h3 id=&quot;eaf愿景&quot;&gt;EAF愿景&lt;/h3&gt;
-&lt;p&gt;Emacs距今已经有45年的发展历史，在这45年内，全世界最顶级的黑客在贡献自己的智慧和想象力，一起构建了Emacs这个伟大的开发者生态工具。
-当你是一个会十几门编程语言的黑客和键盘流信仰者，Emacs绝对是你的不二之选。&lt;/p&gt;
-
-&lt;p&gt;Emacs的劣势也是因为它太古老了，导致在多线程和图形扩展能力已经无法跟上时代的步伐，在很多地方发展落后于IDEA和VSCode。&lt;/p&gt;
-
-&lt;p&gt;EAF的愿景是在保留Emacs古老的黑客文化和庞大的开发者插件生态前提下，通过EAF框架扩展Emacs的多线程和图形渲染能力，实现Live In Emacs的理想。&lt;/p&gt;
-
-&lt;h3 id=&quot;eaf架构设计&quot;&gt;EAF架构设计&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-community/framework.png&quot; alt=&quot;EAF 架构图&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;用最通俗的话来讲, EAF其实做的工作和手机贴膜差不多, 就是先把 PyQt5 的图形程序运行起来, 然后通过QWindow::setParent 的技术把PyQt5的窗口粘贴到Emacs窗口对应的位置。&lt;/p&gt;
-
-&lt;p&gt;EAF整体架构的关键技术有以下几点:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;通过 QtGraphicsView/QtGraphicsSence 来实现实时图形混合, 多个窗口可以共用一个进程的绘制内容, 这样就可以适应 Emacs 的 Window/Buffer 窗口模型设计, 从而最终让 PyQt5 窗口可以像 Emacs Elisp Buffer 那样集成和管理&lt;/li&gt;
-  &lt;li&gt;通过QWindow::setParent技术, 粘贴 PyQt5 的窗口到 Emacs EAF Buffer 的坐标上, 实现多个进程的窗口看起来是一个程序里面的不同部分, 不清楚QWindow::setParent技术的同学, 可以想象一下 Google Chrome 的多进程架构设计. QWindow::setParent的技术除了达到跨进程粘贴的作用外, 还变相的实现了多进程沙箱的设计, EAF图形化的程序运行在单独的进程中, 即使出现了意外崩溃的情况, 也不会影响Emacs本身的稳定性&lt;/li&gt;
-  &lt;li&gt;在Emacs端实现了一个事件监听循环, 当用户在 EAF Buffer按下任何按键, 都会通过 DBus 发送事件消息给 Python 进程, Python 进程再伪造相应的事件来模拟Emacs端用户的键盘输入&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;通过EAF架构可以实现Elisp、Python和JavaScript这三种语言相互混合调用，EAF黑客可以通过Python和JavaScript无限扩展Emacs的能力。&lt;/p&gt;
-
-&lt;h3 id=&quot;eaf安装&quot;&gt;EAF安装&lt;/h3&gt;
-&lt;p&gt;因为EAF开发者本身都在用Arch Linux, 所以Arch Linux是最容易安装EAF的开发环境。&lt;/p&gt;
-
-&lt;p&gt;请按照下面方式安装EAF：&lt;/p&gt;
-
-&lt;h4 id=&quot;1-安装eaf依赖&quot;&gt;1. 安装EAF依赖&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; python-pyqt5 python-pyqt5-sip python-pyqtwebengine python-qrcode python-feedparser python-dbus python-pyinotify python-markdown nodejs aria2 libreoffice filebrowser
-yay &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; python-pymupdf python-grip
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;2-下载eaf代码&quot;&gt;2. 下载EAF代码&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/manateelazycat/emacs-application-framework.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;拷贝代码到 ~/.emacs.d 目录下&lt;/p&gt;
-
-&lt;h4 id=&quot;3-加载eaf&quot;&gt;3. 加载EAF&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;defun add-subdirs-to-load-path &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&quot;Recursive add directories to &lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;load-path&lt;span class=&quot;s1&quot;&gt;'.&quot;
-  (let ((default-directory (file-name-as-directory dir)))
-    (add-to-list '&lt;/span&gt;load-path &lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;normal-top-level-add-subdirs-to-load-path&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;add-subdirs-to-load-path &lt;span class=&quot;s2&quot;&gt;&quot;~/.emacs.d/&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;require &lt;span class=&quot;s1&quot;&gt;'eaf)
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;把上面配置写入 ~/.emacs 文件中，重启Emacs即可&lt;/p&gt;
-
-&lt;h3 id=&quot;体验eaf&quot;&gt;体验EAF&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;应用名称&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;启动命令&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;浏览器&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-browser&lt;/code&gt; 在浏览器中打开或搜索&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-browser-with-history&lt;/code&gt; 搜索历史或者打开URL&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;HTML邮件渲染&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-mail-as-html&lt;/code&gt; 在 &lt;code class=&quot;highlighter-rouge&quot;&gt;gnus&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;mu4e&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;notmuch&lt;/code&gt; 等邮件客户端中执行&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;PDF阅读器&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入PDF文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;视频播放器&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入视频文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;图片浏览器&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入图片文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Markdown预览&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入Markdown文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Org预览&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入Org文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;摄像头程序&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-camera&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;终端模拟器&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-terminal&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;二维码下载文件&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-file-sender-qrcode&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-file-sender-qrcode-in-dired&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;二维码在线浏览器&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-file-browser-qrcode&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;无线分享&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-airshare&lt;/code&gt; 输入要分享给手机的字符串&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;RSS新闻阅读器&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-rss-reader&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;思维导图&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-create-mindmap&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-mindmap&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;办公文档阅读器&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-office&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;流程图&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open&lt;/code&gt; 输入 mmd 格式文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;演示程序&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M-x eaf-open-demo&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;eaf应用开发手册&quot;&gt;EAF应用开发手册&lt;/h3&gt;
-
-&lt;h4 id=&quot;eaf目录结构说明&quot;&gt;EAF目录结构说明&lt;/h4&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;目录&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;目录说明&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;app&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EAF应用目录，保持 app/app_name/buffer.py 的目录结构，每个应用的入口文件都是 buffer.py&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;core&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EAF的核心模块&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;core/buffer.py&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EAF应用的抽象接口文件，包括应用的IPC调用、事件转发和消息处理都通过这个接口文件来定义，如果你要扩展EAF核心功能，请仔细研究这个文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;core/view.py&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EAF应用的显示接口文件，包括应用的跨进程粘贴、显示和缩放都通过这个接口文件来定义，在大多数情况下，EAF黑客都可以不用研究这个文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;core/browser.py&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EAF的浏览器模块，所有浏览器的核心代码都在这个文件中，方便你通过浏览器模块结合JavaScript库快速开发应用，Python和JavaScript相互调用的方法可以重点看这个文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;core/pyaria2.py&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;aria2 库文件，主要作用是让浏览器可以直接调用这个库发送RPC下载命令给 aria2 daemon&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;core/utils.py&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;一些常用的工具库，比如创建文件、获取新端口等，和应用无关的工具库代码可以放到这里，用于减少基础函数的重复代码&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;docker&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Dockerfile, 主要用于构建EAF的Docker镜像，除非你用Docker来运行EAF，请直接忽视这个文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;screenshot&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EAF各个应用截图效果&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;eaf.el&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EAF Elisp进程部分，主要定义EAF应用的快捷键、监听Emacs窗口变化和事件，并通过DBus IPC发送消息给EAF的Python进程&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;eaf.py&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;EAF Python进程部分，用于启动EAF进程和接收Emacs消息，如果你要增加Emacs和EAF之间的通讯接口，需要重点研究这个文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;LICENSE&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;GPLv3许可证文件&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;README.md&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;英文README&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;README.zh-CN.md&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;中文README&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;setup.py&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;python项目设置和工程文件，请直接忽视它&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&quot;eaf应用开发入门&quot;&gt;EAF应用开发入门&lt;/h4&gt;
-&lt;p&gt;在EAF项目中有一个最简单的示例应用 app/demo/buffer.py&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PyQt5.QtGui&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QColor&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PyQt5.QtWidgets&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QPushButton&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;core.buffer&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AppBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emacs_var_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emacs_var_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_widget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;QPushButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, EAF hacker, it's working!!!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setStyleSheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;font-size: 100px&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;你可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-open-demo&lt;/code&gt; 命令来打开这个示例应用，示例应用是在Emacs中打开一个Qt窗口，Qt窗口只有一个可以点击的按钮，简单吧？&lt;/p&gt;
-
-&lt;p&gt;AppBuffer就是开发EAF应用所需要的入口类，它继承于Buffer类，Buffer类定义于 core/buffer.py 中。&lt;/p&gt;
-
-&lt;p&gt;当你开发一个新的EAF应用时，你只需要下面的操作即可完成:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;在app目录下新建一个应用的子目录，拷贝 app/demo/buffer.py 到应用子目录下面；&lt;/li&gt;
-  &lt;li&gt;新建一个Qt控件类，然后通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;self.add_widget&lt;/code&gt; 接口进行添加新的控件&lt;/li&gt;
-  &lt;li&gt;基于 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-open&lt;/code&gt; 接口创建一个打开EAF应用的Elisp函数，具体可以参考 eaf.el 文件中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-open-demo&lt;/code&gt; 代码实现&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;eaf应用开发接口说明&quot;&gt;EAF应用开发接口说明&lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PyQt5.QtGui&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QColor&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PyQt5.QtWidgets&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QPushButton&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;core.buffer&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AppBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emacs_var_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emacs_var_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_widget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;QPushButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, EAF hacker, it's working!!!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setStyleSheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;font-size: 100px&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;经过这几天旅游实践，只要遵循以下几条准则，就可以做到全程避开人流：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;buffer_id: 是Emacs传递过来的唯一ID，用于辨别每个EAF应用对象&lt;/li&gt;
-  &lt;li&gt;url: EAF应用的路径，可以是网页地址，也可以是PDF文件路径等，具体的形式取决于EAF的应用方向&lt;/li&gt;
-  &lt;li&gt;config_dir: EAF配置保存的目录, 用于存储EAF应用数据，比如Cookie、PDF阅读位置等&lt;/li&gt;
-  &lt;li&gt;arguments: EAF应用除了url外，从Emacs端传递的额外自定义数据, 比如app/browser应用，可以传递 temp_html_file 参数表示渲染HTML邮件后删除临时HTML文件&lt;/li&gt;
-  &lt;li&gt;emacs_var_dict: Emacs端的配置字典，比如Emacs端设置的代理配置等&lt;/li&gt;
-  &lt;li&gt;module_path: 应用的模块路径，比如 app.browser.buffer app.pdf-viewer.buffer 用于区分当前运行的应用, 在基于浏览器开发的EAF应用中比较有用&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;早起&lt;/strong&gt;：如果要开500公里以上的路，建议头天8点睡觉，第二天凌晨1点开车，高速绝对不会赌，短途最好也是4点起床，这样就可以避免把时间浪费在高速上&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;避免爬山&lt;/strong&gt;：特别是名山，国庆的时候千万不要去，任何一座山都扛不住全国人民的DDos人流攻击，真的喜欢爬山，可以找野山徒步，比如这次的吴越古道，基本上没人&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;避免去著名景点&lt;/strong&gt;：这次路过杭州，果断放弃西湖，因为人一定超级多，这些著名景点可以专门找闲暇的时间来逛&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;找免费景点&lt;/strong&gt;：无数次旅行都印证 “越绝美的地方，基本上都是免费景点” 这个规律，而且基本上门票价格越高的景点越无聊，比如这次翻车的钱塘江&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;在python端反馈消息给用户&quot;&gt;在Python端反馈消息给用户&lt;/h5&gt;
-&lt;p&gt;如果你想发送消息给Emacs，告诉用户状态，可以在 AppBuffer 类下调用下面的接口即可发送消息给Emacs:&lt;/p&gt;
+&lt;h4 id=&quot;行程&quot;&gt;行程&lt;/h4&gt;
 
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;self.message_to_emacs.emit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello from eaf&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;此次旅行途径地：武汉 - 常州 - 苏州 - 杭州 - 宁国 - 泾县 - 铜陵 - 武汉，全程2000公里。&lt;/p&gt;
+
+&lt;h4 id=&quot;苏州西山岛&quot;&gt;苏州西山岛&lt;/h4&gt;
+
+&lt;p&gt;苏州的西山岛位于苏州古城西南40多公里的太湖之中，系太湖第一大岛，是我国淡水湖泊中最大的岛屿。&lt;/p&gt;
+
+&lt;p&gt;西山岛这个地方视野开阔，特别适合晴天沿湖公路用无人机进行拍摄。加上西山岛位于太湖中央, 在岛上瞭望日出和晚霞都非常美。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155741.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155736.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2日晚上住在西山岛，那天刚好是农历8月16日，晚上一家人懒散地漫步在西山岛沿湖公路，晚风徐徐，柔美的月光洒在太湖中心，舒适惬意。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155703.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155711.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155719.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155725.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155730.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;钱塘江大潮&quot;&gt;钱塘江大潮&lt;/h4&gt;
+
+&lt;p&gt;3日从苏州驱车来嘉兴钱塘江看钱塘江大潮，路上花了几个小时，当看到一线潮时，浪小的甚至比不上海边的浪花。和我们小学课本上看到的完全不是一个概念，钱塘江属于此次旅行翻车之地。建议感兴趣的朋友，找到钱塘江撞潮的准确地点，应该不错，盐官的一线潮强烈不推荐来。&lt;/p&gt;
+
+&lt;h4 id=&quot;京杭大运河&quot;&gt;京杭大运河&lt;/h4&gt;
+
+&lt;p&gt;3日下午到杭州后，带上家人夜游京杭大运河。&lt;/p&gt;
+
+&lt;p&gt;京杭大运河始建于春秋时期，是历经世界上里程最长、工程最大的古代运河，也是最古老的运河之一。春秋吴国为伐齐国而开凿邗沟，隋朝大幅度扩修并贯通至都城洛阳且连涿郡，元朝翻修时弃洛阳而取直至北京。开凿到现在已有2500多年的历史。&lt;/p&gt;
+
+&lt;p&gt;京杭大运河票需要在武林门码头购买，每天只有7:00、7:30、8:20三个班次，售完就要等第二天了，所以朋友们需要提前去排队买票。&lt;/p&gt;
+
+&lt;p&gt;运河两岸分为水北街、水南街。沿岸有大量江南风情的古街，坐船穿梭于运河中，灯火辉煌，江水传声，别有一番江南韵味。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wKgBEFqpLWuAZjWVAAIAAHf2hc820.jpeg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155824.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155818.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155812.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155804.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155759.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155753.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155747.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;云栖竹径&quot;&gt;云栖竹径&lt;/h4&gt;
+
+&lt;p&gt;4日天空飘小雨，其实这个时候西湖最美，何奈人太多，在西湖边找了一个竹海逛逛，挺好，没几个人，郁郁葱葱，清晨竹海中空气沁人心脾。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155911.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155905.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155859.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155854.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155849.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155843.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155836.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155830.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;吴越古道&quot;&gt;吴越古道&lt;/h4&gt;
+
+&lt;p&gt;开始玩皖南318川藏线之前，在宁国市东南部，浙江西部有一个徒步圣地 - 吴越古道。&lt;/p&gt;
+
+&lt;p&gt;吴越国，一个在杭州的历史上留下印记的国度。在五代十国期间，曾因战续需要沿着山势修建起百里的城墙，今人称之为吴越古道。经历了近千年后许多古道早已不存在，今天仍然基本保持完好的吴越古道长度约17公里，整条古道一侧基本都是溪涧一路相随，沿途绿树成荫，泉水飞溅，是一年四季都适宜来徒步的路线。如今古道上的千顷关还残留着原来的样子，无声诉说着当年这里的故事。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wKgIDFuDX_mAXbdxAAXszxsqaxI76.jpeg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这种野外徒步古道的好处是，知道的人少，鲜有人为保护措施，保留最原汁原味的地势地貌，特别适合野外拉练，锻炼小朋友身体和意志。&lt;/p&gt;
+
+&lt;p&gt;古道里很多小路特别有意思，有的路到处是小碎石，走起来歪歪扭扭；有的路小溪顺路而下，分不清到底是路还是小溪；有的路直接在瀑布上摆几块小石头，需要结对牵手趟过；有的路，石头边长满青苔，拾阶而上，别提有多美。;)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160004.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155917.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155922.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155928.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155933.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155945.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155951.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008155958.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为山顶的浙西天池，一路绿树遮阴，凉爽的溪水一路伴随，甚是清凉。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160010.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160015.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160021.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160027.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160033.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160039.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160045.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160050.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160056.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为原生态的环境，山上有很多美丽的昆虫，小朋友可以近距离的看彩色大蜘蛛、带毛小蜗牛、超大天牛…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160101.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160106.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160112.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160118.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160124.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160129.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160135.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160141.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160146.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;吴越古道全程来回35公里山路，我们一行人徒步上山3个小时，下山1.5小时，上山之前还需开10几公里的盘山路，需要预留一天时间，以保障下午5点之前可以安全下山。&lt;/p&gt;
+
+&lt;h4 id=&quot;青龙湾&quot;&gt;青龙湾&lt;/h4&gt;
+
+&lt;p&gt;皖南川藏线又称“江南天路，皖南318”东起宁国市的青龙乡，西至泾县的蔡村镇，其最神秘精华路段全长120公里。&lt;/p&gt;
+
+&lt;p&gt;皖南318川藏线并不像很多景点，需要长途奔袭到每个景点去看风景，它最美的风景恰恰就在沿途…&lt;/p&gt;
+
+&lt;p&gt;比如青龙湾水库沿途的竹林:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160236.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160231.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160220.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;还有到处都是这种彩虹路，开着开着，就莫名其妙的傻开心。;)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160226.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;落羽红杉&quot;&gt;落羽红杉&lt;/h4&gt;
+
+&lt;p&gt;沿途村落小路闪进去，也是别有洞天，虽然道路泥泞狭窄，两边小树枝把车门都刮花了，但是看到这样的美景，什么都值得了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160214.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160208.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;方塘乡的落羽红杉，这次来早了，最佳季节是11月份，那时候整个湖面都将被红色的羽杉染成浪漫的颜色，最好带上无人机。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160151.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160157.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160202.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;桃岭六道弯&quot;&gt;桃岭六道弯&lt;/h4&gt;
+
+&lt;p&gt;从桃岭开始，就是皖南318川藏线最好玩的地方，山路蜿蜒曲折，颇有去川西四姑娘山的上山路，这种路在川西随处可见，但是对于江南的人来说确实非常新鲜。&lt;/p&gt;
+
+&lt;p&gt;从实际驾驶体验看，桃岭六道弯的难度其实很小，除了两头的发卡弯，中间的路都很简单，倒是去六道弯之前的绕山路难度更大一些，路窄弯多，颇有驾驶乐趣。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160243.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160249.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;皖南318泾县段沿途风景&quot;&gt;皖南318泾县段沿途风景&lt;/h4&gt;
+
+&lt;p&gt;过了桃岭六道弯，皖南318泾县段，刚下过雨，站在国道边，瞭望远处烟雨朦胧的小村落，享受着那一刻时间停滞的感觉，其实平凡的每一天就是生活的全部。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160300.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160305.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160311.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160316.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160322.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;水墨汀溪&quot;&gt;水墨汀溪&lt;/h4&gt;
+
+&lt;p&gt;最后一天，游玩了水墨汀溪，水比较清澈，在山谷旁，小溪会呈墨绿色，在溪中映出两岸美景，我觉得这也许就是‘水墨汀溪’这个名字的由来吧。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160415.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160410.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160405.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160359.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160353.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160348.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160342.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160336.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160331.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;最后&quot;&gt;最后&lt;/h4&gt;
+
+&lt;p&gt;皖南318也许没有川西和新疆的一步一美景，也没有甘南的飘渺婀娜…&lt;/p&gt;
+
+&lt;p&gt;但是皖南318川藏线最吸引我的却是沿途美景的走走停停，正当我们沉浸在雨天的小失落时，却在峰回路转的国道旁，瞥见皖南山村那静谧的美。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/wannan-318/wannan-318_20201008160300.jpg&quot; alt=&quot;wannan-318&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Travel" /><summary type="html">这次十一去常州办事情，办完事情，顺便刷一下传说中的皖南318川藏线。 因为是国庆出游，人流量特别大，所以这次旅游最重要的事情就是想办法怎么避开人流，人多了，再好的风景都索然无味。</summary></entry><entry><title type="html">修复Wifi设备导致重启卡住的问题</title><link href="http://localhost:4000/linux/2020/09/12/fix-reboot-show.html" rel="alternate" type="text/html" title="修复Wifi设备导致重启卡住的问题" /><published>2020-09-12T00:00:00+08:00</published><updated>2020-09-12T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/09/12/fix-reboot-show</id><content type="html" xml:base="http://localhost:4000/linux/2020/09/12/fix-reboot-show.html">&lt;p&gt;每次 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo reboot&lt;/code&gt; 的时候，系统都会卡几分钟没法关机，周末抽空研究了一下解决方案。&lt;/p&gt;
+
+&lt;p&gt;先用命令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo journalctl -p3 | tail -100&lt;/code&gt; 查看一下最近的重启日志，发现了卡住的日志线索：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;23:41:17 freedom wpa_supplicant[850]: nl80211: kernel reports: Attribute failed policy validation
+23:41:17 freedom wpa_supplicant[850]: Failed to create interface p2p-dev-wlp0s20f3: -22 (Invalid argument)
+23:41:17 freedom wpa_supplicant[850]: nl80211: Failed to create a P2P Device interface p2p-dev-wlp0s20f3
+23:41:24 freedom kwin_x11[1246]: kwin_core: Compositing is not possible
+00:01:09 freedom systemd-coredump[7234]: Failed to connect to coredump service: Connection refused
+00:01:09 freedom systemd-coredump[7253]: Failed to connect to coredump service: Connection refused
+00:01:23 freedom kernel: watchdog: watchdog0: watchdog did not stop!
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h5 id=&quot;在python端设置emacs变量&quot;&gt;在Python端设置Emacs变量&lt;/h5&gt;
-&lt;p&gt;你可以通过下面的接口，直接在Python进程中设置Emacs的任意变量:&lt;/p&gt;
+&lt;p&gt;根本原因是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wpa_supplicant[850]: Failed to create interface p2p-dev-wlp0s20f3: -22 (Invalid argument)&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;self.set_emacs_var.emit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;var-name&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;var-value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;Google了一下, 发现只用编辑 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/default/grub&lt;/code&gt; 文件，在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GRUB_CMDLINE_LINUX=&quot;&quot;&lt;/code&gt; 参数内添加 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;net.ifnames=0&lt;/code&gt; 即可解决 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Invalid argument&lt;/code&gt; 的问题。&lt;/p&gt;
+
+&lt;p&gt;编辑 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/default/grub&lt;/code&gt; 文件后，执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo update-grub&lt;/code&gt; 命令更新grub配置。&lt;/p&gt;
+
+&lt;p&gt;再次测试，重启速度非常快了，再也不卡在那里了，搞定。&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">每次 sudo reboot 的时候，系统都会卡几分钟没法关机，周末抽空研究了一下解决方案。</summary></entry><entry><title type="html">修复 Dell XPS 13 CPU频率限制的Bug</title><link href="http://localhost:4000/hardware/2020/09/06/fix-dell-xps-cpu-limit.html" rel="alternate" type="text/html" title="修复 Dell XPS 13 CPU频率限制的Bug" /><published>2020-09-06T00:00:00+08:00</published><updated>2020-09-06T00:00:00+08:00</updated><id>http://localhost:4000/hardware/2020/09/06/fix-dell-xps-cpu-limit</id><content type="html" xml:base="http://localhost:4000/hardware/2020/09/06/fix-dell-xps-cpu-limit.html">&lt;p&gt;这几天用Dell XPS的时候，经常出现待机后开机电脑巨卡的问题，有时候都让我怀疑买的是不是一款新电脑？
+买的时候知道这款十代 Intel CPU可以动态调整CPU频率，先用命令查看一下CPU频率：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;watch -n.1 &quot;cat /proc/cpuinfo | grep \&quot;^[c]pu MHz\&quot;&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h5 id=&quot;在python端执行emacs代码&quot;&gt;在Python端执行Emacs代码&lt;/h5&gt;
-&lt;p&gt;如果你想在Python端执行Elisp代码，可以用下面的方式来实现:&lt;/p&gt;
+&lt;p&gt;NND, 猜的果然不错，CPU被限制在400MHz, 系统不卡才怪。&lt;/p&gt;
 
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;self.eval_in_emacs.emit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;网上搜索了一下，是Dell电脑的Bug，官方论坛给了一个Workaround的方法:&lt;/p&gt;
 
-&lt;h5 id=&quot;在elisp端调用python方法&quot;&gt;在Elisp端调用Python方法&lt;/h5&gt;
-&lt;p&gt;在Emacs调用Python方法，稍微复杂点，你需要在AppBuffer定义也方法，比如:&lt;/p&gt;
+&lt;p class=&quot;line-quote&quot;&gt;You need to shutdown the PC, then open the bottom lid up (unscrew 10 torx t5 screws and 2 philips ph1 under the XPS plate) and disconnect the battery for 10-15 seconds, then reconnect it back. On my notebook it returned the speedstep back.&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Python Result&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;随即开始动手尝试：&lt;/p&gt;
 
-&lt;p&gt;然后通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;call_function&lt;/code&gt; 接口来实现对Python方法的调用:&lt;/p&gt;
+&lt;h4 id=&quot;拍一张菩萨保佑照&quot;&gt;拍一张菩萨保佑照&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-dell-xps-cpu-limit/4.jpg&quot; alt=&quot;菩萨照&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;temp-var&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;eaf-call&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;call_function&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf--buffer-id&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;get_foo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;老婆大人说我不到一个星期就要拆电脑的毛病什么时候可以改？囧&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;eaf--buffer-id&lt;/code&gt; 是EAF Buffer的局部变量，你按照上面的格式写代码，EAF框架会自动找到EAF应用对应的 &lt;code class=&quot;highlighter-rouge&quot;&gt;get_foo&lt;/code&gt; 方法，并返回Python函数执行结果到Emacs进程。&lt;/p&gt;
+&lt;h4 id=&quot;背面照&quot;&gt;背面照&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-dell-xps-cpu-limit/3.jpg&quot; alt=&quot;背面照&quot; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&quot;在python端读取用户的输入&quot;&gt;在Python端读取用户的输入&lt;/h5&gt;
-&lt;p&gt;从Python端读取Emacs的输入，可以先看下面的示例代码:&lt;/p&gt;
+&lt;p&gt;后盖是八颗六角螺丝，用T4螺丝头拧下后，用指甲或者塑料片撬开铝后盖和键盘黑色框架的中间缝隙，后盖内部有卡扣，转半圈会自然打开，不要暴力掰，防止后盖卡扣断裂。&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;h4 id=&quot;内部结构&quot;&gt;内部结构&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-dell-xps-cpu-limit/2.jpg&quot; alt=&quot;内部结构&quot; /&gt;&lt;/p&gt;
 
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AppBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Buffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;Dell XPS 13的内部结构做工还是很不错的，除了电源下面的音频走线，看着像我玩树莓派杜邦线的山寨风格，手动扒拉一下散热风扇玩玩，哈哈哈。&lt;/p&gt;
 
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_widget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PdfViewerWidget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_jump_page_message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_jump_page_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;h4 id=&quot;拔掉电源线&quot;&gt;拔掉电源线&lt;/h4&gt;
 
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;send_jump_page_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_input_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Jump to: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;jump_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/fix-dell-xps-cpu-limit/1.jpg&quot; alt=&quot;拔掉电源线&quot; /&gt;&lt;/p&gt;
 
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handle_input_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result_content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result_type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;jump_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jump_to_page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result_content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;p&gt;我上图花圈的地方有一个标有 BATT 标志 的电源插座，用尖嘴镊子在金属插槽两边小心的推，左右推几下，接头就会下来，注意不要暴力拔，这时候持续使小劲比瞬间暴力劲更可取。&lt;/p&gt;
 
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cacel_input_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result_type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;jump_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;p&gt;电源线拔掉以后，等待半分钟后插回去，再用开头的命令测试一下，CPU不再会限制在400MHz了。&lt;/p&gt;
 
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;搞定，电脑再也不会出现幻灯片的情况了，自己动手，丰衣足食。&lt;/p&gt;</content><author><name></name></author><category term="Hardware" /><summary type="html">这几天用Dell XPS的时候，经常出现待机后开机电脑巨卡的问题，有时候都让我怀疑买的是不是一款新电脑？ 买的时候知道这款十代 Intel CPU可以动态调整CPU频率，先用命令查看一下CPU频率：</summary></entry><entry><title type="html">读史记、知兴替，立当代、省吾身</title><link href="http://localhost:4000/reading/2020/09/05/shiji.html" rel="alternate" type="text/html" title="读史记、知兴替，立当代、省吾身" /><published>2020-09-05T00:00:00+08:00</published><updated>2020-09-05T00:00:00+08:00</updated><id>http://localhost:4000/reading/2020/09/05/shiji</id><content type="html" xml:base="http://localhost:4000/reading/2020/09/05/shiji.html">&lt;p&gt;从今年4月份开始，每天晚上读一篇的节奏，历时近5个月终于读完了史太公编著的《史记》一书，共计一百三十篇，五十二万六千五百字。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;首先在Python端，调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;self.send_input_message&lt;/code&gt; 接口发送用户输入提示字符和消息ID给Emacs&lt;/li&gt;
-  &lt;li&gt;用户通过Emacs Minibuffer输入数据后，会通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;handle_input_message&lt;/code&gt; 接口返回消息给Python回调函数&lt;/li&gt;
-  &lt;li&gt;如果用户取消了输入，你依然可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;cancel_input_message&lt;/code&gt; 接口，根据消息类型做一些清理工作&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;每天晚上坐在沙发上，读着史太公记录的几千年历史长河，每每回想过去几十年的经历，犹如沧海一粟。古人在没有现代社会的先进技术和IT设施的情况下，在为人处世、发奋图强、修身治国上依然让我赞叹。原来一直以为《史记》只是记载历史，难免有些枯燥，看到后面，特别是战国时期开始，太史公用人物传记的方式更加生动的侧面描写历史侧面的人和事时，每每到睡前都意犹未尽，难以放下。&lt;/p&gt;
 
-&lt;h5 id=&quot;在python端调用javascript函数&quot;&gt;在Python端调用JavaScript函数&lt;/h5&gt;
-&lt;p&gt;如果你的EAF应用基于浏览器和JavaScript库来开发，建议你先看一下 app/mindmap/buffer.py 的代码，你可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;eval_js&lt;/code&gt; 接口来实现Python直接调用浏览器中的JavaScript代码：&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eval_js&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;js_function(js_argument)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;在python端读取javascript函数的返回结果&quot;&gt;在Python端读取JavaScript函数的返回结果&lt;/h5&gt;
-&lt;p&gt;获取JavaScript函数返回的结果和 &lt;code class=&quot;highlighter-rouge&quot;&gt;eval_js&lt;/code&gt; 接口类似，只不过接口换成 &lt;code class=&quot;highlighter-rouge&quot;&gt;execute_js&lt;/code&gt; 的形式，下面是从浏览器中获取选中文本的示例:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;execute_js&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;get_selection();&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;在python端改变标题&quot;&gt;在Python端改变标题&lt;/h5&gt;
-&lt;p&gt;改变当前EAF的标题很简单，直接调用接口 &lt;code class=&quot;highlighter-rouge&quot;&gt;self.change_title(&quot;new_title&quot;)&lt;/code&gt; 即可&lt;/p&gt;
-
-&lt;h5 id=&quot;保存和恢复应用数据&quot;&gt;保存和恢复应用数据&lt;/h5&gt;
-
-&lt;p&gt;保存数据直接调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;save_session_data&lt;/code&gt; 接口，恢复数据接口用 &lt;code class=&quot;highlighter-rouge&quot;&gt;result_session_data&lt;/code&gt;，下面是视频播放器保存和恢复视频观看位置的示例代码，存储方式就是任意字符串。&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;save_session_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;media_player&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;restore_session_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;session_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;media_player&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setPosition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;全屏接口&quot;&gt;全屏接口&lt;/h5&gt;
-&lt;p&gt;一些应用，比如浏览器需要切换全屏应用，直接调用下面三个接口即可实现全屏的控制：&lt;/p&gt;
+&lt;p&gt;《史记》中描写的战国时期用我同事的话来说是中国历史上最光辉浪漫的时刻。春秋战国至汉朝，前前后后几百年，有多少英雄在其中绽放?&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;toggle_fullscreen: 切换全屏&lt;/li&gt;
-  &lt;li&gt;enable_fullscreen: 开启全屏&lt;/li&gt;
-  &lt;li&gt;disable_fullscreen: 退出全屏&lt;/li&gt;
+  &lt;li&gt;中国最著名的中国哲学家们，老子、孔子、庄子、韩非子&lt;/li&gt;
+  &lt;li&gt;兵法大家，鬼谷子、孙膑、伍子胥&lt;/li&gt;
+  &lt;li&gt;英雄将领廉颇、李牧、卫青、霍去病&lt;/li&gt;
+  &lt;li&gt;谋臣辩士，张仪、陈轸、范蠡、文种、张良、陈平&lt;/li&gt;
+  &lt;li&gt;侠义之士，田横、季布&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&quot;在elisp端发送按键事件给python进程&quot;&gt;在Elisp端发送按键事件给Python进程&lt;/h5&gt;
-&lt;p&gt;有时候，我们需要直接从Emacs端发送按键给EAF Python进程，比如我想在浏览器中按 Win + m 实现回车的操作，可以先定义一个Elisp函数：&lt;/p&gt;
+&lt;h4 id=&quot;怎么看大局&quot;&gt;怎么看大局？&lt;/h4&gt;
+&lt;p&gt;那个时代，他们的科技水平不如我们的万分之一，但是认真揣读每个人物的话，古人的智慧仿佛胜我辈千千万万，古人思考自己、国家和人生的深度远远深刻于我们这些为谋生而奋斗的现代人。战国时期，各个诸侯国都有名相良将，万乘车马，连连征战，为什么很难消灭邻国？&lt;/p&gt;
 
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf-send-return-key&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;Directly send return key to EAF Python side.&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;interactive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;eaf-call&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;send_key&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;eaf--buffer-id&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;RET&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;这是我看《史记》这本书最常想到的问题，从小处看，一个国家的人才储备、能力储备、资源储备还不够攻打邻国。从时代看，一个国家的力量很难和时代趋势去抗衡，武力和谋略这些在时代趋势面前都微不足道。从历史看，从人到家以及最后到国家，每个组织都有自己的人才、资源和力量，大到国家更是如此，所以从历史的角度看，去消灭邻国这件事毫无意义，那只是一时之勇，勇猛如秦朝，前后十六年就覆灭，强大和德行并重如汉朝，也需要休养生息，安抚各邻邦。&lt;/p&gt;
 
-&lt;p&gt;然后在Emacs中通过定义 eaf-*-keybinding 变量来实现 Win + m 快捷键发送回车事件。&lt;/p&gt;
+&lt;p&gt;所以，当我真正看完最后一页，合上《史记》第四卷后我明白，商场如战场，我们需要为每场战争储备人才、资金和操练，为每场商场的战役做好准备，不努力争取就没有机会，但是从战略层面上，要认清楚时代的发展趋势，一味强调在某次战役消灭竞争对手，不光是没有格局的问题，还是愚蠢的表现。因为，自己积累的是竞争优势，但是每个组织的精力和资源是有限的，根本不可能一处有优势，处处有优势，认清楚现实后，在某些战役上可以利用我方优势谋其更优势的地形，但是更要经常思考其他组织的优势，不光是知己知彼，扬长避短和其他组织短兵相接。要多的思考要从时代的趋势看，大家怎么去更广义的合作，不战而屈人之兵不断在2000多年的历史中反复述说，史太公讲的就是这个道理。&lt;/p&gt;
 
-&lt;h5 id=&quot;在elisp段增加eaf应用配置项&quot;&gt;在Elisp段增加EAF应用配置项&lt;/h5&gt;
-&lt;p&gt;如果你需要增加一些自定义选项以配置你的EAF应用，可以直接在 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-var-list&lt;/code&gt; 变量中增加新的自定义字段，&lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-var-list&lt;/code&gt; 定义在 eaf.el 文件中。&lt;/p&gt;
+&lt;h4 id=&quot;关于朋友&quot;&gt;关于朋友&lt;/h4&gt;
+&lt;p&gt;齐国孟尝君，位列三公时，门下三千食客，贬为平民时，门可罗雀，当孟尝君因为旗下谋士冯驩相助再次成为齐国丞相时，孟尝君说过，以前离我而去的食客再来时，我一定要当面向他们吐口水。冯驩慰籍孟尝君道：&lt;/p&gt;
 
-&lt;h5 id=&quot;eaf应用退出清理接口&quot;&gt;EAF应用退出清理接口&lt;/h5&gt;
-&lt;p&gt;如果你的EAF应用有后台进程，你可以通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;destroy_buffer&lt;/code&gt; 接口在EAF应用 Buffer 被关闭之前做一些清理工作，下面是终端浏览器在推出之前杀掉 NodeJs 后台进程的示例代码：&lt;/p&gt;
+&lt;p class=&quot;line-quote&quot;&gt;生者必有死，物之必至也；富贵多士，贫贱寡友，事之固然也。君独不见夫趣市朝者乎？明旦，侧肩争门而入；日暮之后，过市朝者掉臂而不顾。非好朝而恶暮，所期物忘其中。&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;destroy_buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;background_process&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGKILL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;这段话我反复读了很久，我这一生，三起三落，每次都看潮来潮去和人间冷暖，落难时以极低的代价分清楚哪些才是真正关心你的朋友，虽然平常很少沟通，哪些才是酒肉朋友。很长时间，我和孟尝君的想法是一致的，就像史记说的一样 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;天下攘攘 皆为利往 天下熙熙 皆为利来&lt;/code&gt; 。读了冯驩的话，我明白了我的执念，既然我已经看清楚这个世界的运作规则，为什么要厌恶这个每个时代都会重演的剧本呢？人厉害的时候，一堆人拥护你，人落难的时候，少有人问津，这件事情本来就是人性使然，为什么要对人性耿耿于怀呢？难道不应该，知晓人性，继续选择善意吗？&lt;/p&gt;
 
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;# NOTE: We need delete QWebEnginePage manual, otherwise QtWebEngineProcess won't quit.
-&lt;/span&gt;        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;web_page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deleteLater&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer_widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deleteLater&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;善始善终&quot;&gt;善始善终&lt;/h4&gt;
+&lt;p&gt;从小大到，我们看到语文课本上描述的越王句践 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;卧薪尝胆，君子报仇十年不晚&lt;/code&gt; ，但真正读完这段历史，我最佩服的人还是陶朱公范蠡。句践招灭国之灾根本上还是怨句践自己，但是真正能够度过十年尝胆之苦的时光，却要靠范蠡和文种。当句践趁吴王北上后背空虚时，终于灭吴成功后，范蠡明白自己有功于越王之下，难以久居，“飞鸟尽，良弓藏；狡兔死，走狗烹”。他深知句践其人“长颈鸟喙”，可与共患难，难与同安乐。带上家人迁入齐国，在海边结庐而居，耕作经商，积累千万家产。齐王邀请范蠡任齐国相国，范蠡推辞归还相印说：&lt;/p&gt;
 
-&lt;h4 id=&quot;eaf调试技巧&quot;&gt;EAF调试技巧&lt;/h4&gt;
+&lt;p class=&quot;line-quote&quot;&gt;居官致于卿相，治家能致千金；对于一个白手起家的布衣来讲，已经到了极点。久受尊名，恐怕不是吉祥的征兆。&lt;/p&gt;
 
-&lt;p&gt;下面分享有一些调试方法，方便你快速开发EAF应用：&lt;/p&gt;
+&lt;p&gt;范蠡再次迁徙至陶地，范蠡看中陶地接壤各地诸侯国，是各种经商中枢要塞，随根据时节气候和民情风俗顺势而动，没出几年，经商积资又成巨富，遂自号陶朱公。&lt;/p&gt;
 
-&lt;h5 id=&quot;查看python-print代码的结果&quot;&gt;查看Python Print代码的结果&lt;/h5&gt;
-&lt;p&gt;如果你在EAF Python端添加了 print 代码，你可以在Emacs中切换到 &lt;code class=&quot;highlighter-rouge&quot;&gt;*eaf*&lt;/code&gt; buffer来观察运行时的print结果。&lt;/p&gt;
+&lt;p&gt;看完范蠡的生平，无不感叹，军事才能和经商思想集一身的复合型人才，最难能可贵的是，他明白 “物极必反” 的道理，每当到鼎盛时，往往就是祸患的导火处，能在人生每个顶峰时激流勇退，重新再来，最终善始善终。不论战国战火纷飞的时代，即使科技当代，又有多少人能够有这样的自知和魄力呢？&lt;/p&gt;
 
-&lt;h5 id=&quot;不用重启测试eaf应用代码&quot;&gt;不用重启测试EAF应用代码&lt;/h5&gt;
-&lt;p&gt;第一次调用EAF应用后，EAF会在后台启动一个Python进程，如果你更新了 Python 代码，请先调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-stop-process&lt;/code&gt; 命令，这个命令会杀掉老版本的Python后台进程，然后你再重新调用EAF函数即可测试新版EAF代码。&lt;/p&gt;
+&lt;h4 id=&quot;足智多谋&quot;&gt;足智多谋&lt;/h4&gt;
+&lt;p&gt;以前提到战国时期，最喜欢的就是韩信和霍去病，一个通晓人性，以奇制胜，一个勇猛无比，谋略过人。对于陈平的认识，不过是一介说客而已。这次阅读了陈平的生平，从贫民白手起家，顺应时势辅助刘邦，用离间计制服项羽谋臣，小计逮住韩信，最后解平城之围，可以说每每到关键时刻，陈平都是谋才大略。刘邦死后，吕太后执政，一直装傻作乐，不是不管，而是自知力量差距悬殊，让敌人放松警惕，等吕后死后，又用计匡正汉室。&lt;/p&gt;
 
-&lt;p&gt;这个方法你掌握后，你不需要每次更新Python代码都要重启Emacs，极大提高了EAF的开发效率。&lt;/p&gt;
+&lt;p&gt;陈平即使个人到顶峰时刻，依然清醒地说：&lt;/p&gt;
 
-&lt;h5 id=&quot;调试段错误代码&quot;&gt;调试段错误代码&lt;/h5&gt;
+&lt;p class=&quot;line-quote&quot;&gt;我多次使用阴谋诡计，这是道家所禁忌的。我的后代如果被废黜也就完了，终究不会再兴起，因为我多用阴谋诡计积祸太多了。&lt;/p&gt;
 
-&lt;p&gt;如果你在开发中遇到了段错误，可以按照下面的方式调试段错误：&lt;/p&gt;
+&lt;p&gt;国内做技术和商业环境很混乱，真正有才华之士并不能有机会施展抱负，有时候，真的应该学习陈平，审时度势，个人势弱时，多修养生息，韬光养晦，等待时机再出击。回想往些年，过度透支自己，在能力成长的时候，没有看全局的资源和时势变化，最后透支身体的行为真是愚蠢啊。&lt;/p&gt;
+
+&lt;p&gt;等再看完《史记》后，对陈平这种足智多谋、善始善终的古人深感尊敬。&lt;/p&gt;
+
+&lt;h4 id=&quot;历史长河&quot;&gt;历史长河&lt;/h4&gt;
+&lt;p&gt;看太史公从三皇五帝、夏商周讲到战国，直至汉朝前后2000多年历史，我能从中学习的，不仅仅是每个传记描写的历史侧面，也不仅仅是单一维度的功过评说，更是让我从时间的太空去俯视过去，明白了什么是大义大德，什么是趋势和格局, 什么是一生中真正重要的…&lt;/p&gt;
+
+&lt;p&gt;在历史的长河中，特别像我们这种技术手艺人，积极的正确认知自我非常关键，知识可以通过后天努力习得，走错方向了过往精力不再来，岂不到最后后悔一生？&lt;/p&gt;</content><author><name></name></author><category term="Reading" /><summary type="html">从今年4月份开始，每天晚上读一篇的节奏，历时近5个月终于读完了史太公编著的《史记》一书，共计一百三十篇，五十二万六千五百字。</summary></entry><entry><title type="html">经典版的深度终端，还是那个味道</title><link href="http://localhost:4000/linux/2020/09/02/deepin-terminal-back.html" rel="alternate" type="text/html" title="经典版的深度终端，还是那个味道" /><published>2020-09-02T00:00:00+08:00</published><updated>2020-09-02T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/09/02/deepin-terminal-back</id><content type="html" xml:base="http://localhost:4000/linux/2020/09/02/deepin-terminal-back.html">&lt;p&gt;感谢亲爱的肥猫大人，深度终端GTK版本终于回归了，顺手舒服。&lt;/p&gt;
+
+&lt;p&gt;https://twitter.com/felixonmars/status/1301173435398324226?s=20&lt;/p&gt;
+
+&lt;p&gt;安装地址：&lt;/p&gt;
+
+&lt;p&gt;https://www.archlinux.org/packages/community/x86_64/deepin-terminal-old/&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">感谢亲爱的肥猫大人，深度终端GTK版本终于回归了，顺手舒服。</summary></entry><entry><title type="html">Dell XPS, HiDPI and Arch Linux</title><link href="http://localhost:4000/linux/2020/09/02/dell-xps-13.html" rel="alternate" type="text/html" title="Dell XPS, HiDPI and Arch Linux" /><published>2020-09-02T00:00:00+08:00</published><updated>2020-09-02T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/09/02/dell-xps-13</id><content type="html" xml:base="http://localhost:4000/linux/2020/09/02/dell-xps-13.html">&lt;p&gt;最近入手了一个Dell XPS 13, 机器很小巧，32G内存，2T硬盘，资源足够我玩一些开源技术了。
+同时这也是一个4k屏幕，带来了一些烦恼。&lt;/p&gt;
+
+&lt;p&gt;下面是折腾这台机器的一些步骤：&lt;/p&gt;
+
+&lt;h4 id=&quot;引导和磁盘&quot;&gt;引导和磁盘&lt;/h4&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;先在Emacs中执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;(setq eaf-enable-debug t)&lt;/code&gt; 命令打开调试选项&lt;/li&gt;
-  &lt;li&gt;调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;eaf-stop-process&lt;/code&gt; 命令杀掉EAF Python后台进程&lt;/li&gt;
-  &lt;li&gt;继续调试，当发生段错误时， EAF会自动在 &lt;code class=&quot;highlighter-rouge&quot;&gt;*eaf*&lt;/code&gt; Buffer中打印段错误的堆栈信息&lt;/li&gt;
+  &lt;li&gt;按F2进入BIOS, 禁用Secure Boot和安全UEFI启动盘检查，以引导 Manjaro 启动U盘&lt;/li&gt;
+  &lt;li&gt;把硬盘模式从 RAID 模式改成 ACHI 模式，使得安装器可以识别 SSD&lt;/li&gt;
+  &lt;li&gt;保存BIOS配置后，重启按F12选择启动U盘安装系统&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 id=&quot;eaf学习资料&quot;&gt;EAF学习资料&lt;/h4&gt;
+&lt;h4 id=&quot;高分屏设置&quot;&gt;高分屏设置&lt;/h4&gt;
 
-&lt;p&gt;EAF是一个多语言的高难度项目，你需要同时具备Elisp、Python、Qt甚至JavaScript开发技能才能任意Hacking EAF，下面是一些我收集的学习资料帮助你快速学习：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;进入KDE显示设置，设置缩放为 200%&lt;/li&gt;
+  &lt;li&gt;修改 /etc/sddm.conf 配置文件，在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ServerArguments=-nolisten tcp&lt;/code&gt; 行后面增加 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-dpi 196&lt;/code&gt;，放大登录界面的分辨率&lt;/li&gt;
+  &lt;li&gt;修改光标主题中光标大小，从 24 调整为 48&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;微信设置&quot;&gt;微信设置&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;安装 xsettingsd, 保证Wine微信可以正常启动，不能用 gsd-xsettings, gsd-xsettings 会重置DPI设置让系统字体非常小&lt;/li&gt;
+  &lt;li&gt;用命令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;env WINEPREFIX=$HOME/.deepinwine/Deepin-WeChat deepin-wine winecfg&lt;/code&gt; 启动显示设置对话框，点击显示标签，把DPI调到250, 可以放大微信的字体&lt;/li&gt;
+  &lt;li&gt;执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wmctrl -x -a wechat.exe || /opt/deepinwine/apps/Deepin-WeChat/run.sh&lt;/code&gt; 命令来启动或切换微信窗口&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;通过以上设置后，便可以方便的安装系统并调整系统和微信的字体缩放，其他的设置和传统机器相同。&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">最近入手了一个Dell XPS 13, 机器很小巧，32G内存，2T硬盘，资源足够我玩一些开源技术了。 同时这也是一个4k屏幕，带来了一些烦恼。</summary></entry><entry><title type="html">解决Linux下微信输入中文为方块的问题</title><link href="http://localhost:4000/linux/2020/08/18/wechat-and-input-method.html" rel="alternate" type="text/html" title="解决Linux下微信输入中文为方块的问题" /><published>2020-08-18T00:00:00+08:00</published><updated>2020-08-18T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/08/18/wechat-and-input-method</id><content type="html" xml:base="http://localhost:4000/linux/2020/08/18/wechat-and-input-method.html">&lt;ol&gt;
+  &lt;li&gt;编辑文件 /opt/deepinwine/tools/run.sh&lt;/li&gt;
+  &lt;li&gt;找到 WINE_CMD 一行，改成 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WINE_CMD=&quot;LC_ALL=zh_CN.UTF-8 deepin-wine&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;然后重启Wine版本微信后，输入中文就显示正常了。&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">编辑文件 /opt/deepinwine/tools/run.sh 找到 WINE_CMD 一行，改成 WINE_CMD=&quot;LC_ALL=zh_CN.UTF-8 deepin-wine&quot;</summary></entry><entry><title type="html">EAF浏览器可以支持快捷键选中文本功能了！</title><link href="http://localhost:4000/emacs/eaf/2020/07/22/eaf-support-caret-browse.html" rel="alternate" type="text/html" title="EAF浏览器可以支持快捷键选中文本功能了！" /><published>2020-07-22T00:00:00+08:00</published><updated>2020-07-22T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/07/22/eaf-support-caret-browse</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/07/22/eaf-support-caret-browse.html">&lt;p&gt;牛逼哄哄的 HollowMan6 同学写了一个补丁 https://github.com/manateelazycat/emacs-application-framework/pull/345
+更新&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;EAF&lt;/a&gt;最新版，EAF浏览器允许在Emacs里面用键盘选中文本了：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Emacs/Elisp学习：http://ergoemacs.org/emacs/elisp.html&lt;/li&gt;
-  &lt;li&gt;Python学习：《Python核心编程》这本书足够你精通Python语言&lt;/li&gt;
-  &lt;li&gt;PyQt5学习：http://zetcode.com/gui/pyqt5/ 这是我找到最简单的Qt入门教程&lt;/li&gt;
-  &lt;li&gt;JavaScript: Google和Github是你学习JavaScript最好的导师&lt;/li&gt;
+  &lt;li&gt;c : 在页面中激活标记，用于跳转到需要选择的文本模块&lt;/li&gt;
+  &lt;li&gt;j : 键盘移动到下一行&lt;/li&gt;
+  &lt;li&gt;k : 键盘移动到上一行&lt;/li&gt;
+  &lt;li&gt;h : 键盘移动到前一个字符&lt;/li&gt;
+  &lt;li&gt;l : 键盘移动到后一个字符&lt;/li&gt;
+  &lt;li&gt;( : 键盘移动到后一个文字块&lt;/li&gt;
+  &lt;li&gt;) : 键盘移动到后一个文字块&lt;/li&gt;
+  &lt;li&gt;b : 键盘移动到前一个单词&lt;/li&gt;
+  &lt;li&gt;w : 键盘移动到后一个单词&lt;/li&gt;
+  &lt;li&gt;G : 键盘移动到最上面一行&lt;/li&gt;
+  &lt;li&gt;g : 键盘移动到最下面一行&lt;/li&gt;
+  &lt;li&gt;v : 切换激活状态&lt;/li&gt;
+  &lt;li&gt;o : 光标调换开头和结尾的位置&lt;/li&gt;
+  &lt;li&gt;/ : 向前搜索&lt;/li&gt;
+  &lt;li&gt;? : 向后搜索&lt;/li&gt;
+  &lt;li&gt;C-. : 清空搜索&lt;/li&gt;
+  &lt;li&gt;q : 退出&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;有哪些挑战性的任务&quot;&gt;有哪些挑战性的任务？&lt;/h3&gt;
+&lt;p&gt;EAF浏览器配合Emacs查资料写代码的效率已经远远高于通过窗口管理器配合Chrome的效率了。;)&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><category term="EAF" /><summary type="html">牛逼哄哄的 HollowMan6 同学写了一个补丁 https://github.com/manateelazycat/emacs-application-framework/pull/345 更新EAF最新版，EAF浏览器允许在Emacs里面用键盘选中文本了：</summary></entry><entry><title type="html">安卓设备使用代理</title><link href="http://localhost:4000/proxy/2020/07/04/pad-use-proxy.html" rel="alternate" type="text/html" title="安卓设备使用代理" /><published>2020-07-04T00:00:00+08:00</published><updated>2020-07-04T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/07/04/pad-use-proxy</id><content type="html" xml:base="http://localhost:4000/proxy/2020/07/04/pad-use-proxy.html">&lt;p&gt;在文章&lt;a href=&quot;https://manateelazycat.github.io/proxy/2020/03/17/best-proxy.html&quot;&gt;最佳代理实践&lt;/a&gt;详细记载了怎么让Linux桌面使用Trojan代理技术正常浏览网站。&lt;/p&gt;
 
-&lt;p&gt;如果你上面的知识都掌握了，恭喜你，你可以开始挑战&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/wiki/Todo-List&quot;&gt;EAF开发任务&lt;/a&gt;了。&lt;/p&gt;
+&lt;p&gt;最近买了一个华为平板，今天讲一下怎么让安卓设备使用代理的方法：&lt;/p&gt;
 
-&lt;p&gt;关于EAF开发任务的需求和核心技术细节，可以请教EAF社区导师&lt;a href=&quot;https://github.com/MatthewZMD&quot;&gt;Matthew Zeng&lt;/a&gt;, 也可以把问题发送到&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/issues&quot;&gt;Issue页面&lt;/a&gt;, EAF社区大神会尽快回复你。&lt;/p&gt;
-
-&lt;p&gt;祝各位同学暑假快乐，Happy hacking! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">欢迎加入EAF社区 中国开源之夏的同学们，欢迎加入EAF开源社区！</summary></entry><entry><title type="html">最美不过人间烟火气</title><link href="http://localhost:4000/reading/2020/05/04/reading-12-rules.html" rel="alternate" type="text/html" title="最美不过人间烟火气" /><published>2020-05-04T00:00:00+08:00</published><updated>2020-05-04T00:00:00+08:00</updated><id>http://localhost:4000/reading/2020/05/04/reading-12-rules</id><content type="html" xml:base="http://localhost:4000/reading/2020/05/04/reading-12-rules.html">&lt;p&gt;去年在微博上看了乔丹·彼得森的一场TED演讲，当时被这个严肃到近乎真诚的人深深吸引，作为一位临床心理学家，他从心理学的实践出发，研究了大量现代人的心理问题，并对这些心理问题进行深入观察、感受和理解，拨开由痛苦和情绪彼此纠缠形成的迷雾，他最终把自己的感悟写成了一部巨著《人生十二法则》。&lt;/p&gt;
-
-&lt;p&gt;第一次翻开《人生十二法则》的时候，看着目录真的很像一大本鸡汤，每章都有明确的鸡汤法则，但是当你真的沉下心去抚摸每段文字的时候，你会发现，这是一本融合作者各学科知识和实践感悟的大百科全书，作者通过自己的亲身感悟，把现代人遇到的问题和解决方案融合到每个章节中，然后通过对这些烦恼的现象和根源进行分析阐述，最终告诉你怎么正确的认知生活中的各种问题，并给出作者自己启发性的方案。&lt;/p&gt;
-
-&lt;p&gt;作者本身也是一位硬核教授，为了生存，做过洗碗工、加油站员工、厨师、养蜂人、油田工人、铁路工人、特技飞行员，最终以心理学教授为职业。这么丰富人生经历的人写的书非常难以读懂，因为书里的每段话的信息量都非常大，既充满严谨简洁的学术用语，同时内容又面向普通人生活的点点滴滴。所以为了理解书中内容，我每天只能读一段话，然后体会把玩这段话的寓意，就这样断断续续，我大概花了半年时间终于读完这本书。&lt;/p&gt;
-
-&lt;p&gt;读这本书就像看一本生活的百科全书一样，读着读着经常感慨万分，鲜有读其他书的畅快感。&lt;/p&gt;
-
-&lt;p&gt;这本书之所以难以读懂的原因是我开始是以一个”求学者”的身份去读这本书的，总是功利的吸纳这本书的每滴经验，可是每个章节并不像我们通常认为的是一个体系的，而是分散杂糅的。就是这种杂糅混乱而又充满哲理的感觉和我总是想通过一整套知识体系的读法产生了不小的冲突。&lt;/p&gt;
-
-&lt;p&gt;我们从小的教育洗脑总是希望通过一整套意识体系和知识体系，然后唯物地去理解这个世界，当我真的进入这个世界去接触形形色色的人和事后，发现我们的知识和个人力量是多么的渺小，在这个世界上该遇到的坑和错误一个都少不了。&lt;/p&gt;
-
-&lt;p&gt;当我合上这本书的最后一页后，终于明白，这本书讲的不就是 “人间烟火气” 吗？当我再以 “人间烟火气” 的方式去回顾这本书时，一切都明亮了，作者讲的其实是人生，分享的是他自己生活这么多年后对人生真诚的感悟，而不仅仅是一条条法则。&lt;/p&gt;
-
-&lt;p&gt;希望看我博客的同学，有空的时候通读一遍这本书，我相信不论你是懵懂的少年还是感慨的老年人，都会从书中学到很多。下面我分享一下我个人读这本书后的感悟。&lt;/p&gt;
-
-&lt;h3 id=&quot;关于焦虑和幸福感&quot;&gt;关于焦虑和幸福感&lt;/h3&gt;
-&lt;p&gt;在现在的社会中，大家总是在技能、金钱和社会地位上进行无穷无止的比较，是功利的攀比也好，还是在缺乏安全感下的学习进步也好，不断的跑，越跑越快，跑到筋疲力尽，终于有一天跑到中途弦断了，跑不动了，坐在地上望着远方不知在何方的目的地…&lt;/p&gt;
-
-&lt;p&gt;此时，我们自己不但没有解决恐惧和焦虑，反而凭增了不少怨恨和迷茫，也不知道未来的路应该怎么走。&lt;/p&gt;
-
-&lt;p&gt;要避免自己陷入无穷的焦虑和恐惧，其实很容易，只是很少人做到：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;睡眠要好&lt;/strong&gt;，因为我们首先是人，而不是机器，人一旦陷入疲惫后，就没有足够的能量去理清楚复杂的现实，而大多数人拖着疲惫的身体不注重睡眠和休息，第一步就进入了自我折磨和自我否定的负面情绪中，而负面情绪的调节系统和维持有序的生物钟紧密相连。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;清理自己的房间&lt;/strong&gt;，这里的房间不仅仅指物理房间的整洁，而是你心里乱麻般的思绪，此时的心绪乱如毛线团，不要一剪刀下去，那解决不了问题，我们需要在理心绪团的过程中，和自己真诚的对话，这一团如麻的心绪团中，哪些是自己认同的，哪些是外界强加给自己的，哪些是自己不认同的，没关系，一点一点的拆开每个令你困惑无比的心绪结，等你真的全部理清楚后，很多事情自然就迎刃而解了, 因为对抗复杂世界的唯一武器就是简单的内心，复杂的内心只会进入自以为是的状态，内心简单就会进入谦逊的状态，以不变应对现实存在的复杂性。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;多观察这个世界的美好&lt;/strong&gt;，这个世界有很多好的人和事情，也有非常多坏的人和事情，但是这个世界是客观的，它就像一切物理规律那样，矗立在那里，不受好和坏的影响，而我们有时候看到这个世界上的很多令我们恐惧和焦虑的事其实并不会让我们恐惧和焦虑，大多数坏的人和事情并不能真正的伤害到我们，真正伤害我们的往往是我们想改变坏的人和事情而改变不了的挫败感，既然我们改变不了别人，别人也很难真的伤害我们，我们应该做的是把精力放到这个世界真正美好的细节中，去感受那些美好的事情，避免世界变成我们 “想象力虚构的恐怖世界”，你有多久没有看到花朵的色彩和花蕊的形状？你有多久没有看到清晨阳光撒到草地上，透过露珠带来的希望？你有多久没有看到湖边日落的晚霞？这些普普通通的美好每天都在等着你去体验，感受生活的美，现在就下楼去体验吧。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;看清楚未来，一件件去做&lt;/strong&gt;, 当你理清楚自己的房间，重新感受到这个世界的美好时，你会发现你拥有了两件最强大的东西，平静的内心和充满希望的喜悦，即使你现在在技能和金钱等身外之物上离自己的目标还有不少距离，但是你却拥有了最好的能力，就是你对自己的真诚、强大而平静的内心，拥有这两样，你将来做什么都会非常好的未来，接下来要做的事情非常非常简单，定一个小目标，一件一件的去探索和学习，这样既可以平衡对未知的恐惧，同时又能保持兴奋和投入的状态。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;每天留出一些时间应对危机，其他时间忘掉这些&lt;/strong&gt;, 即使我们做到上面说的所有要求，我们依然无法完全去掉恐惧和焦虑，因为这个世界复杂到超出每个人的认知和预料，所以恐惧和焦虑永远都没法消除，人生最差的状况是 “让恐惧和焦虑填充我们的每分每秒，我们却无可奈何”。我们首先要有正确的认识，既然无法消除恐惧和焦虑，我们每天只需要抽出很小一部分时间去应对恐惧和焦虑即可，剩下的时间就忘掉这些恐惧和焦虑，放心的体验生活。因为人生本来就像在高速公路上驾驶一样，你无法消除旁边的危险，只能适时对危险保持关注，剩下的大部分时间应该放松肩膀专注车前方。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;用一句话来说，你需要先处理好自己的痛苦，再去担心他人。这样你才能够强化自己，承担起存在的重担，使生活重新焕发希望。&lt;/p&gt;
-
-&lt;h3 id=&quot;关于生活的节奏&quot;&gt;关于生活的节奏&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;任何时候，不要在一次战斗中耗尽所有精力&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;原来年轻的时候，总是看准一个目标后，用尽全部精力去战斗，经常熬夜和不睡觉去解决问题，比如在创建深度操作系统团队时，最多有连续三周不眠不休的写代码，虽然在很多产品和项目中获得了战术的成功，但是从长远看，耗尽所有精力的结果不是骄傲的胜利，而是牺牲其他重要的东西换来的，比如自己的健康和家庭的和睦，所以，当你再次进入正向奋斗的状态，切忌不要在任何一场战斗中耗费所有精力，保存实力，人生很漫长，慢慢奋斗，慢慢品人生。&lt;/p&gt;
-
-&lt;h3 id=&quot;关于家庭矛盾&quot;&gt;关于家庭矛盾&lt;/h3&gt;
-&lt;p&gt;人到中年，外面会面对复杂的世界，回家会面临家庭的责任，我花了十五年时间明白一个家庭和睦的道理就是 “不要和老婆大人讲道理，她就是道理” ， 这个是我实践的家庭和睦第一法则，今天我看完《人生十二法则》我明白了背后的原因：&lt;/p&gt;
-
-&lt;p&gt;“女性讨论问题的目的便是为了更清晰地理解问题，她们需要有人聆听和提问，然后再着手去解决”&lt;/p&gt;
-
-&lt;p&gt;也就是说，女性是用情感去理解事情的经过，你首先要耐心的听她们讲完整个事情的经过，帮她们理顺思路以后，她们自然会赞同你的解决方案，她们需要的是过程中的沟通和理解，过程中良好的沟通远远比你直接告诉她 “什么是最好的结果” 重要的多。&lt;/p&gt;
-
-&lt;p&gt;对和错对于家庭来说真的不重要，越争对错的家庭矛盾越大, 因为当你选择固步自封成为对的一方时，你的伴侣就会因为吵架输了而变成错的一方，这也无法为你带来和平，若这样的情况反复出现，婚姻就会破裂。如果要和平，你就需要寻找问题的真相，而不是试图成为对的人，这样，你才能打破自己的顽固。&lt;/p&gt;
-
-&lt;p&gt;所以解决家庭问题的核心是，首先要做一个安静的聆听探讨者，不论对于夫妻双方还是孩子，良好的聆听，通过聆听寻求共同的家庭和平，而不是争论谁对谁错，因为家庭组建的基石是包容对方的缺点、信任对方、共同面对生活。&lt;/p&gt;
-
-&lt;h3 id=&quot;关于同情和怨恨&quot;&gt;关于同情和怨恨&lt;/h3&gt;
-&lt;p&gt;以前在IT界有一个金句 “一个人离职要不是钱没给够，要不就是受憋屈了，要不就是两者皆有”， 所有离职的人根源就是这两个原因。&lt;/p&gt;
-
-&lt;p&gt;今天在这本书看到类似的道理 “怨恨的产生只能有两个原因：一是自己被占便宜了，二是自己不愿意”。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;当一个人太迎合他人时会无法维护自己，他会假设别人和自己想法一致，所以会期待相应的回报，却不知道该如何确保这一点。在得不到回报时，他没法表达不满或者直接索取认可，而这种不平等会激活他性格的阴暗面，使他充满怨恨。&lt;/p&gt;
-
-&lt;p&gt;有时候，我们在受到委屈的时候，我们会以为这是悲伤的泪水，其实很多时候这些都是因为怨恨引起的愤怒的泪水。&lt;/p&gt;
-
-&lt;p&gt;所以，当我们在工作和生活中，遇到不公的待遇时，不要假设对方知道自己遭受到的不公，不要憋着不说，知道自己要什么，直白的提出自己想要的东西和解决方案，只有这样，我们才不会因为求而不得，最终产生怨恨伤害自己, 因为当你感受怨恨而渴求 “为什么会这样?” 的时候，往往对方都不关心你，你也没有必要自我折磨。&lt;/p&gt;
-
-&lt;p&gt;做自己，不要因为迎合别人丢失自我，不要因为怨恨进入受害者模式，伤害自己，不值得。&lt;/p&gt;
-
-&lt;h3 id=&quot;很多鸡汤&quot;&gt;很多鸡汤&lt;/h3&gt;
-&lt;p&gt;上面是我读这本书后感触最深的几个部分，书中依然有我认同的思想，只是我江郎才尽，没有足够的佐料继续熬下去，看着这么多鸡汤倒了可惜了，分享给大家吧，哈哈哈哈。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;不要低估视野和方向的力量，它们能够将看似不可逾越的障碍转变成宽阔通畅的道路。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;忠诚需要建立在公平和坦诚之上，友谊则应该是互惠的。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;但是也有人在经历了痛苦之后选择成为善良的人，这样的人在我看来就像超人。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;停止卑鄙的行事方式，停止令你感到懦弱和羞耻的言语。只说让你感到强大的话，只做令你为之骄傲的。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;真正想要改善世界的人，通常不会去试图改变别人，至少他们会先从改变自己。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;我应该怎样对待陌生人？邀请他来我家里，像对待兄弟一样对待他，这样他就真的有可能变成我的兄弟。这么做是在用信任将人最好的一面激发出来，用热情好客创造陌生人之间的美好联系。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;我应该怎样对待堕落的人？真诚而谨慎地伸出援手，但切记不要随他一起身陷泥潭，法则三讲的就是这一点。这个法则既能避免你陷入对牛弹琴的困境，又能阻止你用美德伪装自己的罪恶。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;用行动来体现存在的价值，避免自己因为存在的悲剧而变得痛苦和堕落。这就是法则一想表达的核心意义，即带着勇敢的信念主动迎接世界的不确定性。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;我应该怎样对待自己的不满足？想想那些一无所有的人，厘清自己的现状，努力学会感恩。你可以参考法则十二，也可以想想，也许阻碍你前进的不是机会的匮乏，而是你对已拥有的一切傲慢地视而不见。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;记住，给予比索取更有意义。这个世界是一个等待分享和交换的论坛，而不是一个等待洗劫的宝库。给予就是尽你所能让世界变得更好，当你这么做时，人们内心善的一面也会发出共鸣，大家会支持、模仿、回报和培养这样的行为，然后整个世界也会跟着变得越来越好。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;精力耗竭和心情不耐烦是不可避免的，人们总是有太多要做的事，而时间总是很有限。但是我们不需要孤军奋战，而且通过分工合作完成有意义的工作并分享功劳本来就是好事。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;我在下一个至暗时刻应该怎么做？专注在下一个正确的选择上。我们在法则十里强调过万事都有分崩离析的可能性，在混乱和不确定的环境里，唯一能够指引方向的，或许就是你通过追求理想和专注当下建设起来的人格。如果你没有完成建设，就无法应对危机，结果就只能听天由命。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;我应该如何使自己变得更强大？不要撒谎或做你鄙夷的事情。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;我应该如何使自己变得更高尚？只遵照你心灵的旨意行事。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;我应该如何面对最棘手的问题？将它们视为通向人生之道的大门。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;我应该如何帮助落魄的人？用正确的示范来鼓舞他，使他重新振作起来。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;当众人皆醉我独醒时应该做什么？坚定勇敢地说出事实的真相。&lt;/p&gt;
-
-&lt;h3 id=&quot;世间最美的是什么&quot;&gt;世间最美的是什么？&lt;/h3&gt;
-&lt;p&gt;原来我年轻的时候，总是不满足，固执的不愿停下远行的脚步，望着高高的天走了长长的路，现在回首看，恍然悔悟，什么是世间最美好的事情？&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;最美不过人间烟火气&lt;/p&gt;</content><author><name></name></author><summary type="html">去年在微博上看了乔丹·彼得森的一场TED演讲，当时被这个严肃到近乎真诚的人深深吸引，作为一位临床心理学家，他从心理学的实践出发，研究了大量现代人的心理问题，并对这些心理问题进行深入观察、感受和理解，拨开由痛苦和情绪彼此纠缠形成的迷雾，他最终把自己的感悟写成了一部巨著《人生十二法则》。</summary></entry><entry><title type="html">Gnome3的一些设置</title><link href="http://localhost:4000/linux/2020/04/14/switch-to-gnome.html" rel="alternate" type="text/html" title="Gnome3的一些设置" /><published>2020-04-14T00:00:00+08:00</published><updated>2020-04-14T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/04/14/switch-to-gnome</id><content type="html" xml:base="http://localhost:4000/linux/2020/04/14/switch-to-gnome.html">&lt;p&gt;最近EAF通过QWindow::setParent替换了X11 Reparent技术实现跨进程粘贴后，EAF现在已经可以支持Wayland。&lt;/p&gt;
-
-&lt;p&gt;同时也把桌面环境从KDE切换至Gnome3，虽然Gnome3很多地方的交互设计还是一如既往的脑残，但是总体上还是简洁不少。&lt;/p&gt;
-
-&lt;p&gt;Gnome3方面坑很多，各方面稍微调整了一下，方便下次重装系统参考。&lt;/p&gt;
-
-&lt;h4 id=&quot;去掉一些快捷键&quot;&gt;去掉一些快捷键&lt;/h4&gt;
-&lt;p&gt;我主要用Emacs和EAF，Chrome浏览器都不用，所以Gnome3很多内置快捷键会和EAF冲突, 而且这些快捷键无法通过Gnome3的设置面板中定制，需要 dconf-editor 来解决。&lt;/p&gt;
+&lt;h3 id=&quot;1-安装-igniter&quot;&gt;1. 安装 Igniter&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;安装 dconf-editor&lt;/li&gt;
-  &lt;li&gt;根据目录 org-&amp;gt;gnome-&amp;gt;shell-&amp;gt;keybindings 打开内置按键设置界面&lt;/li&gt;
-  &lt;li&gt;修改按键值为 [], 去掉内置快捷键占用&lt;/li&gt;
+  &lt;li&gt;在PC上配置好代理，首先下载Trojan的安卓客户端&lt;a href=&quot;https://github.com/trojan-gfw/igniter/releases&quot;&gt;Igniter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;使用 &lt;a href=&quot;https://github.com/filebrowser/filebrowser&quot;&gt;filebrowser-bin&lt;/a&gt; 这个应用来传递文件给平板&lt;/li&gt;
+  &lt;li&gt;安装 Igniter&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;顺便图槽一下Gnome3的返回上级的交互设计，一个返回按钮和Backspace按键可以搞定的事情，非要通过弹出单选菜单的方式进行返回，真是脑残的设计。&lt;/p&gt;
-
-&lt;h4 id=&quot;输入法配置&quot;&gt;输入法配置&lt;/h4&gt;
-
-&lt;p&gt;Fcitx 没法直接在Wayland上运行，首先需要在文件 /etc/environment 中写入配置:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;GTK_IM_MODULE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fcitx
-&lt;span class=&quot;nv&quot;&gt;QT_IM_MODULE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fcitx
-&lt;span class=&quot;nv&quot;&gt;XMODIFIERS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;@im&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fcitx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;然后通过命令
-&lt;code class=&quot;highlighter-rouge&quot;&gt;gsettings set org.gnome.settings-daemon.plugins.xsettings overrides &quot;{'Gtk/IMModule':&amp;lt;'fcitx'&amp;gt;}&quot;&lt;/code&gt;
-来设置Fcitx为输入法引擎&lt;/p&gt;
-
-&lt;h4 id=&quot;gnome-shell插件&quot;&gt;Gnome Shell插件&lt;/h4&gt;
-
-&lt;p&gt;默认安装了几个插件来定制Gnome Shell：&lt;/p&gt;
+&lt;h3 id=&quot;2-配置-igniter&quot;&gt;2. 配置 Igniter&lt;/h3&gt;
+&lt;p&gt;启动 Igniter 后，按照下面的方式在平板上配置 Trojan 信息：&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Hide Top Bar: 默认隐藏顶部栏&lt;/li&gt;
-  &lt;li&gt;NoAnnoyance: 避免弹出 “窗口已经准备好” 的无聊通知&lt;/li&gt;
-  &lt;li&gt;TopIcons Plus: 把托盘区域放到顶部面板中&lt;/li&gt;
-  &lt;li&gt;User Themes: 可以加载第三方主题&lt;/li&gt;
-  &lt;li&gt;Walkpaper：每个工作区不同的桌面壁纸，Gnome3本身没有这种设计支持，通过切换工作区换壁纸的方式来实现&lt;/li&gt;
+  &lt;li&gt;填写服务器别名和服务器IP地址&lt;/li&gt;
+  &lt;li&gt;填写服务器Trojan协议密码，一般在 client.json 文件中的 password 字段中&lt;/li&gt;
+  &lt;li&gt;禁用 “验证证书” 选项，因为第一步填写的是IP地址，所以不用验证证书，要不是会显示 Closed by peer 的错误&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Gnome3默认分组的Alt + Tab设计也是脑残至极，好的是，现在可以直接在Gnome3设置面板通过设置 “窗口切换” 命令来回归传统的Alt + Tab切换功能。&lt;/p&gt;
+&lt;p&gt;配置好以后，点击底部链接按钮，然后在 Igniter 右上角点击地球图标按钮先测试一下代理网络是否正常。代理网络正常会显示 “连接 https://www.google.com 用时 xxx ms” 的提示。&lt;/p&gt;
 
-&lt;h4 id=&quot;gnome-shell主题&quot;&gt;Gnome Shell主题&lt;/h4&gt;
+&lt;h3 id=&quot;3-增加过滤应用&quot;&gt;3. 增加过滤应用&lt;/h3&gt;
 
-&lt;p&gt;主题找了一下 Flat-Remix 主题，解压到 ~/.themes 目录下后，通过下面命令来设置主题&lt;/p&gt;
+&lt;p&gt;在 Igniter 右上角有一个菜单按钮，选择过滤应用，找到对应的应用（比如浏览器），打开过滤开关即可针对特定应用使用代理，而不会让所有应用（比如网易云音乐）走代理网络。&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gsettings set org.gnome.shell.extensions.user-theme name &quot;Flat-Remix-Dark-fullPanel&quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;That’s all, 现在可以在平板上正常办公了，enjoy!&lt;/p&gt;</content><author><name></name></author><category term="Proxy" /><summary type="html">在文章最佳代理实践详细记载了怎么让Linux桌面使用Trojan代理技术正常浏览网站。</summary></entry><entry><title type="html">感谢你给我的温暖</title><link href="http://localhost:4000/life/2020/06/22/to-grandmother.html" rel="alternate" type="text/html" title="感谢你给我的温暖" /><published>2020-06-22T00:00:00+08:00</published><updated>2020-06-22T00:00:00+08:00</updated><id>http://localhost:4000/life/2020/06/22/to-grandmother</id><content type="html" xml:base="http://localhost:4000/life/2020/06/22/to-grandmother.html">&lt;p&gt;今天得知你去世的消息，哭不出来，一点都哭不出来，不知道为什么，也许这个世间离开我的亲人太多了，伤害我的人太多了，心冷了，冷透了，当我18岁之前最爱我的人去世时，我真的哭不出来。&lt;/p&gt;
 
-&lt;h4 id=&quot;快速切换应用&quot;&gt;快速切换应用&lt;/h4&gt;
+&lt;p&gt;以下是我这辈子和你相关的事情，以此瑾记你在我心中的回忆：&lt;/p&gt;
 
-&lt;p&gt;我在&lt;a href=&quot;https://manateelazycat.github.io/linux/2019/09/13/open-or-raise.html&quot;&gt;Linux下实现打开或切换应用的功能&lt;/a&gt;文章中写了怎么快速切换应用，原理是一样的，只不过 Gnome3 的快捷键设置需要在所有命令增加 bash -c 的参数才能生效。&lt;/p&gt;
+&lt;p&gt;我人生记得第一件跟你相关的事情，就是我记得我小的时候经常吃一种灰白色的浆糊食品，在老家我们叫米芶（藕粉），因为小时候没有奶吃，八几年也没有订牛奶的服务，所以我很小很小的就吃藕粉糊糊长大，你每次跟我说的时候，都说我小时候很可怜，只能吃藕粉…可是我那是一点都不觉得可怜，我还记得那时候吃米芶用的是淡黄色的瓷碗，瓷碗周围上写着 “遵义市行署机关幼儿园” 的大红色字样，我就在碗里搅啊搅啊，感受藕粉在勺尖的阻力，感受藕粉拉开的那些银丝光泽和小气泡。那时候，我记得我就坐在北京炉边上，耳边有你熟悉的声音，给我摆很多我听不懂的话，那就是我记事开始，对你的第一印象，平平淡淡，但是充满了温暖。&lt;/p&gt;
 
-&lt;p&gt;That’s all!&lt;/p&gt;</content><author><name></name></author><summary type="html">最近EAF通过QWindow::setParent替换了X11 Reparent技术实现跨进程粘贴后，EAF现在已经可以支持Wayland。</summary></entry><entry><title type="html">快速拷贝网页中的代码片段</title><link href="http://localhost:4000/emacs/eaf/2020/04/08/eaf-copy-code.html" rel="alternate" type="text/html" title="快速拷贝网页中的代码片段" /><published>2020-04-08T00:00:00+08:00</published><updated>2020-04-08T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/04/08/eaf-copy-code</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/04/08/eaf-copy-code.html">&lt;p&gt;我们平常在研究技术的时候，经常需要复制网上的代码做实验。遇到代码特别多的时候，需要用鼠标上下拖动来拷贝代码，而且经常容易拷贝出错，非常影响效率。&lt;/p&gt;
+&lt;p&gt;我人生记得第二件跟你相关的事情，是你拿着照片跟我说的，照片上，我穿着一条毛裤和一件棕色的皮夹克，站在我家对面遵义会址后门的柏油马路上，那张照片应该是我最早的照片，充满着九十年代初的记忆，照片纸黄黄的，但是照片纸非常厚。你给我说那张照片关于我的故事：因为我们家就住在遵义会址旁边的家属院，所以拍照的时候，有很多解放军叔叔路过，有一个解放军叔叔很喜欢我，就把他的军帽给我戴，当时我抓起就扔了，然后解放军叔叔再笑呵呵的给我戴，我再扔，你还说我怎么扔叔叔的帽子，没礼貌，我扔了很多次，解放军叔叔也就作罢了，就这样照了我第一张单独的照片，也许这就是我最初的倔强吧。那段记忆，我长大时每每翻出这张照片时，你都会跟我提起这个故事。&lt;/p&gt;
 
-&lt;p&gt;今天写了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/018ec8bbadbf8bf3a8ae607fe092c89863cc8302&quot;&gt;补丁&lt;/a&gt; ， 可以做如下操作来快速拷贝网页中的代码片段：&lt;/p&gt;
+&lt;p&gt;我人生记得第三件跟你相关的事情，是那个毛毛雨的夜晚，我不记得开始，我只记得中间的过程，我趴在你背上，你用一条毛巾紧紧的裹着我全身，用贵州地区特有的背带把我死死地绑在你身上。你一步一步的走在湘江河边，因为路不是很平，所以走的时候高高矮矮的颠簸，河边有一排排的梧桐树，所以雨并不是一直飘起来，只有走到树隙间，就有几颗雨从毛巾外飘进来。那一晚，你从家里一直背我去医学院看病，因为我那晚一直发着高烧，一直到凌晨都没有退烧，那时候没有互联网，没有网约车。一到晚上只能走去医院，我记得那一晚上在你背上趴着的感觉，夜有点冷，小毛毛雨，梧桐树，偶尔一股黄色耀眼的灯光刺进来。我不记得后面的事情了，也许烧晕了。到现在回忆起来，小时候生病的过程其实和病没有关系，而是和家人背着你去医院的那些风、那些雨、那些树和路灯融合的滋味有关…&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;用EAF浏览器打开有代码片段的网页&lt;/li&gt;
-  &lt;li&gt;按 C 键调用 insert_or_copy_code 命令，会在网页中搜索所有代码片段的地方，并高亮索引标签，类似Vimium的效果&lt;/li&gt;
-  &lt;li&gt;键入相应的索引标签，即可快速拷贝代码标签到系统剪切板&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;我人生记得第四件跟你相关的事情，是有一次家里停电，和表妹一起吃猪油拌饭。你给我和表妹一人盛了一碗，我坐在桌子偏你卧室门口的这一头，你和表妹坐在桌子的那一头。因为表妹要和我争宠，说你是她的奶奶，不是我的奶奶。那一晚，我们就坐在桌子的两头吵架，桌子中间点着一根蜡烛，昏暗的晚上，我记得我气鼓鼓的，气炸了。最后你拿着一只金属青蛙逗我玩，我最后才不生气了，在停电的那一晚一直玩那只金属青蛙。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/eaf-copy-code/eaf-copy-code.gif&quot; alt=&quot;EAF Copy Code&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;我人生记得第五件跟你相关的事情，是第二天，你不知道从哪里带回来一只真的小青蛙，非常小，估计只有大拇指那么大，你把它放到玻璃瓶里面。我非常稀奇，因为我从来没有见过真正的青蛙，我记得我在玻璃瓶外放着那只金属青蛙，还在玻璃瓶上面放了一根铅笔，希望小青蛙可以从玻璃瓶底部蹦到铅笔上逃跑，我就在那里透过玻璃瓶看着小青蛙玩一下午。&lt;/p&gt;
 
-&lt;p&gt;是不是效率非常高？;)&lt;/p&gt;</content><author><name></name></author><summary type="html">我们平常在研究技术的时候，经常需要复制网上的代码做实验。遇到代码特别多的时候，需要用鼠标上下拖动来拷贝代码，而且经常容易拷贝出错，非常影响效率。</summary></entry><entry><title type="html">解决KDE下FFmpeg录制视频屏幕闪烁的问题</title><link href="http://localhost:4000/linux/2020/04/05/record-flash.html" rel="alternate" type="text/html" title="解决KDE下FFmpeg录制视频屏幕闪烁的问题" /><published>2020-04-05T00:00:00+08:00</published><updated>2020-04-05T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/04/05/record-flash</id><content type="html" xml:base="http://localhost:4000/linux/2020/04/05/record-flash.html">&lt;p&gt;KDE下，我使用我写的深度录屏录在制程序的时候，发现录制出来的视频一直有闪烁问题，最开始还以为是我代码哪里写错了。&lt;/p&gt;
+&lt;p&gt;我人生记得第六件跟你相关的事情，是关于你的饼干盒，在你的卧室，总有一大盒圆圆的蓝色金属盒，金属盒打开以后总是有满满一盒的饼干，饼干大部分是方形的，偶尔有圆形的。不管是什么形状，但是饼干总是一种风格，饼干有很多孔，在饼干表面撒了很多大颗粒白糖。我记得你每个周六的早上都会去万里路的理发店吹头发，我就趁着你吹头发的两个小时空隙，在家想办法打开你的饼干盒偷吃饼干。但是每次不能偷吃多，每次都偷吃一块，实在馋了，就偷吃两块，我知道偷吃多了你就会发现我偷吃了。你还教我这种饼干还有一种吃法：把饼干浸泡到牛奶中，泡软以后更好吃，虽然我更喜欢吃脆的口感。&lt;/p&gt;
 
-&lt;p&gt;今天搜索了一下，原来是KDE自己的锅，按照下面的方式设置一下就可以解决这个问题：&lt;/p&gt;
+&lt;p&gt;我人生记得第七件跟你相关的事情，是你每次带我去万里路理发的时候，都会给我买才从蒸笼里出来的发糕，才做好的发糕，白白的，咬一口很甜。虽然我现在再也不吃发糕了，但是我依稀记得人群中，我小手拉着你的手，穿梭在人群和叫卖声中，每周都去理发，每周都去吃发糕。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;打开KDE系统设置&lt;/li&gt;
-  &lt;li&gt;点击 “显示和监控”&lt;/li&gt;
-  &lt;li&gt;点击 “混合器”&lt;/li&gt;
-  &lt;li&gt;找到 “避免撕裂（垂直同步）” 选项，从下拉菜单中选择 “从不”&lt;/li&gt;
-  &lt;li&gt;保存&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;我人生记得第八件跟你相关的事情，是夏天凉快的时候，晚上吃过晚饭，你会带上你椭圆形的蒲扇和一张报纸，到了湘江河边，你会找到很多和你聊的来的公公婆婆，找一个干净的地方，铺上报纸唠唠家常。你摇着蒲扇，我就沿着河滨公园的石子路，一个人在那里跑来跑去，想象自己是一架飞机，跑几圈就会在你身边转一下，遇到公公婆婆你就会让我叫一下长辈，然后骄傲的给别人说：“这是我的孙”，每当别人夸你有福气的时候，你就很高兴。在这些傍晚，你告诉了我要怎么喊人，怎么做一个懂礼貌的小朋友。&lt;/p&gt;
 
-&lt;p&gt;搞定，哪天有空了，录制一下EAF的使用视频。&lt;/p&gt;</content><author><name></name></author><summary type="html">KDE下，我使用我写的深度录屏录在制程序的时候，发现录制出来的视频一直有闪烁问题，最开始还以为是我代码哪里写错了。</summary></entry><entry><title type="html">Org-Mode 表格对齐设置</title><link href="http://localhost:4000/emacs/2020/04/02/org-font.html" rel="alternate" type="text/html" title="Org-Mode 表格对齐设置" /><published>2020-04-02T00:00:00+08:00</published><updated>2020-04-02T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/04/02/org-font</id><content type="html" xml:base="http://localhost:4000/emacs/2020/04/02/org-font.html">&lt;h3 id=&quot;org-mode表格对齐&quot;&gt;Org-Mode表格对齐&lt;/h3&gt;
-&lt;p&gt;Emacs的Org-Mode表格功能是大杀器，但对于中文用户来说，比较不爽的是因为中英字体不等宽导致Org-Mode表格无法对齐显示。&lt;/p&gt;
+&lt;p&gt;我人生记得第九件跟你相关的事情，下午有时候你也会出去逛逛，夏天热的时候，会给我五毛钱去买一个长的像人头的雪糕，苦苦的，但是在那无数个夏天，这块苦苦的雪糕就是我整个夏天的记忆。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/tumashu/cnfonts&quot;&gt;cnfonts&lt;/a&gt;是针对这种问题的一种解决方案，通过找到匹配的中英文字体搭配来解决Org-Mode表格不对齐的问题，但是这种方法有一个最显著的副作用是，为了让Org-Mode表格对齐，会造成默认字体的英文字符太窄了，影响编码中字符的识别。虽然cnfonts也可以单独配置Org-Mode的字体，但是折腾也比较复杂。&lt;/p&gt;
+&lt;p&gt;我人生记得第十件跟你相关的事情，有一次带了一辆小汽车给我，那辆小汽车就是我平常看的 “侦探xxx” 动画片里面一模一样的汽车，后面是30度倾斜的栅格，真的每个细节都很像动画片里面侦探坐的那辆车。你告诉我是路上捡的，但是长大后，我才知道怎么可能路上会捡到那么新的车。&lt;/p&gt;
 
-&lt;h3 id=&quot;新的方法&quot;&gt;新的方法&lt;/h3&gt;
-&lt;p&gt;其实更简单的做法是，利用更纱黑体这个字体来解决表格对齐的问题，因为更纱黑体字体通过融合现有字体实现中文字符的宽度刚好是英文字符宽度的两倍，以此来解决表格对齐的问题。&lt;/p&gt;
+&lt;p&gt;我人生记得第十一件跟你相关的事情，是有一年过春节，那时候我估计有七岁了，那年春节可热闹了，是我们家人最齐的时候，有爸爸、有妈妈、有三爹、有二爹、还有那条浑身白色叫欢欢的狮子狗，那年春节是我最难忘的春节，一家人忙活着年夜饭，趁你们忙的时候，我还会去阳台偷吃你做的糖醋排骨。奶奶你做饭，很喜欢放姜，不管有多少肉，你都会做一碗 “清水四季豆” 或者 “清水小南瓜”， 吃完再油腻的菜，喝上一碗蔬菜汤，那就是我小时候的味道。那年春节，我不知道你们都说了什么，我只知道，那一年是我们家人最齐全的日子，真怀念啊，好怕有一天我也老了，记不得那种来之不易的 “幸福的味道”。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;首先通过命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo pacman -S ttf-sarasa-gothic wqy-microhei&lt;/code&gt; 安装好字体&lt;/li&gt;
-  &lt;li&gt;然后把下面的配置放入 ~/.emacs 中即可&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;我人生记得第十二件跟你相关的事情，是从小打到大，每天晚上一起洗脚的日子。洗脚的是一个画着虾的瓷盆，你总是叮嘱我轻拿轻放，每次洗脚的热水都好烫，洗脚的时候，你还喜欢用你的脚趾头拌成螃蟹来夹我的脚。&lt;/p&gt;
 
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emacs-font-size&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emacs-font-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;WenQuanYi Micro Hei Mono&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;set-frame-font&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;%s-%s&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emacs-font-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emacs-font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;set-fontset-font&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;frame-parameter&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'unicode&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;emacs-font-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;p&gt;我人生记得第十三件跟你相关的事情是，爸爸妈妈离婚后，爸爸打你的那天晚上，好吓人，一个案板向你扔过来，你躲过去。但是那天晚上你依然断了两根肋骨。至从他们离婚后，家已经不再是家，你不再会从容的教我讲礼貌，你也不会顽皮的教我吐舌头了。你为了躲避喝酒过度的爸爸，甚至很少回家，在外租房子住。但是我们俩依然有一个小秘密：每个偶数的周六，你都会来看看我，带我吃点东西，走的时候，偷偷塞给我5块钱，嘱咐我，这是我的紧急备用金，平常不要用。当爸爸喝酒去，没人照顾我的时候，拿着这个钱去吃碗粉。&lt;/p&gt;
 
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with-eval-after-load&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'org&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;org-buffer-face-mode-variable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;interactive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;make-face&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'width-font-face&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;set-face-attribute&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'width-font-face&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:font&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;等距更纱黑体 SC 15&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;buffer-face-mode-face&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'width-font-face&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;buffer-face-mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;p&gt;我人生记得第十四件跟你相关的事情是，有一天晚上我不知道发什么脾气了，对你拳打脚踢。你那天晚上用晾衣杆狠狠的揍了我一顿，在我全部人生的全部记忆里，那是你唯一揍我的一次，平常我在你眼里，就是那个最宠爱的孙子，不舍得打不舍得骂。&lt;/p&gt;
 
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-hook&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'org-mode-hook&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'org-buffer-face-mode-variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;我人生记得第十五件跟你相关的事情是，我去了河南生活八年，你每个月都会存半个月的退休工资，半年一起给我邮寄过来，虽然我并没有收到你寄的钱，但是你一直这样坚持寄了八年，我十六岁那年回来家读书，你跟我说，你一直寄钱给我就是怕我远在他乡被人欺负。因为我离开家乡的时候，你比我高很多，所以在我的记忆里，你一直是1米8的身高，我十六岁那年回家，看到你的第一瞬间，奶奶怎么比我还矮？不是你一直很高，而是我长大了。我走的时候你还满头黑发，回来的时候你已经两鬓花白。&lt;/p&gt;
 
-&lt;p&gt;上面配置的意思是，默认Emacs使用文泉驿字体，Org-Mode使用更纱黑体字体，这样既可以解决Org-Mode表格对齐问题，又避免对Emacs其他模式产生影响。&lt;/p&gt;</content><author><name></name></author><summary type="html">Org-Mode表格对齐 Emacs的Org-Mode表格功能是大杀器，但对于中文用户来说，比较不爽的是因为中英字体不等宽导致Org-Mode表格无法对齐显示。</summary></entry><entry><title type="html">高效创作 Mindmap -&amp;gt; Org-Mode -&amp;gt; Word</title><link href="http://localhost:4000/linux/emacs/2020/04/01/org-to-docx.html" rel="alternate" type="text/html" title="高效创作 Mindmap -&gt; Org-Mode -&gt; Word" /><published>2020-04-01T00:00:00+08:00</published><updated>2020-04-01T00:00:00+08:00</updated><id>http://localhost:4000/linux/emacs/2020/04/01/org-to-docx</id><content type="html" xml:base="http://localhost:4000/linux/emacs/2020/04/01/org-to-docx.html">&lt;p&gt;作为Emacser，最享受在Emacs高效的处理文字，特别是在Emacs中编辑Markdown和Org文件，完全就是一种行云流水的感觉。
-但是我们无法让所有的朋友和同事都使用Emacs，特别是有时候要发送公司文件给客户，客户一般都用Word。&lt;/p&gt;
+&lt;p&gt;也许是分开太多年，也不知道这么多年在老家你发生了什么事情，在遵义的两年，你一直在我耳旁唠叨家里的一切，充满了仇恨。我那时候非常叛逆，十八岁出去外面混，见你的日子也越来越少。第一次去北京北漂，失败回来。去成都和东莞回来，2010年结婚的那晚，你一直唠叨，把我都说哭了，我真的不知道你为什么心里那么多仇恨，为什么不能放下？为什么不能和平的过日子？为什么爸爸妈妈都离婚那么多年，你依然不能原谅妈妈？我那时候真的很不能理解, 2011年我去了武汉，联合创建了深度操作系统团队。&lt;/p&gt;
 
-&lt;p&gt;今天就介绍一种在Emacs中编写Org-Mode文件，然后通过Pandoc这个工具导出成Word文档的方法。&lt;/p&gt;
+&lt;p&gt;2016年接你来武汉住了几天，但是这二十年的仇恨，你从遵义带到武汉，我真的好担心你会把这些仇恨带给我的女儿。我记得那天你和我老婆吵了一架，我很害怕我小时候的一切又在我女儿身上重演，我记得我陪你回遵义的路上，你一路骂骂咧咧的。我真的好想对你说，过去的一切都让它过去吧，不管过去怎样对我们，只要我们放下，依然可以平平安安的过好日子的。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;首先创建一个 test.org 文件，第一行加入Org格式的标题字符串 &lt;code class=&quot;highlighter-rouge&quot;&gt;#+TITLE: 文档标题&lt;/code&gt;, 然后按照Org-Mode格式写文件内容&lt;/li&gt;
-  &lt;li&gt;执行命令: &lt;code class=&quot;highlighter-rouge&quot;&gt;pandoc test.org -o test.docx --reference-doc=template.docx&lt;/code&gt; 生成Word文档&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;从2016年一别的四年，我的人生也经历了大起大落，很多事情我现在可以放得下了。我不再像年轻的时候那样爱憎分明了，很多事情更为包容和理解了。我也能够理解爱我的人和恨我的人。曾经我徘徊在想你和怕你的日子，想回去看看你，可是真的回到钛厂楼下的时候，你的房子已经被拆了。&lt;/p&gt;
 
-&lt;p&gt;template.docx 模板文件包含了各种样式细节，它会指导Pandoc按照模板文件相同的样式来转换Word文档，测试时可以下载我的&lt;a href=&quot;https://github.com/manateelazycat/lazycat-emacs/blob/master/site-lisp/template/template.docx&quot;&gt;template.docx&lt;/a&gt;文件。&lt;/p&gt;
+&lt;p&gt;就在我继续徘徊的日子，一直徘徊到今天，听到了再也见不到你的消息，这该死的疫情。&lt;/p&gt;
 
-&lt;h3 id=&quot;为什么不直接在office中编辑&quot;&gt;为什么不直接在Office中编辑？&lt;/h3&gt;
-&lt;p&gt;内容用Org创作，再转换成Word文档，这样做的好处是：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;文本操作效率高：可以利用Emacs强大的编辑命令快速编辑文件内容，而不是在Word中笨拙的操作光标&lt;/li&gt;
-  &lt;li&gt;利用Emacs生态：Emacs有很多插件，纯文本的方式非常适合Emacs快速进行搜索和替换等操作&lt;/li&gt;
-  &lt;li&gt;利用Org生态：比如切换缩进、按照章节移动、快速修复错误序号等问题都可以通过Org生态工具快速完成，而Word光选择一个大型的段落都要操作好久&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;我已经长大，我不再也不是你在河滨公园拉着的那双小手了，而我再也没有机会在我经历过一切后希望有一天能够再看见你，再也没有机会让你原谅我，再也没有机会让你给我温暖。&lt;/p&gt;
 
-&lt;h3 id=&quot;生成模板文件&quot;&gt;生成模板文件&lt;/h3&gt;
-&lt;p&gt;上面的命令中提到控制Word样式的模板文件，其实最简单创建模板的方法是:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;先用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;pandoc test.org -o template.docx&lt;/code&gt; 生成一个带Pandoc默认样式的Word文档&lt;/li&gt;
-  &lt;li&gt;用Office软件打开 template.docx 文件，修改样式成你喜欢的模样&lt;/li&gt;
-  &lt;li&gt;保存 template.docx 文件即可&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;emacs中操作&quot;&gt;Emacs中操作&lt;/h3&gt;
-
-&lt;p&gt;Emacs用户可以用我下面的Elisp函数来实现一键自动转换的功能：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;org-export-docx&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;interactive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;docx-file&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;concat&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-name-sans-extension&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;buffer-file-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;.docx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-           &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;template-file&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/path/template.docx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;shell-command&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;pandoc %s -o %s --reference-doc=%s&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;buffer-file-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;docx-file&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;template-file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Convert finish: %s&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;docx-file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;注意，需要替换上面代码中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;/path/template.docx&lt;/code&gt; 路径需要替换成你生成模板文件的真实路径。&lt;/p&gt;
-
-&lt;h3 id=&quot;高效创作&quot;&gt;高效创作&lt;/h3&gt;
-&lt;p&gt;我平常写文档的实践步骤是&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;理清思路：用EAF思维导图工具做大纲&lt;/li&gt;
-  &lt;li&gt;填充内容：EAF思维导图导出Org格式大纲后，填充内容&lt;/li&gt;
-  &lt;li&gt;转换格式：Org内容写完后，导出成Word文档给客户&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;同样的文档篇幅，Office软件需要编辑2个小时，通过这些工具链的协作，一般只需要半个小时就可以完成。&lt;/p&gt;
-
-&lt;p&gt;因为给客户的文档都是非常规范的，只需要一次性设置好模板文件的样式，文档大纲和内容样式都可以通过工具自动生成，工具会帮合我们节省大量手动排版的时间，创作时只有关心内容即可，所以效率非常高。&lt;/p&gt;</content><author><name></name></author><summary type="html">作为Emacser，最享受在Emacs高效的处理文字，特别是在Emacs中编辑Markdown和Org文件，完全就是一种行云流水的感觉。 但是我们无法让所有的朋友和同事都使用Emacs，特别是有时候要发送公司文件给客户，客户一般都用Word。</summary></entry><entry><title type="html">Nox内建对微软Python Language Server的支持</title><link href="http://localhost:4000/emacs/nox/2020/03/30/nox-support-microsoft-server.html" rel="alternate" type="text/html" title="Nox内建对微软Python Language Server的支持" /><published>2020-03-30T00:00:00+08:00</published><updated>2020-03-30T00:00:00+08:00</updated><id>http://localhost:4000/emacs/nox/2020/03/30/nox-support-microsoft-server</id><content type="html" xml:base="http://localhost:4000/emacs/nox/2020/03/30/nox-support-microsoft-server.html">&lt;p&gt;微软的VSCode之所以好用，除了LSP协议的标准化外，微软自家的语言服务器在质量和性能也比社区实现的语言服务器要好得多。&lt;/p&gt;
-
-&lt;p&gt;今天通过&lt;a href=&quot;https://github.com/manateelazycat/nox/commit/02708ca6db62993b6611d662348af5f91b369234&quot;&gt;这个补丁&lt;/a&gt;实现了 intelephense 对PHP语法补全的支持，而intelephense正是VSCode内置的PHP语言服务器。&lt;/p&gt;
-
-&lt;p&gt;在Python领域，开源社区的&lt;a href=&quot;https://github.com/palantir/python-language-server&quot;&gt;Python Language Server&lt;/a&gt;主要是基于jedi这个库来实现的，对于大型的Python计算库，比如补全numpy的时候就会卡一下。&lt;/p&gt;
-
-&lt;p&gt;微软自己的Python Language Server – &lt;a href=&quot;https://github.com/microsoft/python-language-server&quot;&gt;mspyls&lt;/a&gt;主要是用C#实现的，性能上要比pyls好很多。&lt;/p&gt;
-
-&lt;p&gt;今天晚上给Nox写了一个补丁&lt;a href=&quot;https://github.com/manateelazycat/nox/commit/7e2502ba2f7afe90de7f86b477247eb8858d19a5&quot;&gt;Use mspyls as default Python Language Server&lt;/a&gt;，实现内建对mspyls的支持。&lt;/p&gt;
-
-&lt;h4 id=&quot;体验mspyls&quot;&gt;体验mspyls&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;下载和安装&lt;a href=&quot;https://github.com/manateelazycat/nox&quot;&gt;Nox&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;nox-print-mspyls-download-url&lt;/code&gt; 命令，打印当前操作系统安装包的下载地址&lt;/li&gt;
-  &lt;li&gt;下载并解压文件到 ~/.emacs.d/nox/mspyls 目录下，保证目录的根位置有 Microsoft.Python.LanguageServer 这个文件&lt;/li&gt;
-  &lt;li&gt;给mspyls索引权限: &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo chmod +x -R  ~/.emacs.d/nox/mspyls&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;直接打开 python 文件，即可快速进行语法补全&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;注意&quot;&gt;注意&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;mspyls在语法补全之前会索引项目的文件，请不要直接在 HOME 目录下创建单文件进行语法补全测试，如果你的 HOME 目录文件很多，索引甚至会持续10多分钟&lt;/li&gt;
-  &lt;li&gt;测试建议在HOME下建立一个test的空文件夹，然后再在test文件夹里面创建单文件来测试&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;mspyls-和-pyls-的优缺点&quot;&gt;mspyls 和 pyls 的优缺点&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;pyls: 基于jedi实现的，不建索引，大型Python库的语法补全比较慢&lt;/li&gt;
-  &lt;li&gt;mspyls: 用C# 实现的，补全速度快，但是在巨型目录下，首次索引比较慢&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Nox默认使用mspyls作为Python的默认语言服务器，如果要切换回开源社区的 pyls ，直接修改默认服务器的设置即可：&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nox-python-server&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;pyls&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;感谢&quot;&gt;感谢&lt;/h4&gt;
-&lt;p&gt;感谢Emacs-China和Github社区朋友的帮助，让我这个老年人可以早点睡觉, 特别是 &lt;a href=&quot;https://github.com/theFool32&quot;&gt;theFool32&lt;/a&gt;和&lt;a href=&quot;https://github.com/seagle0128&quot;&gt;seagle0128&lt;/a&gt;的支持，在我解题解到山穷水尽时，给我柳暗花明的灵感和帮助。;)&lt;/p&gt;</content><author><name></name></author><summary type="html">微软的VSCode之所以好用，除了LSP协议的标准化外，微软自家的语言服务器在质量和性能也比社区实现的语言服务器要好得多。</summary></entry><entry><title type="html">Nox - 轻量级LSP客户端</title><link href="http://localhost:4000/emacs/nox/2020/03/29/nox.html" rel="alternate" type="text/html" title="Nox - 轻量级LSP客户端" /><published>2020-03-29T00:00:00+08:00</published><updated>2020-03-29T00:00:00+08:00</updated><id>http://localhost:4000/emacs/nox/2020/03/29/nox</id><content type="html" xml:base="http://localhost:4000/emacs/nox/2020/03/29/nox.html">&lt;h3 id=&quot;lsp&quot;&gt;LSP&lt;/h3&gt;
-&lt;p&gt;Emacs，因其丰富的插件生态和高度一致的协同环境，不论敲代码还是写文章都有行云流水的感觉。
-一直以来Emacs的短板都在智能语法补全上，不能像VSCode那样非常智能的补全代码。&lt;/p&gt;
-
-&lt;p&gt;随着VSCode的流行和微软在开源社区的发力，LSP（编程语言服务器协议）逐渐发展成为代码智能补全领域的佼佼者。
-通过标准的LSP协议，只用为编辑器或IDE开发一款LSP客户端，即可对所有的编
-程语言提供智能补全支持，以解决原来众多编辑器（N）和补全后端（M）相互组
-合产生的 M x N 问题，避免了大家反复造轮子，可以集中社区更多的资源在语
-言服务器后端的开发和优化上。&lt;/p&gt;
-
-&lt;h3 id=&quot;协议研究&quot;&gt;协议研究&lt;/h3&gt;
-&lt;p&gt;Emacs目前也有两个LSP客户端: &lt;a href=&quot;https://github.com/emacs-lsp/lsp-mode&quot;&gt;lsp-mode&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/joaotavora/eglot&quot;&gt;eglot&lt;/a&gt;, 但是这两个客户端的性能却不是很好，特别是lsp-mode, 写一会代码就会卡一下，非常影响编程思路。&lt;/p&gt;
-
-&lt;p&gt;周末完整的研读了LSP的&lt;a href=&quot;https://microsoft.github.io/language-server-protocol/specifications/specification-current/&quot;&gt;协议规范细节&lt;/a&gt;, 并调研了Rust, Golang和Python的JSONRPC库用法，最后决定用Python来实现一个新的LSP代理客户端，因为Python有完整的多线程支持，所以不会出现预想的LSP数据流堵塞Emacs输入的问题。&lt;/p&gt;
-
-&lt;p&gt;经过昨天一天的研究和调试，发现其实LSP Server在代码补全时返回的数据并不
-大，为什么lsp-mode和eglot还会卡住Emacs呢？难道不是之前猜想的Elisp解析JSON慢的问题？&lt;/p&gt;
-
-&lt;p&gt;为了弄明白性能瓶颈，随即裁剪了Eglot进行对比测试，主要针对代码补全以外的功能进行裁剪&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;用posframe替代eldoc来显示文档，避免每次输入一个单词就从服务器请求一次文档&lt;/li&gt;
-  &lt;li&gt;去掉了所有LSP Server返回的代码诊断消息和处理函数，并从Eglot中移除
-flymake相关的代码&lt;/li&gt;
-  &lt;li&gt;默认只补全符号，并禁止补全代码模板，因为yasnippet的参数选中状态很容易消
-失，一旦模板代码写错了，要修改调整反而效率更低&lt;/li&gt;
-  &lt;li&gt;去掉 documentHighlight 协议，没啥用，反而经常通过overlay污染代码空间&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;通过上面的裁剪过后，Eglot居然异常流畅，真是喜出望外啊。&lt;/p&gt;
-
-&lt;h3 id=&quot;nox&quot;&gt;Nox&lt;/h3&gt;
-&lt;p&gt;在Eglot的代码基础之上，今天发布了新的Emacs LSP客户端 – &lt;a href=&quot;https://github.com/manateelazycat/nox&quot;&gt;Nox&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;目前Nox已经支持以下编程语言：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Javascript: &lt;a href=&quot;https://github.com/sourcegraph/javascript-typescript-langserver&quot;&gt;javascript-typescript-stdio&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Rust: &lt;a href=&quot;https://github.com/rust-lang-nursery/rls&quot;&gt;rls&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Python: &lt;a href=&quot;https://github.com/palantir/python-language-server&quot;&gt;pyls&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Ruby: &lt;a href=&quot;https://github.com/castwide/solargraph&quot;&gt;solargraph&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Java: &lt;a href=&quot;https://github.com/eclipse/eclipse.jdt.ls&quot;&gt;Eclipse JDT Language Server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Bash: &lt;a href=&quot;https://github.com/mads-hartmann/bash-language-server&quot;&gt;bash-language-server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;PHP: &lt;a href=&quot;https://github.com/felixfbecker/php-language-server&quot;&gt;php-language-server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;C/C++: &lt;a href=&quot;https://github.com/MaskRay/ccls&quot;&gt;ccls&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Haskell: &lt;a href=&quot;https://github.com/haskell/haskell-ide-engine&quot;&gt;IDE engine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Elm: &lt;a href=&quot;https://github.com/elm-tooling/elm-language-server&quot;&gt;elm-language-server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Kotlin: &lt;a href=&quot;https://github.com/fwcd/KotlinLanguageServer&quot;&gt;kotlin-language-server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Go: &lt;a href=&quot;https://github.com/golang/go/wiki/gopls&quot;&gt;gopls&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Ocaml: &lt;a href=&quot;https://github.com/freebroccolo/ocaml-language-server&quot;&gt;ocaml-language-server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;R: &lt;a href=&quot;https://cran.r-project.org/package=languageserver&quot;&gt;languageserver&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Dart: &lt;a href=&quot;https://github.com/natebosch/dart_language_server&quot;&gt;dart_language_server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Elixir: &lt;a href=&quot;https://github.com/JakeBecker/elixir-ls&quot;&gt;elixir-ls&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Ada: &lt;a href=&quot;https://github.com/AdaCore/ada_language_server&quot;&gt;ada_language_server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Scala: &lt;a href=&quot;http://scalameta.org/metals/&quot;&gt;metals&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;TeX/LaTeX: &lt;a href=&quot;https://github.com/astoff/digestif&quot;&gt;Digestif&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Dockerfile: &lt;a href=&quot;https://github.com/rcjsuen/dockerfile-language-server-nodejs&quot;&gt;dockerfile_language_server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;HTML &lt;a href=&quot;https://github.com/Microsoft/vscode/tree/master/extensions/html-language-features/server&quot;&gt;html_language_server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;CSS: &lt;a href=&quot;https://github.com/Microsoft/vscode/tree/master/extensions/css-language-features/server&quot;&gt;css_language_server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;JSON: &lt;a href=&quot;https://www.npmjs.com/package/vscode-json-languageserver&quot;&gt;json_language_server&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/pics/nox/nox.png&quot; alt=&quot;Nox&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Nox的项目目标主要有三个：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;功能上：只提供代码补全、代码定义跳转、代码引用和重命名功能这四个最核心的功能&lt;/li&gt;
-  &lt;li&gt;设计上：保持界面交互简洁无打扰, 不会像 lsp-ui 提供花里胡哨的功能，减少对用户专注力的干扰&lt;/li&gt;
-  &lt;li&gt;性能上：裁剪无用功能, 优化代码效率，保证代码补全时的流畅手感&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;在我看来，像语法检测和代码模板，flycheck以及yasnippet这些插件的资源占
-用率更低，也更为专业。&lt;/p&gt;
-
-&lt;p&gt;如果你追求LSP所有功能，lsp-mode和Eglot是更好的选择，如果你追求极致的编
-码流畅度，Nox肯定是目前用户体验和性能最好的LSP客户端。&lt;/p&gt;
-
-&lt;h3 id=&quot;安装&quot;&gt;安装&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;先安装依赖组件 &lt;a href=&quot;https://github.com/company-mode/company-mode&quot;&gt;company-mode&lt;/a&gt;和&lt;a href=&quot;https://github.com/tumashu/posframe&quot;&gt;posframe&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;拷贝&lt;a href=&quot;https://github.com/manateelazycat/nox&quot;&gt;Nox&lt;/a&gt;代码到Emacs的 load-path 路径&lt;/li&gt;
-  &lt;li&gt;把下面的配置加到 ~/.emacs 中&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'nox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dolist&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;hook&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;
-               &lt;span class=&quot;ss&quot;&gt;'js-mode-hook&lt;/span&gt;
-               &lt;span class=&quot;ss&quot;&gt;'rust-mode-hook&lt;/span&gt;
-               &lt;span class=&quot;ss&quot;&gt;'python-mode-hook&lt;/span&gt;
-               &lt;span class=&quot;ss&quot;&gt;'ruby-mode-hook&lt;/span&gt;
-               &lt;span class=&quot;ss&quot;&gt;'java-mode-hook&lt;/span&gt;
-               &lt;span class=&quot;ss&quot;&gt;'sh-mode-hook&lt;/span&gt;
-               &lt;span class=&quot;ss&quot;&gt;'php-mode-hook&lt;/span&gt;
-               &lt;span class=&quot;ss&quot;&gt;'c-mode-common-hook&lt;/span&gt;
-               &lt;span class=&quot;ss&quot;&gt;'c-mode-hook&lt;/span&gt;
-               &lt;span class=&quot;ss&quot;&gt;'c++-mode-hook&lt;/span&gt;
-               &lt;span class=&quot;ss&quot;&gt;'haskell-mode-hook&lt;/span&gt;
-               &lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-hook&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hook&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;nox-ensure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;安装配置好以后，打开源码文件，即可享受流畅的智能补全体验。&lt;/p&gt;
-
-&lt;h3 id=&quot;常用命令&quot;&gt;常用命令&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;命令&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;解释&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;nox&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;启动Nox客户端&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;nox-reconnect&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;重新链接LSP服务器&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;nox-shutdown&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;终止LSP服务器&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;nox-show-doc&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;显示光标处符号的文档&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;nox-rename&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;项目范围内批量重命名&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;nox-format&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;格式化当前文件或选中区域&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;xref-find-definitions&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;查找光标处符号定义&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;xref-find-definitions-other-window&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;在其他窗口中查找光标处符号定义&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;xref-pop-marker-stack&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;返回定义跳转前的位置&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;xref-find-references&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;查找光标处符号的所有引用&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;nox-event-buffer&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;切换到LSP消息文件，查看LSP协议消息&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;nox-stderr-buffer&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;切换到子进程管道文件，查看通讯细节和排错信息&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;更多命令和设置选项可以查看&lt;a href=&quot;https://github.com/manateelazycat/nox&quot;&gt;Nox&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;Enjoy! ;)&lt;/p&gt;</content><author><name></name></author><summary type="html">LSP Emacs，因其丰富的插件生态和高度一致的协同环境，不论敲代码还是写文章都有行云流水的感觉。 一直以来Emacs的短板都在智能语法补全上，不能像VSCode那样非常智能的补全代码。</summary></entry><entry><title type="html">Emacs Trick – 颜色重定向</title><link href="http://localhost:4000/emacs/2020/03/28/color-remap.html" rel="alternate" type="text/html" title="Emacs Trick -- 颜色重定向" /><published>2020-03-28T00:00:00+08:00</published><updated>2020-03-28T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/03/28/color-remap</id><content type="html" xml:base="http://localhost:4000/emacs/2020/03/28/color-remap.html">&lt;p&gt;&lt;a href=&quot;https://github.com/manateelazycat/snails&quot;&gt;Snails&lt;/a&gt; 的输入框是无背景设计，整体设计感更好一点。&lt;/p&gt;
-
-&lt;p&gt;但是用户如果设置了 &lt;code class=&quot;highlighter-rouge&quot;&gt;hl-line&lt;/code&gt; 这个Face，会导致snails的输入框是有两种背景颜色，非常丑。&lt;/p&gt;
-
-&lt;p&gt;最开始准备使用临时变量，在进入 snails 的时候保存一下 &lt;code class=&quot;highlighter-rouge&quot;&gt;hl-line&lt;/code&gt; 背景颜色，进入 snails 取消 &lt;code class=&quot;highlighter-rouge&quot;&gt;hl-line&lt;/code&gt; 背景， snails 消失的时候重新恢复 &lt;code class=&quot;highlighter-rouge&quot;&gt;hl-line&lt;/code&gt; 背景。&lt;/p&gt;
-
-&lt;p&gt;想了想，这样做太脆弱了，一旦出问题还会导致用户的 &lt;code class=&quot;highlighter-rouge&quot;&gt;hl-line&lt;/code&gt; 样式损坏。&lt;/p&gt;
-
-&lt;p&gt;Google了一下Emacs关于 local face 的文章，发现可以像下面这种方式来临时设置某一个 face 的样式。&lt;/p&gt;
-
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;face-remap-add-relative&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'hl-line&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:background&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;face-background&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'snails-input-buffer-face&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;上面代码的意思是，把 &lt;code class=&quot;highlighter-rouge&quot;&gt;hl-line&lt;/code&gt; 的 background 属性重定向到 &lt;code class=&quot;highlighter-rouge&quot;&gt;snails-input-buffer-face&lt;/code&gt; 背景色，这样既可以保证snails输入框的无背景设计，实现又非常健壮，不会因为意外对用户的主题产生副作用。&lt;/p&gt;
-
-&lt;p&gt;Emacs还是博大精深啊，学了这么多年，还有很多东西都不懂。&lt;/p&gt;</content><author><name></name></author><summary type="html">Snails 的输入框是无背景设计，整体设计感更好一点。</summary></entry></feed>
+&lt;p&gt;希望天堂再也没有仇恨…&lt;/p&gt;</content><author><name></name></author><category term="Life" /><summary type="html">今天得知你去世的消息，哭不出来，一点都哭不出来，不知道为什么，也许这个世间离开我的亲人太多了，伤害我的人太多了，心冷了，冷透了，当我18岁之前最爱我的人去世时，我真的哭不出来。</summary></entry></feed>

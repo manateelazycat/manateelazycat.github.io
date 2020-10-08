@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -54,7 +51,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数3068 2020-03-17
+                字数3082 2020-03-17
             </div>
             <div class="content">
                 <h2 id="不断变化的gfw">不断变化的GFW</h2>
@@ -84,7 +81,7 @@ deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free co
 
 <h3 id="安装trojan服务端">安装Trojan服务端</h3>
 
-<p>通过命令 <code class="highlighter-rouge">ssh root@your_vps_ip</code> 登录VPS服务器后，执行下面脚本自动安装和配置Trojan服务端:</p>
+<p>通过命令 <code class="language-plaintext highlighter-rouge">ssh root@your_vps_ip</code> 登录VPS服务器后，执行下面脚本自动安装和配置Trojan服务端:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-N</span> <span class="nt">--no-check-certificate</span> https://raw.githubusercontent.com/mark-hans/trojan-wiz/master/ins.sh <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> +x ins.sh <span class="o">&amp;&amp;</span> bash ins.sh
 </code></pre></div></div>
@@ -93,7 +90,7 @@ deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free co
 
 <h3 id="启动trojan服务端">启动Trojan服务端</h3>
 
-<p>安装完成后，使用命令<code class="highlighter-rouge">systemctl start trojan-gfw</code> 启动trojan服务端, 同时可以用命令<code class="highlighter-rouge">systemctl status trojan-gfw</code>来检查trojan服务端的状态，如果状态为<code class="highlighter-rouge">active(running)</code>, 证明trojan服务端已经启动。</p>
+<p>安装完成后，使用命令<code class="language-plaintext highlighter-rouge">systemctl start trojan-gfw</code> 启动trojan服务端, 同时可以用命令<code class="language-plaintext highlighter-rouge">systemctl status trojan-gfw</code>来检查trojan服务端的状态，如果状态为<code class="language-plaintext highlighter-rouge">active(running)</code>, 证明trojan服务端已经启动。</p>
 
 <h3 id="拷贝服务端配置文件">拷贝服务端配置文件</h3>
 
@@ -106,24 +103,24 @@ deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free co
 
 <p>比如你的VPS IP为 xxx.xxx.xxx.xxx，使用下面的命令来完成拷贝服务端配置文件到本机：</p>
 
-<p><code class="highlighter-rouge">scp root@xxx.xxx.xxx.xxx:/home/trojan/ca-cert.pem ./</code></p>
+<p><code class="language-plaintext highlighter-rouge">scp root@xxx.xxx.xxx.xxx:/home/trojan/ca-cert.pem ./</code></p>
 
-<p><code class="highlighter-rouge">scp root@xxx.xxx.xxx.xxx:/home/trojan/client.json ./</code></p>
+<p><code class="language-plaintext highlighter-rouge">scp root@xxx.xxx.xxx.xxx:/home/trojan/client.json ./</code></p>
 
 <h3 id="下载trojan客户端">下载Trojan客户端</h3>
 
 <ul>
-  <li>首先在VPS使用命令 <code class="highlighter-rouge">ping github.com</code>, 获取 github.com 的ip地址, 比如是 192.30.253.112</li>
-  <li>在本机 /etc/hosts 文件中加入 <code class="highlighter-rouge">192.30.253.112 github.com</code> , 这样访问github页面就暂时不需要FQ</li>
-  <li>重启本机网络服务: <code class="highlighter-rouge">sudo systemctl restart NetworkManager</code></li>
-  <li>下载Trojan客户端: <code class="highlighter-rouge">wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz</code></li>
+  <li>首先在VPS使用命令 <code class="language-plaintext highlighter-rouge">ping github.com</code>, 获取 github.com 的ip地址, 比如是 192.30.253.112</li>
+  <li>在本机 /etc/hosts 文件中加入 <code class="language-plaintext highlighter-rouge">192.30.253.112 github.com</code> , 这样访问github页面就暂时不需要FQ</li>
+  <li>重启本机网络服务: <code class="language-plaintext highlighter-rouge">sudo systemctl restart NetworkManager</code></li>
+  <li>下载Trojan客户端: <code class="language-plaintext highlighter-rouge">wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz</code></li>
 </ul>
 
 <p>下载trojan-1.14.1-linux-amd64.tar.xz后，解压文件，把ca-cert.pem和client.json拷贝到 trojan 目录下。</p>
 
 <h3 id="启动trojan客户端">启动Trojan客户端</h3>
 
-<p><code class="highlighter-rouge">./trojan -c client.json</code> 即可在 127.0.0.1:1080 建立本地代理连接，最后通过Chrome SwitchyOmega来配置浏览器的代理设置。</p>
+<p><code class="language-plaintext highlighter-rouge">./trojan -c client.json</code> 即可在 127.0.0.1:1080 建立本地代理连接，最后通过Chrome SwitchyOmega来配置浏览器的代理设置。</p>
 
 <p>在浏览器验证可以FQ以后，你可以清除刚刚在本机 /etc/hosts 的github设置。</p>
 
@@ -137,7 +134,7 @@ deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free co
 	proxy <span class="o">=</span> socks5://127.0.0.1:1080
 </code></pre></div></div>
 
-<p>注意，上明配置等同于命令 <code class="highlighter-rouge">git config --global http.proxy 'socks5://127.0.0.1:1080'</code></p>
+<p>注意，上明配置等同于命令 <code class="language-plaintext highlighter-rouge">git config --global http.proxy 'socks5://127.0.0.1:1080'</code></p>
 
 <p>Git不认https.proxy，设置http.proxy就可以支持 https 了。</p>
 
@@ -152,16 +149,11 @@ Port 22
 ProxyCommand /usr/bin/ncat <span class="nt">--proxy</span> 127.0.0.1:1080 <span class="nt">--proxy-type</span> socks5 %h %p
 </code></pre></div></div>
 
-<h2 id="配置yay代理">配置yay代理</h2>
+<h2 id="yay和代理">yay和代理</h2>
+<p>yay会经常从 aur.archlinux.org 上 git clone 源码，但是不要在 bashrc 中设置 http_proxy 和 https_proxy 环境变量。
+会导致 yay 在 git clone 时报 <code class="language-plaintext highlighter-rouge">OpenSSL SSL_connection: SSL_ERROR_SYSCALL</code> 的错误，原因是设置代理后 https 变成了 http。</p>
 
-<p>yay 代理有两种方式，一种是设置代理环境变量，一种是通过安装 gcc-go 替换 go 来支持 <code class="highlighter-rouge">proxychains4 yay</code> 的代理操作。
-因为 gccgo 很多实现和 go 都有很大的差别，为了不影响其他 go 程序，选择第一种方式。</p>
-
-<p>在 <code class="highlighter-rouge">~/.bashrc</code> 文件中添加如下的代理配置：</p>
-
-<pre><code class="language-Bash">export http_proxy=socks5://127.0.0.1:1080
-export https_proxy=socks5://127.0.0.1:1080
-</code></pre>
+<p>注意， .gitconfig 里设置代理也会导致 yay 报上面的错，yay安装软件时可以临时注释掉 .gitconfig 文件中关于代理的配置。</p>
 
 <h2 id="配置aria2代理">配置Aria2代理</h2>
 <p>我们上面已经配置了Socks5代理，但是Aria2只支持HTTP代理, 所以我们需要通过 privoxy 来转换Socks5代理成HTTP代理:</p>
@@ -175,7 +167,7 @@ export https_proxy=socks5://127.0.0.1:1080
 listen-address 127.0.0.1:9888
 </code></pre></div></div>
 
-<p>这样aria2就可以直接用 <code class="highlighter-rouge">127.0.0.1:9888</code> 这个Http代理来下载东西了。</p>
+<p>这样aria2就可以直接用 <code class="language-plaintext highlighter-rouge">127.0.0.1:9888</code> 这个Http代理来下载东西了。</p>
 
 <h2 id="配置npm代理">配置npm代理</h2>
 

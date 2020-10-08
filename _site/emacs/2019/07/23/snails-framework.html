@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -72,7 +69,7 @@ Snails的这个项目的主要目的是：</p>
   <li>多线程不可行： Emacs的多线程设计上，每次只能运行一个线程上下文，所以不能采用像Gtk/Qt那样通过子线程的思路来解决耗时搜索时不卡界面的方法，因为一旦Emacs切换到耗时操作所在线程，耗时操作放还是会卡主Emacs。</li>
   <li>多进程可行：简单的搜索，比如搜索打开的文件，就放到Emacs进程中处理，耗时的搜索需要放到子进程里面处理, 这样耗时搜索的时候就不会卡主Emacs了</li>
   <li>避免子进程轰炸Emacs：子进程每更新一行结果不要去刷新Emacs的界面，对用户的输入流畅性干扰很大，在进程搜索完成以后再统一渲染结果，所以后端Shell命令就要选择高效率的工具，比如选 ripgrep 而不是 grep, 选 fd 而不是 find (Rust大法好，哈哈哈)</li>
-  <li>按键缝隙不要创建子进程：一个人的输入间隔在 50ms ~ 200ms 之间，因为子进程创建一次很昂贵，所以在敲击键盘的时候就不要创建异步后端的子进程，以节省系统资源，这时候可以用 <code class="highlighter-rouge">run-with-idle-timer</code> 函数做延迟处理，当用户手指头一松开在发愣的时候才创建搜索子进程</li>
+  <li>按键缝隙不要创建子进程：一个人的输入间隔在 50ms ~ 200ms 之间，因为子进程创建一次很昂贵，所以在敲击键盘的时候就不要创建异步后端的子进程，以节省系统资源，这时候可以用 <code class="language-plaintext highlighter-rouge">run-with-idle-timer</code> 函数做延迟处理，当用户手指头一松开在发愣的时候才创建搜索子进程</li>
   <li>尽快杀掉旧进程：当用户输入很快时，有一些子进程还在搜索旧的输入字符串，可以在新的搜索进程开始之前尽快的杀掉那些还还没有结束的旧进程，减少对系统资源的占用。</li>
 </ol>
 
@@ -84,7 +81,7 @@ Snails的这个项目的主要目的是：</p>
 
 <p>简单一句话来概括框架：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>每次用户输入的时候框架分配一个新的 ticker ,
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>每次用户输入的时候框架分配一个新的 ticker ,
 后端们自己去搜索，得到结果的时候看看自己的 ticker 是不是最新的，
 最新的就能用，不是最新的就丢掉。
 </code></pre></div></div>

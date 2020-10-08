@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -69,12 +66,12 @@
 
 <h3 id="举一个简单的例子">举一个简单的例子：</h3>
 
-<p>在Elisp端，我们使用 eaf-set 设置了 <code class="highlighter-rouge">eaf-camera-save-path</code> 这个变量的值</p>
+<p>在Elisp端，我们使用 eaf-set 设置了 <code class="language-plaintext highlighter-rouge">eaf-camera-save-path</code> 这个变量的值</p>
 
 <pre><code class="language-Elisp">(eaf-set 'eaf-camera-save-path "~/Downloads")
 </code></pre>
 
-<p>eaf-set 会自动更新 EAF Python 端 buffer 中的字典 <code class="highlighter-rouge">emacs_var_dict</code> 对应的 key, 最终我们在 EAF Python 端可以通过下面的代码来获取刚刚我们通过 eaf-set 设置的变量 eaf-camera-save-path 的值。</p>
+<p>eaf-set 会自动更新 EAF Python 端 buffer 中的字典 <code class="language-plaintext highlighter-rouge">emacs_var_dict</code> 对应的 key, 最终我们在 EAF Python 端可以通过下面的代码来获取刚刚我们通过 eaf-set 设置的变量 eaf-camera-save-path 的值。</p>
 
 <pre><code class="language-Python">self.emacs_var_dict["eaf-camera-save-path"]
 </code></pre>

@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -57,13 +54,13 @@
                 字数529 2018-09-13
             </div>
             <div class="content">
-                <p>一直都是用 <code class="highlighter-rouge">$(element).attr("data-foo", foo-value)</code> 的方式更新 data-* 属性的</p>
+                <p>一直都是用 <code class="language-plaintext highlighter-rouge">$(element).attr("data-foo", foo-value)</code> 的方式更新 data-* 属性的</p>
 
-<p>今天写程序的时候, 发现 <code class="highlighter-rouge">$(element).attr("data-foo", foo-value)</code> 更新属性 foo 后, 再次用 <code class="highlighter-rouge">$(element).data("foo")</code> 居然返回的一直是旧值</p>
+<p>今天写程序的时候, 发现 <code class="language-plaintext highlighter-rouge">$(element).attr("data-foo", foo-value)</code> 更新属性 foo 后, 再次用 <code class="language-plaintext highlighter-rouge">$(element).data("foo")</code> 居然返回的一直是旧值</p>
 
 <p>百思不得其解, 一直在调试, 一直怀疑自己的 element 定位是不是错了, 最后求助于 StackOverflow 才发现:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>第一次调用 $(element).data("foo") 的时候,
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>第一次调用 $(element).data("foo") 的时候,
 会访问 data-foo 属性, 并且把属性值缓存在 JQuery 内部
 并从此以后都使用此缓存值,
 直到下次用 $(element).data("foo", foo-value) 更新属性值后才会更新缓存
@@ -72,7 +69,7 @@
 导致 $(element).data("foo") 永远都是 JQuery 第一次调用 .data 方法的缓存值.
 </code></pre></div></div>
 
-<p>改用 <code class="highlighter-rouge">$(element).data("foo", foo-value)</code> 形式来更新 data-* 属性值, 整个逻辑就正确了.</p>
+<p>改用 <code class="language-plaintext highlighter-rouge">$(element).data("foo", foo-value)</code> 形式来更新 data-* 属性值, 整个逻辑就正确了.</p>
 
 <p>现在年纪大了, 备注一下这个JQuery坑, 免的以后自己再坑到自己, 哈哈哈.</p>
 

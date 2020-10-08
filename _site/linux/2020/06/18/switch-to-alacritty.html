@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>切换终端到Alacritty</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                切换终端到Alacritty
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Linux">
+                    <div class="category">
+                        Linux
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数961 2020-06-18
+            </div>
+            <div class="content">
+                <p>今天升级了Arch系统，深度终端也升级到新版本，不知道哪个渣渣写的新版代码，一堆Bug，没法吐槽，真是越做越差了。</p>
+
+<p>懒得折腾我原来写的深度终端老版，直接切换到Alacritty，将就用吧。</p>
+
+<p>分享下折腾细节：</p>
+
+<h3 id="1-修改终端切换命令">1. 修改终端切换命令</h3>
+
+<p>终端启动和切换命令换成了</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wmctrl <span class="nt">-x</span> <span class="nt">-a</span>  alacritty <span class="o">||</span>  alacritty
+</code></pre></div></div>
+
+<h3 id="2-终端窗口默认屏幕居中">2. 终端窗口默认屏幕居中</h3>
+
+<p>在KDE设置-&gt;窗口管理-&gt;窗口规则中，添加 “Initial placement” 配置，强制默认居中。</p>
+
+<p>这样Alacritty启动的时候不会显示在屏幕左上角了。</p>
+
+<h3 id="3-配置alacritty">3. 配置Alacritty</h3>
+
+<p>Alacritty的配置文件在路径 ~/.config/alacritty/alacritty.yml，具体的配置如下:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># 默认窗口无标题栏，16:9的窗口比例启动</span>
+window:
+    decorations: <span class="s2">"none"</span>
+    dimensions:
+      columns: 120
+      lines: 30
+
+<span class="c"># 背景半透明，方便抄代码</span>
+background_opacity: 0.8
+
+<span class="c"># 实时重载配置文件，不用重启测试配置选项</span>
+live_config_reload: <span class="nb">true</span>
+
+<span class="c"># 主题，抄肥猫的主题配色</span>
+colors:
+  primary:
+    foreground: <span class="s1">'0xeeeeec'</span>
+
+  normal:
+     black:   <span class="s1">'0x2e3436'</span>
+     red:     <span class="s1">'0xcc0000'</span>
+     green:   <span class="s1">'0x73d216'</span>
+     yellow:  <span class="s1">'0xedd400'</span>
+     blue:    <span class="s1">'0x3465a4'</span>
+     magenta: <span class="s1">'0x75507b'</span>
+     cyan:    <span class="s1">'0x06989a'</span>
+     white:   <span class="s1">'0xd3d7cf'</span>
+
+  bright:
+     black:   <span class="s1">'0x2e3436'</span>
+     red:     <span class="s1">'0xef2929'</span>
+     green:   <span class="s1">'0x8ae234'</span>
+     yellow:  <span class="s1">'0xfce94f'</span>
+     blue:    <span class="s1">'0x729fcf'</span>
+     magenta: <span class="s1">'0xad7fa8'</span>
+     cyan:    <span class="s1">'0x34e2e2'</span>
+     white:   <span class="s1">'0xeeeeec'</span>
+
+<span class="c"># 字体设置为等宽字体，可以用命令 fc-list 查看你系统的字体</span>
+font:
+  size: 13
+
+  normal:
+    family: Noto Sans Mono
+    style: Regular
+
+  bold:
+    family: Noto Sans Mono
+
+  italic:
+    family: Noto Sans Mono
+</code></pre></div></div>
+
+<p>虽然没有我老版深度终端，将就用吧，平常大部分都用Emacs/EAF里面的终端。</p>
+
+            </div>
+        </div>
+    </body>
+</html>
