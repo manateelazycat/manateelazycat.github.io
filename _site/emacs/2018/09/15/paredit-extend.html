@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -150,7 +147,7 @@ If current line is not blank, do `paredit-kill' first, re-indent line if rest li
       <span class="p">(</span><span class="nv">indent-for-tab-command</span><span class="p">))))</span>
 </code></pre></div></div>
 
-<p>大部分模式都用 <code class="highlighter-rouge">paredit-common-mode-kill</code> 进行语法删除, 但是 <code class="highlighter-rouge">paredit-common-kill</code> 在 web-mode 和 ruby-mode 上表现很糟糕, 所以我又写了 <code class="highlighter-rouge">paredit-web-mode-kill</code> 和 <code class="highlighter-rouge">paredit-ruby-mode-kill</code></p>
+<p>大部分模式都用 <code class="language-plaintext highlighter-rouge">paredit-common-mode-kill</code> 进行语法删除, 但是 <code class="language-plaintext highlighter-rouge">paredit-common-kill</code> 在 web-mode 和 ruby-mode 上表现很糟糕, 所以我又写了 <code class="language-plaintext highlighter-rouge">paredit-web-mode-kill</code> 和 <code class="language-plaintext highlighter-rouge">paredit-ruby-mode-kill</code></p>
 
 <h3 id="paredit-common-mode-kill-的删除逻辑">paredit-common-mode-kill 的删除逻辑:</h3>
 

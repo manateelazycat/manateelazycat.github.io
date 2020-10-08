@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -99,7 +96,7 @@
   <li>第一种是直接返回 html.erb 文件, html.erb 文件会根据填充数据生成新的 html 文件替换现有的页面</li>
   <li>返回 js.erb 文件, 根据填充数据生成新的 js 文件直接在当前页面中执行代码操作 DOM 元素</li>
   <li>返回 json 数据给 ajax , 由浏览器中 ajax的js回调来处理返回的 json 数据, 并操作当前页面的 DOM 元素</li>
-  <li>当然也可以直接用 <code class="highlighter-rouge">redirect_to new_path</code> 跳转到 new_path 页面</li>
+  <li>当然也可以直接用 <code class="language-plaintext highlighter-rouge">redirect_to new_path</code> 跳转到 new_path 页面</li>
 </ol>
 
 <p>只要把这个消息响应循环铭记于心, 你已经就理解了 Rails 一半了, 虽然 Rails 功能强大, 但是本质上 Rails 就是按照上面的消息循环来处理所有的 HTTP 请求.</p>
@@ -118,14 +115,14 @@
 
 <p>其实我们再回想一下 “消息响应循环” 那张图, Web本质是什么?</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Web的本质就是用户点击HTML的连接, 更新当前页面.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Web的本质就是用户点击HTML的连接, 更新当前页面.
 更新的方式可以是直接跳转, 或者用新的页面替换, 或者JS直接操作DOM元素
 </code></pre></div></div>
 <p>在本质之上, 才是各种工具, 插件,性能优化和架构设计等.</p>
 
 <p>然而 Rails 的本质是什么呢?</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rails 的本质就是根据 Restful 的设计原则来修改路由, 控制器和模板等文件
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rails 的本质就是根据 Restful 的设计原则来修改路由, 控制器和模板等文件
 使得 Rails 能够按照 "消息响应循环" 一直循环下去
 </code></pre></div></div>
 
@@ -265,19 +262,19 @@
 <p>所以, 最后总结来说, 在 Rails 里你需要添加一个新的资源来处理页面, 假设这个资源叫 foo, 你需要做的就是再重复上面的步骤:</p>
 <ol>
   <li>rails g model foo 生成一个数据库表</li>
-  <li>routes.rb 加上 <code class="highlighter-rouge">resources foo</code></li>
+  <li>routes.rb 加上 <code class="language-plaintext highlighter-rouge">resources foo</code></li>
   <li>创建 foos_controller.rb 文件</li>
   <li>在目录下 view/foos/ 创建动作对应的 *.html.erb 文件</li>
 </ol>
 
 <h5 id="第二版斧-独善其身的模型">第二版斧: 独善其身的模型</h5>
-<p>当你执行命令 <code class="highlighter-rouge">rails g model foo attr_a:integer attr_b:integer</code> 生成模型的时候, 也就创建了
+<p>当你执行命令 <code class="language-plaintext highlighter-rouge">rails g model foo attr_a:integer attr_b:integer</code> 生成模型的时候, 也就创建了
  app/models/foo.rb 文件:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Foo &lt; ApplicationRecord
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Foo &lt; ApplicationRecord
 end
 </code></pre></div></div>
 <p>在模型文件中, 我们是可以直接访问数据表的属性的, 比如下面这样:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Foo &lt; ApplicationRecord
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Foo &lt; ApplicationRecord
    def print_attr
       printf("%&lt;attr_a&gt;s %&lt;attr_b&gt;s", attr_a: attr_a, attr_b: attr_b)
    end
@@ -287,7 +284,7 @@ end
 <p>第二扳斧比较简单, 就是模型文件中只放一些跟数据表属性相关的工具函数就可以了, 跟产品业务相关的代码全部都放到控制器 foos_controller.rb 中.</p>
 
 <p>上面的 print_attr 是 Foo 的实例函数, 如果需要创建 Foo 的类函数需要使用下面的方式:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Foo &lt; ApplicationRecord
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Foo &lt; ApplicationRecord
    class &lt;&lt; self
      def class_func
         printf("I'm a class function")
@@ -295,23 +292,23 @@ end
    end
 end
 </code></pre></div></div>
-<p>然后就可以直接使用 <code class="highlighter-rouge">Foo.class_func</code> 来调用了.</p>
+<p>然后就可以直接使用 <code class="language-plaintext highlighter-rouge">Foo.class_func</code> 来调用了.</p>
 
 <p>还有一些非常独特的情况, 就是针对模型函数会在多个控制器中使用, 甚至是多个 *.html.erb 模板文件中调用, 这时候就可以用 helper 模块来处理.</p>
 
 <p>比如我们创建一个跟 session 相关的 helper 模块 app/helpers/sessions_helper.rb</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module SessionsHelper
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module SessionsHelper
   def log_in(user)
     session[:user_id] = user.id
   end
 end
 </code></pre></div></div>
 <p>然后在 app/controllers/application_controller.rb 文件中加入 include 语句:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class ApplicationController &lt; ActionController::Base
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class ApplicationController &lt; ActionController::Base
   include SessionsHelper
 end
 </code></pre></div></div>
-<p>这样, 我们就可以在所有的模式、控制器、视图文件中访问 <code class="highlighter-rouge">log_in</code> 函数了.</p>
+<p>这样, 我们就可以在所有的模式、控制器、视图文件中访问 <code class="language-plaintext highlighter-rouge">log_in</code> 函数了.</p>
 
 <h5 id="第三板斧">第三板斧</h5>
 <p>前两板斧主要讲了怎么生成资源页面和模型文件中功能函数的处理, 现实的Web场景不仅仅是跳转到新的页面或者大范围更新当前页面的内容, 更多的场景是, 根据用户的交互行为, 局部微小的改变一小块界面来进行视觉反馈.</p>
@@ -320,7 +317,7 @@ end
 
 <p>JavaScript 主要有四种情况:</p>
 <h6 id="1-表单的类型-只提交-不处理返回数据">1. 表单的类型, 只提交, 不处理返回数据</h6>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%= form_for(:session, url: sign_in_path) do |f| %&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%= form_for(:session, url: sign_in_path) do |f| %&gt;
     &lt;%= f.email_field :email, class: "form-control", placeholder: "登录邮箱" %&gt;
     &lt;%= f.password_field :password, class: "form-control", placeholder: "密码" %&gt;
 
@@ -328,10 +325,10 @@ end
 &lt;% end%&gt;
 </code></pre></div></div>
 
-<p>比如这种最简单的, 在 <code class="highlighter-rouge">form_for</code> 里面直接点击按钮, 就执行 submit 动作, 这种情况, 我们只需要控制 form_for 里的 url 字段, 也就是前面说的资源路径, form_for 会自动用 POST 请求调用资源的 create 动作函数的.</p>
+<p>比如这种最简单的, 在 <code class="language-plaintext highlighter-rouge">form_for</code> 里面直接点击按钮, 就执行 submit 动作, 这种情况, 我们只需要控制 form_for 里的 url 字段, 也就是前面说的资源路径, form_for 会自动用 POST 请求调用资源的 create 动作函数的.</p>
 
 <h6 id="2-ajax-发送异步请求-并处理返回的模板数据">2. ajax 发送异步请求, 并处理返回的模板数据:</h6>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$.ajax({type: "POST",
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$.ajax({type: "POST",
         url: "/missions/1",
         success: function(result) {
         }
@@ -348,10 +345,10 @@ end
 </code></pre></div></div>
 <p>上面这段代码就是最简单的模板返回样例, format.html 的意思就是返回一个模板, render 的意思就是直接渲染模板 app/views/layouts/_foo.html.erb 的内容</p>
 
-<p><code class="highlighter-rouge">layout: false</code> 这句强调的是不要在 _foo.html.erb 外包裹其他模板, 文件 _foo.html.erb 显示的是啥内容就用啥内容, 因为很多时候 _foo.html.erb 模板在作为 ajax 的返回的数据并代表一个完整的页面, 而仅仅只是一个 div 的模板内容用于替换局部的DOM元素.</p>
+<p><code class="language-plaintext highlighter-rouge">layout: false</code> 这句强调的是不要在 _foo.html.erb 外包裹其他模板, 文件 _foo.html.erb 显示的是啥内容就用啥内容, 因为很多时候 _foo.html.erb 模板在作为 ajax 的返回的数据并代表一个完整的页面, 而仅仅只是一个 div 的模板内容用于替换局部的DOM元素.</p>
 
 <h6 id="3-ajax-发送异步请求-并处理返回的-json-数据">3. ajax 发送异步请求, 并处理返回的 json 数据</h6>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$.ajax({type: "POST",
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$.ajax({type: "POST",
         url: "/missions/1",
         success: function(result) {
            console.log(result["status"])
@@ -366,7 +363,7 @@ def edit
   end
 end
 </code></pre></div></div>
-<p>和返回模板数据的格式类似, 唯一的不同是 format.html 变成了 format.json, 然后通过 <code class="highlighter-rouge">json: { key: "value" }</code> 的形式返回JSON数据给 ajax 请求.</p>
+<p>和返回模板数据的格式类似, 唯一的不同是 format.html 变成了 format.json, 然后通过 <code class="language-plaintext highlighter-rouge">json: { key: "value" }</code> 的形式返回JSON数据给 ajax 请求.</p>
 
 <h6 id="4-第三方插件发送表单请求-在-ajax-成功后执行js代码">4. 第三方插件发送表单请求, 在 ajax 成功后执行JS代码</h6>
 <p><img src="http://localhost:4000/pics/rails-study/rails-study-9.png" alt="上传头像" />
@@ -385,7 +382,7 @@ end
 <p>因为像这种第三方插件, 有时候我们往往并不能用 ajax 简单的替换 submit 的操作, 所以这种情况, 我们依然会采用 form_with 的方式提交表单, 但是会在 ajax:success 的方式使得请求返回 JSON 数据的时候调用我们制定的 JS 函数.</p>
 
 <p>这其中的关键就是</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data-action: "ajax:success-&gt;user#update"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data-action: "ajax:success-&gt;user#update"
 </code></pre></div></div>
 <p>这一句, 这一句起到了承上启下的作用, 这种方法相对于 Rails 传统的 SJR 方法的优势可以参考我的另一篇文章 <a href="https://www.jianshu.com/p/8b5e81216b83">SJR 结合 Stimulus 构建可维护的JavaScript代码</a></p>
 
@@ -406,29 +403,29 @@ end
     resources :missions
   end
 end</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rails会在你访问 mission 资源的时候, 自动在 mission 资源前面加入 project 的前缀.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rails会在你访问 mission 资源的时候, 自动在 mission 资源前面加入 project 的前缀.
 
 你会发现, 上面的 projects 和 missions 后面的 ID 感觉都是 hash 过的, 这种处理一般是防止通过资源的数字id猜出产品的规模.
 
 HashID 的处理很简单, 只用在 Gemfile 加入
 </code></pre></div></div>
 <p>gem “hashid-rails”</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>以后, 在需要处理的资源文件中加入 include Hashid:Rails 的语句
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>以后, 在需要处理的资源文件中加入 include Hashid:Rails 的语句
 </code></pre></div></div>
 <p>class Mission &lt; ApplicationRecord
   include Hashid::Rails
 end</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这样访问路径的时候就自动 Hash 资源的数字 id
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>这样访问路径的时候就自动 Hash 资源的数字 id
 
 通过 HashID 可以反向获取对象, 就像这样:
 </code></pre></div></div>
 <p>mission = Mission.find_by_hashid(“hashid_string”)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 ###### 子模板的嵌入和参数判断
 为了避免重复代码, 我们有时候会在模板中再嵌入之模板, 一般都使用下面类似的代码:
 </code></pre></div></div>
 <p>&lt;%= render “layouts/foo” %&gt;</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 如果子模板 app/views/layouts/_foo.html.erb 中可以传入 keyword 的参数, 但是上面的代码调用子模板时却什么参数都没有调用, 可以在子模板中使用 local_assigns.has_key? 的方式来判断参数是否传入:
 </code></pre></div></div>
 <p>&lt;% if local_assigns.has_key? :keyword %&gt;
@@ -436,14 +433,14 @@ end</p>
 &lt;% else %&gt;
      …
 &lt;% end %&gt; &gt;</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 ###### 手机页面的处理
 因为 Turbolinks 的加速处理, Rails 渲染手机页面也是非常快速的, 但是怎么针对手机的尺寸单独进行手机页面适配呢?
 
 首先需要在 Gemfile 加入浏览器设备探测的插件:
 </code></pre></div></div>
 <p>gem “browser”</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 再在 app/controllers/application_controller.rb 文件中加入:
 </code></pre></div></div>
 <p>class ApplicationController &lt; ActionController::Base

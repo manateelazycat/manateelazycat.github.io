@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -65,15 +62,15 @@
 
 <h3 id="解决思路">解决思路</h3>
 <ol>
-  <li>安装Gnome Settings Daemon <code class="highlighter-rouge">sudo pacman -S gnome-settings-daemon</code></li>
-  <li>安装微信 <code class="highlighter-rouge">yay -S deepin.com.wechat2</code></li>
-  <li>添加 <code class="highlighter-rouge">/usr/lib/gsd-xsettings</code> 到桌面环境启动项</li>
-  <li>删除原先的微信目录 <code class="highlighter-rouge">rm -rf ~/.deepinwine/Deepin-WeChat</code></li>
+  <li>安装Gnome Settings Daemon <code class="language-plaintext highlighter-rouge">sudo pacman -S gnome-settings-daemon</code></li>
+  <li>安装微信 <code class="language-plaintext highlighter-rouge">yay -S deepin.com.wechat2</code></li>
+  <li>添加 <code class="language-plaintext highlighter-rouge">/usr/lib/gsd-xsettings</code> 到桌面环境启动项</li>
+  <li>删除原先的微信目录 <code class="language-plaintext highlighter-rouge">rm -rf ~/.deepinwine/Deepin-WeChat</code></li>
 </ol>
 
 <p>这样 DeepinWine 就认为在Gnome环境下，可以正常启动 DeepinWine 版本的微信了。</p>
 
-<p>同时，可以用命令 <code class="highlighter-rouge">wmctrl -x -a wechat.exe || /opt/deepinwine/apps/Deepin-WeChat/run.sh</code> 绑定快捷键进行一键启动微信或者切换微信窗口。</p>
+<p>同时，可以用命令 <code class="language-plaintext highlighter-rouge">wmctrl -x -a wechat.exe || /opt/deepinwine/apps/Deepin-WeChat/run.sh</code> 绑定快捷键进行一键启动微信或者切换微信窗口。</p>
 
             </div>
         </div>

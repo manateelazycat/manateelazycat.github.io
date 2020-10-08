@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -74,7 +71,7 @@
 <p>因为 exec-path-from-shell 这个插件工作的非常好, 我开发的所有Emacs插件都会在插件开头写上这段代码保证能够正确调用外部命令.</p>
 
 <p>Emacs作为一个永远都可以折腾下去的邪恶操作系统, exec-path-from-shell 又衍生出另外一个问题:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>exec-path-from-shell-initialize 命令要从 shell rc 文件中读取环境变量
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>exec-path-from-shell-initialize 命令要从 shell rc 文件中读取环境变量
 shell rc 文件越大, 读取越慢.
 
 想象十几个Emacs插件启动的时候都需要执行一次

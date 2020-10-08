@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -113,10 +110,10 @@ make liberime
 <ol>
   <li>Linux下直接安装librime这个包就可以了，不需要Mac去手动编译 librime.1.dylib 这个库</li>
   <li>Linux下 liberime.so 这个动态库，直接 make 一下就好了，不需要像Mac那样那么麻烦</li>
-  <li>Linux下 <code class="highlighter-rouge">liberime-start</code> 函数的第一个路径是 <code class="highlighter-rouge">/usr/share/rime-data/</code> , Mac下是 <code class="highlighter-rouge">/Library/Input Methods/Squirrel.app/Contents/SharedSupport</code></li>
+  <li>Linux下 <code class="language-plaintext highlighter-rouge">liberime-start</code> 函数的第一个路径是 <code class="language-plaintext highlighter-rouge">/usr/share/rime-data/</code> , Mac下是 <code class="language-plaintext highlighter-rouge">/Library/Input Methods/Squirrel.app/Contents/SharedSupport</code></li>
 </ol>
 
-<p>主要的坑在于 Emacs 27 执行 <code class="highlighter-rouge">(liberime-start "/usr/share/rime-data/" (file-truename "~/.emacs.d/pyim/rime/"))</code> 的时候会崩溃，切换回 Emacs 26.3 正式版以后问题就解决了，最开始不知道是这个原因，花了十几分钟研究，最后通过 gdb 定位问题。</p>
+<p>主要的坑在于 Emacs 27 执行 <code class="language-plaintext highlighter-rouge">(liberime-start "/usr/share/rime-data/" (file-truename "~/.emacs.d/pyim/rime/"))</code> 的时候会崩溃，切换回 Emacs 26.3 正式版以后问题就解决了，最开始不知道是这个原因，花了十几分钟研究，最后通过 gdb 定位问题。</p>
 
 <p>现在Linux版的Emacs也可以愉快的用RIME来输入中文了。</p>
 

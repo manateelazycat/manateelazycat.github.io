@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -63,7 +60,7 @@
 <p>在非DDE环境下，Wine启动的微信客户端会有一个非常烦人的问题，每次微信窗口关闭以后，都会留下一个透明的窗口，虽然这个透明的窗口并不拦截输入事件，但是总是挡着其他程序前面看着也很烦。</p>
 
 <h3 id="解决思路">解决思路</h3>
-<p>启动微信的命令就绑定按键到命令 <code class="highlighter-rouge">/opt/deepinwine/apps/Deepin-WeChat/run.sh</code> (可以通过查看 /usr/share/applications/deepin.com.wechat.desktop 文件的 Exec 参数来获取启动命令)</p>
+<p>启动微信的命令就绑定按键到命令 <code class="language-plaintext highlighter-rouge">/opt/deepinwine/apps/Deepin-WeChat/run.sh</code> (可以通过查看 /usr/share/applications/deepin.com.wechat.desktop 文件的 Exec 参数来获取启动命令)</p>
 
 <p>我们需要开发一个开机启动脚本，做两个方面的工作：</p>
 <ol>
@@ -115,7 +112,7 @@
 
 <p>脚本源码解析:</p>
 <ol>
-  <li><code class="highlighter-rouge">__init__</code> 函数做一些 Wnck 初始代码和窗口切换函数回调处理</li>
+  <li><code class="language-plaintext highlighter-rouge">__init__</code> 函数做一些 Wnck 初始代码和窗口切换函数回调处理</li>
   <li>active_window_changed 函数中，通过 screen.get_active_window 来获取激活窗口，当激活窗口不是微信，就在后台遍历一下所有窗口，把微信窗口隐藏</li>
   <li>run 函数通过调用 Gtk.main 函数来保持事件循环一直运行，不会发生脚本启动就退出的问题</li>
 </ol>
@@ -123,7 +120,7 @@
 <p>简单吧？几行代码就轻松解决了，哈哈哈哈。</p>
 
 <h4 id="3-添加脚本到启动服务中">3. 添加脚本到启动服务中</h4>
-<p>把脚本 wechat_window_monitor.py 拷贝到 /usr/local/bin/ 后，通过 <code class="highlighter-rouge">chmod +x wechat_window_monitor.py</code> 来赋予脚本执行权限后，添加到开机启动脚本。</p>
+<p>把脚本 wechat_window_monitor.py 拷贝到 /usr/local/bin/ 后，通过 <code class="language-plaintext highlighter-rouge">chmod +x wechat_window_monitor.py</code> 来赋予脚本执行权限后，添加到开机启动脚本。</p>
 
 <p class="line-quote">程序员的世界好可怕，只要想得到，就可以解决任何问题。</p>
 

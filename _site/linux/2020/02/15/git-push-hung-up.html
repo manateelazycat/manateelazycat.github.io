@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -57,7 +54,7 @@
                 字数332 2020-02-15
             </div>
             <div class="content">
-                <p>今天在执行命令 <code class="highlighter-rouge">git push</code> 时，终端报了下面的错误:</p>
+                <p>今天在执行命令 <code class="language-plaintext highlighter-rouge">git push</code> 时，终端报了下面的错误:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>枚举对象: 35, 完成.
 对象计数中: 100% <span class="o">(</span>35/35<span class="o">)</span>, 完成.
@@ -70,7 +67,7 @@ fatal: 远端意外挂断了
 fatal: 远端意外挂断了
 </code></pre></div></div>
 
-<p>Google了一下，应该是Buffer太小的原因，使用下面的命令修复后就可以正常 <code class="highlighter-rouge">git push</code> 了。</p>
+<p>Google了一下，应该是Buffer太小的原因，使用下面的命令修复后就可以正常 <code class="language-plaintext highlighter-rouge">git push</code> 了。</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config http.postBuffer 100000000
 git config ssh.postBuffer 100000000

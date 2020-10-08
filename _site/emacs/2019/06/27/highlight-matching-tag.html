@@ -20,9 +20,6 @@
     <div class="navigatebar-button navigatebar-mine">
         <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
     </div>
-    <div class="navigatebar-slogan">
-        「生活可以更简单, 欢迎来到我的开源世界」
-    </div>
     <div class="navigatebar-button">
         <a href="http://localhost:4000/index.html">Home</a>
     </div>
@@ -66,7 +63,7 @@
 <p>highlight-matching-tag的原理和instant-rename-tag完全是一样的，只是绑定了不同的事件hook</p>
 
 <ol>
-  <li>通过 <code class="highlighter-rouge">post-command-hook</code> 监听光标移动事件，如果当前处于 <code class="highlighter-rouge">web-mode</code> 模式时继续处理</li>
+  <li>通过 <code class="language-plaintext highlighter-rouge">post-command-hook</code> 监听光标移动事件，如果当前处于 <code class="language-plaintext highlighter-rouge">web-mode</code> 模式时继续处理</li>
   <li>如果光标在Tag区域，找到匹配的光标，然后用 Overlay 高亮匹配的标签</li>
   <li>如果光标不在Tag区域，隐藏标签高亮</li>
 </ol>
@@ -76,7 +73,7 @@
 <p>安装方法见<a href="https://github.com/manateelazycat/highlight-matching-tag">Github</a></p>
 
 <h3 id="使用方法">使用方法</h3>
-<p>安装好只用调用命令 <code class="highlighter-rouge">(highlight-matching-tag 1)</code> 即可</p>
+<p>安装好只用调用命令 <code class="language-plaintext highlighter-rouge">(highlight-matching-tag 1)</code> 即可</p>
 
             </div>
         </div>
