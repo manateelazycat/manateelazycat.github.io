@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-23T02:06:45+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">读《价值》</title><link href="http://localhost:4000/business/reading/2020/10/22/reading-value.html" rel="alternate" type="text/html" title="读《价值》" /><published>2020-10-22T00:00:00+08:00</published><updated>2020-10-22T00:00:00+08:00</updated><id>http://localhost:4000/business/reading/2020/10/22/reading-value</id><content type="html" xml:base="http://localhost:4000/business/reading/2020/10/22/reading-value.html">&lt;p&gt;最近读了一下高瓴创始人张磊写的《价值》，通篇读下来给我感觉就是把高瓴的广告都塞到一本书里面了，哈哈哈哈。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-23T11:01:34+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">GCC Emacs</title><link href="http://localhost:4000/emacs/2020/10/23/use-native-comp-branch.html" rel="alternate" type="text/html" title="GCC Emacs" /><published>2020-10-23T00:00:00+08:00</published><updated>2020-10-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/10/23/use-native-comp-branch</id><content type="html" xml:base="http://localhost:4000/emacs/2020/10/23/use-native-comp-branch.html">&lt;p&gt;从去年就听说了Emacs社区开发者Andrea Corallo领导开发的GCC Emacs, 经过一年的进化和改进，现在GCC Emacs技术已经进入Emacs的native-comp分支。&lt;/p&gt;
+
+&lt;p&gt;GCC Emacs是一种利用libgccjit来编译Elisp为ELF文件的技术，具体的实现细节可以参考&lt;a href=&quot;http://akrl.sdf.org/gccemacs.html&quot;&gt;GCC Emacs官网&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;GCC Emacs的目标是提升Emacs以及插件的启动速度和运行速度，相对于没有优化过的版本，性能平均提高3.7倍，具体的实现原理和测试细节可以查看&lt;a href=&quot;http://akrl.sdf.org/Kludging_LPC_2020.pdf&quot;&gt;作者演讲稿&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这个技术对于那些需要即时性能提升来改善用户体验的大型插件尤其有帮助，比如lsp-mode的JSON消息解析。&lt;/p&gt;
+
+&lt;p&gt;Arch系统安装也非常简单，一条命令就可以体验GCC Emacs&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Bash&quot;&gt;sudo pacman -S emacs-native-comp-git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Enjoy! ;)&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><summary type="html">从去年就听说了Emacs社区开发者Andrea Corallo领导开发的GCC Emacs, 经过一年的进化和改进，现在GCC Emacs技术已经进入Emacs的native-comp分支。</summary></entry><entry><title type="html">读《价值》</title><link href="http://localhost:4000/business/reading/2020/10/22/reading-value.html" rel="alternate" type="text/html" title="读《价值》" /><published>2020-10-22T00:00:00+08:00</published><updated>2020-10-22T00:00:00+08:00</updated><id>http://localhost:4000/business/reading/2020/10/22/reading-value</id><content type="html" xml:base="http://localhost:4000/business/reading/2020/10/22/reading-value.html">&lt;p&gt;最近读了一下高瓴创始人张磊写的《价值》，通篇读下来给我感觉就是把高瓴的广告都塞到一本书里面了，哈哈哈哈。&lt;/p&gt;
 
 &lt;p&gt;但是书中的很多观点还是很有启发性的。&lt;/p&gt;
 
@@ -501,31 +514,4 @@
   &lt;li&gt;q : 退出&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;EAF浏览器配合Emacs查资料写代码的效率已经远远高于通过窗口管理器配合Chrome的效率了。;)&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><category term="EAF" /><summary type="html">牛逼哄哄的 HollowMan6 同学写了一个补丁 https://github.com/manateelazycat/emacs-application-framework/pull/345 更新EAF最新版，EAF浏览器允许在Emacs里面用键盘选中文本了：</summary></entry><entry><title type="html">安卓设备使用代理</title><link href="http://localhost:4000/proxy/2020/07/04/pad-use-proxy.html" rel="alternate" type="text/html" title="安卓设备使用代理" /><published>2020-07-04T00:00:00+08:00</published><updated>2020-07-04T00:00:00+08:00</updated><id>http://localhost:4000/proxy/2020/07/04/pad-use-proxy</id><content type="html" xml:base="http://localhost:4000/proxy/2020/07/04/pad-use-proxy.html">&lt;p&gt;在文章&lt;a href=&quot;https://manateelazycat.github.io/proxy/2020/03/17/best-proxy.html&quot;&gt;最佳代理实践&lt;/a&gt;详细记载了怎么让Linux桌面使用Trojan代理技术正常浏览网站。&lt;/p&gt;
-
-&lt;p&gt;最近买了一个华为平板，今天讲一下怎么让安卓设备使用代理的方法：&lt;/p&gt;
-
-&lt;h3 id=&quot;1-安装-igniter&quot;&gt;1. 安装 Igniter&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;在PC上配置好代理，首先下载Trojan的安卓客户端&lt;a href=&quot;https://github.com/trojan-gfw/igniter/releases&quot;&gt;Igniter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;使用 &lt;a href=&quot;https://github.com/filebrowser/filebrowser&quot;&gt;filebrowser-bin&lt;/a&gt; 这个应用来传递文件给平板&lt;/li&gt;
-  &lt;li&gt;安装 Igniter&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;2-配置-igniter&quot;&gt;2. 配置 Igniter&lt;/h3&gt;
-&lt;p&gt;启动 Igniter 后，按照下面的方式在平板上配置 Trojan 信息：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;填写服务器别名和服务器IP地址&lt;/li&gt;
-  &lt;li&gt;填写服务器Trojan协议密码，一般在 client.json 文件中的 password 字段中&lt;/li&gt;
-  &lt;li&gt;禁用 “验证证书” 选项，因为第一步填写的是IP地址，所以不用验证证书，要不是会显示 Closed by peer 的错误&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;配置好以后，点击底部链接按钮，然后在 Igniter 右上角点击地球图标按钮先测试一下代理网络是否正常。代理网络正常会显示 “连接 https://www.google.com 用时 xxx ms” 的提示。&lt;/p&gt;
-
-&lt;h3 id=&quot;3-增加过滤应用&quot;&gt;3. 增加过滤应用&lt;/h3&gt;
-
-&lt;p&gt;在 Igniter 右上角有一个菜单按钮，选择过滤应用，找到对应的应用（比如浏览器），打开过滤开关即可针对特定应用使用代理，而不会让所有应用（比如网易云音乐）走代理网络。&lt;/p&gt;
-
-&lt;p&gt;That’s all, 现在可以在平板上正常办公了，enjoy!&lt;/p&gt;</content><author><name></name></author><category term="Proxy" /><summary type="html">在文章最佳代理实践详细记载了怎么让Linux桌面使用Trojan代理技术正常浏览网站。</summary></entry></feed>
+&lt;p&gt;EAF浏览器配合Emacs查资料写代码的效率已经远远高于通过窗口管理器配合Chrome的效率了。;)&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><category term="EAF" /><summary type="html">牛逼哄哄的 HollowMan6 同学写了一个补丁 https://github.com/manateelazycat/emacs-application-framework/pull/345 更新EAF最新版，EAF浏览器允许在Emacs里面用键盘选中文本了：</summary></entry></feed>
