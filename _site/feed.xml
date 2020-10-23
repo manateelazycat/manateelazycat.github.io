@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-23T11:09:42+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">GCC Emacs</title><link href="http://localhost:4000/emacs/2020/10/23/use-native-comp-branch.html" rel="alternate" type="text/html" title="GCC Emacs" /><published>2020-10-23T00:00:00+08:00</published><updated>2020-10-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/10/23/use-native-comp-branch</id><content type="html" xml:base="http://localhost:4000/emacs/2020/10/23/use-native-comp-branch.html">&lt;p&gt;从去年就听说了Emacs社区开发者Andrea Corallo领导开发的GCC Emacs, 经过一年的进化和改进，现在GCC Emacs技术已经进入Emacs的native-comp分支。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-23T22:05:22+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF浏览器导入Chrome历史和书签了!</title><link href="http://localhost:4000/emacs/eaf/2020/10/23/import-chrome-history.html" rel="alternate" type="text/html" title="EAF浏览器导入Chrome历史和书签了!" /><published>2020-10-23T00:00:00+08:00</published><updated>2020-10-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/10/23/import-chrome-history</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/10/23/import-chrome-history.html">&lt;p&gt;今天社区大神mackong提交了两个补丁：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/a2570c240079d72c19105b1f935d7a3209901b1b&quot;&gt;Support import history from chrome&lt;/a&gt;。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/b1f4bd2e9ce4faaa93561dc948d435f33a44084b&quot;&gt;Support import bookmark from chrome&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;合并这些补丁以后:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在EAF浏览器中按 C-M-i 快捷键会自动导入Chrome浏览器历史记录，导入浏览器记录之前记得先关闭Chrome浏览器。&lt;/li&gt;
+  &lt;li&gt;在EAF浏览器中按 C-c i 快捷键会自动导入Chrome书签。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;社区的大神太厉害了，目前为止EAF已经有全球31名&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/graphs/contributors&quot;&gt;开发者&lt;/a&gt;持续提交补丁，我真的好开心啊。&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><category term="EAF" /><summary type="html">今天社区大神mackong提交了两个补丁：</summary></entry><entry><title type="html">GCC Emacs</title><link href="http://localhost:4000/emacs/2020/10/23/use-native-comp-branch.html" rel="alternate" type="text/html" title="GCC Emacs" /><published>2020-10-23T00:00:00+08:00</published><updated>2020-10-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/2020/10/23/use-native-comp-branch</id><content type="html" xml:base="http://localhost:4000/emacs/2020/10/23/use-native-comp-branch.html">&lt;p&gt;从去年就听说了Emacs社区开发者Andrea Corallo领导开发的GCC Emacs, 经过一年的进化和改进，现在GCC Emacs技术已经进入Emacs的native-comp分支。&lt;/p&gt;
 
 &lt;p&gt;GCC Emacs是一种利用libgccjit来编译Elisp为ELF文件的技术，具体的实现细节可以参考&lt;a href=&quot;http://akrl.sdf.org/gccemacs.html&quot;&gt;GCC Emacs官网&lt;/a&gt;。&lt;/p&gt;
 
@@ -491,27 +505,4 @@
   &lt;li&gt;找到 WINE_CMD 一行，改成 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WINE_CMD=&quot;LC_ALL=zh_CN.UTF-8 deepin-wine&quot;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;然后重启Wine版本微信后，输入中文就显示正常了。&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">编辑文件 /opt/deepinwine/tools/run.sh 找到 WINE_CMD 一行，改成 WINE_CMD=&quot;LC_ALL=zh_CN.UTF-8 deepin-wine&quot;</summary></entry><entry><title type="html">EAF浏览器可以支持快捷键选中文本功能了！</title><link href="http://localhost:4000/emacs/eaf/2020/07/22/eaf-support-caret-browse.html" rel="alternate" type="text/html" title="EAF浏览器可以支持快捷键选中文本功能了！" /><published>2020-07-22T00:00:00+08:00</published><updated>2020-07-22T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/07/22/eaf-support-caret-browse</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/07/22/eaf-support-caret-browse.html">&lt;p&gt;牛逼哄哄的 HollowMan6 同学写了一个补丁 https://github.com/manateelazycat/emacs-application-framework/pull/345
-更新&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;EAF&lt;/a&gt;最新版，EAF浏览器允许在Emacs里面用键盘选中文本了：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;c : 在页面中激活标记，用于跳转到需要选择的文本模块&lt;/li&gt;
-  &lt;li&gt;j : 键盘移动到下一行&lt;/li&gt;
-  &lt;li&gt;k : 键盘移动到上一行&lt;/li&gt;
-  &lt;li&gt;h : 键盘移动到前一个字符&lt;/li&gt;
-  &lt;li&gt;l : 键盘移动到后一个字符&lt;/li&gt;
-  &lt;li&gt;( : 键盘移动到后一个文字块&lt;/li&gt;
-  &lt;li&gt;) : 键盘移动到后一个文字块&lt;/li&gt;
-  &lt;li&gt;b : 键盘移动到前一个单词&lt;/li&gt;
-  &lt;li&gt;w : 键盘移动到后一个单词&lt;/li&gt;
-  &lt;li&gt;G : 键盘移动到最上面一行&lt;/li&gt;
-  &lt;li&gt;g : 键盘移动到最下面一行&lt;/li&gt;
-  &lt;li&gt;v : 切换激活状态&lt;/li&gt;
-  &lt;li&gt;o : 光标调换开头和结尾的位置&lt;/li&gt;
-  &lt;li&gt;/ : 向前搜索&lt;/li&gt;
-  &lt;li&gt;? : 向后搜索&lt;/li&gt;
-  &lt;li&gt;C-. : 清空搜索&lt;/li&gt;
-  &lt;li&gt;q : 退出&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;EAF浏览器配合Emacs查资料写代码的效率已经远远高于通过窗口管理器配合Chrome的效率了。;)&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><category term="EAF" /><summary type="html">牛逼哄哄的 HollowMan6 同学写了一个补丁 https://github.com/manateelazycat/emacs-application-framework/pull/345 更新EAF最新版，EAF浏览器允许在Emacs里面用键盘选中文本了：</summary></entry></feed>
+&lt;p&gt;然后重启Wine版本微信后，输入中文就显示正常了。&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">编辑文件 /opt/deepinwine/tools/run.sh 找到 WINE_CMD 一行，改成 WINE_CMD=&quot;LC_ALL=zh_CN.UTF-8 deepin-wine&quot;</summary></entry></feed>
