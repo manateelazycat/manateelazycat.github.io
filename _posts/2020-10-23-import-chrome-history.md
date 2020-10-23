@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EAF浏览器导入Chrome历史和书签了!
+title: EAF浏览器支持直接导入Chrome历史和书签了!
 categories: [Emacs, EAF]
 ---
 
