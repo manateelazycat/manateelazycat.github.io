@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>使用scrcpy技术实现同屏协作的功能</title>
+
+
+        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/index.html">Home</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="http://localhost:4000/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="http://localhost:4000/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                使用scrcpy技术实现同屏协作的功能
+            </div>
+            <div class="category-area">
+                「
+                <a href="http://localhost:4000/tags.html#Linux">
+                    <div class="category">
+                        Linux
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数2708 2020-11-12
+            </div>
+            <div class="content">
+                <p>之前在华为平板上体验了“同屏协作”的功能，可以直接投射手机屏幕到华为平板上，实现多设备共享微信内容，非常方便。</p>
+
+<p>但是华为的同屏协作仅限于华为平板和华为手机之间，今天发现了scrcpy这个工具，可以在Linux下实现同样的功能。(严重怀疑华为同屏协作也是用scrcpy实现的，哈哈哈哈)</p>
+
+<p>scrcpy这个工具可以通过USB（或TCP/IP）连接用于显示或控制安卓设备, 并且不需要手机获取 <em>root</em> 权限。</p>
+
+<p>它的特点主要有：</p>
+
+<ul>
+  <li><strong>轻量</strong> （原生，仅显示设备屏幕）</li>
+  <li><strong>性能</strong> （30~60fps）</li>
+  <li><strong>质量</strong> （分辨率可达1920x1080或更高）</li>
+  <li><strong>低延迟</strong> (35-70ms)</li>
+  <li><strong>快速启动</strong> （数秒内即能开始显示）</li>
+  <li><strong>无侵入性</strong> （不需要在安卓设备上安装任何程序）</li>
+</ul>
+
+<p>折腾scrcpy还是比较曲折的，下面是折腾经历分享：</p>
+
+<h4 id="安装必要的工具">安装必要的工具</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> scrcpy adb
+</code></pre></div></div>
+
+<h4 id="打开手机的adb网络调试功能">打开手机的ADB网络调试功能</h4>
+
+<ol>
+  <li>手机中搜索 “开发者选项”， 找到“USB调试”选项，点击开启；</li>
+  <li>手机链接USB数据线（仅第一次需要），在链接选项中选择 “打开文件” 菜单项，不能只选择 “仅充电”，要不是ADB无法连接到手机；</li>
+</ol>
+
+<p>首次打开USB调试选项后连接手机，手机会弹出 “允许USB调试吗？” 的对话框，选择确定。</p>
+
+<h4 id="设置adb-tcp端口">设置ADB TCP端口</h4>
+
+<p>手机链接到电脑后，使用以下命令来设置ADB的TCP链接端口号：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adb shell
+
+setprop service.adb.tcp.port 5555
+
+stop adbd
+start adbd
+
+<span class="nb">exit</span>
+</code></pre></div></div>
+
+<h4 id="通过wifi投屏">通过Wifi投屏</h4>
+
+<p>设置完ADB TCP端口后，就可以断开USB数据线，确保电脑和手机都连接到同一个Wifi网络后，查看手机的IP地址（可以点击Wifi列表名字或者下载 “网络信号信息” 工具查看）</p>
+
+<p>使用下面的命令来投屏手机到电脑:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">-s</span> 192.168.x.x:5555
+</code></pre></div></div>
+
+<p>192.168.x.x 需要换成你手机的真实IP</p>
+
+<p>在高铁的环境，可以直接用USB数据线的方式，直接使用<code class="language-plaintext highlighter-rouge">scrcpy</code>命令即可。</p>
+
+<h4 id="缩小分辨率">缩小分辨率</h4>
+
+<p>默认的窗口使用了整个屏幕高，有时候操作不太方便，可以适当缩小一点：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">-m</span> 1024
+</code></pre></div></div>
+
+<h4 id="锁定屏幕朝向">锁定屏幕朝向</h4>
+
+<p>可以使用如下命令锁定屏幕朝向：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--lock-video-orientation</span> 0   <span class="c"># 自然朝向</span>
+scrcpy <span class="nt">--lock-video-orientation</span> 1   <span class="c"># 90° 逆时针旋转</span>
+scrcpy <span class="nt">--lock-video-orientation</span> 2   <span class="c"># 180°</span>
+scrcpy <span class="nt">--lock-video-orientation</span> 3   <span class="c"># 90° 顺时针旋转</span>
+</code></pre></div></div>
+
+<h3 id="屏幕录制">屏幕录制</h3>
+
+<p>可以在屏幕镜像的同时录制视频：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--record</span> file.mp4
+scrcpy <span class="nt">-r</span> file.mkv
+</code></pre></div></div>
+
+<p>在不开启屏幕镜像的同时录制：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--no-display</span> <span class="nt">--record</span> file.mp4
+scrcpy <span class="nt">-Nr</span> file.mkv
+</code></pre></div></div>
+<p>按Ctrl+C以停止录制。</p>
+
+<h4 id="多设备">多设备</h4>
+
+<p>如果多个设备在执行<code class="language-plaintext highlighter-rouge">adb devices</code>后被列出，您必须指定设备的 <em>序列号</em> ：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--serial</span> 0123456789abcdef
+scrcpy <span class="nt">-s</span> 0123456789abcdef  <span class="c"># short version</span>
+</code></pre></div></div>
+
+<p>如果设备是通过TCP/IP方式连接到电脑的：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--serial</span> 192.168.0.1:5555
+scrcpy <span class="nt">-s</span> 192.168.0.1:5555  <span class="c"># short version</span>
+</code></pre></div></div>
+
+<p>您可以同时启动多个 <em>scrcpy</em> 实例以同时显示多个设备的画面。</p>
+
+<h4 id="标题">标题</h4>
+
+<p>窗口的标题默认为设备型号。您可以通过如下命令修改它：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--window-title</span> <span class="s1">'My device'</span>
+</code></pre></div></div>
+
+<h4 id="位置和大小">位置和大小</h4>
+
+<p>您可以指定初始的窗口位置和大小：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--window-x</span> 100 <span class="nt">--window-y</span> 100 <span class="nt">--window-width</span> 800 <span class="nt">--window-height</span> 600
+</code></pre></div></div>
+
+<h4 id="无边框">无边框</h4>
+
+<p>关闭边框：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--window-borderless</span>
+</code></pre></div></div>
+
+<h4 id="保持窗口在最前">保持窗口在最前</h4>
+
+<p>您可以通过如下命令保持窗口在最前面：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--always-on-top</span>
+</code></pre></div></div>
+
+<h4 id="全屏">全屏</h4>
+
+<p>您可以通过如下命令直接全屏启动scrcpy：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--fullscreen</span>
+scrcpy <span class="nt">-f</span>  <span class="c"># short version</span>
+</code></pre></div></div>
+
+<p>全屏状态可以通过<kbd>MOD</kbd>+<kbd>f</kbd>实时改变。</p>
+
+<h4 id="保持常亮">保持常亮</h4>
+
+<p>防止设备在已连接的状态下休眠：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--stay-awake</span>
+scrcpy <span class="nt">-w</span>
+</code></pre></div></div>
+
+<p>程序关闭后，设备设置会恢复原样。</p>
+
+<h4 id="关闭屏保">关闭屏保</h4>
+
+<p><em>Scrcpy</em> 不会默认关闭屏幕保护。</p>
+
+<p>关闭屏幕保护：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--disable-screensaver</span>
+</code></pre></div></div>
+
+<h4 id="旋转设备屏幕">旋转设备屏幕</h4>
+
+<p>使用<kbd>MOD</kbd>+<kbd>r</kbd>以在竖屏和横屏模式之间切换。</p>
+
+<p>需要注意的是，只有在前台应用程序支持所要求的模式时，才会进行切换。</p>
+
+<h4 id="复制黏贴">复制黏贴</h4>
+
+<p>每次Android的剪贴板变化的时候，它都会被自动同步到电脑的剪贴板上。</p>
+
+<p>所有的 <kbd>Ctrl</kbd> 快捷键都会被转发至设备。其中：</p>
+<ul>
+  <li><kbd>Ctrl</kbd>+<kbd>c</kbd> 复制</li>
+  <li><kbd>Ctrl</kbd>+<kbd>x</kbd> 剪切</li>
+  <li><kbd>Ctrl</kbd>+<kbd>v</kbd> 黏贴 （在电脑到设备的剪贴板同步完成之后）</li>
+</ul>
+
+<h4 id="捏拉缩放">捏拉缩放</h4>
+
+<p>模拟 “捏拉缩放”：<kbd>Ctrl</kbd>+<em>按住并移动鼠标</em>。</p>
+
+<p>更准确的说，您需要在按住<kbd>Ctrl</kbd>的同时按住并移动鼠标。
+在鼠标左键松开之后，光标的任何操作都会相对于屏幕的中央进行。</p>
+
+<p>具体来说， <em>scrcpy</em> 使用“虚拟手指”以在相对于屏幕中央相反的位置产生触摸事件。</p>
+
+<h4 id="安装apk">安装APK</h4>
+
+<p>如果您要要安装APK，请拖放APK文件（文件名以<code class="language-plaintext highlighter-rouge">.apk</code>结尾）到 <em>scrcpy</em> 窗口。</p>
+
+<p>该操作在屏幕上不会出现任何变化，而会在控制台输出一条日志。</p>
+
+<h4 id="将文件推送至设备">将文件推送至设备</h4>
+
+<p>如果您要推送文件到设备的 <code class="language-plaintext highlighter-rouge">/sdcard/</code>，请拖放文件至（不能是APK文件）<em>scrcpy</em> 窗口。</p>
+
+<p>该操作没有可见的响应，只会在控制台输出日志。</p>
+
+<p>在启动时可以修改目标目录：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrcpy <span class="nt">--push-target</span> /sdcard/foo/bar/
+</code></pre></div></div>
+
+<h4 id="其他操作">其他操作</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>操作</th>
+      <th style="text-align: left">快捷键</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>全屏</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>f</kbd></td>
+    </tr>
+    <tr>
+      <td>向左旋转屏幕</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>←</kbd> <em>(左)</em></td>
+    </tr>
+    <tr>
+      <td>向右旋转屏幕</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>→</kbd> <em>(右)</em></td>
+    </tr>
+    <tr>
+      <td>将窗口大小重置为1:1 (像素优先)</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>g</kbd></td>
+    </tr>
+    <tr>
+      <td>将窗口大小重置为消除黑边</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>w</kbd> | <em>双击¹</em></td>
+    </tr>
+    <tr>
+      <td>点按 <code class="language-plaintext highlighter-rouge">主屏幕</code></td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>h</kbd> | <em>点击鼠标中键</em></td>
+    </tr>
+    <tr>
+      <td>点按 <code class="language-plaintext highlighter-rouge">返回</code></td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>b</kbd> | <em>点击鼠标右键²</em></td>
+    </tr>
+    <tr>
+      <td>点按 <code class="language-plaintext highlighter-rouge">切换应用</code></td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>s</kbd></td>
+    </tr>
+    <tr>
+      <td>点按 <code class="language-plaintext highlighter-rouge">菜单</code> （解锁屏幕）</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>m</kbd></td>
+    </tr>
+    <tr>
+      <td>点按 <code class="language-plaintext highlighter-rouge">音量+</code></td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>↑</kbd> <em>(up)</em></td>
+    </tr>
+    <tr>
+      <td>点按 <code class="language-plaintext highlighter-rouge">音量-</code></td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>↓</kbd> <em>(down)</em></td>
+    </tr>
+    <tr>
+      <td>点按 <code class="language-plaintext highlighter-rouge">电源</code></td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>p</kbd></td>
+    </tr>
+    <tr>
+      <td>打开屏幕</td>
+      <td style="text-align: left"><em>点击鼠标右键²</em></td>
+    </tr>
+    <tr>
+      <td>关闭设备屏幕（但继续在电脑上显示）</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>o</kbd></td>
+    </tr>
+    <tr>
+      <td>打开设备屏幕</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>Shift</kbd>+<kbd>o</kbd></td>
+    </tr>
+    <tr>
+      <td>旋转设备屏幕</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>r</kbd></td>
+    </tr>
+    <tr>
+      <td>展开通知面板</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>n</kbd></td>
+    </tr>
+    <tr>
+      <td>展开快捷操作</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>Shift</kbd>+<kbd>n</kbd></td>
+    </tr>
+    <tr>
+      <td>复制到剪贴板³</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>c</kbd></td>
+    </tr>
+    <tr>
+      <td>剪切到剪贴板³</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>x</kbd></td>
+    </tr>
+    <tr>
+      <td>同步剪贴板并黏贴³</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>v</kbd></td>
+    </tr>
+    <tr>
+      <td>导入电脑剪贴板文本</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>Shift</kbd>+<kbd>v</kbd></td>
+    </tr>
+    <tr>
+      <td>打开/关闭FPS显示（在 stdout)</td>
+      <td style="text-align: left"><kbd>MOD</kbd>+<kbd>i</kbd></td>
+    </tr>
+    <tr>
+      <td>捏拉缩放</td>
+      <td style="text-align: left"><kbd>Ctrl</kbd>+<em>点按并移动鼠标</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>¹双击黑色边界以关闭黑色边界</em></p>
+
+<p><em>²点击鼠标右键将在屏幕熄灭时点亮屏幕，其余情况则视为按下 返回键 。</em></p>
+
+            </div>
+        </div>
+    </body>
+</html>

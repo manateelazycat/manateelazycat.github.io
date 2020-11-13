@@ -1,4 +1,323 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-23T22:05:22+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF浏览器导入Chrome历史和书签了!</title><link href="http://localhost:4000/emacs/eaf/2020/10/23/import-chrome-history.html" rel="alternate" type="text/html" title="EAF浏览器导入Chrome历史和书签了!" /><published>2020-10-23T00:00:00+08:00</published><updated>2020-10-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/10/23/import-chrome-history</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/10/23/import-chrome-history.html">&lt;p&gt;今天社区大神mackong提交了两个补丁：&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-13T09:21:06+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">使用scrcpy技术实现同屏协作的功能</title><link href="http://localhost:4000/linux/2020/11/12/use-scrcpy.html" rel="alternate" type="text/html" title="使用scrcpy技术实现同屏协作的功能" /><published>2020-11-12T00:00:00+08:00</published><updated>2020-11-12T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/11/12/use-scrcpy</id><content type="html" xml:base="http://localhost:4000/linux/2020/11/12/use-scrcpy.html">&lt;p&gt;之前在华为平板上体验了“同屏协作”的功能，可以直接投射手机屏幕到华为平板上，实现多设备共享微信内容，非常方便。&lt;/p&gt;
+
+&lt;p&gt;但是华为的同屏协作仅限于华为平板和华为手机之间，今天发现了scrcpy这个工具，可以在Linux下实现同样的功能。(严重怀疑华为同屏协作也是用scrcpy实现的，哈哈哈哈)&lt;/p&gt;
+
+&lt;p&gt;scrcpy这个工具可以通过USB（或TCP/IP）连接用于显示或控制安卓设备, 并且不需要手机获取 &lt;em&gt;root&lt;/em&gt; 权限。&lt;/p&gt;
+
+&lt;p&gt;它的特点主要有：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;轻量&lt;/strong&gt; （原生，仅显示设备屏幕）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;性能&lt;/strong&gt; （30~60fps）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;质量&lt;/strong&gt; （分辨率可达1920x1080或更高）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;低延迟&lt;/strong&gt; (35-70ms)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;快速启动&lt;/strong&gt; （数秒内即能开始显示）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;无侵入性&lt;/strong&gt; （不需要在安卓设备上安装任何程序）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;折腾scrcpy还是比较曲折的，下面是折腾经历分享：&lt;/p&gt;
+
+&lt;h4 id=&quot;安装必要的工具&quot;&gt;安装必要的工具&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; scrcpy adb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;打开手机的adb网络调试功能&quot;&gt;打开手机的ADB网络调试功能&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;手机中搜索 “开发者选项”， 找到“USB调试”选项，点击开启；&lt;/li&gt;
+  &lt;li&gt;手机链接USB数据线（仅第一次需要），在链接选项中选择 “打开文件” 菜单项，不能只选择 “仅充电”，要不是ADB无法连接到手机；&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;首次打开USB调试选项后连接手机，手机会弹出 “允许USB调试吗？” 的对话框，选择确定。&lt;/p&gt;
+
+&lt;h4 id=&quot;设置adb-tcp端口&quot;&gt;设置ADB TCP端口&lt;/h4&gt;
+
+&lt;p&gt;手机链接到电脑后，使用以下命令来设置ADB的TCP链接端口号：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;adb shell
+
+setprop service.adb.tcp.port 5555
+
+stop adbd
+start adbd
+
+&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;通过wifi投屏&quot;&gt;通过Wifi投屏&lt;/h4&gt;
+
+&lt;p&gt;设置完ADB TCP端口后，就可以断开USB数据线，确保电脑和手机都连接到同一个Wifi网络后，查看手机的IP地址（可以点击Wifi列表名字或者下载 “网络信号信息” 工具查看）&lt;/p&gt;
+
+&lt;p&gt;使用下面的命令来投屏手机到电脑:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; 192.168.x.x:5555
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;192.168.x.x 需要换成你手机的真实IP&lt;/p&gt;
+
+&lt;p&gt;在高铁的环境，可以直接用USB数据线的方式，直接使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scrcpy&lt;/code&gt;命令即可。&lt;/p&gt;
+
+&lt;h4 id=&quot;缩小分辨率&quot;&gt;缩小分辨率&lt;/h4&gt;
+
+&lt;p&gt;默认的窗口使用了整个屏幕高，有时候操作不太方便，可以适当缩小一点：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; 1024
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;锁定屏幕朝向&quot;&gt;锁定屏幕朝向&lt;/h4&gt;
+
+&lt;p&gt;可以使用如下命令锁定屏幕朝向：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--lock-video-orientation&lt;/span&gt; 0   &lt;span class=&quot;c&quot;&gt;# 自然朝向&lt;/span&gt;
+scrcpy &lt;span class=&quot;nt&quot;&gt;--lock-video-orientation&lt;/span&gt; 1   &lt;span class=&quot;c&quot;&gt;# 90° 逆时针旋转&lt;/span&gt;
+scrcpy &lt;span class=&quot;nt&quot;&gt;--lock-video-orientation&lt;/span&gt; 2   &lt;span class=&quot;c&quot;&gt;# 180°&lt;/span&gt;
+scrcpy &lt;span class=&quot;nt&quot;&gt;--lock-video-orientation&lt;/span&gt; 3   &lt;span class=&quot;c&quot;&gt;# 90° 顺时针旋转&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;屏幕录制&quot;&gt;屏幕录制&lt;/h3&gt;
+
+&lt;p&gt;可以在屏幕镜像的同时录制视频：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--record&lt;/span&gt; file.mp4
+scrcpy &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; file.mkv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在不开启屏幕镜像的同时录制：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--no-display&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--record&lt;/span&gt; file.mp4
+scrcpy &lt;span class=&quot;nt&quot;&gt;-Nr&lt;/span&gt; file.mkv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;按Ctrl+C以停止录制。&lt;/p&gt;
+
+&lt;h4 id=&quot;多设备&quot;&gt;多设备&lt;/h4&gt;
+
+&lt;p&gt;如果多个设备在执行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;adb devices&lt;/code&gt;后被列出，您必须指定设备的 &lt;em&gt;序列号&lt;/em&gt; ：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--serial&lt;/span&gt; 0123456789abcdef
+scrcpy &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; 0123456789abcdef  &lt;span class=&quot;c&quot;&gt;# short version&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;如果设备是通过TCP/IP方式连接到电脑的：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--serial&lt;/span&gt; 192.168.0.1:5555
+scrcpy &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; 192.168.0.1:5555  &lt;span class=&quot;c&quot;&gt;# short version&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;您可以同时启动多个 &lt;em&gt;scrcpy&lt;/em&gt; 实例以同时显示多个设备的画面。&lt;/p&gt;
+
+&lt;h4 id=&quot;标题&quot;&gt;标题&lt;/h4&gt;
+
+&lt;p&gt;窗口的标题默认为设备型号。您可以通过如下命令修改它：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--window-title&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'My device'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;位置和大小&quot;&gt;位置和大小&lt;/h4&gt;
+
+&lt;p&gt;您可以指定初始的窗口位置和大小：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--window-x&lt;/span&gt; 100 &lt;span class=&quot;nt&quot;&gt;--window-y&lt;/span&gt; 100 &lt;span class=&quot;nt&quot;&gt;--window-width&lt;/span&gt; 800 &lt;span class=&quot;nt&quot;&gt;--window-height&lt;/span&gt; 600
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;无边框&quot;&gt;无边框&lt;/h4&gt;
+
+&lt;p&gt;关闭边框：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--window-borderless&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;保持窗口在最前&quot;&gt;保持窗口在最前&lt;/h4&gt;
+
+&lt;p&gt;您可以通过如下命令保持窗口在最前面：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--always-on-top&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;全屏&quot;&gt;全屏&lt;/h4&gt;
+
+&lt;p&gt;您可以通过如下命令直接全屏启动scrcpy：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--fullscreen&lt;/span&gt;
+scrcpy &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# short version&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;全屏状态可以通过&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;f&lt;/kbd&gt;实时改变。&lt;/p&gt;
+
+&lt;h4 id=&quot;保持常亮&quot;&gt;保持常亮&lt;/h4&gt;
+
+&lt;p&gt;防止设备在已连接的状态下休眠：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--stay-awake&lt;/span&gt;
+scrcpy &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;程序关闭后，设备设置会恢复原样。&lt;/p&gt;
+
+&lt;h4 id=&quot;关闭屏保&quot;&gt;关闭屏保&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;Scrcpy&lt;/em&gt; 不会默认关闭屏幕保护。&lt;/p&gt;
+
+&lt;p&gt;关闭屏幕保护：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--disable-screensaver&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;旋转设备屏幕&quot;&gt;旋转设备屏幕&lt;/h4&gt;
+
+&lt;p&gt;使用&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;r&lt;/kbd&gt;以在竖屏和横屏模式之间切换。&lt;/p&gt;
+
+&lt;p&gt;需要注意的是，只有在前台应用程序支持所要求的模式时，才会进行切换。&lt;/p&gt;
+
+&lt;h4 id=&quot;复制黏贴&quot;&gt;复制黏贴&lt;/h4&gt;
+
+&lt;p&gt;每次Android的剪贴板变化的时候，它都会被自动同步到电脑的剪贴板上。&lt;/p&gt;
+
+&lt;p&gt;所有的 &lt;kbd&gt;Ctrl&lt;/kbd&gt; 快捷键都会被转发至设备。其中：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;c&lt;/kbd&gt; 复制&lt;/li&gt;
+  &lt;li&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;x&lt;/kbd&gt; 剪切&lt;/li&gt;
+  &lt;li&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;v&lt;/kbd&gt; 黏贴 （在电脑到设备的剪贴板同步完成之后）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;捏拉缩放&quot;&gt;捏拉缩放&lt;/h4&gt;
+
+&lt;p&gt;模拟 “捏拉缩放”：&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;em&gt;按住并移动鼠标&lt;/em&gt;。&lt;/p&gt;
+
+&lt;p&gt;更准确的说，您需要在按住&lt;kbd&gt;Ctrl&lt;/kbd&gt;的同时按住并移动鼠标。
+在鼠标左键松开之后，光标的任何操作都会相对于屏幕的中央进行。&lt;/p&gt;
+
+&lt;p&gt;具体来说， &lt;em&gt;scrcpy&lt;/em&gt; 使用“虚拟手指”以在相对于屏幕中央相反的位置产生触摸事件。&lt;/p&gt;
+
+&lt;h4 id=&quot;安装apk&quot;&gt;安装APK&lt;/h4&gt;
+
+&lt;p&gt;如果您要要安装APK，请拖放APK文件（文件名以&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.apk&lt;/code&gt;结尾）到 &lt;em&gt;scrcpy&lt;/em&gt; 窗口。&lt;/p&gt;
+
+&lt;p&gt;该操作在屏幕上不会出现任何变化，而会在控制台输出一条日志。&lt;/p&gt;
+
+&lt;h4 id=&quot;将文件推送至设备&quot;&gt;将文件推送至设备&lt;/h4&gt;
+
+&lt;p&gt;如果您要推送文件到设备的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/sdcard/&lt;/code&gt;，请拖放文件至（不能是APK文件）&lt;em&gt;scrcpy&lt;/em&gt; 窗口。&lt;/p&gt;
+
+&lt;p&gt;该操作没有可见的响应，只会在控制台输出日志。&lt;/p&gt;
+
+&lt;p&gt;在启动时可以修改目标目录：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;--push-target&lt;/span&gt; /sdcard/foo/bar/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;其他操作&quot;&gt;其他操作&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;操作&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;快捷键&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;全屏&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;f&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;向左旋转屏幕&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;←&lt;/kbd&gt; &lt;em&gt;(左)&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;向右旋转屏幕&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;→&lt;/kbd&gt; &lt;em&gt;(右)&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;将窗口大小重置为1:1 (像素优先)&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;g&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;将窗口大小重置为消除黑边&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;w&lt;/kbd&gt; | &lt;em&gt;双击¹&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;点按 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;主屏幕&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;h&lt;/kbd&gt; | &lt;em&gt;点击鼠标中键&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;点按 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;返回&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;b&lt;/kbd&gt; | &lt;em&gt;点击鼠标右键²&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;点按 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;切换应用&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;s&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;点按 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;菜单&lt;/code&gt; （解锁屏幕）&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;m&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;点按 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;音量+&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;↑&lt;/kbd&gt; &lt;em&gt;(up)&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;点按 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;音量-&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;↓&lt;/kbd&gt; &lt;em&gt;(down)&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;点按 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;电源&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;p&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;打开屏幕&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;em&gt;点击鼠标右键²&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;关闭设备屏幕（但继续在电脑上显示）&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;o&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;打开设备屏幕&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;o&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;旋转设备屏幕&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;r&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;展开通知面板&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;n&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;展开快捷操作&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;n&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;复制到剪贴板³&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;c&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;剪切到剪贴板³&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;x&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;同步剪贴板并黏贴³&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;v&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;导入电脑剪贴板文本&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;v&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;打开/关闭FPS显示（在 stdout)&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;MOD&lt;/kbd&gt;+&lt;kbd&gt;i&lt;/kbd&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;捏拉缩放&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;em&gt;点按并移动鼠标&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;em&gt;¹双击黑色边界以关闭黑色边界&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;²点击鼠标右键将在屏幕熄灭时点亮屏幕，其余情况则视为按下 返回键 。&lt;/em&gt;&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">之前在华为平板上体验了“同屏协作”的功能，可以直接投射手机屏幕到华为平板上，实现多设备共享微信内容，非常方便。</summary></entry><entry><title type="html">EAF浏览器支持直接导入Chrome历史和书签了!</title><link href="http://localhost:4000/emacs/eaf/2020/10/23/import-chrome-history-and-bookmark.html" rel="alternate" type="text/html" title="EAF浏览器支持直接导入Chrome历史和书签了!" /><published>2020-10-23T00:00:00+08:00</published><updated>2020-10-23T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/10/23/import-chrome-history-and-bookmark</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/10/23/import-chrome-history-and-bookmark.html">&lt;p&gt;今天社区大神mackong提交了两个补丁：&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/a2570c240079d72c19105b1f935d7a3209901b1b&quot;&gt;Support import history from chrome&lt;/a&gt;。&lt;/li&gt;
@@ -500,9 +819,4 @@
   &lt;li&gt;执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wmctrl -x -a wechat.exe || /opt/deepinwine/apps/Deepin-WeChat/run.sh&lt;/code&gt; 命令来启动或切换微信窗口&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;通过以上设置后，便可以方便的安装系统并调整系统和微信的字体缩放，其他的设置和传统机器相同。&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">最近入手了一个Dell XPS 13, 机器很小巧，32G内存，2T硬盘，资源足够我玩一些开源技术了。 同时这也是一个4k屏幕，带来了一些烦恼。</summary></entry><entry><title type="html">解决Linux下微信输入中文为方块的问题</title><link href="http://localhost:4000/linux/2020/08/18/wechat-and-input-method.html" rel="alternate" type="text/html" title="解决Linux下微信输入中文为方块的问题" /><published>2020-08-18T00:00:00+08:00</published><updated>2020-08-18T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/08/18/wechat-and-input-method</id><content type="html" xml:base="http://localhost:4000/linux/2020/08/18/wechat-and-input-method.html">&lt;ol&gt;
-  &lt;li&gt;编辑文件 /opt/deepinwine/tools/run.sh&lt;/li&gt;
-  &lt;li&gt;找到 WINE_CMD 一行，改成 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WINE_CMD=&quot;LC_ALL=zh_CN.UTF-8 deepin-wine&quot;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;然后重启Wine版本微信后，输入中文就显示正常了。&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">编辑文件 /opt/deepinwine/tools/run.sh 找到 WINE_CMD 一行，改成 WINE_CMD=&quot;LC_ALL=zh_CN.UTF-8 deepin-wine&quot;</summary></entry></feed>
+&lt;p&gt;通过以上设置后，便可以方便的安装系统并调整系统和微信的字体缩放，其他的设置和传统机器相同。&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">最近入手了一个Dell XPS 13, 机器很小巧，32G内存，2T硬盘，资源足够我玩一些开源技术了。 同时这也是一个4k屏幕，带来了一些烦恼。</summary></entry></feed>
