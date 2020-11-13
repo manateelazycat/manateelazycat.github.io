@@ -56,7 +56,8 @@ exit
 使用下面的命令来投屏手机到电脑:
 
 ```bash
-scrcpy -s 192.168.x.x:5555
+adb connect 192.168.x.x:5555
+scrcpy
 ```
 
 192.168.x.x 需要换成你手机的真实IP
