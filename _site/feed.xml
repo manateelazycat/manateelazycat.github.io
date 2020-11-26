@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-13T09:21:06+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">使用scrcpy技术实现同屏协作的功能</title><link href="http://localhost:4000/linux/2020/11/12/use-scrcpy.html" rel="alternate" type="text/html" title="使用scrcpy技术实现同屏协作的功能" /><published>2020-11-12T00:00:00+08:00</published><updated>2020-11-12T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/11/12/use-scrcpy</id><content type="html" xml:base="http://localhost:4000/linux/2020/11/12/use-scrcpy.html">&lt;p&gt;之前在华为平板上体验了“同屏协作”的功能，可以直接投射手机屏幕到华为平板上，实现多设备共享微信内容，非常方便。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-26T20:10:55+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF焦点问题修复札记</title><link href="http://localhost:4000/emacs/eaf/2020/11/26/fix-eaf-focus.html" rel="alternate" type="text/html" title="EAF焦点问题修复札记" /><published>2020-11-26T00:00:00+08:00</published><updated>2020-11-26T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/11/26/fix-eaf-focus</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/11/26/fix-eaf-focus.html">&lt;p&gt;最近升级系统后遇到一个非常郁闷的问题，当从其他程序切换到Emacs/EAF窗口的时候，EAF高概率会无法响应任何事件，包括Emacs本身。
+最近比较忙，遇到这个问题就暂时用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;killall emacs&lt;/code&gt; 命令来解决。&lt;/p&gt;
+
+&lt;p&gt;今天花了2个小时好好的调研一番，终于想出了解决方案。&lt;/p&gt;
+
+&lt;h4 id=&quot;研究&quot;&gt;研究&lt;/h4&gt;
+&lt;p&gt;首先在 core/view.py 的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eventFilter&lt;/code&gt; 函数里面加上一句代码 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;print(time.time(), event.type())&lt;/code&gt;, 认真观察出问题时的事件环境。&lt;/p&gt;
+
+&lt;p&gt;通过反复观察后发现一个规律：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;切换到Emacs/EAF窗口时，如果光标在EAF窗口外，Emacs窗口可以正常切换输入焦点&lt;/li&gt;
+  &lt;li&gt;如果光标在EAF窗口内，Emacs窗口无法获取输入焦点，因为Emacs无法获取输入焦点，所以EAF和整个Emacs都没有反映。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;掌握规律后，事件序列就有参考价值了，当鼠标在EAF窗口外时，事件触发的顺序符合下面的规律:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;QEvent.ShortcutOverride&lt;/li&gt;
+  &lt;li&gt;QEvent.KeyPress&lt;/li&gt;
+  &lt;li&gt;QEvent.KeyRelease&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;看来罪魁祸首在于 QEvent.ShortcutOverride 事件, 这个事件产生以后，输入焦点只能聚焦到EAF的Qt窗口，而不能正常转移Emacs窗口中。&lt;/p&gt;
+
+&lt;h3 id=&quot;补丁&quot;&gt;补丁&lt;/h3&gt;
+&lt;p&gt;根据事件的规律，最后写了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/2e1e5f6c9574617f71e0d1c53f0c6b00105b9d18&quot;&gt;修复补丁&lt;/a&gt;解决了这个问题，解决思路如下：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;因为Emacs是EAF Python进程的父进程, 捕获到QEvent.ShortcutOverride事件发生时，首选用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;os.getppid()&lt;/code&gt; 获取Emacs的进程PID;&lt;/li&gt;
+  &lt;li&gt;通过命令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wmctrl -lp | awk -vpid=$PID '$3==emacs_pid {print $1; exit}'&lt;/code&gt; 获取Emacs PID对应的XID;&lt;/li&gt;
+  &lt;li&gt;通过命令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wmctrl -i -a emacs_xid&lt;/code&gt; 激活Emacs窗口；&lt;/li&gt;
+  &lt;li&gt;最后把所有逻辑联接在一起，捕获QEvent.ShortcutOverride事件后，调用 wmctrl 命令强制激活Emacs窗口。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;又可以开心的用EAF了，强烈建议大家更新EAF到最新版，最新的补丁需要安装 wmctrl 这个工具配合才能生效。&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><category term="EAF" /><summary type="html">最近升级系统后遇到一个非常郁闷的问题，当从其他程序切换到Emacs/EAF窗口的时候，EAF高概率会无法响应任何事件，包括Emacs本身。 最近比较忙，遇到这个问题就暂时用 killall emacs 命令来解决。</summary></entry><entry><title type="html">使用scrcpy技术实现同屏协作的功能</title><link href="http://localhost:4000/linux/2020/11/12/use-scrcpy.html" rel="alternate" type="text/html" title="使用scrcpy技术实现同屏协作的功能" /><published>2020-11-12T00:00:00+08:00</published><updated>2020-11-12T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/11/12/use-scrcpy</id><content type="html" xml:base="http://localhost:4000/linux/2020/11/12/use-scrcpy.html">&lt;p&gt;之前在华为平板上体验了“同屏协作”的功能，可以直接投射手机屏幕到华为平板上，实现多设备共享微信内容，非常方便。&lt;/p&gt;
 
 &lt;p&gt;但是华为的同屏协作仅限于华为平板和华为手机之间，今天发现了scrcpy这个工具，可以在Linux下实现同样的功能。(严重怀疑华为同屏协作也是用scrcpy实现的，哈哈哈哈)&lt;/p&gt;
 
@@ -51,7 +86,8 @@ start adbd
 
 &lt;p&gt;使用下面的命令来投屏手机到电脑:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scrcpy &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; 192.168.x.x:5555
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;adb connect 192.168.x.x:5555
+scrcpy
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;192.168.x.x 需要换成你手机的真实IP&lt;/p&gt;
@@ -790,33 +826,4 @@ scrcpy &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt;
 
 &lt;p&gt;安装地址：&lt;/p&gt;
 
-&lt;p&gt;https://www.archlinux.org/packages/community/x86_64/deepin-terminal-old/&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">感谢亲爱的肥猫大人，深度终端GTK版本终于回归了，顺手舒服。</summary></entry><entry><title type="html">Dell XPS, HiDPI and Arch Linux</title><link href="http://localhost:4000/linux/2020/09/02/dell-xps-13.html" rel="alternate" type="text/html" title="Dell XPS, HiDPI and Arch Linux" /><published>2020-09-02T00:00:00+08:00</published><updated>2020-09-02T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/09/02/dell-xps-13</id><content type="html" xml:base="http://localhost:4000/linux/2020/09/02/dell-xps-13.html">&lt;p&gt;最近入手了一个Dell XPS 13, 机器很小巧，32G内存，2T硬盘，资源足够我玩一些开源技术了。
-同时这也是一个4k屏幕，带来了一些烦恼。&lt;/p&gt;
-
-&lt;p&gt;下面是折腾这台机器的一些步骤：&lt;/p&gt;
-
-&lt;h4 id=&quot;引导和磁盘&quot;&gt;引导和磁盘&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;按F2进入BIOS, 禁用Secure Boot和安全UEFI启动盘检查，以引导 Manjaro 启动U盘&lt;/li&gt;
-  &lt;li&gt;把硬盘模式从 RAID 模式改成 ACHI 模式，使得安装器可以识别 SSD&lt;/li&gt;
-  &lt;li&gt;保存BIOS配置后，重启按F12选择启动U盘安装系统&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;高分屏设置&quot;&gt;高分屏设置&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;进入KDE显示设置，设置缩放为 200%&lt;/li&gt;
-  &lt;li&gt;修改 /etc/sddm.conf 配置文件，在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ServerArguments=-nolisten tcp&lt;/code&gt; 行后面增加 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-dpi 196&lt;/code&gt;，放大登录界面的分辨率&lt;/li&gt;
-  &lt;li&gt;修改光标主题中光标大小，从 24 调整为 48&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;微信设置&quot;&gt;微信设置&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;安装 xsettingsd, 保证Wine微信可以正常启动，不能用 gsd-xsettings, gsd-xsettings 会重置DPI设置让系统字体非常小&lt;/li&gt;
-  &lt;li&gt;用命令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;env WINEPREFIX=$HOME/.deepinwine/Deepin-WeChat deepin-wine winecfg&lt;/code&gt; 启动显示设置对话框，点击显示标签，把DPI调到250, 可以放大微信的字体&lt;/li&gt;
-  &lt;li&gt;执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wmctrl -x -a wechat.exe || /opt/deepinwine/apps/Deepin-WeChat/run.sh&lt;/code&gt; 命令来启动或切换微信窗口&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;通过以上设置后，便可以方便的安装系统并调整系统和微信的字体缩放，其他的设置和传统机器相同。&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">最近入手了一个Dell XPS 13, 机器很小巧，32G内存，2T硬盘，资源足够我玩一些开源技术了。 同时这也是一个4k屏幕，带来了一些烦恼。</summary></entry></feed>
+&lt;p&gt;https://www.archlinux.org/packages/community/x86_64/deepin-terminal-old/&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">感谢亲爱的肥猫大人，深度终端GTK版本终于回归了，顺手舒服。</summary></entry></feed>
