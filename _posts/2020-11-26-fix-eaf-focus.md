@@ -17,13 +17,13 @@ categories: [Emacs, EAF]
 * 切换到Emacs/EAF窗口时，如果光标在EAF窗口外，Emacs窗口可以正常切换输入焦点
 * 如果光标在EAF窗口内，Emacs窗口无法获取输入焦点，因为Emacs无法获取输入焦点，所以EAF和整个Emacs都没有反映。
 
-掌握规律后，事件序列就有参考价值了，当鼠标在EAF窗口外时，事件触发的顺序符合下面的规律:
+掌握规律后，事件序列就有参考价值了，当鼠标在EAF窗口内时，事件触发的顺序符合下面的规律:
 
 1. QEvent.ShortcutOverride
 2. QEvent.KeyPress
 3. QEvent.KeyRelease
 
-看来罪魁祸首在于 QEvent.ShortcutOverride 事件, 这个事件产生以后，输入焦点只能聚焦到EAF的Qt窗口，而不能正常转移Emacs窗口中。
+看来罪魁祸首在于 QEvent.ShortcutOverride 事件, 这个事件产生以后，输入焦点只能聚焦到EAF的Qt窗口，而不能正常聚焦到Emacs窗口本身。
 
 ### 补丁
 根据事件的规律，最后写了一个[修复补丁](https://github.com/manateelazycat/emacs-application-framework/commit/2e1e5f6c9574617f71e0d1c53f0c6b00105b9d18)解决了这个问题，解决思路如下：
