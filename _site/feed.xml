@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-26T20:10:55+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF焦点问题修复札记</title><link href="http://localhost:4000/emacs/eaf/2020/11/26/fix-eaf-focus.html" rel="alternate" type="text/html" title="EAF焦点问题修复札记" /><published>2020-11-26T00:00:00+08:00</published><updated>2020-11-26T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/11/26/fix-eaf-focus</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/11/26/fix-eaf-focus.html">&lt;p&gt;最近升级系统后遇到一个非常郁闷的问题，当从其他程序切换到Emacs/EAF窗口的时候，EAF高概率会无法响应任何事件，包括Emacs本身。
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-01T10:05:59+08:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">EAF and EmacsConf 2020</title><link href="http://localhost:4000/emacs/eaf/2020/12/01/eaf-community.html" rel="alternate" type="text/html" title="EAF and EmacsConf 2020" /><published>2020-12-01T00:00:00+08:00</published><updated>2020-12-01T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/12/01/eaf-community</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/12/01/eaf-community.html">&lt;p&gt;前天&lt;a href=&quot;https://github.com/MatthewZMD&quot;&gt;MT&lt;/a&gt;代表EAF社区在&lt;a href=&quot;https://emacsconf.org/2020/&quot;&gt;EmacsConf 2020&lt;/a&gt;发表了&lt;a href=&quot;https://emacsconf.org/2020/talks/34/&quot;&gt;演讲&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;包括EmacsConf演讲视频的制作、用户问题的回复、IRC的互动，MT都付出了巨大的努力。&lt;/p&gt;
+
+&lt;p&gt;这还不是所有，因为MT常年在加拿大工作，我们之间经常倒12个小时左右的时差，经常都是我睡醒了以后，MT已经完成了大量的社区补丁代码审核、补丁的合并，他是如此友好、耐心 (比我有耐心多了)，耐心的解答EAF用户的问题，每个讨论EAF的地方都有MT的影子，我经常在Reddit看到MT不厌其烦的向大家推荐EAF的各种功能。&lt;/p&gt;
+
+&lt;p&gt;真的很感谢MT这两年的热情和投入，没有他，EAF不会发展的这么迅速。&lt;/p&gt;
+
+&lt;p&gt;到目前为止, &lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework&quot;&gt;EAF&lt;/a&gt;社区已经超过1,300个赞、100次以上的fork、合并了272个社区补丁、提交了超过1,566次commit。&lt;/p&gt;
+
+&lt;p&gt;当我看到EmacsConf 2020中MT开心的笑容时，我想这也许就是开源社区最大的魅力吧。&lt;/p&gt;
+
+&lt;p&gt;这么多年，很多人问我开源社区的本质是什么？&lt;/p&gt;
+
+&lt;p&gt;其实就是通过代码传递简简单单的快乐，我们可能永远都无法在线下见到协作开发者，但是我们可以通过代码交流思想，知道地球的某处有很多聪明的人们有着共同的理想。&lt;/p&gt;
+
+&lt;p&gt;那里没有利益关系，也没有雇佣关系，就是下了班以后，大家为了共同的兴趣一起交流，一起合作，一起在不同文化背景下相互欣赏。&lt;/p&gt;
+
+&lt;p&gt;EAF user say:&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;Oh, thats great actually, I have noticed it being a little choppy at times, I am excited to try EAF in general because it looks awesome and if its faster than pdf-tools I will probably also switch to it for my pdfs. Thanks a lot for the talk, one of my favourites in this EmacsConf, it gave me a lot of great tools to try inside Emacs!!&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><category term="EAF" /><summary type="html">前天MT代表EAF社区在EmacsConf 2020发表了演讲。</summary></entry><entry><title type="html">EAF焦点问题修复札记</title><link href="http://localhost:4000/emacs/eaf/2020/11/26/fix-eaf-focus.html" rel="alternate" type="text/html" title="EAF焦点问题修复札记" /><published>2020-11-26T00:00:00+08:00</published><updated>2020-11-26T00:00:00+08:00</updated><id>http://localhost:4000/emacs/eaf/2020/11/26/fix-eaf-focus</id><content type="html" xml:base="http://localhost:4000/emacs/eaf/2020/11/26/fix-eaf-focus.html">&lt;p&gt;最近升级系统后遇到一个非常郁闷的问题，当从其他程序切换到Emacs/EAF窗口的时候，EAF高概率会无法响应任何事件，包括Emacs本身。
 最近比较忙，遇到这个问题就暂时用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;killall emacs&lt;/code&gt; 命令来解决。&lt;/p&gt;
 
 &lt;p&gt;今天花了2个小时好好的调研一番，终于想出了解决方案。&lt;/p&gt;
@@ -13,7 +33,7 @@
   &lt;li&gt;如果光标在EAF窗口内，Emacs窗口无法获取输入焦点，因为Emacs无法获取输入焦点，所以EAF和整个Emacs都没有反映。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;掌握规律后，事件序列就有参考价值了，当鼠标在EAF窗口外时，事件触发的顺序符合下面的规律:&lt;/p&gt;
+&lt;p&gt;掌握规律后，事件序列就有参考价值了，当鼠标在EAF窗口内时，事件触发的顺序符合下面的规律:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;QEvent.ShortcutOverride&lt;/li&gt;
@@ -21,7 +41,7 @@
   &lt;li&gt;QEvent.KeyRelease&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;看来罪魁祸首在于 QEvent.ShortcutOverride 事件, 这个事件产生以后，输入焦点只能聚焦到EAF的Qt窗口，而不能正常转移Emacs窗口中。&lt;/p&gt;
+&lt;p&gt;看来罪魁祸首在于 QEvent.ShortcutOverride 事件, 这个事件产生以后，输入焦点只能聚焦到EAF的Qt窗口，而不能正常聚焦到Emacs窗口本身。&lt;/p&gt;
 
 &lt;h3 id=&quot;补丁&quot;&gt;补丁&lt;/h3&gt;
 &lt;p&gt;根据事件的规律，最后写了一个&lt;a href=&quot;https://github.com/manateelazycat/emacs-application-framework/commit/2e1e5f6c9574617f71e0d1c53f0c6b00105b9d18&quot;&gt;修复补丁&lt;/a&gt;解决了这个问题，解决思路如下：&lt;/p&gt;
@@ -820,10 +840,4 @@ scrcpy &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt;
 &lt;h4 id=&quot;历史长河&quot;&gt;历史长河&lt;/h4&gt;
 &lt;p&gt;看太史公从三皇五帝、夏商周讲到战国，直至汉朝前后2000多年历史，我能从中学习的，不仅仅是每个传记描写的历史侧面，也不仅仅是单一维度的功过评说，更是让我从时间的太空去俯视过去，明白了什么是大义大德，什么是趋势和格局, 什么是一生中真正重要的…&lt;/p&gt;
 
-&lt;p&gt;在历史的长河中，特别像我们这种技术手艺人，积极的正确认知自我非常关键，知识可以通过后天努力习得，走错方向了过往精力不再来，岂不到最后后悔一生？&lt;/p&gt;</content><author><name></name></author><category term="Reading" /><summary type="html">从今年4月份开始，每天晚上读一篇的节奏，历时近5个月终于读完了史太公编著的《史记》一书，共计一百三十篇，五十二万六千五百字。</summary></entry><entry><title type="html">经典版的深度终端，还是那个味道</title><link href="http://localhost:4000/linux/2020/09/02/deepin-terminal-back.html" rel="alternate" type="text/html" title="经典版的深度终端，还是那个味道" /><published>2020-09-02T00:00:00+08:00</published><updated>2020-09-02T00:00:00+08:00</updated><id>http://localhost:4000/linux/2020/09/02/deepin-terminal-back</id><content type="html" xml:base="http://localhost:4000/linux/2020/09/02/deepin-terminal-back.html">&lt;p&gt;感谢亲爱的肥猫大人，深度终端GTK版本终于回归了，顺手舒服。&lt;/p&gt;
-
-&lt;p&gt;https://twitter.com/felixonmars/status/1301173435398324226?s=20&lt;/p&gt;
-
-&lt;p&gt;安装地址：&lt;/p&gt;
-
-&lt;p&gt;https://www.archlinux.org/packages/community/x86_64/deepin-terminal-old/&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">感谢亲爱的肥猫大人，深度终端GTK版本终于回归了，顺手舒服。</summary></entry></feed>
+&lt;p&gt;在历史的长河中，特别像我们这种技术手艺人，积极的正确认知自我非常关键，知识可以通过后天努力习得，走错方向了过往精力不再来，岂不到最后后悔一生？&lt;/p&gt;</content><author><name></name></author><category term="Reading" /><summary type="html">从今年4月份开始，每天晚上读一篇的节奏，历时近5个月终于读完了史太公编著的《史记》一书，共计一百三十篇，五十二万六千五百字。</summary></entry></feed>
