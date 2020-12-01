@@ -57,7 +57,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数857 2020-11-26
+                字数859 2020-11-26
             </div>
             <div class="content">
                 <p>最近升级系统后遇到一个非常郁闷的问题，当从其他程序切换到Emacs/EAF窗口的时候，EAF高概率会无法响应任何事件，包括Emacs本身。
@@ -75,7 +75,7 @@
   <li>如果光标在EAF窗口内，Emacs窗口无法获取输入焦点，因为Emacs无法获取输入焦点，所以EAF和整个Emacs都没有反映。</li>
 </ul>
 
-<p>掌握规律后，事件序列就有参考价值了，当鼠标在EAF窗口外时，事件触发的顺序符合下面的规律:</p>
+<p>掌握规律后，事件序列就有参考价值了，当鼠标在EAF窗口内时，事件触发的顺序符合下面的规律:</p>
 
 <ol>
   <li>QEvent.ShortcutOverride</li>
@@ -83,7 +83,7 @@
   <li>QEvent.KeyRelease</li>
 </ol>
 
-<p>看来罪魁祸首在于 QEvent.ShortcutOverride 事件, 这个事件产生以后，输入焦点只能聚焦到EAF的Qt窗口，而不能正常转移Emacs窗口中。</p>
+<p>看来罪魁祸首在于 QEvent.ShortcutOverride 事件, 这个事件产生以后，输入焦点只能聚焦到EAF的Qt窗口，而不能正常聚焦到Emacs窗口本身。</p>
 
 <h3 id="补丁">补丁</h3>
 <p>根据事件的规律，最后写了一个<a href="https://github.com/manateelazycat/emacs-application-framework/commit/2e1e5f6c9574617f71e0d1c53f0c6b00105b9d18">修复补丁</a>解决了这个问题，解决思路如下：</p>
