@@ -23,22 +23,7 @@ a {
     text-decoration: none;
 }
 
-.cover {
-    display: none;
-}
-
-.motto {
-    font-size: 18px;
-    color: #AAA;
-    opacity: 0.7;
-    font-family: mottoFont;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-.content {
+.content-background {
     flex: 1;
     width: auto;
     overflow-y: scroll;

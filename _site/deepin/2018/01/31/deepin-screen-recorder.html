@@ -8,32 +8,32 @@
 <title>从深度录屏看录制后端的技术细节</title>
 
 
-        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
-        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
     </head>
     <body>
         <div class="navigatebar">
     <div class="navigatebar-button navigatebar-mine">
-        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/index.html">Home</a>
+        <a href="//manateelazycat.github.io/index.html">Home</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/tags.html">Tags</a>
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/projects.html">Projects</a>
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/feed.xml">Feeds</a>
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
     </div>
     <div class="navigatebar-button navigatebar-about">
-        <a href="http://localhost:4000/about.html">About</a>
+        <a href="//manateelazycat.github.io/about.html">About</a>
     </div>
 </div>
 
@@ -43,7 +43,7 @@
             </div>
             <div class="category-area">
                 「
-                <a href="http://localhost:4000/tags.html#Deepin">
+                <a href="//manateelazycat.github.io/tags.html#Deepin">
                     <div class="category">
                         Deepin
                     </div>
@@ -57,7 +57,7 @@
                 <p>深度录屏现在已经变成深度社区反馈问题的神器了，以前要大段文字才能表述清楚的问题反馈，现在直接用录屏录制一段，清清楚楚，不拖泥带水。社区的用户反馈简单，我们深度团队修复问题也迅速了。</p>
 
 <h3 id="总体架构">总体架构</h3>
-<p><img src="http://localhost:4000/pics/deepin-screen-recorder/deepin-screen-recorder-1.png" alt="总体架构" /></p>
+<p><img src="//manateelazycat.github.io/pics/deepin-screen-recorder/deepin-screen-recorder-1.png" alt="总体架构" /></p>
 
 <p>深度录屏这个小工具的总体架构非常简单，从上到下依次为：
 1、进程启动的初始化操作，包括单实例处理和快捷键处理（第一次按快捷键开始录制，再按一次结束录制）

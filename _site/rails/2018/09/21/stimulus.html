@@ -8,32 +8,32 @@
 <title>Rails Everyday, SJR 结合 Stimulus 构建可维护的JavaScript代码</title>
 
 
-        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
-        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
     </head>
     <body>
         <div class="navigatebar">
     <div class="navigatebar-button navigatebar-mine">
-        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/index.html">Home</a>
+        <a href="//manateelazycat.github.io/index.html">Home</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/tags.html">Tags</a>
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/projects.html">Projects</a>
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/feed.xml">Feeds</a>
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
     </div>
     <div class="navigatebar-button navigatebar-about">
-        <a href="http://localhost:4000/about.html">About</a>
+        <a href="//manateelazycat.github.io/about.html">About</a>
     </div>
 </div>
 
@@ -43,7 +43,7 @@
             </div>
             <div class="category-area">
                 「
-                <a href="http://localhost:4000/tags.html#Rails">
+                <a href="//manateelazycat.github.io/tags.html#Rails">
                     <div class="category">
                         Rails
                     </div>
@@ -72,11 +72,11 @@ Text
 <p>说 Stimulus 是生产力代表一点都不为过, 不过今天不详细讲解 Stimulus 的用法.
 今天主要讲怎么利用 Stimulus 优雅的处理 AJAX 请求, 来构建健壮可维护的 JavaScript 代码.</p>
 
-<p><img src="http://localhost:4000/pics/stimulus/stimulus-1.png" alt="Rails Demo" /></p>
+<p><img src="//manateelazycat.github.io/pics/stimulus/stimulus-1.png" alt="Rails Demo" /></p>
 
 <p>举个简单的例子, 如果我们要实现上图中这种上传头像后自动更新页面中两处头像元素的功能, 我们一般会按照下图这种 Rails SJR (Server-generated JavaScript Responses) 流程来处理:</p>
 
-<p><img src="http://localhost:4000/pics/stimulus/stimulus-2.png" alt="Rails SJR workflow" /></p>
+<p><img src="//manateelazycat.github.io/pics/stimulus/stimulus-2.png" alt="Rails SJR workflow" /></p>
 
 <ol>
   <li>首先在浏览器端, 触发 submit 按钮后, 提交表单数据到服务器</li>
@@ -85,7 +85,7 @@ Text
   <li>JS 文件随着 AJAX 的结果返回给浏览器中执行并更改HTML页面的DOM结构</li>
 </ol>
 
-<p><img src="http://localhost:4000/pics/stimulus/stimulus-3.png" alt="Rails SJR &amp; Stimulus workflow" /></p>
+<p><img src="//manateelazycat.github.io/pics/stimulus/stimulus-3.png" alt="Rails SJR &amp; Stimulus workflow" /></p>
 
 <p>如果我们用 Stimulus 技术来处理, 看看会有哪些变化?</p>
 <ol>
@@ -99,9 +99,9 @@ Text
 
 <p>我们首先来看看下面两张图:</p>
 
-<p><img src="http://localhost:4000/pics/stimulus/stimulus-4.png" alt="SJR request " /></p>
+<p><img src="//manateelazycat.github.io/pics/stimulus/stimulus-4.png" alt="SJR request " /></p>
 
-<p><img src="http://localhost:4000/pics/stimulus/stimulus-5.png" alt="SJR &amp; Stimulus request" /></p>
+<p><img src="//manateelazycat.github.io/pics/stimulus/stimulus-5.png" alt="SJR &amp; Stimulus request" /></p>
 
 <ol>
   <li>第一张是 SJR 技术根据AJAX请求的响应方式, SJR 技术的 ruby 控制器总是返回 format.js 的JS模板文件, 就会导致每个请求都会创建一个又小又碎的 JS 文件</li>

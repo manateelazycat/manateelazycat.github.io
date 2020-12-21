@@ -8,32 +8,32 @@
 <title>Indium, 在Emacs中使用Chrome调试协议调试JavaScript</title>
 
 
-        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
-        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
     </head>
     <body>
         <div class="navigatebar">
     <div class="navigatebar-button navigatebar-mine">
-        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/index.html">Home</a>
+        <a href="//manateelazycat.github.io/index.html">Home</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/tags.html">Tags</a>
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/projects.html">Projects</a>
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/feed.xml">Feeds</a>
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
     </div>
     <div class="navigatebar-button navigatebar-about">
-        <a href="http://localhost:4000/about.html">About</a>
+        <a href="//manateelazycat.github.io/about.html">About</a>
     </div>
 </div>
 
@@ -43,7 +43,7 @@
             </div>
             <div class="category-area">
                 「
-                <a href="http://localhost:4000/tags.html#Emacs">
+                <a href="//manateelazycat.github.io/tags.html#Emacs">
                     <div class="category">
                         Emacs
                     </div>
@@ -57,13 +57,13 @@
                 <p>日常在Web开发中, 一般都是在Emacs敲好代码中, 打开Chrome测试, 调试的时候直接调用 Chrome 内建的 DevTools/Console 中快速的调试和定位 JavaScript 代码的问题.</p>
 
 <p>一般的都是这样玩的, 在Chrome中按  Cmd + Option + I:
-<img src="http://localhost:4000/pics/indium/indium-1.png" alt="Chrome DevTools" /></p>
+<img src="//manateelazycat.github.io/pics/indium/indium-1.png" alt="Chrome DevTools" /></p>
 
 <p>Chrome 的开发者工具虽然很好用, 但是作为一个资深的Emacs党, 特别讨厌在 Chrome Console 中蹩脚的用方向键调整JavaSctipt 代码, 如果可以直接在Emacs中调试 JavaScript 代码改多好啊, 和Emacs高度集成, 想想都挺美的.</p>
 
 <p>这就是今天给大家介绍的 <a href="https://indium.readthedocs.io/en/latest/installation.html">Indium</a>
-<img src="http://localhost:4000/pics/indium/indium-2.png" alt="Chrome" />
-<img src="http://localhost:4000/pics/indium/indium-3.png" alt="Indium REPL" /></p>
+<img src="//manateelazycat.github.io/pics/indium/indium-2.png" alt="Chrome" />
+<img src="//manateelazycat.github.io/pics/indium/indium-3.png" alt="Indium REPL" /></p>
 
 <p>安装了 Indium 了以后, Emacs 可以通过 Chrome 的调试协议, 直接在Emacs中, reload 页面、执行和补全JavaScript代码片段、通过 inspector 查找元素和属性、通过断点来调试 JavaScript 代码, 所有都在 Emacs 中完成, 再也不需要频繁的在 Emacs 和 Chrome 中切换.</p>
 
@@ -129,7 +129,7 @@ Chrome 默认是不用调试协议启动的, 所以重新启动 Chrome 之前, �
 <h4 id="5-见证奇迹的时候到了">5. 见证奇迹的时候到了</h4>
 <p>打开Emacs加载 indium 后, 打开Web项目中的 JavaScript 文件.
 执行 indium-connect 命令, 一旦连接成功后, 就可以看到如下界面:
-<img src="http://localhost:4000/pics/indium/indium-4.png" alt="Indium REPL" /></p>
+<img src="//manateelazycat.github.io/pics/indium/indium-4.png" alt="Indium REPL" /></p>
 
 <p>就证明 indium 已经成功启用了, 现在就可以在 Emacs 中调试JavaScript代码了.
 因为 Indium 这个东西坑很多, 这篇文件把各种坑都踩了, 分享出来, 祝大家 Happy hacking.</p>

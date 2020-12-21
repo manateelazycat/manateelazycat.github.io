@@ -8,32 +8,32 @@
 <title>用Emacs编辑EAF浏览器输入框的内容</title>
 
 
-        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
-        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
     </head>
     <body>
         <div class="navigatebar">
     <div class="navigatebar-button navigatebar-mine">
-        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/index.html">Home</a>
+        <a href="//manateelazycat.github.io/index.html">Home</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/tags.html">Tags</a>
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/projects.html">Projects</a>
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/feed.xml">Feeds</a>
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
     </div>
     <div class="navigatebar-button navigatebar-about">
-        <a href="http://localhost:4000/about.html">About</a>
+        <a href="//manateelazycat.github.io/about.html">About</a>
     </div>
 </div>
 
@@ -43,13 +43,13 @@
             </div>
             <div class="category-area">
                 「
-                <a href="http://localhost:4000/tags.html#Emacs">
+                <a href="//manateelazycat.github.io/tags.html#Emacs">
                     <div class="category">
                         Emacs
                     </div>
                 </a>
                 
-                <a href="http://localhost:4000/tags.html#EAF">
+                <a href="//manateelazycat.github.io/tags.html#EAF">
                     <div class="category">
                         EAF
                     </div>
@@ -65,7 +65,7 @@
 
 <p>这种处理方法的优势是Emacs可以一直保持键盘的全局控制，劣势是因为Qt控件无法直接处理键盘事件，导致用户无法在EAF浏览器中输入中文。</p>
 
-<p><img src="http://localhost:4000/pics/eaf-edit-focus-text/1.png" alt="EAF edit focus text" /></p>
+<p><img src="//manateelazycat.github.io/pics/eaf-edit-focus-text/1.png" alt="EAF edit focus text" /></p>
 
 <h3 id="解决方法">解决方法</h3>
 <p>解决方法思路如下：</p>
@@ -108,7 +108,7 @@
   <li>如果按Ctrl + c Ctrl + k则取消编辑。</li>
 </ol>
 
-<p><img src="http://localhost:4000/pics/eaf-edit-focus-text/2.png" alt="EAF edit focus text" /></p>
+<p><img src="//manateelazycat.github.io/pics/eaf-edit-focus-text/2.png" alt="EAF edit focus text" /></p>
 
 <p>现在基本上可以做到不用Chrome,只用EAF浏览器了。</p>
 
