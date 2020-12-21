@@ -8,32 +8,32 @@
 <title>Emacs, grep-dired 快速文件过滤和重构工具</title>
 
 
-        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
-        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
     </head>
     <body>
         <div class="navigatebar">
     <div class="navigatebar-button navigatebar-mine">
-        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/index.html">Home</a>
+        <a href="//manateelazycat.github.io/index.html">Home</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/tags.html">Tags</a>
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/projects.html">Projects</a>
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/feed.xml">Feeds</a>
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
     </div>
     <div class="navigatebar-button navigatebar-about">
-        <a href="http://localhost:4000/about.html">About</a>
+        <a href="//manateelazycat.github.io/about.html">About</a>
     </div>
 </div>
 
@@ -43,7 +43,7 @@
             </div>
             <div class="category-area">
                 「
-                <a href="http://localhost:4000/tags.html#Emacs">
+                <a href="//manateelazycat.github.io/tags.html#Emacs">
                     <div class="category">
                         Emacs
                     </div>
@@ -69,7 +69,7 @@
   <li>甚至结合 wdired 对所有的文件名进行快速重构.</li>
 </ol>
 
-<p><img src="http://localhost:4000/pics/grep-dired/grep-dired.png" alt="grep-dired" /></p>
+<p><img src="//manateelazycat.github.io/pics/grep-dired/grep-dired.png" alt="grep-dired" /></p>
 
 <p>本来基于 color-rg.el 代码进行原型开发, 开发到一半发现 Emacs 有 find-dired 的代码做了同样的事情, 干脆放弃最开始的原型代码, 基于 find-dired 的代码, 裁剪了很多老旧的代码 (比如 find + grep 搜索文件内容, 显然没有 ripgrep 快), 去掉了很多Unix系统的兼容代码, 加入了自己的一些函数, 很快就构建出 grep-dired.el</p>
 

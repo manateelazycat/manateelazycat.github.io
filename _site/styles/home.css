@@ -27,29 +27,12 @@ a:hover {
     color: #57BF7D;
 }
 
-.cover {
-    display: block;
-    width: auto;
-    max-height: 100%;
-}
-
-.motto {
-    position: fixed;
-    bottom: 10px;
-    left: 60px;
-    z-index: 2;
-    font-size: 36px;
-    color: #AAA;
-    opacity: 0.7;
-    font-family: mottoFont;
-}
-
-.content {
-    flex: 1;
-    width: auto;
-    overflow-y: scroll;
-    padding-left: 10px;
-    padding-right: 10px;
+.content-background {
+    background-image: url("https://manateelazycat.github.io/pics/home/kurt_cobain.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
 }
 
 .post-line {

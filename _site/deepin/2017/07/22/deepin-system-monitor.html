@@ -8,32 +8,32 @@
 <title>深度系统监视器原理剖析</title>
 
 
-        <link rel="stylesheet" href="http://localhost:4000/styles/font.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/post.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/post_mobile.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="http://localhost:4000/styles/navigatebar.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="http://localhost:4000/styles/navigatebar_mobile.css">
-        <link rel="stylesheet" href="http://localhost:4000/theme/highlight.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
     </head>
     <body>
         <div class="navigatebar">
     <div class="navigatebar-button navigatebar-mine">
-        <a href="http://localhost:4000/index.html">ManateeLazyCat</a>
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/index.html">Home</a>
+        <a href="//manateelazycat.github.io/index.html">Home</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/tags.html">Tags</a>
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/projects.html">Projects</a>
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
     </div>
     <div class="navigatebar-button">
-        <a href="http://localhost:4000/feed.xml">Feeds</a>
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
     </div>
     <div class="navigatebar-button navigatebar-about">
-        <a href="http://localhost:4000/about.html">About</a>
+        <a href="//manateelazycat.github.io/about.html">About</a>
     </div>
 </div>
 
@@ -43,7 +43,7 @@
             </div>
             <div class="category-area">
                 「
-                <a href="http://localhost:4000/tags.html#Deepin">
+                <a href="//manateelazycat.github.io/tags.html#Deepin">
                     <div class="category">
                         Deepin
                     </div>
@@ -57,7 +57,7 @@
                 <h3 id="为什么要做深度系统监视器">为什么要做深度系统监视器？</h3>
 <p>为了达到深度操作系统UI/UX大统一的‘雄伟’目标，闲来无事写了深度系统监视器，先发一张图镇楼，哈哈哈。</p>
 
-<p><img src="http://localhost:4000/pics/deepin-system-monitor/deepin-system-monitor-1.png" alt="" /></p>
+<p><img src="//manateelazycat.github.io/pics/deepin-system-monitor/deepin-system-monitor-1.png" alt="" /></p>
 
 <p>社区的开源爱好者马上会跳出来说，深度你们又造轮子，你们造的轮子比Gnome和KDE的系统监视器好吗？</p>
 
@@ -66,9 +66,9 @@
 <p>深度系统监视器首先要解决的问题是：提高用户操作的易用性
 Gnome的系统监视器默认分开了三个标签，把进程列表和资源总览分开了，看进程列表的状态就不知道资源总览的信息，看资源总览信息就不知道进程列表的状态，而且还在第三个标签提供了一个鸡肋的磁盘设备的空间，只能看啥操作都不能做，还不如放在文件管理器或者磁盘管理工具里面。</p>
 
-<p><img src="http://localhost:4000/pics/deepin-system-monitor/deepin-system-monitor-2.png" alt="" /></p>
+<p><img src="//manateelazycat.github.io/pics/deepin-system-monitor/deepin-system-monitor-2.png" alt="" /></p>
 
-<p><img src="http://localhost:4000/pics/deepin-system-monitor/deepin-system-monitor-3.png" alt="" /></p>
+<p><img src="//manateelazycat.github.io/pics/deepin-system-monitor/deepin-system-monitor-3.png" alt="" /></p>
 
 <p>所以针对这些不爽的设计，深度系统监视器把资源总览信息和列表的进程信息放在一起，一眼就可以知道现在电脑的整体负载，而且用户马上就可以在右边查看高资源占用的进程，再也不用来回费劲的切换标签去看这两个本来就应该在一起的信息。</p>
 
@@ -558,7 +558,7 @@ lrwx------ 1 andy andy 64 7月  22 17:18 99 -&gt; anon_inode:[eventfd]
 
 <p>这样用户就可以在系统监视器看到Wine程序的网络流量了，如下图所示：</p>
 
-<p><img src="http://localhost:4000/pics/deepin-system-monitor/deepin-system-monitor-4.png" alt="" /></p>
+<p><img src="//manateelazycat.github.io/pics/deepin-system-monitor/deepin-system-monitor-4.png" alt="" /></p>
 
 <p>代码参考实现：</p>
 
