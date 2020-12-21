@@ -48,7 +48,7 @@ a:hover {
 .post-title {
     text-decoration: none;
     font-size: 18px;
-    color: #333;
+    color: #000;
 }
 
 .post-summary {
@@ -61,7 +61,7 @@ a:hover {
 }
 
 .post-date {
-    color: #AAA;
+    color: #666;
     font-size: 12px;
     text-align: right;
 }
@@ -141,13 +141,13 @@ a:hover {
 .char-total-counter {
     display: flex;
     justify-content: flex-end;
-    color: #AAA;
+    color: #666;
     font-size: 11px;
     margin-right: 20px;
 }
 
 .char-counter {
-    color: #AAA;
+    color: #666;
     font-size: 11px;
     margin-right: 10px;
 }
