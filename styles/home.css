@@ -42,7 +42,7 @@ a:hover {
     margin-right: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid #DDD;
 }
 
 .post-title {
@@ -123,11 +123,11 @@ a:hover {
 }
 
 .category {
-    color: #999;
+    color: #666;
     font-size: 12px;
     height: 16px;
     position: relative;
-    background: #EFEFEF;
+    background: #DDD;
     margin-right: 5px;
     padding-left: 10px;
     padding-right: 10px;
