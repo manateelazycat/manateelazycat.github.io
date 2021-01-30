@@ -11,6 +11,8 @@ EAF最近合并了开发者mackong的[mume.js补丁](https://github.com/manateel
 具体的效果如下：
 ![EAF and mume.js]({{site.url}}/pics/mumejs/mumejs.png)
 
+![EAF and mume.js]({{site.url}}/pics/mumejs/mumejs-2.png)
+
 #### 优势
 用mume.js作为Markdown渲染引擎后，有如下好处：
 1. 不用像python-grip那样需要依赖于Github Markdown API和token，不再需要设置 ```eaf-grip-token```
