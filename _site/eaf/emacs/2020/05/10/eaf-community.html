@@ -314,10 +314,10 @@ yay <span class="nt">-S</span> python-pymupdf python-grip
 
 <span class="k">class</span> <span class="nc">AppBuffer</span><span class="p">(</span><span class="n">Buffer</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buffer_id</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">config_dir</span><span class="p">,</span> <span class="n">arguments</span><span class="p">,</span> <span class="n">emacs_var_dict</span><span class="p">,</span> <span class="n">module_path</span><span class="p">):</span>
-        <span class="n">Buffer</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buffer_id</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">arguments</span><span class="p">,</span> <span class="n">emacs_var_dict</span><span class="p">,</span> <span class="n">module_path</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="n">Buffer</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buffer_id</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">arguments</span><span class="p">,</span> <span class="n">emacs_var_dict</span><span class="p">,</span> <span class="n">module_path</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">QPushButton</span><span class="p">(</span><span class="s">"Hello, EAF hacker, it's working!!!"</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s">"font-size: 100px"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">QPushButton</span><span class="p">(</span><span class="s">"Hello, EAF hacker, it's working!!!"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s">"font-size: 100px"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>你可以通过 <code class="language-plaintext highlighter-rouge">eaf-open-demo</code> 命令来打开这个示例应用，示例应用是在Emacs中打开一个Qt窗口，Qt窗口只有一个可以点击的按钮，简单吧？</p>
@@ -338,10 +338,10 @@ yay <span class="nt">-S</span> python-pymupdf python-grip
 
 <span class="k">class</span> <span class="nc">AppBuffer</span><span class="p">(</span><span class="n">Buffer</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buffer_id</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">config_dir</span><span class="p">,</span> <span class="n">arguments</span><span class="p">,</span> <span class="n">emacs_var_dict</span><span class="p">,</span> <span class="n">module_path</span><span class="p">):</span>
-        <span class="n">Buffer</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buffer_id</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">arguments</span><span class="p">,</span> <span class="n">emacs_var_dict</span><span class="p">,</span> <span class="n">module_path</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="n">Buffer</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buffer_id</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">arguments</span><span class="p">,</span> <span class="n">emacs_var_dict</span><span class="p">,</span> <span class="n">module_path</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">QPushButton</span><span class="p">(</span><span class="s">"Hello, EAF hacker, it's working!!!"</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s">"font-size: 100px"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">QPushButton</span><span class="p">(</span><span class="s">"Hello, EAF hacker, it's working!!!"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s">"font-size: 100px"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>AppBuffer就是开发EAF应用所需要的入口类，它继承于Buffer类，Buffer类定义于 core/buffer.py 中。</p>
@@ -397,27 +397,27 @@ yay <span class="nt">-S</span> python-pymupdf python-grip
 <h5 id="在python端读取用户的输入">在Python端读取用户的输入</h5>
 <p>从Python端读取Emacs的输入，可以先看下面的示例代码:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
 
 <span class="k">class</span> <span class="nc">AppBuffer</span><span class="p">(</span><span class="n">Buffer</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buffer_id</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>
-        <span class="n">Buffer</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buffer_id</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">arguments</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="n">Buffer</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buffer_id</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">arguments</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">PdfViewerWidget</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">QColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">send_jump_page_message</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">send_jump_page_message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">PdfViewerWidget</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">QColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="n">send_jump_page_message</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">send_jump_page_message</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">send_jump_page_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">send_input_message</span><span class="p">(</span><span class="s">"Jump to: "</span><span class="p">,</span> <span class="s">"jump_page"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">send_input_message</span><span class="p">(</span><span class="s">"Jump to: "</span><span class="p">,</span> <span class="s">"jump_page"</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">handle_input_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_type</span><span class="p">,</span> <span class="n">result_content</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">result_type</span> <span class="o">==</span> <span class="s">"jump_page"</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">jump_to_page</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">result_content</span><span class="p">))</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="n">jump_to_page</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">result_content</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">cacel_input_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result_type</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">result_type</span> <span class="o">==</span> <span class="s">"jump_page"</span><span class="p">:</span>
-            <span class="o">...</span>
+            <span class="p">...</span>
 
-<span class="o">...</span>
+<span class="p">...</span>
 </code></pre></div></div>
 
 <ol>
@@ -429,13 +429,13 @@ yay <span class="nt">-S</span> python-pymupdf python-grip
 <h5 id="在python端调用javascript函数">在Python端调用JavaScript函数</h5>
 <p>如果你的EAF应用基于浏览器和JavaScript库来开发，建议你先看一下 app/mindmap/buffer.py 的代码，你可以通过 <code class="language-plaintext highlighter-rouge">eval_js</code> 接口来实现Python直接调用浏览器中的JavaScript代码：</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">eval_js</span><span class="p">(</span><span class="s">"js_function(js_argument)"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="bp">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="n">eval_js</span><span class="p">(</span><span class="s">"js_function(js_argument)"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h5 id="在python端读取javascript函数的返回结果">在Python端读取JavaScript函数的返回结果</h5>
 <p>获取JavaScript函数返回的结果和 <code class="language-plaintext highlighter-rouge">eval_js</code> 接口类似，只不过接口换成 <code class="language-plaintext highlighter-rouge">execute_js</code> 的形式，下面是从浏览器中获取选中文本的示例:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">execute_js</span><span class="p">(</span><span class="s">"get_selection();"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="n">execute_js</span><span class="p">(</span><span class="s">"get_selection();"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h5 id="在python端改变标题">在Python端改变标题</h5>
@@ -446,11 +446,11 @@ yay <span class="nt">-S</span> python-pymupdf python-grip
 <p>保存数据直接调用 <code class="language-plaintext highlighter-rouge">save_session_data</code> 接口，恢复数据接口用 <code class="language-plaintext highlighter-rouge">result_session_data</code>，下面是视频播放器保存和恢复视频观看位置的示例代码，存储方式就是任意字符串, 你可以根据字符串保存任意结构的数据，比如Json数据。</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">save_session_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">media_player</span><span class="o">.</span><span class="n">position</span><span class="p">())</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="n">media_player</span><span class="p">.</span><span class="n">position</span><span class="p">())</span>
 
 <span class="k">def</span> <span class="nf">restore_session_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_data</span><span class="p">):</span>
     <span class="n">position</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">session_data</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">media_player</span><span class="o">.</span><span class="n">setPosition</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="n">media_player</span><span class="p">.</span><span class="n">setPosition</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h5 id="全屏接口">全屏接口</h5>
@@ -480,12 +480,12 @@ yay <span class="nt">-S</span> python-pymupdf python-grip
 <p>如果你的EAF应用有后台进程，你可以通过 <code class="language-plaintext highlighter-rouge">destroy_buffer</code> 接口在EAF应用 Buffer 被关闭之前做一些清理工作，下面是终端浏览器在推出之前杀掉 NodeJs 后台进程的示例代码：</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">destroy_buffer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">background_process</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGKILL</span><span class="p">)</span>
+    <span class="n">os</span><span class="p">.</span><span class="n">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">background_process</span><span class="p">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">signal</span><span class="p">.</span><span class="n">SIGKILL</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">buffer_widget</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
         <span class="c1"># NOTE: We need delete QWebEnginePage manual, otherwise QtWebEngineProcess won't quit.
-</span>        <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">web_page</span><span class="o">.</span><span class="n">deleteLater</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">deleteLater</span><span class="p">()</span>
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="n">web_page</span><span class="p">.</span><span class="n">deleteLater</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="n">deleteLater</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h4 id="eaf调试技巧">EAF调试技巧</h4>
