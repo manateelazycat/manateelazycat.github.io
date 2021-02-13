@@ -96,35 +96,35 @@
 <span class="kn">from</span> <span class="nn">captcha_solver</span> <span class="kn">import</span> <span class="n">CaptchaSolver</span>
 
 <span class="c1"># 通过Chromium加载网页
-</span><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
-<span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://www.xxx.com'</span><span class="p">)</span>
+</span><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="n">Chrome</span><span class="p">()</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://www.xxx.com'</span><span class="p">)</span>
 
 <span class="c1"># 获得网页截图
-</span><span class="n">png</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">get_screenshot_as_png</span><span class="p">()</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">png</span><span class="p">))</span>
+</span><span class="n">png</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">get_screenshot_as_png</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">png</span><span class="p">))</span>
 
 <span class="c1"># 找到验证码所在的元素，先阅读 Selenium API文档，下面这行代码需要换成实际的验证码元素
-</span><span class="n">element</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_class_name</span><span class="p">(</span><span class="s">"validimg"</span><span class="p">)</span>
+</span><span class="n">element</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_class_name</span><span class="p">(</span><span class="s">"validimg"</span><span class="p">)</span>
 
 <span class="c1"># 获取验证码的位置信息
-</span><span class="n">location</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">location</span>
-<span class="n">size</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">size</span>
+</span><span class="n">location</span> <span class="o">=</span> <span class="n">element</span><span class="p">.</span><span class="n">location</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">element</span><span class="p">.</span><span class="n">size</span>
 <span class="n">left</span> <span class="o">=</span> <span class="n">location</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span>
 <span class="n">top</span> <span class="o">=</span> <span class="n">location</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span>
 <span class="n">right</span> <span class="o">=</span> <span class="n">location</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="o">+</span> <span class="n">size</span><span class="p">[</span><span class="s">'width'</span><span class="p">]</span>
 <span class="n">bottom</span> <span class="o">=</span> <span class="n">location</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span> <span class="o">+</span> <span class="n">size</span><span class="p">[</span><span class="s">'height'</span><span class="p">]</span>
 
 <span class="c1"># 通过验证码坐标偏移，截取验证码的截图
-</span><span class="n">im</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">))</span>
+</span><span class="n">im</span> <span class="o">=</span> <span class="n">im</span><span class="p">.</span><span class="n">crop</span><span class="p">((</span><span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">))</span>
 
 <span class="c1"># 转换图片为Byte Array格式的数据
 </span><span class="n">buf</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
-<span class="n">im</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'PNG'</span><span class="p">)</span>
-<span class="n">byte_im</span> <span class="o">=</span> <span class="n">buf</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+<span class="n">im</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s">'PNG'</span><span class="p">)</span>
+<span class="n">byte_im</span> <span class="o">=</span> <span class="n">buf</span><span class="p">.</span><span class="n">getvalue</span><span class="p">()</span>
 
 <span class="c1"># 通过 anti-captcha 的API key进行验证码破解工作
 </span><span class="n">solver</span> <span class="o">=</span> <span class="n">CaptchaSolver</span><span class="p">(</span><span class="s">'antigate'</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s">'your-anti-captcha-api-key'</span><span class="p">)</span>
-<span class="n">captcha_code</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve_captcha</span><span class="p">(</span><span class="n">byte_im</span><span class="p">)</span>
+<span class="n">captcha_code</span> <span class="o">=</span> <span class="n">solver</span><span class="p">.</span><span class="n">solve_captcha</span><span class="p">(</span><span class="n">byte_im</span><span class="p">)</span>
 
 <span class="c1"># 打印验证码
 </span><span class="k">print</span><span class="p">(</span><span class="n">captcha_code</span><span class="p">)</span>

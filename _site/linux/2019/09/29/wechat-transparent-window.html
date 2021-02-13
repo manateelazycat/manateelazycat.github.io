@@ -79,32 +79,32 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
 </span>
 <span class="kn">import</span> <span class="nn">gi</span>
-<span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s">'Wnck'</span><span class="p">,</span> <span class="s">'3.0'</span><span class="p">)</span>
-<span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s">'Gtk'</span><span class="p">,</span> <span class="s">'3.0'</span><span class="p">)</span>
+<span class="n">gi</span><span class="p">.</span><span class="n">require_version</span><span class="p">(</span><span class="s">'Wnck'</span><span class="p">,</span> <span class="s">'3.0'</span><span class="p">)</span>
+<span class="n">gi</span><span class="p">.</span><span class="n">require_version</span><span class="p">(</span><span class="s">'Gtk'</span><span class="p">,</span> <span class="s">'3.0'</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">Wnck</span><span class="p">,</span> <span class="n">Gtk</span>
 
 <span class="kn">import</span> <span class="nn">time</span>
 
 <span class="k">class</span> <span class="nc">WeChatWindowMonitor</span><span class="p">():</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span> <span class="o">=</span> <span class="n">Wnck</span><span class="o">.</span><span class="n">Screen</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">force_update</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">screen</span> <span class="o">=</span> <span class="n">Wnck</span><span class="p">.</span><span class="n">Screen</span><span class="p">.</span><span class="n">get_default</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="n">force_update</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">wechat_window_name</span> <span class="o">=</span> <span class="s">"微信"</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">wechat_window_name</span> <span class="o">=</span> <span class="s">"微信"</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"active_window_changed"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_window_changed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"active_window_changed"</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">active_window_changed</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">active_window_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
-        <span class="n">active_window</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">get_active_window</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">active_window</span> <span class="ow">and</span> <span class="n">active_window</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wechat_window_name</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">win</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">get_windows</span><span class="p">():</span>
-                <span class="k">if</span> <span class="n">win</span> <span class="ow">and</span> <span class="n">win</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">wechat_window_name</span><span class="p">:</span>
-                    <span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+        <span class="n">active_window</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="n">get_active_window</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">active_window</span> <span class="ow">and</span> <span class="n">active_window</span><span class="p">.</span><span class="n">get_name</span><span class="p">()</span> <span class="o">!=</span> <span class="bp">self</span><span class="p">.</span><span class="n">wechat_window_name</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">win</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="n">get_windows</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">win</span> <span class="ow">and</span> <span class="n">win</span><span class="p">.</span><span class="n">get_name</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="p">.</span><span class="n">wechat_window_name</span><span class="p">:</span>
+                    <span class="n">win</span><span class="p">.</span><span class="n">close</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">Gtk</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+        <span class="n">Gtk</span><span class="p">.</span><span class="n">main</span><span class="p">()</span>
 
-<span class="n">WeChatWindowMonitor</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">WeChatWindowMonitor</span><span class="p">().</span><span class="n">run</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>脚本源码解析:</p>

@@ -104,19 +104,19 @@ defaults.pcm.card 1
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_sound_card_id</span><span class="p">():</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"/proc/asound/pcm"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">s</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">):</span>
                 <span class="k">if</span> <span class="s">"playback 1"</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                    <span class="n">number</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"-"</span><span class="p">)</span>
-                    <span class="k">return</span> <span class="p">(</span><span class="s">"</span><span class="si">%</span><span class="s">s,</span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+                    <span class="n">number</span> <span class="o">=</span> <span class="n">line</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="n">split</span><span class="p">(</span><span class="s">"-"</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="p">(</span><span class="s">"%s,%s"</span> <span class="o">%</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="k">return</span> <span class="s">"0,0"</span>
 
 <span class="k">def</span> <span class="nf">play_sound</span><span class="p">(</span><span class="n">sound_file</span><span class="p">):</span>
     <span class="n">sound_card_id</span> <span class="o">=</span> <span class="n">get_sound_card_id</span><span class="p">()</span>
 
-    <span class="n">play_command</span> <span class="o">=</span> <span class="s">"mpg123 -o alsa -a hw:</span><span class="si">%</span><span class="s">s </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">sound_card_id</span><span class="p">,</span> <span class="n">sound_file</span><span class="p">)</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">play_command</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">play_command</span> <span class="o">=</span> <span class="s">"mpg123 -o alsa -a hw:%s %s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">sound_card_id</span><span class="p">,</span> <span class="n">sound_file</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="p">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">play_command</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>玩树莓派还是Python好啊, 轻描淡写几行代码就搞定了.</p>
