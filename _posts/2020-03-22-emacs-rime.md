@@ -8,13 +8,13 @@ categories: [Emacs]
 
 今天讲的仍然是在Emacs配置RIME输入法，只不过主角从[pyim](https://github.com/tumashu/pyim)换成了[emacs-rime](https://github.com/DogLooksGood/emacs-rime)。
 
-* pyim是一个强大的Emacs输入法，不但整套输入法，还支持RIME作为输入法后端输入
+* pyim是一个强大的Emacs输入法，不但内置整套输入法，还支持RIME作为输入法后端输入
 * emacs-rime是RIME输入法的Emacs UI前端，所有行为都通过RIME配置文件来配置
 
 ### 安装RIME输入法
 
 ```bash
-sudo pacman -S fcitx-rime
+sudo pacman -S fcitx5-rime librime
 ```
 
 ### 配置RIME输入法
