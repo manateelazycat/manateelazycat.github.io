@@ -115,6 +115,8 @@ Font="Noto Sans Mono 13"
 Theme=Material-Color-Blue
 ```
 
+Gnome3用户可以安装 ```fcitx5-skin-adwaita-dark``` 这个主题，和Gnome3风格比较搭
+
 ## 使用感受
 原来使用Fcitx4配合RIME输入法的时候，因为总是配置不好RIME的词库，导致实际使用的体验并不是非常流畅，手速跟不上思维的速度。
 
