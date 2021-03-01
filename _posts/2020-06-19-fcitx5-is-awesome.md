@@ -21,7 +21,7 @@ sudo pacman -Rs $(pacman -Qsq fcitx)
 安装Fcitx5软件包：
 
 ```bash
-sudo pacman -S fcitx5-chinese-addons fcitx5-git fcitx5-gtk fcitx5-qt fcitx5-pinyin-zhwiki kcm-fcitx5
+sudo pacman -S fcitx5-chinese-addons fcitx5-git fcitx5-gtk fcitx5-qt fcitx5-pinyin-zhwiki fcitx5-configtool kcm-fcitx5
 ```
 
 * fcitx5: 输入法基础框架主程序
@@ -29,6 +29,7 @@ sudo pacman -S fcitx5-chinese-addons fcitx5-git fcitx5-gtk fcitx5-qt fcitx5-piny
 * fcitx5-gtk: GTK程序的支持
 * fcitx5-qt: QT5程序的支持
 * fcitx5-pinyin-zhwiki: 肥猫制作的维基百万词库，没有版权风险, 放心使用
+* fcitx5-configtool: 图形化配置工具
 * kcm-fcitx5: KDE桌面环境的支持
 
 ### 3. 设置Fcitx5初始配置
