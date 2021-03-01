@@ -60,7 +60,19 @@ Layout=
 0=Default
 ```
 
-### 4. 修改输入法环境变量，使应用可以调用Fcitx5输入法
+### 4. 修改拼音输入法的翻页快捷键
+
+找到 ~/.config/fcitx5/conf/pinyin.conf，确保把 comma 和 period 添加到配置文件中
+
+```bash
+[PrevPage]
+0=comma
+
+[NextPage]
+0=period
+```
+
+### 5. 修改输入法环境变量，使应用可以调用Fcitx5输入法
 
 将下面的内容粘贴到 ~/.pam_environment
 
@@ -70,7 +82,7 @@ XMODIFIERS=@im=fcitx5
 QT_IM_MODULE=fcitx5
 ```
 
-### 5. 系统登录后默认启动Fcitx5输入法
+### 6. 系统登录后默认启动Fcitx5输入法
 
 将下面的内容粘贴到 ~/.xprofile
 
@@ -78,7 +90,7 @@ QT_IM_MODULE=fcitx5
 fcitx5 &
 ```
 
-### 6. 配置输入法皮肤
+### 7. 配置输入法皮肤
 
 默认主题实在是太难看了，先用下面命令安装 fcitx5-material-color 这个主题
 
