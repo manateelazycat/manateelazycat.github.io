@@ -42,6 +42,7 @@ XMODIFIERS=@im=fcitx
 3. User Themes: 可以加载第三方主题
 4. Walkpaper：每个工作区不同的桌面壁纸，Gnome3本身没有这种设计支持，通过切换工作区换壁纸的方式来实现
 5. AlternateTab: 默认使用图片来显示Alt Tab
+6. CPU Power Manager: 控制笔记本在不插电的时候不要降频
 
 Gnome3默认分组的Alt + Tab设计也是脑残至极，好的是，现在可以直接在Gnome3设置面板通过设置 “窗口切换” 命令来回归传统的Alt + Tab切换功能。
 
