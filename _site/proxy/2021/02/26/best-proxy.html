@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>最佳代理实践 (2021-02-26)</title>
+
+
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="//manateelazycat.github.io/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                最佳代理实践 (2021-02-26)
+            </div>
+            <div class="category-area">
+                「
+                <a href="//manateelazycat.github.io/tags.html#Proxy">
+                    <div class="category">
+                        Proxy
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数2461 2021-02-26
+            </div>
+            <div class="content">
+                <h2 id="不断变化的gfw">不断变化的GFW</h2>
+<p>GFW不断在变化，而我们的代理策略也要一直更新，我会定期总结FQ的最佳攻略，方便自己备忘。</p>
+
+<p>注意：文中的 <code class="language-plaintext highlighter-rouge">your_vps_ip</code> 要换成你自己的服务器IP地址。</p>
+
+<h2 id="配置trojan代理客户端">配置Trojan代理客户端</h2>
+
+<h3 id="准备工作">准备工作</h3>
+
+<ul>
+  <li>一台境外的VPS, 不需要购买域名和配置证书</li>
+</ul>
+
+<h3 id="vps安装debian-9">VPS安装Debian 9</h3>
+
+<p>一般VPS都有操作系统安装服务，安装Debian 9以后，替换 /etc/apt/sources.list 文件内容为163镜像源，提升软件安装速度:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deb http://mirrors.163.com/debian/ stretch main non-free contrib
+deb http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+deb http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch-updates main non-free contrib
+deb-src http://mirrors.163.com/debian/ stretch-backports main non-free contrib
+deb http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+deb-src http://mirrors.163.com/debian-security/ stretch/updates main non-free contrib
+</code></pre></div></div>
+
+<h3 id="安装trojan服务端">安装Trojan服务端</h3>
+
+<p>通过命令 <code class="language-plaintext highlighter-rouge">ssh root@your_vps_ip</code> 登录VPS服务器后，执行下面脚本自动安装和配置Trojan服务端:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-N</span> <span class="nt">--no-check-certificate</span> https://raw.githubusercontent.com/mark-hans/trojan-wiz/master/ins.sh <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> +x ins.sh <span class="o">&amp;&amp;</span> bash ins.sh
+</code></pre></div></div>
+
+<p>安装过程中提示“请选择证书模式”，选择”使用IP自签发证书”的模式。</p>
+
+<h3 id="启动trojan服务端">启动Trojan服务端</h3>
+
+<p>安装完成后，使用命令<code class="language-plaintext highlighter-rouge">systemctl start trojan-gfw</code> 启动trojan服务端, 同时可以用命令<code class="language-plaintext highlighter-rouge">systemctl status trojan-gfw</code>来检查trojan服务端的状态，如果状态为<code class="language-plaintext highlighter-rouge">active(running)</code>, 证明trojan服务端已经启动。</p>
+
+<h3 id="拷贝服务端配置文件">拷贝服务端配置文件</h3>
+
+<p>trojan服务端配置成功以后会在VPS的/home/trojan/目录下生成client.json和ca-cert.pem两个文件:</p>
+
+<ul>
+  <li>client.json 是客户端配置文件，已经按照VPS IP配置好</li>
+  <li>ca-cert.pem 是证书文件，已经按照VPS配置好</li>
+</ul>
+
+<p>比如你的VPS IP为 xxx.xxx.xxx.xxx，使用下面的命令来完成拷贝服务端配置文件到本机：</p>
+
+<p><code class="language-plaintext highlighter-rouge">scp root@xxx.xxx.xxx.xxx:/home/trojan/ca-cert.pem ./</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">scp root@xxx.xxx.xxx.xxx:/home/trojan/client.json ./</code></p>
+
+<h3 id="下载trojan客户端">下载Trojan客户端</h3>
+
+<ul>
+  <li>首先在VPS使用命令 <code class="language-plaintext highlighter-rouge">ping github.com</code>, 获取 github.com 的ip地址, 比如是 192.30.253.112</li>
+  <li>在本机 /etc/hosts 文件中加入 <code class="language-plaintext highlighter-rouge">192.30.253.112 github.com</code> , 这样访问github页面就暂时不需要FQ</li>
+  <li>重启本机网络服务: <code class="language-plaintext highlighter-rouge">sudo systemctl restart NetworkManager</code></li>
+  <li>下载Trojan客户端: <code class="language-plaintext highlighter-rouge">wget https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz</code></li>
+</ul>
+
+<p>下载trojan-1.14.1-linux-amd64.tar.xz后，解压文件，把ca-cert.pem和client.json拷贝到 trojan 目录下。</p>
+
+<h3 id="启动trojan客户端">启动Trojan客户端</h3>
+
+<p><code class="language-plaintext highlighter-rouge">./trojan -c client.json</code> 即可在 127.0.0.1:1080 建立本地代理连接，最后通过Chrome SwitchyOmega来配置浏览器的代理设置。</p>
+
+<p>在浏览器验证可以FQ以后，你可以清除刚刚在本机 /etc/hosts 的github设置。</p>
+
+<h2 id="安装-sshuttle">安装 sshuttle</h2>
+
+<p>除了浏览器正常浏览外，作为开发者经常需要通过命令行访问各种安装包，我在<a href="https://manateelazycat.github.io/proxy/2020/03/17/best-proxy.html">上一期的文章</a>中介绍了对Git、Git SSH、yay、Aria2、npm、youtube-dl各种工具的代理设置。</p>
+
+<p>今天介绍一种新的方法 sshuttle:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sshuttle -vv --dns -r root@your_vps_ip -x your_vps_ip 0/0</code></p>
+
+<p>通过上面的命令可以让你本地所有流量都通过你的VPS服务器进行访问了，体验类似VPN，不过比VPN更轻量，而且不需要对服务器进行任何设置。</p>
+
+<p>sshuttle执行一下，所有命令行工具都会自动走代理，不用每个命令行都配置一下，而且相对于proxychains这种基于LD_PRELOAD实现代理工具，能够解决golang这种静态编译工具的代理问题，比如<code class="language-plaintext highlighter-rouge">go get</code>和<code class="language-plaintext highlighter-rouge">yay</code>。</p>
+
+<p>如果不想走全局代理，直接终端 Ctrl + C 就可以了。</p>
+
+<h2 id="总结">总结</h2>
+<p>如果你就想全局配置代理，shuttle无疑是更简单的方法，买一台VPS服务器，本地一条命令就搞定了，不用折腾服务器，也不用配置上面的Trojan。</p>
+
+<p>我个人更喜欢在服务器上配置Trojan服务后，本地通过配置让Chrome以及EAF走自动代理，sshuttle在需要安装开发者底层库的时候才临时启用一下。</p>
+
+            </div>
+        </div>
+    </body>
+</html>
