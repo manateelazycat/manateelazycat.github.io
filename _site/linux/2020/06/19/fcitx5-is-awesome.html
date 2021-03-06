@@ -48,7 +48,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数1228 2020-06-19
+                字数1432 2020-06-19
             </div>
             <div class="content">
                 <p>今天刷Twitter的时候，看到肥猫基于Fcitx5制作的 “肥猫维基百万大词库” ，简直太好用了。</p>
@@ -66,7 +66,7 @@
 
 <p>安装Fcitx5软件包：</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> fcitx5-chinese-addons fcitx5-git fcitx5-gtk fcitx5-qt fcitx5-pinyin-zhwiki kcm-fcitx5
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> fcitx5-chinese-addons fcitx5-git fcitx5-gtk fcitx5-qt fcitx5-pinyin-zhwiki fcitx5-configtool kcm-fcitx5
 </code></pre></div></div>
 
 <ul>
@@ -75,6 +75,7 @@
   <li>fcitx5-gtk: GTK程序的支持</li>
   <li>fcitx5-qt: QT5程序的支持</li>
   <li>fcitx5-pinyin-zhwiki: 肥猫制作的维基百万词库，没有版权风险, 放心使用</li>
+  <li>fcitx5-configtool: 图形化配置工具</li>
   <li>kcm-fcitx5: KDE桌面环境的支持</li>
 </ul>
 
@@ -106,7 +107,18 @@ Default <span class="nv">Layout</span><span class="o">=</span>us
 <span class="nv">0</span><span class="o">=</span>Default
 </code></pre></div></div>
 
-<h3 id="4-修改输入法环境变量使应用可以调用fcitx5输入法">4. 修改输入法环境变量，使应用可以调用Fcitx5输入法</h3>
+<h3 id="4-修改拼音输入法的翻页快捷键">4. 修改拼音输入法的翻页快捷键</h3>
+
+<p>找到 ~/.config/fcitx5/conf/pinyin.conf，确保把 comma 和 period 添加到配置文件中</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>PrevPage]
+<span class="nv">0</span><span class="o">=</span>comma
+
+<span class="o">[</span>NextPage]
+<span class="nv">0</span><span class="o">=</span>period
+</code></pre></div></div>
+
+<h3 id="5-修改输入法环境变量使应用可以调用fcitx5输入法">5. 修改输入法环境变量，使应用可以调用Fcitx5输入法</h3>
 
 <p>将下面的内容粘贴到 ~/.pam_environment</p>
 
@@ -115,14 +127,14 @@ Default <span class="nv">Layout</span><span class="o">=</span>us
 <span class="nv">QT_IM_MODULE</span><span class="o">=</span>fcitx5
 </code></pre></div></div>
 
-<h3 id="5-系统登录后默认启动fcitx5输入法">5. 系统登录后默认启动Fcitx5输入法</h3>
+<h3 id="6-系统登录后默认启动fcitx5输入法">6. 系统登录后默认启动Fcitx5输入法</h3>
 
 <p>将下面的内容粘贴到 ~/.xprofile</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fcitx5 &amp;
 </code></pre></div></div>
 
-<h3 id="6-配置输入法皮肤">6. 配置输入法皮肤</h3>
+<h3 id="7-配置输入法皮肤">7. 配置输入法皮肤</h3>
 
 <p>默认主题实在是太难看了，先用下面命令安装 fcitx5-material-color 这个主题</p>
 
@@ -143,6 +155,8 @@ Vertical Candidate <span class="nv">List</span><span class="o">=</span>False
 <span class="c"># 默认蓝色主题</span>
 <span class="nv">Theme</span><span class="o">=</span>Material-Color-Blue
 </code></pre></div></div>
+
+<p>Gnome3用户可以安装 <code class="language-plaintext highlighter-rouge">fcitx5-skin-adwaita-dark</code> 这个主题，和Gnome3风格比较搭</p>
 
 <h2 id="使用感受">使用感受</h2>
 <p>原来使用Fcitx4配合RIME输入法的时候，因为总是配置不好RIME的词库，导致实际使用的体验并不是非常流畅，手速跟不上思维的速度。</p>

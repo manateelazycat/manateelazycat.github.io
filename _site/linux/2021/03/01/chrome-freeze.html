@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>Gnome-Shell卡死修复</title>
+
+
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="//manateelazycat.github.io/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                Gnome-Shell卡死修复
+            </div>
+            <div class="category-area">
+                「
+                <a href="//manateelazycat.github.io/tags.html#Linux">
+                    <div class="category">
+                        Linux
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数343 2021-03-01
+            </div>
+            <div class="content">
+                <p>这两天重新安装了Gnome-Shell, 发现一个奇怪的问题：</p>
+<ol>
+  <li>Chrome最大化时，Emacs全屏状态切换到Chrome，Chrome卡死</li>
+  <li>Chrome最大化时，WPS最大化状态切换到Chrome，Chrome卡死</li>
+  <li>Chrome不是最大化，或者Emacs不是全屏，WPS不是最大化时，都不会卡死Chrome</li>
+</ol>
+
+<p>最开始还以为是Fctix5的Bug，最后发现是因为安装了Hide Top Bar这个Gnome-Shell插件导致的，奶奶的，浪费了我两天的时间。</p>
+
+<p>好的是老K更新了Fctix5以后(https://github.com/fcitx/fcitx5/commit/9d653348afb42b8ba226e5b65ca884bd1e83ed4d)，Emacs再也不会因为XIM的问题卡系统了。;)</p>
+
+            </div>
+        </div>
+    </body>
+</html>
