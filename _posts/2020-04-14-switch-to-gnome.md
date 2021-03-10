@@ -38,23 +38,14 @@ XMODIFIERS=@im=fcitx
 默认安装了几个插件来定制Gnome Shell：
 
 1. NoAnnoyance v2: 避免弹出 “窗口已经准备好” 的无聊通知
-2. Hide Panel: 隐藏顶部Panel
+2. Blur my Shell: 调整Gnome Shell组件的毛玻璃效果，美
 3. Printers: 方便查看打印机状态
 4. AlternateTab: 默认使用图片来显示Alt Tab
 5. CPU Power Manager: 控制笔记本在不插电的时候不要降频
 6. Caffeine: 临时禁用一下待机功能，PPT演示的时候比较方便
-7. Blur my Shell: 调整Gnome Shell组件的毛玻璃效果，美
-
-Gnome3默认分组的Alt + Tab设计也是脑残至极，好的是，现在可以直接在Gnome3设置面板通过设置 “窗口切换” 命令来回归传统的Alt + Tab切换功能。
 
 #### Gnome Shell主题
 
 主题找了一下 Flat-Remix 主题，解压到 ~/.themes 目录下后，通过下面命令来设置主题
 
 ```gsettings set org.gnome.shell.extensions.user-theme name "Flat-Remix-Dark-fullPanel"```
-
-#### 快速切换应用
-
-我在[Linux下实现打开或切换应用的功能](https://manateelazycat.github.io/linux/2019/09/13/open-or-raise.html)文章中写了怎么快速切换应用，原理是一样的，只不过 Gnome3 的快捷键设置需要在所有命令增加 bash -c 的参数才能生效。
-
-That's all!
