@@ -5,7 +5,7 @@ categories: [Emacs, EAF]
 ---
 
 ### MacOS补丁
-今天早上 lhpfvs 提交了补丁 [partially support macOS](https://github.com/manateelazycat/emacs-application-framework/commit/cdcd969ee8fee562e8b83e708784ca8bb62149b0)，这个补丁已经合并到EAF主线分支，现在EAF可以支持macOS啦，至此EAF已经支持Windows、Linux、Mac等所有操作系统平台。
+今天早上社区大神提交了补丁 [partially support macOS](https://github.com/manateelazycat/emacs-application-framework/commit/cdcd969ee8fee562e8b83e708784ca8bb62149b0)，这个补丁已经合并到EAF主线分支，现在EAF可以支持macOS啦，至此EAF已经支持Windows、Linux、Mac等所有操作系统平台。
 
 因为Mac平台底层API的限制，Mac平台无法像Windows和Linux平台那样使用跨进程粘贴技术，Mac平台下只是把Qt窗口简单的置顶处理，所以Mac平台会存在Emacs失去焦点后EAF Qt窗口内容无法显示的问题。
 
