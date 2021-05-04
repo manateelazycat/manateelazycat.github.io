@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>EAF + Vue.js, Happy hacking!</title>
+
+
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="//manateelazycat.github.io/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                EAF + Vue.js, Happy hacking!
+            </div>
+            <div class="category-area">
+                「
+                <a href="//manateelazycat.github.io/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                
+                <a href="//manateelazycat.github.io/tags.html#EAF">
+                    <div class="category">
+                        EAF
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数467 2021-03-07
+            </div>
+            <div class="content">
+                <p>最新版EAF增加了一个vue-demo的app，方便大家基于Vue.js给Emacs开发多媒体应用。</p>
+
+<p>更新EAF后，在根目录执行 ./install-eaf.sh 脚本，EAF会自动安装Vue依赖并自动运行<code class="language-plaintext highlighter-rouge">npm run build</code>来构建Vue应用。</p>
+
+<p>安装完成后使用 <code class="language-plaintext highlighter-rouge">eaf-open-vue-demo</code>命令来打开Vue演示应用。</p>
+
+<p>目前为止，EAF具备的协同开发能力有：</p>
+<ol>
+  <li>Elisp &lt;-&gt; EPC &lt;-&gt; Python 之间互相调用，通过PyQt5来利用Python和Qt5的生态软件包</li>
+  <li>Elisp &lt;-&gt; EAF Browser &lt;-&gt; JavaScript 之间互相调用，通过浏览器来利用NodeJS生态软件包</li>
+  <li>Elisp &lt;-&gt; EAF Browser &lt;-&gt; Vue.js 之间互相调用，通过浏览器来利用Vue.js生态软件包</li>
+</ol>
+
+<p>EAF现在可以联合Python和JavaScript两种编程语言进行协同编程，同时可以通过Qt5、NodeJS、Vue.js三种方式来扩展Emacs的多媒体能力，欢迎大家提交新的应用!</p>
+
+            </div>
+        </div>
+    </body>
+</html>
