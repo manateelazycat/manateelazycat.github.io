@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>EAF支持Mac平台啦！</title>
+
+
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="//manateelazycat.github.io/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                EAF支持Mac平台啦！
+            </div>
+            <div class="category-area">
+                「
+                <a href="//manateelazycat.github.io/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                
+                <a href="//manateelazycat.github.io/tags.html#EAF">
+                    <div class="category">
+                        EAF
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数436 2021-03-13
+            </div>
+            <div class="content">
+                <h3 id="macos补丁">MacOS补丁</h3>
+<p>今天早上社区大神提交了补丁 <a href="https://github.com/manateelazycat/emacs-application-framework/commit/cdcd969ee8fee562e8b83e708784ca8bb62149b0">partially support macOS</a>，这个补丁已经合并到EAF主线分支，现在EAF可以支持macOS啦，至此EAF已经支持Windows、Linux、Mac等所有操作系统平台。</p>
+
+<p>因为Mac平台底层API的限制，Mac平台无法像Windows和Linux平台那样使用跨进程粘贴技术，Mac平台下只是把Qt窗口简单的置顶处理，所以Mac平台会存在Emacs失去焦点后EAF Qt窗口内容无法显示的问题。</p>
+
+<p>如果你只是最大化使用Emacs和EAF，不切换其他应用窗口，Mac平台的体验和Windows以及Linux就没有感官上的差别。</p>
+
+<p>Mac平台的安装、设置和一些使用限制请查看<a href="https://github.com/manateelazycat/emacs-application-framework/wiki/macOS">Wiki</a></p>
+
+<h3 id="感谢">感谢</h3>
+<p>EAF社区能发展到现在，特别是Windows和Mac平台的开发离不开社区大神的努力，目前为止，EAF社区已经有42个开发贡献者，贡献了超过1800+的补丁。</p>
+
+<p>感谢社区开发者的热情和贡献，同时也欢迎有才华的你加入我们，一起为Emacs的多媒体能力添砖加瓦。</p>
+
+            </div>
+        </div>
+    </body>
+</html>

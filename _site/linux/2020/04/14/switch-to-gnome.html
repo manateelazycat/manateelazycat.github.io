@@ -48,7 +48,7 @@
                 」
             </div>
             <div class="char-counter">
-                字数1197 2020-04-14
+                字数1005 2020-04-14
             </div>
             <div class="content">
                 <p>最近EAF通过QWindow::setParent替换了X11 Reparent技术实现跨进程粘贴后，EAF现在已经可以支持Wayland。</p>
@@ -87,27 +87,18 @@
 
 <ol>
   <li>NoAnnoyance v2: 避免弹出 “窗口已经准备好” 的无聊通知</li>
-  <li>Hide Panel: 隐藏顶部Panel</li>
+  <li>Blur my Shell: 调整Gnome Shell组件的毛玻璃效果，美</li>
   <li>Printers: 方便查看打印机状态</li>
   <li>AlternateTab: 默认使用图片来显示Alt Tab</li>
   <li>CPU Power Manager: 控制笔记本在不插电的时候不要降频</li>
   <li>Caffeine: 临时禁用一下待机功能，PPT演示的时候比较方便</li>
-  <li>Blur my Shell: 调整Gnome Shell组件的毛玻璃效果，美</li>
 </ol>
-
-<p>Gnome3默认分组的Alt + Tab设计也是脑残至极，好的是，现在可以直接在Gnome3设置面板通过设置 “窗口切换” 命令来回归传统的Alt + Tab切换功能。</p>
 
 <h4 id="gnome-shell主题">Gnome Shell主题</h4>
 
 <p>主题找了一下 Flat-Remix 主题，解压到 ~/.themes 目录下后，通过下面命令来设置主题</p>
 
 <p><code class="language-plaintext highlighter-rouge">gsettings set org.gnome.shell.extensions.user-theme name "Flat-Remix-Dark-fullPanel"</code></p>
-
-<h4 id="快速切换应用">快速切换应用</h4>
-
-<p>我在<a href="https://manateelazycat.github.io/linux/2019/09/13/open-or-raise.html">Linux下实现打开或切换应用的功能</a>文章中写了怎么快速切换应用，原理是一样的，只不过 Gnome3 的快捷键设置需要在所有命令增加 bash -c 的参数才能生效。</p>
-
-<p>That’s all!</p>
 
             </div>
         </div>
