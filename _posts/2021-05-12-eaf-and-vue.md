@@ -1,6 +1,6 @@
 ---
 layout: post
-title:
+title: EAF音乐播放器发布啦！
 categories: [Emacs, EAF]
 ---
 
