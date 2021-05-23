@@ -15,7 +15,7 @@ Emacs还有一些高级调试方法用于非错误场景的调试，举个例子
 {:.line-quote}
 sdcv.el基于posframe来实现翻译窗口的弹出，但是有个小问题，每次EAF网页中弹出翻译窗口的时候，鼠标都会跳到Emacs的左上角，翻译以后要重新移动光标, 非常的不方便。
 
-但是这时候我们往往不知道到底是哪个Emacs插件引入的这种行为, 一个一个的排查非常消耗时，但是我知道Emacs底层API中设置光标位置的函数是 ```set-mouse-position```, 所以这时候可以调用命令 ```(debug-on-entry 'set-mouse-position)``` 来设置当Emacs调用 ```set-mouse-position``` 函数的时候弹出堆栈，方便开发者定位Emacs运行时的函数调用堆栈。
+但是这时候我们往往不知道到底是哪个Emacs插件引入的这种行为, 一个一个的排查非常耗时，但是我知道Emacs底层API中设置光标位置的函数是 ```set-mouse-position```, 所以这时候可以调用命令 ```(debug-on-entry 'set-mouse-position)``` 来设置当Emacs调用 ```set-mouse-position``` 函数的时候弹出堆栈，方便开发者定位Emacs运行时的函数调用堆栈。
 
 这时，只要调用翻译函数，一旦光标被插件移动后，就会弹出类似下面的堆栈信息：
 
