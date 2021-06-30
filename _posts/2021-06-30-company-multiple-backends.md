@@ -38,12 +38,16 @@ categories: [Emacs]
           #'(lambda ()
               (require 'company-elisp)
               (push 'company-elisp company-backends)))
+
+;; Remove duplicate candidate.
+(add-to-list 'company-transformers #'delete-dups)
 ```
 
 1. 把其他company后端都放到 company-capf 之前，避免 company-capf (citre用的就是这个接口) 把其他后端的补全数据给覆盖了
 2. 通过 company-tabnine 这个深度学习补全后端可以分析LSP后端数据的能力，把LSP和Citre两个后端的数据进行揉和
 3. 通过 'company-mode/backend-with-yas 建议，利用 company-mode 的 :with 关键字，把所有语言的模板补全后端进行二次揉和
 4. 编辑Elisp文件时，临时增加 company-elisp 这个补全后端
+5. 删除多个后端间重复的补全选项
 
 ![LSP补全后端]({{site.url}}/pics/company-multiple-backends/tabnine.png)
 
