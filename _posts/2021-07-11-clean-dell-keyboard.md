@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 清理Dell XPS13键帽下杂物
-categories: [Linux]
+categories: [Hardware]
 ---
 
 经常出差，不知道把什么东西掉进笔记本键帽下，按键J和按键W总是会卡一下，作为一个资深码农，流畅的键盘手感非常重要，码代码卡一下心里就容易分心。
