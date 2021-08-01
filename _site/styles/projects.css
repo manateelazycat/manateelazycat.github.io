@@ -128,8 +128,10 @@ a:hover {
 .project-name {
     color: #73BC83;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .project-intro {
+    font-size: 20px;
+    margin-top: 10px;
 }

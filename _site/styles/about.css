@@ -21,7 +21,7 @@ ul {
 
 li {
     line-height: 30px;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .about a {
@@ -62,7 +62,7 @@ li {
 
 .title {
     color: #AAA;
-    font-size: 36px;
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
     border-top: 2px solid #AAA;
@@ -75,6 +75,7 @@ li {
 }
 
 .name {
+    font-size: 20px;
     text-align: center;
     color: #888;
     margin-bottom: 40px;
@@ -82,7 +83,7 @@ li {
 
 .segement {
     color: #888;
-    font-size: 18px;
+    font-size: 22px;
     margin-top: 40px;
 }
 

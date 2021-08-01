@@ -47,22 +47,22 @@ a:hover {
 
 .post-title {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 22px;
     color: #000;
 }
 
 .post-summary {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
     margin-right: 10px;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 26px;
     color: #333;
 }
 
 .post-date {
     color: #666;
-    font-size: 12px;
+    font-size: 16px;
     text-align: right;
 }
 
@@ -93,7 +93,7 @@ a:hover {
 }
 
 .slogan {
-    font-size: 22px;
+    font-size: 26px;
     text-align: center;
     color: #666;
     margin-bottom: 100px;
@@ -124,7 +124,7 @@ a:hover {
 
 .category {
     color: #666;
-    font-size: 12px;
+    font-size: 18px;
     height: 16px;
     position: relative;
     background: #DDD;
@@ -142,13 +142,13 @@ a:hover {
     display: flex;
     justify-content: flex-end;
     color: #666;
-    font-size: 11px;
+    font-size: 16px;
     margin-right: 20px;
 }
 
 .char-counter {
     color: #666;
-    font-size: 11px;
+    font-size: 16px;
     margin-right: 10px;
 }
 

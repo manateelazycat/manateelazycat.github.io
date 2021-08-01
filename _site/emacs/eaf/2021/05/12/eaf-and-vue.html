@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>EAF音乐播放器发布啦！</title>
+
+
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="//manateelazycat.github.io/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                EAF音乐播放器发布啦！
+            </div>
+            <div class="category-area">
+                「
+                <a href="//manateelazycat.github.io/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                
+                <a href="//manateelazycat.github.io/tags.html#EAF">
+                    <div class="category">
+                        EAF
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数391 2021-05-12
+            </div>
+            <div class="content">
+                <p><img src="//manateelazycat.github.io/pics/eaf-and-vue/eaf-and-vue.png" alt="EAF and vue.js" /></p>
+
+<p>最近用Vue.js给EAF写了一个音乐播放器，主要解决了一项关键技术 “Elisp直接调用Vue.js的函数”, 原理如下：</p>
+
+<ol>
+  <li>Vue组件执行 <code class="language-plaintext highlighter-rouge">mounted</code> 的时候，用 <code class="language-plaintext highlighter-rouge">window.foo = this.foo</code> 方法注入Vue组件的函数 <code class="language-plaintext highlighter-rouge">foo</code> 到window对象</li>
+  <li>Elisp首先通过IPC调用Python进程内函数</li>
+  <li>Python函数内再通过QWebEngine的 <code class="language-plaintext highlighter-rouge">execute_javascript</code> 接口调用第一步注入的JavaScript函数</li>
+</ol>
+
+<p>通过上面三个步骤，Emacs可以在运行时直接通过Elisp调用JavaScript函数来操作Vue应用的行为。</p>
+
+<p>EAF现在可以用Elisp, Python, C++, JavaScript四种语言协同编程，同时基于Qt和Vue.js技术无限扩展Emacs的图形绘制能力。借助EAF框架，所有VSCode能做的事情，现在Emacs都可以做了，祝我教早日一统江湖，哈哈哈哈。</p>
+
+            </div>
+        </div>
+    </body>
+</html>
