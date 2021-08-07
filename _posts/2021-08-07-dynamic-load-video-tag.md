@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Vue.js 动态切换 <video> 的内容
+title: Vue.js动态切换视频
 categories: [Web]
 ---
 
