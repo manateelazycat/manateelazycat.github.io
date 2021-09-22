@@ -4,79 +4,74 @@ title: ManateeLazyCat
 ---
 
 <div class="topbar">
-    <div class="topbar-button">
-        <a href="{{ site.url }}/index.html">ManateeLazyCat</a>
-    </div>
-    <div class="topbar-button">
-        <a href="{{ site.url }}/tags.html">Tags</a>
-    </div>
-    <div class="topbar-button">
-        <a href="{{ site.url }}/projects.html">Projects</a>
-    </div>
-    <div class="topbar-button">
-        <a href="{{ site.url }}/feed.xml">Feeds</a>
-    </div>
-    <div class="topbar-button">
-        <a href="{{ site.url }}/about.html">About</a>
-    </div>
+  <div class="topbar-button">
+    <a href="{{ site.url }}/index.html">ManateeLazyCat</a>
+  </div>
+  <div class="topbar-button">
+    <a href="{{ site.url }}/tags.html">Tags</a>
+  </div>
+  <div class="topbar-button">
+    <a href="{{ site.url }}/projects.html">Projects</a>
+  </div>
+  <div class="topbar-button">
+    <a href="{{ site.url }}/feed.xml">Feeds</a>
+  </div>
+  <div class="topbar-button">
+    <a href="{{ site.url }}/about.html">About</a>
+  </div>
 </div>
 
 <div class="slogan">
-    「生活可以更简单, 欢迎来到我的开源世界」
+  「生活可以更简单, 欢迎来到我的开源世界」
 </div>
 
 <ul>
-    <div class="char-total-counter">
-        {% assign count = 0 %}
-        {% for post in site.posts %}
-        {% assign single_count = post.content | strip_html | strip_newlines | remove: " " | size %}
-        {% assign count = count | plus: single_count %}
-        {% endfor %}
-
-        {{ site.posts.size }}篇文章
-
-        {% if count > 1000 %}
-        {{ count | divided_by: 1000 }},{{ count | modulo: 1000 }}字
-        {% else %}
-        {{ count }}
-        {% endif %}
-    </div>
-
+  <div class="char-total-counter">
+    {% assign count = 0 %}
     {% for post in site.posts %}
-
-    <li class="post-line">
-        <a
-            class="post-title"
-            href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
-        </a>
-
-        <a href="{{ site.baseurl }}{{ post.url }}">
-            <div class="post-summary">
-                {{ post.content | strip_html | truncate: 80, " ..." }}
-            </div>
-        </a>
-        <div class="post-info">
-            <div class="category-area">
-                {% for category in post.categories %}
-                <a href="{{ site.url }}/tags.html#{{ category }}">
-                    <div class="category">
-                        {{ category }}
-                    </div>
-                </a>
-                {% endfor %}
-            </div>
-            <div class="right-info-area">
-                <div class="char-counter">
-                    字数 {{ post.content | strip_html | strip_newlines | remove: " " | size }}
-                </div>
-                <div class="post-date">
-                    {{ post.date | date: "%Y-%m-%d" }}
-                </div>
-            </div>
-        </div>
-    </li>
-
+    {% assign single_count = post.content | strip_html | strip_newlines | remove: " " | size %}
+    {% assign count = count | plus: single_count %}
     {% endfor %}
+
+    {{ site.posts.size }}篇文章
+    {{ count }}字
+  </div>
+
+  {% for post in site.posts %}
+
+  <li class="post-line">
+    <a
+      class="post-title"
+      href="{{ site.baseurl }}{{ post.url }}">
+      {{ post.title }}
+    </a>
+
+    <a href="{{ site.baseurl }}{{ post.url }}">
+      <div class="post-summary">
+        {{ post.content | strip_html | truncate: 80, " ..." }}
+      </div>
+    </a>
+    <div class="post-info">
+      <div class="category-area">
+        {% for category in post.categories %}
+        <a href="{{ site.url }}/tags.html#{{ category }}">
+          <div class="category">
+            {{ category }}
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="right-info-area">
+        <div class="char-counter">
+          字数 {{ post.content | strip_html | strip_newlines | remove: " " | size }}
+        </div>
+        <div class="post-date">
+          {{ post.date | date: "%Y-%m-%d" }}
+        </div>
+      </div>
+    </div>
+  </li>
+
+  {% endfor %}
 
 </ul>
