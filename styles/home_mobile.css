@@ -79,8 +79,8 @@ a {
 }
 
 .topbar-button {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0px;
+    margin-right: 10px;
     color: #888;
     font-size: 20px;
     font-family: angelinaFont;
