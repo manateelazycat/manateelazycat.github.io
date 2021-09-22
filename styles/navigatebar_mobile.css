@@ -6,10 +6,6 @@
 
     padding-top: 20px;
     padding-bottom: 20px;
-
-    border-bottom: 1px solid #EEE;
-
-    box-shadow: 0 2px 10px -1px rgba(0,0,0,0.05);
 }
 
 .navigatebar-button {
@@ -33,7 +29,6 @@
 }
 
 .navigatebar-mine {
-    flex: 1;
     margin-left: 10px;
 }
 
