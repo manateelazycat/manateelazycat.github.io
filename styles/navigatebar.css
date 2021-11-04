@@ -11,6 +11,12 @@
     position: relative;
 }
 
+@media screen and (max-width: 600px) {
+    .navigatebar {
+        width: 80%;
+    }
+}
+
 .navigatebar-button {
     margin-left: 10px;
     margin-right: 10px;
