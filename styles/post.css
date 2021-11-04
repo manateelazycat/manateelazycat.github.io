@@ -24,6 +24,12 @@ body {
     padding-right: 40px;
 }
 
+@media screen and (max-width: 600px) {
+    .content-area {
+        width: 80%;
+    }
+}
+
 ul {
     margin: 0;
     padding: 0;
