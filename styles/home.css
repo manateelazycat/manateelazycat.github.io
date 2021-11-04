@@ -37,6 +37,13 @@ a:hover {
     width: 100%;
 }
 
+@media screen and (max-width: 600px) {
+    .content {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
 .post-line {
     margin-left: 20px;
     margin-right: 20px;
