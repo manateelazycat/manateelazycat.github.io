@@ -41,7 +41,7 @@ XMODIFIERS=@im=fcitx
 2. Blur my Shell: 调整Gnome Shell组件的毛玻璃效果，美
 3. Printers: 方便查看打印机状态
 4. AlternateTab: 默认使用图片来显示Alt Tab
-5. CPU Power Manager: 控制笔记本在不插电的时候不要降频
+5. cpufreq: 控制笔记本在不插电的时候不要降频
 6. Caffeine: 临时禁用一下待机功能，PPT演示的时候比较方便
 7. Gnome 40 UI Improvements: 在工作区页面隐藏输入框，调大工作区缩略图大小
 8. No overview at start-up: 登录时不显示工作区激活状态
