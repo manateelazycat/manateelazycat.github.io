@@ -28,6 +28,6 @@ categories: [Emacs]
 (require 'find-orphan)
 ```
 
-## Usage
+## 使用
 * find-orphan-function-in-buffer : 在当前文档自动查找所有孤立函数
 * find-orphan-function-in-directory : 在当前工程自动查找所有孤立函数
