@@ -12,6 +12,11 @@ categories: [Emacs]
 
 如果在一个大型项目中一直重复上面的操作会非常痛苦, find-orphan.el 就是解决上面的痛点的贴心插件，现在你只需要打开源文件，然后执行命令 ```find-orphan-function-in-directory``` 即可，它会自动搜索所有函数名, 并用ripgrep自动在工程中搜索，最后告诉你所有孤立函数的列表，方便你快速删除无用代码。
 
+## 原理
+1. 基于AST来查找所有函数名
+2. 使用ripgrep来搜索函数名在项目中出现的次数
+3. 打印那些统计次数小于2的函数名
+
 ## 安装
 1. 安装[tree-sitter](https://emacs-tree-sitter.github.io/installation/)
 2. 安装[ripgrep](https://github.com/BurntSushi/ripgrep)
