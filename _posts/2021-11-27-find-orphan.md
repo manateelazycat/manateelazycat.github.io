@@ -22,7 +22,7 @@ categories: [Emacs]
 ## 安装
 1. 安装[tree-sitter](https://emacs-tree-sitter.github.io/installation/)
 2. 安装[ripgrep](https://github.com/BurntSushi/ripgrep)
-3. 下载find-orphan.el并加载到load-path
+3. 下载[find-orphan.el](https://github.com/manateelazycat/find-orphan)并加载到load-path
 
 把下面的代码添加到 ~/.emacs 中, 替换 ```<path-to-find-orphan>```为 find-orphan.el 所在目录
 ```Elisp
