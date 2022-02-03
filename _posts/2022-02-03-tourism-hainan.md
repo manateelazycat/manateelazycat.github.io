@@ -4,6 +4,11 @@ title: 海南行
 categories: [Travel]
 ---
 
+### 路线
+![]({{site.url}}/pics/hainan/map1.jpg)
+
+![]({{site.url}}/pics/hainan/map2.jpg)
+
 ### 黄姚古镇
 ![]({{site.url}}/pics/hainan/huangyao1.jpg)
 
