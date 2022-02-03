@@ -9,6 +9,8 @@ categories: [Travel]
 
 ![]({{site.url}}/pics/hainan/map2.jpg)
 
+全程5300公里
+
 ### 黄姚古镇
 ![]({{site.url}}/pics/hainan/huangyao1.jpg)
 
