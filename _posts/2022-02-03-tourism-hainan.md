@@ -5,11 +5,11 @@ categories: [Travel]
 ---
 
 ### 路线
-![]({{site.url}}/pics/hainan/map1.jpg)
+![]({{site.url}}/pics/hainan/map1.png)
 
-![]({{site.url}}/pics/hainan/map2.jpg)
+![]({{site.url}}/pics/hainan/map2.png)
 
-全程5300公里
+全程6000公里
 
 ### 黄姚古镇
 ![]({{site.url}}/pics/hainan/huangyao1.jpg)
