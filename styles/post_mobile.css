@@ -39,6 +39,10 @@ a {
     text-decoration: none;
 }
 
+p {
+    font-family: jinkaiFont;
+}
+
 .title {
     color: #000;
     font-size: 24px;
