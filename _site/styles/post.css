@@ -24,6 +24,12 @@ body {
     padding-right: 40px;
 }
 
+@media screen and (max-width: 600px) {
+    .content-area {
+        width: 80%;
+    }
+}
+
 ul {
     margin: 0;
     padding: 0;
@@ -39,6 +45,10 @@ a {
     text-decoration: none;
 }
 
+p {
+    font-family: jinkaiFont;
+}
+
 .title {
     color: #000;
     font-size: 26px;
@@ -49,6 +59,7 @@ a {
 
 .content {
     line-height: 28px;
+    font-size: 20px;
 }
 
 li>img,

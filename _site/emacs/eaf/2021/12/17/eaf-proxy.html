@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>基于Clash的EAF规则代理解决方案</title>
+
+
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="//manateelazycat.github.io/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                基于Clash的EAF规则代理解决方案
+            </div>
+            <div class="category-area">
+                「
+                <a href="//manateelazycat.github.io/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                
+                <a href="//manateelazycat.github.io/tags.html#EAF">
+                    <div class="category">
+                        EAF
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数4033 2021-12-17
+            </div>
+            <div class="content">
+                <p>EAF浏览器是基于QWebEngine来实现的，QWebEngine因为受限于底层Chromium代码的实现，QWebEngine无法像QWebKit那样，通过Qt代码来实现基于自定义规则的代理路由。</p>
+
+<p>如果修改Qt5的源码则非常麻烦，一个比较合理解决方案是 “通过引入第二个本地代理来变相实现规则代理”，简单逻辑如下图：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>EAF Browser ---&gt; Transfer Proxy ---&gt; Need Proxy ------&gt; Local Proxy ---&gt; Proxy Server ---&gt; Target Website
+                       |
+                       ------------&gt; No Need Proxy ---&gt; Target Website
+</code></pre></div></div>
+
+<p>用Clash作为规则代理(Transfer Proxy), 充当EAF浏览器和本地代理客户端的中间代理，如果一个域名匹配代理规则，Clash就把流量定向到本地代理客户端，再由本地代理客户端发送请求给代理服务器。如果一个域名匹配直连规则，Clash直接略过本地代理客户端直接访问目标网站。</p>
+
+<h3 id="安装clash">安装Clash</h3>
+<p>首先从<a href="https://github.com/Dreamacro/clash">Clash</a>安装Clash, Arch直接用pacman安装即可。</p>
+
+<h3 id="配置clash">配置Clash</h3>
+<p>首先你需要在本地配置一个本地socks5代理，可以参考我的另外一篇文章<a href="https://manateelazycat.github.io/proxy/2021/02/26/best-proxy.html">最佳代理实践</a>。</p>
+
+<p>比如本地socks5代理是 127.0.0.1 的 1080 端口（如果不是，请修改下面配置中 proxies 字段内容），然后新建一个 config.yml 配置文件：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># config.yml</span>
+<span class="c"># 本地http(s)代理端口</span>
+port: 18080
+<span class="c"># 本地socks5代理端口</span>
+socks-port: 10808
+<span class="c"># 是否允许局域网中其他机器访问</span>
+allow-lan: <span class="nb">false</span>
+<span class="c"># 仅当allow-lan设置为true时生效</span>
+<span class="c"># '*': 绑定所有IP</span>
+<span class="c"># 192.168.122.11:绑定单个IPV4</span>
+<span class="c"># "[aaaa::a8aa:ff:fe09:57d8]":绑定单个IPV6</span>
+bind-address: <span class="s1">'*'</span>
+<span class="c"># 运行模式</span>
+<span class="c"># rule: 基于规则</span>
+<span class="c"># global: 全局代理</span>
+<span class="c"># direct: 不代理</span>
+mode: rule
+<span class="c"># 日志输出级别</span>
+<span class="c"># info / warning / error / debug / silent</span>
+log-level: info
+<span class="c"># 当设置为false时，不解析IPV6地址</span>
+ipv6: <span class="nb">false</span>
+<span class="c"># 流量出口</span>
+interface-name: wlp4s0
+
+<span class="c"># DNS 设置</span>
+dns:
+  <span class="nb">enable</span>: <span class="nb">false
+  </span>listen: 0.0.0.0:53
+  <span class="c"># ipv6: false # when the false, response to AAAA questions will be empty</span>
+
+  <span class="c"># These nameservers are used to resolve the DNS nameserver hostnames below.</span>
+  <span class="c"># Specify IP addresses only</span>
+  default-nameserver:
+    - 114.114.114.114
+    - 8.8.8.8
+  enhanced-mode: redir-host <span class="c"># or fake-ip</span>
+  fake-ip-range: 198.18.0.1/16 <span class="c"># Fake IP addresses pool CIDR</span>
+  <span class="c"># use-hosts: true # lookup hosts and return IP record</span>
+
+  <span class="c"># Hostnames in this list will not be resolved with fake IPs</span>
+  <span class="c"># i.e. questions to these domain names will always be answered with their</span>
+  <span class="c"># real IP addresses</span>
+  <span class="c"># fake-ip-filter:</span>
+  <span class="c">#   - '*.lan'</span>
+  <span class="c">#   - localhost.ptlogin2.qq.com</span>
+
+  <span class="c"># Supports UDP, TCP, DoT, DoH. You can specify the port to connect to.</span>
+  <span class="c"># All DNS questions are sent directly to the nameserver, without proxies</span>
+  <span class="c"># involved. Clash answers the DNS question with the first result gathered.</span>
+  nameserver:
+    - 114.114.114.114 <span class="c"># default value</span>
+    - 8.8.8.8 <span class="c"># default value</span>
+    - tls://dns.rubyfish.cn:853 <span class="c"># DNS over TLS</span>
+    - https://1.1.1.1/dns-query <span class="c"># DNS over HTTPS</span>
+    - dhcp://en0 <span class="c"># dns from dhcp</span>
+
+  <span class="c"># When `fallback` is present, the DNS server will send concurrent requests</span>
+  <span class="c"># to the servers in this section along with servers in `nameservers`.</span>
+  <span class="c"># The answers from fallback servers are used when the GEOIP country</span>
+  <span class="c"># is not `CN`.</span>
+  <span class="c"># fallback:</span>
+  <span class="c">#   - tcp://1.1.1.1</span>
+
+  <span class="c"># If IP addresses resolved with servers in `nameservers` are in the specified</span>
+  <span class="c"># subnets below, they are considered invalid and results from `fallback`</span>
+  <span class="c"># servers are used instead.</span>
+  <span class="c">#</span>
+  <span class="c"># IP address resolved with servers in `nameserver` is used when</span>
+  <span class="c"># `fallback-filter.geoip` is true and when GEOIP of the IP address is `CN`.</span>
+  <span class="c">#</span>
+  <span class="c"># If `fallback-filter.geoip` is false, results from `nameserver` nameservers</span>
+  <span class="c"># are always used if not match `fallback-filter.ipcidr`.</span>
+  <span class="c">#</span>
+  <span class="c"># This is a countermeasure against DNS pollution attacks.</span>
+  <span class="c"># fallback-filter:</span>
+  <span class="c">#   geoip: true</span>
+  <span class="c">#   geoip-code: CN</span>
+  <span class="c">#   ipcidr:</span>
+  <span class="c">#     - 240.0.0.0/4</span>
+  <span class="c">#   domain:</span>
+  <span class="c">#     - '+.google.com'</span>
+  <span class="c">#     - '+.facebook.com'</span>
+  <span class="c">#     - '+.youtube.com'</span>
+
+  <span class="c"># Lookup domains via specific nameservers</span>
+  <span class="c"># nameserver-policy:</span>
+  <span class="c">#   'www.baidu.com': '114.114.114.114'</span>
+  <span class="c">#   '+.internal.crop.com': '10.0.0.1'</span>
+proxies:
+<span class="c"># 代理服务器配置，更多的代理设置请查看：https://lancellc.gitbook.io/clash/clash-config-file/an-example-configuration-file</span>
+  - name: <span class="s2">"local-socks5"</span>
+    <span class="nb">type</span>: socks5
+    server: localhost
+    port: 1080
+
+proxy-groups:
+  <span class="c"># 组策略</span>
+  <span class="c"># url-test 自动选择最快的节点进行访问.</span>
+  - name: <span class="s2">"auto"</span>   <span class="c">#策略名</span>
+    <span class="nb">type</span>: url-test
+    proxies:
+      - local-socks5
+    <span class="c"># tolerance: 150</span>
+    url: <span class="s1">'http://www.gstatic.com/generate_204'</span>
+    interval: 300
+
+rules:
+<span class="c"># 规则策略</span>
+<span class="c"># 当一级域名是google.com时使用auto策略</span>
+  - DOMAIN-SUFFIX,google.com,auto
+  - DOMAIN-SUFFIX,github.com,auto
+  - DOMAIN-SUFFIX,github.io,auto
+  - DOMAIN-SUFFIX,gitee.com,DIRECT
+  - DOMAIN-SUFFIX,emacs-china.org,DIRECT
+  - DOMAIN-SUFFIX,ruby-china.org,DIRECT
+  - DOMAIN-SUFFIX,baidu.com,DIRECT
+<span class="c"># 当域名含有关键词google时使用auto</span>
+  - DOMAIN-KEYWORD,google,auto
+  - DOMAIN,google.com,auto
+<span class="c"># 当一级域名是ad.com时拒绝访问，可以用于屏蔽广告</span>
+  - DOMAIN-SUFFIX,ad.com,REJECT
+<span class="c"># 内网服务ip不走代理</span>
+  - SRC-IP-CIDR,192.168.1.0/32,DIRECT
+  - SRC-IP-CIDR,10.0.0.0/8,DIRECT
+<span class="c"># 可选参数 "no-resolve" ，基于IP的规则 (GEOIP, IP-CIDR, IP-CIDR6)</span>
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - GEOIP,CN,DIRECT
+<span class="c"># 目标端口是8888时，直接访问不走代理</span>
+  - SRC-PORT,8888,DIRECT
+<span class="c"># 默认规则</span>
+  - MATCH,auto
+</code></pre></div></div>
+
+<p>接着运行命令 <code class="language-plaintext highlighter-rouge">clash -f config.yml</code> 来启动Clash，Clash会对外暴露一个 http 类型的 18080 端口代理。</p>
+
+<h3 id="配置eaf">配置EAF</h3>
+<p>最后在Emacs中通过如下配置来设置EAF使用Clash代理：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(setq eaf-proxy-type "http")
+(setq eaf-proxy-host "127.0.0.1")
+(setq eaf-proxy-port "18080")
+</code></pre></div></div>
+
+<h3 id="最后">最后</h3>
+<p>通过上面的配置，可以让EAF浏览器实现基于规则的自动代理，当然这种方法也适用于任何其他软件，比如Chrome浏览器。</p>
+
+<p>Clash中转代理的方法，可以让系统中多个软件共用同一套代理规则，更新规则也很方便，只需修改上面配置文件中的 rules 字段内容。</p>
+
+<p>感谢EmacsChina社区的<a href="https://emacs-china.org/u/EdmondFrank">EdmondFrank</a>的贡献，使得EAF具备自动代理的能力，感谢！</p>
+
+            </div>
+        </div>
+    </body>
+</html>

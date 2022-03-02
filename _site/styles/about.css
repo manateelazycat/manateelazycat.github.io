@@ -52,6 +52,12 @@ li {
     padding-right: 40px;
 }
 
+@media screen and (max-width: 600px) {
+    .about {
+        width: 80%;
+    }
+}
+
 .title-area {
     display: flex;
     flex-direction: row;
