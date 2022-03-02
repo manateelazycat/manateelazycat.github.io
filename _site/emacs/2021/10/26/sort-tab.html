@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>更简洁的标签栏设计</title>
+
+
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="//manateelazycat.github.io/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                更简洁的标签栏设计
+            </div>
+            <div class="category-area">
+                「
+                <a href="//manateelazycat.github.io/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数991 2021-10-26
+            </div>
+            <div class="content">
+                <h3 id="emacs编程流">Emacs编程流</h3>
+<p>在Emacs中，不同的使用场景有不同的使用方法，有些场景需要直觉操作，有些场景需要效率优先。</p>
+
+<p>日常Emacs使用场景简单总结主要有以下几类：</p>
+
+<ul>
+  <li>打开文件：通过find-file、dired或EAF文件管理器打开需要编辑的文件；</li>
+  <li>常用文件跳转：看一下顶部标签栏快速切换到另外一个常用文件；</li>
+  <li>文件模糊搜索：当打开文件过多时，通过标签栏找文件太费劲，更好的方式是通过搜索框架来模糊查找文件，比如Ivy、Helm和Snails；</li>
+  <li>文件对比：Emacs最好的设计，快速分屏，快速切换不同窗口中的文件</li>
+  <li>命令执行：通过M-x操作来执行一些复杂命令，这些命令平常不用，但是需要时往往想不起命令的名字，现在比较流行Smex</li>
+</ul>
+
+<h3 id="标签栏的优势">标签栏的优势</h3>
+<p>我们编程时，时间占用比最大的其实就是常用文件间的快速编辑和快速切换，社区常用的搜索框架都需要搜索一下关键字，特别是在专注思考编程问题时，频繁的关键字搜索对心智负担比较大，容易影响思考的流畅性。</p>
+
+<p>当常用文件在10个以内时，标签栏的直觉化操作就非常方便，EmacsChina社区的一个道友还专门写了一篇文章<a href="https://amaikinono.github.io/introduce-awesome-tab.html">Jump Between Buffers in a Slick Way</a>来论述标签栏的优势。</p>
+
+<h3 id="更简洁的标签栏设计">更简洁的标签栏设计</h3>
+
+<p><img src="//manateelazycat.github.io/pics/sort-tab/screenshot.png" alt="sort-tab" /></p>
+
+<p>今天花了几个小时写了一个新的标签栏插件<a href="https://github.com/manateelazycat/sort-tab">Sort-Tab</a>, 着重解决两个体验问题：</p>
+
+<ol>
+  <li>之前的Awesome-Tab虽然默认支持Project分组和自定义规则分组，但是这几年我使用的体验看，不管怎么分组都很麻烦，因为分组容易把两个经常编辑的文件分到两个不同的组（比如不如不同项目间借鉴代码、Web项目中不同编程语言的文件并列编辑等），导致我经常需要切换标签分组才能找到标签，很是麻烦；</li>
+  <li>Emacser不喜欢标签栏的另外一个理由是分屏后标签栏占用太多的纵向空间，两个窗口之间有一条比较宽的分割线，看着不爽。</li>
+</ol>
+
+<p>Sort-Tab相对于<a href="https://github.com/manateelazycat/awesome-tab">Awesome-Tab</a>的优势主要有两个：标签分组策略和屏幕空间设计。</p>
+
+<ol>
+  <li>根据文件的使用频率来排序，这样使用的时间越长，相关的文件标签挨的越紧，基本上可以做到下意识的左右切换(借鉴了<a href="https://emacs-china.org/t/buffer-tab/18359">kinono</a>的想法,很赞)；</li>
+  <li>顶栏设计，抛弃了header-line和tab-line的设计, 所有窗口都共享一个标签栏，最大程度减少纵向空间的浪费，再配合<a href="https://github.com/manateelazycat/awesome-tray">Awesome-Tray</a>，整体上可以实现非常简洁的视觉感官。</li>
+</ol>
+
+<p>插件今天才写完，估计还有一些小问题，欢迎各位朋友试用反馈建议。;)</p>
+
+            </div>
+        </div>
+    </body>
+</html>

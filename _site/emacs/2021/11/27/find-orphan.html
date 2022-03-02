@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>基于抽象语法树自动查找孤立函数</title>
+
+
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="//manateelazycat.github.io/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                基于抽象语法树自动查找孤立函数
+            </div>
+            <div class="category-area">
+                「
+                <a href="//manateelazycat.github.io/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数644 2021-11-27
+            </div>
+            <div class="content">
+                <h2 id="什么是-find-orphanel-">什么是 find-orphan.el ?</h2>
+<p>当我们完成一个大型项目后，经常需要重构代码以去掉项目过程中的无用代码，我们经常会按照下面流程进行操作：</p>
+<ol>
+  <li>打开源代码文件，找到函数定义</li>
+  <li>使用ripgrep工具把每个函数名都在项目目录下进行递归搜索</li>
+  <li>找到对应的源码文件，删除没有任何引用的孤立函数</li>
+</ol>
+
+<p>如果在一个大型项目中一直重复上面的操作会非常痛苦, find-orphan.el 就是解决上面痛点的贴心插件。</p>
+
+<p>现在你只需要打开源文件，然后执行命令 <code class="language-plaintext highlighter-rouge">find-orphan-function-in-directory</code> 即可，它会自动搜索所有函数名, 并用ripgrep自动在工程中搜索，最后告诉你所有孤立函数的列表，方便你快速删除无用代码。</p>
+
+<h2 id="原理">原理</h2>
+<ol>
+  <li>基于AST来查找所有函数名</li>
+  <li>使用ripgrep来统计函数名在项目中出现的次数</li>
+  <li>打印那些统计次数小于2的函数名</li>
+</ol>
+
+<h2 id="安装">安装</h2>
+<ol>
+  <li>安装<a href="https://emacs-tree-sitter.github.io/installation/">tree-sitter</a></li>
+  <li>安装<a href="https://github.com/BurntSushi/ripgrep">ripgrep</a></li>
+  <li>下载<a href="https://github.com/manateelazycat/find-orphan">find-orphan.el</a>并加载到load-path</li>
+</ol>
+
+<p>把下面的代码添加到 ~/.emacs 中, 替换 <code class="language-plaintext highlighter-rouge">&lt;path-to-find-orphan&gt;</code>为 find-orphan.el 所在目录</p>
+<pre><code class="language-Elisp">(add-to-list 'load-path "&lt;path-to-find-orphan&gt;")
+(require 'find-orphan)
+</code></pre>
+
+<h2 id="使用">使用</h2>
+<ul>
+  <li>find-orphan-function-in-buffer : 在当前文档自动查找所有孤立函数</li>
+  <li>find-orphan-function-in-directory : 在当前工程自动查找所有孤立函数</li>
+</ul>
+
+            </div>
+        </div>
+    </body>
+</html>

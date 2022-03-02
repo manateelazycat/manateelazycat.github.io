@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>EAF支持Wayland native啦!</title>
+
+
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="//manateelazycat.github.io/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                EAF支持Wayland native啦!
+            </div>
+            <div class="category-area">
+                「
+                <a href="//manateelazycat.github.io/tags.html#Emacs">
+                    <div class="category">
+                        Emacs
+                    </div>
+                </a>
+                
+                <a href="//manateelazycat.github.io/tags.html#EAF">
+                    <div class="category">
+                        EAF
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数300 2022-01-02
+            </div>
+            <div class="content">
+                <p>通过<a href="https://github.com/emacs-eaf/emacs-application-framework/commit/8df41d0058a59affbec19f013b504259305109cc">补丁</a>EAF正式支持Wayland native环境, 以前EAF只支持XWayland, 我已经在Emacs 29环境下测试过了。</p>
+
+<p>在Wayland native环境下，EAF会采取和macOS同等的策略，Emacs获得焦点时显示EAF窗口，Emacs失去焦点时隐藏EAF窗口，以绕过Wayland native下窗口管理器不允许XReparent这种跨进程粘贴技术。</p>
+
+<p>目前还有点小问题是，Wayland native环境下放弃XReparent跨进程粘贴技术后，EAF窗口的坐标只有在Emacs全屏的时候是正常的，原因是我还没有找到怎么获取Emacs窗口在屏幕范围的绝对坐标，找到对应的方法就可以修复这个小问题。</p>
+
+            </div>
+        </div>
+    </body>
+</html>

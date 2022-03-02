@@ -1,597 +1,724 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="//manateelazycat.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="//manateelazycat.github.io/" rel="alternate" type="text/html" /><updated>2021-08-01T18:56:21+08:00</updated><id>//manateelazycat.github.io/feed.xml</id><entry><title type="html">甘南行</title><link href="//manateelazycat.github.io/travel/2021/08/01/gannan.html" rel="alternate" type="text/html" title="甘南行" /><published>2021-08-01T00:00:00+08:00</published><updated>2021-08-01T00:00:00+08:00</updated><id>//manateelazycat.github.io/travel/2021/08/01/gannan</id><content type="html" xml:base="//manateelazycat.github.io/travel/2021/08/01/gannan.html">&lt;h3 id=&quot;路线图&quot;&gt;路线图&lt;/h3&gt;
-&lt;p&gt;暑假带家人去甘南转一圈，因为武汉离甘南较远而且路途中没什么好的景点，为了节省时间，决定乘高铁到陇南，再在陇南当地租车自驾转甘南一圈。
-根据朋友的建议，原计划按照下面的路线旅游，不去拉卜楞寺，扎尕那出来直接去玛曲黄河第一湾。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="//manateelazycat.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="//manateelazycat.github.io/" rel="alternate" type="text/html" /><updated>2022-03-03T01:33:05+08:00</updated><id>//manateelazycat.github.io/feed.xml</id><entry><title type="html">魔方CFOP公式</title><link href="//manateelazycat.github.io/curiosity/2022/03/03/advanced-cute.html" rel="alternate" type="text/html" title="魔方CFOP公式" /><published>2022-03-03T00:00:00+08:00</published><updated>2022-03-03T00:00:00+08:00</updated><id>//manateelazycat.github.io/curiosity/2022/03/03/advanced-cute</id><content type="html" xml:base="//manateelazycat.github.io/curiosity/2022/03/03/advanced-cute.html">&lt;h3 id=&quot;基本公式&quot;&gt;基本公式&lt;/h3&gt;
+&lt;p&gt;先把视频完全看会后，记住两个公式：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;右手公式：上顺下逆 (右手上翻、顶部顺转、右手下翻，顶部逆转)&lt;/li&gt;
+  &lt;li&gt;左手公式：上逆下顺 (左手上翻、顶部逆转、左手下翻、顶部顺转)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;白色十字&quot;&gt;白色十字&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;拼好白色十字&lt;/li&gt;
+  &lt;li&gt;旋转白色下面的拿一层，使得中间层色块和顶部白色十字相邻&lt;/li&gt;
+  &lt;li&gt;白色面朝上，相邻面一面在左和一面在前（或一面在后和一面在前）放置后，右手公式后，进行一次右手上翻&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;底部两层&quot;&gt;底部两层&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://1hrbld.tw/intermediate-selection-panel/333-intermediate-method-cfop-introduction/&quot;&gt;CFOP公式走法&lt;/a&gt;相对于&lt;a href=&quot;https://manateelazycat.github.io/curiosity/2021/03/16/cube.html&quot;&gt;基本公式走法&lt;/a&gt;主要区别是：CFOP强调底部两层尽量一次拼好，而不是基本公式那样先拼底部第一层再拼第二层，步骤要少很多。&lt;/p&gt;
+
+&lt;p&gt;底部两层一起拼的方法如下：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;白色块朝四周时：白色块面朝自己，旋转至底部，再旋转顶部边块，使得边块和白色块垂直，再反向转边块，使得白色角块和边块相邻&lt;/li&gt;
+  &lt;li&gt;白色块朝上时：找到顶部边块面朝自己，旋转边块至左边和右边，再旋转顶部角块，使得白色角块和边块相邻&lt;/li&gt;
+  &lt;li&gt;当边块和角块在顶面相邻后，再把底部白色边块朝上旋转，来接白色块至底部，最后完成底部两层&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如果遇到极端情况，底部两层三种颜色已经拼好，但第四种颜色不好拼，这时候可以结合基本公式的第二层拼法：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;右手公式把白色角块都移动到底部&lt;/li&gt;
+  &lt;li&gt;找到顶部非黄色的边块，旋转顶面，直到顶部边块和下面两层连成线&lt;/li&gt;
+  &lt;li&gt;如果顶部边块移动到右边就执行：顶部顺转、右手公式、前面逆转，顶部逆转，前面顺转&lt;/li&gt;
+  &lt;li&gt;如果顶部边块移动到左边就执行：顶部逆转、左手公式、前面顺转，顶部顺转，前面逆转&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;顶部十字&quot;&gt;顶部十字&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;如果顶部黄色是拐角样子，拐角放右下角(不是拐角或直线就随便找一个角)：前面顺转、右手公式、前面逆转&lt;/li&gt;
+  &lt;li&gt;如果顶部黄色一条线，黄线横着放：前面顺转、右手公式、前面逆转&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;顶部十字和侧面中心对齐&quot;&gt;顶部十字和侧面中心对齐&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;选择顶部面，观察和侧面对齐情况&lt;/li&gt;
+  &lt;li&gt;相邻就把位置放成一个左边、一个后面，相对就一个前一个后&lt;/li&gt;
+  &lt;li&gt;前面顺转一次、两次右手公式、前面顺转两次、左手公式，前面顺转一次&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/gannan_plan.png&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;顶部角块位置&quot;&gt;顶部角块位置&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;找到一个位置对的角块，把角块放在右下角大拇指位置：三次右手公式、左面上翻一次、三次右手公式、左面下翻一次&lt;/li&gt;
+  &lt;li&gt;如果四个角块位置都不对，也按上面的步骤做完以后就会出现一个位置正确的角块，然后再重复一次&lt;/li&gt;
+  &lt;li&gt;直到顶部4个角的位置都是对的&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;可惜，在扎尕那开错路一直开到了合作市，还是把拉卜楞寺这一站给加上了。囧&lt;/p&gt;
+&lt;h3 id=&quot;最后一步&quot;&gt;最后一步&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;找到黄色块，把黄色面放左面&lt;/li&gt;
+  &lt;li&gt;观察左上角，如果左上角黄色朝上，执行四次右手公式，如果左上角黄色朝后，执行两次右手公式&lt;/li&gt;
+  &lt;li&gt;如果左上角朝上的步骤做完后，还有其他黄色块方向不对，需要&lt;strong&gt;旋转左面直到把黄色块移动到左上角朝后的位置&lt;/strong&gt;：执行两次右手公式&lt;/li&gt;
+  &lt;li&gt;旋转左手面，搞定&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="Curiosity" /><summary type="html">基本公式 先把视频完全看会后，记住两个公式： 右手公式：上顺下逆 (右手上翻、顶部顺转、右手下翻，顶部逆转) 左手公式：上逆下顺 (左手上翻、顶部逆转、左手下翻、顶部顺转)</summary></entry><entry><title type="html">Emacs递归添加目录下所有插件</title><link href="//manateelazycat.github.io/emacs/2022/03/02/emacs-load-directory-recursively.html" rel="alternate" type="text/html" title="Emacs递归添加目录下所有插件" /><published>2022-03-02T00:00:00+08:00</published><updated>2022-03-02T00:00:00+08:00</updated><id>//manateelazycat.github.io/emacs/2022/03/02/emacs-load-directory-recursively</id><content type="html" xml:base="//manateelazycat.github.io/emacs/2022/03/02/emacs-load-directory-recursively.html">&lt;p&gt;Emacs社区默认用下面的方式递归扫描目录下所有插件，并添加到Emacs加载路径 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;load-path&lt;/code&gt; 中：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/gannan_road.png&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default-directory&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;plugin_directory&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;normal-top-level-add-subdirs-to-load-path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;陇南租车很方便，高铁站出口左手100米就是一个神州租车的网点，可以提前用App租好，出了高铁站直接开走。
-甘南有些地方路况比较差，建议租SUV比较妥当，平常小轿车底盘太低容易托底。&lt;/p&gt;
+&lt;p&gt;但是像&lt;a href=&quot;https://github.com/emacs-eaf/emacs-application-framework/&quot;&gt;EAF&lt;/a&gt;这种插件，子目录下有成千个NPM模块，会极大的增加Emacs启动扫描目录的时间，加之Emacs自身的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;normal-top-level-add-subdirs-to-load-path&lt;/code&gt; 函数实现过于复杂，自己重新写了一个新的函数专门用于递归添加目录下所有插件。&lt;/p&gt;
 
-&lt;h3 id=&quot;甘南大峪沟-第2天---住岷县&quot;&gt;甘南大峪沟 (第2天 - 住岷县)&lt;/h3&gt;
-&lt;p&gt;第二天从陇南出发，大概2~3个小时到大峪沟，去大峪沟的路上会经过卓尼县，正值当地居民收割青稞的时节，棉花糖似的白云飘在湛蓝的天空，一伸手就可摘下，白云的阴影投射山坡上，忽明忽暗，路两边是一望无尽的青稞和油菜花，一块黄一块绿的，层层叠叠铺在广袤的草原，开过充满生活气息的小村庄，这不就是宫崎骏动画中的画面吗？&lt;/p&gt;
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&apos;cl-lib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_102959_edit_16513024170916.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;add-subdirs-to-load-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;search-dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;interactive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;dir&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-name-as-directory&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;search-dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dolist&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;subdir&lt;/span&gt;
+             &lt;span class=&quot;c1&quot;&gt;;; 过滤出不必要的目录，提升Emacs启动速度&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;cl-remove-if&lt;/span&gt;
+              &lt;span class=&quot;nf&quot;&gt;#&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;subdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;or&lt;/span&gt;
+                   &lt;span class=&quot;c1&quot;&gt;;; 不是文件的都移除&lt;/span&gt;
+                   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-directory-p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;concat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dir&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;subdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+                   &lt;span class=&quot;c1&quot;&gt;;; 目录匹配下面规则的都移除&lt;/span&gt;
+                   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;member&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;subdir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;.&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;..&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;;Linux当前目录和父目录&lt;/span&gt;
+                                    &lt;span class=&quot;s&quot;&gt;&quot;dist&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;node_modules&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;__pycache__&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;;语言相关的模块目录&lt;/span&gt;
+                                    &lt;span class=&quot;s&quot;&gt;&quot;RCS&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;CVS&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;rcs&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;cvs&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;.git&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;.github&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;;版本控制目录&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;directory-files&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;subdir-path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;concat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dir&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-name-as-directory&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;subdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;;; 目录下有 .el .so .dll 文件的路径才添加到 load-path 中，提升Emacs启动速度&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;cl-some&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;subdir-file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                           &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-regular-p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;concat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;subdir-path&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;subdir-file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+                                &lt;span class=&quot;c1&quot;&gt;;; .so .dll 文件指非Elisp语言编写的Emacs动态库&lt;/span&gt;
+                                &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;member&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;file-name-extension&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;subdir-file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;el&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;so&quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+                       &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;directory-files&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;subdir-path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+          
+          &lt;span class=&quot;c1&quot;&gt;;; 注意：add-to-list 函数的第三个参数必须为 t ，表示加到列表末尾&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;;; 这样Emacs会从父目录到子目录的顺序搜索Elisp插件，顺序反过来会导致Emacs无法正常启动&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&apos;load-path&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;subdir-path&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790778385.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+        &lt;span class=&quot;c1&quot;&gt;;; 继续递归搜索子目录&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-subdirs-to-load-path&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;subdir-path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="Emacs" /><summary type="html">Emacs社区默认用下面的方式递归扫描目录下所有插件，并添加到Emacs加载路径 load-path 中：</summary></entry><entry><title type="html">读《心若菩提》</title><link href="//manateelazycat.github.io/reading/2022/02/24/reading-heart-is-bodhi.html" rel="alternate" type="text/html" title="读《心若菩提》" /><published>2022-02-24T00:00:00+08:00</published><updated>2022-02-24T00:00:00+08:00</updated><id>//manateelazycat.github.io/reading/2022/02/24/reading-heart-is-bodhi</id><content type="html" xml:base="//manateelazycat.github.io/reading/2022/02/24/reading-heart-is-bodhi.html">&lt;p&gt;最近公司太忙，导致读书清单欠账太多，经朋友推荐《心若菩提》这本书，花了两天时间认真研读了一下。感叹曹老先生艰苦创业的精神和人生向善的坚持。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790786593.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;曹老先生亲笔写自传，希望自己的经历分享出去，让别人有所借鉴和受益，我一直有读书记笔记的习惯，下面是我从这本书摘录的一些段落，和大家共同向曹老先生学习。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790772995.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;任何事情，只要肯动脑筋，没有解决不了的。&lt;/p&gt;
 
-&lt;p&gt;大峪沟风景区去的时候还没有修好，山上只有一个寺庙，倒是下山的时候从国道拐下去的一条小路可以直接开到河边，小朋友在那里捡到了很多漂亮的小石头，说要把这些小石头拿回家放到鱼缸中。&lt;/p&gt;
+&lt;p&gt;信是一种信念，也是一种信任，不仅对自己要有自信，对他人也要有信任，这叫互信。如果一个人什么都不信，那肯定会一事无成。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790770131.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;签订合同时，甲乙双方是平等的，双方要相互尊重，你不要骗我，企图从中牟取暴利，我也不欺负你，充分尊重你的劳动，一定要弄清楚对方的成本。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790775750.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;我认为一个企业与一个人一样，要或者都需要一颗头。企业这个人是法人，直接面向社会各界，做头的条件，一是必须具备较高的综合素质，二是要有广泛的人脉关系。如果在条件不成熟的情况下贸然去当头，相信等着你的恐怕就不光是福祉了。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790781013.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;根据我前些年自学管理会计技术用于分析控制成本。我认为只要做到产品质量的保证，才能有效的控制成本。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790783699.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;从产业链理论上讲，上下游企业，是有买卖关系，但也是分工不同，绝对不是各自孤立地存在的。要想要公司健康发展，不仅是需要我们自己产品客户端的繁荣，更需要我们产品供应商的发达。&lt;/p&gt;
 
-&lt;p&gt;大峪沟的下一站是扎尕那，需要开一截回头路，第二天晚上准备在岷县高速旁的酒店住下。&lt;/p&gt;
+&lt;p&gt;国际上收购兼并议价方式不外三种。常见的第一种，采用权益法，计算方式是以被重组的标的物经营盈利能力，按PE多少被来计，比如一家企业去年盈利1000万元，议价PE按照10倍，作价就是1亿。第二种：比价法，如果最近刚好市场上有基本相同的资产交易可供参考。第三种就是重置成本法，也就是说加入新建一个同样的工厂要花多少钱。&lt;/p&gt;
 
-&lt;p&gt;在去岷县的路上遇到一座有趣的木板桥，当地的居民骑着摩托车从桥上路过，在桥下刚好看到一个爸爸停下摩托车给女儿拍照的瞬间，多么平凡而幸福的生活呀。&lt;/p&gt;
+&lt;h3 id=&quot;后记&quot;&gt;后记&lt;/h3&gt;
+&lt;p&gt;上面是我从《心若菩提》这本书学到的一些理念和知识，其实本书那些人生过程更值得大家去学习，比如曹老先生很小的时候就锻炼自己的身体和意志，已经长大后时刻不忘做好事帮助他人，做生意讲究市场的正规经营和从来不坑合作伙伴的点点滴滴，才是更值得学习的地方。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790804002.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;书的后半部分，从曹老先生做双辽/通辽两地玻璃的生意过程中可以看出曹老先生是一个市场营销高手，他的高不在于有多少技巧性的术，而在于尊重市场规律，考虑上下游合作伙伴利益，用大道去化解商业上的困难，不在意短期利益和信息差工具，用更持续的理念去正常经营。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790806590.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;我的理解是，商业就是尊重基本常识，尊重别人的劳动，尊重互信合作的前提下，做好自己，做出对社会有用的产品，也许这就是我们常说的‘大道至简’。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790815316.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;因为这本书还比较厚，无法在博客中一一述说，感兴趣的同学建议买一本来看。&lt;/p&gt;</content><author><name></name></author><category term="Reading" /><summary type="html">最近公司太忙，导致读书清单欠账太多，经朋友推荐《心若菩提》这本书，花了两天时间认真研读了一下。感叹曹老先生艰苦创业的精神和人生向善的坚持。</summary></entry><entry><title type="html">读《查理芒格传》</title><link href="//manateelazycat.github.io/reading/2022/02/21/reading-charlie-munger.html" rel="alternate" type="text/html" title="读《查理芒格传》" /><published>2022-02-21T00:00:00+08:00</published><updated>2022-02-21T00:00:00+08:00</updated><id>//manateelazycat.github.io/reading/2022/02/21/reading-charlie-munger</id><content type="html" xml:base="//manateelazycat.github.io/reading/2022/02/21/reading-charlie-munger.html">&lt;p&gt;从春节前一直在读这本书，但是鉴于这本书的厚度和琐碎，一直断断续续的，直到今天才读完。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790809309.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;第一次知道查理芒格是在读段永平的故事中发现的，倒不是因为他是巴菲特的搭档和这个世界最富有的人之一，而是被这位正直和独立思考的老人所吸引。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790811951.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;下面是我读这本书觉得受益的段落摘抄，就像巴菲特说的一样，大家之所以不能成为巴菲特和芒格一样的人，不是大家不够聪明，无法理解这两位老人讲的道理，而是大部分人都太‘聪明’了，知道道理后却无法做到：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790818068.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;用最基本的方法来寻找问题的答案是一项非常好的传统，为世人节省了大量的时间，当然，有些问题的困难程度迫使你变得非常勤奋。我非常喜欢‘勤奋’这个词，因为对我而言它就意味着你必须静下心来直到把问题解决。&lt;/p&gt;
 
-&lt;h3 id=&quot;姑麻湖-第3天---住迭部县&quot;&gt;姑麻湖 (第3天 - 住迭部县)&lt;/h3&gt;
+&lt;p&gt;“在军队里和当小律师时的打牌经验锻炼了我的经商技巧。”芒格说，“你必须学会的是在形势不利的情况下及早认输，而如果有大牌在手，就要下重注，因为你不常拿到大牌。机会出现，但不是经常的事，所以一旦降临就要紧紧抓住。”&lt;/p&gt;
 
-&lt;p&gt;从岷县去扎尕那只需要不到3个小时，在地图上发现姑麻湖，随即从国道拐进去。&lt;/p&gt;
+&lt;p&gt;“尽你所能，永不撒谎，言出必行。永远别找任何借口。如果要开会就早点动身，别迟到。不过真的要迟到的话，别绞尽脑汁想什么借口，只要道歉就好了。他们要听到道歉，但对借口一点都没兴趣。”&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790825099.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;芒格最喜欢的一句话是亚里士多德说的，“要避免嫉妒，最好的方法就是让自己的成功实至名归。”&lt;/p&gt;
 
-&lt;p&gt;高德地图上的姑麻湖定位是有问题的，当你顺着导航开到谷底，遇到下面这条河上的一座大桥时，不要顺着导航往左上山，而是过桥向右边的烂路一直往前开。（也可以直接导航到‘黑拉村’）&lt;/p&gt;
+&lt;p&gt;和芒格一样，格雷厄姆出了名的正直、忠于目标和尊重现实。他常常告诫自己的学生要在华尔街成功就必须做到两点：首先要正确思考，其次要独立思考。&lt;/p&gt;
 
-&lt;p&gt;这条烂路非常烂，左边是落石绝壁，右边是悬崖，所谓的路就是落石铺成的石子路，建议一定要开四驱车过去，而且要在晴天开，雨天路会塌方太危险了。&lt;/p&gt;
+&lt;p&gt;“如果在你思考过程中你完全依赖他人，总是购买别人的意见，一旦离开你自己的小天地，就会大难临头。”&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790845423.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;“对于私人投资者来说，价值的最基本概念就是当你买进卖出证劵时，衡量依据是内在价值而不是当时的价格，我认为这种理论永不过时。”&lt;/p&gt;
 
-&lt;p&gt;开过烂路后会发现下面这座山，顺着路一路开上左边的山顶上去。&lt;/p&gt;
+&lt;p&gt;芒格这样概括自己的律师生涯：“如果你为了满足一个很难对付的客户完全将自我抹杀，最后得到了满分，你的回报只是把这一切在另外一个难对付的客户面前重新来一遍，这种情况司空见惯。”&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_140908.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;马歇尔说这几十年来他和芒格共事的时候从他身上学到了很多。“我学会了如何赚钱，” 马歇尔说，不过另外他也开始相信 “努力工作、为人诚实，如果你坚持这样做，你会得到一切。”&lt;/p&gt;
 
-&lt;p&gt;山顶有两个村（吾乎村、黑拉村），村门是关着的，打开村门后在山顶继续往前开。&lt;/p&gt;
+&lt;p&gt;“对我们这些成为律师的人来说，” 温迪芒格说，“从他的经商生涯中学到的宝贵一课就是不要和自己不信任的人做生意。如果没有信任，经济条件如何根本就不相干。大多数人只会考虑经济问题，认为自己和一个不信任的人交易的时候合同会帮你把关，你一定要和高水准的人做生意 – 和他打交道的都是这类人。” 芒格也用这种方式说：”永远不要和一头猪玩摔跤，因为如果你这么做了，你们两个都会变脏，但是猪会乐在其中。“&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_142024.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;当他们发现喜诗糖果是一桩出色的、不断发展的生意后，芒格和巴菲特认识到，收购一笔优质业务让它继续运作下去要比买下一家价格很低却在苦苦挣扎的公司，然后费时费力甚至费钱去拯救它要容易和愉快很多。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_144709.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;”威斯科金融继续更努力地尝试通过牢记那些显而易见的事，而不是去理解深奥复杂的事情来盈利，” 芒格说，”像我们这样着眼长期收益的人，通常尽量不做傻事，也不试图扮演非常聪明的角色，最后获得的收益是非常可观的。“ 俗话说“善泳者溺”，这句话充满着智慧。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_140306.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;”一个人能做出几次成功的投资然后就袖手旁观，得到的好处是非常多的，“芒格说，”你要付给经纪的钱少得多，也会少听很多废话…”&lt;/p&gt;
 
-&lt;p&gt;车开到头，会遇到一个采石场, 如果是四驱的车可以继续往山顶开，两驱车建议停留在采石场，徒步1个小时上山。&lt;/p&gt;
+&lt;p&gt;“我们对收购来的业务最主要的贡献就是什么都不做。” 芒格说，他们绝对不会干扰那些办事卓越有成效的经理人，特别是那些优点性格的人。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_151417.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;”正直、聪明，经验和奉献精神，这些都是一家公司运作良好所必须的，“芒格说，”我们非常幸运这么多年能和一群这样优秀的人才一起工作。我认为，让我们自己来管理的话，要做的比现在更好则非常困难。“&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_152912.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;芒格说，当你年纪越来越大，你对老朋友的包容度越来越高，而对新朋友的则越来越低。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_150903.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;当你认为有一些人或者一些不公平的事情正在侵害你的生活时，其实你自己在把自己的生活搞得一团糟。&lt;/p&gt;
 
-&lt;p&gt;徒步上山的路非常美，大概走4公里可以走到上面的高山草原。&lt;/p&gt;
+&lt;p&gt;查理芒格常常引用诺贝尔奖查理费曼的一句话， 他说第一条规则就是不要欺骗自己，你就是最容易受骗的那个人。芒格钥匙认为自己发现某人正在自欺欺人，他的反应就会非常不近人情。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790827471.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;“如果你想变得聪明点，” 芒格说， “你就必须不停地问 ’为什么， 为什么，为什么？’ 同时你还必须将答案和有条理的深层理论联系起来。你必须直到那些最主要的理论。这稍微会有些费力，但也充满乐趣。”&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_150944.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;芒格从物理学家那里学会了通过寻找最简单、最直接答案来解决问题。最容易的方法永远都是最好的方法。芒格又从数学家那里学到了将问题倒过来看，或者从反面去看，反转，再反转。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_150641.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;芒格说，虽然很少有公司可能永远屹立不倒，但是每一家公司都应该在创建的时候预计到要存在许多年。控制公司的方式应该考虑为 “金融工程学”。正如建造桥梁的时候会附带一个备用系统和冗余系数来应对极端压力一样，公司也应该能抵抗来自竞争者、经济衰退、石油危机或者其他天灾人祸带来的压力。过多的运用杠杆工具或欠债都会让公司在此类风暴中脆弱得不堪一击。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_152820.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;“我已经在投资管理行业中待了有差不多44年了，一直都力图不让任何人失望，” 巴菲特说，“至于如何才能让人不失望，其中最关键的一点是让他们有合理的期待，知道自己会得到什么，不会得到什么。如果有几十万人对我们这样那样的不满意，芒格和我都无法进行有效的工作。”&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_151328.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;不论芒格自己的个人生活还是职业生涯中，它都反复遭遇障碍和心痛的事。对此，芒格只会轻描淡写地说，那就是大多数人在生命中的经历罢了。如果说生命是一个箱子，任何试图让箱子变得更大一些的人最后都会发现必须冲破箱子的四边才行。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_151219.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;四驱车只能开到高山草原下面，大约徒步半个小时后到草原顶部。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210724_160256.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;登上高山草原的山顶后，3500米的姑麻峰立刻映入眼帘，高山草原上有漫山遍野的格桑花，地毯一样的绿草，酸甜可口的野草莓，山顶上实在太美了，藏民们每天生活的地方简直如仙境一般。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790835229.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790842730.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790866440.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790871285.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790868853.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790837904.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790840332.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;山上还有很多可爱的牦牛们，造型非常可爱，你给它拍照的时候，它还会停下来望着你摆Pose，哈哈哈哈。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790859205.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790861673.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790864145.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790873631.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790875860.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790878337.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在桥边岔路口遇到资深驴友一家，他们也是去姑麻湖的，他们的车底盘低但是知道上山路，我们的车底盘高不知道怎么走，就这样，我们路口一商量一起去，多亏了他们，我们可以看到如此美丽的姑麻峰和高山草原。&lt;/p&gt;
-
-&lt;p&gt;一路上我们欢声笑语，也没觉得路有多烂就登上了最高点看到姑麻峰，有时候我们帮助别人的时候就是帮助自己，期待下次再去甘南的时候再叫上他们一起。;)&lt;/p&gt;
-
-&lt;h3 id=&quot;扎尕那&quot;&gt;扎尕那&lt;/h3&gt;
-
-&lt;p&gt;早上从迭部县到扎尕那村只用半个小时的路程，但是扎尕那会在门口验票，建议看到 “游客中心” 几个大字后就下一个人走路去买票，节省等待时间。&lt;/p&gt;
-
-&lt;p&gt;扎尕那村早上的时候，晨雾在山尖上缭绕还是非常美的，好似仙境的山村。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790904458.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790899085.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;可惜的是现在扎尕那太火了，人超级多，这么美的仙气，人一多就没有继续停留的欲望了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790896533.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;扎尕那到合作市的路上&quot;&gt;扎尕那到合作市的路上&lt;/h3&gt;
-
-&lt;p&gt;为了避开人群，我一直向西往扎尕那山上开，觉得可以很快向西穿过扎尕那。&lt;/p&gt;
-
-&lt;p&gt;谁知一路向北开了200公里来到了卓尼县，扎尕那到卓尼县的这条G248国道非常之烂，路面几乎没有铺装，200公里的国道我整整花了6个小时才开完，晚上到合作市的时候已经精疲力尽了。&lt;/p&gt;
-
-&lt;p&gt;唯一可以慰籍的是这一路看到了很多壮阔的草原山谷，太美了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790894045.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790891311.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790888900.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790886454.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790883255.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;离合作市还有50公里的时候，路边看到了一户藏民的家就建在这小桥流水旁边，真是羡慕啊。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790880803.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;藏餐&quot;&gt;藏餐&lt;/h3&gt;
-
-&lt;p&gt;在合作市尝了一下藏餐，酥油茶清甜可口一点也不腻，羊肉肠和羊排也做的非常美味。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790914920.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790920227.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790928362.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790931392.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;达宗圣湖-第4天---住合作市&quot;&gt;达宗圣湖 (第4天 - 住合作市)&lt;/h3&gt;
-
-&lt;p&gt;网上看到达宗圣湖有大型土拨鼠，就一大早带小朋友过来，可惜天空小雨，土拨鼠没有看到，只看到不怕人的小松鼠。&lt;/p&gt;
-
-&lt;p&gt;其实后面才知道，随便一个甘南的草原都可以看到土拨鼠，而且达宗圣湖很脏，建议大家不要来。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790950377.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;拉卜楞寺&quot;&gt;拉卜楞寺&lt;/h3&gt;
-
-&lt;p&gt;在达宗圣湖山顶发现左前胎爆了（一定是昨天G248国道惹的祸），一位好心的藏民帮我换了备胎后就开到拉卜楞寺附近去补胎。&lt;/p&gt;
-
-&lt;p&gt;老婆大人和小朋友去拉卜楞寺转了一圈，我在旁边补胎，传说当天班禅大师来寺庙，好多室内的地方都不让进，可惜可惜。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790937025.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790939417.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790941768.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790944471.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790947099.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;桑科草原&quot;&gt;桑科草原&lt;/h3&gt;
-
-&lt;p&gt;在桑科草原的路边停下，本来准备拍草原美景的，翻过山头一看，哈哈哈哈，漫山遍野的土拨鼠洞，可把小朋友乐坏了，最大的土拨鼠有泰迪狗那么大，最小的就像小白鼠那么大，只要有一点风吹草动，土拨鼠们立马躲进洞中，通过地下迷宫从另外一个洞口跑出来挑衅你。 :)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790963493.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790960961.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最大的那只土拨鼠的洞口。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790955095.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;真人版打地鼠，小朋友来回玩了一个多小时。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790958710.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790953021.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;阿万仓镇宁玛寺&quot;&gt;阿万仓镇宁玛寺&lt;/h3&gt;
-
-&lt;p&gt;从桑科草原出来，路过阿万仓镇时，远远就能看到宁玛寺超大的转经筒，宁玛寺这个转经筒是世界上最大的大藏转经筒，高度42.38米，总重达320吨，用掉60公斤黄金，由尼泊尔工匠手工锻造而成。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791020289.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791006306.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791010831.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791015514.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;去玛曲的路上&quot;&gt;去玛曲的路上&lt;/h3&gt;
-
-&lt;p&gt;从夏河县桑科草原到玛曲县的路上，路上的每一个观景台都值得下车看一下，这一带的风景主要是草原上蜿蜒的小河和湖泊，坐在路边看牦牛们饮水吃草，内心也一起平静了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790973077.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790965917.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790968231.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790970731.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790975405.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790977578.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790979810.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790982249.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791022524.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791008592.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791013191.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791017788.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;玛曲黄河第一湾-第5天---住玛曲县&quot;&gt;玛曲黄河第一湾 (第5天 - 住玛曲县)&lt;/h3&gt;
-
-&lt;p&gt;下午6点开到玛曲县黄河第一湾，因为景点在桥上，地势太低，需要开车到旁边的冈乃尔峰上，在山顶上瞭望远处的黄河。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790998729.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790992277.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790996411.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790984841.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790987353.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627790989762.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791003961.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;莲宝叶则-第6天---住阿坝县&quot;&gt;莲宝叶则 (第6天 - 住阿坝县)&lt;/h3&gt;
-
-&lt;p&gt;莲宝玉则因为生态保护永久关闭，经驴友指点，可以去莲宝玉则南边的莲宝叶则游玩，莲宝叶则因为在高山上，天气变化无常，进山还是大暴雨，到山顶就大晴天，过一阵大风一吹就又开始下雨。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210727_163503.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;莲宝叶则海拔4500+，当天在山顶上徒步了2万步，真是暴爽啊。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791024992.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791027275.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791029786.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791032055.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791036709.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;到山顶处有一个冰川高山湖 – 扎尕尔措湖，随着阳光不同角度的照射，蓝天、雪山、绿树倒影入湖水中，五彩的阳光抹在石头上，美爆了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791034490.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791039059.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791041222.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791043446.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;莲宝叶则半天即可游完，生态极好，下山路上可以看到野生的麋鹿和野兔在路上奔跑。&lt;/p&gt;
-
-&lt;h3 id=&quot;草原骑马&quot;&gt;草原骑马&lt;/h3&gt;
-
-&lt;p&gt;莲宝叶则去月亮湾的路上有一个观景台，小朋友终于可以体验骑马了，这里的马不用人牵，自己随便骑，30元一圈，我们一家三个人骑了两匹马，骑到远处的山上再骑下来，一共才120元。&lt;/p&gt;
-
-&lt;p&gt;我骑的那匹马比较调皮，走一走就不走了，要停下来吃草，不是缰绳，我估计就要走路下山了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210728_101611.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/IMG_20210728_101816.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;红原月亮湾&quot;&gt;红原月亮湾&lt;/h3&gt;
-
-&lt;p&gt;红原县的月亮湾刚好是去九寨沟的半路上，可以休息一下。&lt;/p&gt;
-
-&lt;p&gt;甘南这里的天一会大晴天一会下雨，很容易拍到变换天气下的大片,。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791068585.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791064851.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791062597.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;当天晴的时候，蓝天倒映在河水中，把河水都染成蓝色的，我想这就是月亮湾的由来吧。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791060368.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791058139.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791052537.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791055811.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;甘南彩虹&quot;&gt;甘南彩虹&lt;/h3&gt;
-
-&lt;p&gt;去九寨沟的路上，一路都是左边下雨右边晴天的景象。&lt;/p&gt;
-
-&lt;p&gt;在路过当年红军过草地的位置，一家人发现天穹一般大小的彩虹，彩虹罩在草原上，真是太幸运了。&lt;/p&gt;
-
-&lt;p&gt;从中午一直到下午，一家人都在 “阳光、彩虹、小白马”的歌声中嘻嘻哈哈…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791070823.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;九寨沟-第7天---住九寨沟县彭丰村&quot;&gt;九寨沟 (第7天 - 住九寨沟县彭丰村)&lt;/h3&gt;
-
-&lt;p&gt;到九寨沟的时候，已经是晚上11点了，上山的山路特别险，弯道特别多，基本上一路都是 “晚上秋名山” 的感觉。&lt;/p&gt;
-
-&lt;p&gt;九寨沟的人超级超级多，每个观景的地方都人山人海，但是九寨沟的景色还是非常美的，每一眼都是一幅完美的风景画。&lt;/p&gt;
-
-&lt;p&gt;黄山归来不看岳，九寨归来不看水，九寨沟果然名不虚传。&lt;/p&gt;
-
-&lt;h4 id=&quot;九寨沟五花海&quot;&gt;九寨沟五花海&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791072931.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791075193.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791077503.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791079722.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791081878.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791084051.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;九寨沟珍珠滩&quot;&gt;九寨沟珍珠滩&lt;/h4&gt;
-&lt;p&gt;九寨沟珍珠滩在2017年8月8日的地震中损毁严重，现在还在恢复期。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791086483.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791089571.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791091951.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791094327.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791096506.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791100161.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;九寨沟五彩池&quot;&gt;九寨沟五彩池&lt;/h4&gt;
-&lt;p&gt;九寨沟五彩池，不同的阳光，不同的角度都有不同颜色的美。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791102336.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791104606.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791106769.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;九寨沟长海和犀牛海&quot;&gt;九寨沟长海和犀牛海&lt;/h4&gt;
-&lt;p&gt;九寨沟犀牛海的颜色好漂亮，有一种宁静的美。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791110362.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791112650.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;九寨沟芦苇湖&quot;&gt;九寨沟芦苇湖&lt;/h4&gt;
-&lt;p&gt;芦苇湖是九寨沟山脚下最后一个景点，湖水蜿蜒穿梭于芦苇中，像一条蓝绿相间的碧玉丝带映在眼前，美不胜收。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791115523.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791117757.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791119905.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791121991.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791125735.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791127919.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791130265.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/gannan/mmexport1627791132643.jpg&quot; alt=&quot;gannan&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;”…学会适应困难非常重要，因为无论你的能力有多强，总会遇到逆境和麻烦，“ 芒格在喜诗糖果75周年庆典上对员工们说”创造这家企业的喜诗家族至少经历过一次失败，那可是一次非常严重的失败。不过如果一个人能牢记生命中充满兴衰变迁这个道理，一生进行正确的思考，遵循正确的价值观，他的一生最终应该发展的很好。所以我会说，不要被一些挫折打败。“&lt;/p&gt;
 
 &lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
-&lt;p&gt;甘南这一圈，其实最美的风景是从夏河县桑科草原到玛曲县的路上，路上的每一个观景台都值得下车看一下，特别是傍晚开到一个草原小河的地方，一条蜿蜒的小河穿过广袤草原，一个藏民的帐篷就安扎在小河弯处，周围是一望无际的牧场，天上的阳光洒在牧场上。&lt;/p&gt;
+&lt;p&gt;上面的摘录单独看也许都是非常励志的鸡汤，甚至感觉是废话，但是当生活和工作中遇到很多挫折，失败以后再结合芒格的话，你会发现犯蠢事的原因并不是那些错综复杂的理由，往往在自己身上：“对自己不够诚实、对投机心存侥幸、对简单的道理视而不见、对自己不够自信…”&lt;/p&gt;
 
-&lt;p&gt;那一幕，看一眼，那种无忧无虑生活在苍天下的境界，终身难忘。&lt;/p&gt;</content><author><name></name></author><category term="Travel" /><summary type="html">路线图 暑假带家人去甘南转一圈，因为武汉离甘南较远而且路途中没什么好的景点，为了节省时间，决定乘高铁到陇南，再在陇南当地租车自驾转甘南一圈。 根据朋友的建议，原计划按照下面的路线旅游，不去拉卜楞寺，扎尕那出来直接去玛曲黄河第一湾。</summary></entry><entry><title type="html">跑步很爽的设备</title><link href="//manateelazycat.github.io/hardware/2021/07/12/huawei-watch.html" rel="alternate" type="text/html" title="跑步很爽的设备" /><published>2021-07-12T00:00:00+08:00</published><updated>2021-07-12T00:00:00+08:00</updated><id>//manateelazycat.github.io/hardware/2021/07/12/huawei-watch</id><content type="html" xml:base="//manateelazycat.github.io/hardware/2021/07/12/huawei-watch.html">&lt;p&gt;年龄增大，压力增大，更需要跑步，过去的方式是买一块腕带，装上手机跑，手机放在手腕太重，经常因为电话或微信干扰。&lt;/p&gt;
+&lt;p&gt;最后以芒格分享幸福长寿的秘诀来结尾:&lt;/p&gt;
 
-&lt;p&gt;我一直在找一款装备满足我跑步的基本需求：&lt;/p&gt;
+&lt;p class=&quot;line-quote&quot;&gt;不要嫉妒、不要怨恨、不要铺张浪费、即使遇到麻烦，也要保持乐观，和可靠的人打交道，做你应该做的事…这些简单的道理能够让人活得更好，都是些老生常谈的话，保持乐观是很明智的。&lt;/p&gt;</content><author><name></name></author><category term="Reading" /><summary type="html">从春节前一直在读这本书，但是鉴于这本书的厚度和琐碎，一直断断续续的，直到今天才读完。</summary></entry><entry><title type="html">海南行</title><link href="//manateelazycat.github.io/travel/2022/02/03/tourism-hainan.html" rel="alternate" type="text/html" title="海南行" /><published>2022-02-03T00:00:00+08:00</published><updated>2022-02-03T00:00:00+08:00</updated><id>//manateelazycat.github.io/travel/2022/02/03/tourism-hainan</id><content type="html" xml:base="//manateelazycat.github.io/travel/2022/02/03/tourism-hainan.html">&lt;h3 id=&quot;自驾行程&quot;&gt;自驾行程&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/map1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/map2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;武汉的冬天太冷了，冷到什么程度？打个比方，我们家冰箱都比客厅暖和。&lt;/p&gt;
+
+&lt;p&gt;为了让老婆小朋友过一个暖和的年，大家今年一致决定去温暖湿润的海南自驾旅游过年。&lt;/p&gt;
+
+&lt;p&gt;这次自驾路线从湖北武汉起，途径广州贺州，从广州湛江上岛，环游海南海口、三亚、陵水、万宁、琼中、儋州，再回海口离岛，北上经广西钦州、崇左回遵义老家，最终从贵州、湖南回武汉，全程总里程超6000多公里。&lt;/p&gt;
+
+&lt;p&gt;经过前期攻略研究，海南主要是看海岸线，海南的东线相对于西线更为暖和，特别是三亚-陵水-万宁一带的海岸线最美，考虑到春节后还要回贵州老家，时间不是那么宽裕，这次我的自驾路线不同于网上的环岛路线：&lt;/p&gt;
+
 &lt;ol&gt;
-  &lt;li&gt;可以记录步数和报公里数，知道我跑了多久和每公里的陪速&lt;/li&gt;
-  &lt;li&gt;可以链接蓝牙耳机播放音乐，蓝牙链接稳定&lt;/li&gt;
-  &lt;li&gt;重量轻续航长不要每天充电&lt;/li&gt;
+  &lt;li&gt;先从海口出发，从琼中中线直接开到三亚，全程3个小时&lt;/li&gt;
+  &lt;li&gt;再从三亚出发，沿东线走陵水、万宁一路往回走，主要玩海滩和岛屿，一般需要3~5天时间&lt;/li&gt;
+  &lt;li&gt;从万宁往西横穿，到琼中百花岭玩热带雨林，最终落脚海南最西边儋州海花岛过年&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;今天早晨试验了一下华为的GT2 Pro，完美的满足了我的跑步设备要求。&lt;/p&gt;
+&lt;p&gt;整个海南自驾行程呈8字形状，为什么是这个走法呢？主要有几点考虑：&lt;/p&gt;
 
-&lt;p&gt;小小的缺点是，夏天出汗多，时间久了容易手腕起湿疹，需要定期换个手带，其他挺好没毛病。&lt;/p&gt;</content><author><name></name></author><category term="Hardware" /><summary type="html">年龄增大，压力增大，更需要跑步，过去的方式是买一块腕带，装上手机跑，手机放在手腕太重，经常因为电话或微信干扰。</summary></entry><entry><title type="html">清理Dell XPS13键帽下杂物</title><link href="//manateelazycat.github.io/hardware/2021/07/11/clean-dell-keyboard.html" rel="alternate" type="text/html" title="清理Dell XPS13键帽下杂物" /><published>2021-07-11T00:00:00+08:00</published><updated>2021-07-11T00:00:00+08:00</updated><id>//manateelazycat.github.io/hardware/2021/07/11/clean-dell-keyboard</id><content type="html" xml:base="//manateelazycat.github.io/hardware/2021/07/11/clean-dell-keyboard.html">&lt;p&gt;经常出差，不知道把什么东西掉进笔记本键帽下，按键J和按键W总是会卡一下，作为一个资深码农，流畅的键盘手感非常重要，码代码卡一下心里就容易分心。&lt;/p&gt;
-
-&lt;p&gt;在等小朋友上课的地方没有工具可以拆卸，只好就地取材想办法，下面分享一下Dell XP13键帽的拆卸方法：&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;找一张名片或者比较薄的东西&lt;/li&gt;
-  &lt;li&gt;把名片塞到键帽底部往上抬，这时候下面的蝴蝶支架结构会整体抬起来&lt;/li&gt;
-  &lt;li&gt;用指甲扣住键帽上方缝隙，均匀使劲就可以把键帽扣下来，并且不会损坏下面的支架结构&lt;/li&gt;
-  &lt;li&gt;清理完键帽下杂物，把键帽底部先放好，上方均匀按压，听到 “咔” 的一声就证明安装好了&lt;/li&gt;
+  &lt;li&gt;三亚酒店在春节会涨价3倍，先玩三亚再往回走的路线相对于从北玩到南的路线，酒店的费用会越玩越便宜&lt;/li&gt;
+  &lt;li&gt;海南最好看的海岸线其实就在三亚、陵水、万宁这三个城市，其他城市不用去，因为再美的海岸线，天天看也会腻&lt;/li&gt;
+  &lt;li&gt;大家看腻海滩以后，刚好可以去一下琼中的百花岭热带雨林换换口味&lt;/li&gt;
+  &lt;li&gt;考虑到春节大多数饭店都要关门，落脚到海花岛是一个比较好的选择，可以保证年夜饭有地方吃，哈哈哈哈&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;拆卸的过程中，发现Dell的键帽卡扣结构做的比苹果键帽的要简单和健壮很多，多次拆卸都不会出现断裂，反之，苹果的键帽很容易就扣坏了。&lt;/p&gt;
+&lt;h3 id=&quot;黄姚古镇&quot;&gt;黄姚古镇&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/huangyao1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;清理完键帽下杂物后，果然键指如飞，舒坦了。&lt;/p&gt;</content><author><name></name></author><category term="Hardware" /><summary type="html">经常出差，不知道把什么东西掉进笔记本键帽下，按键J和按键W总是会卡一下，作为一个资深码农，流畅的键盘手感非常重要，码代码卡一下心里就容易分心。</summary></entry><entry><title type="html">Emacs + Company-Mode 配置多个补全后端</title><link href="//manateelazycat.github.io/emacs/2021/06/30/company-multiple-backends.html" rel="alternate" type="text/html" title="Emacs + Company-Mode 配置多个补全后端" /><published>2021-06-30T00:00:00+08:00</published><updated>2021-06-30T00:00:00+08:00</updated><id>//manateelazycat.github.io/emacs/2021/06/30/company-multiple-backends</id><content type="html" xml:base="//manateelazycat.github.io/emacs/2021/06/30/company-multiple-backends.html">&lt;p&gt;&lt;a href=&quot;https://company-mode.github.io/&quot;&gt;Company-Mode&lt;/a&gt;是Emacs的代码补全框架，最近Emacs-China社区大神发布了&lt;a href=&quot;https://github.com/universal-ctags/citre&quot;&gt;Citre&lt;/a&gt;这个全新的补全前端，基于&lt;a href=&quot;https://ctags.io/&quot;&gt;Universal Ctags&lt;/a&gt;建索引的原理给开发项目提供代码补全建议。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/huangyao2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;这两天折腾了一下Citre，给我的感觉是：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;LSP补全后端(lsp-mode, eglot, nox)针对系统库的补全更好，比如 os.path.exists 这种&lt;/li&gt;
-  &lt;li&gt;Ctags补全后端针对项目自研代码补全更好，而且速度比LSP快，不粘手&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/huangyao3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;如果我们可以同时用LSP和Ctags两个后端补全代码，就可以兼顾系统库和自研代码的代码补全。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/huangyao4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;早上折腾了一下，核心配置如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/huangyao5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;;; Customize company backends.&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-backends&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;company-tabnine&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-dabbrev&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-keywords&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-files&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-capf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/huangyao6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;;; Add yasnippet support for all company backends.&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defvar&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-mode/enable-yas&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;t&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;Enable yasnippet for all backends.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/huangyao7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-mode/backend-with-yas&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-mode/enable-yas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;listp&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;member&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&apos;company-yasnippet&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-      &lt;span class=&quot;nv&quot;&gt;backend&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;append&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;consp&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;backend&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:with&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-yasnippet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/huangyao8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-backends&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mapcar&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#&apos;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;company-mode/backend-with-yas&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-backends&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/huangyao9.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;;; Add `company-elisp&apos; backend for elisp.&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-hook&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&apos;emacs-lisp-mode-hook&lt;/span&gt;
-          &lt;span class=&quot;nf&quot;&gt;#&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&apos;company-elisp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&apos;company-elisp&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;company-backends&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;p&gt;武汉到海南需要1300多公里，中途逛了一下广西贺州的黄姚古镇。黄姚古镇发祥于宋朝年间，镇中的建筑多为明清时期所建，有着近1000年历史。去的那天刚好飘了一会儿小雨，雨淅淅沥沥的雨落在青石板路上，别有一番风情。古镇比较小，2个小时就可以轻松逛完，出口附近的古榕树很漂亮，看着参天的气根和枝叶，特别有生命力。&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;;; Remove duplicate candidate.&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&apos;company-transformers&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#&apos;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;delete-dups&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;h3 id=&quot;上岛和离岛攻略&quot;&gt;上岛和离岛攻略&lt;/h3&gt;
+&lt;p&gt;上岛：导航到广东湛江徐闻港，到了港口后跟着别人的车进港，在入口岗亭处不用下车，把所有人的身份证给工作人员买票，车加人的轮渡费用是470多块，买完票往前开100米，工作人员会让乘客下车走客运通道上船，司机直接开车到轮渡上。按照工作人员的安排停好车以后，上二楼和乘客会合。&lt;/p&gt;
+
+&lt;p&gt;轮渡从湛江徐闻港开到海口新海港全程需要2个小时，徐闻港全天24小时都有船只上岛，这次出港之前，海南免费给每个游客做核算检测，做完即可离开，不用等，非常方便。&lt;/p&gt;
+
+&lt;p&gt;离岛和上岛流程差不多，唯一的变化是，离岛需要提前预约买票（微信搜索新海港公众号预约买票），如果你在免税区买了东西，建议去新海港离岛（只有新海港才支持免税商品出港检查），没有买东西可以选择秀英港离岛。这次我是大年初一离岛的，人很少，没有上岛的时候那么挤。&lt;/p&gt;
+
+&lt;h3 id=&quot;三亚湾&quot;&gt;三亚湾&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/sanyawan4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/sanyawan1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/sanyawan2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/sanyawan3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第一天到三亚的时候已经下午了，先去三亚湾看一下夕阳，客观的说三亚的海滩一般，沙子没那么细腻，大多数人都是来海上玩游艇的。&lt;/p&gt;
+
+&lt;p&gt;三亚我觉得最好的东西倒是马路路边的鲍鱼和生蚝，3~5块一个，非常新鲜烤的也很嫩，口感像豆腐一样。&lt;/p&gt;
+
+&lt;p&gt;晚上很多新疆人会在三亚湾旁跳广场舞，舞蹈跳的挺好的，比内陆大妈们跳得好看，哈哈哈哈。&lt;/p&gt;
+
+&lt;h3 id=&quot;三亚三美湾&quot;&gt;三亚三美湾&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/sanmeiwan1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/sanmeiwan2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/sanmeiwan3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第二天一大早先去看南海观音，景点实在游客太多不想去挤，就导航岛旁边的一个三美湾的地方从远处瞭望下，本来是看南海观音的，没想到脚下的三美湾海岸线那么美，湛蓝的海水拍打着干净的沙滩，浪花激打在旁边的礁石上，真的太美了。&lt;/p&gt;
+
+&lt;h3 id=&quot;三亚西岛&quot;&gt;三亚西岛&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/xidao1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/xidao2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/xidao3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/xidao4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/xidao5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/xidao6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;三亚最好玩的景点其实是一海相隔的西岛，海水非常干净，“蓝绿的海水 + 晒热的沙滩 + 依偎的椰树” 满足了我小时候对海南的所有幻想，随处都是明信片般的风景。&lt;/p&gt;
+
+&lt;p&gt;西岛最爽的玩法是找酒店老板租一下电动摩托车，骑着摩托车带着小朋友在岛上的小巷子里穿梭，特别好玩，这里简直就是遛娃天堂。晚上可以点一些章鱼和烧烤，喝一碗冰凉甘甜的清凉补，很过瘾。&lt;/p&gt;
+
+&lt;p&gt;西岛最南边的牛王岭早上7点和下午4点潮水会退去，适合小朋友赶海，不过早上要早起哟，晚了海水上来就啥都找不到了，哈哈哈哈。&lt;/p&gt;
+
+&lt;p&gt;西岛中午热的时候去海滩浴场游一下泳很舒服，唯一不完美的地方是浴场底部有很多礁石有点硌脚。&lt;/p&gt;
+
+&lt;h3 id=&quot;陵水清水湾&quot;&gt;陵水清水湾&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/linshuiwan.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;西岛住了一晚上后，第三天开车去陵水，去陵水主要是去分界洲岛，本来没想去清水湾的，傍晚刚好路过就去看看。&lt;/p&gt;
+
+&lt;p&gt;没想到清水湾太让我惊喜了，海水特别干净、沙子超级细腻，宽阔平缓的沙滩即使有浪很大都非常安全。最让我惊喜的是海水居然是温的，不会像其他海滩那样冰凉。光脚走在细腻的沙滩感受海水轻轻的拂过，浪花大片大片的在海滩上散开又消退，加上远边的白云多多，此情此景真的太治愈了。&lt;/p&gt;
+
+&lt;p&gt;强烈建议大家路过陵水一定要来清水湾感受一下，毫不夸张的说，陵水清水湾是海南最适合散步的海滩。&lt;/p&gt;
+
+&lt;h3 id=&quot;陵水分界洲岛&quot;&gt;陵水分界洲岛&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/fenjiezhou1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/fenjiezhou2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/fenjiezhou3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/fenjiezhou4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/fenjiezhou5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/fenjiezhou6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/fenjiezhou7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/fenjiezhou8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/fenjiezhou9.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;西岛总面积大概3平方公里，分界洲岛只有0.48平方公里，全程走路3个小时就可以玩完。&lt;/p&gt;
+
+&lt;p&gt;第一次见这么美的海滩，就像颜料瓶不小心打翻在岛屿周围，不同颜色的海水随着海岸线一圈一圈染印开来，任何言语都很难形容分界洲岛的美。&lt;/p&gt;
+
+&lt;h3 id=&quot;万宁巴厘村&quot;&gt;万宁巴厘村&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/balicun1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/balicun2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/balicun3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;分界洲岛出来后，开车一个小时就到万宁，海南这一点比较好，每个城市间都是一个小时车程，连续换景点也不会太劳累。&lt;/p&gt;
+
+&lt;p&gt;马蜂窝上看了巴厘村的一些独特建筑，第四天早上先在巴厘村转了转，景点很小，里面的景色一般，反而是入口处的善恶门最有意思，印尼语叫做坎迪班塔，传说天神把阻挡住去路的山给劈成了两半，而这被劈开的山就向左右两边退开，形成了一道大门。如果邪灵通过这道门，就会被夹在中间，无法通过。&lt;/p&gt;
+
+&lt;h3 id=&quot;万宁石梅湾&quot;&gt;万宁石梅湾&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/shimeiwan.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;万宁南燕湾&quot;&gt;万宁南燕湾&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/nanyanwan.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;万宁神州半岛&quot;&gt;万宁神州半岛&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/shenzhoubandao1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/shenzhoubandao2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/shenzhoubandao3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/shenzhoubandao4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/shenzhoubandao5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/shenzhoubandao6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;万宁的石梅湾、南燕湾和神州半岛都是免费景点，景色不错，南燕湾沙滩在别墅区里面，导航到‘南燕往’进去后，一直往里面走，穿过别墅区就是南燕湾。&lt;/p&gt;
+
+&lt;h3 id=&quot;万宁太阳河入海口&quot;&gt;万宁太阳河入海口&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/taiyanghe1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/taiyanghe2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/taiyanghe3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;此次海南第二个惊喜就是路过的太阳河入海口，导航到 “太阳和景观大桥” 就可以找到。&lt;/p&gt;
+
+&lt;p&gt;如果说陵水清水湾是平缓安全的海滩，太阳河入海口的海湾可以说是壮观、汹涌还带一分危险，海岸线特别陡，浪特别大，感觉这里的大海是要从海洋深处跑上来卷走沙滩上的一切…站在沙滩上看着海水咆哮，感受大海的力量。&lt;/p&gt;
+
+&lt;p&gt;沙滩上有很多漂亮的贝壳，走的时候可以捡一些走，小朋友的最爱。&lt;/p&gt;
+
+&lt;h3 id=&quot;琼中百花岭热带雨林&quot;&gt;琼中百花岭热带雨林&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/baihualing1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/baihualing2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/baihualing3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/baihualing4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/baihualing5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/baihualing6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/baihualing7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/baihualing8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;海南的沙滩紫外线特别大，玩了几天，大家已经对绝美的海滩产生审美疲劳，第五天自驾到琼中（海南最中间的地方）的百花岭热带雨林，琼中绝对是海南当地人民的最爱，因为这里森林覆盖率超过90%, 高大的香蕉树、椰树和榕树把紫外线挡在浓密的树冠上，徒步行走在雨林中全身都非常凉快。&lt;/p&gt;
+
+&lt;p&gt;百花瀑布有一段楼梯还是非常陡的，老年人们要保护好自己的膝盖，哈哈哈哈。&lt;/p&gt;
+
+&lt;p&gt;山顶上的万年神树很壮观，6000年的榕树顶上长了一棵4000年的菩提树，古老的树根垂下来，像一把天神弹奏的天琴。&lt;/p&gt;
+
+&lt;p&gt;站在树下仰望，相对于神树经历的沧海桑田，我们这些人不过是蝼蚁，再想想，世界上很多烦心事本无必要，你看看神树活那么久就没有这些烦恼，烦恼都是人自己的妄念和执念造成的。&lt;/p&gt;
+
+&lt;h3 id=&quot;海花岛&quot;&gt;海花岛&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/haihuadao1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/haihuadao2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/haihuadao3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;海花岛的五国温泉城很大，温泉水很干净，特别是温泉泳池简直是我的最爱，从6点多一直玩到晚上9:30。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/haihuadao4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;除夕夜在海花岛的大三元饭店吃的，厨师手艺不错，每道菜都保留了食材最原始的味道。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/haihuadao5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/haihuadao6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/haihuadao7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/haihuadao8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/haihuadao10.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;整个海花岛没有开发完，建议夏天来度假，冬天天太冷了，很多娱乐设施都没有开放。&lt;/p&gt;
+
+&lt;p&gt;冬天岛上只有一个海洋馆可以逛逛，不过只要有水有鱼的地方都是小朋友的天堂。&lt;/p&gt;
+
+&lt;h3 id=&quot;崇左德天跨国大瀑布&quot;&gt;崇左德天跨国大瀑布&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/detiandapubu1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/detiandapubu2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/detiandapubu3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/detiandapubu4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/hainan/detiandapubu6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;从海南回贵州的路上会经过广西崇左，去年就想来看中越边境上的德天大瀑布，可惜去年春节加班错过了，今年终于有机会瞻仰一下。&lt;/p&gt;
+
+&lt;p&gt;德天瀑布越南语称作“Thác Đức Thiên”位于中越两国之间，板约瀑布（上图左侧瀑布）在越南一侧，越南语称作“Bản Giốc &amp;amp; Đức Thiên”。&lt;/p&gt;
+
+&lt;p&gt;德天瀑布宽120米，分三级瀑布，垂直高度60多米，源于广西归春河，终年有水。德天瀑布与越南板约瀑布相连，雨季两瀑布融为一体，全宽208米。排在巴西-阿根廷之间的伊瓜苏瀑布、赞比亚-津巴布韦之间的维多利亚瀑布以及美国-加拿大的尼亚加拉瀑布之后，是世界第四大、亚洲第一大跨国瀑布，年均水流量约为贵州黄果树瀑布的三倍。&lt;/p&gt;
+
+&lt;p&gt;德天瀑布周围是广西独有的那种水墨画般的秀灵群山，碧波沿着河床层层叠叠泻下，甚是壮美。春节是德天大瀑布的枯水期，建议7月~11月来游览，那时德天瀑布与越南板约瀑布会融合奔腾而下，更为壮观。&lt;/p&gt;
+
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
+&lt;p&gt;这次也有翻车景点，比如三亚大小洞、万宁大花角和儋州千年古盐田都是不推荐去的景点，非常一般。&lt;/p&gt;
+
+&lt;p&gt;总体来说海南海岸线还是非常美的，每个海湾和岛屿的景色都有自己独特的味道，下次有时间再来海南刷加井岛、大洲岛和蜈支洲岛。&lt;/p&gt;</content><author><name></name></author><category term="Travel" /><summary type="html">自驾行程</summary></entry><entry><title type="html">EAF支持Wayland native啦!</title><link href="//manateelazycat.github.io/emacs/eaf/2022/01/02/eaf-support-wayland-native.html" rel="alternate" type="text/html" title="EAF支持Wayland native啦!" /><published>2022-01-02T00:00:00+08:00</published><updated>2022-01-02T00:00:00+08:00</updated><id>//manateelazycat.github.io/emacs/eaf/2022/01/02/eaf-support-wayland-native</id><content type="html" xml:base="//manateelazycat.github.io/emacs/eaf/2022/01/02/eaf-support-wayland-native.html">&lt;p&gt;通过&lt;a href=&quot;https://github.com/emacs-eaf/emacs-application-framework/commit/8df41d0058a59affbec19f013b504259305109cc&quot;&gt;补丁&lt;/a&gt;EAF正式支持Wayland native环境, 以前EAF只支持XWayland, 我已经在Emacs 29环境下测试过了。&lt;/p&gt;
+
+&lt;p&gt;在Wayland native环境下，EAF会采取和macOS同等的策略，Emacs获得焦点时显示EAF窗口，Emacs失去焦点时隐藏EAF窗口，以绕过Wayland native下窗口管理器不允许XReparent这种跨进程粘贴技术。&lt;/p&gt;
+
+&lt;p&gt;目前还有点小问题是，Wayland native环境下放弃XReparent跨进程粘贴技术后，EAF窗口的坐标只有在Emacs全屏的时候是正常的，原因是我还没有找到怎么获取Emacs窗口在屏幕范围的绝对坐标，找到对应的方法就可以修复这个小问题。&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><category term="EAF" /><summary type="html">通过补丁EAF正式支持Wayland native环境, 以前EAF只支持XWayland, 我已经在Emacs 29环境下测试过了。</summary></entry><entry><title type="html">读《货币的非国家化》</title><link href="//manateelazycat.github.io/reading/2021/12/29/reading-denationalisation-of-money.html" rel="alternate" type="text/html" title="读《货币的非国家化》" /><published>2021-12-29T00:00:00+08:00</published><updated>2021-12-29T00:00:00+08:00</updated><id>//manateelazycat.github.io/reading/2021/12/29/reading-denationalisation-of-money</id><content type="html" xml:base="//manateelazycat.github.io/reading/2021/12/29/reading-denationalisation-of-money.html">&lt;p&gt;最近朋友推荐了一本哈耶克的《货币的非国家化》，客观的说，这种大经济学家写的书，通篇都是研究结论和解决方案，看后并不能非常透彻的理解所有观点，但是其中的一些观点还是令我非常受益的，极大的加深了我对经济学一些基本原理的理解，本文主要记录我在读书时一些关键观点的记录，记下来供以后再次翻阅学习。&lt;/p&gt;
+
+&lt;h3 id=&quot;笔记摘抄&quot;&gt;笔记摘抄&lt;/h3&gt;
+&lt;p&gt;货币的发行也遵循以下原则：就得到好结果而言，自利是比仁慈更好的动机。&lt;/p&gt;
+
+&lt;p&gt;假如政府控制货币是不可避免的，金本位制好于任何其他制度；同时，哈耶克也相信，即时黄金也不如竞争性货币那么可靠，后者的价值会被基本维持在一个相对稳定的水平上，因为竞争性货币的发行者有强烈的限制其发行数量的动机，否则就会丢掉生意。&lt;/p&gt;
+
+&lt;p&gt;新观念总是会被那些不得不面对日常生活与现实的、头脑僵化的人嘲笑为 “空想家想出来的概念”。从事实务的人过于接近“日复一日的问题”，他们通常只能看到难题和障碍本身，而看不到错误或失灵的根本原因，这就好像伐木工永远看不到整片森林一样。有的时候，甚至更为根本性的变化也不得不通过激进的改革进行，而不是对某个已经失效的方法或政策进行零零碎碎的修改。然而，变革时间拖得过长，可能会带来更多的混乱。一个陷进泥沼的人不可能迈着小步走出来，他唯一的希望是跨出一大步。&lt;/p&gt;
+
+&lt;p&gt;在货币领域中，我并不想禁止政府做任何事情，只要政府不阻止他人，做自己可以做的更好的事情就可以了。&lt;/p&gt;
+
+&lt;p&gt;经济学家的任务应该是像我不厌其烦地重复过的那样，使从今天的政治角度看来不可行的政策具有政治上的可能性。定此时此刻应该做什么，这是政治家而不是经济学家的任务。&lt;/p&gt;
+
+&lt;p&gt;竞争性货币处于什么年代并不重要，因为它们所证明的原则是永恒的：激励影响行为。&lt;/p&gt;
+
+&lt;p&gt;政府作为其强占发行货币转有权的借口，这样的好处当然不能抵消这种制度带来的种种弊端。这种制度具有一切垄断行为的弊端：即使你对它们的产品不满意也必须使用这些产品，最重要的是，这种制度禁止人们探索满足自身某种需求的更好方法，而垄断者不会进行这种激励。&lt;/p&gt;
+
+&lt;p&gt;如果一种货币的发行量被一个机构刻意的控制着，而这个机构的自私自利驱使它满足其使用者的愿望，那么它就是一种最佳货币。如果一种货币被操纵来满足特定集团的利益需要，那么这种货币极有可能成为最恶劣的货币。&lt;/p&gt;
+
+&lt;p&gt;近代以来，政府之所以能够不断扩张，在很大程度上是因为它能够通过发行货币来弥补赤字，而借口经常是它将因此而创造就业机会。&lt;/p&gt;
+
+&lt;p&gt;实际发行货币的数量才使决定货币价值的真正要素。&lt;/p&gt;
+
+&lt;p&gt;如果发钞机构不能满足人们的预期（而政府机构也肯定会滥用机会来操纵原材料价格水平），那么该机构有可能迅速丢掉其整个发钞业务，这种恐惧将能提供比任何政府垄断所能提供的保险机制更强大。&lt;/p&gt;
+
+&lt;p&gt;私人货币赖以生存的基础是人们对它的信任。&lt;/p&gt;
+
+&lt;p&gt;不同名称的货币单位，其彼此间的相对价值可能会不断变动。我们必须强调价值不断波动这一事实，因为这并非我们区别各种交换媒介的唯一办法。即使使用同样一套单位（比如元、法郎），其被人乐于接受的程度（或流动性，即时其有成为货币的特质）或被不同群体的人们乐意接受的程度也大相迳庭。这就是说，不同种类的货币之间的区别可能不止一个维度。&lt;/p&gt;
+
+&lt;p&gt;尽管分门别类有重要意义，但这并不意味着，我们能够清晰地、毫不含糊地将这些东西分成两个或更多截然不同的类别。所有这些区分都有重要意义，但在我们常见的为了追求虚假的精确性而把这样的分类视为可量化的指标时，这种区分却可能具有误导性。在经济学中，为了使某一研究题目更易用数学处理而引入现实世界中根本不存在的严格区分，并不能使其研究更科学，而只能使其更不合乎科学。&lt;/p&gt;
+
+&lt;p&gt;发钞银行可以运用两种方法来改变其所发通货的总量：一是以其他通货（或证劵及其他商品）为工具出售或回购其所发通货；二是收缩或扩展其放贷活动。为了保留对其已发通货的控制权，总体来说，它将不得不将其信贷仅限于短期合约。这样，只要减少或暂时中止新的信贷活动，仅贷款人陆续偿还以前发放的贷款，就会使其发钞总量迅速减少。&lt;/p&gt;
+
+&lt;p&gt;影响人们从若干种货币中作出选择的主要因素是货币的四种用途；第一种，用以购买商品和服务；第二种，持有作为满足未来之需的储备；第三种，用于合同规定的延迟支付；第四种，作为会计单位（尤其是在记账时）。&lt;/p&gt;
+
+&lt;p&gt;事实上，直接以保持原材料价格稳定为目标而调控货币的发行量，对消费品价格保持稳定的效果极有可能比直接以后者为目标调控货币量的效果好。经验已经证明，在货币的发行量变化与消费品价格水平的波动之间存在相当大的滞后期。事实上，这可能意味着，如果货币发行量的调整被迫推迟，直到发行量的过剩或短缺在消费品价格波动中表现出来时才进行调整，就不可能避免地会出现非常严重的价格波动。另外，就原材料来说，由于这种滞后时间要短得多，因此那些提前发出的预警应该能使人们更及时地采取预防性措施。&lt;/p&gt;
+
+&lt;p&gt;在多元通货体系中，并没有货币需求总量之类的玩意儿。对于不同的通货会有不同的需求量，但由于这些不同的通货不能完全相互替代，所以这些不同的需求量不能加总为一个总量。我们相信，市场对趋于贬值的通货可能只有很小的需求量（但供应量很大），而对于保持稳定的通货的需求量与供应量则会相等，至于趋于升值的通货，则需求量很大（但供应量较小）。尽管只要存在货币的自由市场，人们就会时刻准备卖出（以某个价格）手中的货币而买进其他货币，但他们却不会准备永远持有一种货币（可买进的替代性货币的特征将影响对某一具体货币的需求量）。因为，不存在一个可以被认为对货币价值有决定性影响的单个货币数量。&lt;/p&gt;
+
+&lt;p&gt;货币主义理论在所有情形下都会面临的主要缺陷是，它突出强调的是货币数量变动对价格总水平的影响，因而使人们过分地关注通货膨胀和通货紧缩对债权-债务关系的有害影响，却忽略了向流通中注入和撤出货币的数量对相对价格结构所产生的更重要的、危害更大的影响，因为后者会扭曲资源配置，尤其是导致投资向错误的方向配置。&lt;/p&gt;
+
+&lt;p&gt;通货膨胀并非会在同一时间影响所有商品和服务的价格，而只能使不同商品的价格陆续上涨，因为通货膨胀会改变各种商品价格间的关系（尽管关于平均价格变动的统计数据能掩盖这种相对价格结构的变动）。通货膨胀对相对收入的影响只是价格结构发生紊乱的一种后果而已（尽管在那些肤浅的观察家看来，这是一种最触目惊心的后果）。从长远看，通货膨胀对经济正常运转构成的更严重的且最终可能导致自由市场体系无法正常运转的危害在于，价格结构被扰乱，从而引导资源投向错误方向，驱使劳动力和其他生产要素（尤其是资本投资）投入某些项目—只有在通货膨胀继续加速的条件下，这些项目才有利可图。正式这种效应导致严重的失业浪潮。&lt;/p&gt;
+
+&lt;p&gt;通货膨胀不是治疗事业的药方，而是其重要根源之一。很多情况下，通货膨胀确实会导致失业的暂时减少，但其代价是以后会出现更多失业。正是这一点使通货膨胀在政治上有无可抵挡的诱惑力，因此通货膨胀格外具有严重的潜在危害。&lt;/p&gt;
+
+&lt;p&gt;根本不存在“成本推升”通货膨胀之类的事情。不管是工资提高，还是石油价格上涨，或者是进口商品价格普遍上涨，都不可能推动所有商品价格上涨，除非政府发给这些购买者更多的钱用于购买这些东西。所谓的成本推升的通货膨胀不过是货币量增加的结果而已，政府觉得不得不增加货币的发行量，以阻止工资上涨（或其他成本）导致的失业，失业本应该发生在增加货币的发行量之前，但它却被政府将会增加货币发行量的预期掩盖。政府打算以此增加对工人生产的产品的需求，从而使所有工人都找到就业机会。若政府不增加货币量，工人群体工资的提高就不会导致普遍价格水平上涨，而只会导致销售量的下降，从而导致失业。&lt;/p&gt;
+
+&lt;p&gt;如果工会之类的其他垄断性组织成功地大幅提高了某种重要原材料的价格或某一群工人的工资，货币标价的我价格水平的稳定，只有通过其他商品的价格下降才能获得。人们如果不得不花费更多的钱购买其所消费的汽油、书籍和报纸，就必须减少对其他东西的消费。&lt;/p&gt;
+
+&lt;p&gt;所有的通货膨胀都是非常危险的，我们之所以这么说，恰恰是因为，有很多人（包括很多经济学家）都认为，某种温和的通货膨胀是无害的，甚至是有益的。所有人工操作的通货膨胀都具有自我加速的机制。货币政策面临着一个进退两难的困境。为了维持温和通货膨胀所创造的经济活跃程度，货币当局不得不加速通胀率，且增加幅度不得不一次比一次更大，以使通胀率能压过人们的预期。若货币政策不能做到这一点，要么停止加速，要不完全放弃通胀政策，经济将处于一个比此过程启动之前更糟糕的境地。通货膨胀会使正常的失误判断不断累加，而在正常情况下，那些失误是会被迅速而及时地清除的，现在却不得不集聚在一起同时清算。除此之外，通胀政策也导致生产投向错误的方向，把劳动力和其他资源引向只靠货币量增加，即只有不断追加投资才能维持下去的生产活动中。&lt;/p&gt;
+
+&lt;p&gt;货币政策与其说是经济萧条的救星，不如说是萧条的根源，因为货币管理当局很容易屈服于廉价货币的“叫嚣”，从而将生产引致错误的方向，使后来的通货膨胀不可避免；相反，货币政策不太可能协助经济摆脱在某一方向上过量投资的后果。市场经济过去的不稳定恰恰是不让市场机制最重要的管理者–货币–由市场过程进行调整的恶果。&lt;/p&gt;
+
+&lt;p&gt;为人们提供一种交换媒介，提供一种在购买某等价物并将其支付给其他人前自己也乐意持有的交换媒介是一种有益的服务，这就跟生产任何其他物品一样。若对现金的需求增加，则应增加该货币的发行数量以保持现金平衡，它也就不会扰乱其他商品或服务的供需比例关系。但是，通过增发货币，使有些人可买到超出其正常收入的东西（这本来是他人应得到的），这确实属于盗窃之类的犯罪行为。然而，当这种犯罪活动是垄断的货币发行者，尤其是政府犯下时，却成为一种为人们普遍容忍、非常赚钱的犯罪活动，因为其后果未被人们搞明白，也不受任何惩罚。但对于必须与其他通过或竞争的某一通货发行者来说，这是一种自杀行为，因为这将摧毁其所能提供的服务，而人们正是因为这些服务才愿意持有其通货的。&lt;/p&gt;
+
+&lt;p&gt;必然会稀缺的不是流动性，而是购买力，即换取用于消费或进一步生产的物品的能力，购买力之所以是有限的，是因为所能购买的东西的数量是既定的。假如人们需要更多的流动性资产，仅仅是为了持有而不是为了花销，那么这类资产在被制造出来之时就不会使其贬值。但如果人们需要更多流动性资产是为了用他们购买其他物品，那么增加发行量的信用价值将在人们手指间悄然流逝。&lt;/p&gt;
+
+&lt;p&gt;政府未来可能会发现其将面临国际性压力，迫使其实现有害于本国国民而有益于他国的货币政策，政府只有放弃其控制货币发行的权力和责任，才能摆脱这种压力。我们现在已处于这样一个阶段，已成功将本国通胀率降到5%以下的国家将会被另一些国家拖死，那些国家仍高昂地以每年15%的速度制造通货膨胀，并借以“通货再膨胀”的办法摆脱困境。&lt;/p&gt;
+
+&lt;p&gt;任何借助通货膨胀获得的充分就业都是内在的、不稳定的。企图依靠货币政策在短期内实现就业最大化，这在本质上是亡命之徒的政策，因而只能换取端站的喘息之机，对齐有百害而无一利。&lt;/p&gt;
+
+&lt;p&gt;政客们信奉修正了的凯恩斯定理：从长远来看，我们都是要下台的，因此他们才不管治愈事业的短期成功是否必将导致未来更多的事业。因为因此而受指责的不会是制造了这些失业的政客，而是后来那些试图停止这种失业的政治家。民主制设置的最危险的陷进莫过于此。因为在民主制中，政府被迫按照人民认为是正确的信念采取行动。因此，我们获得稳定货币的唯一希望确实在于，现在就要找到保护货币免受证词侵扰的办法。&lt;/p&gt;
+
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
+&lt;p&gt;对以上观点感兴趣的同学建议买一本书，系统性的学习哈耶克的思想和论证过程，哈耶克在论证过程的思考就像本书的封面的那一句话可以形容：&lt;/p&gt;
+
+&lt;p class=&quot;line-quote&quot;&gt;只有真正对人、社会、经济、自由有深刻认知，才会有此洞见&lt;/p&gt;
+
+&lt;p&gt;哈耶克核心的观点 “剥夺政府的发币权，基于企业自私自利的驱动下，通过多种货币竞争来避免长期的通货膨胀” 对于现实世界来说还是太超前了。有时候就跟开源社区一样，当开源运动最初提出 “软件最核心的代码要彻底开放” 的时候，很多人并不支持，但是随着人自己知识和认知的提升，开源软件已经是IT界普遍接受的事实和潮流。&lt;/p&gt;
+
+&lt;p&gt;我相信随着新一代人认知提升，当社会大多数人接受哈耶克的观点后，哈耶克的竞争性货币理念才能在整个社会中从上到下的实现，一旦货币长期保持稳定后，将会产生出新的社会秩序和经济繁荣。&lt;/p&gt;</content><author><name></name></author><category term="Reading" /><summary type="html">最近朋友推荐了一本哈耶克的《货币的非国家化》，客观的说，这种大经济学家写的书，通篇都是研究结论和解决方案，看后并不能非常透彻的理解所有观点，但是其中的一些观点还是令我非常受益的，极大的加深了我对经济学一些基本原理的理解，本文主要记录我在读书时一些关键观点的记录，记下来供以后再次翻阅学习。</summary></entry><entry><title type="html">基于Clash的EAF规则代理解决方案</title><link href="//manateelazycat.github.io/emacs/eaf/2021/12/17/eaf-proxy.html" rel="alternate" type="text/html" title="基于Clash的EAF规则代理解决方案" /><published>2021-12-17T00:00:00+08:00</published><updated>2021-12-17T00:00:00+08:00</updated><id>//manateelazycat.github.io/emacs/eaf/2021/12/17/eaf-proxy</id><content type="html" xml:base="//manateelazycat.github.io/emacs/eaf/2021/12/17/eaf-proxy.html">&lt;p&gt;EAF浏览器是基于QWebEngine来实现的，QWebEngine因为受限于底层Chromium代码的实现，QWebEngine无法像QWebKit那样，通过Qt代码来实现基于自定义规则的代理路由。&lt;/p&gt;
+
+&lt;p&gt;如果修改Qt5的源码则非常麻烦，一个比较合理解决方案是 “通过引入第二个本地代理来变相实现规则代理”，简单逻辑如下图：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;EAF Browser ---&amp;gt; Transfer Proxy ---&amp;gt; Need Proxy ------&amp;gt; Local Proxy ---&amp;gt; Proxy Server ---&amp;gt; Target Website
+                       |
+                       ------------&amp;gt; No Need Proxy ---&amp;gt; Target Website
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;把其他company后端都放到 company-capf 之前，避免 company-capf (citre用的就是这个接口) 把其他后端的补全数据给覆盖了&lt;/li&gt;
-  &lt;li&gt;通过 company-tabnine 这个深度学习补全后端可以分析LSP后端数据的能力，把LSP和Citre两个后端的数据进行揉和&lt;/li&gt;
-  &lt;li&gt;通过 ‘company-mode/backend-with-yas 建议，利用 company-mode 的 :with 关键字，把所有语言的模板补全后端进行二次揉和&lt;/li&gt;
-  &lt;li&gt;编辑Elisp文件时，临时增加 company-elisp 这个补全后端&lt;/li&gt;
-  &lt;li&gt;删除多个后端间重复的补全选项&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;用Clash作为规则代理(Transfer Proxy), 充当EAF浏览器和本地代理客户端的中间代理，如果一个域名匹配代理规则，Clash就把流量定向到本地代理客户端，再由本地代理客户端发送请求给代理服务器。如果一个域名匹配直连规则，Clash直接略过本地代理客户端直接访问目标网站。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/company-multiple-backends/tabnine.png&quot; alt=&quot;LSP补全后端&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;安装clash&quot;&gt;安装Clash&lt;/h3&gt;
+&lt;p&gt;首先从&lt;a href=&quot;https://github.com/Dreamacro/clash&quot;&gt;Clash&lt;/a&gt;安装Clash, Arch直接用pacman安装即可。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/company-multiple-backends/citre.png&quot; alt=&quot;Ctags补全后端&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;配置clash&quot;&gt;配置Clash&lt;/h3&gt;
+&lt;p&gt;首先你需要在本地配置一个本地socks5代理，可以参考我的另外一篇文章&lt;a href=&quot;https://manateelazycat.github.io/proxy/2021/02/26/best-proxy.html&quot;&gt;最佳代理实践&lt;/a&gt;。&lt;/p&gt;
 
-&lt;p&gt;详细的配置请访问 https://github.com/manateelazycat/lazycat-emacs/blob/8f3dee8a6fe724ec52cd2b17155cfc2cefc8066b/site-lisp/config/init-company-mode.el&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><summary type="html">Company-Mode是Emacs的代码补全框架，最近Emacs-China社区大神发布了Citre这个全新的补全前端，基于Universal Ctags建索引的原理给开发项目提供代码补全建议。</summary></entry><entry><title type="html">修复Arch升级 “无法满足依赖关系” 的错误</title><link href="//manateelazycat.github.io/linux/2021/06/18/fix-arch-upgrade-failed.html" rel="alternate" type="text/html" title="修复Arch升级 “无法满足依赖关系” 的错误" /><published>2021-06-18T00:00:00+08:00</published><updated>2021-06-18T00:00:00+08:00</updated><id>//manateelazycat.github.io/linux/2021/06/18/fix-arch-upgrade-failed</id><content type="html" xml:base="//manateelazycat.github.io/linux/2021/06/18/fix-arch-upgrade-failed.html">&lt;p&gt;Arch升级的时候，偶尔会报 “无法满足依赖关系” 的错误，简单的错误可以通过删除冲突依赖的方式来修复。
-当遇到删除冲突依赖会导致系统核心组件被卸载时，这时候就需要下面的命令来跳过升级过程中所有检测：&lt;/p&gt;
+&lt;p&gt;比如本地socks5代理是 127.0.0.1 的 1080 端口（如果不是，请修改下面配置中 proxies 字段内容），然后新建一个 config.yml 配置文件：&lt;/p&gt;
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-Syudd&lt;/span&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# config.yml&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 本地http(s)代理端口&lt;/span&gt;
+port: 18080
+&lt;span class=&quot;c&quot;&gt;# 本地socks5代理端口&lt;/span&gt;
+socks-port: 10808
+&lt;span class=&quot;c&quot;&gt;# 是否允许局域网中其他机器访问&lt;/span&gt;
+allow-lan: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 仅当allow-lan设置为true时生效&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# &apos;*&apos;: 绑定所有IP&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 192.168.122.11:绑定单个IPV4&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# &quot;[aaaa::a8aa:ff:fe09:57d8]&quot;:绑定单个IPV6&lt;/span&gt;
+bind-address: &lt;span class=&quot;s1&quot;&gt;&apos;*&apos;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 运行模式&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# rule: 基于规则&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# global: 全局代理&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# direct: 不代理&lt;/span&gt;
+mode: rule
+&lt;span class=&quot;c&quot;&gt;# 日志输出级别&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# info / warning / error / debug / silent&lt;/span&gt;
+log-level: info
+&lt;span class=&quot;c&quot;&gt;# 当设置为false时，不解析IPV6地址&lt;/span&gt;
+ipv6: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 流量出口&lt;/span&gt;
+interface-name: wlp4s0
+
+&lt;span class=&quot;c&quot;&gt;# DNS 设置&lt;/span&gt;
+dns:
+  &lt;span class=&quot;nb&quot;&gt;enable&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;false
+  &lt;/span&gt;listen: 0.0.0.0:53
+  &lt;span class=&quot;c&quot;&gt;# ipv6: false # when the false, response to AAAA questions will be empty&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;# These nameservers are used to resolve the DNS nameserver hostnames below.&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# Specify IP addresses only&lt;/span&gt;
+  default-nameserver:
+    - 114.114.114.114
+    - 8.8.8.8
+  enhanced-mode: redir-host &lt;span class=&quot;c&quot;&gt;# or fake-ip&lt;/span&gt;
+  fake-ip-range: 198.18.0.1/16 &lt;span class=&quot;c&quot;&gt;# Fake IP addresses pool CIDR&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# use-hosts: true # lookup hosts and return IP record&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;# Hostnames in this list will not be resolved with fake IPs&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# i.e. questions to these domain names will always be answered with their&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# real IP addresses&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# fake-ip-filter:&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#   - &apos;*.lan&apos;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#   - localhost.ptlogin2.qq.com&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;# Supports UDP, TCP, DoT, DoH. You can specify the port to connect to.&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# All DNS questions are sent directly to the nameserver, without proxies&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# involved. Clash answers the DNS question with the first result gathered.&lt;/span&gt;
+  nameserver:
+    - 114.114.114.114 &lt;span class=&quot;c&quot;&gt;# default value&lt;/span&gt;
+    - 8.8.8.8 &lt;span class=&quot;c&quot;&gt;# default value&lt;/span&gt;
+    - tls://dns.rubyfish.cn:853 &lt;span class=&quot;c&quot;&gt;# DNS over TLS&lt;/span&gt;
+    - https://1.1.1.1/dns-query &lt;span class=&quot;c&quot;&gt;# DNS over HTTPS&lt;/span&gt;
+    - dhcp://en0 &lt;span class=&quot;c&quot;&gt;# dns from dhcp&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;# When `fallback` is present, the DNS server will send concurrent requests&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# to the servers in this section along with servers in `nameservers`.&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# The answers from fallback servers are used when the GEOIP country&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# is not `CN`.&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# fallback:&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#   - tcp://1.1.1.1&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;# If IP addresses resolved with servers in `nameservers` are in the specified&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# subnets below, they are considered invalid and results from `fallback`&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# servers are used instead.&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# IP address resolved with servers in `nameserver` is used when&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# `fallback-filter.geoip` is true and when GEOIP of the IP address is `CN`.&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# If `fallback-filter.geoip` is false, results from `nameserver` nameservers&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# are always used if not match `fallback-filter.ipcidr`.&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# This is a countermeasure against DNS pollution attacks.&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# fallback-filter:&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#   geoip: true&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#   geoip-code: CN&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#   ipcidr:&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#     - 240.0.0.0/4&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#   domain:&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#     - &apos;+.google.com&apos;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#     - &apos;+.facebook.com&apos;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#     - &apos;+.youtube.com&apos;&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;# Lookup domains via specific nameservers&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# nameserver-policy:&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#   &apos;www.baidu.com&apos;: &apos;114.114.114.114&apos;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#   &apos;+.internal.crop.com&apos;: &apos;10.0.0.1&apos;&lt;/span&gt;
+proxies:
+&lt;span class=&quot;c&quot;&gt;# 代理服务器配置，更多的代理设置请查看：https://lancellc.gitbook.io/clash/clash-config-file/an-example-configuration-file&lt;/span&gt;
+  - name: &lt;span class=&quot;s2&quot;&gt;&quot;local-socks5&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;: socks5
+    server: localhost
+    port: 1080
+
+proxy-groups:
+  &lt;span class=&quot;c&quot;&gt;# 组策略&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# url-test 自动选择最快的节点进行访问.&lt;/span&gt;
+  - name: &lt;span class=&quot;s2&quot;&gt;&quot;auto&quot;&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#策略名&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;: url-test
+    proxies:
+      - local-socks5
+    &lt;span class=&quot;c&quot;&gt;# tolerance: 150&lt;/span&gt;
+    url: &lt;span class=&quot;s1&quot;&gt;&apos;http://www.gstatic.com/generate_204&apos;&lt;/span&gt;
+    interval: 300
+
+rules:
+&lt;span class=&quot;c&quot;&gt;# 规则策略&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 当一级域名是google.com时使用auto策略&lt;/span&gt;
+  - DOMAIN-SUFFIX,google.com,auto
+  - DOMAIN-SUFFIX,github.com,auto
+  - DOMAIN-SUFFIX,github.io,auto
+  - DOMAIN-SUFFIX,gitee.com,DIRECT
+  - DOMAIN-SUFFIX,emacs-china.org,DIRECT
+  - DOMAIN-SUFFIX,ruby-china.org,DIRECT
+  - DOMAIN-SUFFIX,baidu.com,DIRECT
+&lt;span class=&quot;c&quot;&gt;# 当域名含有关键词google时使用auto&lt;/span&gt;
+  - DOMAIN-KEYWORD,google,auto
+  - DOMAIN,google.com,auto
+&lt;span class=&quot;c&quot;&gt;# 当一级域名是ad.com时拒绝访问，可以用于屏蔽广告&lt;/span&gt;
+  - DOMAIN-SUFFIX,ad.com,REJECT
+&lt;span class=&quot;c&quot;&gt;# 内网服务ip不走代理&lt;/span&gt;
+  - SRC-IP-CIDR,192.168.1.0/32,DIRECT
+  - SRC-IP-CIDR,10.0.0.0/8,DIRECT
+&lt;span class=&quot;c&quot;&gt;# 可选参数 &quot;no-resolve&quot; ，基于IP的规则 (GEOIP, IP-CIDR, IP-CIDR6)&lt;/span&gt;
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - GEOIP,CN,DIRECT
+&lt;span class=&quot;c&quot;&gt;# 目标端口是8888时，直接访问不走代理&lt;/span&gt;
+  - SRC-PORT,8888,DIRECT
+&lt;span class=&quot;c&quot;&gt;# 默认规则&lt;/span&gt;
+  - MATCH,auto
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;老年人日常备忘。&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">Arch升级的时候，偶尔会报 “无法满足依赖关系” 的错误，简单的错误可以通过删除冲突依赖的方式来修复。 当遇到删除冲突依赖会导致系统核心组件被卸载时，这时候就需要下面的命令来跳过升级过程中所有检测：</summary></entry><entry><title type="html">读《别闹了，费曼先生》</title><link href="//manateelazycat.github.io/reading/2021/06/16/reading-mr-ferman.html" rel="alternate" type="text/html" title="读《别闹了，费曼先生》" /><published>2021-06-16T00:00:00+08:00</published><updated>2021-06-16T00:00:00+08:00</updated><id>//manateelazycat.github.io/reading/2021/06/16/reading-mr-ferman</id><content type="html" xml:base="//manateelazycat.github.io/reading/2021/06/16/reading-mr-ferman.html">&lt;p&gt;最近读了《别闹了，费曼先生》这本书，起因是我看过的很多书的作者经常提到费曼，说他讲物理学讲的最好。&lt;/p&gt;
+&lt;p&gt;接着运行命令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;clash -f config.yml&lt;/code&gt; 来启动Clash，Clash会对外暴露一个 http 类型的 18080 端口代理。&lt;/p&gt;
 
-&lt;p&gt;读了这本类似自传的书，挺喜欢费曼的好奇心和率真性格，他的人生是根据自己的兴趣爱好扩展的，同时他从不给自己的人生设限，除了他内心热爱的物理学，包括收音机、恶作剧、密码锁、桑巴鼓、葡萄牙语、超快心算、破解玛雅文字等等，只要他感兴趣的事情他都可以用非常巧妙的方式快速学习。&lt;/p&gt;
+&lt;h3 id=&quot;配置eaf&quot;&gt;配置EAF&lt;/h3&gt;
+&lt;p&gt;最后在Emacs中通过如下配置来设置EAF使用Clash代理：&lt;/p&gt;
 
-&lt;p&gt;特别是回忆起自传中他在造原子弹过程中破解密码锁和玩桑巴鼓的两段经历，每每想到都觉得欢乐无比。&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(setq eaf-proxy-type &quot;http&quot;)
+(setq eaf-proxy-host &quot;127.0.0.1&quot;)
+(setq eaf-proxy-port &quot;18080&quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;费曼是一个终身都在学习，每时每刻都在做脑力游戏的小朋友，向他致敬。&lt;/p&gt;
+&lt;h3 id=&quot;最后&quot;&gt;最后&lt;/h3&gt;
+&lt;p&gt;通过上面的配置，可以让EAF浏览器实现基于规则的自动代理，当然这种方法也适用于任何其他软件，比如Chrome浏览器。&lt;/p&gt;
 
-&lt;p class=&quot;line-quote&quot;&gt;我从未长大,但我从未停止成长&lt;/p&gt;</content><author><name></name></author><category term="Reading" /><summary type="html">最近读了《别闹了，费曼先生》这本书，起因是我看过的很多书的作者经常提到费曼，说他讲物理学讲的最好。</summary></entry><entry><title type="html">读《虚拟现实》</title><link href="//manateelazycat.github.io/reading/2021/05/24/reading-vr.html" rel="alternate" type="text/html" title="读《虚拟现实》" /><published>2021-05-24T00:00:00+08:00</published><updated>2021-05-24T00:00:00+08:00</updated><id>//manateelazycat.github.io/reading/2021/05/24/reading-vr</id><content type="html" xml:base="//manateelazycat.github.io/reading/2021/05/24/reading-vr.html">&lt;p&gt;半个月前带着女儿去书店涉猎新书，本来想找一些科幻或数学的书看看，可惜网红书店的书实在是太无聊了，乱逛的时候发现这本 Jaron Lanier 写的《虚拟现实》。&lt;/p&gt;
+&lt;p&gt;Clash中转代理的方法，可以让系统中多个软件共用同一套代理规则，更新规则也很方便，只需修改上面配置文件中的 rules 字段内容。&lt;/p&gt;
 
-&lt;p&gt;本来以为是那种老掉牙VR市场分析的书籍，翻了几页发现其实是 Jaron Lanier 有点带自传性质的书，特别是读到作者小的时候和父亲在新墨西哥州修建自己玻璃太空舱式的家时，感觉作者实在是太酷了，当即决定买回家慢慢评尝。&lt;/p&gt;
+&lt;p&gt;感谢EmacsChina社区的&lt;a href=&quot;https://emacs-china.org/u/EdmondFrank&quot;&gt;EdmondFrank&lt;/a&gt;的贡献，使得EAF具备自动代理的能力，感谢！&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><category term="EAF" /><summary type="html">EAF浏览器是基于QWebEngine来实现的，QWebEngine因为受限于底层Chromium代码的实现，QWebEngine无法像QWebKit那样，通过Qt代码来实现基于自定义规则的代理路由。</summary></entry><entry><title type="html">解决Linux下微信缺失WeChatWin.dll的问题</title><link href="//manateelazycat.github.io/linux/2021/12/15/wechat-windll.html" rel="alternate" type="text/html" title="解决Linux下微信缺失WeChatWin.dll的问题" /><published>2021-12-15T00:00:00+08:00</published><updated>2021-12-15T00:00:00+08:00</updated><id>//manateelazycat.github.io/linux/2021/12/15/wechat-windll</id><content type="html" xml:base="//manateelazycat.github.io/linux/2021/12/15/wechat-windll.html">&lt;p&gt;Arch最近升级系统后，微信会弹出缺失WeChatWin.dll的错误导致无法启动微信。&lt;/p&gt;
 
-&lt;p&gt;花了半个月的时间，断断续续的读完，非常的享受，不仅仅是佩服作者从小的折腾和多领域的交叉科学才华，更加佩服的作者在做了那么多创造力工作的背后，依然保持对科技的好奇心和人性的敏锐洞察。&lt;/p&gt;
+&lt;p&gt;原因是Arch升级了lib32-libldap这个包的缘故，降回旧版本可以解决这个问题。&lt;/p&gt;
 
-&lt;p&gt;读完这本书其实很难从某一个维度去述说这本书给人的感觉，因为书中信息量实在太大了，看似作者前后冲突的喃喃自语，其实包含作者对人生每个阶段的思考和真诚的分享，作者小时候不幸的童年、年轻时披头式的游民生活以及对音乐的痴迷，这些交揉奇特的经历深深的吸引了我，我想也许只有VR这种通过科技创造虚拟的世界才能真正的满足作者对未知的探索。&lt;/p&gt;
+&lt;p&gt;解决方案如下：&lt;/p&gt;
 
-&lt;p&gt;看这本书就像看《神秘博士》一样，你真的不知道下一页有多么精彩，他很有可能在陪爸爸建太空舱，也有可能在开一个要靠路肩摩擦才能停下的破车，他有可能在玩我连名字都叫不上的乐器，也有可能在和黑客书呆子在讨论 “租一个妈妈” 这种只有程序员才会讨论的话题 …&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo pacman -Sy
+sudo pacman -S downgrade
+sudo downgrade lib32-libldap
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;VR我觉得只是他多彩生活的一种工作形式而已，他代表了知识黑客应该有的好奇心、独立思考和缤纷人生。&lt;/p&gt;
+&lt;p&gt;把lib32-libldap降级到版本2.4.59，并在后续的提示中，选择把此包加入不更新列表。&lt;/p&gt;
 
-&lt;p&gt;书店乱逛纸质书可以最大程度的偶遇新的领域，因为那里没有僵硬的算法推荐和同质化的功利目的，AI和算法只是服务人类的工具，而人才有独一无二的多样性，而多样性才是社会的未来。&lt;/p&gt;</content><author><name></name></author><category term="Reading" /><summary type="html">半个月前带着女儿去书店涉猎新书，本来想找一些科幻或数学的书看看，可惜网红书店的书实在是太无聊了，乱逛的时候发现这本 Jaron Lanier 写的《虚拟现实》。</summary></entry><entry><title type="html">研发人员创业</title><link href="//manateelazycat.github.io/business/2021/05/23/developer-entrepreneurship.html" rel="alternate" type="text/html" title="研发人员创业" /><published>2021-05-23T00:00:00+08:00</published><updated>2021-05-23T00:00:00+08:00</updated><id>//manateelazycat.github.io/business/2021/05/23/developer-entrepreneurship</id><content type="html" xml:base="//manateelazycat.github.io/business/2021/05/23/developer-entrepreneurship.html">&lt;p&gt;未来各行业的创业对技术的要求很高，哪个企业的技术团队越好，机会越多，这也是越来越多研发出生的人参与创业的原因。&lt;/p&gt;
-
-&lt;p&gt;我个人经历虽然不仅仅是一个研发，很多事情都深入实践过，但是自己也经历了很长的代码研发，所以对研发人员的心理还是非常理解的。&lt;/p&gt;
-
-&lt;p&gt;研发人员创业，优点有很多：&lt;/p&gt;
+&lt;p&gt;最后，重新启动微信即可。&lt;/p&gt;</content><author><name></name></author><category term="Linux" /><summary type="html">Arch最近升级系统后，微信会弹出缺失WeChatWin.dll的错误导致无法启动微信。</summary></entry><entry><title type="html">基于抽象语法树自动查找孤立函数</title><link href="//manateelazycat.github.io/emacs/2021/11/27/find-orphan.html" rel="alternate" type="text/html" title="基于抽象语法树自动查找孤立函数" /><published>2021-11-27T00:00:00+08:00</published><updated>2021-11-27T00:00:00+08:00</updated><id>//manateelazycat.github.io/emacs/2021/11/27/find-orphan</id><content type="html" xml:base="//manateelazycat.github.io/emacs/2021/11/27/find-orphan.html">&lt;h2 id=&quot;什么是-find-orphanel-&quot;&gt;什么是 find-orphan.el ?&lt;/h2&gt;
+&lt;p&gt;当我们完成一个大型项目后，经常需要重构代码以去掉项目过程中的无用代码，我们经常会按照下面流程进行操作：&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;务实，一定要做有价值的事情，忽悠的事情不会做&lt;/li&gt;
-  &lt;li&gt;认真，很多事情会做的非常扎实和仔细，保证产品让客户放心&lt;/li&gt;
-  &lt;li&gt;效率，做事麻利，不会拖拖拉拉的&lt;/li&gt;
+  &lt;li&gt;打开源代码文件，找到函数定义&lt;/li&gt;
+  &lt;li&gt;使用ripgrep工具把每个函数名都在项目目录下进行递归搜索&lt;/li&gt;
+  &lt;li&gt;找到对应的源码文件，删除没有任何引用的孤立函数&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;研发人员创业，也有很多需要改进的地方：&lt;/p&gt;
+&lt;p&gt;如果在一个大型项目中一直重复上面的操作会非常痛苦, find-orphan.el 就是解决上面痛点的贴心插件。&lt;/p&gt;
+
+&lt;p&gt;现在你只需要打开源文件，然后执行命令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find-orphan-function-in-directory&lt;/code&gt; 即可，它会自动搜索所有函数名, 并用ripgrep自动在工程中搜索，最后告诉你所有孤立函数的列表，方便你快速删除无用代码。&lt;/p&gt;
+
+&lt;h2 id=&quot;原理&quot;&gt;原理&lt;/h2&gt;
 &lt;ol&gt;
-  &lt;li&gt;需求把握，需求来源给真金白银的市场和客户，不仅仅是研发人员的需求，特别是做产品的时候，要把自己转换成无技术背景的客户角度去思考，很多功能一眼就知道合不合适&lt;/li&gt;
-  &lt;li&gt;害怕见客户，可能因为平常直来直去的职业沟通习惯，不喜欢商务那些常用工作方法（了解钱出处、谁来拍板、价值是什么等等），害怕和客户沟通，从我的实践经验看，只要面向利益和价值去沟通，客户不会太在意你的说话技巧，客户最主要在意产品多少钱，产品能给我带来什么价值？&lt;/li&gt;
-  &lt;li&gt;耐心不够，因为研发的主要工作就是，学习很多知识，打磨研发工具，效率超高的完成研发任务，所以时间对于研发来说非常宝贵，而正常的商务沟通需要面对很多不同职业的人，需要很多时间花在沟通上，这一点非常重要，需要增强自己的沟通耐心&lt;/li&gt;
-  &lt;li&gt;方向感不够，很多事情都在想怎么做，怎么做好，但是最开始的方向是否对，市场匹配度，产品生命周期，营销方法是什么？这些都没有花精力去想，这些问题不想好，容易在错误的方向上做的越多亏的越多&lt;/li&gt;
+  &lt;li&gt;基于AST来查找所有函数名&lt;/li&gt;
+  &lt;li&gt;使用ripgrep来统计函数名在项目中出现的次数&lt;/li&gt;
+  &lt;li&gt;打印那些统计次数小于2的函数名&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;世界上很多事情都难免尽善尽美，有时候，选择创业和商务，有了更多的自由度，但一定要其他东西去换。&lt;/p&gt;
-
-&lt;h4 id=&quot;研发人员的工作模式&quot;&gt;研发人员的工作模式：&lt;/h4&gt;
-&lt;p&gt;了解需求 -&amp;gt; 找资料学习 -&amp;gt; 代码实现 -&amp;gt; 各种调试稳定产品 -&amp;gt; 沟通 -&amp;gt; 睡觉&lt;/p&gt;
-
-&lt;h4 id=&quot;研发创业者的工作模式&quot;&gt;研发创业者的工作模式：&lt;/h4&gt;
-&lt;p&gt;了解需求 -&amp;gt; 搞清楚商务付费逻辑 -&amp;gt; 签合同 -&amp;gt; 组织团队开发 -&amp;gt; 喝酒(客户或者团建) -&amp;gt; 睡觉&lt;/p&gt;
-
-&lt;p&gt;最大的交换在我来看，研发人员需要牺牲以前大量学习技术的时间，用这些时间去跑市场、见客户和思考大方向。如果研发人员自身没有意识到和改进这一点，大量时间依然在学习技术和代码实现上，有非常大的概率会在大方向上判断错误，团队做了很多无用功，甚至公司面临经营风险。&lt;/p&gt;
-
-&lt;p&gt;上面是我多年实践的研发人员创业的一些优缺点，很多事情我自己已经克服了(状态还不稳定)，希望分享给研发创业的同学。&lt;/p&gt;</content><author><name></name></author><category term="Business" /><summary type="html">未来各行业的创业对技术的要求很高，哪个企业的技术团队越好，机会越多，这也是越来越多研发出生的人参与创业的原因。</summary></entry><entry><title type="html">我们的一些商业信条</title><link href="//manateelazycat.github.io/business/2021/05/23/lnks-believe.html" rel="alternate" type="text/html" title="我们的一些商业信条" /><published>2021-05-23T00:00:00+08:00</published><updated>2021-05-23T00:00:00+08:00</updated><id>//manateelazycat.github.io/business/2021/05/23/lnks-believe</id><content type="html" xml:base="//manateelazycat.github.io/business/2021/05/23/lnks-believe.html">&lt;h4 id=&quot;世界上最贵的东西是信任和耐心&quot;&gt;世界上最贵的东西是信任和耐心&lt;/h4&gt;
-&lt;p&gt;人与人之间是相互不信任的，信任需要长时间的了解、共同战斗和磨合。&lt;/p&gt;
-
-&lt;p&gt;我们总是用金钱去换取信任，然后通过信任和耐心去获取更多金钱。&lt;/p&gt;
-
-&lt;p&gt;当合作伙伴和内部团队之间充满信任和耐心后，很多交易成本和创造成本都会降低很多。&lt;/p&gt;
-
-&lt;h4 id=&quot;永远基于对方是聪明人的前提去合作&quot;&gt;永远基于对方是聪明人的前提去合作&lt;/h4&gt;
-&lt;p&gt;每个人都有自己的价值体系、人生经历和成长感悟，每一个有进取心的人都会变得聪明。&lt;/p&gt;
-
-&lt;p&gt;我们的合作都必须建立在对方是聪明人的基础之上去合作，不要玩套路，通过双方合作成就彼此。&lt;/p&gt;
-
-&lt;p&gt;也许有人会说，如果对方是小白呢？那也不能干忽悠的事情，当你忽悠别人的时候，别人总有一天会醒悟的，而你却是最大损失那一位，因为你失去未来一个可以值得信任同时能力获得巨大进步的合作伙伴。&lt;/p&gt;
-
-&lt;h4 id=&quot;我们愿意为我们相信的事情去奋斗&quot;&gt;我们愿意为我们相信的事情去奋斗&lt;/h4&gt;
-&lt;p&gt;有时候成功除了努力、运气外，很重要的事情是在自己积累足够知识和理解世界后，为自己愿意相信的事情去努力。&lt;/p&gt;
-
-&lt;p&gt;因为相信，所以可以尽情挥洒自己的激情。&lt;/p&gt;
-
-&lt;p&gt;很多企业没有成功，不是资金不够，不是能力不够，而是创始人不够了解自己，在自己不喜欢的事情耗费太多精力。&lt;/p&gt;
-
-&lt;h4 id=&quot;为什么要写下来&quot;&gt;为什么要写下来？&lt;/h4&gt;
-&lt;p&gt;看书学习的时候，除了学习别人的思想，自己也有很多想法，写下来供未来的我自己进一步学习，同时也给我自己的CPU降降频率，太多东西放到自己脑袋里，太乱了，不利于长线思考。如果不写下来，这些转瞬即逝的想法丢了也很可惜。&lt;/p&gt;
-
-&lt;p&gt;今天看到Jaron Lanier写的一段话，特别适合我现在迫切想写下来的心情，哈哈哈哈。&lt;/p&gt;
-
-&lt;p class=&quot;line-quote&quot;&gt;虚荣过剩曾是、现在仍是网络发展的动机之一…&lt;/p&gt;</content><author><name></name></author><category term="Business" /><summary type="html">世界上最贵的东西是信任和耐心 人与人之间是相互不信任的，信任需要长时间的了解、共同战斗和磨合。</summary></entry><entry><title type="html">EAF音乐播放器发布啦！</title><link href="//manateelazycat.github.io/emacs/eaf/2021/05/12/eaf-and-vue.html" rel="alternate" type="text/html" title="EAF音乐播放器发布啦！" /><published>2021-05-12T00:00:00+08:00</published><updated>2021-05-12T00:00:00+08:00</updated><id>//manateelazycat.github.io/emacs/eaf/2021/05/12/eaf-and-vue</id><content type="html" xml:base="//manateelazycat.github.io/emacs/eaf/2021/05/12/eaf-and-vue.html">&lt;p&gt;&lt;img src=&quot;//manateelazycat.github.io/pics/eaf-and-vue/eaf-and-vue.png&quot; alt=&quot;EAF and vue.js&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最近用Vue.js给EAF写了一个音乐播放器，主要解决了一项关键技术 “Elisp直接调用Vue.js的函数”, 原理如下：&lt;/p&gt;
-
+&lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
 &lt;ol&gt;
-  &lt;li&gt;Vue组件执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mounted&lt;/code&gt; 的时候，用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;window.foo = this.foo&lt;/code&gt; 方法注入Vue组件的函数 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;foo&lt;/code&gt; 到window对象&lt;/li&gt;
-  &lt;li&gt;Elisp首先通过IPC调用Python进程内函数&lt;/li&gt;
-  &lt;li&gt;Python函数内再通过QWebEngine的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;execute_javascript&lt;/code&gt; 接口调用第一步注入的JavaScript函数&lt;/li&gt;
+  &lt;li&gt;安装&lt;a href=&quot;https://emacs-tree-sitter.github.io/installation/&quot;&gt;tree-sitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;安装&lt;a href=&quot;https://github.com/BurntSushi/ripgrep&quot;&gt;ripgrep&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;下载&lt;a href=&quot;https://github.com/manateelazycat/find-orphan&quot;&gt;find-orphan.el&lt;/a&gt;并加载到load-path&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;通过上面三个步骤，Emacs可以在运行时直接通过Elisp调用JavaScript函数来操作Vue应用的行为。&lt;/p&gt;
+&lt;p&gt;把下面的代码添加到 ~/.emacs 中, 替换 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;path-to-find-orphan&amp;gt;&lt;/code&gt;为 find-orphan.el 所在目录&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Elisp&quot;&gt;(add-to-list &apos;load-path &quot;&amp;lt;path-to-find-orphan&amp;gt;&quot;)
+(require &apos;find-orphan)
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;EAF现在可以用Elisp, Python, C++, JavaScript四种语言协同编程，同时基于Qt和Vue.js技术无限扩展Emacs的图形绘制能力。借助EAF框架，所有VSCode能做的事情，现在Emacs都可以做了，祝我教早日一统江湖，哈哈哈哈。&lt;/p&gt;</content><author><name></name></author><category term="Emacs" /><category term="EAF" /><summary type="html"></summary></entry></feed>
+&lt;h2 id=&quot;使用&quot;&gt;使用&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;find-orphan-function-in-buffer : 在当前文档自动查找所有孤立函数&lt;/li&gt;
+  &lt;li&gt;find-orphan-function-in-directory : 在当前工程自动查找所有孤立函数&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="Emacs" /><summary type="html">什么是 find-orphan.el ? 当我们完成一个大型项目后，经常需要重构代码以去掉项目过程中的无用代码，我们经常会按照下面流程进行操作： 打开源代码文件，找到函数定义 使用ripgrep工具把每个函数名都在项目目录下进行递归搜索 找到对应的源码文件，删除没有任何引用的孤立函数</summary></entry></feed>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<title>Vue.js动态切换视频</title>
+
+
+        <link rel="stylesheet" href="//manateelazycat.github.io/styles/font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/post.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/post_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="//manateelazycat.github.io/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="//manateelazycat.github.io/theme/highlight.css">
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="//manateelazycat.github.io/index.html">ManateeLazyCat</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/tags.html">Tags</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/projects.html">Projects</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="//manateelazycat.github.io/feed.xml">Feeds</a>
+    </div>
+    <div class="navigatebar-button navigatebar-about">
+        <a href="//manateelazycat.github.io/about.html">About</a>
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="title">
+                Vue.js动态切换视频
+            </div>
+            <div class="category-area">
+                「
+                <a href="//manateelazycat.github.io/tags.html#Web">
+                    <div class="category">
+                        Web
+                    </div>
+                </a>
+                」
+            </div>
+            <div class="char-counter">
+                字数432 2021-08-07
+            </div>
+            <div class="content">
+                <p>一般我们会用Video标签来播放视频，在Vue.js中用 :src 属性来绑定视频路径。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;video</span> <span class="na">controls</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">:src=</span><span class="s">"videoPath"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/video&gt;</span>
+</code></pre></div></div>
+
+<p>上面这段代码第一次加载视频没问题，但是如果是一个视频播放列表，切换到第二个视频路径的时候，浏览器并没有切换新的视频。</p>
+
+<p>原因是更新了 source 的值并不会触发浏览器加载新的视频，这时候只能新建一个Video元素才可以。</p>
+
+<p>在Vue.js中有一个简单的方法来创建新元素，只用更新 :key 值就可以了。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;video</span> <span class="na">:key=</span><span class="s">"dynamicKey"</span> <span class="na">controls</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">:src=</span><span class="s">"videoPath"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/video&gt;</span>
+</code></pre></div></div>
+
+<p>在Javascript端用随机数来生成dyanmicKey:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">videoPath</span> <span class="o">=</span> <span class="nx">videoPath</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">dynamicKey</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>That’s all</p>
+
+            </div>
+        </div>
+    </body>
+</html>
