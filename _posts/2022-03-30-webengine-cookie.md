@@ -23,7 +23,7 @@ categories: [Qt, Linux]
 
 ### 源码参考
 
-1. 保存Cookie信息到本地:
+保存Cookie信息到本地:
 
 ```python
 def add_cookie(self, cookie):
@@ -63,7 +63,7 @@ def touch(path):
             os.utime(path)
 ```
 
-2. 返回Cookie信息给网站服务器:
+返回Cookie信息给网站服务器:
 
 ```python
 def load_cookie(self):
