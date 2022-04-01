@@ -62,12 +62,12 @@ title: ManateeLazyCat
         {% endfor %}
       </div>
       <div class="right-info-area">
-        <div class="post-date">
-          {{ post.date | date: "%Y-%m-%d" }}
-        </div>
-        
         <div class="char-counter">
           {{ post.content | strip_html | strip_newlines | remove: " " | size }}字
+        </div>
+        
+        <div class="post-date">
+          {{ post.date | date: "%Y-%m-%d" }}
         </div>
       </div>
     </div>
