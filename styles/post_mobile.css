@@ -155,7 +155,7 @@ td {
 
 .char-counter {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     color: #AAA;
     font-size: 11px;
     margin-top: 20px;

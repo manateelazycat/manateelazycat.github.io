@@ -27,7 +27,7 @@
                 {% endfor %}」
             </div>
             <div class="char-counter">
-                字数{{ page.content | strip_html | strip_newlines | remove: " " | size }} {{ page.date | date: "%Y-%m-%d" }}
+              {{ page.date | date: "%Y-%m-%d" }} {{ page.content | strip_html | strip_newlines | remove: " " | size }}字
             </div>
             <div class="content">
                 {{ content }}
