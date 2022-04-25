@@ -31,7 +31,15 @@ def add_cookie(self, cookie):
     if not cookie.isSessionCookie():
         import json
         
-        cookie_file = os.path.join(self.config_dir, "browser", "cookie", cookie.domain())
+        # 移除 cookie.domain 前的 "." 字符.
+        #
+        # 有些网站，比如github.com在登录时返回cookie的域名是 '.github.com' 而不是 'github.com'
+        # 这样会导致真实的cookie保存在 cookie/.github.com 文件中，而下次访问github.com的时候却是从 cookie/github.com 文件中加载错误的 cookie 信息导致页面出错，比如返回 HTTP 422 错误
+        cookie_domain = cookie.domain()
+        if cookie_domain.startswith("."):
+            cookie_domain = cookie_domain[len("."):]
+        
+        cookie_file = os.path.join(self.config_dir, "browser", "cookie", cookie_domain)
         cookie_dict = {}
         
         # 从本地文件读取Cookie信息
