@@ -28,4 +28,4 @@ recursive-search-references帮我快速清理那些很久之前添加但现在�
 ```
 
 ## 使用
-* recursive-search-references-function : 在Emacs配置文件目录中搜索插件引用
+* recursive-search-references : 在Emacs配置文件目录中搜索插件引用
