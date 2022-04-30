@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello, GitHub Pages
-categories: [Tech]
+categories: [Jekyll]
 ---
 
 自己不喜欢浪费时间搭建博客网站，所以文章一直都放到简书上，编写简单，容易维护。
