@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jekyll 访问统计
-categories: [Tech]
+categories: [Jekyll]
 ---
 
 这几天下班都在折腾Jekyll, 想给每篇文章添加一个访问统计，看看大家更喜好那类文章。

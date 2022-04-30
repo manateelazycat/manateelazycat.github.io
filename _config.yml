@@ -11,3 +11,7 @@ webrick:
 
 plugins:
   - jekyll-feed
+  
+- name: Jekyll Deploy Action
+  uses: jeffreytse/jekyll-deploy-action@v0.3.1
+  

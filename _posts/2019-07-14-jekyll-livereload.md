@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jekyll实时刷新
-categories: [Tech]
+categories: [Jekyll]
 ---
 
 用Jekyll写博客时，总是写一写的需要手动刷新一下浏览器看效果，今天看了一下Jekyll的官方文档
