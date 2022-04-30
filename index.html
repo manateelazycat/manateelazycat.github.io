@@ -34,7 +34,7 @@ title: ManateeLazyCat
     {% endfor %}
 
     {{ site.posts.size }}篇文章
-    {{ count }}字
+    {{ count | intcomma }}字
   </div>
 
   {% for post in site.posts %}
@@ -63,7 +63,7 @@ title: ManateeLazyCat
       </div>
       <div class="right-info-area">
         <div class="char-counter">
-          {{ post.content | strip_html | strip_newlines | remove: " " | size }}字
+          {{ post.content | strip_html | strip_newlines | remove: " " | size | intcomma }}字
         </div>
         
         <div class="post-date">
