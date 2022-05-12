@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LSP-Brige架构设计与LSP协议解析
+title: LSP-Bridge架构设计与LSP协议解析
 categories: [Emacs]
 ---
 
