@@ -50,7 +50,29 @@ Content-Length: 180\r\n
 }
 ```
 
-以读取服务器返回数据为例，开头是通过解析Content-Length字符串来提取消息的长度，接着读取一个空行扔掉，然后继续按照解析来的长度信息读取后续的消息内容，读取内容通过 ```json.load``` 来转换成JSON对象做进一步处理。
+正常的解析过程是，第一行通过解析Content-Length字符串来提取消息的长度，接着读取一个空行扔掉，然后继续按照解析来的长度信息读取后续的消息内容，读取内容通过 ```json.load``` 来转换成JSON对象做进一步处理，样例代码如下：
+
+```python
+first_line = self.process.stdout.readline().strip()
+length = int(first_line[line.rfind(":") + 1:])
+
+second_line = self.process.stdout.readline().strip()
+
+message = self.process.stdout.readline(length).strip()
+json.loads(message)
+```
+
+但是实践中，因为管道缓冲大小的原因，消息处理并不会这么完美，一般有三种意外情况：
+
+1. 消息字符串前后不干净导致 ```json.loads(message)``` 失败，这时候要找到消息开始```{``` 和 末尾```}```的位置，截取中间合法的消息内容再传递给```json.loads```
+
+2. 第二条消息的 ```Content-Length: number``` 会放到第一条消息的末尾，这种情况是每次读完消息后，检查一下第一条消息的行尾，看看是不是 ```Content-Length: number``` 结尾， 是的话接下来操作应该是直接跳过下一行后，按照长度再读一行就可以知道第二条消息的准确内容
+
+3. 管道缓冲区不够时，```Content-Length: 1234```有可能会截断成两行```Content-Length: 12```和```34```，这时候需要在读取 ```Content-Length: 12``` 以后再检查下一行的开头是不是数字， 是数字的话，还需要把这两行的数字拼接一下，拼接后的数字才是真正的下一条消息的长度，接着跳过下一行后，用矫正过的长度读取消息内容
+
+注意LSP消息的解析一定要严谨，错过一行消息或者解析错误都会导致实践中发生丢LSP消息的情况，解析LSP消息是后面所有章节的基础，这一章错误，后面的逻辑都会混乱。
+
+### LSP消息类型
 
 LSP客户端发送给服务器的消息一般有三种，分别是Request、 Notification和Response, 这三种消息的格式细节区别是：
 1. Notification消息不带id属性， Request的id属性是lsp-bridge生成的，方便服务器返回的时候带上id用于识别消息类型, Response的id属性一般是读取服务器返回消息的id后再发送回去，方便服务器根据id来处理客户端消息
