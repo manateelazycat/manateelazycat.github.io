@@ -178,31 +178,17 @@ send_to_notification("textDocument/didChange",
                  })
 ```
 
-```textDocument/didChange``` 消息应该是LSP里面最复杂的一条消息， 它分别要处理文本添加、 删除和修改三种操作所对应字符参数， 主要针对start_row、 start_character、 end_row、 end_character、 range_length、 text六个参数进行详细设计。
 
-1. 添加操作：
-* start_row: 编辑之后的行
-* start_character: 编辑之后光标到行首的字符长度
-* end_row: 编辑之后的行
-* end_character: 编辑之后光标到行首的字符长度
-* range_length: 0
-* text: 编辑后变动开始位置和变动结束位置之间的字符内容
+```textDocument/didChange``` 消息应该是LSP里面最复杂的一条消息， 需要根据Emacs编辑文本的变动同步给LSP服务器， 主要针对start_row、 start_character、 end_row、 end_character、 range_length、 text六个参数进行详细设计。
 
-2. 删除操作：
-* start_row: 编辑之后的行
-* start_character: 编辑之后光标到行首的字符长度
-* end_row: 编辑之前的行
-* end_character: 编辑之前光标到行首的字符长度
-* range_length: 编辑变动的长度
-* text: 空字符串
+* start_row: 变动之前起始光标的行
+* start_character: 变动之前起始光标的列
+* end_row: 变动之前末尾光标的行
+* end_character: 变动之前末尾光标的列
+* range_length: 变动后字符串的长度
+* text: 变动后的字符串
 
-3. 修改操作：
-* start_row: 编辑之后的行
-* start_character: 编辑之后光标到行首的字符长度
-* end_row: 编辑之前的行
-* end_character: 编辑之前光标到行首的字符长度
-* range_length: 编辑变动的长度
-* text: 编辑后变动开始位置和变动结束位置之间的字符内容
+变动之前的状态需要通过Emacs的```before-change-functions```函数来跟踪，变动之后的状态需要通过Emacs的```after-change-functions```函数来跟踪。
 
 当你正确的处理 ```textDocument/didChange``` 消息后，就可以发送 ```textDocument/completion``` 请求给服务器来获取当前光标处的语法补全信息:
 

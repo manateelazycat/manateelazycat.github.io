@@ -156,4 +156,4 @@ class CookiesManager(object):
 注意这里面的```browser_view```指的是```QWebEngineView```的实例， 只需要在你的```QWebEngineView```实现里加入一行代码 ```self.cookies_manager = CookiesManager(self)``` 就好了。
 
 ### 最后
-我自己原来实现了5版Cookie代码都没有完美实现， 上面这个稳定的版本主要是EAF社区大佬[ctrl2wei](https://github.com/ctrl2wei)的研究成果，经大佬翻阅了大量RFC文档写就而成，希望上面的分享可以帮助到正在开发浏览器的你。
+我自己原来实现了5版Cookie代码都没有完美实现， 上面这个稳定的版本主要是EAF社区大佬[ctrl2wei](https://github.com/ctrl2wei)的研究成果，经大佬翻阅了大量RFC文档写就而成，希望上面的分享可以帮助到正在开发浏览器的你。 ;)
