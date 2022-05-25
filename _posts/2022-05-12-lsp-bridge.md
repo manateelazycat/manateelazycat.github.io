@@ -244,6 +244,25 @@ else:
 
 触发字符在你发送 ```initialize``` 请求的时候， 服务器会返回对应的补全触发字符， 一般在JSON结构的这个位置 ```message["result"]["capabilities"]["completionProvider"]["triggerCharacters"]```
 
+### 实践细节分享
+
+#### 候选词实现
+每种语言的LSP服务器实现的完整度不一样，有些服务器会返回的多一点，有些服务器会返回的少一点，所以补全菜单的插入优先级应该按照 textEdit/newText->insertText->label 这三个等级来依次实现，注意当用textEdit来插入候选词时，需要根据 textEdit/rang/start 的信息作为替换起始位置。
+
+后选词的显示应该永远用 label 来显示, LSP服务器有时候会返回 label 一样， 但是 annotation 不一样的候选词， 这种情况需要根据 annotation 的类型在 label 后面加一个空格， 避免补全前端过滤相同 label 的后选词。
+
+如果 textEdit/annotation 是Snippet类型， 还需要根据编辑器的插件实现Snippet展开。
+
+LSP服务器如果返回 additionalTextEdits 值， 还需要处理 additionalTextEdits， 一般这个信息是包含一些附加的操作，比如 auto-import 功能。
+
+#### Character处理
+
+Client向服务器发送当前光标的位置的时候， 要注意使用 utf-16 编码来计算 Tab 和 Space 的情况， 这是LSP协议的细节差异， 虽然文本都是用 utf-8 来传输， 但是唯独 character 信息要用 utf-16 来处理， 要不没法正确处理文本有 emoji 字符时的列信息。
+
+#### 重命名处理
+
+编辑器重命名文件以后需要通过发送workspace/renameFiles提醒消息， 来告诉LSP服务器， 主要用途是让语言服务器启动更新 import 路径。 需要注意的是，这个只是提醒服务器，但是你在实现中依然需要对旧的路径发送 closeFile 提醒，对新的路径要发送 openFile 提醒， 这样LSP服务器才会在重命名后继续响应编辑器发送的LSP消息。
+
 ### 安装和使用lsp-bridge
 
 ![lsp-bridge]({{site.url}}/pics/lsp-bridge/screenshot.png)
