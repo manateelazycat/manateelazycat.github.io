@@ -234,13 +234,13 @@ else:
                                  "character": column
                              },
                              "context": {
-                                 "triggerKind": 3
+                                 "triggerKind": 1
                              }
                          },
                          request_id)
 ```
 
-这里需要注意的是，如果字符是补全触发字符，比如 '.' '->' 这些字符， triggerKind的类型必须是2, 并且需要同步发送触发补全的字符， 如果不是触发补全字符， triggerKind类型必须是3。
+这里需要注意的是，如果字符是补全触发字符，比如 '.' '->' 这些字符， triggerKind的类型必须是2, 并且需要同步发送触发补全的字符， 如果不是触发补全字符， triggerKind类型必须是1, 一般我们不发送 triggerKind 3, 避免一些服务器(比如 volar)不返回补全信息 。
 
 触发字符在你发送 ```initialize``` 请求的时候， 服务器会返回对应的补全触发字符， 一般在JSON结构的这个位置 ```message["result"]["capabilities"]["completionProvider"]["triggerCharacters"]```
 
