@@ -269,7 +269,7 @@ Client向服务器发送当前光标的位置的时候， 要注意使用 utf-16
 
 lsp-bridge安装很简单， 为了保持最新的内容， 请大家直接查看 lsp-bridge 的[README](https://github.com/manateelazycat/lsp-bridge)
 
-注意： 开发者需要打开 ```(setq lsp-bridge-enable-logt t)``` 选项， 以实时查看服务器的返回消息 （用户不用打开这个选项，以提高性能）。
+注意： 开发者需要打开 ```(setq lsp-bridge-enable-log t)``` 选项， 以实时查看服务器的返回消息 （用户不用打开这个选项，以提高性能）。
 
 ### 一起开发 lsp-bridge
 lsp-bridge发布的短短几天，已经有15位开发者加入我们的团队，贡献16种编程语言的语法补全代码，包括Java、 C、 C++、 Python、 Golang、 Rust、 Ruby、 Haskell、 Elixir、 Dart、 SCala、TypeScript、 JavaScript、 OCaml、 Erlang、 LaTeX等语言。
