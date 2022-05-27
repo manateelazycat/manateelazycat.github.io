@@ -92,18 +92,19 @@ process.stdout = io.TextIOWrapper(process.stdout, newline='', encoding="utf-8")
 先给服务器打个招呼，告诉服务器有LSP客户端在进行初始化操作。
 
 ```python
-send_to_request("initialize", {
-               "processId": os.getpid(),
-               "rootPath": root_path,
-               "clientInfo": {
-                  "name": "emacs",
-                  "version": "GNU Emacs 28.1 (build 1, x86_64-pc-linux-gnu, GTK+ Version 3.24.33, cairo version 1.17.6)\n of 2022-04-04"
-               },
-               "rootUri": project_path,
-               "capabilities": {},
-               "initializationOptions": {}
-               }, 
-               initialize_id)
+send_to_request(
+    "initialize", {
+    "processId": os.getpid(),
+    "rootPath": root_path,
+    "clientInfo": {
+       "name": "emacs",
+       "version": "GNU Emacs 28.1 (build 1, x86_64-pc-linux-gnu, GTK+ Version 3.24.33, cairo version 1.17.6)\n of 2022-04-04"
+    },
+    "rootUri": project_path,
+    "capabilities": {},
+    "initializationOptions": {}
+    }, 
+    initialize_id)
 ```
 
 这里面需要注意的几个地方：
@@ -121,23 +122,23 @@ send_to_request("initialize", {
 这一步主要是在 ```initialized``` 提醒消息发送后，马上对LSP服务器进行初始化配置，以pyright为例：
 
 ```python
-send_to_notification("workspace/didChangeConfiguration", 
-                    "settings": {
-                        "analysis": {
-                          "autoImportCompletions": true,
-                          "typeshedPaths": [],
-                          "stubPath": "",
-                          "useLibraryCodeForTypes": true,
-                          "diagnosticMode": "openFilesOnly",
-                          "typeCheckingMode": "basic",
-                          "logLevel": "verbose",
-                          "autoSearchPaths": true,
-                          "extraPaths": []
-                        },
-                        "pythonPath": "/usr/bin/python",
-                        "venvPath": ""
-                      }
-                    )
+send_to_notification(
+    "workspace/didChangeConfiguration", 
+    "settings": {
+        "analysis": {
+          "autoImportCompletions": true,
+          "typeshedPaths": [],
+          "stubPath": "",
+          "useLibraryCodeForTypes": true,
+          "diagnosticMode": "openFilesOnly",
+          "typeCheckingMode": "basic",
+          "logLevel": "verbose",
+          "autoSearchPaths": true,
+          "extraPaths": []
+        },
+        "pythonPath": "/usr/bin/python",
+        "venvPath": ""
+    })
 ```
 
 这一步的关键是，每个LSP服务器的初始化配置都不一样，填不对配置， LSP服务器也不理你，哈哈哈哈。
@@ -149,15 +150,16 @@ send_to_notification("workspace/didChangeConfiguration",
 上面初始化和配置操作完成以后，需要马上调用 textDocument/didOpen 提醒消息，告诉LSP服务器打开文件的内容， 比如：
 
 ```python
-send_to_notification("textDocument/didOpen",
-                    {
-                        "textDocument": {
-                        "uri": "file:///home/andy/foo.py"
-                        "languageId": "python",
-                        "version": 0,
-                            "text": f.read()
-                        }
-                     })
+send_to_notification(
+    "textDocument/didOpen",
+    {
+        "textDocument": {
+        "uri": "file:///home/andy/foo.py"
+        "languageId": "python",
+        "version": 0,
+            "text": f.read()
+        }
+    })
 ```
 
 一旦完成 textDocument/didOpen 消息发送后，后面就简单了，只用查看[LSP协议文档](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/)，向服务器发送消息，接到消息后解析JSON内容就可以快速开发 lsp-bridge 高级功能。
@@ -168,28 +170,29 @@ textDocument/didOpen消息后，其他消息都可以发送一个接收一个，
 首先要监听Emacs的内容变化钩子 ```after-change-functions```, Emacs编辑文件后都要发送 ```textDocument/didChange``` 提醒消息给LSP服务器，让服务器可以实时保持文本内容和编辑器是一样的， 这样做的原因是， 如果编辑器不保存文件， LSP服务器就不知道当前文件的最新内容，我们也不可能每次都发送全文件内容给服务器， 那样在处理大文件的时候会有性能问题， ```textDocument/didChange```提醒消息一般长这个样子：
 
 ```python
-send_to_notification("textDocument/didChange",
-                     {
-                      "textDocument": {
-                          "uri": "file:///home/andy/foo.py"
-                          "version": version
-                     },
-                     "contentChanges": [
-                         {
-                             "range": {
-                                 "start": {
-                                 "line": start_row - 1,
-                                 "character": start_character
-                         },
-                         "end": {
-                              "line": end_row - 1,
-                              "character": end_character
-                                }
-                          },
-                          "rangeLength": range_length,
-                          "text": text
-                      }]
-                 })
+send_to_notification(
+    "textDocument/didChange",
+    {
+        "textDocument": {
+             "uri": "file:///home/andy/foo.py"
+             "version": version
+        },
+        "contentChanges": [
+            {
+                "range": {
+                    "start": {
+                    "line": start_row - 1,
+                    "character": start_character
+            },
+            "end": {
+                 "line": end_row - 1,
+                 "character": end_character
+                   }
+             },
+             "rangeLength": range_length,
+             "text": text
+         }]
+    })
 ```
 
 
@@ -208,36 +211,38 @@ send_to_notification("textDocument/didChange",
 
 ```python
 if char in self.trigger_characters:
-    self.send_to_request("textDocument/completion",
-                         {
-                             "textDocument": {
-                                 "uri": "file:///home/andy/foo.py"
-                             },
-                             "position": {
-                                 "line": row - 1,
-                                 "character": column
-                             },
-                             "context": {
-                                 "triggerKind": 2,
-                                 "triggerCharacter": char
-                             }
-                         },
-                         request_id)
+    self.send_to_request(
+        "textDocument/completion",
+        {
+            "textDocument": {
+                "uri": "file:///home/andy/foo.py"
+            },
+            "position": {
+                "line": row - 1,
+                "character": column
+            },
+            "context": {
+                "triggerKind": 2,
+                "triggerCharacter": char
+            }
+        },
+        request_id)
 else:
-    self.send_to_request("textDocument/completion",
-                         {
-                             "textDocument": {
-                                 "uri": "file:///home/andy/foo.py"
-                             },
-                             "position": {
-                                 "line": row - 1,
-                                 "character": column
-                             },
-                             "context": {
-                                 "triggerKind": 1
-                             }
-                         },
-                         request_id)
+    self.send_to_request(
+        "textDocument/completion",
+        {
+            "textDocument": {
+                "uri": "file:///home/andy/foo.py"
+            },
+            "position": {
+                "line": row - 1,
+                "character": column
+            },
+            "context": {
+                "triggerKind": 1
+            }
+        },
+        request_id)
 ```
 
 这里需要注意的是，如果字符是补全触发字符，比如 '.' '->' 这些字符， triggerKind的类型必须是2, 并且需要同步发送触发补全的字符， 如果不是触发补全字符， triggerKind类型必须是1, 一般我们不发送 triggerKind 3, 避免一些服务器(比如 volar)不返回补全信息 。
