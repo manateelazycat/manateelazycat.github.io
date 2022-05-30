@@ -314,6 +314,59 @@ severity是消息的类型：
 
 LSP服务器如果返回 additionalTextEdits 值， 还需要处理 additionalTextEdits， 一般这个信息是包含一些附加的操作，比如 auto-import 功能。
 
+#### 后选词动态信息获取
+
+默认发送 `textDocumentation/completion` 请求时， 候选词太多， LSP服务器没法在短时间内计算所有候选词的 `documentation` 和`additionalTextEdits` 信息(一般是 auto-import 信息)， 可以在用户在补全菜单上下选择时再向LSP服务器发送 `completionItem/resolve` 请求， 以动态的获取进一步的文档和补全信息, 这样可以兼顾补全的性能和信息的完备性。
+
+注意， `completionItem/resolve` 的参数是一个 `CompletionItem` ， 也就是 `textDocumentation/completion` 请求返回的 `CompletionItem`, 你需要在LSP客户端中完整缓存 `CompletionItem` 信息， 以方便在后续的 `completionItem/resolve` 请求中使用， 如果 `CompletionItem` 信息不全， LSP服务器不会返回 `documentation` 和 `additionalTextEdits` 等附加信息， 只会原封不动的返回请求的数据， 这是一个比较细节的坑， 一定要注意。 
+
+```
+--- Send (26155): completionItem/resolve
+{
+   "id": 26155,
+   "method": "completionItem/resolve",
+   "params": {
+      "label": "expanduser",
+      "kind": 3,
+      "data": {
+         "workspacePath": "/home/andy/test.py",
+         "filePath": "/home/andy/test.py",
+         "position": {
+            "line": 2,
+            "character": 12
+         },
+         "symbolLabel": "expanduser"
+      },
+      "sortText": "09.9999.expanduser"
+   },
+   "jsonrpc": "2.0"
+}
+
+--- Recv response (26155): completionItem/resolve
+{
+   "jsonrpc": "2.0",
+   "id": 26155,
+   "result": {
+      "label": "expanduser",
+      "kind": 3,
+      "data": {
+         "workspacePath": "/home/andy/test.py",
+         "filePath": "/home/andy/test.py",
+         "position": {
+            "line": 2,
+            "character": 12
+         },
+         "symbolLabel": "expanduser"
+      },
+      "sortText": "09.9999.expanduser",
+      "documentation": {
+         "kind": "plaintext",
+         "value": "expanduser(path: PathLike[AnyStr@expanduser]) -> AnyStr@expanduser\n\nexpanduser(path: AnyStr@expanduser) -> AnyStr@expanduser\n\nExpand ~ and ~user constructions.  If user or $HOME is unknown,\ndo nothing."
+      }
+   }
+}
+```
+
 #### Character处理
 
 Client向服务器发送当前光标的位置的时候， 要注意使用 utf-16 编码来计算 Tab 和 Space 的情况， 这是LSP协议的细节差异， 虽然文本都是用 utf-8 来传输， 但是唯独 character 信息要用 utf-16 来处理， 要不没法正确处理文本有 emoji 字符时的列信息。
