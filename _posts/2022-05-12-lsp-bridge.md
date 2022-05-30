@@ -249,6 +249,60 @@ else:
 
 触发字符在你发送 ```initialize``` 请求的时候， 服务器会返回对应的补全触发字符， 一般在JSON结构的这个位置 ```message["result"]["capabilities"]["completionProvider"]["triggerCharacters"]```
 
+#### 诊断消息
+LSP 3.16的协议约定， LSP服务器会一直发送诊断信息， 一般消息格式如下：
+
+```
+{
+   "jsonrpc": "2.0",
+   "method": "textDocument/publishDiagnostics",
+   "params": {
+      "uri": "file:///home/andy/test.py",
+      "version": 0,
+      "diagnostics": [
+         {
+            "range": {
+               "start": {
+                  "line": 2,
+                  "character": 7
+               },
+               "end": {
+                  "line": 2,
+                  "character": 8
+               }
+            },
+            "message": "Expected member name after \".\"",
+            "severity": 1,
+            "source": "Pyright"
+         },
+         {
+            "range": {
+               "start": {
+                  "line": 4,
+                  "character": 7
+               },
+               "end": {
+                  "line": 4,
+                  "character": 8
+               }
+            },
+            "message": "Expected member name after \".\"",
+            "severity": 1,
+            "source": "Pyright"
+         }
+      ]
+   }
+}
+```
+
+需要注意的是，因为服务器会一直发送诊断信息，信息量会非常大，为了提高编辑器编辑性能， 建议做一个缓存处理，当编辑器idle 1秒以后再拉取最新的诊断信息渲染到编辑器窗口内。
+
+severity是消息的类型：
+1. `severity == 1` 错误诊断
+2. `severity == 2` 警告诊断
+3. `severity == 3` 信息诊断
+4. `severity == 4` 线索诊断
+
 ### 实践细节分享
 
 #### 候选词实现
