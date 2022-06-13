@@ -59,6 +59,7 @@ GHC 黑客 Dons Stewart 写的这本 Real World Haskell 系统型的讲解了Has
 就打开ielm临时写一个demo函数验证一下，当我读完以后，
 我发现99%的Emacs的问题都可以自己调试和解决。
 ```
+
 如果你花时间读完这本Emacs内置的宝典，
 你也可以像我这样写这么多扩展： [Andy Stewart](http://www.emacswiki.org/emacs/AndyStewart)
 
@@ -77,6 +78,13 @@ Vala有C的速度，Python的简洁，语法类似 C Sharp,
 基本看完这本手册以后，拿着API就可以直接开始写了。
 
 Vala写Gtk+是非常爽的。
+```
+
+### Rust: [Rust语言圣经](https://course.rs/about-book.html)
+```
+这本书应该是中文范围内将Rust最好的一本书， 所有权讲的很清晰， 基本概念的章节都通俗易懂， 进阶章节可以先看一遍， 以后遇到了当工具书来查看。
+
+作者后面讲线程和异步模型时， 理解还是很到位的， 证明作者基本功很扎实， 强烈推荐想学习Rust的同学读这本书， 一本就够了。
 ```
 
 #### 正则表达式： [精通正则表达式](https://book.douban.com/subject/2154713/)
