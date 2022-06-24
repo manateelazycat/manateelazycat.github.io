@@ -303,6 +303,113 @@ severity是消息的类型：
 3. `severity == 3` 信息诊断
 4. `severity == 4` 线索诊断
 
+#### Code Action
+LSP服务器会针对现有代码的错误提供一些自动修复的功能， 常用于Java和Rust语言。
+
+一般Code Action的消息如下：
+
+```
+{
+   "id": 46587,
+   "method": "textDocument/codeAction",
+   "params": {
+      "range": {
+         "start": {
+            "line": 3,
+            "character": 13
+         },
+         "end": {
+            "line": 3,
+            "character": 17
+         }
+      },
+      "context": {
+         "diagnostics": [
+            {
+               "range": {
+                  "start": {
+                     "line": 3,
+                     "character": 13
+                  },
+                  "end": {
+                     "line": 3,
+                     "character": 17
+                  }
+               },
+               "severity": 1,
+               "source": "rustc",
+               "message": "format argument must be a string literal",
+               "relatedInformation": [
+                  {
+                     "location": {
+                        "uri": "file:///home/andy/world_hello/src/main.rs",
+                        "range": {
+                           "start": {
+                              "line": 3,
+                              "character": 13
+                           },
+                           "end": {
+                              "line": 3,
+                              "character": 13
+                           }
+                        }
+                     },
+                     "message": "you might be missing a string literal to format with: `\"{}\", `"
+                  }
+               ]
+            }
+         ]
+      },
+      "textDocument": {
+         "uri": "file:///home/andy/world_hello/src/main.rs"
+      }
+   },
+   "jsonrpc": "2.0"
+}
+```
+
+* range: 告诉LSP服务器需要修复的区域， 一般是光标处字符串或者选中区域范围
+* context: 只有一个 diagnostics 列表， 注意诊断信息返回的时候需要保存一下当前文件所有的诊断信息， 在发送 Code Action 信息的时候， 需要根据 `range` 的范围过滤出对应的诊断信息列表发给LSP服务器; context 还有一个 `only` 字段， 可以指定服务器只修复某些类型的错误， 3.16 协议支持这些类型的 Code Action: "quickfix", "refactor", "refactor.extract", "refactor.inline", "refactor.rewrite", "source", "source.organizeImports"
+* textDocument: 文件的URI链接
+
+LSP服务器返回内容一般如下：
+
+```
+{
+   "jsonrpc": "2.0",
+   "id": 46587,
+   "result": [
+      {
+         "title": "you might be missing a string literal to format with: `\"{}\", `",
+         "kind": "quickfix",
+         "edit": {
+            "changes": {
+               "file:///home/andy/world_hello/src/main.rs": [
+                  {
+                     "range": {
+                        "start": {
+                           "line": 3,
+                           "character": 13
+                        },
+                        "end": {
+                           "line": 3,
+                           "character": 13
+                        }
+                     },
+                     "newText": "\"{}\", "
+                  }
+               ]
+            }
+         },
+         "isPreferred": true
+      }
+   ]
+}
+```
+
+LSP服务器会返回修复列表，你需要让用户选择一种修复方案后， 在Client根据LSP服务器的消息修改或替换特定的文件。
+
+
 ### 实践细节分享
 
 #### 候选词实现
