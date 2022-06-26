@@ -35,7 +35,7 @@ Emacs在LSP场景下慢的原因有两个：
 
 1. 把candidate当作接口的Key: capf所有接口的lambda函数都以 candidate 作为参数， 什么意思呢？ 就是你补全菜单看到的候选词就是capf搜索其他信息的Key， 但是LSP的协议经常会发送 candidate 一样但 annotation 不一样的候选词， 以Java语言为例， 一个同名函数经常来源于不同的模块， capf这样以 candidate 作为Key的设计， 导致LSP的补全后端要写非常多的丑陋代码去绕过这个设计缺陷。 还有一些LSP服务器会返回非常长的候选词， 比如Java LSP服务器就会返回函数的所有参数信息， 这时候我们需要引入 display-label 和 label 的设计， display-label用于候选词显示， 当候选词太长时可以用...省略号来表示， label来留存真实的候选词内容， 而capf并没有这样的机制， 我需要写大量的workaround来实现这些功能
 2. 基于接口的动态查询: capf认为你应该保存候选词列表， 不管查询 candidate、 icon、 annotation还是deprecated信息， 补全菜单绘制的时候， 都先要根据 candidates 接口函数找到所有的候选词， 再通过候选词作为Key去查询图标、 备注等信息， 最后再由补全前端进行聚合渲染。 当LSP服务器返回超过几千个的候选词(比如TypeScript)， 每次菜单绘制都需要进行大量的搜索查询操作， 极大的浪费了Emacs的计算资源。 而现代计算机的内存都是非常大的， 我们完全可以用经典的 "空间换时间" 的思路去大幅提升这一块的补全性能
-3. exit-function接口： capf的exit-function接口是假设你先插入候选词以后， 再调用补全后端的exit-function接口进行操作， 我们以 volar(vue的LSP服务器)为例，当你输入 `fun.` 的时候， 补全菜单会弹出包括 `var` 的候选词列表， 当你在 `var` 候选词按回车时， volar会通过 `additionalTextEdits` 信息告诉编辑器最后补全成 `fun?.var` 的样子， 这其中的逻辑是， LSP服务器会通过 `additionalTextEdits` 信息让编辑器把光标移动到 `.` 之前的位置， 然后插入 `?.var` 的字符串， 而capf创造的时候， 还没有LSP协议。 capf的设计是， 补全菜单敲入回车的时候就默认插入 `var` 变成 `fun.var` 的形式再调用补全后端的exit-function接口, 这样就导致在实现LSP后端的时候， 我们要写大量的workaround的代码去记住插入候选词之前的位置， 先要删除capf插入的候选词， 再进行复杂的LSP协议解析和替换字符串操作, 结果就是基于corfu实现的补全信息你总会看到Emacs '插入->删除->再插入' 引起的闪烁问题
+3. exit-function接口： capf的exit-function接口是假设你先插入候选词以后， 再调用补全后端的exit-function接口进行操作， 我们以 volar(vue的LSP服务器)为例，当你输入 `fun.` 的时候， 补全菜单会弹出包括 `var` 的候选词列表， 当你在 `var` 候选词按回车时， volar会通过 `additionalTextEdits` 信息告诉编辑器最后补全成 `fun?.var` 的样子， 这其中的逻辑是， LSP服务器会通过 `additionalTextEdits` 信息让编辑器把光标移动到 `.` 之前的位置， 然后插入 `?.var` 的字符串， 而capf创造的时候， 还没有LSP协议。 capf的设计是， 补全菜单敲入回车的时候就默认插入 `var` 变成 `fun.var` 的形式再调用补全后端的exit-function接口, 这样就导致在实现LSP后端的时候， 我们要写大量的workaround的代码去记住插入候选词之前的位置， 先要删除capf插入的候选词， 再进行复杂的LSP协议解析和替换字符串操作, 结果就是基于capf实现补全菜单在插入补全信息时， 你总会看到Emacs发生 '插入->删除->再插入' 引起的闪烁问题
 
 ### lsp-bridge 的设计
 
@@ -52,15 +52,13 @@ Emacs在LSP场景下慢的原因有两个：
 
 ### acm的策略
 
-通过前面的论述， 大家应该清楚， lsp-bridge和acm的目标都是以 "实现极致的补全速度" 为前提， 在满足这个前提的情况下， acm已经实现了对 Elisp Symbol、 LSP、 Yasnippet、 Tempel、 Words、 Path甚至是English等后端的内在支持（抱歉我的英文非常不好）， 而这些后端已经进行内置的融合设计， 比如优先显示Elisp/LSP/Words的补全信息， 才菜单第一屏底部显示Yasnippet/Tempel信息， 当你在输入文件路径的时候， 自动切换成Path后端， 当你调用 `lsp-bridge-toggle-english-helper` 命令时， 临时进入英文单词补全。 你完全不需要为了融合不同的后端， 去折腾 company-transformer/corfu-cape等机制。 同时 acm 使用了SVG来绘制图标， 而不是使用 all-the-icons, 实现像素级的对齐和菜单大小动态调整， 而不需要像corfu现在的代码实现那样， 对补全菜单进行复杂的手工计算， 我希望corfu的作者可以看一看acm的实现， corfu的代码最少可以再精简1/3。
+通过前面的论述， 大家应该清楚， lsp-bridge和acm的目标都是以 "实现极致的补全速度" 为前提， 在满足这个前提的情况下， acm已经实现了对 Elisp Symbol、 LSP、 Yasnippet、 Tempel、 Words、 Path甚至是English等后端的内在支持（抱歉我的英文非常不好）， 而这些后端已经进行内置的融合设计， 比如优先显示Elisp/LSP/Words的补全信息， 才菜单第一屏底部显示Yasnippet/Tempel信息， 当你在输入文件路径的时候， 自动切换成Path后端， 当你调用 `lsp-bridge-toggle-english-helper` 命令时， 临时进入英文单词补全。 你完全不需要为了融合不同的后端， 去折腾 company-transformer/corfu-cape等机制。 同时 acm 使用了SVG来绘制图标， 而不是使用 all-the-icons, 实现像素级的对齐和菜单大小动态调整。 我希望corfu的作者可以看一看acm的实现， 只要图标用svg来绘制， corfu代码中手工计算大小的代码就都可以删除, 让代码更加简洁。
 
 ### 最后
 lsp-bridge和acm的目标是 "实现极致的补全速度" （同样的LSP服务器配置， Emacs不应该比VSCode/VI的补全速度慢， 没有道理）， 同时做到真正的做到开箱即用， 用户只需要安装好LSP服务器后， 不用做任何配置就可以立即享受丝滑的智能语法补全体验。
 
 capf时代， 大家的体验是什么呢？ 下载lsp客户端， 折腾补全前端， 折腾图标显示， 折腾补全后端， 折腾补全后端的融合， 折腾不同插件包代码的融合， 甚至要写大量的 hook 和 advice 代码... 然后呢？ 代码补全的时候还是卡的一批， 然后用户再查看大量的文档， 折腾大量的优化技巧， 延时技巧， 关掉很多选项， 最后安慰自己， 这就是Emacs的强大， 这就是我的强大， 你看我多么厉害， 折腾了几个月后， 我的补全速度还行... (我在此处深深的鄙视这种自己骗自己的行为)
 
-我想说的是， 为什么同样的LSP服务器配置， VSCode能够做到丝滑的编程体验， Emacs以前那些LSP实现方案那么卡顿呢？ 为什么在lsp-bridge已经完全实现了丝滑补全的效果后， 社区的一部分人还要找借口攻击python的方案不够好呢？ Elisp的性能不行， Elisp通过子进程调用外部工具输出文本结果再用一大堆正则过滤的方案就叫优雅(大量过滤字符串也会导致Emacs卡顿)， 而lsp-bridge/EAF通过 "IPC + Thread" 的方法， 实现了 Elisp、 Python、 C++、 JavaScript等语言的融合编程方法(不同语言和语言库可以在运行时进行语义互调用)， 却被称为不 emacsy 的方案。 我相信这17年来写过的elisp的代码比大多数Emacser都多， 我深爱着Emacs， 也非常清楚Emacs的优势和缺陷， 我希望大家持有开放的心态去看Emacs未来的进化， 让其他编程语言和生态去扩展Emacs的能力会让Emacs变的更强更好， 我们Emacser应该有足够的生态自信去拥抱异构融合编程技术， 而不要因为恐惧固守己见， 甚至攻击自己都不了解的技术。 
-
-Emacs是强大的效率工具， 让我们有更多时间去享受生活， 是Emacs服务我们， 而不应是我们去服务工具。
+我想说的是， 为什么同样的LSP服务器配置， VSCode能够做到丝滑的编程体验， Emacs以前那些LSP实现方案那么卡顿呢？ 为什么在lsp-bridge已经完全实现了丝滑补全的效果后， 社区的一部分人还要找借口攻击Python的方案不够好呢？ Emacs社区以前大量使用子进程调用外部工具输出文本结果再用一大堆正则过滤来增强Emacs, 但是这种基于文本过滤的方法限制很多， 大部分都属于Hacking Way的范畴。 lsp-bridge/EAF通过 "IPC + Thread" 的方法， 实现了 Elisp、 Python、 C++、 JavaScript等语言的融合编程方法(不同语言和语言库可以在运行时进行语义互调用)， 经常会被误解为不 emacsy 的方案。 我相信这17年来写过的elisp的代码比大多数Emacser都多， 我深爱着Emacs， 也非常清楚Emacs的优势和缺陷， 我希望大家持有开放的心态去看Emacs未来的进化， 让其他编程语言和生态去扩展Emacs的能力会让Emacs变的更强更好， 我们Emacser应该有足够的生态自信去拥抱异构融合编程技术， 不要因为恐惧而固守己见， 甚至否定自己都不了解的技术。 
 
 希望这篇博文能够解答很多Emacser对lsp-bridge的疑问。
