@@ -52,7 +52,7 @@ Emacs在LSP场景下慢的原因有两个：
 
 ### acm的策略
 
-通过前面的论述， 大家应该清楚， lsp-bridge和acm的目标都是以 "实现极致的补全速度" 为前提， 在满足这个前提的情况下， acm已经实现了对 Elisp Symbol、 LSP、 Yasnippet、 Tempel、 Words、 Path甚至是English等后端的内在支持（抱歉我的英文非常不好）， 而这些后端已经进行内置的融合设计， 比如优先显示Elisp/LSP/Words的补全信息， 才菜单第一屏底部显示Yasnippet/Tempel信息， 当你在输入文件路径的时候， 自动切换成Path后端， 当你调用 `lsp-bridge-toggle-english-helper` 命令时， 临时进入英文单词补全。 你完全不需要为了融合不同的后端， 去折腾 company-transformer/corfu-cape等机制。 同时 acm 使用了SVG来绘制图标， 而不是使用 all-the-icons, 实现像素级的对齐和菜单大小动态调整。 我希望corfu的作者可以看一看acm的实现， 只要图标用svg来绘制， corfu代码中手工计算大小的代码就都可以删除, 让代码更加简洁。
+通过前面的论述， 大家应该清楚， lsp-bridge和acm的目标都是以 "实现极致的补全速度" 为前提， 在满足这个前提的情况下， acm已经实现了对 Elisp Symbol、 LSP、 Yasnippet、 Tempel、 Words、 Path甚至是English等后端的内在支持（抱歉我的英文非常不好）， 而这些后端已经进行内置的融合设计， 比如优先显示Elisp/LSP/Words的补全信息， 菜单第一屏底部显示Yasnippet/Tempel信息， 当你在输入文件路径的时候， 自动切换成Path后端， 当你调用 `lsp-bridge-toggle-english-helper` 命令时， 临时进入英文单词补全。 你完全不需要为了融合不同的后端， 去折腾 company-transformer/corfu-cape等机制。 同时 acm 使用了SVG来绘制图标， 而不是使用 all-the-icons, 实现像素级的对齐和菜单大小动态调整。 我希望corfu的作者可以看一看acm的实现， 只要图标用svg来绘制， corfu代码中手工计算大小的代码就都可以删除, 让代码更加简洁。
 
 ### 最后
 lsp-bridge和acm的目标是 "实现极致的补全速度" （同样的LSP服务器配置， Emacs不应该比VSCode/VI的补全速度慢， 没有道理）， 同时做到真正的做到开箱即用， 用户只需要安装好LSP服务器后， 不用做任何配置就可以立即享受丝滑的智能语法补全体验。
