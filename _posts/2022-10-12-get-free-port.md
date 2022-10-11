@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Get free port (Elisp version)
+title: Elisp Get free port
 categories: [Emacs]
 ---
 
