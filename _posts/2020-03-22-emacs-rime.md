@@ -1,23 +1,23 @@
 ---
 layout: post
-title: 折腾emacs-rime
+title: 折腾 emacs-rime
 categories: [Emacs]
 ---
 
-半年前在[在Linux版的Emacs中使用RIME输入法](https://manateelazycat.github.io/emacs/2019/09/12/make-rime-works-with-linux.html)这篇文章中详细讲述了怎么在Emacs使用RIME输入法。
+半年前在[在 Linux 版的 Emacs 中使用 RIME 输入法](https://manateelazycat.github.io/emacs/2019/09/12/make-rime-works-with-linux.html)这篇文章中详细讲述了怎么在 Emacs 使用 RIME 输入法。
 
-今天讲的仍然是在Emacs配置RIME输入法，只不过主角从[pyim](https://github.com/tumashu/pyim)换成了[emacs-rime](https://github.com/DogLooksGood/emacs-rime)。
+今天讲的仍然是在 Emacs 配置 RIME 输入法，只不过主角从[pyim](https://github.com/tumashu/pyim)换成了[emacs-rime](https://github.com/DogLooksGood/emacs-rime)。
 
-* pyim是一个强大的Emacs输入法，不但内置整套输入法，还支持RIME作为输入法后端输入
-* emacs-rime是RIME输入法的Emacs UI前端，所有行为都通过RIME配置文件来配置
+* pyim 是一个强大的 Emacs 输入法，不但内置整套输入法，还支持 RIME 作为输入法后端输入
+* emacs-rime 是 RIME 输入法的 Emacs UI 前端，所有行为都通过 RIME 配置文件来配置
 
-### 安装RIME输入法
+### 安装 RIME 输入法
 
 ```bash
 sudo pacman -S fcitx5-rime librime
 ```
 
-### 配置RIME输入法
+### 配置 RIME 输入法
 
 #### 默认使用简体
 
@@ -38,7 +38,7 @@ patch:
       states: [ 漢字, 汉字 ]
 ```
 
-#### 修改默认后选词数量
+#### 修改默认侯选词数量
 
 创建配置文件 ~/.config/fcitx/rime/default.custom.yaml，内容填上：
 
@@ -104,9 +104,9 @@ translator/dictionary: luna_pinyin.sogou
 
 ### 安装依赖
 
-因为[posframe](https://github.com/tumashu/posframe)可以让后选词显示在光标处，所以建议安装
+因为[posframe](https://github.com/tumashu/posframe)可以让侯选词显示在光标处，所以建议安装
 
-### 安装emacs-rime
+### 安装 emacs-rime
 
 ```bash
 git clone https://github.com/DogLooksGood/emacs-rime
@@ -130,11 +130,11 @@ git clone https://github.com/DogLooksGood/emacs-rime
       rime-show-candidate 'posframe)
 ```
 
-上面的配置分别设置emacs-rime读取RIME配置的路径、UI细节和使用posframe来显示候选词。
+上面的配置分别设置 emacs-rime 读取 RIME 配置的路径、UI 细节和使用 posframe 来显示候选词。
 
-### emacs-rime的优点
+### emacs-rime 的优点
 
-1. 安装相对pyim+rime要简单不少，基本就是下载拷贝就可以了，动态库编译和加载自动解决。
-2. 只是RIME的前端，代码量比较小，有问题还可以提交个补丁；
+1. 安装相对 pyim+rime 要简单不少，基本就是下载拷贝就可以了，动态库编译和加载自动解决。
+2. 只是 RIME 的前端，代码量比较小，有问题还可以提交个补丁；
 3. 中英文混合输入的体验很好，英文输入完成后，按回车或者空格就可以继续输入中文；
 4. UI默认配色不错，看着很现代；
