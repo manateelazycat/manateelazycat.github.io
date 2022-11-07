@@ -64,7 +64,7 @@ blink-search 针对上面两种场景进行归纳分析:
  
 平常我们写代码的时候， 经常需要移动光标到别的地方看一下， 再移动回来继续编写， 这时候就需要用到 Emacs 的 register 来临时保存一下正在编写代码的位置， 我自己写了两个小函数 [remember-init](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L391) 和 [remember-jump](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L397)。 敲了一段代码准备移动光标之前先执行一下 `remember-init` 命令保存当前的位置, 等看了别处的代码， 再调用一下 `remember-jump` 命令就可以立刻回到之前记录的位置， 继续编写代码。 这两个函数太小了， 依然保存在 lazycat-emacs 的 [basic-toolkit.el](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L1) 插件中， 喜欢的同学欢迎拷贝走。
 
-[goto-line-preview](https://github.com/jcs090218/goto-line-preview) 这个插件比较有意思的是， 输入跳转行号的时候， 它会实时的预览将要去的目标行， 目标位置不对的话按 `C - g` 快速取消， 节省确认的时间。
+[goto-line-preview](https://github.com/jcs090218/goto-line-preview) 这个插件比较有意思的是， 输入跳转行号的时候， 它会实时的预览将要去的目标行， 目标位置不对的话按 `C-g` 快速取消， 节省确认的时间。
  
 有时候， 我们需要对代码选中行的位置垂直插入列内容 （比如 python 某一段代码需要统一缩进一下）， 我一般是先执行`rm-set-mark` 命令标记矩形操作的起始行， 然后纵向移动光标到其他行， 最后执行 `string-insert-rectangle` 命令快速进行列数据插入。 也可以先执行 `rm-set-mark` 标记列初始位置， 然后移动光标到不同列和不同行， 最后执行 `rm-kill-region` 删除矩形选择的区域。 这个命令我经常用于 python 或者 haskell 的代码缩进调整。 
  
