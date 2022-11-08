@@ -8,8 +8,8 @@ categories: [Emacs]
 
 ### 分享原则
 1. 为了便于理解， 我尽量用图文的方式去阐述， 插件尽量以链接的方式分享， 不对插件用法展开详细阐述。
-2. 分享的插件只分享日常用的高频插件， 每种语言对应的 lang-mode 插件就不再介绍。
-3. 每个插件着重讲插件的优缺点和适用场景。
+2. 只分享日常用的高频插件， 每种语言对应的 lang-mode 插件就不再介绍。
+3. 每个插件着重讲其优缺点和适用场景。
 
 ### 初始布局
 一般我打开 Emacs 后直接就是空白启动画面或者自动恢复上次 Emacs 未关闭的文件， 退出时调用 `desktop-save` 命令保存文件列表， 启动 Emacs 后， 自动调用 `desktop-read` 命令恢复上次未关闭的文件列表, 具体的 session 保存和恢复函数可以参考我的配置 [init-session](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/config/init-session.el#L98)
