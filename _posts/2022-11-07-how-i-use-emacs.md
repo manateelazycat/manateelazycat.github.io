@@ -39,7 +39,7 @@ blink-search 针对上面两种场景进行归纳分析:
 
 ![]({{site.url}}/pics/howiuseemacs/blink-search-grep-directory.png)
 
-因为 blink-search 小心的进行多线程设计和渲染优化， 基本上不管以后加多少个搜索后端， 都会非常快速的响应， blink-search 更适合那些习惯 helm 的用户切换， 探索性搜索体验还离 ivy 有不少体验差距。
+因为 blink-search 小心的进行多线程设计和渲染优化， 基本上不管以后加多少个搜索后端， 都会非常快速的响应， blink-search 更适合那些习惯 helm 的用户切换， 探索性搜索体验还离 ivy 有不少差距。
 
 ### 代码编辑
 代码编辑的插件非常多， 我今天主要介绍我平常每天都在用的一下高频插件。
