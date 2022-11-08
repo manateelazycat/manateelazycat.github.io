@@ -12,9 +12,9 @@ categories: [Emacs]
 3. 每个插件着重讲其优缺点和适用场景。
 
 ### 初始布局
-一般我打开 Emacs 后直接就是空白启动画面或者自动恢复上次 Emacs 未关闭的文件， 退出时调用 `desktop-save` 命令保存文件列表， 启动 Emacs 后， 自动调用 `desktop-read` 命令恢复上次未关闭的文件列表, 具体的 session 保存和恢复函数可以参考我的配置 [init-session](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/config/init-session.el#L98)
+一般我的 Emacs 启动后会自动恢复上次 Emacs 未关闭的文件， 退出时调用 `desktop-save` 命令保存文件列表， 启动 Emacs 后， 自动调用 `desktop-read` 命令恢复上次未关闭的文件列表, 具体的 session 保存和恢复函数可以参考我的配置 [init-session](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/config/init-session.el#L98)
 
-每次启动 Emacs 后， 一般都有一个比较明确的目的： 写代码、 修改配置或者文件， 我一般会想一想今天打开 Emacs 想干啥， 然后直接通过快捷键打开特定的目录， 所以我的 Emacs 启动后通常都是下面这张图的布局: 
+每次启动 Emacs， 我都有一个比较明确的目的： 写代码、 修改配置或者文件， 我一般会想一想今天打开 Emacs 想干啥， 然后直接通过快捷键打开特定的目录， 所以我的 Emacs 启动后通常都是下面这张图的布局: 
 
 ![]({{site.url}}/pics/howiuseemacs/layout.png)
 
@@ -50,9 +50,9 @@ blink-search 针对上面两种场景进行归纳分析:
 
 ![]({{site.url}}/pics/howiuseemacs/lsp-bridge.png)
 
-除开语法编辑外， 我们每天写各种语言代码， 最常用的编辑就是括号编辑， 比如括号自动匹配插入、 括号内内容快速删除、 快速用括号包裹光标所在对象、 能够区分字符串和注释进行语义字符串删除， 我日常用的主要是 [grammatical-edit](https://github.com/manateelazycat/grammatical-edit), grammatical-edit 是基于[tree-sitter](https://tree-sitter.github.io/tree-sitter/)开发的， 相对于传统括号插件 paredit 的优势是能够语义的识别当前光标处的内容， 同时对更多语言提供支持， 比如 JavaScript、 ruby、 Vue.js 等等流行语言， 强在多语言兼容性上， 在编辑 Lisp 语言方面， 能力可能较 lispy 弱一点。
+除开语法编辑外， 我们每天写各种语言代码， 最常用的编辑就是括号编辑， 比如括号自动匹配插入、 括号内内容快速删除、 快速用括号包裹光标所在对象、 能够区分字符串和注释进行语义字符串删除， 我日常用的主要是 [grammatical-edit](https://github.com/manateelazycat/grammatical-edit), grammatical-edit 是基于[tree-sitter](https://tree-sitter.github.io/tree-sitter/)开发的， 相对于传统括号插件 paredit 的优势是能够语义的识别当前光标处的内容， 同时对更多语言提供支持， 比如 JavaScript、 ruby、 Vue.js 等等流行语言， 强在多语言兼容性上， 在编辑 Lisp 语言方面， 能力可能较 lispy 弱一点。 在编写 Elisp 代码的时候， 最喜欢用 `grammatical-edit-jump-out-pair-and-newline` 命令， 跳出当前括号并跳转到下一个同级缩进的地方继续编写下一个逻辑块， 如果没有类似的插件， 每天找括号在哪都会眼睛疼。 另外一个高频命令是 `grammatical-edit-wrap-round` 不用移动光标即可快速用括号包括光标处对象， 非常的方便， 基本上每天要按上百次。
 
-我们平常时，光标下的对象有各种类型， 比如 url、 string、 symbol、 email 等等， 对这些不同类型对象快速拷贝和编辑， 我一般用 [thing-edit](https://github.com/manateelazycat/thing-edit), thing-edit 的优势是， 不需要移动光标， 也不需要用渐进选中的方式去切换不同对象， 直接调用对应的命令就可以快速拷贝当前光标的不同类型对象， 比如我经常用的 `thing-copy-url`，  `thing-copy-parentheses` `thing-copy-sexp` 和 `thing-copy-line` 几个命令， 给我自己节省了大量时间， 特别是 thing-edit 搭配 [one-key](https://github.com/manateelazycat/one-key) 一起搭配体验最佳， 需要用一些偏门的 thing-edit 命令， 记不起快捷键可以随时按 ？ 弹出 one-key 菜单查看。
+我们平常时，光标下的对象有各种类型， 比如 url、 string、 symbol、 email 等等， 对这些不同类型对象快速拷贝和编辑， 我一般用 [thing-edit](https://github.com/manateelazycat/thing-edit), thing-edit 的优势是， 不需要移动光标， 也不需要用渐进选中的方式去切换不同对象， 直接调用对应的命令就可以快速拷贝当前光标的不同类型对象， 比如我经常用的 `thing-copy-url`，  `thing-copy-parentheses` `thing-copy-sexp` 和 `thing-copy-line` 几个命令， 给我自己节省了大量时间， 特别是 thing-edit 搭配 [one-key](https://github.com/manateelazycat/one-key) 一起搭配体验最佳， 需要用一些偏门的 thing-edit 命令， 记不起快捷键可以随时按 ？ 弹出 one-key 菜单查看。 大家可以参考一下我的 [thing-edit one-key](https://github.com/manateelazycat/lazycat-emacs/blob/0a03ddf781158f8d3b38f6b10d46fe559695cb7f/site-lisp/config/init-thing-edit.el#L90)。
  
 在语法块删除方面， 我个人很喜欢左右按块的方式对当前行的内容进行删除， 每天用 [delete-block](https://github.com/manateelazycat/delete-block) 都变成肌肉记忆了， 虽然 delete-block 的实现非常简单， 基本上就是基于 `syntax-move-point` 和 `subword-move-point` 两个函数简单封装， 但是这么多年体验下来， 非常好用， 基本上适用于所有编程语言， 偶尔把匹配括号删除导致括号不平衡的时候（主要是 lisp 语言), 配合 `forward-delete` 和 `backward-delete` 也可以快速调整修复。
  
@@ -61,6 +61,8 @@ blink-search 针对上面两种场景进行归纳分析:
 [open-newline](https://github.com/manateelazycat/open-newline) 这个插件功能也很简单， 就是不用移动光标， 一键在行上面或者下面开一个新行， 并根据模式自动缩进一下， 这个插件相当于替换原生 Emacs 三个功能的组合： 移动到行尾、 按回车键、 按缩进键， 每天这个命令调用无数遍， 我现在基本上都很少按单纯的回车键。 它最大的方便性是随时想换行都可以直接换， 不用移动到行尾再换行。
  
 [duplicate-line](https://github.com/manateelazycat/duplicate-line) 顾名思义， 就是快速复制当前行或者当前选中区域， move-text、 open-newline 和 duplicate-line 这三个插件都属于实现很简单， 但是每天使用频率超级高的插件， 节省了非常多的编程时间。
+
+[scroll-up-one-line](https://github.com/manateelazycat/lazycat-emacs/blob/0a03ddf781158f8d3b38f6b10d46fe559695cb7f/site-lisp/extensions/lazycat/basic-toolkit.el#L470) 和 [scroll-down-one-line](https://github.com/manateelazycat/lazycat-emacs/blob/0a03ddf781158f8d3b38f6b10d46fe559695cb7f/site-lisp/extensions/lazycat/basic-toolkit.el#L475), 这两个函数的方便是我就想一行一行的上下滚动一下屏幕， 但是不想改变当前光标的位置， 其他滚动的方法容易导致光标位置丢掉以后， 再回去找就很麻烦。
  
 平常我们写代码的时候， 经常需要移动光标到别的地方看一下， 再移动回来继续编写， 这时候就需要用到 Emacs 的 register 来临时保存一下正在编写代码的位置， 我自己写了两个小函数 [remember-init](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L391) 和 [remember-jump](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L397)。 敲了一段代码准备移动光标之前先执行一下 `remember-init` 命令保存当前的位置, 等看了别处的代码， 再调用一下 `remember-jump` 命令就可以立刻回到之前记录的位置， 继续编写代码。 这两个函数太小了， 依然保存在 lazycat-emacs 的 [basic-toolkit.el](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L1) 插件中， 喜欢的同学欢迎拷贝走。
 
@@ -69,7 +71,11 @@ blink-search 针对上面两种场景进行归纳分析:
 有时候， 我们需要对代码选中行的位置垂直插入列内容 （比如 python 某一段代码需要统一缩进一下）， 我一般是先执行`rm-set-mark` 命令标记矩形操作的起始行， 然后纵向移动光标到其他行， 最后执行 `string-insert-rectangle` 命令快速进行列数据插入。 也可以先执行 `rm-set-mark` 标记列初始位置， 然后移动光标到不同列和不同行， 最后执行 `rm-kill-region` 删除矩形选择的区域。 这个命令我经常用于 python 或者 haskell 的代码缩进调整。 
  
 ### 代码重构
-不管 LSP 的语法分析多么先进， 我们很多时候都离不开正则式的代码重构， 特别是你编写过程中的中间代码并不一定是语义完备的， 这时候 LSP 的 rename 操作是无法使用的。 我日常每天的代码重构利器是 [color-rg](https://github.com/manateelazycat/color-rg), color-rg 这个名字主要致敬我之前最爱的 [color-moccur.el](https://www.emacswiki.org/emacs/color-moccur.el), 之前一直用 color-moccur.el 很多年， 2019 年的时候用 ripgrep 重新写了一个模仿 color-moccur.el 体验的插件。 ripgrep 相对于 Elisp 原生的 grep 性能要提升很多倍， 基本上中小型项目的源码全文搜索都是秒开， 同时 color-rg.el 也实现了 wgrep 类似的功能， 按 `e` 键直接把所有 ripgrep 搜索出的内容转换成文本进行批量编辑， 批量编辑后再按`C-c C-c`就可以自动保存更改到所有编辑过的文件。 还有很多高级用法， 比如在搜索结果中进一步通过正则来二次过滤， 临时删除某一个匹配行内容等， 大家感兴趣可以读 README 各种用法。 color-rg.el 相对于 ivy 那种实时搜索的好处是， color-rg.el 有一个专门的 buffer 来存储搜索结果， 搜索 Buffer 的内容更持久和稳定些， 甚至可以把搜索结果先和其他窗口各种分屏对比后再编辑， 非常适合重度重构的应用场景。 ivy 更适合探索式搜索的应用场景， 重构方便性不如 color-rg.el 。
+不管 LSP 的语法分析多么先进， 我们很多时候都离不开正则式的代码重构， 特别是你编写过程中的中间代码并不一定是语义完备的， 这时候 LSP 的 rename 操作是无法使用的。 我日常每天的代码重构利器是 [color-rg](https://github.com/manateelazycat/color-rg), color-rg 这个名字主要致敬我之前最爱的 [color-moccur.el](https://www.emacswiki.org/emacs/color-moccur.el), 之前一直用 color-moccur.el 很多年， 2019 年的时候用 ripgrep 重新写了一个模仿 color-moccur.el 体验的插件。 ripgrep 相对于 Elisp 原生的 grep 性能要提升很多倍， 基本上中小型项目的源码全文搜索都是秒开， 同时 color-rg.el 也实现了 wgrep 类似的功能， 按 `e` 键直接把所有 ripgrep 搜索出的内容转换成文本进行批量编辑， 批量编辑后再按`C-c C-c`就可以自动保存更改到所有编辑过的文件。 还有很多高级用法， 比如在搜索结果中进一步通过正则来二次过滤， 临时删除某一个匹配行内容等。
+
+我平常用的比较多的命令是 `color-rg-search-input` 和 `color-rg-search-symbol`, 大家感兴趣可以读 color-rg README 中各种用法。 
+
+color-rg.el 相对于 ivy 那种实时搜索的好处是， color-rg.el 有一个专门的 buffer 来存储搜索结果， 搜索 Buffer 的内容更持久和稳定些， 甚至可以把搜索结果先和其他窗口各种分屏对比后再编辑， 非常适合重度重构的应用场景。 ivy 更适合探索式搜索的应用场景， 重构方便性不如 color-rg.el 。
 
 ![]({{site.url}}/pics/howiuseemacs/color-rg.png)
 
@@ -112,7 +118,11 @@ EAF 文件管理器主要的优势是双列查看， 快速预览文件非常方
 ![]({{site.url}}/pics/howiuseemacs/eaf-file-manager.png)
 
 #### EAF Git 客户端
-EAF Git 从功能上， 现阶段肯定要比 magit 弱很多。 EAF Git 的局部优势是， 多线程技术加持不会有性能问题， 比如 Linux Kernel 上百万的 Commit 可以全部展开和实时搜索， 这种规模的项目， magit 打开就直接卡死了。 同时 EAF Git 的界面和设计都是面向 Git 小白来设计的， 全是傻瓜化操作， 相对于 magit 更好入门一点。 (完整的手册可以查看 [EAF Git Client 手册](https://manateelazycat.github.io/emacs/eaf/2022/04/22/eaf-git.html))
+EAF Git 从功能上， 现阶段肯定要比 magit 弱很多。 EAF Git 的局部优势是， 多线程技术加持不会有性能问题， 比如 Linux Kernel 上百万的 Commit 可以全部展开和实时搜索， 这种规模的项目， magit 打开就直接卡死了。 同时 EAF Git 的界面和设计都是面向 Git 小白来设计的， 全是傻瓜化操作， 相对于 magit 更好入门一点。 
+
+我平常超级爱 `eaf-git-get-permalink` 和 `eaf-git-show-history` 这两个命令， `eaf-git-get-permalink` 可以直接生成当前 Git 项目中代码行的引用， 非常快速的分享代码给朋友， 不用去 github 打开文件后再点击 permalink 菜单。 `eaf-git-show-history` 主要用于分析一些错误代码是谁写的， 可以一键查询光标处所关联的 Commit 历史， 当然最后发现傻逼是自己， 哈哈哈哈。
+
+完整的手册可以查看 [EAF Git Client 手册](https://manateelazycat.github.io/emacs/eaf/2022/04/22/eaf-git.html)
 
 ![]({{site.url}}/pics/howiuseemacs/eaf-git.png)
 
@@ -148,11 +158,18 @@ EAF RSS 阅读器相对于文本版的 RSS Reader 实现， 主要有两个优�
 ![]({{site.url}}/pics/howiuseemacs/eaf-music-player.png)
 
 #### EAF 终端
-从文本操作的角度看， 客观的说 EAF 的终端没有 eshell 和 [aweshell](https://github.com/manateelazycat/aweshell) 好用， 唯一的优势是具备完全渲染VTE所有细节的能力, 同时不会因为 Emacs 自身的限制导致终端运行的命令性能降低。
+从文本操作的角度看， 客观的说 EAF 的终端没有 eshell 和 [aweshell](https://github.com/manateelazycat/aweshell) 好用， 唯一的优势是具备完全渲染 VTE 所有细节的能力, 同时不会因为 Emacs 自身的限制导致终端运行的命令性能降低。
 
 其实我因为重度开发 Emacs 插件， 经常会让 Emacs 重启来测试， 所以我用的最多的是我写的另外一个终端 [Deepin Terminal](https://github.com/manateelazycat/deepin-terminal), 哈哈哈哈。
  
 ![]({{site.url}}/pics/howiuseemacs/eaf-terminal.png)
+
+### 效率奇高的一些小命令
+我平常会用一些小命令来提升微操作效率， 有些是内置的， 有些是外部插件：
+
+* bury-buffer/unbury-buffer: 我经常用这两个命令来快速切换历史记录中前后两个 buffers， 我的理念是， 如果 buffer 切换可以通过 sort-tab 或者 bury/unbury 操作快速切换， 就不要弹出搜索框， 更直观效率也更高。
+* kill-ring-search: Emacs 内置的命令， 主要是快速搜索剪切板内容， 举例， 我要拷贝三段代码从 A 文件到其他地方， 传统的方法就是拷贝一段， 然后切换到其他文件， 粘贴后再回到 A 文件拷贝第二段， 因为 Emacs 的拷贝粘贴只能用最后一个， 这样的操作会导致反复切换文件， 效率低下。 用了 `kill-ring-search` 的操作是， 直接在 A 文件对三段文字进行拷贝， 然后切换到需要粘贴的地方， 通过 `kill-ring-search` 来搜索剪切板内拷贝的内容进行插入， 这样就能极大的减少不必要的 Buffer 切换操作, 提升了日常编程的效率。
+* sort-lines: 是 Emacs 内置命令， 主要用于快速排序选中行， 我经常用于 Python import 代码的排序， 排序后比较容易发现一些重复的代码， 或者仅仅只是让代码更加美观整洁一点。
 
 ### 写博客
 Emacs 下写博客是一种享受， 不光是 Emacs 本身的编辑功能强大， 还有几个模式我强烈推荐大家使用：
@@ -166,6 +183,7 @@ Emacs 下写博客是一种享受， 不光是 Emacs 本身的编辑功能强大
 平常编写 Emacs 插件过程中， 有几个插件强烈推荐大家使用：
 
 * ielm: M-x ielm 这个属于 Emacs 内置的 Elisp 代码解释器， 我基本上是针对一些关键 Elisp 函数， 原理在 ielm 调试通了以后才会写到 *.el 文件中执行 `load-file` 命令。
+* eval-expression: 主要用于执行简单的表达式， 操作稳定性不如 ielm, 但好在不用频繁切换 ielm, 影响思考流畅性
 * rebuilder: Emacs 内置的正则可视化调试器， 因为 Elisp 的正则一些写法和 POSIX 以及 Unix 的正则都不太一样（比如 `\(` 分组这种)， 对 Elisp 正则不熟悉的同学可以先在 rebuilder 中验证一下， rebuilder 中可以正常高亮后， 再把正则写入 `looking-at` 或者 `search-forward-regexp` 类似的函数中。
 * [find-orphan](https://github.com/manateelazycat/find-orphan): 开发过程中很多代码都是废代码， 最后清理的时候， 基本上只能用 imenu + grep 的方法， 一个一个搜索太耗费时间了， find-orphan 基于 tree-sitter 和 ripgrep 两种工具， 自动化的搜索代码中未被引用的 Elisp 代码， 提醒用户批量删除。
 * interaction-log: Emacs 内置功能， 特别是有些 bug 可以复现， 但不知道是什么命令导致的， 打开这个日志模式， 非常清楚的知道 Emacs 现在在干什么。
