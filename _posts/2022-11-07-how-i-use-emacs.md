@@ -44,16 +44,27 @@ blink-search 针对上面两种场景进行归纳分析:
 ### 代码编辑
 代码编辑的插件非常多， 我今天主要介绍我平常每天都在用的一下高频插件。
 
+#### 自动保存
 首先要介绍的是 [auto-save](https://github.com/manateelazycat/auto-save), Emacs 内在的保存机制设计得非常麻烦， 保存时到处丢临时版本内容， 很容易污染项目目录。 平常调试也比较麻烦， 万一没保存， 编译或者启动脚本都会发现行为不对。 auto-save 利用是 Emacs 内在的 idle 机制， 当用户停下手指头 1 秒以后， 它就会自动保存所有未保存的文件， 心智非常轻松。 万一保存错文件， 配合 git checkout 机制都可以快速返回修改之前的状态。 这个插件平常用基本上没有任何存在感， 但是从推荐程度来说， 它对于我来说是最重要的插件， 没有 auto-save, 我要浪费多少时间在手动保存操作上。 (感兴趣 auto-save 原理的同学可以进一步阅读[auto-save.el 源码解析](https://manateelazycat.github.io/emacs/2016/03/16/auto-save.html))
 
-代码语义编辑方面， 我主要用 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge), lsp-bridge 的好处是利用 Python 多线程的技术， 结合专门为 LSP 协议开发的 acm 补全菜单， 能够把 Emacs 代码语法补全性能提升到 VSCode 的水平。 这个插件的原理和核心技术我就不展开说了， 可以读我以前写的文章 [LSP-Bridge 架构设计与 LSP 协议解析](https://manateelazycat.github.io/emacs/2022/05/12/lsp-bridge.html) 和 [为什么 lsp-bridge 不用 capf?](https://manateelazycat.github.io/emacs/2022/06/26/why-lsp-bridge-not-use-capf.html) 。
+#### 智能补全
+代码语义编辑方面， 我主要用 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge), lsp-bridge 的好处是利用 Python 多线程的技术， 结合专门为 LSP 协议开发的 acm 补全菜单， 能够把 Emacs 代码语法补全性能提升到 VSCode 的水平。 
+
+这个插件的原理和核心技术我就不展开说了， 可以读我以前写的文章 [LSP-Bridge 架构设计与 LSP 协议解析](https://manateelazycat.github.io/emacs/2022/05/12/lsp-bridge.html) 和 [为什么 lsp-bridge 不用 capf?](https://manateelazycat.github.io/emacs/2022/06/26/why-lsp-bridge-not-use-capf.html) 。
 
 ![]({{site.url}}/pics/howiuseemacs/lsp-bridge.png)
 
-除开语法编辑外， 我们每天写各种语言代码， 最常用的编辑就是括号编辑， 比如括号自动匹配插入、 括号内内容快速删除、 快速用括号包裹光标所在对象、 能够区分字符串和注释进行语义字符串删除， 我日常用的主要是 [grammatical-edit](https://github.com/manateelazycat/grammatical-edit), grammatical-edit 是基于[tree-sitter](https://tree-sitter.github.io/tree-sitter/)开发的， 相对于传统括号插件 paredit 的优势是能够语义的识别当前光标处的内容， 同时对更多语言提供支持， 比如 JavaScript、 ruby、 Vue.js 等等流行语言， 强在多语言兼容性上， 在编辑 Lisp 语言方面， 能力可能较 lispy 弱一点。 在编写 Elisp 代码的时候， 最喜欢用 `grammatical-edit-jump-out-pair-and-newline` 命令， 跳出当前括号并跳转到下一个同级缩进的地方继续编写下一个逻辑块， 如果没有类似的插件， 每天找括号在哪都会眼睛疼。 另外一个高频命令是 `grammatical-edit-wrap-round` 不用移动光标即可快速用括号包括光标处对象， 非常的方便， 基本上每天要按上百次。
+#### 括号补全
+除开语法编辑外， 我们每天写各种语言代码， 最常用的编辑就是括号编辑， 比如括号自动匹配插入、 括号内内容快速删除、 快速用括号包裹光标所在对象、 能够区分字符串和注释进行语义字符串删除， 我日常用的主要是 [grammatical-edit](https://github.com/manateelazycat/grammatical-edit), grammatical-edit 是基于[tree-sitter](https://tree-sitter.github.io/tree-sitter/)开发的， 相对于传统括号插件 paredit 的优势是能够语义的识别当前光标处的内容， 同时对更多语言提供支持， 比如 JavaScript、 ruby、 Vue.js 等等流行语言， 强在多语言兼容性上， 在编辑 Lisp 语言方面， 能力可能较 lispy 弱一点。 
 
-我们平常时，光标下的对象有各种类型， 比如 url、 string、 symbol、 email 等等， 对这些不同类型对象快速拷贝和编辑， 我一般用 [thing-edit](https://github.com/manateelazycat/thing-edit), thing-edit 的优势是， 不需要移动光标， 也不需要用渐进选中的方式去切换不同对象， 直接调用对应的命令就可以快速拷贝当前光标的不同类型对象， 比如我经常用的 `thing-copy-url`，  `thing-copy-parentheses` `thing-copy-sexp` 和 `thing-copy-line` 几个命令， 给我自己节省了大量时间， 特别是 thing-edit 搭配 [one-key](https://github.com/manateelazycat/one-key) 一起搭配体验最佳， 需要用一些偏门的 thing-edit 命令， 记不起快捷键可以随时按 ？ 弹出 one-key 菜单查看。 大家可以参考一下我的 [thing-edit one-key](https://github.com/manateelazycat/lazycat-emacs/blob/0a03ddf781158f8d3b38f6b10d46fe559695cb7f/site-lisp/config/init-thing-edit.el#L90)。
+在编写 Elisp 代码的时候， 最喜欢用 `grammatical-edit-jump-out-pair-and-newline` 命令， 跳出当前括号并跳转到下一个同级缩进的地方继续编写下一个逻辑块， 如果没有类似的插件， 每天找括号在哪都会眼睛疼。 另外一个高频命令是 `grammatical-edit-wrap-round` 不用移动光标即可快速用括号包括光标处对象， 非常的方便， 基本上每天要按上百次。
+
+#### 光标对象智能感知
+我们平常时，光标下的对象有各种类型， 比如 url、 string、 symbol、 email 等等， 对这些不同类型对象快速拷贝和编辑， 我一般用 [thing-edit](https://github.com/manateelazycat/thing-edit), thing-edit 的优势是， 不需要移动光标， 也不需要用渐进选中的方式去切换不同对象， 直接调用对应的命令就可以快速拷贝当前光标的不同类型对象， 比如我经常用的 `thing-copy-url`，  `thing-copy-parentheses` `thing-copy-sexp` 和 `thing-copy-line` 几个命令， 给我自己节省了大量时间， 特别是 thing-edit 搭配 [one-key](https://github.com/manateelazycat/one-key) 一起搭配体验最佳， 需要用一些偏门的 thing-edit 命令， 记不起快捷键可以随时按 ？ 弹出 one-key 菜单查看。 
+
+大家可以参考一下我的 [thing-edit one-key](https://github.com/manateelazycat/lazycat-emacs/blob/0a03ddf781158f8d3b38f6b10d46fe559695cb7f/site-lisp/config/init-thing-edit.el#L90)。
  
+#### 代码编辑小插件
 在语法块删除方面， 我个人很喜欢左右按块的方式对当前行的内容进行删除， 每天用 [delete-block](https://github.com/manateelazycat/delete-block) 都变成肌肉记忆了， 虽然 delete-block 的实现非常简单， 基本上就是基于 `syntax-move-point` 和 `subword-move-point` 两个函数简单封装， 但是这么多年体验下来， 非常好用， 基本上适用于所有编程语言， 偶尔把匹配括号删除导致括号不平衡的时候（主要是 lisp 语言), 配合 `forward-delete` 和 `backward-delete` 也可以快速调整修复。
  
 [move-text](https://github.com/manateelazycat/move-text) 这个插件非常简单就是把当前行的内容移动到上一行或者下一行, 简单易懂非常方便, 最早是在 emacswiki 上发布的， 后续慢慢从 [lazycat-emacs](https://github.com/manateelazycat/lazycat-emacs)中独立出来。
@@ -64,12 +75,15 @@ blink-search 针对上面两种场景进行归纳分析:
 
 [scroll-up-one-line](https://github.com/manateelazycat/lazycat-emacs/blob/0a03ddf781158f8d3b38f6b10d46fe559695cb7f/site-lisp/extensions/lazycat/basic-toolkit.el#L470) 和 [scroll-down-one-line](https://github.com/manateelazycat/lazycat-emacs/blob/0a03ddf781158f8d3b38f6b10d46fe559695cb7f/site-lisp/extensions/lazycat/basic-toolkit.el#L475), 这两个函数的方便是我就想一行一行的上下滚动一下屏幕， 但是不想改变当前光标的位置， 其他滚动的方法容易导致光标位置丢掉以后， 再回去找就很麻烦。
  
+#### 位置导航
 平常我们写代码的时候， 经常需要移动光标到别的地方看一下， 再移动回来继续编写， 这时候就需要用到 Emacs 的 register 来临时保存一下正在编写代码的位置， 我自己写了两个小函数 [remember-init](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L391) 和 [remember-jump](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L397)。 敲了一段代码准备移动光标之前先执行一下 `remember-init` 命令保存当前的位置, 等看了别处的代码， 再调用一下 `remember-jump` 命令就可以立刻回到之前记录的位置， 继续编写代码。 这两个函数太小了， 依然保存在 lazycat-emacs 的 [basic-toolkit.el](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L1) 插件中， 喜欢的同学欢迎拷贝走。
-
-[kill-ring-search](https://github.com/nschum/kill-ring-search.el): 主要是快速搜索剪切板内容， 举例， 我要拷贝三段代码从 A 文件到其他地方， 传统的方法就是拷贝一段， 然后切换到其他文件， 粘贴后再回到 A 文件拷贝第二段， 因为 Emacs 的拷贝粘贴只能用最后一个， 这样的操作会导致反复切换文件， 效率低下。 用了 `kill-ring-search` 的操作是， 直接在 A 文件对三段文字进行拷贝， 然后切换到需要粘贴的地方， 通过 `kill-ring-search` 来搜索剪切板内拷贝的内容进行插入， 这样就能极大的减少不必要的 Buffer 切换操作, 提升了日常编程的效率。
 
 [goto-line-preview](https://github.com/jcs090218/goto-line-preview) 这个插件比较有意思的是， 输入跳转行号的时候， 它会实时的预览将要去的目标行， 目标位置不对的话按 `C-g` 快速取消， 节省确认的时间。
  
+#### 搜索剪切板
+[kill-ring-search](https://github.com/nschum/kill-ring-search.el): 主要是快速搜索剪切板内容， 举例， 我要拷贝三段代码从 A 文件到其他地方， 传统的方法就是拷贝一段， 然后切换到其他文件， 粘贴后再回到 A 文件拷贝第二段， 因为 Emacs 的拷贝粘贴只能用最后一个， 这样的操作会导致反复切换文件， 效率低下。 用了 `kill-ring-search` 的操作是， 直接在 A 文件对三段文字进行拷贝， 然后切换到需要粘贴的地方， 通过 `kill-ring-search` 来搜索剪切板内拷贝的内容进行插入， 这样就能极大的减少不必要的 Buffer 切换操作, 提升了日常编程的效率。
+
+#### 矩形操作
 有时候， 我们需要对代码选中行的位置垂直插入列内容 （比如 python 某一段代码需要统一缩进一下）， 我一般是先执行`rm-set-mark` 命令标记矩形操作的起始行， 然后纵向移动光标到其他行， 最后执行 `string-insert-rectangle` 命令快速进行列数据插入。 也可以先执行 `rm-set-mark` 标记列初始位置， 然后移动光标到不同列和不同行， 最后执行 `rm-kill-region` 删除矩形选择的区域。 这个命令我经常用于 python 或者 haskell 的代码缩进调整。 
  
 ### 代码重构
@@ -100,7 +114,7 @@ color-rg.el 相对于 ivy 那种实时搜索的好处是， color-rg.el 有一�
 
 ![]({{site.url}}/pics/howiuseemacs/insert-translated-name.gif)
 
-写 README 的时候， 经常需要狂飙英文， 所以这时候一个方便的英文单词补全插件就非常重要。 自己写过[company-english-helper](https://github.com/manateelazycat/company-english-helper)和[corfu-english-helper](https://github.com/manateelazycat/corfu-english-helper)， 但是性能都不胜理想， 主要的原因是当英文词典的单词数量达到 10 万规模时， 即时把所有单词都弄到内存中去搜索， Elisp 实时过滤 10 万个单词都非常吃力。 目前主要用 lsp-bridge 的 [search_sdcv_words.py](https://github.com/manateelazycat/lsp-bridge/blob/fc7384d2850ad580fc32ecb490333fb4438cc099/core/search_sdcv_words.py#L1)后端来实现英文补全， `search_sdcv_words` 后端把 10 万单词的过滤都在 Python 线程中实现， Python 搜索 10 万单词的性能基本上是瞬间， 所以最终的差别是， Python 实现英文单词补全可以做到丝滑的补全体验， 而纯粹的 Elisp 实现总是有一卡一卡的感觉。
+写 README 的时候， 经常需要狂飙英文， 所以这时候一个方便的英文单词补全插件就非常重要。 自己写过[company-english-helper](https://github.com/manateelazycat/company-english-helper)和[corfu-english-helper](https://github.com/manateelazycat/corfu-english-helper)， 但是性能都不胜理想， 主要的原因是当英文词典的单词数量达到 10 万规模时， 即时把所有单词都弄到内存中去搜索， Elisp 实时过滤 10 万个单词都非常吃力。 目前主要用 lsp-bridge 的 [search_sdcv_words.py](https://github.com/manateelazycat/lsp-bridge/blob/fc7384d2850ad580fc32ecb490333fb4438cc099/core/search_sdcv_words.py#L1)后端来实现英文补全， `search_sdcv_words` 后端把 10 万单词的过滤都在 Python 线程中实现， Python 搜索 10 万单词的性能基本上是瞬间， 所以最终的差别是， Python 实现英文单词补全可以做到丝滑的补全体验， 而纯粹的 Elisp 实现总是有一卡一卡的感觉。 安装 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge) 后， 执行 `lsp-bridge-toggle-sdcv-helper` 命令来激活英文书写助手。
 
 ![]({{site.url}}/pics/howiuseemacs/acm-english-helper.png)
 
@@ -116,6 +130,12 @@ color-rg.el 相对于 ivy 那种实时搜索的好处是， color-rg.el 有一�
 #### EAF 文件管理器
 EAF 文件管理器主要的优势是双列查看， 快速预览文件非常方便， 特别是相册目录下， 一路往下按 `j` 键就可以快速的查看不同的图片。
 同时整个文件管理器的逻辑实现都是基于语义结构体写的， 不管怎么扩展文件管理器的功能， 代码基础都是非常健壮的， 比 dired 那种基于正则表达式 hacking 的方式， 代码更容易维护。
+
+我经常用的主要有几个功能：
+* `eaf-py-proxy-mark_file_by_extension`: 按 `*` 键， 根据扩展名选中文件， 再按 `f` 批量打开， 或者按 `x` 批量删除， 或者按 `t` 反选其他文件。
+* `eaf-py-proxy-search_file`: 按 `C-s`, 可以在当前目录下快速搜索文件， 支持模糊、 首字母和拼音搜索。
+* `eaf-py-proxy-find_files`: 按 `G` 键， 自动在目录下递归搜索文件， 因为是基于 [fd](https://github.com/sharkdp/fd) 实现的， 基本上是秒搜。
+* `eaf-py-proxy-batch_rename`: 按 `e` 键， 自动把当前目录转换成文本， 编辑文本内容后， `C-c C-c` 批量更改文件名。
 
 ![]({{site.url}}/pics/howiuseemacs/eaf-file-manager.png)
 
@@ -140,7 +160,14 @@ EAF 图片浏览器最大的优势就是， 不管多大的图片都能够无极
 
 
 #### EAF 浏览器
-EAF 浏览器基本上就是 EAF 这个项目最重要的应用， 内置 V8 的 JavaScript 引擎就不用多说， 包括 DarkerReader、 Vimium、 EditInEmacs、 ReaderMode 等日常通用的快捷键功能都非常齐备。 这样的理念是， 希望 Emacs 承担窗口管理器的角色， Elisp 充当胶水语言的角色， 通过 EAF 程序来实现一致的键盘操作， 在 Emacs 内部统一管理比外部的窗口管理器更统一， 集成协作效率更高。
+EAF 浏览器基本上就是 EAF 这个项目最重要的应用， 内置 V8 的 JavaScript 引擎就不用多说， 包括 DarkerReader、 Vimium、 EditInEmacs、 ReaderMode 等日常通用的快捷键功能都非常齐备。 
+
+这样的理念是， 把 Emacs 当作窗口管理器， Elisp 充当胶水语言， 然后结合 EAF 程序来实现一致的键盘操作， 在 Emacs 内部统一管理比外部窗口管理器的操作方式更统一， 集成协作效率更高。
+
+主要的快捷操作是： 
+* 按 `f` 键， 进入链接快速跳转， 输入两个字符打开任意一个链接。
+* 按 `e` 键， 底部弹出输入框， 由 Emacs 来编辑输入框的内容， 要比浏览器的编辑效率高很多。
+* 按 `C-M-c` 键， 根据提示， 自动拷贝代码块， 不需要用鼠标在代码块中滑动全选
 
 ![]({{site.url}}/pics/howiuseemacs/eaf-browser.png)
 
@@ -166,7 +193,7 @@ EAF RSS 阅读器相对于文本版的 RSS Reader 实现， 主要有两个优�
  
 ![]({{site.url}}/pics/howiuseemacs/eaf-terminal.png)
 
-### 效率奇高的一些小命令
+### 贴心小命令
 我平常会用一些小命令来提升微操作效率， 有些是内置的， 有些是外部插件：
 
 * bury-buffer/unbury-buffer: 我经常用这两个命令来快速切换历史记录中前后两个 buffers， 我的理念是， 如果 buffer 切换可以通过 sort-tab 或者 bury/unbury 操作快速切换， 就不要弹出搜索框， 更直观效率也更高。
@@ -185,6 +212,7 @@ Emacs 下写博客是一种享受， 不光是 Emacs 本身的编辑功能强大
 
 * ielm: M-x ielm 这个属于 Emacs 内置的 Elisp 代码解释器， 我基本上是针对一些关键 Elisp 函数， 原理在 ielm 调试通了以后才会写到 *.el 文件中执行 `load-file` 命令。
 * eval-expression: 主要用于执行简单的表达式， 操作稳定性不如 ielm, 但好在不用频繁切换 ielm, 影响思考流畅性
+* refresh-file: 我自己写了一个小命令 [refresh-file](https://github.com/manateelazycat/lazycat-emacs/blob/4992104ebfc765ddd84bb7fd3fdebd15bea2f66b/site-lisp/extensions/lazycat/basic-toolkit.el#L480), 功能是自动格式化 *.el 文件， 保存并自动加载。 我把这个命令绑定到 `F2` 按键上， 我自己的习惯是， 写完插件后， 按一下 `F2` 快速更新当前插件代码， 再测试看效果， 改动以后继续`F2`， 周而复始， 直到完成插件功能。
 * rebuilder: Emacs 内置的正则可视化调试器， 因为 Elisp 的正则一些写法和 POSIX 以及 Unix 的正则都不太一样（比如 `\(` 分组这种)， 对 Elisp 正则不熟悉的同学可以先在 rebuilder 中验证一下， rebuilder 中可以正常高亮后， 再把正则写入 `looking-at` 或者 `search-forward-regexp` 类似的函数中。
 * [find-orphan](https://github.com/manateelazycat/find-orphan): 开发过程中很多代码都是废代码， 最后清理的时候， 基本上只能用 imenu + grep 的方法， 一个一个搜索太耗费时间了， find-orphan 基于 tree-sitter 和 ripgrep 两种工具， 自动化的搜索代码中未被引用的 Elisp 代码， 提醒用户批量删除。
 * interaction-log: Emacs 内置功能， 特别是有些 bug 可以复现， 但不知道是什么命令导致的， 打开这个日志模式， 非常清楚的知道 Emacs 现在在干什么。
