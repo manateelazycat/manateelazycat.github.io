@@ -148,7 +148,7 @@ EAF RSS 阅读器相对于文本版的 RSS Reader 实现， 主要有两个优�
 ![]({{site.url}}/pics/howiuseemacs/eaf-music-player.png)
 
 #### EAF 终端
-从文本操作的角度看， 客观的说 EAF 的终端没有 eshell 和 [aweshell](https://github.com/manateelazycat/aweshell)好用， 唯一的优势就是具备完全渲染所有终端效果, 同时不会因为 Emacs 线程限制导致终端运行的命令比较慢。
+从文本操作的角度看， 客观的说 EAF 的终端没有 eshell 和 [aweshell](https://github.com/manateelazycat/aweshell) 好用， 唯一的优势就是具备完全渲染所有终端效果, 同时不会因为 Emacs 线程限制导致终端运行的命令比较慢。
 
 其实我因为重度开发 Emacs 插件， 经常会让 Emacs 重启来测试， 所以我用的最多的是我写的另外一个终端 [Deepin Terminal](https://github.com/manateelazycat/deepin-terminal), 哈哈哈哈。
  
