@@ -159,7 +159,7 @@ Emacs 下写博客是一种享受， 不光是 Emacs 本身的编辑功能强大
 
 * [emacs-rime](https://github.com/DogLooksGood/emacs-rime): 强烈推荐狗哥的 RIME 输入法前端， 可以记住不同 Buffer 的输入状态， 特别是在同时写博客和写代码的时候， 不用切换一次 Buffer 就切换一次输入法， 简直太方便了， 比 scim 时代的 scim-bridge 还要方便。
 * [olivetti](https://github.com/rnkn/olivetti): 这个插件主要是让 Emacs 特定的 Buffer， 比如 Markdown 和 OrgMode 的内容可以居中显示， 左右两边保留一定的空白， 避免屏幕太宽的时候， 左右横向大幅度看文字内容太累。
-* [deno-bridge-jieba](https://github.com/ginqi7/deno-bridge-jieba): 这个插件基于 [deno-bridge](https://github.com/ginqi7/deno-bridge-jieba) 和 [deno-jieba](https://github.com/wangbinyq/deno-jieba/tree/wasm)来实现， 因为 deno-jieba 是基于 Rust 和 WASM 实现的， 这个插件也许是 Emacs 里面最快的中文分词插件了， 这个插件的主要好处是， 写中文博客可以按照中文分词的方式去移动或删除单词， 不用一个一个汉字的去处理， 效率提高了很多， 强烈推荐。
+* [deno-bridge-jieba](https://github.com/ginqi7/deno-bridge-jieba): 主要利用了 [deno-bridge](https://github.com/ginqi7/deno-bridge-jieba) 和 [deno-jieba](https://github.com/wangbinyq/deno-jieba/tree/wasm)这两种技术， 特别是 deno-jieba 是由 Rust 通过 WASM 实现的， 它也许是 Emacs 里面最快的中文分词插件， 要好处是， 按照中文分词的边界去移动或删除单词， 不用一个一个汉字的去处理， 中文编辑效率提高了很多， 强烈推荐。
 * [pangu-spacing](https://github.com/coldnew/pangu-spacing): 写技术博客经常会存在中文和各种英文专业术语混合输入， 我的强迫症是在英文单词和中文之间必须加空格， 要不哪看哪不舒服， 但是创作的时候真的容易忘记这件事情， 再回过头一个一个的给英文单词加空格就很烦躁， 这个插件就是在特定模式（比如 markdown)下， 给所有英文周围加空格， 全自动的， 比较省心。
 
 ### Elisp 编程
