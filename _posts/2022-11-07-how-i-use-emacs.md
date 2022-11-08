@@ -66,6 +66,8 @@ blink-search 针对上面两种场景进行归纳分析:
  
 平常我们写代码的时候， 经常需要移动光标到别的地方看一下， 再移动回来继续编写， 这时候就需要用到 Emacs 的 register 来临时保存一下正在编写代码的位置， 我自己写了两个小函数 [remember-init](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L391) 和 [remember-jump](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L397)。 敲了一段代码准备移动光标之前先执行一下 `remember-init` 命令保存当前的位置, 等看了别处的代码， 再调用一下 `remember-jump` 命令就可以立刻回到之前记录的位置， 继续编写代码。 这两个函数太小了， 依然保存在 lazycat-emacs 的 [basic-toolkit.el](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L1) 插件中， 喜欢的同学欢迎拷贝走。
 
+[kill-ring-search](https://github.com/nschum/kill-ring-search.el): 主要是快速搜索剪切板内容， 举例， 我要拷贝三段代码从 A 文件到其他地方， 传统的方法就是拷贝一段， 然后切换到其他文件， 粘贴后再回到 A 文件拷贝第二段， 因为 Emacs 的拷贝粘贴只能用最后一个， 这样的操作会导致反复切换文件， 效率低下。 用了 `kill-ring-search` 的操作是， 直接在 A 文件对三段文字进行拷贝， 然后切换到需要粘贴的地方， 通过 `kill-ring-search` 来搜索剪切板内拷贝的内容进行插入， 这样就能极大的减少不必要的 Buffer 切换操作, 提升了日常编程的效率。
+
 [goto-line-preview](https://github.com/jcs090218/goto-line-preview) 这个插件比较有意思的是， 输入跳转行号的时候， 它会实时的预览将要去的目标行， 目标位置不对的话按 `C-g` 快速取消， 节省确认的时间。
  
 有时候， 我们需要对代码选中行的位置垂直插入列内容 （比如 python 某一段代码需要统一缩进一下）， 我一般是先执行`rm-set-mark` 命令标记矩形操作的起始行， 然后纵向移动光标到其他行， 最后执行 `string-insert-rectangle` 命令快速进行列数据插入。 也可以先执行 `rm-set-mark` 标记列初始位置， 然后移动光标到不同列和不同行， 最后执行 `rm-kill-region` 删除矩形选择的区域。 这个命令我经常用于 python 或者 haskell 的代码缩进调整。 
@@ -168,7 +170,6 @@ EAF RSS 阅读器相对于文本版的 RSS Reader 实现， 主要有两个优�
 我平常会用一些小命令来提升微操作效率， 有些是内置的， 有些是外部插件：
 
 * bury-buffer/unbury-buffer: 我经常用这两个命令来快速切换历史记录中前后两个 buffers， 我的理念是， 如果 buffer 切换可以通过 sort-tab 或者 bury/unbury 操作快速切换， 就不要弹出搜索框， 更直观效率也更高。
-* kill-ring-search: Emacs 内置的命令， 主要是快速搜索剪切板内容， 举例， 我要拷贝三段代码从 A 文件到其他地方， 传统的方法就是拷贝一段， 然后切换到其他文件， 粘贴后再回到 A 文件拷贝第二段， 因为 Emacs 的拷贝粘贴只能用最后一个， 这样的操作会导致反复切换文件， 效率低下。 用了 `kill-ring-search` 的操作是， 直接在 A 文件对三段文字进行拷贝， 然后切换到需要粘贴的地方， 通过 `kill-ring-search` 来搜索剪切板内拷贝的内容进行插入， 这样就能极大的减少不必要的 Buffer 切换操作, 提升了日常编程的效率。
 * sort-lines: 是 Emacs 内置命令， 主要用于快速排序选中行， 我经常用于 Python import 代码的排序， 排序后比较容易发现一些重复的代码， 或者仅仅只是让代码更加美观整洁一点。
 
 ### 写博客
