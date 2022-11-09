@@ -76,6 +76,8 @@ blink-search 针对上面两种场景进行归纳分析:
 [duplicate-line](https://github.com/manateelazycat/duplicate-line) 顾名思义， 就是快速复制当前行或者当前选中区域， move-text、 open-newline 和 duplicate-line 这三个插件都属于实现很简单， 但是每天使用频率超级高的插件， 节省了非常多的编程时间。
 
 [scroll-up-one-line](https://github.com/manateelazycat/lazycat-emacs/blob/0a03ddf781158f8d3b38f6b10d46fe559695cb7f/site-lisp/extensions/lazycat/basic-toolkit.el#L470) 和 [scroll-down-one-line](https://github.com/manateelazycat/lazycat-emacs/blob/0a03ddf781158f8d3b38f6b10d46fe559695cb7f/site-lisp/extensions/lazycat/basic-toolkit.el#L475), 这两个函数的方便是我就想一行一行的上下滚动一下屏幕， 但是不想改变当前光标的位置， 其他滚动的方法容易导致光标位置丢掉以后， 再回去找就很麻烦。
+
+[visual-regexp](https://github.com/benma/visual-regexp.el): 我主要用这个插件提供的 `vr/query-replace` 来替代 Emacs 内置的 `query-replace-regexp`, 它的作用是可视化的告诉你正则替换的效果。
  
 #### 位置导航
 平常我们写代码的时候， 经常需要移动光标到别的地方看一下， 再移动回来继续编写， 这时候就需要用到 Emacs 的 register 来临时保存一下正在编写代码的位置， 我自己写了两个小函数 [remember-init](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L391) 和 [remember-jump](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L397)。 敲了一段代码准备移动光标之前先执行一下 `remember-init` 命令保存当前的位置, 等看了别处的代码， 再调用一下 `remember-jump` 命令就可以立刻回到之前记录的位置， 继续编写代码。 这两个函数太小了， 依然保存在 lazycat-emacs 的 [basic-toolkit.el](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L1) 插件中， 喜欢的同学欢迎拷贝走。
