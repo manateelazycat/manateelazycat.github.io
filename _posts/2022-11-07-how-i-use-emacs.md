@@ -21,6 +21,7 @@ categories: [Emacs]
 * 最上面标签栏是 [sort-tab](https://github.com/manateelazycat/sort-tab), sort-tab 会根据文件使用的频率自动对标签进行排序， 用的越多的 Buffer 越靠左边， 它不像传统的标签栏那样按照文件的类型或者项目的目录进行模式划分， 只按照使用频率来动态排序， 这样的好处是， 不管你当前在进行哪种类型的操作， 都可以快速在最左边的几个标签中快速切换， 效率特别高， 针对使用频率低的 Buffer 再结合搜索插件进行快速过滤， 非常的直观方便。 同时 sort-tab 是用顶部固定窗口的方式实现的， 不管怎么分屏都只占用一行高度， 节省了笔记本宝贵的纵向空间。
 * 中间是 [EAF](https://github.com/emacs-eaf/emacs-application-framework) 的文件管理器应用， EAF 文件管理器相对于传统的 dired 主要的好处是， 双栏设计， 非常方便快速预览文件和图片， 内置多线程技术， 不会因为文件数量多而导致的卡顿。 同时， 文件的信息都是按照结构体的方式进行存储计算， 扩展新功能的时候， 不用担心像 dired 那样基于文本正则表达式的方式各种魔改， 也不会发生 dired 各种高级插件之间的相互冲突。 最后， 像大家常用的快速标记文件、 递归查找文件、 整个目录转换成文本后批量编辑的功能， EAF File Manager 都已经完整实现。
 * 最下面是 [awesome-tray](https://github.com/manateelazycat/awesome-tray), awesome-tray 的优点是直接隐藏 mode-line, 把必须的状态信息（比如位置、 mode、 日期、 时间、 父目录、 Git 信息等）放到 minibuffer 最右边， 非常节省纵向空间， 也不用担心开启了新的 mode 把 mode-line 弄乱后再写很多补丁去美化 mode-line, 目前社区已经支持 24 种以上插件去根据环境显示各种各样的信息。
+* 我主要用 [smex](https://github.com/nonsequitur/smex) 搭配 awesome-tray 使用来替代原生的 `M-x`, smex 主要的功能就是对常用命令进行记录， 下次 `M-x` 的时候会先对常用命令按照使用频率进行排序， 方便快速执行常用命令。 在常用命令之间切换也很简单， 直接在 minibuffer 上按 `C-s` 或 `C-r` 即可。
  
 ### 搜索切换
 搜索插件是我使用频率最高的插件， 以前开发过 anything、 helm、 snails 的插件， 主要不满意的地方是搜索数据多的时候会卡一下。 最近基于 Python 多线程技术开发了 [blink-search](https://github.com/manateelazycat/blink-search)， 保证不管多大的搜索数据， Emacs 永远都绘制屏幕可视区域的内容。
