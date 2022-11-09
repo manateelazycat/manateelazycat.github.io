@@ -57,10 +57,12 @@ blink-search 针对上面两种场景进行归纳分析:
 
 ![]({{site.url}}/pics/howiuseemacs/lsp-bridge.png)
 
-#### 括号补全
+#### 括号插件
 除开语法编辑外， 我们每天写各种语言代码， 最常用的编辑就是括号编辑， 比如括号自动匹配插入、 括号内内容快速删除、 快速用括号包裹光标所在对象、 能够区分字符串和注释进行语义字符串删除， 我日常用的主要是 [grammatical-edit](https://github.com/manateelazycat/grammatical-edit), grammatical-edit 是基于[tree-sitter](https://tree-sitter.github.io/tree-sitter/)开发的， 相对于传统括号插件 paredit 的优势是能够语义的识别当前光标处的内容， 同时对更多语言提供支持， 比如 JavaScript、 ruby、 Vue.js 等等流行语言， 强在多语言兼容性上， 在编辑 Lisp 语言方面， 能力可能较 lispy 弱一点。 
 
 在编写 Elisp 代码的时候， 最喜欢用 `grammatical-edit-jump-out-pair-and-newline` 命令， 跳出当前括号并跳转到下一个同级缩进的地方继续编写下一个逻辑块， 如果没有类似的插件， 每天找括号在哪都会眼睛疼。 另外一个高频命令是 `grammatical-edit-wrap-round` 不用移动光标即可快速用括号包括光标处对象， 非常的方便， 基本上每天要按上百次。
+
+[highlight-parentheses](https://github.com/manateelazycat/lazycat-emacs/blob/47ed27a317c9d81b9ae4727a62c43bccc585b8b1/site-lisp/extensions/lazycat/highlight-parentheses.el#L1): 因为像 Lisp 这样的语言， 括号非常多， 除了强大的括号编辑插件外， 还需要随时知道当前括号的层级， 这个插件有里及外的对不同层级的括号用不同的颜色渲染， 需要弄清楚 `)` 对应的 `(` 位置， 秒一眼括号颜色即可。
 
 #### 光标对象智能感知
 我们平常时，光标下的对象有各种类型， 比如 url、 string、 symbol、 email 等等， 对这些不同类型对象快速拷贝和编辑， 我一般用 [thing-edit](https://github.com/manateelazycat/thing-edit), thing-edit 的优势是， 不需要移动光标， 也不需要用渐进选中的方式去切换不同对象， 直接调用对应的命令就可以快速拷贝当前光标的不同类型对象， 比如我经常用的 `thing-copy-url`，  `thing-copy-parentheses` `thing-copy-sexp` 和 `thing-copy-line` 几个命令， 给我自己节省了大量时间， 特别是 thing-edit 搭配 [one-key](https://github.com/manateelazycat/one-key) 一起搭配体验最佳， 需要用一些偏门的 thing-edit 命令， 记不起快捷键可以随时按 ？ 弹出 one-key 菜单查看。 
@@ -84,6 +86,11 @@ blink-search 针对上面两种场景进行归纳分析:
 平常我们写代码的时候， 经常需要移动光标到别的地方看一下， 再移动回来继续编写， 这时候就需要用到 Emacs 的 register 来临时保存一下正在编写代码的位置， 我自己写了两个小函数 [remember-init](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L391) 和 [remember-jump](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L397)。 敲了一段代码准备移动光标之前先执行一下 `remember-init` 命令保存当前的位置, 等看了别处的代码， 再调用一下 `remember-jump` 命令就可以立刻回到之前记录的位置， 继续编写代码。 这两个函数太小了， 依然保存在 lazycat-emacs 的 [basic-toolkit.el](https://github.com/manateelazycat/lazycat-emacs/blob/89562052b9885e83a4d7a3b2ab5cbe3dbbfcfc19/site-lisp/extensions/lazycat/basic-toolkit.el#L1) 插件中， 喜欢的同学欢迎拷贝走。
 
 [goto-line-preview](https://github.com/jcs090218/goto-line-preview) 这个插件比较有意思的是， 输入跳转行号的时候， 它会实时的预览将要去的目标行， 目标位置不对的话按 `C-g` 快速取消， 节省确认的时间。
+
+[winpoint](https://github.com/manateelazycat/lazycat-emacs/blob/47ed27a317c9d81b9ae4727a62c43bccc585b8b1/site-lisp/extensions/lazycat/winpoint.el#L1): 平常我们会分窗口进行协作编程， 特别是有时候会对一个 Buffer 的不同部分进行分屏查看，  Emacs 本身无法记录 Buffer 在不同窗口中滚动的位置， 一旦当前窗口切换成别的 Buffer 再回来， Buffer 对应的位置就会丢掉， 再找回之前的位置就会花费很多时间。 winpoint 的好处是它会记录 Buffer 在不同窗口的滚动位置， 不管你怎么切换窗口内的 Buffer 都不会丢掉对应的位置， 非常适合代码研究的场景。 这个插件原来是 `Jorgen Schaefer` 编写的， 我用了自己 fork 的版本。
+
+#### 光标插件
+[cursor-chg](https://github.com/manateelazycat/lazycat-emacs/blob/47ed27a317c9d81b9ae4727a62c43bccc585b8b1/site-lisp/extensions/lazycat/cursor-chg.el#L1): 这个插件比较有意思的是， 用户输入字符的时候光标会变成窄竖线， 用户停止敲击时光标会变成方块的样子， 这样的设计既避免用户输入的时候干扰文字渲染， 又方便不输入时快速找到光标的位置。
  
 #### 搜索剪切板
 [kill-ring-search](https://github.com/nschum/kill-ring-search.el): 主要是快速搜索剪切板内容， 举例， 我要拷贝三段代码从 A 文件到其他地方， 传统的方法就是拷贝一段， 然后切换到其他文件， 粘贴后再回到 A 文件拷贝第二段， 因为 Emacs 的拷贝粘贴只能用最后一个， 这样的操作会导致反复切换文件， 效率低下。 用了 `kill-ring-search` 的操作是， 直接在 A 文件对三段文字进行拷贝， 然后切换到需要粘贴的地方， 通过 `kill-ring-search` 来搜索剪切板内拷贝的内容进行插入， 这样就能极大的减少不必要的 Buffer 切换操作, 提升了日常编程的效率。
@@ -217,8 +224,10 @@ Emacs 下写博客是一种享受， 不光是 Emacs 本身的编辑功能强大
 
 * ielm: M-x ielm 这个属于 Emacs 内置的 Elisp 代码解释器， 我基本上是针对一些关键 Elisp 函数， 原理在 ielm 调试通了以后才会写到 *.el 文件中执行 `load-file` 命令。
 * eval-expression: 主要用于执行简单的表达式， 操作稳定性不如 ielm, 但好在不用频繁切换 ielm, 影响思考流畅性
+* eldoc: Elisp 编程离不开 `eldoc` 这个功能， 实时的知道当前 Elisp 函数的参数类型， 不用反复查看函数的定义， 建议搭配我自己写的扩展插件 [eldoc-extension](https://github.com/manateelazycat/lazycat-emacs/blob/47ed27a317c9d81b9ae4727a62c43bccc585b8b1/site-lisp/extensions/lazycat/eldoc-extension.el#L1), 效果更佳。
 * refresh-file: 我自己写了一个小命令 [refresh-file](https://github.com/manateelazycat/lazycat-emacs/blob/4992104ebfc765ddd84bb7fd3fdebd15bea2f66b/site-lisp/extensions/lazycat/basic-toolkit.el#L480), 功能是自动格式化 *.el 文件， 保存并自动加载。 我把这个命令绑定到 `F2` 按键上， 我自己的习惯是， 写完插件后， 按一下 `F2` 快速更新当前插件代码， 再测试看效果， 改动以后继续`F2`， 周而复始， 直到完成插件功能。
 * rebuilder: Emacs 内置的正则可视化调试器， 因为 Elisp 的正则一些写法和 POSIX 以及 Unix 的正则都不太一样（比如 `\(` 分组这种)， 对 Elisp 正则不熟悉的同学可以先在 rebuilder 中验证一下， rebuilder 中可以正常高亮后， 再把正则写入 `looking-at` 或者 `search-forward-regexp` 类似的函数中。
+* [pretty-lambdada](https://github.com/manateelazycat/lazycat-emacs/blob/47ed27a317c9d81b9ae4727a62c43bccc585b8b1/site-lisp/extensions/lazycat/pretty-lambdada.el#L1): 当我们输入 lambda 关键字时， 这个插件会用 `λ` 来渲染， 看起来非常美观， 同时也帮自己校验 lambda 拼写是否正确。
 * [find-orphan](https://github.com/manateelazycat/find-orphan): 开发过程中很多代码都是废代码， 最后清理的时候， 基本上只能用 imenu + grep 的方法， 一个一个搜索太耗费时间了， find-orphan 基于 tree-sitter 和 ripgrep 两种工具， 自动化的搜索代码中未被引用的 Elisp 代码， 提醒用户批量删除。
 * interaction-log: Emacs 内置功能， 特别是有些 bug 可以复现， 但不知道是什么命令导致的， 打开这个日志模式， 非常清楚的知道 Emacs 现在在干什么。
 
