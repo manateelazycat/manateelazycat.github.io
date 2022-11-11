@@ -164,7 +164,11 @@ EAF 文件管理器主要的优势是双列查看， 快速预览文件非常方
 #### EAF Git 客户端
 EAF Git 从功能上， 现阶段肯定要比 magit 弱很多。 EAF Git 的局部优势是， 多线程技术加持不会有性能问题， 比如 Linux Kernel 上百万的 Commit 可以全部展开和实时搜索， 这种规模的项目， magit 打开就直接卡死了。 同时 EAF Git 的界面和设计都是面向 Git 小白来设计的， 全是傻瓜化操作， 相对于 magit 更好入门一点。 
 
-我平常超级爱 `eaf-git-get-permalink` 和 `eaf-git-show-history` 这两个命令， `eaf-git-get-permalink` 可以直接生成当前 Git 项目中代码行的引用， 非常快速的分享代码给朋友， 不用去 github 打开文件后再点击 permalink 菜单。 `eaf-git-show-history` 主要用于分析一些错误代码是谁写的， 可以一键查询光标处所关联的 Commit 历史， 当然最后发现傻逼是自己， 哈哈哈哈。
+我平常超级爱 `eaf-git-get-permalink` 和 `eaf-git-show-history` 这两个命令:
+
+`eaf-git-get-permalink` 可以直接生成当前 Git 项目中代码行的引用， 非常快速的分享代码给朋友， 不用去 github 打开文件后再点击 permalink 菜单。 
+
+`eaf-git-show-history` 有时候我们想查找一下历史补丁的详情， 但是又记不得补丁的提交信息（比如谁写的， 或者什么时间写的）， 只知道代码出错的原因肯定是自己以前见过的补丁。 这时候， `eaf-git-show-history` 这个命令就非常好用， 它可以反向解析出修改当前代码的所有提交历史， 就很容易找到自己想找的哪个补丁。
 
 完整的手册可以查看 [EAF Git Client 手册](https://manateelazycat.github.io/emacs/eaf/2022/04/22/eaf-git.html)
 
