@@ -243,6 +243,7 @@ Emacs 下写博客是一种享受， 不光是 Emacs 本身的编辑功能强大
 * rebuilder: Emacs 内置的正则可视化调试器， 因为 Elisp 的正则一些写法和 POSIX 以及 Unix 的正则都不太一样（比如 `\(` 分组这种)， 对 Elisp 正则不熟悉的同学可以先在 rebuilder 中验证一下， rebuilder 中可以正常高亮后， 再把正则写入 `looking-at` 或者 `search-forward-regexp` 类似的函数中。
 * [pretty-lambdada](https://github.com/manateelazycat/lazycat-emacs/blob/47ed27a317c9d81b9ae4727a62c43bccc585b8b1/site-lisp/extensions/lazycat/pretty-lambdada.el#L1): 当我们输入 lambda 关键字时， 这个插件会用 `λ` 来渲染， 看起来非常美观， 同时也帮自己校验 lambda 拼写是否正确。
 * [find-orphan](https://github.com/manateelazycat/find-orphan): 开发过程中很多代码都是废代码， 最后清理的时候， 基本上只能用 imenu + grep 的方法， 一个一个搜索太耗费时间了， find-orphan 基于 tree-sitter 和 ripgrep 两种工具， 自动化的搜索代码中未被引用的 Elisp 代码， 提醒用户批量删除。
+* describe-char: 有时候不知道光标处的颜色是什么 face 提供的， 用 describe-char 这个命令就能够准确的知道光标处的字体、编码、颜色等信息。
 * interaction-log: Emacs 内置功能， 特别是有些 bug 可以复现， 但不知道是什么命令导致的， 打开这个日志模式， 非常清楚的知道 Emacs 现在在干什么。
 
 ### Emacs 配置
