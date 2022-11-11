@@ -135,6 +135,14 @@ color-rg.el 相对于 ivy 那种实时搜索的好处是， color-rg.el 有一�
 除了英文辅助写入， 偶尔查一下单词也是必须的， 以前都用 [sdcv](https://github.com/manateelazycat/sdcv), 我一直嫌弃排版不好看， 后面基于 EAF 的原理写了 [popweb](https://github.com/manateelazycat/popweb), popweb 利用网页技术来展示在线翻译页面， popweb 很难被封锁的原因是， 它本质是打开翻译网站的网页， 然后利用 CSS 隐藏掉不需要的页面元素， 这种实现方式非常简单稳定， 不需要破解 API， 维护代价很低。
 
 ![]({{site.url}}/pics/howiuseemacs/popweb.png)
+
+平常编程工作需要查阅大量英文网站和材料， 遇到不会的单词要反复用鼠标去选中， 效率非常低。 这时候可以先用 [EAF Browser](https://github.com/emacs-eaf/eaf-browser) 先查看英文网站（如下图一）， 当需要翻译时， 按 `N` 键 (`eaf-py-proxy-insert_or_render_by_eww` 命令), EAF Browser 会自动用 `eww` 来渲染网页(如下图二), 因为 eww 渲染出来都是文本内容， 这时候可以结合 popweb 对任意文本进行键盘移动翻译。
+
+这种操作和直接用 `eww` 打开网页的区别是， EAF Browser 先用 [Readability.js](https://github.com/mozilla/readability) 提取网页中真正需要阅读的内容(过滤掉网页两边的控件和导航链接等)再传递给 eww, 这样既可以避免 eww 的缺陷 （无法解析 CSS 和 JS), 又能利用 eww 文本渲染的能力为我所用。
+
+![]({{site.url}}/pics/howiuseemacs/eaf-browser-normal-render.png)
+
+![]({{site.url}}/pics/howiuseemacs/eaf-browser-eww-render.png)
  
 ### 文件管理和学习娱乐
 日常文件管理和学习娱乐基本上是[EAF](https://github.com/emacs-eaf/emacs-application-framework), 我用 EAF 替换大部分 Emacs 对应插件的理由主要是某些模块 Emacs 无法实现或者 Emacs 无法做到像素级别对齐和美观的图形界面。
