@@ -180,8 +180,12 @@ EAF 浏览器基本上就是 EAF 这个项目最重要的应用， 内置 V8 的
 * 按 `f` 键， 进入链接快速跳转， 输入两个字符打开任意一个链接。
 * 按 `e` 键， 底部弹出输入框， 由 Emacs 来编辑输入框的内容， 要比浏览器的编辑效率高很多。
 * 按 `C-M-c` 键， 根据提示， 自动拷贝代码块， 不需要用鼠标在代码块中滑动全选
+* 按 `,` 键： 利用 Mozilla 的 Readability.js 库， 把网页中间部分阅读内容提取出来进行清爽阅读 (如下图二所示)
+* 按 `n` 键： 利用 Mozilla 的 Readability.js 库， 把网页中间部分阅读内容转换成 Emacs Text Buffer, 方便批量操作
 
 ![]({{site.url}}/pics/howiuseemacs/eaf-browser.png)
+
+![]({{site.url}}/pics/howiuseemacs/eaf-browser-reader-mode.png)
 
 #### EAF PDF 阅读器
 EAF PDF 阅读器是用 mupdf 这个库来实现, 是 Emacs 下性能最好的 PDF 阅读器， 除了简单的连续翻页、 实时缩放， 还包括 DarkMode、 Vimium Jump、 Annotation、 LaTeX Sync Jump、 ISearch、 OrgMode Link 等等超级方便高级功能。 
