@@ -89,6 +89,8 @@ blink-search 针对上面两种场景进行归纳分析:
 
 [winpoint](https://github.com/manateelazycat/lazycat-emacs/blob/47ed27a317c9d81b9ae4727a62c43bccc585b8b1/site-lisp/extensions/lazycat/winpoint.el#L1): 平常我们会分窗口进行协作编程， 特别是有时候会对一个 Buffer 的不同部分进行分屏查看，  Emacs 本身无法记录 Buffer 在不同窗口中滚动的位置， 一旦当前窗口切换成别的 Buffer 再回来， Buffer 对应的位置就会丢掉， 再找回之前的位置就会花费很多时间。 winpoint 的好处是它会记录 Buffer 在不同窗口的滚动位置， 不管你怎么切换窗口内的 Buffer 都不会丢掉对应的位置， 非常适合代码研究的场景。 这个插件原来是 `Jorgen Schaefer` 编写的， 我用了自己 fork 的版本。
 
+[watch-other-window](https://github.com/manateelazycat/watch-other-window/): 代码分屏浏览的时候， 一般我会在下面的窗口写代码， 上面的窗口展示参考内容。 这时候就可以用 `watch-other-window` 命令， 保持光标在当前窗口不动来滚动别的窗口， 不用来回的调用 `other-window` 命令。 其实最早我用的都是 `scroll-other-window` 这个内置的命令， 不知道为什么 Emacs 28 开始对某些场景会失效， 所以我就自己封装了一个更简单的 `watch-other-window` 给自己用。
+
 #### 光标插件
 [cursor-chg](https://github.com/manateelazycat/lazycat-emacs/blob/47ed27a317c9d81b9ae4727a62c43bccc585b8b1/site-lisp/extensions/lazycat/cursor-chg.el#L1): 这个插件比较有意思的是， 用户输入字符的时候光标会变成窄竖线， 用户停止敲击时光标会变成方块的样子， 这样的设计既避免用户输入的时候干扰文字渲染， 又方便不输入时快速找到光标的位置。
  
