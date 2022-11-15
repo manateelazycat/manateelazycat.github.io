@@ -106,7 +106,35 @@ In two more minutes, she will have been talking on the phone for three hours
 ```
 
 ### 连接词
-一些比较常用的连接词， '只要' ```as long as```, 比如 ```He won't have it his way, as long as I'm here```。 '假定' ```Suppose``` 比如 ```Suppose you were ill, where would you go?```。 '既然' ```now that``` 比如 ```There's nothing to worry about, now that Father is back```。 '好让' ```in order that``` 比如 ```I've typed out the main points in boldface, in order that you won't miss them``` 。 '以免' ```lest``` 比如 ```I've underlined the key points, lest you miss them```。 '万一' ```in case``` 比如 ```You'd better bring more money, in case you should need it```
+一些比较常用的连接词， '只要' ```as long as```, 比如:
+```
+He won't have it his way, as long as I'm here
+``` 
+
+'假定' ```Suppose``` 比如:
+```
+Suppose you were ill, where would you go?
+``` 
+
+'既然' ```now that``` 比如:
+```
+There's nothing to worry about, now that Father is back
+``` 
+
+'好让' ```in order that``` 比如:
+```
+I've typed out the main points in boldface, in order that you won't miss them
+``` 
+
+'以免' ```lest``` 比如:
+```
+I've underlined the key points, lest you miss them
+``` 
+
+'万一' ```in case``` 比如:
+```
+You'd better bring more money, in case you should need it
+```
 
 ### 代名词与关系代名词
 代名词与关系代名词的对应关系如下：
