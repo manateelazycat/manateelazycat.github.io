@@ -143,7 +143,17 @@ color-rg.el 相对于 ivy 那种实时搜索的好处是， color-rg.el 有一�
 ![]({{site.url}}/pics/howiuseemacs/eaf-browser-normal-render.png)
 
 ![]({{site.url}}/pics/howiuseemacs/eaf-browser-eww-render.png)
- 
+
+[dictionary-overlay](https://github.com/ginqi7/dictionary-overlay): 这个插件是我强烈推荐的一个英语单词记忆插件， 它的原理是当你执行命令 `dictionary-overlay-mark-word-unknown` 标记一个单词不懂时, 它会自动搜索翻译， 并通过 overlay 的方式把翻译显示生词后面。 这样你下次你看别的文章时， 所有你不懂的单词的翻译都会自动显示， 避免再次遇到生词时你要一个一个的查找翻译， 当你有一天终于记住这些单词的意思后就可以用 `dictionary-overlay-mark-word-known` 标记这个单词我已经记住了， 生词后面的翻译也会一并隐藏。
+
+英文文章最佳操作流程是：
+1. EAF Browser 查找资料， 像 StackOverflow 这种网站就没有必要上 dictionary-overlay 了
+2. 遇到复杂的专业文章， 在 EAF Browser 中执行命令 `eaf-py-proxy-insert_or_render_by_eww` 转换成 eww 模式
+3. 在 eww 模式中执行 `dictionary-overlay-render-buffer` 命令, 开启 dictionary-overlay
+4. 遇到不懂的单词自动调用 `popweb-dict-bing-pointer` 弹出翻译并同时做生词标记 `dictionary-overlay-mark-word-unknown`, 具体参考我的[小函数](https://github.com/manateelazycat/lazycat-emacs/blob/5c887f791123356fb79128d11b1a651680c037bb/site-lisp/config/init-popweb.el#L92)
+
+![]({{site.url}}/pics/howiuseemacs/dictionary-overlay.png)
+
 ### 文件管理和学习娱乐
 日常文件管理和学习娱乐基本上是[EAF](https://github.com/emacs-eaf/emacs-application-framework), 我用 EAF 替换大部分 Emacs 对应插件的理由主要是某些模块 Emacs 无法实现或者 Emacs 无法做到像素级别对齐和美观的图形界面。
 
