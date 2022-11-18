@@ -419,7 +419,7 @@ Emacs 中获取光标处的内容主要是用 `thing-at-point` 这个函数， �
 ## 最后
 我自己写了很多 Elisp 插件， 但是回忆起来， 上面分享的内容基本覆盖到写一个插件所需的 70% 内容， 也是大家 Elisp 编程入门最容易卡壳的地方， 为了方便大家理解, 我只写了其中关键的部分， 一些基本的概念， 如 defvar， defun、 defcustom、 setq、 if、 when、 unless 等我并没有展开细讲， 这些都属于每个语言相通的部分, 大家自行 Google 应该就可以很快理解。
 
-今天讲的每个 API 的详细参数用法， 请大家善用 `describe-variable` 和 `describe-function`。
+今天讲的每个 API 的详细参数用法， 请大家善用 `describe-variable` 和 `describe-function`, 进阶查找 API 请善用 `apropos-variable` 和 `apropos-function`， 后面这两个命令可以通过正则表达式来挖掘 Elisp 有用但你很难知道全称的 API。
 
 其实 Elisp 编程挺容易的， 特别是基于 Emacs 解释器的编程环境， Elisp 即写即加载的测试方式， 要比大多数语言的开发效率都高， 因为它一瞬间就给你反馈， 到底效果好不好马上就可以知道。
 
