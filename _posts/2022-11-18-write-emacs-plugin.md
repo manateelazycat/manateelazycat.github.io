@@ -423,4 +423,4 @@ Emacs 中获取光标处的内容主要是用 `thing-at-point` 这个函数， �
 
 其实 Elisp 编程挺容易的， 特别是基于 Emacs 解释器的编程环境， Elisp 即写即加载的测试方式， 要比大多数语言的开发效率都高， 因为它一瞬间就给你反馈， 到底效果好不好马上就可以知道。
 
-纸上得来终觉浅， 绝知此事要躬行， 如果你已经完全懂我今天说的内容， 希望进阶掌握高级编程技巧， 请一页一页的耐心读 [GNU Emacs Lisp Reference Manual](https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html)。
+纸上得来终觉浅， 绝知此事要躬行， 希望进阶掌握高级编程技巧的同学， 请一页一页的耐心读 [GNU Emacs Lisp Reference Manual](https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html)。
