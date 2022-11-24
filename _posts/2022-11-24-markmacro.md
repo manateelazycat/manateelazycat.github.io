@@ -150,3 +150,6 @@ prefix-flex-row.txt
 * `markmacro-rect-set` record point at first line of rectangle, then move cursor to last line
 * `markmacro-rect-mark-columns` mark **all columns** in rectangle area
 * Delete right character and type `'`
+
+## 最后
+用心体验一下， 就会发现这个插件带来的生产力非常高。 ;)
