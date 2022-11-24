@@ -20,7 +20,7 @@ markmacro 的原理和 Meow 键盘宏的理念一样：
 为了直观的让大家理解这个插件的作用， 我编写了一些测试用例：
 
 ### Case 1
-![]({{site.url}}/pics/markmacro/case1.gif)
+![]({{site.url}}/pics/markmacro/case_1.gif)
 
 ```python
 fruit = apple watermelon peaches
@@ -36,7 +36,7 @@ fruit = ["apple", "watermelon", "peaches"]
 * `markmacro-apply-all` apply kmacro to all **mark words**
 
 ### Case 2
-![]({{site.url}}/pics/markmacro/case2.gif)
+![]({{site.url}}/pics/markmacro/case_2.gif)
 
 ```python
 it-is-ver-long-variable
@@ -51,7 +51,7 @@ it_is_ver_long_variable
 * `markmacro-apply-all-except-first` apply kmacro to all **mark words** except first word
 
 ### Case 3
-![]({{site.url}}/pics/markmacro/case3.gif)
+![]({{site.url}}/pics/markmacro/case_3.gif)
 
 
 ```python
@@ -88,7 +88,7 @@ prefix-flex-row.txt
 * `markmacro-apply-all` apply kmacro to all **mark lines** 
 
 ### Case 4
-![]({{site.url}}/pics/markmacro/case4.gif)
+![]({{site.url}}/pics/markmacro/case_4.gif)
 
 
 ```elisp
@@ -111,7 +111,7 @@ prefix-flex-row.txt
 * `markmacro-apply-all` apply kmacro to all **mark symbols** 
 
 ### Case 5
-![]({{site.url}}/pics/markmacro/case5.gif)
+![]({{site.url}}/pics/markmacro/case_5.gif)
 
 ```elisp
 ("s-/" . markmacro-mark-words)
