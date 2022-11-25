@@ -151,5 +151,36 @@ prefix-flex-row.txt
 * `markmacro-rect-mark-columns` mark **all columns** in rectangle area
 * Delete right character and type `'`
 
+### Case 6
+![]({{site.url}}/pics/markmacro/case_6.gif)
+
+```elisp
+(defun test-function-1 (arg)
+  )
+
+(defun test-function-2 (arg)
+  )
+
+(defun test-function-3 (arg)
+  )
+
+=>
+
+(defun test-function-1 (new-arg arg)
+  )
+
+(defun test-function-2 (new-arg arg)
+  )
+
+(defun test-function-3 (new-arg arg)
+  )
+```
+
+* `markmacro-mark-imenus` mark **all functions** and start kmacro record automatically
+* isearch `(` character
+* Type `new-arg`
+* `markmacro-apply-all` apply kmacro to all **mark functions** 
+
+
 ## 最后
 用心体验一下， 就会发现这个插件带来的生产力非常高。 ;)
