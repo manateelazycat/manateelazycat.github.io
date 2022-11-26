@@ -181,6 +181,80 @@ prefix-flex-row.txt
 * Type `new-arg`
 * `markmacro-apply-all` apply kmacro to all **mark functions** 
 
+### Case 7
+![]({{site.url}}/pics/markmacro/case_7.gif)
+
+```elisp
+(defun markmacro-mark-words ()
+  (interactive)
+  (let ((bound (if (region-active-p)
+                   (cons (region-beginning) (region-end))
+                 (bounds-of-thing-at-point 'symbol)))
+        (mark-bounds '()))
+    (when bound
+      (when (region-active-p)
+        (deactivate-mark))
+
+      (let ((mark-bound-start (car bound))
+            (mark-bound-end (cdr bound))
+            (last-point 0)
+            current-bound)
+        (save-excursion
+          (goto-char mark-bound-start)
+          (while (and (<= (point) mark-bound-end)
+                      (> (point) last-point))
+            (setq current-bound (bounds-of-thing-at-point 'word))
+            (when current-bound
+              (add-to-list 'mark-bounds current-bound t))
+            (setq last-point (point))
+            (forward-word))))
+
+      (dolist (bound mark-bounds)
+        (let* ((overlay (make-overlay (car bound) (cdr bound))))
+          (overlay-put overlay 'face 'markmacro-mark-face)
+          (add-to-list 'markmacro-overlays overlay t)))
+
+      (markmacro-select-last-overlay))))
+
+=>
+
+(defun markmacro-mark-words ()
+  (interactive)
+  (let ((bound (if (region-active-p)
+                   (cons (region-beginning) (region-end))
+                 (bounds-of-thing-at-point 'symbol)))
+        (mark-bounds '()))
+    (when bound
+      (when (region-active-p)
+        (deactivate-mark))
+
+      (let ((mark-bound-start (car bound))
+            (mark-bound-end (cdr bound))
+            (last-point 0)
+            new-current-bound)
+        (save-excursion
+          (goto-char mark-bound-start)
+          (while (and (<= (point) mark-bound-end)
+                      (> (point) last-point))
+            (setq new-current-bound (bounds-of-thing-at-point 'word))
+            (when new-current-bound
+              (add-to-list 'mark-bounds new-current-bound t))
+            (setq last-point (point))
+            (forward-word))))
+
+      (dolist (bound mark-bounds)
+        (let* ((overlay (make-overlay (car bound) (cdr bound))))
+          (overlay-put overlay 'face 'markmacro-mark-face)
+          (add-to-list 'markmacro-overlays overlay t)))
+
+      (markmacro-select-last-overlay))))
+```
+
+* Move cursor to left position of `(defun markmacro-mark-words`
+* `mark-sexp` to selection region of `markmacro-mark-words` function 
+* `markmacro-secondary-region-set` translate region to secondary region
+* Move cursor to target (`current-bound` in this case), `markmacro-secondary-region-mark-cursors` mark **all targets** in secondary region
+* Type something, `markmacro-apply-all` apply kmacro to all **all targets**
 
 ## 最后
 用心体验一下， 就会发现这个插件带来的生产力非常高。 ;)
