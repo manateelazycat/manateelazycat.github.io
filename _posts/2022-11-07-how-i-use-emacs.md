@@ -139,6 +139,10 @@ color-rg.el 相对于 ivy 那种实时搜索的好处是， color-rg.el 有一�
 
 ![]({{site.url}}/pics/howiuseemacs/acm-english-helper.png)
 
+你甚至在不记得英文单词怎么拼写的时候， 直接写拼音就可以补全英文单词了， 连 Google 翻译都节省了。
+
+![]({{site.url}}/pics/howiuseemacs/lsp-bridge-sdcv-pinyin.png)
+
 除了英文辅助写入， 偶尔查一下单词也是必须的， 以前都用 [sdcv](https://github.com/manateelazycat/sdcv), 我一直嫌弃排版不好看， 后面基于 EAF 的原理写了 [popweb](https://github.com/manateelazycat/popweb), popweb 利用网页技术来展示在线翻译页面， popweb 很难被封锁的原因是， 它本质是打开翻译网站的网页， 然后利用 CSS 隐藏掉不需要的页面元素， 这种实现方式非常简单稳定， 不需要破解 API， 维护代价很低。
 
 ![]({{site.url}}/pics/howiuseemacs/popweb.png)
