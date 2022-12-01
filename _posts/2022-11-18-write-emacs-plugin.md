@@ -130,33 +130,34 @@ M-x load-file 重新加载文件以载入新的函数定义， 再执行 `my-fir
 (shell-command "ls" "my-command-output")
 ```
 
-如果我们要编写一个插件， 它既能执行命令， 又不要卡住 Emacs 要怎么做呢？ 这时候就需要用 `start-process` 了：
+如果我们要编写一个插件， 它既能执行命令， 又不要卡住 Emacs 要怎么做呢？ 这时候就需要用 `make-process` ， 我直接上一段 EAF Git Client 的实战代码：
 
 ```elisp
-(start-process "async-command-example" "async-command-output-buffer" "ls" "-l")
+(defun eaf-git-run (prompt command)
+  (message prompt)
+  (save-window-excursion
+    (let ((output-content ""))
+      (make-process
+       :name "eaf-git-subprocess"
+       :command command
+       :filter (lambda (process output)
+                 (setq output-content (format "%s%s\n" output-content output)))
+       :sentinel (lambda (process event)
+                   (message (string-trim output-content))
+                   )))))
+                   
+(defun eaf-git-pull ()
+  (interactive)
+  (eaf-git-run "Git pull..." (list "git" "pull" "--rebase")))                   
 ```
 
-* `async-command-example`: 第一个参数是异步子进程的名称
-* `async-command-output-buffer`: 第二个参数是异步子进程的输出的 buffer， 这样就可以对 buffer 显示的子进程结果进行编程管理
-* 后面两个参数分别是命令行工具的名称和对应的启动参数
+上面的代码需要实现一个完全异步的 `git pull` 命令， 即使 `git` 命令执行时间比较长。
 
-从应用场景上来看， `shell-command-to-string` 比较适合快速在 minibuffer 显示一下状态， 比如配合 `git pull` 命令， `start-process` 相当于是 `shell-command-to-string` 的异步版本， 适合那些耗时的子进程场景， 比如解压缩的 tar 命令。
+* `:command`: 参数是一个列表格式， 包括命名工具名字和命名参数， 这里我们用的是 `(list "git" "pull" "--rebase")`
+* `:filter`: 这个是一个过滤函数， 意思是当进程有任何输出的时候， 我们可以过滤 `output` 参数的内容， 上面代码是把所有的输出保存到 `output-content` 变量中
+* `:sentinel`: 是一个守护函数， 一般用于监听子进程的退出状态(`event`), 这里我们并不监听状态， 不管 `git` 命令是正常还是异常退出， 我们都在 minibuffer 中显示 `git` 命令的全部输出
 
-如果我要像 color-rg 那样开发一个实时显示 rg 搜索结果并高亮的插件, 那应该怎么做呢？ 核心的关键是 `compilation-start` 这个函数。
-在调用 `compilation-start` 命令之前， 提前先执行两行代码：
-
-```elisp
-(add-hook 'compilation-filter-hook 'filter-function nil t)
-(set (make-local-variable 'compilation-process-setup-function) 'process-setup-function)
-```
-
-* `compilation-filter-hook`: 是 `compilation-start` 启动子进程的过滤钩子， 也就是说每次子进程输出内容都会执行勾在这个钩子上的函数， 注意上面的代码 `add-hook` 最后一个参数是 t, 表示 `add-hook` 只针对当前 buffer 有效， 避免干扰其他由 `compilation-start` 启动的子进程
-* `compilation-process-setup-function`: 这个函数我们主要用于监听函数的结束状态， 一般我们会在自定义函数中设置 `(set (make-local-variable 'compilation-exit-message-function) (lambda (status code msg) (message "Subprocess status: %s" status)))` 这样的 lambda 函数， 比如子进程输出 `exited abnormally with code` 的字符串时， 我们就可以用 `(string-prefix-p "exited abnormally with code" msg)` 的方式来处理子进程异常退出的情况
-
-当然， 如果你不想像 color-rg 那样实时的处理命令行工具返回的内容， 只想监听进程的结束状态， 可以用下面这种稍微简单一点的方法：
-1. `async-shell-command`： 启动异步子进程， 需要写清楚第二个参数 output-buffer 的名字
-2. `get-buffer-process`： 这个函数根据 output-buffer 得到 buffer 对应的子进程对象
-3. `set-process-sentinel`: 通过 `(set-process-sentinel proc #'sentinel-function)` 的方式给子进程建立一个守护函数， 其中 `proc` 是第二步得到的子进程对象， `sentinel-function` 是守护函数， 举个例子： `(defun sentinel-function (process string-signal) (when (memq (process-status process) '(exit signal)) (message "Subprocess exit.")))`
+上面就是 Emacs 异步子进程需要掌握的知识， 更多高阶用法可以查看 [Creating an Asynchronous Process](https://www.gnu.org/software/emacs/manual/html_node/elisp/Asynchronous-Processes.html)
 
 如果你深入掌握这一节的内容， 你已经掌握利用外部命令行工具编写 Emacs 插件的原理。
 
