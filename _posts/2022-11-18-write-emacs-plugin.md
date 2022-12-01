@@ -417,6 +417,9 @@ Emacs 中获取光标处的内容主要是用 `thing-at-point` 这个函数， �
 
 这两个函数的技术基础是 `parse-partial-sexp`, 它可以分析光标处的语法状态， 这个函数也是 paredit 这类插件的核心技术原理。
 
+## 类似教程
+* [Elisp Demos](https://github.com/xuchunyang/elisp-demos/blob/master/elisp-demos.org): 国内大佬维护的一个 Elisp API 演示实例
+
 ## 最后
 我自己写了很多 Elisp 插件， 但是回忆起来， 上面分享的内容基本覆盖到写一个插件所需的 70% 内容， 也是大家 Elisp 编程入门最容易卡壳的地方， 为了方便大家理解, 我只写了其中关键的部分， 一些基本的概念， 如 defvar， defun、 defcustom、 setq、 if、 when、 unless 等我并没有展开细讲， 这些都属于每个语言相通的部分, 大家自行 Google 应该就可以很快理解。
 
