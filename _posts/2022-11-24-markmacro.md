@@ -250,6 +250,27 @@ prefix-flex-row.txt
       (markmacro-select-last-overlay))))
 ```
 
+
+### Case 8
+![]({{site.url}}/pics/markmacro/case_8.gif)
+
+```elisp
+window.scrollTo(0, 0); document.getElementsByTagName('html')[0].style.visibility = 'hidden'; document.getElementsByClassName('lf_area')[0].style.visibility = 'visible'; document.getElementsByTagName('header')[0].style.display = 'none'; document.getElementsByClassName('contentPadding')[0].style.padding = '10px';
+
+=> 
+
+window.scrollTo(0, 0);
+document.getElementsByTagName('html')[0].style.visibility = 'hidden';
+document.getElementsByClassName('lf_area')[0].style.visibility = 'visible';
+document.getElementsByTagName('header')[0].style.display = 'none';
+document.getElementsByClassName('contentPadding')[0].style.padding = '10px';
+```
+
+* Move cursor to left position of `;`
+* `markmacro-mark-chars` to selection **mark chars** `;` in string
+* `forward-char` and `newline`
+* `markmacro-apply-all` apply kmacro to all **mark chars**
+
 * Move cursor to left position of `(defun markmacro-mark-words`
 * `mark-sexp` to selection region of `markmacro-mark-words` function 
 * `markmacro-secondary-region-set` translate region to secondary region
