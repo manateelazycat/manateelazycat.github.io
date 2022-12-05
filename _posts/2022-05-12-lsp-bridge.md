@@ -1,7 +1,7 @@
 ---
 layout: post
 title: LSP-Bridge 架构设计与 LSP 协议解析
-categories: [Emacs]
+categories: [Emacs, LSP]
 ---
 
 [EAF](https://github.com/emacs-eaf/emacs-application-framework/)补强了 Emacs 的多媒体生态后，Emacs 离 VSCode 这种现代 IDE 最大的差距就是代码语法补全，VSCode 通过[LSP](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/)协议实现了绝大多数编程语言的智能语法补全，而且操作性能极佳。
@@ -491,8 +491,8 @@ lsp-bridge 安装很简单， 为了保持最新的内容， 请大家直接查�
 注意： 开发者需要打开 ```(setq lsp-bridge-enable-log t)``` 选项， 以实时查看服务器的返回消息 （用户不用打开这个选项，以提高性能）。
 
 ### 一起开发 lsp-bridge
-lsp-bridge发布的短短几天，已经有15位开发者加入我们的团队，贡献16种编程语言的语法补全代码，包括Java、 C、 C++、 Python、 Golang、 Rust、 Ruby、 Haskell、 Elixir、 Dart、 SCala、TypeScript、 JavaScript、 OCaml、 Erlang、 LaTeX等语言。
+lsp-bridge 发布的短短几天，已经有 15 位开发者加入我们的团队，贡献 16 种编程语言的语法补全代码，包括 Java、 C、 C++、 Python、 Golang、 Rust、 Ruby、 Haskell、 Elixir、 Dart、 SCala、TypeScript、 JavaScript、 OCaml、 Erlang、 LaTeX 等语言。
 
 目前已完成的功能包括代码语法补全、定义跳转、引用查看和重命名， 欢迎加入我们开发更多的高级功能。
 
-持续给lsp-bridge做贡献的理由是我们可以保证永远不卡Emacs， 实现行云流水的编程体验， 哈哈哈哈。
+持续给 lsp-bridge 做贡献的理由是我们可以保证永远不卡 Emacs， 实现行云流水的编程体验， 哈哈哈哈。
