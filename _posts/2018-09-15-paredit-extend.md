@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 智能的语法删除函数, 增强 web-mode, ruby-mode
-categories: [Emacs]
+categories: [Emacs, Elisp]
 ---
 
 作为十几年忠实的 paredit 粉, 我几乎会在所有模式中使用 paredit 模式以进行语法快速删除, 而不仅仅只是傻傻的文本删除.
@@ -118,7 +118,7 @@ If current line is not blank, do `paredit-kill' first, re-indent line if rest li
 1. 如果当前是空行, 会删除整个行, 并自动缩进到下一行的缩进位置
 2. 如果在字符串里面, 执行 paredit-kill
 3. 如果在 ruby block 开始的地方, 比如 class, def, module 等, 直接删除整个 ruby block
-4. 如果在 ruby end关键字的位置, 直接删除 end 和后面的内容
+4. 如果在 ruby end 关键字的位置, 直接删除 end 和后面的内容
 5. 其他的情况, 执行 paredit-kill, 比如直接删除一段 ruby 块
 
 通过新版的 paredit-extension.el 的增强, 不仅仅保持了大部分模式 sexp 语法删除的爽快, 还非常智能的增强了 web-mode 和 ruby-mode 的语法删除体验.

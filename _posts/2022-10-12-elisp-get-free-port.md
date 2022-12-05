@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Elisp Get free port
-categories: [Emacs]
+categories: [Emacs, Elisp]
 ---
 
 在构建双向通讯的 RPC 程序时， 给两边进程找到可用的端口号就比较重要， 手动分配的端口号容易在将来和其他程序相冲突。

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Emacs 插件开发手册
-categories: [Emacs]
+categories: [Emacs, Elisp]
 ---
 
 本篇博客主要讲怎么写 Emacs 插件来改善我们的工作环境， 进一步提升工作效率， 其中的内容是我给公司同事内部培训的教材， 会不定期更新。
