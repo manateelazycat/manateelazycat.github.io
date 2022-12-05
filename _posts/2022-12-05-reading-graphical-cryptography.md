@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 读《图解密码技术》
-categories: [Reading]
+categories: [Reading, Cryptography]
 ---
 
 花了几天时间， 读完了日本作家结城浩的[《图解密码技术》](https://book.douban.com/subject/26822106/)。
