@@ -227,6 +227,8 @@ EAF PDF 阅读器是用 mupdf 这个库来实现, 是 Emacs 下性能最好的 P
 
 ![]({{site.url}}/pics/howiuseemacs/eaf-pdf-viewer.png)
 
+PDF 里面一个功能我经常用 `eaf-ocr-buffer`, 这个命令会调用 [EasyOCR](https://github.com/JaidedAI/EasyOCR) 自动识别 PDF 截图中的文字并自动粘贴到 Emacs 粘贴板中， 特别是看那些扫描版的 PDF 特别好用， 作笔记的时候不用对着一个字一个字的手动敲入。
+
 #### EAF RSS 阅读器
 EAF RSS 阅读器相对于文本版的 RSS Reader 实现， 主要有两个优势： 文章直接用 EAF 浏览器查看原文， 支持双栏布局和支持中文标题对齐。
 

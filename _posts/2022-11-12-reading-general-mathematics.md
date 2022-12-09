@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 读《吴军数学通识讲义》
-categories: [Reading]
+categories: [Reading, Math]
 ---
 
 随着这几年把 EAF、 PopWeb、 lsp-bridge、 deno-bridge 和 blink-search 等几个关键的项目开发完成后， Emacs 的工作环境已经能够满足我对 All in Emacs 和超高性能的期待。
