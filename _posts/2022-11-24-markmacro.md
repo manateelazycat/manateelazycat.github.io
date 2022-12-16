@@ -277,5 +277,51 @@ document.getElementsByClassName('contentPadding')[0].style.padding = '10px';
 * Move cursor to target (`current-bound` in this case), `markmacro-secondary-region-mark-cursors` mark **all targets** in secondary region
 * Type something, `markmacro-apply-all` apply kmacro to all **all targets**
 
+### Case 8
+<img src="./images/case8.gif">
+
+```elisp
+window.scrollTo(0, 0); document.getElementsByTagName('html')[0].style.visibility = 'hidden'; document.getElementsByClassName('lf_area')[0].style.visibility = 'visible'; document.getElementsByTagName('header')[0].style.display = 'none'; document.getElementsByClassName('contentPadding')[0].style.padding = '10px';
+
+=> 
+
+window.scrollTo(0, 0);
+document.getElementsByTagName('html')[0].style.visibility = 'hidden';
+document.getElementsByClassName('lf_area')[0].style.visibility = 'visible';
+document.getElementsByTagName('header')[0].style.display = 'none';
+document.getElementsByClassName('contentPadding')[0].style.padding = '10px';
+```
+
+* Move cursor to left position of `;`
+* `markmacro-mark-chars` to selection **mark chars** `;` in string
+* `forward-char` and `newline`
+* `markmacro-apply-all` apply kmacro to all **mark chars**
+
+### Case 9
+![]({{site.url}}/pics/markmacro/case_9.gif)
+
+```shell
+$ find .git/objects -type f.git/objects/01/55eb4229851634a0f03eb265b69f5a2d56f341 # tree 2.git/objects/1a/410efbd13591db07496601ebc7a059dd55cfe9 # commit 3.git/objects/1f/7a7a472abf3dd9643fd615f6da379c4acb3e3a # test.txt v2.git/objects/3c/4e9cd789d88d8d89c1073707c3585e41b0e614 # tree 3.git/objects/83/baae61804e65cc73a7201a7252750c76066a30 # test.txt v1.git/objects/ca/c0cab538b970a37ea1e769cbbde608743bc96d # commit 2.git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4 # 'test content'.git/objects/d8/329fc1cc938780ffdd9f94e0d364e0ea74f579 # tree 1.git/objects/fa/49b077972391ad58037050f2a75f74e3671e92 # new.txt.git/objects/fd/f4fc3344e67ab068f836878b6c4951e3b15f3d # commit 1
+
+=> 
+
+$ find .git/objects -type f
+.git/objects/01/55eb4229851634a0f03eb265b69f5a2d56f341 # tree 2
+.git/objects/1a/410efbd13591db07496601ebc7a059dd55cfe9 # commit 3
+.git/objects/1f/7a7a472abf3dd9643fd615f6da379c4acb3e3a # test.txt v2
+.git/objects/3c/4e9cd789d88d8d89c1073707c3585e41b0e614 # tree 3
+.git/objects/83/baae61804e65cc73a7201a7252750c76066a30 # test.txt v1
+.git/objects/ca/c0cab538b970a37ea1e769cbbde608743bc96d # commit 2
+.git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4 # 'test content'
+.git/objects/d8/329fc1cc938780ffdd9f94e0d364e0ea74f579 # tree 1
+.git/objects/fa/49b077972391ad58037050f2a75f74e3671e92 # new.txt
+.git/objects/fd/f4fc3344e67ab068f836878b6c4951e3b15f3d # commit 1
+```
+
+* Move cursor to **second** `.git`, and select to end of string
+* `markmacro-secondary-region-set` translate region to secondary region
+* Select **second** `.git`
+* Press RETURN char, `markmacro-apply-all` apply kmacro to **.git**
+
 ## 最后
 用心体验一下， 就会发现这个插件带来的生产力非常高。 ;)
