@@ -321,6 +321,7 @@ $ find .git/objects -type f
 * Move cursor to **second** `.git`, and select to end of string
 * `markmacro-secondary-region-set` translate region to secondary region
 * Select **second** `.git`
+* `markmacro-secondary-region-mark-cursors` mark all **.git**
 * Press RETURN char, `markmacro-apply-all` apply kmacro to **.git**
 
 ## 最后
