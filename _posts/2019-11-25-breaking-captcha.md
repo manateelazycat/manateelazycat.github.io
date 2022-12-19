@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 不要说自己是玩电脑的
-categories: [Linux]
+categories: [Linux, OCR]
 ---
 
 不要告诉别人自己是玩电脑的，特别是亲朋好友，他们会认为你啥都会干，特别是...
@@ -14,11 +14,11 @@ categories: [Linux]
 1. 黑白化，去掉背景纹理干扰
 2. 去掉孤立噪点，避免干扰线干扰
 3. 锐化处理，让字体边缘更为清晰
-4. 字母截取，得出独立的字符, 一般可以用图片发大5倍绝技，增加OCR识别成功率
+4. 字母截取，得出独立的字符, 一般可以用图片发大 5 倍绝技，增加 OCR 识别成功率
 5. 把很多样本截取的不同字符丢给机器学习,让机器去学习不同字符的变形情况
 6. 最后全部连在一起，做验证码内容识别
 
-玩了一会机器学习代码，和我当年写的网易有道词典Linux版的OCR识别大部分流程差不多，就是机器学习这一块比较唬人。
+玩了一会机器学习代码，和我当年写的网易有道词典 Linux 版的 OCR 识别大部分流程差不多，就是机器学习这一块比较唬人。
 
 一般我到这个时候就会开始偷懒，这么成熟的产业，一定有公司干验证码破解服务的公司吧？
 
@@ -33,7 +33,7 @@ categories: [Linux]
 2. 通过 driver.get_screenshot_as_png() 获取网页截图
 3. 通过 Selenium XPath 定位验证码的元素，然后通过坐标，从网页截图中切割验证码的图片
 4. 转换 PIL Image 对象为 Byte Array 格式的数据，丢给 CaptchaSolver 这个库
-5. 填上 anti-captcha 的API Key, 等5秒钟就会返回破解的验证码了
+5. 填上 anti-captcha 的 API Key, 等 5 秒钟就会返回破解的验证码了
 
 为什么不用 request 请求 img 元素 src 属性呢？
 
@@ -45,7 +45,7 @@ from PIL import Image
 from io import BytesIO
 from captcha_solver import CaptchaSolver
 
-# 通过Chromium加载网页
+# 通过 Chromium 加载网页
 driver = webdriver.Chrome()
 driver.get('http://www.xxx.com')
 
@@ -53,7 +53,7 @@ driver.get('http://www.xxx.com')
 png = driver.get_screenshot_as_png()
 im = Image.open(BytesIO(png))
 
-# 找到验证码所在的元素，先阅读 Selenium API文档，下面这行代码需要换成实际的验证码元素
+# 找到验证码所在的元素，先阅读 Selenium API 文档，下面这行代码需要换成实际的验证码元素
 element = driver.find_element_by_class_name("validimg")
 
 # 获取验证码的位置信息
@@ -67,12 +67,12 @@ bottom = location['y'] + size['height']
 # 通过验证码坐标偏移，截取验证码的截图
 im = im.crop((left, top, right, bottom))
 
-# 转换图片为Byte Array格式的数据
+# 转换图片为 Byte Array 格式的数据
 buf = BytesIO()
 im.save(buf, format='PNG')
 byte_im = buf.getvalue()
 
-# 通过 anti-captcha 的API key进行验证码破解工作
+# 通过 anti-captcha 的 API key 进行验证码破解工作
 solver = CaptchaSolver('antigate', api_key='your-anti-captcha-api-key')
 captcha_code = solver.solve_captcha(byte_im)
 
