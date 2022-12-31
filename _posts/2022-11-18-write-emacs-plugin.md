@@ -432,6 +432,7 @@ Emacs 中获取光标处的内容主要是用 `thing-at-point` 这个函数， �
 ## 类似教程
 * [Elisp Demos](https://github.com/xuchunyang/elisp-demos/blob/master/elisp-demos.org): 国内大佬维护的一个 Elisp API 演示实例
 * [Awesome Elisp](https://github.com/p3r7/awesome-elisp)
+* [The Emacs Package Developer’s Handbook](https://github.com/alphapapa/emacs-package-dev-handbook)
 * [Awesome Emacs](https://list.community/emacs-tw/awesome-emacs)
 
 ## 最后
