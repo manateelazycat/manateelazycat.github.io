@@ -57,6 +57,8 @@ trojan 服务端配置成功以后会在 VPS 的/home/trojan/目录下生成 cli
 
 ```scp root@xxx.xxx.xxx.xxx:/home/trojan/client.json ./```
 
+**注意 client.json 的 `local_addr` 需要设置为 `0.0.0.0` , 方便后面的 proxy-ns 可以正常代理。** 
+
 ### 1.6 下载 Trojan 客户端
 
 * 首先在 VPS 使用命令 ```ping github.com```, 获取 github.com 的 ip 地址, 比如是 192.30.253.112
@@ -72,7 +74,7 @@ trojan 服务端配置成功以后会在 VPS 的/home/trojan/目录下生成 cli
 
 在浏览器验证可以 FQ 以后，你可以清除刚刚在本机 /etc/hosts 的 github 设置。
 
-注意 client.json 的 `local_addr` 需要设置为 `0.0.0.0` , 方便后面的 proxy-ns 可以正常代理。
+**注意 client.json 的 `local_addr` 需要设置为 `0.0.0.0` , 方便后面的 proxy-ns 可以正常代理。** 
 
 ## 2. 配置命令行代理
 
@@ -81,6 +83,10 @@ trojan 服务端配置成功以后会在 VPS 的/home/trojan/目录下生成 cli
 proxy-ns 和其他工具的实现原理不一样的是， 它利用的是 Linux 的 namespace 来实现， 可以很好的支持进程下所有子进程的代理， 即使是那些静态编译的工具。
 
 安装方法 `yay -S proxy-ns`, 用 `sudo systemctl start proxy-nsd.service` 命令启动 proxy-nsd 服务, 同时用 `sudo systemctl enable proxy-nsd.service` 命令加入到系统启动服务中。
+
+### 2.2 更改特定应用的启动网络配置
+
+以 Emacs 为例, 找到 /usr/share/applications/emacs.desktop 中 `Exec` 字段， 在字段开头加上 proxy-ns 后， Emacs 从启动器启动后就会自动应用代理网络， 包括 Emacs 所启动的子进程。
 
 ## 3. 配置手机代理
 
