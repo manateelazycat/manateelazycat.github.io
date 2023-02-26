@@ -50,4 +50,4 @@ self.interceptor = AdBlockInterceptor(self.profile, self)
 
 EAF Browser 加了 5.5 万条广告规则后， 广告屏蔽的分数直接上了 90 分。
 
-需要注意的是， 广告过滤的正则库实现效率一定要高， 要不是容易把浏览器卡住， 甚至卡住 Qt 的主线程， EAF 用的是 braveblock 这个哭， braveblock 是 ablock-rust 这个 Rust 库的 Python 绑定。
+需要注意的是， 广告过滤的正则库实现效率一定要高， 要不是容易把浏览器卡住， 甚至卡住 Qt 的主线程， EAF 用的是 braveblock 这个库， braveblock 是 ablock-rust 这个 Rust 库的 Python 绑定。
