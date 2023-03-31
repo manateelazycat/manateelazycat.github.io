@@ -7,7 +7,7 @@ categories: [Emacs, EAF]
 ### 远程代码补全
 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge) 是 Emacs 里面第一个把远程代码补全的性能做到比 VSCode 还快的 LSP Client，使用起来非常简单：
 
-1. 本地和服务器都安装 lsp-bridge 和 LSP Server
+1. 本地和服务器都安装 lsp-bridge, 同时只用在服务端安装 LSP Server
 2. 在服务器启动 lsp-bridge： ```python3 lsp_bridge.py```
 3. 执行 ```lsp-bridge-open-remote-file``` 命令打开远程文件， 输入远程服务器 IP 和文件路径，比如 xxx.xxx.xxx.xxx:/path/file
 
