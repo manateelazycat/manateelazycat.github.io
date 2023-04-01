@@ -28,7 +28,7 @@ categories: [Emacs, EAF]
 3. 安全隧道建立后， 本地 lsp-bridge Python 模块通过 socket 向远程服务器发送 `open_file` 的请求
 4. 远程 lsp-bridge 接受到请求以后， 读取远程服务器的文件， 返回文件内容给本地 lsp-bridge, 本地 lsp-bridge Python 模块再通过本地 lsp-bridge Elisp 模块调用 Emacs 函数创建 Buffer
 5. 监控 Emacs 才创建的远程文件 Buffer， 根据 `before-change-functions` 和 `after-change-functions` 两个 hook， 得到每次编文本的 diff text
-6. 本地 lsp-bridge Python 模块得到 diff text 以后， 按照顺序分别发送给远程 lsp-bridge 的文件同步模块和 LSP 模块， 文件同步模块根据 diff text 序列， 在远程服务器重建文件的最新内容（这样不管文件有多大， 文件的内容都可以实时同步， 因为 diff text 非常小）， 同时 LSP 模块负责根据 diff text 转换成 LSP 协议的 textDocument/didChange 请求发送给远程的 LSP 服务器， 也会发送到其他搜索补全后端
+6. 本地 lsp-bridge Python 模块得到 diff text 以后， 按照顺序分别发送给远程 lsp-bridge 的文件同步模块和 LSP 模块， 文件同步模块根据 diff text 序列， 在远程服务器重建文件的最新内容（这样不管文件有多大， 文件的内容都可以实时同步， 因为 diff text 非常小）。 同时 LSP 模块负责根据 diff text 转换成 LSP 协议的 textDocument/didChange 请求发送给远程的 LSP 服务器， 也会发送文件搜索请求到其他搜索补全后端。 有些语言需要获取文件的内容时， 远端 LSP&Search 模块会从 FileSync 模块的内存中直接读取最新 Buffer 的内容， 而不会从开发者电脑绕一圈（这样也会避免在两边传送大型文件内容卡死 Emacs）
 7. 当远程 lsp-bridge LSP 模块得到 LSP 服务器或其他搜索后端的返回响应后， 再通过 socket 发送给本地 lsp-bridge, 经过 Python 模块和 Elisp 模块， 最终发送给 Emacs
 8. Emacs 得到补全数据后， 结合 lsp-bridge 的 ACM 模块（异步补全菜单）， 在本地弹出补全菜单
 9. 其中紫线的部分比较复杂， 本地 lsp-bridge 和远端 lsp-bridge 建立链接后， 远端 lsp-bridge 需要获取 Emacs 配置时， 会从远端到本地建立一个 RPC， 从本地 Emacs 读取配置后再返回远端的 lsp-bridge, 为了保证 RPC 的数据不会受影响， 整体设计上， lsp-bridge 在安全隧道基础上建立了三个独立的通信频道， 分别处理文件同步、 LSP 请求及返回、 Elisp 远程 RPC 通道
