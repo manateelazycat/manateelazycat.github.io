@@ -53,6 +53,12 @@ blink-search 针对上面两种场景进行归纳分析:
 #### 智能补全
 代码语义编辑方面， 我主要用 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge), lsp-bridge 的好处是利用 Python 多线程的技术， 结合专门为 LSP 协议开发的 acm 补全菜单， 能够把 Emacs 代码语法补全性能提升到 VSCode 的水平。 
 
+lsp-bridge 现在主要的几个特性： 
+1. 完全异步设计： 高性能不卡 Emacs
+2. 开箱即用： 支持多 LSP 服务器（包括代码、诊断和修复）
+3. 多后端融合： acm 菜单自动融合 lsp, tabnine, template, file path, english, tailwind, citre 等补全后端， 用户不需要折腾多后端融合
+4. VSCode 版的远程补全体验： 默认支持远程代码补全， 多大文件都不卡顿
+
 这个插件的原理和核心技术我就不展开说了， 可以读我以前写的文章 [LSP-Bridge 架构设计与 LSP 协议解析](https://manateelazycat.github.io/emacs/2022/05/12/lsp-bridge.html) 和 [为什么 lsp-bridge 不用 capf?](https://manateelazycat.github.io/emacs/2022/06/26/why-lsp-bridge-not-use-capf.html) 。
 
 ![]({{site.url}}/pics/howiuseemacs/lsp-bridge.png)
@@ -169,6 +175,14 @@ color-rg.el 相对于 ivy 那种实时搜索的好处是， color-rg.el 有一�
 日常文件管理和学习娱乐基本上是[EAF](https://github.com/emacs-eaf/emacs-application-framework), 我用 EAF 替换大部分 Emacs 对应插件的理由主要是某些模块 Emacs 无法实现或者 Emacs 无法做到像素级别对齐和美观的图形界面。
 
 具体的优点我不再罗列， 每个组件我就写我最喜欢的一两点， 萝卜白菜各有所爱吧。
+
+### ChatGPT
+我自己开发一个 ChatGPT 插件[mind-wave](https://github.com/manateelazycat/mind-wave), 它大大提升了我编程的效率。
+
+1. 当我想研究技术的时候， 就打开一个 test.chat 文件， 执行 `mind-wave-chat-ask` 命令开始和 ChatGPT 聊天
+2. 代码模式： 它还可以重构代码、添加注释、解释代码和根据 diff 内容生成补丁名称（生成补丁这个工作对于我这种英语渣渣来说简直是解放生产力)
+3. 文档模式： 平常没事帮我润色一下文档， 自动翻译成英文， 还会根据光标的位置帮我分析单词在上下文的意思， 并给出类似的例句
+4. 摘要模式： 在我要看视频和文章之前， 先帮我总结一下视频或者网站的大概内容， 节省了我大量的时间
 
 #### EAF 文件管理器
 EAF 文件管理器主要的优势是双列查看， 快速预览文件非常方便， 特别是相册目录下， 一路往下按 `j` 键就可以快速的查看不同的图片。
