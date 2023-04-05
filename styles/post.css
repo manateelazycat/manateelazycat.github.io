@@ -24,9 +24,9 @@ body {
     padding-right: 40px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     .content-area {
-        width: 80%;
+        width: 90%;
     }
 }
 
