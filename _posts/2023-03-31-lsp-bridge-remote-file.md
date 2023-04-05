@@ -1,7 +1,7 @@
 ---
 layout: post
 title: lsp-bridge 远程代码补全
-categories: [Emacs, EAF]
+categories: [Emacs, LSP]
 ---
 
 ### 远程代码补全
