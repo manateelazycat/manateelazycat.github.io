@@ -37,7 +37,7 @@ a:hover {
     width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     .content {
         padding-left: 10%;
         padding-right: 10%;
