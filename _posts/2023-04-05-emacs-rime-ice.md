@@ -27,6 +27,12 @@ cp -r ./rime-ice/* ~/.config/fcitx/rime/
 
 注意， rime 配置文件非常娇气（主要是配置文件不能错一个空格）， 建议先把 `~/.config/fcitx/rime/` 目录下所有文件备份后再删除干净后再把 rime-ice 所有配置都拷贝进去。
 
+### 句号翻页
+我比较喜欢用逗号或句号翻页， 下面是详细的设置方法：
+找到 ~/.config/fcitx/rime/default.yaml 文件中的 `- { when: paging, accept: comma, send: Page_Up }` 和 `- { when: has_menu, accept: period, send: Page_Down }` 内容， 注释掉。
+
+同时 grep ~/.config/fcitx/rime/ 目录， 把所有 url_2 开头的行的前面都加一个 `#` 符号注释掉。
+
 ### 安装 posframe
 
 [posframe](https://github.com/tumashu/posframe)可以让侯选词显示在光标处，所以建议安装。
@@ -62,7 +68,9 @@ git clone https://github.com/DogLooksGood/emacs-rime
 
 [雾凇拼音](https://github.com/iDvel/rime-ice) 主页有一些输入用例， 如果你打同样的拼音可以补全相同的中文候选词， 就证明已经成功用上了雾凇拼音。
 
-我个人的体验， 雾凇拼音的细节调教非常好，比我们自己折腾的 rime 词库要专业的多，中文输入， 特别是长句输入再也不用翻很多页。现在，Emacs 的中文输入太爽了， 我顺手就给 rime-ice 的作者捐了一点款， 感谢开源作者的辛劳付出。 ;)
+我个人的体验， 雾凇拼音的细节调教非常好，比我们自己折腾的 rime 词库要专业的多，中文输入， 特别是长句输入再也不用翻很多页。
+
+emacs-rime 搭配雾凇拼音后， Emacs 的中文输入非常爽， 我顺手就给 rime-ice 的作者捐了一点款， 感谢开源作者的辛劳付出。 ;)
 
 ### 配合插件
 因为我经常用 Markdown 写很多博客分享， 除了 emacs-rime, rime-ice 外， 推荐两外两个插件一起配合来用， 口感最佳：
