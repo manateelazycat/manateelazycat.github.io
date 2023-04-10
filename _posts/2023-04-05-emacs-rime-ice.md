@@ -78,4 +78,9 @@ emacs-rime 搭配雾凇拼音后， Emacs 的中文输入非常爽， 我顺手�
 1. [deno-bridge-jieba](https://github.com/ginqi7/deno-bridge-jieba): Emacs 默认不认识中文的分词位置， 所有要修改一段中文时只能一个一个汉字的移动， deno-bridge-jieba 利用 TypeScript/Deno 快速实现中文分词， 安装后 Emacs 就可以基于词的粒度来左右移动光标， 非常方便
 2. [pangu-spacing](https://github.com/coldnew/pangu-spacing): 我自己是强迫症， 一定希望中文博客中的英文单词两边要有空格这样看着才舒服， 但是手动调整中文内容的英文空格， 效率很低， pangu-spacing 这个插件会自动扫描当前文档内容， 自动添加英文单词空格， 节省了很多时间
 
+### One more thing
+既然在 Emacs 都可以使用雾凇输入法， 外面的软件（比如 Chrome、 WPS 等）应该也可以使用雾凇输入法呀， 之前一直以为 fcitx5 的配置文件在 ~/.config/fctix5/rime 下面， 各种拷贝 rime-ice 配置都不行。 
 
+研究了一段时间才发现 fcitx5 的配置路径在 ~/.local/share/fcitx5/rime 呀， 直接清空 ~/.local/share/fcitx5/rime 目录下的所有内容， 把上面调配好的 ~/.config/fcitx/rime 下的所有内容拷贝到 ~/.local/share/fcitx5/rime 下， 重启 fcitx5, 选择中州韵输入法即可。
+
+这样 Emacs 和 Linux 下其他软件都可以使用流畅的雾凇输入法啦， 舒服。
