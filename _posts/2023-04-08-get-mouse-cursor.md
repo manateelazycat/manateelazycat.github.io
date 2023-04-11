@@ -4,9 +4,9 @@ title: 获取网页中光标处的单词
 categories: [EAF, AI]
 ---
 
-https://github.com/emacs-eaf/emacs-application-framework/commit/25457f7eda9b736764957a9bc12d7dab162ec88d
-
 今天写了一个补丁， 现在 EAF 浏览器， 可以按住 Ctrl 移动鼠标， 自动获取光标处的单词并翻译了。
+
+https://github.com/emacs-eaf/emacs-application-framework/commit/25457f7eda9b736764957a9bc12d7dab162ec88d
 
 感谢 ChatGPT 帮我提供获取光标处单词的原理函数:
 
