@@ -101,6 +101,32 @@ GC_ROOT_STATICPRO: 6840 microseconds
 
 也就是说， GC 调用非常频繁， 最短 80 毫秒就会启动一次， 最长 300 毫秒就会启动一次， 也就是一秒钟启动次数在 3~12 次左右， 在这个间隔内，每次 GC 的消耗时间都在 38 毫秒左右。
 
+### Valgrind
+
+今天用 valgrind 做了一些性能分析， 性能分析方法：
+
+#### 1. 运行 valgrind， 通过 valgrind 找出性能瓶颈
+```
+valgrind --tool=callgrind --simulate-cache=yes --collect-jumps=yes emacs
+```
+* `--tool=callgrind`：使用 `callgrind` 工具分析性能。
+* `--simulate-cache=yes`：模拟缓存行为，以捕获缓存命中/未命中等信息。这将有助于了解缓存效率对性能的影响。
+* `--collect-jumps=yes`：收集跳转指令信息。这将有助于了解代码的分支预测效果。
+
+等待 valgrind 启动完（需要十几秒）， 运行 Emacs 卡顿的命令， Ctrl + C 结束分析
+
+#### 2. 看性能分析报告
+
+```
+kcachegrind callgrind.out.PID
+```
+
+![]({{site.url}}/pics/emacs_gc/1.png)
+
+![]({{site.url}}/pics/emacs_gc/2.png)
+
+目前看 mark_localized_symbol 函数的性能占比非常高。
+
 
 ### 最后
 以上是一些关于 Emacs GC 的研究， 因为时间关系， 很难在短时间内有进展， 前期只能先理理思路， 把思路分享出来抛砖引玉, 欢迎大家一起讨论贡献智慧。
