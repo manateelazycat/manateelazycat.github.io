@@ -33,6 +33,9 @@ cp -r ./rime-ice/* ~/.config/fcitx/rime/
 
 同时 grep ~/.config/fcitx/rime/ 目录， 把所有 url_2 开头的行的前面都加一个 `#` 符号注释掉。
 
+### 更改候选词数量
+默认是 5 格，可以改成 9 个，减少翻译次数， 在 rime 目录下 grep `page_size`, 把 5 换成 9 即可。
+
 ### 安装 posframe
 
 [posframe](https://github.com/tumashu/posframe)可以让侯选词显示在光标处，所以建议安装。
