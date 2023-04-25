@@ -4,9 +4,9 @@ title: Emacs 里用雾凇拼音实现流畅中文输入
 categories: [Emacs]
 ---
 
-Emacs 下一直都在用狗哥写的[emacs-rime](https://github.com/DogLooksGood/emacs-rime)输入法来输入中文，但是 rime 默认的词库非常一般， 导致我们在 Emacs 输入中文的时候并没有使用外部输入法那么流畅。
+Emacs 下一直都在用狗哥写的[emacs-rime](https://github.com/DogLooksGood/emacs-rime)输入法来输入中文，但是 rime 默认的词库质量一般， 导致我们在 Emacs 输入中文的时候并没有使用外部输入法那么流畅。
 
-今天主要介绍， 怎么在 Emacs 中安装 emacs-rime 并结合 [雾凇拼音](https://github.com/iDvel/rime-ice) 来达到流畅的中文输入体验。
+今天主要介绍， 怎么在 Emacs 中安装 emacs-rime 并结合 [雾凇拼音](https://github.com/iDvel/rime-ice) 来实现流畅的中文输入体验。
 
 ### 安装 RIME 输入法
 
@@ -18,7 +18,7 @@ sudo pacman -S fcitx5-rime librime
 
 ### 安装雾凇拼音
 
-使用下面的命令拷贝雾凇拼音所有的 rime 配置到 fcitx 的 rime 配置目录下
+使用下面的命令拷贝雾凇拼音的所有 rime 配置到 fcitx 的 rime 配置目录下
 
 ```bash
 git clone https://github.com/iDvel/rime-ice --depth=1
@@ -34,7 +34,7 @@ cp -r ./rime-ice/* ~/.config/fcitx/rime/
 同时 grep ~/.config/fcitx/rime/ 目录， 把所有 url_2 开头的行的前面都加一个 `#` 符号注释掉。
 
 ### 更改候选词数量
-默认是 5 格，可以改成 9 个，减少翻译次数， 在 rime 目录下 grep `page_size`, 把 5 换成 9 即可。
+默认是 5 格，可以改成 9 个，减少翻页次数， 在 rime 目录下 grep `page_size`, 把 5 换成 9 即可。
 
 ### 安装 posframe
 
@@ -46,7 +46,7 @@ cp -r ./rime-ice/* ~/.config/fcitx/rime/
 git clone https://github.com/DogLooksGood/emacs-rime
 ```
 
-把 emacs-rime 目录放到 ```load-path``` 下，增加下面配置:
+把 emacs-rime 目录放到 ```load-path``` 下，添加以下配置:
 
 ```elisp
 (require 'rime)
@@ -79,7 +79,7 @@ emacs-rime 搭配雾凇拼音后， Emacs 的中文输入非常爽， 我顺手�
 因为我经常用 Markdown 写很多博客分享， 除了 emacs-rime, rime-ice 外， 推荐两外两个插件一起配合来用， 口感最佳：
 
 1. [deno-bridge-jieba](https://github.com/ginqi7/deno-bridge-jieba): Emacs 默认不认识中文的分词位置， 所有要修改一段中文时只能一个一个汉字的移动， deno-bridge-jieba 利用 TypeScript/Deno 快速实现中文分词， 安装后 Emacs 就可以基于词的粒度来左右移动光标， 非常方便
-2. [pangu-spacing](https://github.com/coldnew/pangu-spacing): 我自己是强迫症， 一定希望中文博客中的英文单词两边要有空格这样看着才舒服， 但是手动调整中文内容的英文空格， 效率很低， pangu-spacing 这个插件会自动扫描当前文档内容， 自动添加英文单词空格， 节省了很多时间
+2. [pangu-spacing](https://github.com/coldnew/pangu-spacing): 我自己是强迫症， 一定希望中文文章中的英文单词两边要有空格这样看着才舒服， 但是手动调整中文内容的英文空格， 效率很低， pangu-spacing 这个插件会自动扫描当前文档内容， 自动添加英文单词空格， 节省了很多时间
 
 ### One more thing
 既然在 Emacs 都可以使用雾凇输入法， 外面的软件（比如 Chrome、 WPS 等）应该也可以使用雾凇输入法呀， 之前一直以为 fcitx5 的配置文件在 ~/.config/fctix5/rime 下面， 各种拷贝 rime-ice 配置都不行。 
