@@ -78,7 +78,7 @@ lsp-bridge 现在主要的几个特性：
 #### 代码编辑小插件
 在语法块删除方面， 我个人很喜欢左右按块的方式对当前行的内容进行删除， 每天用 [delete-block](https://github.com/manateelazycat/delete-block) 都变成肌肉记忆了， 虽然 delete-block 的实现非常简单， 基本上就是基于 `syntax-move-point` 和 `subword-move-point` 两个函数简单封装， 但是这么多年体验下来， 非常好用， 基本上适用于所有编程语言， 偶尔把匹配括号删除导致括号不平衡的时候（主要是 lisp 语言), 配合 `forward-delete` 和 `backward-delete` 也可以快速调整修复。
  
-[move-text](https://github.com/manateelazycat/move-text) 这个插件非常简单就是把当前行的内容移动到上一行或者下一行, 简单易懂非常方便, 最早是在 emacswiki 上发布的， 后续慢慢从 [lazycat-emacs](https://github.com/manateelazycat/lazycat-emacs)中独立出来。
+[move-text](https://github.com/manateelazycat/move-text) 这个插件非常简单就是把当前行的内容移动到上一行或者下一行, 简单易懂非常方便, 最早是在 emacswiki 上发布的， 后续慢慢从 [lazycat-emacs](https://github.com/manateelazycat/lazycat-emacs) 中独立出来。
  
 [open-newline](https://github.com/manateelazycat/open-newline) 这个插件功能也很简单， 就是不用移动光标， 一键在行上面或者下面开一个新行， 并根据模式自动缩进一下， 这个插件相当于替换原生 Emacs 三个功能的组合： 移动到行尾、 按回车键、 按缩进键， 每天这个命令调用无数遍， 我现在基本上都很少按单纯的回车键。 它最大的方便性是随时想换行都可以直接换， 不用移动到行尾再换行。
  
@@ -137,7 +137,7 @@ color-rg.el 相对于 ivy 那种实时搜索的好处是， color-rg.el 有一�
 ### 窗口管理 
 
 #### Toggle One Window
-我个人平常大部分时间都是单窗口全屏写代码， treemacs/sr-speedbar、 dedicated terminal 等等我都不用, 这样使得整个编写代码的过程非常专注。 即使分屏也会临时的分屏， 分屏操作后快速切换到全屏状态。 一般我们会进行这样的操作： 使用 Emacs 内置的 `current-window-configuration` 记住当前窗口布局， `delete-other-windows` 命令清理其他窗口， 最后再用   `set-window-configuration` 恢复之前窗口布局。 这个操作做多了就很烦， 这个时候就可以用 [toggle-one-window](https://github.com/manateelazycat/toggle-one-window)这个插件， 调用 `toggle-one-window` 这个命令可以快速在单窗口和多窗口布局之间快速切换， 不用手动记录窗口配置， 临时用一下非常爽。
+我个人平常大部分时间都是单窗口全屏写代码， treemacs/sr-speedbar、 dedicated terminal 等等我都不用, 这样使得整个编写代码的过程非常专注。 即使分屏也会临时的分屏， 分屏操作后快速切换到全屏状态。 一般我们会进行这样的操作： 使用 Emacs 内置的 `current-window-configuration` 记住当前窗口布局， `delete-other-windows` 命令清理其他窗口， 最后再用   `set-window-configuration` 恢复之前窗口布局。 这个操作做多了就很烦， 这个时候就可以用 [toggle-one-window](https://github.com/manateelazycat/toggle-one-window) 这个插件， 调用 `toggle-one-window` 这个命令可以快速在单窗口和多窗口布局之间快速切换， 不用手动记录窗口配置， 临时用一下非常爽。
 
 #### Popper
 Emacs 本身的弹窗规则比较混乱， 当我们专注的学习和研究的时候， 偶尔会查看一些按键和函数的帮助信息或者 Emacs 弹出了一些报错， 这时候处理完这些临时信息后， 原来的窗口布局就被弄乱了， 又需要花费时间去分屏切换。 来回折腾久了， 心情不免烦躁。 [popper](https://github.com/karthink/popper) 这个插件就是用来解决这个问题的， 安装好以后， 当 Emacs 再次弹出临时窗口时， 只需要执行 `popper-toggle-latest` 这个命令就可以快速回到弹出窗口之前的窗口布局， 非常方便。
@@ -278,7 +278,7 @@ Emacs 下写博客是一种享受， 不光是 Emacs 本身的编辑功能强大
 
 * [emacs-rime](https://github.com/DogLooksGood/emacs-rime): 强烈推荐狗哥的 RIME 输入法前端， 可以记住不同 Buffer 的输入状态， 特别是在同时写博客和写代码的时候， 不用切换一次 Buffer 就切换一次输入法， 简直太方便了， 比 scim 时代的 scim-bridge 还要方便。
 * [olivetti](https://github.com/rnkn/olivetti): 这个插件主要是让 Emacs 特定的 Buffer， 比如 Markdown 和 OrgMode 的内容可以居中显示， 左右两边保留一定的空白， 避免屏幕太宽的时候， 左右横向大幅度看文字内容太累。
-* [deno-bridge-jieba](https://github.com/ginqi7/deno-bridge-jieba): 主要利用了 [deno-bridge](https://github.com/ginqi7/deno-bridge-jieba) 和 [deno-jieba](https://github.com/wangbinyq/deno-jieba/tree/wasm)这两种技术， 特别是 deno-jieba 是由 Rust 通过 WASM 实现的， 它也许是 Emacs 里面最快的中文分词插件， 要好处是， 按照中文分词的边界去移动或删除单词， 不用一个一个汉字的去处理， 中文编辑效率提高了很多， 强烈推荐。
+* [deno-bridge-jieba](https://github.com/ginqi7/deno-bridge-jieba): 主要利用了 [deno-bridge](https://github.com/ginqi7/deno-bridge-jieba) 和 [deno-jieba](https://github.com/wangbinyq/deno-jieba/tree/wasm) 这两种技术， 特别是 deno-jieba 是由 Rust 通过 WASM 实现的， 它也许是 Emacs 里面最快的中文分词插件， 要好处是， 按照中文分词的边界去移动或删除单词， 不用一个一个汉字的去处理， 中文编辑效率提高了很多， 强烈推荐。
 * [wraplish](https://github.com/manateelazycat/wraplish): 写技术博客经常会存在中文和各种英文专业术语混合输入， 我的强迫症是在英文单词和中文之间必须加空格， 要不哪看哪不舒服， 但是创作的时候真的容易忘记这件事情， 再回过头一个一个的给英文单词加空格就很烦躁， 这个插件就是在特定模式（比如 markdown)下， 给所有英文周围加空格， 全自动的， 比较省心。
 
 ### Elisp 编程
