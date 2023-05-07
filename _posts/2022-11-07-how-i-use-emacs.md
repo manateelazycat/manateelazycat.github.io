@@ -136,7 +136,11 @@ color-rg.el 相对于 ivy 那种实时搜索的好处是， color-rg.el 有一�
  
 ### 窗口管理 
 
+#### Toggle One Window
 我个人平常大部分时间都是单窗口全屏写代码， treemacs/sr-speedbar、 dedicated terminal 等等我都不用, 这样使得整个编写代码的过程非常专注。 即使分屏也会临时的分屏， 分屏操作后快速切换到全屏状态。 一般我们会进行这样的操作： 使用 Emacs 内置的 `current-window-configuration` 记住当前窗口布局， `delete-other-windows` 命令清理其他窗口， 最后再用   `set-window-configuration` 恢复之前窗口布局。 这个操作做多了就很烦， 这个时候就可以用 [toggle-one-window](https://github.com/manateelazycat/toggle-one-window)这个插件， 调用 `toggle-one-window` 这个命令可以快速在单窗口和多窗口布局之间快速切换， 不用手动记录窗口配置， 临时用一下非常爽。
+
+#### Popper
+Emacs 本身的弹窗规则比较混乱， 当我们专注的学习和研究的时候， 偶尔会查看一些按键和函数的帮助信息或者 Emacs 弹出了一些报错， 这时候处理完这些临时信息后， 原来的窗口布局就被弄乱了， 又需要花费时间去分屏切换。 来回折腾久了， 心情不免烦躁。 [popper](https://github.com/karthink/popper) 这个插件就是用来解决这个问题的， 安装好以后， 当 Emacs 再次弹出临时窗口时， 只需要执行 `popper-toggle-latest` 这个命令就可以快速回到弹出窗口之前的窗口布局， 非常方便。
 
 ### 英文翻译
 做为一个英文不咋地的程序员， 每天最头疼的就是给各种函数和变量起名字, 传统的做法是递给 Google 翻译中文， 获取英文翻译后， 再根据语言特定的代码风格， 做大量的连接符处理， 比如手写 下划线、 连接线甚至每个单词都做骆驼风格调整， 这个操作每天会遇到无数次， 每次都需要手动调整英文名字风格真的太痛苦了。 [insert-translated-name](https://github.com/manateelazycat/insert-translated-name) 就是为了处理这种情况而生的， 每次需要定义函数或变量名时， 直接键入中文， insert-translated-name 会自动翻译中文并按照当前文件对应的语言风格自动命名， 甚至支持区分字符串、 注释和正常代码区域等不同语法位置。 这样写代码既可以保证单词拼写正确， 也大大提升了写代码命名的效率。
