@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 谈研发人员的怎么专注
+title: 谈研发人员怎么专注
 categories: [Think]
 ---
 
