@@ -14,7 +14,7 @@ categories: [Emacs, EAF]
 作为 Arch 粉丝， 最简单的方法就是问肥猫大佬， 大佬告诉我三个重要信息：
 1. Arch 里 KDE 的基于 qt5-webengine 的 aura-browser 和基于 pyqt5-webengine 的 qutebrowser， 都能正常放 B 站视频
 2. Arch 里的 Qt 默认就开了 proprietary_codecs 编译参数: https://github.com/archlinux/svntogit-packages/blob/packages/qt6-webengine/trunk/PKGBUILD#L28
-3. pip 安装 PyQt 是不靠谱的， 因为不确定是怎么实现的， 因为没人保证
+3. pip 安装 PyQt 是不靠谱的， 不确定是怎么实现的， 因为没人保证
 
 知道这些信息就简单了， 就是删除 pip 安装的 PyQt6， 用 pacman 来安装 Qt6 和 PyQt6:
 
