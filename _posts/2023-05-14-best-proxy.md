@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 最佳代理实践 2023-05-14
+title: 最佳代理实践 (2023-05-14)
 categories: [Proxy]
 ---
 
