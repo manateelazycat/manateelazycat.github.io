@@ -82,9 +82,17 @@ trojan 服务端配置成功以后会在 VPS 的/home/trojan/目录下生成 cli
 
 proxy-ns 和其他工具的实现原理不一样的是， 它利用的是 Linux 的 namespace 来实现， 可以很好的支持进程下所有子进程的代理， 即使是那些静态编译的工具。
 
-安装方法 `yay -S proxy-ns`, 用 `sudo systemctl start proxy-nsd.service` 命令启动 proxy-nsd 服务, 同时用 `sudo systemctl enable proxy-nsd.service` 命令加入到系统启动服务中。
+安装方法 `yay -S proxy-ns`, 用 `sudo systemctl start proxy-nsd@main.service` 命令启动 proxy-nsd 服务, 同时用 `sudo systemctl enable proxy-nsd@main.service --now` 命令加入到系统启动服务中。
 
-### 2.2 更改特定应用的启动网络配置
+备注： 因为 yay 安装 proxy-ns 的时候会调用 git 命令， 有可能导致安装不成功， 只要上面的 trojan 服务器配置好了， 可以临时用 ```sshuttle``` 来建立一个全局代理来安装 proxy-ns：```sshuttle -vv --dns -r root@your_vps_ip -x your_vps_ip 0/0```
+
+### 2.2 禁用 IPv6
+
+proxy-ns 新版在代理服务器支持 IPv6 时， IPv6 的流量也会走代理。 但是这个功能会导致我的代理服务器没法工作， 下面是禁用这个选项的方法： 打开 ```/etc/proxy-nsd/main.conf``` 文件， 找到 ```ENABLE_IPV6``` 选项， 改成 ```ENABLE_IPV6=0```。
+
+用命令 ```sudo systemctl restart proxy-nsd@main.service``` 重启 proxy-ns 服务即可。
+
+### 2.3 更改特定应用的启动网络配置
 
 以 Emacs 为例, 找到 /usr/share/applications/emacs.desktop 中 `Exec` 字段， 在字段开头加上 proxy-ns 后， Emacs 从启动器启动后就会自动应用代理网络， 包括 Emacs 所启动的子进程。
 
