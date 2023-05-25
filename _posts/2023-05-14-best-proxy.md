@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 最佳代理实践 (2023-05-14)
+title: 最佳代理实践之 trojan-gfw (2023-05-14)
 categories: [Proxy]
 ---
 
@@ -84,7 +84,7 @@ proxy-ns 和其他工具的实现原理不一样的是， 它利用的是 Linux 
 
 安装方法 `yay -S proxy-ns`, 用 `sudo systemctl start proxy-nsd@main.service` 命令启动 proxy-nsd 服务, 同时用 `sudo systemctl enable proxy-nsd@main.service --now` 命令加入到系统启动服务中。
 
-备注： 因为 yay 安装 proxy-ns 的时候会调用 git 命令， 有可能导致安装不成功， 只要上面的 trojan 服务器配置好了， 可以临时用 ```sshuttle``` 来建立一个全局代理来安装 proxy-ns：```sshuttle -vv --dns -r root@your_vps_ip -x your_vps_ip 0/0```
+备注： 因为 yay 安装 proxy-ns 的时候会调用 git 命令， 有可能导致安装不成功， 只要上面的 trojan 服务器配置好了， 可以临时用 ```sshuttle``` 来建立一个全局代理来安装 proxy-ns： ```sshuttle -vv --dns -r root@your_vps_ip -x your_vps_ip 0/0```
 
 ### 2.2 禁用 IPv6
 
