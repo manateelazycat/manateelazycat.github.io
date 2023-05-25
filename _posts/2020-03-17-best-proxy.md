@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 最佳代理实践 (2020-03-17)
+title: 最佳代理实践之 trojan-gfw (2020-03-17)
 categories: [Proxy]
 ---
 
