@@ -40,6 +40,8 @@ GFW 不断在变化， 而我们的代理策略也要一直更新， 我会定�
 #### 3.1 配置服务端 v2ray
 服务器安装 v2ray: ```pacman -S v2ray```, 替换 ```V2RAY_ID``` 和 ```V2RAY_PATH``` 后把内容覆盖服务器的 v2ray 配置文件 ```/etc/v2ray/config.json```。
 
+注意， 下面配置中的 ```"network": "tcp,udp"``` 和 ```"followRedirect": true``` 很关键， 因为下面的 proxy-ns 需要服务器开启 UDP, 否则 proxy-ns 只能在终端中运行， 而没法支持应用子进程代理（比如 proxy-ns 包裹 emacs)。
+
 ```
 {
   "inbounds": [
