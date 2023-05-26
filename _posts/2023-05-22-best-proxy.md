@@ -48,6 +48,8 @@ GFW 不断在变化， 而我们的代理策略也要一直更新， 我会定�
     "listen":"127.0.0.1",
     "protocol": "vless",
     "settings": {
+      "network": "tcp,udp",
+      "followRedirect": true,
       "decryption": "none",
       "clients": [
         {
