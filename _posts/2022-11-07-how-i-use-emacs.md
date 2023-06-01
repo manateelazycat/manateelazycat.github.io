@@ -177,6 +177,9 @@ Emacs 本身的弹窗规则比较混乱， 当我们专注的学习和研究的�
 
 ![]({{site.url}}/pics/howiuseemacs/dictionary-overlay.png)
 
+#### 沉浸式翻译
+不过现在我最喜欢的是 EAF Browser 的沉浸式翻译功能， 遇到英文网页， 按 Alt + i 调用 ```immersive_translation``` 命令自动把整个网页翻译成一段英文一段中文的形式。 沉静式翻译相对于其他翻译插件的优势是可以最快速度知道一个英文网页在说什么， 了解其全貌以后， 再详细看局部的英文， 这样学习外文材料的速度就大大加快了。
+
 ### 文件管理和学习娱乐
 日常文件管理和学 习娱乐基本上是 [EAF](https://github.com/emacs-eaf/emacs-application-framework), 我用 EAF 替换大部分 Emacs 对应插件的理由主要是某些模块 Emacs 无法实现或者 Emacs 无法做到像素级别对齐和美观的图形界面。
 
