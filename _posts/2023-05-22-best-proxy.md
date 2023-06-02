@@ -340,7 +340,10 @@ proxy-ns 和其他工具的实现原理不一样的是， 它利用的是 Linux 
 
 安装方法 `yay -S proxy-ns`, 用 `sudo systemctl start proxy-nsd@main.service` 命令启动 proxy-nsd 服务, 同时用 `sudo systemctl enable proxy-nsd@main.service --now` 命令加入到系统启动服务中。
 
-备注： 因为 yay 安装 proxy-ns 的时候会调用 git 命令， 有可能导致安装不成功， 只要上面的 trojan 服务器配置好了， 可以临时用 ```sshuttle``` 来建立一个全局代理来安装 proxy-ns： ```sshuttle -vv --dns -r root@your_vps_ip -x your_vps_ip 0/0```
+备注： 
+
+1. 因为 yay 安装 proxy-ns 的时候会调用 git 命令， 有可能导致安装不成功， 只要上面的 trojan 服务器配置好了， 可以临时用 ```sshuttle``` 来建立一个全局代理来安装 proxy-ns： ```sshuttle -vv --dns -r root@your_vps_ip -x your_vps_ip 0/0```
+2. 目前 proxy-ns 只在 ArchLinux 上打包了， 如果在其他系统， 需要下载 badvpn git 最新版从头编译， 要不 proxy-ns 无法建立虚拟网卡
 
 #### 4.2 禁用 IPv6
 
