@@ -27,3 +27,10 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```
 DEEPIN_WINE_SCALE=1.25
 ```
+
+#### 避免获取微信窗口抢焦点
+一般我把微信放在另外的工作区， 但是当有消息来时， 微信会自动获取焦点并切换工作区， 非常烦人。
+
+解决方法： 安装 NoAnnoyance Gnome Shell 扩展， 搜索 Extension 应用， 找到 NoAnnoyance 插件， 点击配置按钮， 添加一行规则 ```Wine```。
+
+这样微信再来消息的时候就不会抢夺窗口焦点了。
