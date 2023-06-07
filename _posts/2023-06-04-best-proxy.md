@@ -47,5 +47,10 @@ proxy-ns 新版在代理服务器支持 IPv6 时， IPv6 的流量也会走代�
 
 以 Emacs 为例, 找到 /usr/share/applications/emacs.desktop 中 `Exec` 字段， 在字段开头加上 proxy-ns 后， Emacs 从启动器启动后就会自动应用代理网络， 包括 Emacs 所启动的子进程。
 
+#### 测试服务器的支持情况
+* 命令 `proxy-ns nc -znv 9.9.9.9 53` 可以测试机场服务器的 TCP 支持情况
+* 命令 `proxy-ns nc -znvu 9.9.9.9 53` 可以测试机场服务器的 UDP 支持情况
+* 命令 `ss -tlnp` 可以查看本地网络的链接情况
+
 ### 最后
 机场应该是比 VPS 自己折腾要更加方便一点。 
