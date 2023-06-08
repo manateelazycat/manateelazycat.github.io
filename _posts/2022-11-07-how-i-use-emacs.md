@@ -84,6 +84,8 @@ lsp-bridge 现在主要的几个特性：
  
 [duplicate-line](https://github.com/manateelazycat/duplicate-line) 顾名思义， 就是快速复制当前行或者当前选中区域， move-text、 open-newline 和 duplicate-line 这三个插件都属于实现很简单， 但是每天使用频率超级高的插件， 节省了非常多的编程时间。
 
+[effortless-indent](https://github.com/manateelazycat/effortless-indent) 一些以空格为缩进的语言(比如 Python、 Haskell 等)， 我们往往粘贴后要再次选中才能调整缩进位置， 这个操作很繁琐。 而 effortless-indent 会记住粘贴的范围， 当我们从外部粘贴代码后， 只需要调用 `effortless-indent-right` 或者 `effortless-indent-left` 就可以快速调整缩进位置， 特别省心。
+
 [scroll-up-one-line](https://github.com/manateelazycat/lazycat-emacs/blob/0a03ddf781158f8d3b38f6b10d46fe559695cb7f/site-lisp/extensions/lazycat/basic-toolkit.el#L470) 和 [scroll-down-one-line](https://github.com/manateelazycat/lazycat-emacs/blob/0a03ddf781158f8d3b38f6b10d46fe559695cb7f/site-lisp/extensions/lazycat/basic-toolkit.el#L475), 这两个函数的方便是我就想一行一行的上下滚动一下屏幕， 但是不想改变当前光标的位置， 其他滚动的方法容易导致光标位置丢掉以后， 再回去找就很麻烦。
 
 [visual-regexp](https://github.com/benma/visual-regexp.el): 我主要用这个插件提供的 `vr/query-replace` 来替代 Emacs 内置的 `query-replace-regexp`, 它的作用是可视化的告诉你正则替换的效果。
