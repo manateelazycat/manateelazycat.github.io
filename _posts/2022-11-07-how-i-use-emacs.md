@@ -101,6 +101,8 @@ lsp-bridge 现在主要的几个特性：
 
 [watch-other-window](https://github.com/manateelazycat/watch-other-window/): 代码分屏浏览的时候， 一般我会在下面的窗口写代码， 上面的窗口展示参考内容。 这时候就可以用 `watch-other-window` 命令， 保持光标在当前窗口不动来滚动别的窗口， 不用来回的调用 `other-window` 命令。 其实最早我用的都是 `scroll-other-window` 这个内置的命令， 不知道为什么 Emacs 28 开始对某些场景会失效， 所以我就自己封装了一个更简单的 `watch-other-window` 给自己用。
 
+[easy-nav-mode](https://github.com/manateelazycat/lazycat-emacs/blob/db5c790ba25a688721f0b807a0361b52cf45db70/site-lisp/config/init-easy-nav.el): 我自己写了一个代码阅读模式的按键绑定， 随便绑定一个按键到 `easy-nav-enter`, 这个命令会把当前 Buffer 转换成阅读模式， 接着你就可以用单按键浏览源代码了， 还可以变浏览变搜索、 翻译、 跳转和拷贝光标处内容。 阅读模式会自动进入只读模式， 避免阅读代码的时候不小心修改了代码。
+
 #### 光标插件
 [cursor-chg](https://github.com/manateelazycat/lazycat-emacs/blob/47ed27a317c9d81b9ae4727a62c43bccc585b8b1/site-lisp/extensions/lazycat/cursor-chg.el#L1): 这个插件比较有意思的是， 用户输入字符的时候光标会变成窄竖线， 用户停止敲击时光标会变成方块的样子， 这样的设计既避免用户输入的时候干扰文字渲染， 又方便不输入时快速找到光标的位置。
  
