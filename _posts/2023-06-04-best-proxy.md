@@ -32,20 +32,11 @@ proxy-ns 和其他工具的实现原理不一样的是， 它利用的是 Linux 
 
 安装方法 `yay -S proxy-ns`, 用 `sudo systemctl start proxy-nsd@main.service` 命令启动 proxy-nsd 服务, 同时用 `sudo systemctl enable proxy-nsd@main.service --now` 命令加入到系统启动服务中。
 
-备注： 
-
-1. 因为 yay 安装 proxy-ns 的时候会调用 git 命令， 有可能导致安装不成功， 只要上面的 trojan 服务器配置好了， 可以临时用 ```sshuttle``` 来建立一个全局代理来安装 proxy-ns： ```sshuttle -vv --dns -r root@your_vps_ip -x your_vps_ip 0/0```
-2. 目前 proxy-ns 只在 ArchLinux 上打包了， 如果在其他系统， 需要下载 badvpn git 最新版从头编译， 要不 proxy-ns 无法建立虚拟网卡
-
-#### 禁用 IPv6
-
-proxy-ns 新版在代理服务器支持 IPv6 时， IPv6 的流量也会走代理。 但是这个功能会导致我的代理服务器没法工作， 下面是禁用这个选项的方法： 打开 ```/etc/proxy-nsd/main.conf``` 文件， 找到 ```ENABLE_IPV6``` 选项， 改成 ```ENABLE_IPV6=0```。
-
-用命令 ```sudo systemctl restart proxy-nsd@main.service``` 重启 proxy-ns 服务即可。
+备注： 目前 proxy-ns 只在 ArchLinux 上打包了， 如果在其他系统， 需要下载编译 [badvpn](https://github.com/ambrop72/badvpn) ， 以支持 proxy-ns 建立虚拟网卡的功能。
 
 #### 更改特定应用的启动网络配置
 
-以 Emacs 为例, 找到 /usr/share/applications/emacs.desktop 中 `Exec` 字段， 在字段开头加上 proxy-ns 后， Emacs 从启动器启动后就会自动应用代理网络， 包括 Emacs 所启动的子进程。
+以 Emacs 为例, 找到 `/usr/share/applications/emacs.desktop` 中 `Exec` 字段， 在字段开头加上 proxy-ns 后， Emacs 启动后就会自动应用代理网络， 包括 Emacs 里启动的所有子进程。 这样就不用为 Emacs 下的各种工具配置代理了， 非常省心。
 
 #### 一些网络测试命令
 * 命令 `proxy-ns nc -znv 9.9.9.9 53` 可以测试机场服务器的 TCP 支持情况
