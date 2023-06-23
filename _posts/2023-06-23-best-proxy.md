@@ -21,4 +21,4 @@ ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/
 7. 自动更新 GFWList: 每个 1 小时自动更新
 8. 自动更新订阅: 每个 1 小时自动更新
 
-最后点击 `保存并应用`, 这样就配置好整个系统的全局透明代理， 不再需要 SwitchyOmega 和 proxy-ns 其他工具， 应该是目前我折腾最简单的代理方式了。
+这样就配置好整个系统的全局透明代理， 不再需要 SwitchyOmega 和 proxy-ns 其他工具, 省心方便。
