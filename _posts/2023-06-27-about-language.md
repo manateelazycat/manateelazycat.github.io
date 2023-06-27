@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 创造性思维和严格型编程语言
-categories: [Proxy]
+categories: [Think]
 ---
 
 编程是介于科学和艺术的一门实践学科。
