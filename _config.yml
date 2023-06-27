@@ -11,4 +11,5 @@ webrick:
 
 plugins:
   - jekyll-feed
-  
+
+permalink: /:year/:month/:day/:title/
