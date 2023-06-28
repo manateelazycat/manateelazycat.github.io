@@ -18,7 +18,8 @@ ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/
 4. 透明代理/系统代理： `启用 GFWList 模式`
 5. 透明代理/系统代理实现方式： `redirect`
 6. 规则端口的分流模式： `GFWList 模式`
-7. 自动更新 GFWList: 每个 1 小时自动更新
-8. 自动更新订阅: 每个 1 小时自动更新
+7. 防止 DNS 污染： DNS-over-HTTPS
+8. 自动更新 GFWList: 每个 1 小时自动更新
+9. 自动更新订阅: 每个 1 小时自动更新
 
 That‘s all! ;)
