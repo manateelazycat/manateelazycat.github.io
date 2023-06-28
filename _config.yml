@@ -12,4 +12,6 @@ webrick:
 plugins:
   - jekyll-feed
 
-permalink: /:year/:month/:day/:title/
+collections:
+  posts:
+    permalink: /:year/:month/:day/:title/
