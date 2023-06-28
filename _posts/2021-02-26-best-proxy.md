@@ -76,7 +76,7 @@ trojan 服务端配置成功以后会在 VPS 的/home/trojan/目录下生成 cli
 
 ### 2.1 安装 sshuttle
 
-除了浏览器正常浏览外， 作为开发者经常需要通过命令行访问各种安装包， 我在[上一期的文章](https://manateelazycat.github.io/proxy/2020/03/17/best-proxy.html) 中介绍了对 Git、 Git SSH、 yay、 Aria2、 npm、 youtube-dl 各种工具的代理设置。
+除了浏览器正常浏览外， 作为开发者经常需要通过命令行访问各种安装包， 我在[上一期的文章](https://manateelazycat.github.io/2020/03/17/best-proxy.html) 中介绍了对 Git、 Git SSH、 yay、 Aria2、 npm、 youtube-dl 各种工具的代理设置。
 
 今天介绍一种新的方法 sshuttle:
 

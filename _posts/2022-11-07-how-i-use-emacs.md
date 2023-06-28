@@ -48,7 +48,7 @@ blink-search 针对上面两种场景进行归纳分析:
 代码编辑的插件非常多， 我今天主要介绍我平常每天都在用的一下高频插件。
 
 #### 自动保存
-首先要介绍的是 [auto-save](https://github.com/manateelazycat/auto-save), Emacs 内在的保存机制设计得非常麻烦， 保存时到处丢临时版本内容， 很容易污染项目目录。 平常调试也比较麻烦， 万一没保存， 编译或者启动脚本都会发现行为不对。 auto-save 利用是 Emacs 内在的 idle 机制， 当用户停下手指头 1 秒以后， 它就会自动保存所有未保存的文件， 心智非常轻松。 万一保存错文件， 配合 git checkout 机制都可以快速返回修改之前的状态。 这个插件平常用基本上没有任何存在感， 但是从推荐程度来说， 它对于我来说是最重要的插件， 没有 auto-save, 我要浪费多少时间在手动保存操作上。 (感兴趣 auto-save 原理的同学可以进一步阅读 [auto-save.el 源码解析](https://manateelazycat.github.io/emacs/2016/03/16/auto-save.html))
+首先要介绍的是 [auto-save](https://github.com/manateelazycat/auto-save), Emacs 内在的保存机制设计得非常麻烦， 保存时到处丢临时版本内容， 很容易污染项目目录。 平常调试也比较麻烦， 万一没保存， 编译或者启动脚本都会发现行为不对。 auto-save 利用是 Emacs 内在的 idle 机制， 当用户停下手指头 1 秒以后， 它就会自动保存所有未保存的文件， 心智非常轻松。 万一保存错文件， 配合 git checkout 机制都可以快速返回修改之前的状态。 这个插件平常用基本上没有任何存在感， 但是从推荐程度来说， 它对于我来说是最重要的插件， 没有 auto-save, 我要浪费多少时间在手动保存操作上。 (感兴趣 auto-save 原理的同学可以进一步阅读 [auto-save.el 源码解析](https://manateelazycat.github.io/2016/03/16/auto-save.html))
 
 #### 智能补全
 代码语义编辑方面， 我主要用 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge), lsp-bridge 的好处是利用 Python 多线程的技术， 结合专门为 LSP 协议开发的 acm 补全菜单， 能够把 Emacs 代码语法补全性能提升到 VSCode 的水平。 
@@ -59,7 +59,7 @@ lsp-bridge 现在主要的几个特性：
 3. 多后端融合： acm 菜单自动融合 lsp, tabnine, template, file path, english, tailwind, citre 等补全后端， 用户不需要折腾多后端融合
 4. VSCode 版的远程补全体验： 默认支持远程代码补全， 多大文件都不卡顿
 
-这个插件的原理和核心技术我就不展开说了， 可以读我以前写的文章 [LSP-Bridge 架构设计与 LSP 协议解析](https://manateelazycat.github.io/emacs/2022/05/12/lsp-bridge.html) 和 [为什么 lsp-bridge 不用 capf?](https://manateelazycat.github.io/emacs/2022/06/26/why-lsp-bridge-not-use-capf.html) 。
+这个插件的原理和核心技术我就不展开说了， 可以读我以前写的文章 [LSP-Bridge 架构设计与 LSP 协议解析](https://manateelazycat.github.io/2022/05/12/lsp-bridge.html) 和 [为什么 lsp-bridge 不用 capf?](https://manateelazycat.github.io/2022/06/26/why-lsp-bridge-not-use-capf.html) 。
 
 ![]({{site.url}}/pics/howiuseemacs/lsp-bridge.png)
 
@@ -218,7 +218,7 @@ EAF Git 从功能上， 现阶段肯定要比 magit 弱很多。 EAF Git 的局�
 
 `eaf-git-show-history` 有时候我们想查找一下历史补丁的详情， 但是又记不得补丁的提交信息（比如谁写的， 或者什么时间写的）， 只知道代码出错的原因肯定是自己以前见过的补丁。 这时候， `eaf-git-show-history` 这个命令就非常好用， 它可以反向解析出修改当前代码的所有提交历史， 就很容易找到自己想找的哪个补丁。
 
-完整的手册可以查看 [EAF Git Client 手册](https://manateelazycat.github.io/emacs/eaf/2022/04/22/eaf-git.html)
+完整的手册可以查看 [EAF Git Client 手册](https://manateelazycat.github.io/2022/04/22/eaf-git.html)
 
 ![]({{site.url}}/pics/howiuseemacs/eaf-git.png)
 

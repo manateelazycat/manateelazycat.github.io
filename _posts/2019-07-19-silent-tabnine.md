@@ -1,14 +1,14 @@
 ---
 layout: post
-title: 禁止TabNine不停的催我升级收费版本
+title: 禁止 TabNine 不停的催我升级收费版本
 categories: [Emacs]
 ---
 
-前天推荐了非常好用的[TabNine](https://manateelazycat.github.io/emacs/2019/07/17/tabnine.html)
+前天推荐了非常好用的 [TabNine](https://manateelazycat.github.io/2019/07/17/tabnine.html)
 
-这几天用下来，越用越喜欢，而且觉得免费版就够了, 但是TabNine在大型项目（超过400kb索引）的时候，会一直在 echo-area 催我升级收费版本，有点烦人。
+这几天用下来， 越用越喜欢， 而且觉得免费版就够了, 但是 TabNine 在大型项目（超过 400kb 索引）的时候， 会一直在 echo-area 催我升级收费版本， 有点烦人。
 
-研究了一下 company 的源代码，写了一段补丁，把下面的代码粘贴到 ~/.emacs 配置文件中， TabNine就不会在大项目中反复的提示你升级收费版本了：
+研究了一下 company 的源代码， 写了一段补丁， 把下面的代码粘贴到 ~/.emacs 配置文件中， TabNine 就不会在大项目中反复的提示你升级收费版本了：
 
 ```elisp
 ;; The free version of TabNine is good enough,
@@ -22,4 +22,4 @@ categories: [Emacs]
         ad-do-it))))
 ```
 
-世界终于清静了，但是鉴于TabNine补全的爽快，还是建议大家多多去[购买](https://tabnine.com/buy)TabNine的收费版本, 支持一下作者。
+世界终于清静了， 但是鉴于 TabNine 补全的爽快，  还是建议大家多多去[购买](https://tabnine.com/buy)TabNine 的收费版本, 支持一下作者。
