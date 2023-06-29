@@ -597,7 +597,7 @@ title: Projects
       snails
     </a>
     <div class="project-intro">
-      作为资深的Helm开发者，觉得Helm越来越臃肿，而且经常卡顿，加之异常讨厌ivy在minibuffer跳上跳下晃眼睛的设计。自己重新设计了类似VSCode的弹出式补全框架：集成了VSCode的交互行为、Helm多后端集成搜索、Ivy的速度，而且默认行为只有一个，输入关键字按回车，没有复杂的其他操作。
+      作为资深的Helm开发者，觉得Helm越来越臃肿，而且经常卡顿，加之异常讨厌ivy在minibuffer跳上跳下晃眼睛的设计。自己重新设计了类似VSCode的弹出式补全框架：集成了VSCode的交互行为、Helm多后端集成搜索、Ivy的速度，而且默认行为只有一个，输入关键字按回车，没有复杂的其他操作。blink-search的性能要比snails还要好很多。
     </div>
   </div>
 
@@ -608,7 +608,7 @@ title: Projects
       nox
     </a>
     <div class="project-intro">
-      LSP (Language Server Protocol) 是目前非常流行的代码补全协议，nox利用LSP协议为多种编程语言提供代码语法补全、定义跳转和引用等功能，代码fork于eglot, 因为移除了大量无用和消耗性能的模块，nox是目前Emacs下流畅性最好的LSP客户端。
+      LSP (Language Server Protocol) 是目前非常流行的代码补全协议，nox利用LSP协议为多种编程语言提供代码语法补全、定义跳转和引用等功能，代码fork于eglot, 因为移除了大量无用和消耗性能的模块，nox是比eglot的性能好很多。自从开发了lsp-bridge,这个项目就没有必要继续维护了。
     </div>
   </div>
 
@@ -619,7 +619,7 @@ title: Projects
       find-define
     </a>
     <div class="project-intro">
-      集成了 elisp-def、jedi、godef-jump、dumb-jump等插件对不同的编程语言提供源码跳转和快速返回的功能。目前功能已经被Nox + Xref这种更先进的技术替代，这个插件不再开发。
+      集成了 elisp-def、jedi、godef-jump、dumb-jump等插件对不同的编程语言提供源码跳转和快速返回的功能。目前功能已经被lsp-bridge这种更先进的技术替代，这个插件不再开发。
     </div>
   </div>
 
@@ -630,7 +630,7 @@ title: Projects
       multi-term
     </a>
     <div class="project-intro">
-      Emacs最早也是最著名的终端插件，主要解决了多终端管理、底部固定终端和关闭后自动退出等问题，现在用的最多的是我的 aweshell.el 插件，遇到图形要求高的，就搭配EAF终端插件来使用。这个插件已经不再继续维护和开发了。
+      Emacs最早也是最著名的终端插件，主要解决了多终端管理、底部固定终端和关闭后自动退出等问题，现在用的最多的是我的 aweshell.el 插件，遇到图形要求高的，就搭配EAF终端插件来使用。这个插件已经不再继续维护和开发了。现在我主要使用eaf-pyqterminal, 用PyQt绘制的，性能和兼容性更好。
     </div>
   </div>
 
@@ -641,7 +641,7 @@ title: Projects
       awesome-pair
     </a>
     <div class="project-intro">
-      集成于 paredit.el，针对非Lisp环境，特别是Web环境和前端Vue.js增加了大量贴心的结构化编辑功能：比如标签属性结构化编辑、Vue.js多模式区域智能识别编辑。
+      集成于 paredit.el，针对非Lisp环境，特别是Web环境和前端Vue.js增加了大量贴心的结构化编辑功能：比如标签属性结构化编辑、Vue.js多模式区域智能识别编辑。由fingertip替代，fingertip支持Emacs内置的treesit技术。
     </div>
   </div>
 
@@ -652,7 +652,7 @@ title: Projects
       awesome-tab
     </a>
     <div class="project-intro">
-      tabbar.el默认的界面太丑而且难用，awesome-tab基于原版的tabbar.el进行了大量功能增强：包括按照项目和自定义规则分组、增加文件图标显示、标签外形美化等工作。
+      tabbar.el默认的界面太丑而且难用，awesome-tab基于原版的tabbar.el进行了大量功能增强：包括按照项目和自定义规则分组、增加文件图标显示、标签外形美化等工作。现在由sort-tab替代，sort-tab根据标签使用频率排序，更实用。
     </div>
   </div>
 
@@ -663,7 +663,7 @@ title: Projects
       sdcv
     </a>
     <div class="project-intro">
-      基于星际译王命令行工具开发的光标翻译软件，可以自动提取当前光标的单词或选中文字，并通过弹出菜单的形式显示翻译，英语学习翻译利器。
+      基于星际译王命令行工具开发的光标翻译软件，可以自动提取当前光标的单词或选中文字，并通过弹出菜单的形式显示翻译，英语学习翻译利器。现在由popweb替代，词典后端更多，界面更丰富。
     </div>
   </div>
 
@@ -674,7 +674,7 @@ title: Projects
       grammatical-edit
     </a>
     <div class="project-intro">
-      基于 tree-sitter 生成的AST来实现语法结构编辑，比awesome-pair原理基础更坚固，适应的语言范围更广。
+      基于 tree-sitter 生成的AST来实现语法结构编辑，比awesome-pair原理基础更坚固，适应的语言范围更广。由fingertip替代。
     </div>
   </div>
 
