@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ubuntu 系统浏览器支持 HTML5
+title: Ubuntu 手动编译 PyQt6 支持私有解码器
 categories: [Emacs, EAF]
 ---
 
