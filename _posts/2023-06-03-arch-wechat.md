@@ -34,3 +34,7 @@ DEEPIN_WINE_SCALE=1.25
 解决方法： 安装 NoAnnoyance Gnome Shell 扩展， 搜索 Extension 应用， 找到 NoAnnoyance 插件， 点击配置按钮， 添加一行规则 ```Wine```。
 
 这样微信再来消息的时候就不会抢夺窗口焦点了。
+
+### 环境冲突
+微信和 Gnome Shell 的 [Smart Auto Move](https://extensions.gnome.org/extension/4736/smart-auto-move/)插件冲突， 这个插件会导致微信窗口启动不了， 卸载这个插件就好了。
+
