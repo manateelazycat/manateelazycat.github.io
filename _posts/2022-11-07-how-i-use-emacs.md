@@ -264,7 +264,18 @@ EAF RSS 阅读器相对于文本版的 RSS Reader 实现， 主要有两个优�
 #### EAF 音乐播放器
 我曾经是 emms.el 插件的[重度配置者](https://github.com/manateelazycat/lazycat-emacs-time-machine/blob/master/site-lisp/config/init-emms.el)， 但是实在受不了播放列表多列无法对齐的界面， 强迫症真心忍受不了, 偶尔会按一下 `F` 键， 像浏览器网页跳转那样来快速切换音乐。
 
+默认还支持网易云音乐的歌单播放， 同时支持封面、 歌词的自动下载。
+
 ![]({{site.url}}/pics/howiuseemacs/eaf-music-player.png)
+
+![]({{site.url}}/pics/howiuseemacs/eaf-music-player-cloud.png)
+
+#### EAF 地图
+我比较喜欢全世界到处浪， 一般浪之前我都会做详细的攻略， 找出所有可能的旅游景点， 自驾的时候一个刚需就是要知道怎么走最顺路， 这样可以节省大量的时间。 商业地图不管是 Goolge 还是高德地图， 都有一个限制， 超过 20 个地址以后， 这些商业地图就没法做路径自动规划了。 一旦超过 20 个景点， 以前我就需要用两张地图才能规划， 经常在两个地图对坐标或者异动景点位置， 全凭脑袋记坐标。
+
+终于在折磨了很多次以后， 我有一天下午基于 OpenStreetMap 开发了一个旅游地图， 按 a 键自动添加地址， 按 d 键删除地址， 按 x 键自动对已经添加的地址做动态路径规划， 按 s 键还可以以文本的方式保存名称和坐标， 方便 Emacs 批量快速操作， 也方便快速分享给朋友们。
+
+![]({{site.url}}/pics/howiuseemacs/eaf-map.png)
 
 #### EAF 终端
 从文本操作的角度看， 客观的说 EAF 的终端没有 eshell 和 [aweshell](https://github.com/manateelazycat/aweshell) 好用， 唯一的优势是具备完全渲染 VTE 所有细节的能力, 同时不会因为 Emacs 自身的限制导致终端运行的命令性能降低。
