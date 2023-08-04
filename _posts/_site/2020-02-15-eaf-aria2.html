@@ -1,7 +1,7 @@
 <h3 id="eaf浏览器--aria2下载客户端">EAF浏览器 + Aria2下载客户端</h3>
 <p>今天写了一个<a href="https://github.com/manateelazycat/emacs-application-framework/commit/c026064067d9c6100fbfe9f983a0486b8aea9627">EAF+Aria2</a>补丁。</p>
 
-<p>只要安装了<code class="highlighter-rouge">aria2c</code>和<code class="highlighter-rouge">aria2p</code>这两个命令，EAF浏览器就可以直接使用aria2来下载文件了。</p>
+<p>只要安装了<code class="language-plaintext highlighter-rouge">aria2c</code>和<code class="language-plaintext highlighter-rouge">aria2p</code>这两个命令，EAF浏览器就可以直接使用aria2来下载文件了。</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> aria2
 <span class="nb">sudo </span>pip3 <span class="nb">install </span>aria2p
@@ -12,7 +12,7 @@
 <p><img src="http://localhost:4000/pics/eaf-aria2/eaf-aria2.png" alt="EAF + Aria2" /></p>
 
 <h3 id="自定义下载目录">自定义下载目录</h3>
-<p>EAF的默认下载目录在 <code class="highlighter-rouge">~/Downloads</code>, 我们可以通过下面的代码修改下载文件保存目录，比如 <code class="highlighter-rouge">~/Documents</code></p>
+<p>EAF的默认下载目录在 <code class="language-plaintext highlighter-rouge">~/Downloads</code>, 我们可以通过下面的代码修改下载文件保存目录，比如 <code class="language-plaintext highlighter-rouge">~/Documents</code></p>
 
 <div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">eaf-setq</span> <span class="nv">eaf-browser-download-path</span> <span class="s">"~/Documents"</span><span class="p">)</span>
 </code></pre></div></div>
@@ -29,6 +29,7 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>forward-socks5t / 127.0.0.1:1080 <span class="nb">.</span>
 listen-address 127.0.0.1:9888
+<span class="nb">sudo </span>systemctl start privoxy
 </code></pre></div></div>
 
 <p>最后通过下面的代码来设置Aria2代理:</p>

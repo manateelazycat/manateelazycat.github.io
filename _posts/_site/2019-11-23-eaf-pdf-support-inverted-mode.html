@@ -8,7 +8,7 @@
 
 <p>最开始的时候读了 PyMupdf 的手册，找到API</p>
 
-<p><code class="highlighter-rouge">getPixmap(matrix=fitz.Identity, colorspace=fitz.csRGB, clip=None, alpha=False, annots=True)</code> ,</p>
+<p><code class="language-plaintext highlighter-rouge">getPixmap(matrix=fitz.Identity, colorspace=fitz.csRGB, clip=None, alpha=False, annots=True)</code> ,</p>
 
 <p>最开始的想法是直接把 alpha 这个参数设置为 True, 然后PDF页面渲染的时候先画任意颜色背景，因为PDF页面是透明的，这样就可以通过背景颜色渲染来控制PDF的背景颜色。</p>
 
@@ -20,7 +20,7 @@
 
 <p>马上搜索了一下 pixmap 的API, 看到了这个：</p>
 
-<p><code class="highlighter-rouge">invertIRect([irect])</code></p>
+<p><code class="language-plaintext highlighter-rouge">invertIRect([irect])</code></p>
 
 <p>看着原理可以行得通，构思一下解决思路：</p>
 <ol>

@@ -3,7 +3,7 @@
 <p>如果说 CSS 是把样式从 HTML 剥离的技术, Stimulus 就是把 JS 从 HTML 剥离的技术, 结合  Turbolinks 一起使用, 开发效率和用户体验都很棒.</p>
 
 <p>Stimulus 的代码一般长这样:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button
     data-controller="user"
     data-action="user.action"&gt;
 Text
@@ -11,7 +11,7 @@ Text
 </code></pre></div></div>
 <p>当点击按钮的时候, Stimulus 会自动找到 user_controller.js 文件, 并调用 user_controller.js 中的 action 函数.</p>
 
-<p>Stimulus 利用元素的属性, 在保证 JS 和 HTML 之间关联性的同时最大程度的保持 HTML 文件的干净, 并自动建立从 HTML 元素到 JS 函数的连接, 不用手动在 JS 文件中写很多这种逻辑孤立的回调函数 <code class="highlighter-rouge">$("button").click(function(){${ ... })</code>.</p>
+<p>Stimulus 利用元素的属性, 在保证 JS 和 HTML 之间关联性的同时最大程度的保持 HTML 文件的干净, 并自动建立从 HTML 元素到 JS 函数的连接, 不用手动在 JS 文件中写很多这种逻辑孤立的回调函数 <code class="language-plaintext highlighter-rouge">$("button").click(function(){${ ... })</code>.</p>
 
 <p>说 Stimulus 是生产力代表一点都不为过, 不过今天不详细讲解 Stimulus 的用法.
 今天主要讲怎么利用 Stimulus 优雅的处理 AJAX 请求, 来构建健壮可维护的 JavaScript 代码.</p>

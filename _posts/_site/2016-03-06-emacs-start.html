@@ -39,13 +39,13 @@
 
 <p>所以在折腾任何Emacs插件时， 首先要得到 Emacs 的出错信息， 只有得到出错信心才能快速的去寻找解决方案，这个技能很简单， 就是在 Emacs 启动的时候加一个  –debug-init 参数， 比如像下面这样启动Emacs：</p>
 
-<p><code class="highlighter-rouge">emacs --debug-init</code></p>
+<p><code class="language-plaintext highlighter-rouge">emacs --debug-init</code></p>
 
 <p>这样Emacs在加载配置文件的时候就会启用调试器， 一旦发生错误后， Emacs不会崩溃一闪而过， 而是在调试器中告诉你在加载配置文件的哪一个函数出现了的具体问题信息， 然后我们就可以拿着问题的信息去研究修复了。</p>
 
 <p>因为很多初学者对Emacs不是非常熟悉， 经常不知道 Emacs 默认的行为是什么， 甚至无从判断问题是 Emacs 本身就有问题还是自己添加的配置有问题， 其实只用在启动的时候添加 -Q 参数就可以了， 像这样：</p>
 
-<p><code class="highlighter-rouge">emacs -Q</code></p>
+<p><code class="language-plaintext highlighter-rouge">emacs -Q</code></p>
 
 <p>这样Emacs就不会加载任何配置文件， 你可以对比Emacs默认的行为来判断是否真的是因为配置文件引起的问题。</p>
 

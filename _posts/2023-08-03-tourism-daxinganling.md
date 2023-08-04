@@ -402,11 +402,20 @@ categories: [Travel]
 
 ![]({{site.url}}/pics/daxinganling/131.jpg)
 
-
 #### 第十二天： 齐齐哈尔 - 哈尔滨
-从齐齐哈尔到哈尔滨的路上要经过扎龙国家级自然保护区， 可以带小朋友来这里看一下丹顶鹤。
+从齐齐哈尔到哈尔滨的路上要经过扎龙国家级自然保护区， 可以带小朋友来这里看一下丹顶鹤， 丹顶鹤全世界已不足 3700 只， 其中 300 多只在扎龙自然保护区。
 
-未完待续
+![]({{site.url}}/pics/daxinganling/132.jpg)
+
+![]({{site.url}}/pics/daxinganling/133.jpg)
+
+![]({{site.url}}/pics/daxinganling/134.jpg)
+
+![]({{site.url}}/pics/daxinganling/135.jpg)
+
+![]({{site.url}}/pics/daxinganling/136.jpg)
+
+![]({{site.url}}/pics/daxinganling/137.jpg)
 
 #### 第十三天： 哈尔滨
 未完待续
