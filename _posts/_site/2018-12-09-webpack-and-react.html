@@ -179,19 +179,19 @@ cnpm <span class="nb">install</span> <span class="nt">--save-dev</span> reload n
 <p>我们按照上面的目录结构去填充每个配置文件, 我会在文件下面讲解每行代码的意思:</p>
 
 <p><strong>app.js</strong></p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">),</span>
-    <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">(),</span>
-    <span class="nx">reload</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">reload</span><span class="dl">'</span><span class="p">),</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">),</span>
+    <span class="nx">app</span> <span class="o">=</span> <span class="nf">express</span><span class="p">(),</span>
+    <span class="nx">reload</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">reload</span><span class="dl">'</span><span class="p">),</span>
     <span class="nx">rootPath</span> <span class="o">=</span> <span class="nx">__dirname</span><span class="p">;</span>
 
-<span class="kd">var</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">webpack</span><span class="dl">"</span><span class="p">),</span>
-    <span class="nx">webpackConfig</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./webpack.config</span><span class="dl">"</span><span class="p">),</span>
-    <span class="nx">webpackDevMiddleware</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">webpack-dev-middleware</span><span class="dl">"</span><span class="p">),</span>
-    <span class="nx">webpackHotMiddleware</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">webpack-hot-middleware</span><span class="dl">"</span><span class="p">),</span>
-    <span class="nx">compiler</span> <span class="o">=</span> <span class="nx">webpack</span><span class="p">(</span><span class="nx">webpackConfig</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">webpack</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">webpackConfig</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./webpack.config</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">webpackDevMiddleware</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">webpack-dev-middleware</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">webpackHotMiddleware</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">webpack-hot-middleware</span><span class="dl">"</span><span class="p">),</span>
+    <span class="nx">compiler</span> <span class="o">=</span> <span class="nf">webpack</span><span class="p">(</span><span class="nx">webpackConfig</span><span class="p">);</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
-  <span class="nx">webpackDevMiddleware</span><span class="p">(</span><span class="nx">compiler</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span>
+  <span class="nf">webpackDevMiddleware</span><span class="p">(</span><span class="nx">compiler</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">publicPath</span><span class="p">:</span> <span class="nx">webpackConfig</span><span class="p">.</span><span class="nx">output</span><span class="p">.</span><span class="nx">publicPath</span><span class="p">,</span>
     <span class="na">noInfo</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="na">stats</span><span class="p">:</span> <span class="p">{</span>
@@ -199,17 +199,17 @@ cnpm <span class="nb">install</span> <span class="nt">--save-dev</span> reload n
     <span class="p">}</span>
   <span class="p">})</span>
 <span class="p">);</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">webpackHotMiddleware</span><span class="p">(</span><span class="nx">compiler</span><span class="p">));</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kd">static</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/dist</span><span class="dl">'</span><span class="p">));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="nf">webpackHotMiddleware</span><span class="p">(</span><span class="nx">compiler</span><span class="p">));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nf">static</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/dist</span><span class="dl">'</span><span class="p">));</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">res</span><span class="p">.</span><span class="nx">sendFile</span><span class="p">(</span><span class="nx">rootPath</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/server/index.html</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nf">sendFile</span><span class="p">(</span><span class="nx">rootPath</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/server/index.html</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nx">reload</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+<span class="nf">reload</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">* Server starting...</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">* Server starting...</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -238,13 +238,13 @@ cnpm <span class="nb">install</span> <span class="nt">--save-dev</span> reload n
 
 <span class="kd">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">React + Express rocks!</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span>
     <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">title</span> <span class="p">}</span> <span class="o">&gt;</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">,
-</span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">app</span><span class="dl">'</span><span class="p">)</span>
+</span>    <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">app</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">);</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">module</span><span class="p">.</span><span class="nx">hot</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">module</span><span class="p">.</span><span class="nx">hot</span><span class="p">.</span><span class="nx">accept</span><span class="p">();</span>
+<span class="nf">if </span><span class="p">(</span><span class="nx">module</span><span class="p">.</span><span class="nx">hot</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">module</span><span class="p">.</span><span class="nx">hot</span><span class="p">.</span><span class="nf">accept</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -253,10 +253,10 @@ cnpm <span class="nb">install</span> <span class="nt">--save-dev</span> reload n
     <p>顶部是 import 代码, 导入 React 库和 LESS 组件</p>
   </li>
   <li>
-    <p>中间 ReactDOM.render 就是 React 组件的代码, 替换 server/index.html 中 id 为 app 的 DIV 区域, React 组件的样式主要通过 <code class="highlighter-rouge">import styles from "./index.less"</code> 来引入, 这样每个组件的样式都单独放在组件相关的 less 文件中, 不会因为组件越来越多, less 的作用域相互影响</p>
+    <p>中间 ReactDOM.render 就是 React 组件的代码, 替换 server/index.html 中 id 为 app 的 DIV 区域, React 组件的样式主要通过 <code class="language-plaintext highlighter-rouge">import styles from "./index.less"</code> 来引入, 这样每个组件的样式都单独放在组件相关的 less 文件中, 不会因为组件越来越多, less 的作用域相互影响</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">module.hot.accpet()</code> 代码的意思就是当JS修改后, 如果当前模块是热的即进行热替换, 和 app.js 中的  <code class="highlighter-rouge">app.use(webpackHotMiddleware(compiler))</code> 代码对应, 只有这两个代码都存在, JS/LESS文件修改后才会进行热替换操作</p>
+    <p><code class="language-plaintext highlighter-rouge">module.hot.accpet()</code> 代码的意思就是当JS修改后, 如果当前模块是热的即进行热替换, 和 app.js 中的  <code class="language-plaintext highlighter-rouge">app.use(webpackHotMiddleware(compiler))</code> 代码对应, 只有这两个代码都存在, JS/LESS文件修改后才会进行热替换操作</p>
   </li>
 </ul>
 
@@ -269,7 +269,7 @@ cnpm <span class="nb">install</span> <span class="nt">--save-dev</span> reload n
 }
 </code></pre>
 
-<p>最简单的LESS文件, 需要安装 less、less-loader、 style-loader 和 css-loader 这四个插件, 才能通过 webpack 保证 JS/JSX 文件中可以直接执行 <code class="highlighter-rouge">import styles from "./index.less"</code> 来使用 LESS 文件的样式内容.</p>
+<p>最简单的LESS文件, 需要安装 less、less-loader、 style-loader 和 css-loader 这四个插件, 才能通过 webpack 保证 JS/JSX 文件中可以直接执行 <code class="language-plaintext highlighter-rouge">import styles from "./index.less"</code> 来使用 LESS 文件的样式内容.</p>
 
 <p><strong>server/index.html</strong></p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -287,9 +287,9 @@ cnpm <span class="nb">install</span> <span class="nt">--save-dev</span> reload n
 </code></pre></div></div>
 <p>非常简单的 HTML 文件</p>
 <ul>
-  <li><code class="highlighter-rouge">&lt;div id="app"&gt;&lt;div&gt;</code> 一个DIV占位符, 用于 React 的JS组件进行DOM替换操作</li>
-  <li><code class="highlighter-rouge">&lt;script src="./bundle.js"&gt;&lt;/script&gt;</code> 注意, 这里加载的是 Webpack 编译后的 bundle.js 文件, 而不是 client/index.js 文件</li>
-  <li><code class="highlighter-rouge">&lt;script src="/reload/reload.js"&gt;&lt;/script&gt;</code> 这里的 reload.js 就对应 app.js 中的 <code class="highlighter-rouge">reload(app)</code> 代码, reload 插件在服务器重启后, 会自动重新加载所有包括 <code class="highlighter-rouge">&lt;script src="/reload/reload.js"&gt;&lt;/script&gt;</code> 的页面</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;div id="app"&gt;&lt;div&gt;</code> 一个DIV占位符, 用于 React 的JS组件进行DOM替换操作</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;script src="./bundle.js"&gt;&lt;/script&gt;</code> 注意, 这里加载的是 Webpack 编译后的 bundle.js 文件, 而不是 client/index.js 文件</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;script src="/reload/reload.js"&gt;&lt;/script&gt;</code> 这里的 reload.js 就对应 app.js 中的 <code class="language-plaintext highlighter-rouge">reload(app)</code> 代码, reload 插件在服务器重启后, 会自动重新加载所有包括 <code class="language-plaintext highlighter-rouge">&lt;script src="/reload/reload.js"&gt;&lt;/script&gt;</code> 的页面</li>
 </ul>
 
 <p><strong>dist/bundle.js</strong>
@@ -361,13 +361,13 @@ Webpack 为了加快编译速度, bundle.js 文件其实都存在于内存中, �
 </span></code></pre></div></div>
 <p>大部分代码都是被 npm/cnpm 命令自动生成的, 我们只用看 scripts 这一段:</p>
 <ul>
-  <li><code class="highlighter-rouge">"start": "nodemon ./app.js"</code> 这句代码的意思是, 由 nodemon 来启动 app.js , nodemon 会监听项目的所有文件, 在文件变动后重启服务器, 重启服务器的规则受 nodemon.json 配置文件中的规则影响</li>
+  <li><code class="language-plaintext highlighter-rouge">"start": "nodemon ./app.js"</code> 这句代码的意思是, 由 nodemon 来启动 app.js , nodemon 会监听项目的所有文件, 在文件变动后重启服务器, 重启服务器的规则受 nodemon.json 配置文件中的规则影响</li>
 </ul>
 
 <p><strong>webpack.config.js</strong>
 如果你看到这里了, 你会发现上面的这些配置一点都不复杂, 其实最复杂的就是 webpack.config.js , 但是如果你理解了我上面说的工作流程, 你会发现理解 webpack.config.js 的内容也是非常自然的:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpack</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpack</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">hotMiddlewareScript</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">webpack-hot-middleware/client?reload=true</span><span class="dl">"</span><span class="p">;</span>
 
@@ -413,8 +413,8 @@ Webpack 为了加快编译速度, bundle.js 文件其实都存在于内存中, �
     <span class="na">filename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bundle.js</span><span class="dl">'</span>
   <span class="p">},</span>
   <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
-    <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">HotModuleReplacementPlugin</span><span class="p">(),</span>
-    <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">NoEmitOnErrorsPlugin</span><span class="p">(),</span>
+    <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nc">HotModuleReplacementPlugin</span><span class="p">(),</span>
+    <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nc">NoEmitOnErrorsPlugin</span><span class="p">(),</span>
   <span class="p">],</span>
   <span class="na">devServer</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">hot</span><span class="p">:</span> <span class="kc">true</span>
@@ -424,13 +424,13 @@ Webpack 为了加快编译速度, bundle.js 文件其实都存在于内存中, �
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">const webpack = require('webpack');</code> 导入 webpack 这个库</p>
+    <p><code class="language-plaintext highlighter-rouge">const webpack = require('webpack');</code> 导入 webpack 这个库</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">var hotMiddlewareScript = "webpack-hot-middleware/client?reload=true"</code> 这个代码非常重要, app.js 和 client/index.js 都加入了对 webpack-hot-middleware 这个中间件的支持, 以实现 JS 文件改动后的热替换支持, 这句的意思是, JS热替换失败以后重新加载页面, 如果这句不写, 很多情况下, 你改 JS 文件的内容会导致热替换机制不一定成功, 最终导致即使修改了JS文件, 浏览器也不会刷新页面内容</p>
+    <p><code class="language-plaintext highlighter-rouge">var hotMiddlewareScript = "webpack-hot-middleware/client?reload=true"</code> 这个代码非常重要, app.js 和 client/index.js 都加入了对 webpack-hot-middleware 这个中间件的支持, 以实现 JS 文件改动后的热替换支持, 这句的意思是, JS热替换失败以后重新加载页面, 如果这句不写, 很多情况下, 你改 JS 文件的内容会导致热替换机制不一定成功, 最终导致即使修改了JS文件, 浏览器也不会刷新页面内容</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">client: ["./client", hotMiddlewareScript]</code> 用上面的热替换规则, 监听 client 下所有文件, 如果 client 下的文件变动后, webpack会自动重新编译、打包和热替换, 记住 JS/LESS 文件的变动和替换是由 Webpack 来监听和执行的, nodemon 主要用于监听后端代码、配置文件和HTML页面文件</p>
+    <p><code class="language-plaintext highlighter-rouge">client: ["./client", hotMiddlewareScript]</code> 用上面的热替换规则, 监听 client 下所有文件, 如果 client 下的文件变动后, webpack会自动重新编译、打包和热替换, 记住 JS/LESS 文件的变动和替换是由 Webpack 来监听和执行的, nodemon 主要用于监听后端代码、配置文件和HTML页面文件</p>
   </li>
   <li>
     <p>rules 相关代码主要控制 js/jsx 文件的需要通过 babel-loader 来转换 React JSX文件的 JavaScript 语法, less 文件自动会被三个插件 style-loader、css-loader、less-loader 依次处理, 自动把编写的 Less 文件转换成 CSS 样式, 并保证每个CSS组件的名字有一个唯一的hash值, 避免不同组件之间同样的 class name 互相影响.</p>
@@ -445,7 +445,7 @@ Webpack 为了加快编译速度, bundle.js 文件其实都存在于内存中, �
     <p>plugins 相关的代码, 表示加载 HotModuleReplacementPlugin 这个插件, 配合 app.js、client/index.js 进行 JS/CSS 热替换操作, NoEmitOnErrorsPlugin 插件的目的是, 当文件有语法错误时不要刷新页面, 只是在终端里打印错误</p>
   </li>
   <li>
-    <p>devServer 最主要的配置就是 <code class="highlighter-rouge">hot: true</code>, 还是关于热替换操作的, 你看, 为了让 JS/CSS 热替换成功, 首先需要 app.js 使用 <code class="highlighter-rouge">app.use</code> 代码使用热替换中间件, 其次 client/index.js 中要通过 <code class="highlighter-rouge">module.hot.accept()</code> 来手动控制JS模块是否需要热替换, 最后还需要在 webpack.config.js 中通过 hotMiddlewareScript、 plugins 和 devServer 三个字段来控制, 最终需要这5个地方共同设置来达成热替换的操作, 其实 Webpack 的难点就在这, 配置太分散, 一处没有设置对就没法操作.</p>
+    <p>devServer 最主要的配置就是 <code class="language-plaintext highlighter-rouge">hot: true</code>, 还是关于热替换操作的, 你看, 为了让 JS/CSS 热替换成功, 首先需要 app.js 使用 <code class="language-plaintext highlighter-rouge">app.use</code> 代码使用热替换中间件, 其次 client/index.js 中要通过 <code class="language-plaintext highlighter-rouge">module.hot.accept()</code> 来手动控制JS模块是否需要热替换, 最后还需要在 webpack.config.js 中通过 hotMiddlewareScript、 plugins 和 devServer 三个字段来控制, 最终需要这5个地方共同设置来达成热替换的操作, 其实 Webpack 的难点就在这, 配置太分散, 一处没有设置对就没法操作.</p>
   </li>
 </ul>
 

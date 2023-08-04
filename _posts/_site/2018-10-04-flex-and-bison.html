@@ -72,8 +72,8 @@
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="p">{</span>
 <span class="cp">#define YYSTYPE double
-#include&lt;stdio.h&gt;
-#include&lt;math.h&gt;
+#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span><span class="cpf">&lt;math.h&gt;</span><span class="cp">
 </span><span class="kt">int</span> <span class="n">yylex</span><span class="p">();</span>
 <span class="kt">void</span> <span class="n">yyerror</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">);</span>
 <span class="o">%</span><span class="p">}</span>
@@ -126,8 +126,8 @@
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="p">{</span>
 <span class="cp">#define YYSTYPE double
-#include "calculator.tab.h"
-#include &lt;stdlib.h&gt;
+#include</span> <span class="cpf">"calculator.tab.h"</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 </span><span class="n">YYSTYPE</span> <span class="n">yylval</span><span class="p">;</span>
 <span class="o">%</span><span class="p">}</span>
 
@@ -153,7 +153,7 @@
 
 <p>源码备注:</p>
 <ul>
-  <li><code class="highlighter-rouge">#define YYSTYPE double</code> 要放在顶部, 这样就可以把默认的 YYSTYPE 从 int 改成 double 来支持浮点数运算</li>
+  <li><code class="language-plaintext highlighter-rouge">#define YYSTYPE double</code> 要放在顶部, 这样就可以把默认的 YYSTYPE 从 int 改成 double 来支持浮点数运算</li>
   <li>calculator.y 顶部定义函数 yylex 和 yyerror 的声明, 避免 cc 编译的时候报警告</li>
   <li>calculator.l 模式中, 只要 { … } 是空白就表示不处理标记 (token) , 也就可以实现忽略空格和注释字符串的功能</li>
   <li>calculator.y 中越靠下的匹配规则在语法树的优先级越高, 因为它被别人应用的越多, 在语法树中越靠近树枝的部位</li>

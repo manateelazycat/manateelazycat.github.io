@@ -31,7 +31,7 @@
 <span class="cp">#ifndef SINGLELISTVIEW_H
 #define SINGLELISTVIEW_H
 </span>
-<span class="cp">#include &lt;DSimpleListView&gt;
+<span class="cp">#include</span> <span class="cpf">&lt;DSimpleListView&gt;</span><span class="cp">
 </span>
 <span class="n">DWIDGET_USE_NAMESPACE</span>  <span class="c1">// 这句话主要强调使用 dtkwidget 的命名空间，以使用其控件</span>
 
@@ -49,7 +49,7 @@
 <span class="cp">#ifndef SINGLELISTITEM_H
 #define SINGLELISTITEM_H
 </span>
-<span class="cp">#include &lt;DSimpleListItem&gt;
+<span class="cp">#include</span> <span class="cpf">&lt;DSimpleListItem&gt;</span><span class="cp">
 </span>
 <span class="n">DWIDGET_USE_NAMESPACE</span>
 
@@ -79,8 +79,8 @@
 <p>其次，实现 singlelistview.cpp, 看看超级简单吧？ 只需根据 QString 创建一个 DSimpleListItem ，然后通过函数添加Item到ListView即可:</p>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// singlelistview.cpp</span>
-<span class="cp">#include "singlelistview.h"
-#include "singlelistitem.h"
+<span class="cp">#include</span> <span class="cpf">"singlelistview.h"</span><span class="cp">
+#include</span> <span class="cpf">"singlelistitem.h"</span><span class="cp">
 </span>
 <span class="n">DWIDGET_USE_NAMESPACE</span>
 
@@ -104,8 +104,8 @@
 <p>下面我们就看一下实现上图中的单列列表的 DSimpleListItem 的实现细节：</p>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// singlelistitem.cpp</span>
-<span class="cp">#include "singlelistitem.h"
-#include &lt;QColor&gt;
+<span class="cp">#include</span> <span class="cpf">"singlelistitem.h"</span><span class="cp">
+#include</span> <span class="cpf">&lt;QColor&gt;</span><span class="cp">
 </span>
 <span class="n">DWIDGET_USE_NAMESPACE</span>
 
@@ -132,7 +132,7 @@
     <span class="n">painter</span><span class="o">-&gt;</span><span class="n">setOpacity</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">isSelect</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">painter</span><span class="o">-&gt;</span><span class="n">fillPath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">QColor</span><span class="p">(</span><span class="s">"#2CA7F8"</span><span class="p">));</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">painter</span><span class="o">-&gt;</span><span class="n">fillPath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">QColor</span><span class="p">(</span><span class="s">"#D8D8D8"</span><span class="p">));</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -160,8 +160,8 @@
 <p>多列列表的原理也非常简单，直接看代码：</p>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// multilistview.cpp</span>
-<span class="cp">#include "multilistview.h"
-#include "multilistitem.h"
+<span class="cp">#include</span> <span class="cpf">"multilistview.h"</span><span class="cp">
+#include</span> <span class="cpf">"multilistitem.h"</span><span class="cp">
 </span>
 <span class="n">DWIDGET_USE_NAMESPACE</span>
 
@@ -197,8 +197,8 @@
 <p>multilistviewitem.cpp 的实现非常类似单列列表的Item实现:</p>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// multilistitem.cpp</span>
-<span class="cp">#include "multilistitem.h"
-#include &lt;QColor&gt;
+<span class="cp">#include</span> <span class="cpf">"multilistitem.h"</span><span class="cp">
+#include</span> <span class="cpf">&lt;QColor&gt;</span><span class="cp">
 </span>
 <span class="n">DWIDGET_USE_NAMESPACE</span>
 
@@ -222,7 +222,7 @@
     <span class="n">painter</span><span class="o">-&gt;</span><span class="n">setOpacity</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">isSelect</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">painter</span><span class="o">-&gt;</span><span class="n">fillPath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">QColor</span><span class="p">(</span><span class="s">"#2CA7F8"</span><span class="p">));</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">painter</span><span class="o">-&gt;</span><span class="n">fillPath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">QColor</span><span class="p">(</span><span class="s">"#D8D8D8"</span><span class="p">));</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -240,9 +240,9 @@
 
     <span class="k">if</span> <span class="p">(</span><span class="n">column</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">painter</span><span class="o">-&gt;</span><span class="n">drawText</span><span class="p">(</span><span class="n">QRect</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> <span class="n">padding</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">y</span><span class="p">(),</span> <span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">()</span> <span class="o">-</span> <span class="n">padding</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">()),</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignLeft</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignVCenter</span><span class="p">,</span> <span class="n">artist</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">column</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">column</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">painter</span><span class="o">-&gt;</span><span class="n">drawText</span><span class="p">(</span><span class="n">QRect</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> <span class="n">padding</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">y</span><span class="p">(),</span> <span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">()</span> <span class="o">-</span> <span class="n">padding</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">()),</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignLeft</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignVCenter</span><span class="p">,</span> <span class="n">song</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">column</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">column</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">painter</span><span class="o">-&gt;</span><span class="n">drawText</span><span class="p">(</span><span class="n">QRect</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> <span class="n">padding</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">y</span><span class="p">(),</span> <span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">()</span> <span class="o">-</span> <span class="n">padding</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">()),</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignRight</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">::</span><span class="n">AlignVCenter</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>

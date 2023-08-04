@@ -41,7 +41,7 @@ Helm到目前为止都是Emacs下最强大的模糊搜索框架。</p>
 </ul>
 
 <h4 id="编写同步插件">编写同步插件</h4>
-<p>我们用内置的<code class="highlighter-rouge">snails-backend-recentf</code>插件来讲解怎么编写同步插件：</p>
+<p>我们用内置的<code class="language-plaintext highlighter-rouge">snails-backend-recentf</code>插件来讲解怎么编写同步插件：</p>
 
 <div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">require</span> <span class="ss">'snails-core</span><span class="p">)</span>
 <span class="p">(</span><span class="nb">require</span> <span class="ss">'recentf</span><span class="p">)</span>
@@ -78,17 +78,17 @@ Helm到目前为止都是Emacs下最强大的模糊搜索框架。</p>
     <p>:name 参数是插件的名字，请为你的插件取一个不同的名字，Snails根据插件的名字来插入搜索结果</p>
   </li>
   <li>
-    <p>:candidate-filter 是一个过滤函数, <code class="highlighter-rouge">input</code> 参数指用户输入的字符串, 你需要返回一个候选词列表，列表的每一项是一个格式为 <code class="highlighter-rouge">(list display-name candidate-content)</code>的对象, 对象的第一个元素 <code class="highlighter-rouge">display-name</code> 是显示给用户的候选名字, 对象的第二个元素<code class="highlighter-rouge">candidate-content</code> 是真实的补全结果，后面会传给回调函数 <code class="highlighter-rouge">candidate-do</code>. 如果什么没有搜索到，可以返回nil，Snails框架会在结果中隐藏返回nil的后端。</p>
+    <p>:candidate-filter 是一个过滤函数, <code class="language-plaintext highlighter-rouge">input</code> 参数指用户输入的字符串, 你需要返回一个候选词列表，列表的每一项是一个格式为 <code class="language-plaintext highlighter-rouge">(list display-name candidate-content)</code>的对象, 对象的第一个元素 <code class="language-plaintext highlighter-rouge">display-name</code> 是显示给用户的候选名字, 对象的第二个元素<code class="language-plaintext highlighter-rouge">candidate-content</code> 是真实的补全结果，后面会传给回调函数 <code class="language-plaintext highlighter-rouge">candidate-do</code>. 如果什么没有搜索到，可以返回nil，Snails框架会在结果中隐藏返回nil的后端。</p>
   </li>
   <li>
     <p>:candidate-do 是一个确认函数，当你按 Ctrl+m 的时候执行这个函数，函数内容你可以自由发挥。</p>
   </li>
 </ul>
 
-<p>以上面这段插件代码，它的意思是，如果用户什么都没有输入，显示所有最近浏览的文件，如果有输入，根据用户输入来过滤最近浏览的文件，用户确认后，用 <code class="highlighter-rouge">find-file</code> 这个命令打开文件。</p>
+<p>以上面这段插件代码，它的意思是，如果用户什么都没有输入，显示所有最近浏览的文件，如果有输入，根据用户输入来过滤最近浏览的文件，用户确认后，用 <code class="language-plaintext highlighter-rouge">find-file</code> 这个命令打开文件。</p>
 
 <h4 id="编写异步插件">编写异步插件</h4>
-<p>我们用内置的<code class="highlighter-rouge">snails-backend-mdfind</code>插件来讲解怎么编写异步插件：</p>
+<p>我们用内置的<code class="language-plaintext highlighter-rouge">snails-backend-mdfind</code>插件来讲解怎么编写异步插件：</p>
 
 <div class="language-elisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">require</span> <span class="ss">'snails-core</span><span class="p">)</span>
 
@@ -125,17 +125,17 @@ Helm到目前为止都是Emacs下最强大的模糊搜索框架。</p>
     <p>:name 参数是插件的名字，请为你的插件取一个不同的名字，Snails根据插件的名字来插入搜索结果</p>
   </li>
   <li>
-    <p>:build-command 是一个命令行参数构建函数，<code class="highlighter-rouge">input</code> 是用户输入的字符串, 你需要返回一个字符串列表，列表第一个是调用的Shell工具的名字，列表剩下的字符串是传递给Shell工具的参数。如果你不想进一步搜索，可以直接返回nil。Snails会在结果中隐藏返回nil的后端。</p>
+    <p>:build-command 是一个命令行参数构建函数，<code class="language-plaintext highlighter-rouge">input</code> 是用户输入的字符串, 你需要返回一个字符串列表，列表第一个是调用的Shell工具的名字，列表剩下的字符串是传递给Shell工具的参数。如果你不想进一步搜索，可以直接返回nil。Snails会在结果中隐藏返回nil的后端。</p>
   </li>
   <li>
-    <p>:candidate-filter 是一个过滤函数, <code class="highlighter-rouge">candidate-list</code> 是Shell命令返回的字符串列表, 你需要返回一个候选词列表，列表的每一项是一个格式为 <code class="highlighter-rouge">(list display-name candidate-content)</code>的对象, 对象的第一个元素 <code class="highlighter-rouge">display-name</code> 是显示给用户的候选名字, 对象的第二个元素<code class="highlighter-rouge">candidate-content</code> 是真实的补全结果，后面会传给回调函数 <code class="highlighter-rouge">candidate-do</code>. 如果什么没有搜索到，可以返回nil，Snails框架会在结果中隐藏返回nil的后端。</p>
+    <p>:candidate-filter 是一个过滤函数, <code class="language-plaintext highlighter-rouge">candidate-list</code> 是Shell命令返回的字符串列表, 你需要返回一个候选词列表，列表的每一项是一个格式为 <code class="language-plaintext highlighter-rouge">(list display-name candidate-content)</code>的对象, 对象的第一个元素 <code class="language-plaintext highlighter-rouge">display-name</code> 是显示给用户的候选名字, 对象的第二个元素<code class="language-plaintext highlighter-rouge">candidate-content</code> 是真实的补全结果，后面会传给回调函数 <code class="language-plaintext highlighter-rouge">candidate-do</code>. 如果什么没有搜索到，可以返回nil，Snails框架会在结果中隐藏返回nil的后端。</p>
   </li>
   <li>
     <p>:candidate-do 是一个确认函数，当你按 Ctrl+m 的时候执行这个函数，函数内容你可以自由发挥。</p>
   </li>
 </ul>
 
-<p>以上面这段插件代码举例，如果用户输入 <code class="highlighter-rouge">awesome</code>, 他会构建一个命令字符串列表 <code class="highlighter-rouge">(list "mdfind" "'awesome'")</code> 用于创建搜索子进程，当子进程完成时，进程返回候选列表给candidate-fitler过滤函数, 过滤函数过滤Shell命令返回的结果进行候选词渲染。用户确认后，用 <code class="highlighter-rouge">find-file</code> 这个命令打开文件。</p>
+<p>以上面这段插件代码举例，如果用户输入 <code class="language-plaintext highlighter-rouge">awesome</code>, 他会构建一个命令字符串列表 <code class="language-plaintext highlighter-rouge">(list "mdfind" "'awesome'")</code> 用于创建搜索子进程，当子进程完成时，进程返回候选列表给candidate-fitler过滤函数, 过滤函数过滤Shell命令返回的结果进行候选词渲染。用户确认后，用 <code class="language-plaintext highlighter-rouge">find-file</code> 这个命令打开文件。</p>
 
 <p>Snails非常智能，它会管理所有异步后端的子进程，当用户修改输入时，Snails会自动创建新的子进程继续搜索，同时把那些旧的子进程杀掉。不管用户输入多快，都不会卡主Emacs。</p>
 

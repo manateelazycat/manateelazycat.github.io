@@ -29,7 +29,7 @@
 <p>Vue.js官方文档可能从入门的角度看，都是用单文件的方式来展示Vue.js的示例，但是真实的项目往往都是需要前端路由来控制，即使看完Vue.js/Vuex的文档，我相信大多数人还是不知道怎么修改一个 vue-cli 项目去支持前端页面的路由跳转。</p>
 
 <h4 id="路由跳转之appvue">路由跳转之App.vue</h4>
-<p>首先 App.vue 文件要改成 <code class="highlighter-rouge">&lt;router-view&gt;&lt;/router-view&gt;</code> 的形式，这样所有Vue.js动态切换的页面都会在 router-view 中进行替换，下面是我的 App.vue, 这个文件除了调样式外基本不用作任何改动。</p>
+<p>首先 App.vue 文件要改成 <code class="language-plaintext highlighter-rouge">&lt;router-view&gt;&lt;/router-view&gt;</code> 的形式，这样所有Vue.js动态切换的页面都会在 router-view 中进行替换，下面是我的 App.vue, 这个文件除了调样式外基本不用作任何改动。</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
@@ -51,7 +51,7 @@
 <h4 id="路由跳转之mainjs">路由跳转之main.js</h4>
 <p>其次 main.js 要修改成下面的样子，这样你只用在 components 目录添加新的组件，然后更新 VueRouter 的内容即可实现各种路由跳转。</p>
 
-<p><code class="highlighter-rouge">router.beforeEach</code> 这一段代码的意思是，路由更新是更改浏览器标签的标题。</p>
+<p><code class="language-plaintext highlighter-rouge">router.beforeEach</code> 这一段代码的意思是，路由更新是更改浏览器标签的标题。</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">VueRouter</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue-router</span><span class="dl">'</span><span class="p">;</span>
@@ -62,9 +62,9 @@
 <span class="k">import</span> <span class="nx">Home</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/Home.vue</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">productionTip</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">VueRouter</span><span class="p">);</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="nx">VueRouter</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VueRouter</span><span class="p">({</span>
+<span class="kd">let</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">VueRouter</span><span class="p">({</span>
     <span class="na">routes</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span>
           <span class="na">component</span><span class="p">:</span> <span class="nx">Login</span><span class="p">,</span>
@@ -81,18 +81,18 @@
     <span class="p">]</span>
 <span class="p">});</span>
 
-<span class="nx">router</span><span class="p">.</span><span class="nx">beforeEach</span><span class="p">((</span><span class="nx">to</span><span class="p">,</span> <span class="k">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">title</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">router</span><span class="p">.</span><span class="nf">beforeEach</span><span class="p">((</span><span class="nx">to</span><span class="p">,</span> <span class="k">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nx">to</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">title</span><span class="p">)</span> <span class="p">{</span>
         <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">to</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="nx">next</span><span class="p">();</span>
+    <span class="nf">next</span><span class="p">();</span>
 <span class="p">})</span>
 
-<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+<span class="k">new</span> <span class="nc">Vue</span><span class="p">({</span>
     <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">router</span><span class="p">:</span> <span class="nx">router</span><span class="p">,</span>
-    <span class="na">render</span><span class="p">:</span> <span class="nx">c</span> <span class="o">=&gt;</span> <span class="nx">c</span><span class="p">(</span><span class="nx">App</span><span class="p">),</span>
+    <span class="na">render</span><span class="p">:</span> <span class="nx">c</span> <span class="o">=&gt;</span> <span class="nf">c</span><span class="p">(</span><span class="nx">App</span><span class="p">),</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -113,7 +113,7 @@
 
 <p>data代码区域是组件内部自己用的，可以看做组件内部属性初始值的声明区域, 一般都是下面的形式:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">data</span><span class="p">()</span> <span class="p">{</span>
      <span class="k">return</span> <span class="p">{</span>
          <span class="na">attr1</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
          <span class="na">attr2</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
@@ -144,7 +144,7 @@
 <p>computed代码区域是用作组件内部属性和Vuex Store状态绑定的，比如 Vuex 有一个 count 的状态，可以通过以下部分来声明组件内部的 count 属性, 一旦 Store 的 count 发生变化，组件内部的 count 属性也会跟着一起变化。</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">computed</span><span class="p">:</span> <span class="p">{</span>
-  <span class="nx">count</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nf">count </span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">store</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -153,7 +153,7 @@
 <h4 id="watch---">watch: { … }</h4>
 <p>watch代码区域是专门用户监听 Store 状态变化的，一旦 Store 状态发生变化，就可以在 watch 代码区域中调用对应的组件函数, 比如</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Vue</span><span class="p">({</span>
   <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#demo</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Foo</span><span class="dl">'</span><span class="p">,</span>
@@ -161,10 +161,10 @@
     <span class="na">fullName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Foo Bar</span><span class="dl">'</span>
   <span class="p">},</span>
   <span class="na">watch</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">firstName</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="na">firstName</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">fullName</span> <span class="o">=</span> <span class="nx">val</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span>
     <span class="p">},</span>
-    <span class="na">lastName</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="na">lastName</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">fullName</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">val</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -197,7 +197,7 @@
 <span class="p">}</span>
 
 <span class="kd">const</span> <span class="nx">mutations</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">updateZoomRatio</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">ratio</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">updateZoomRatio</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">ratio</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">state</span><span class="p">.</span><span class="nx">zoomRatio</span> <span class="o">=</span> <span class="nx">ratio</span>
     <span class="p">},</span>
 <span class="p">}</span>
@@ -214,8 +214,8 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">computed</span><span class="p">:</span> <span class="p">{</span>
      <span class="nl">zoomRatio</span><span class="p">:</span> <span class="p">{</span>
-         <span class="kd">get</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">getters</span><span class="p">[</span><span class="dl">"</span><span class="s2">Background/zoomRatio</span><span class="dl">"</span><span class="p">]</span> <span class="p">},</span>
-         <span class="kd">set</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">"</span><span class="s2">Background/updateZoomRatio</span><span class="dl">"</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">}</span>
+         <span class="nf">get</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">getters</span><span class="p">[</span><span class="dl">"</span><span class="s2">Background/zoomRatio</span><span class="dl">"</span><span class="p">]</span> <span class="p">},</span>
+         <span class="nf">set</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nf">commit</span><span class="p">(</span><span class="dl">"</span><span class="s2">Background/updateZoomRatio</span><span class="dl">"</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">}</span>
      <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -223,8 +223,8 @@
 <p>因为 Background.js 是 store/modules 子目录下声明的单独Store模块</p>
 
 <ol>
-  <li>首先需要在 Background.js 模块中增加 <code class="highlighter-rouge">namespaced: true</code> 的关键字以支持命名空间</li>
-  <li>其次需要在组件中用 <code class="highlighter-rouge">Background/zoomRatio</code> 的前缀去调用 Store 状态。</li>
+  <li>首先需要在 Background.js 模块中增加 <code class="language-plaintext highlighter-rouge">namespaced: true</code> 的关键字以支持命名空间</li>
+  <li>其次需要在组件中用 <code class="language-plaintext highlighter-rouge">Background/zoomRatio</code> 的前缀去调用 Store 状态。</li>
 </ol>
 
 <p>这样才能在组件中对Store子模块的状态进行正常访问</p>
@@ -232,23 +232,42 @@
 <h3 id="eventbus-回调调用两次的问题">EventBus 回调调用两次的问题</h3>
 <p>对于组件之间的单向通讯，比如子组件发送信号给父组件，有时候用 EventBus 更轻便。</p>
 
-<p>一般我们都会在 mounted 区域中通过 <code class="highlighter-rouge">EventBus.$on("signal", this.callback)</code> 的方式进行事件回调处理:</p>
+<p>一般我们都会在 mounted 区域中通过 <code class="language-plaintext highlighter-rouge">EventBus.$on("signal", this.callback)</code> 的方式进行事件回调处理:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">EventBus</span><span class="p">.</span><span class="nx">$on</span><span class="p">(</span><span class="dl">"</span><span class="s2">signal</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">callback</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">mounted</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">EventBus</span><span class="p">.</span><span class="nf">$on</span><span class="p">(</span><span class="dl">"</span><span class="s2">signal</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">callback</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>这个地方的坑在于，一旦页面切换时，页面加载一次就会调用一次 <code class="highlighter-rouge">EventBus.$on("signal", this.callback)</code> , 页面加载多次就会导致调用多次事件回调，在项目实践中会产生各种诡异的现场。</p>
+<p>这个地方的坑在于，一旦页面切换时，页面加载一次就会调用一次 <code class="language-plaintext highlighter-rouge">EventBus.$on("signal", this.callback)</code> , 页面加载多次就会导致调用多次事件回调，在项目实践中会产生各种诡异的现场。</p>
 
-<p>要保证页面加载的时候只调用一次事件回调，就需要在 beforeDestroy 区域中调用 <code class="highlighter-rouge">EventBus.$off("signal")</code> 方法:</p>
+<p>要保证页面加载的时候只调用一次事件回调，就需要在 beforeDestroy 区域中调用 <code class="language-plaintext highlighter-rouge">EventBus.$off("signal")</code> 方法:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">beforeDestroy</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">EventBus</span><span class="p">.</span><span class="nx">$off</span><span class="p">(</span><span class="dl">"</span><span class="s2">signal</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">beforeDestroy</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">EventBus</span><span class="p">.</span><span class="nf">$off</span><span class="p">(</span><span class="dl">"</span><span class="s2">signal</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>这段代码的意思是，当页面销毁时注销事件回调，当页面创建时再注册事件回调，这样就解决 EventBus 回调调用两次的诡异问题。</p>
+
+<h3 id="路由跳转时页面滚动到顶部">路由跳转时页面滚动到顶部</h3>
+<p>Vue.js 路由切换的时候，如果当前页面不在顶部，一旦路由发生变化后，新的页面依然是当前滚动的位置，而不是最顶部，这样的设定不符合用户的心理预期。</p>
+
+<p>其实Vue.js已经内置这样的功能：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">VueRouter</span><span class="p">({</span>
+    <span class="nf">scrollBehavior</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">0</span> <span class="p">};</span>
+    <span class="p">},</span>
+    <span class="na">routes</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="na">path</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+        <span class="p">},</span>
+   <span class="p">]</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>只需在 <code class="language-plaintext highlighter-rouge">VueRouter</code> 中添加 <code class="language-plaintext highlighter-rouge">scrollBehavior</code> 的函数即可，这样页面切换的时候会自动滚动页面顶部。</p>
 
 <h3 id="最后">最后</h3>
 <p>虽然上面写了这么多，但是从整体上看，一旦你熟悉了Vue.js的使用方式，Vue.js已经算同等规模开源项目里面坑比较少的项目，用起来还是非常省心和好用的。</p>

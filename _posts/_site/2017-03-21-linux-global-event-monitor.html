@@ -152,15 +152,15 @@ X11相关的技术有两种方案：</p>
             <span class="k">break</span><span class="p">;</span>
         <span class="k">case</span> <span class="n">KeyPress</span><span class="p">:</span>
             <span class="c1">// 发送 keyPress 信号，附带按键的 code</span>
-            <span class="n">emit</span> <span class="n">keyPress</span><span class="p">(((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)[</span><span class="mi">1</span><span class="p">]);</span>
+            <span class="n">emit</span> <span class="nf">keyPress</span><span class="p">(((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)[</span><span class="mi">1</span><span class="p">]);</span>
 
             <span class="k">break</span><span class="p">;</span>
         <span class="k">case</span> <span class="n">KeyRelease</span><span class="p">:</span>
             <span class="c1">// 发送 keyRelease 信号，附带按键的 code</span>
-            <span class="n">emit</span> <span class="n">keyRelease</span><span class="p">(((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)[</span><span class="mi">1</span><span class="p">]);</span>
+            <span class="n">emit</span> <span class="nf">keyRelease</span><span class="p">(((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="n">data</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)[</span><span class="mi">1</span><span class="p">]);</span>
 
             <span class="k">break</span><span class="p">;</span>
-        <span class="nl">default:</span>
+        <span class="k">default</span><span class="o">:</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>

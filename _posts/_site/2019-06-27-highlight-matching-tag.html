@@ -1,20 +1,20 @@
-<p>昨天花了一个小时给Emacs写了实时重命名Tag的插件<a href="https://manateelazycat.github.io/2019/06/26/instant-rename-tag.html">instant-rename-tag</a></p>
+<p>昨天花了一个小时给 Emacs 写了实时重命名 Tag 的插件 <a href="https://manateelazycat.github.io/2019/06/26/instant-rename-tag.html">instant-rename-tag</a></p>
 
-<p>今天就在想，能否基于同样原理写一个实时高亮匹配标签的插件呢？</p>
+<p>今天就在想， 能否基于同样原理写一个实时高亮匹配标签的插件呢？</p>
 
 <h3 id="highlight-matching-tagel-的原理">highlight-matching-tag.el 的原理</h3>
 
-<p>highlight-matching-tag的原理和instant-rename-tag完全是一样的，只是绑定了不同的事件hook</p>
+<p>highlight-matching-tag 的原理和 instant-rename-tag 完全是一样的， 只是绑定了不同的事件 hook</p>
 
 <ol>
-  <li>通过 <code class="highlighter-rouge">post-command-hook</code> 监听光标移动事件，如果当前处于 <code class="highlighter-rouge">web-mode</code> 模式时继续处理</li>
-  <li>如果光标在Tag区域，找到匹配的光标，然后用 Overlay 高亮匹配的标签</li>
-  <li>如果光标不在Tag区域，隐藏标签高亮</li>
+  <li>通过 <code class="language-plaintext highlighter-rouge">post-command-hook</code> 监听光标移动事件， 如果当前处于 <code class="language-plaintext highlighter-rouge">web-mode</code> 模式时继续处理</li>
+  <li>如果光标在 Tag 区域， 找到匹配的光标， 然后用 Overlay 高亮匹配的标签</li>
+  <li>如果光标不在 Tag 区域， 隐藏标签高亮</li>
 </ol>
 
 <p><img src="http://localhost:4000/pics/highlight-matching-tag/highlight-matching-tag.gif" alt="highlight-matching-tag" /></p>
 
-<p>安装方法见<a href="https://github.com/manateelazycat/highlight-matching-tag">Github</a></p>
+<p>安装方法见 <a href="https://github.com/manateelazycat/highlight-matching-tag">Github</a></p>
 
 <h3 id="使用方法">使用方法</h3>
-<p>安装好只用调用命令 <code class="highlighter-rouge">(highlight-matching-tag 1)</code> 即可</p>
+<p>安装好只用调用命令 <code class="language-plaintext highlighter-rouge">(highlight-matching-tag 1)</code> 即可</p>

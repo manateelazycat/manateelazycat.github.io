@@ -21,9 +21,9 @@
 
 <p>理解上面的模型关系后，解决内存泄漏的问题就很简单了，只需在销毁QWebEngineView之前，手动的销毁QWebEnginePage对象，就可以自动退出对应的renderer进程。</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">web_page</span><span class="o">.</span><span class="n">deleteLater</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">buffer_widget</span><span class="o">.</span><span class="n">deleteLater</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">buffer_widget</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="n">web_page</span><span class="p">.</span><span class="nf">deleteLater</span><span class="p">()</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">buffer_widget</span><span class="p">.</span><span class="nf">deleteLater</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>上面是EAF浏览器删除页面时的参考代码。</p>

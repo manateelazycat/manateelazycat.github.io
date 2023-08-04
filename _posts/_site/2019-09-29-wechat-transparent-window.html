@@ -4,7 +4,7 @@
 <p>在非DDE环境下，Wine启动的微信客户端会有一个非常烦人的问题，每次微信窗口关闭以后，都会留下一个透明的窗口，虽然这个透明的窗口并不拦截输入事件，但是总是挡着其他程序前面看着也很烦。</p>
 
 <h3 id="解决思路">解决思路</h3>
-<p>启动微信的命令就绑定按键到命令 <code class="highlighter-rouge">/opt/deepinwine/apps/Deepin-WeChat/run.sh</code> (可以通过查看 /usr/share/applications/deepin.com.wechat.desktop 文件的 Exec 参数来获取启动命令)</p>
+<p>启动微信的命令就绑定按键到命令 <code class="language-plaintext highlighter-rouge">/opt/deepinwine/apps/Deepin-WeChat/run.sh</code> (可以通过查看 /usr/share/applications/deepin.com.wechat.desktop 文件的 Exec 参数来获取启动命令)</p>
 
 <p>我们需要开发一个开机启动脚本，做两个方面的工作：</p>
 <ol>
@@ -25,38 +25,38 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
 </span>
-<span class="kn">import</span> <span class="nn">gi</span>
-<span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s">'Wnck'</span><span class="p">,</span> <span class="s">'3.0'</span><span class="p">)</span>
-<span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s">'Gtk'</span><span class="p">,</span> <span class="s">'3.0'</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">Wnck</span><span class="p">,</span> <span class="n">Gtk</span>
+<span class="kn">import</span> <span class="n">gi</span>
+<span class="n">gi</span><span class="p">.</span><span class="nf">require_version</span><span class="p">(</span><span class="s">'Wnck'</span><span class="p">,</span> <span class="s">'3.0'</span><span class="p">)</span>
+<span class="n">gi</span><span class="p">.</span><span class="nf">require_version</span><span class="p">(</span><span class="s">'Gtk'</span><span class="p">,</span> <span class="s">'3.0'</span><span class="p">)</span>
+<span class="kn">from</span> <span class="n">gi.repository</span> <span class="kn">import</span> <span class="n">Wnck</span><span class="p">,</span> <span class="n">Gtk</span>
 
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="n">time</span>
 
 <span class="k">class</span> <span class="nc">WeChatWindowMonitor</span><span class="p">():</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span> <span class="o">=</span> <span class="n">Wnck</span><span class="o">.</span><span class="n">Screen</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">force_update</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">screen</span> <span class="o">=</span> <span class="n">Wnck</span><span class="p">.</span><span class="n">Screen</span><span class="p">.</span><span class="nf">get_default</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="nf">force_update</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">wechat_window_name</span> <span class="o">=</span> <span class="s">"微信"</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">wechat_window_name</span> <span class="o">=</span> <span class="s">"微信"</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"active_window_changed"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_window_changed</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="s">"active_window_changed"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">active_window_changed</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">active_window_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
-        <span class="n">active_window</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">get_active_window</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">active_window</span> <span class="ow">and</span> <span class="n">active_window</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wechat_window_name</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">win</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">get_windows</span><span class="p">():</span>
-                <span class="k">if</span> <span class="n">win</span> <span class="ow">and</span> <span class="n">win</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">wechat_window_name</span><span class="p">:</span>
-                    <span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+    <span class="k">def</span> <span class="nf">active_window_changed</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
+        <span class="n">active_window</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="nf">get_active_window</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">active_window</span> <span class="ow">and</span> <span class="n">active_window</span><span class="p">.</span><span class="nf">get_name</span><span class="p">()</span> <span class="o">!=</span> <span class="n">self</span><span class="p">.</span><span class="n">wechat_window_name</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">win</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="nf">get_windows</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">win</span> <span class="ow">and</span> <span class="n">win</span><span class="p">.</span><span class="nf">get_name</span><span class="p">()</span> <span class="o">==</span> <span class="n">self</span><span class="p">.</span><span class="n">wechat_window_name</span><span class="p">:</span>
+                    <span class="n">win</span><span class="p">.</span><span class="nf">close</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">())</span>
 
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">Gtk</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">Gtk</span><span class="p">.</span><span class="nf">main</span><span class="p">()</span>
 
-<span class="n">WeChatWindowMonitor</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="nc">WeChatWindowMonitor</span><span class="p">().</span><span class="nf">run</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>脚本源码解析:</p>
 <ol>
-  <li><code class="highlighter-rouge">__init__</code> 函数做一些 Wnck 初始代码和窗口切换函数回调处理</li>
+  <li><code class="language-plaintext highlighter-rouge">__init__</code> 函数做一些 Wnck 初始代码和窗口切换函数回调处理</li>
   <li>active_window_changed 函数中，通过 screen.get_active_window 来获取激活窗口，当激活窗口不是微信，就在后台遍历一下所有窗口，把微信窗口隐藏</li>
   <li>run 函数通过调用 Gtk.main 函数来保持事件循环一直运行，不会发生脚本启动就退出的问题</li>
 </ol>
@@ -64,6 +64,6 @@
 <p>简单吧？几行代码就轻松解决了，哈哈哈哈。</p>
 
 <h4 id="3-添加脚本到启动服务中">3. 添加脚本到启动服务中</h4>
-<p>把脚本 wechat_window_monitor.py 拷贝到 /usr/local/bin/ 后，通过 <code class="highlighter-rouge">chmod +x wechat_window_monitor.py</code> 来赋予脚本执行权限后，添加到开机启动脚本。</p>
+<p>把脚本 wechat_window_monitor.py 拷贝到 /usr/local/bin/ 后，通过 <code class="language-plaintext highlighter-rouge">chmod +x wechat_window_monitor.py</code> 来赋予脚本执行权限后，添加到开机启动脚本。</p>
 
 <p class="line-quote">程序员的世界好可怕，只要想得到，就可以解决任何问题。</p>

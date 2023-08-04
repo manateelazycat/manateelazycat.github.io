@@ -18,34 +18,34 @@
 <h4 id="添加-init-genericel-文件">添加 init-generic.el 文件</h4>
 <p>首先在先按照 <a href="http://www.jianshu.com/p/da2223a1d2d8">Emacs折腾之旅起航</a>  设置好 ~/.emacs 文件后， 在 ~/.emacs-config 目录下新建一个 init-generic.el 的文件， 打开文件 init-generic.el 在文件最后面添加下面一行：</p>
 
-<p><code class="highlighter-rouge">(provide 'init-generic)</code></p>
+<p><code class="language-plaintext highlighter-rouge">(provide 'init-generic)</code></p>
 
 <p>这一句表示这个文件会提供一个名字叫 “init-generic” 的模块， 然后在 ~/.emacs 里面添加:</p>
 
-<p><code class="highlighter-rouge">(require 'init-generic)</code></p>
+<p><code class="language-plaintext highlighter-rouge">(require 'init-generic)</code></p>
 
 <p>这样， Emacs 启动的时候就会找到 init-generic 文件并加载 “init-generic” 模块。</p>
 
 <h4 id="配置详解">配置详解</h4>
 <p>下面我们要做的就是在 init-generic 文件中添加如下配置：</p>
 
-<p><code class="highlighter-rouge">(fset 'yes-or-no-p 'y-or-n-p)</code></p>
+<p><code class="language-plaintext highlighter-rouge">(fset 'yes-or-no-p 'y-or-n-p)</code></p>
 
 <p>配置说明： 很多时候Emacs会问你很多问题， 默认必须让你回答 yes 或 no, 每次都键入 yes 和 no , 心里会超级狂躁的， 这句配置的意思是 Emacs 问你 yes 或 no 的时候你只需键入 y 或 n 就可以了， 节省键入时间 (为什么 y-or-n 后面要跟一个 -p ? 是什么鬼？ 在 Elisp 编程传统中加上一个后缀来标记一个符号是一个变量， 而不是函数， 仅仅只是一个名字习惯， 你仍然可以让 -p 后缀的符号表达任何意义都是可以的）。</p>
 
-<p><code class="highlighter-rouge">(blank-cursor-mode -1)</code></p>
+<p><code class="language-plaintext highlighter-rouge">(blank-cursor-mode -1)</code></p>
 
 <p>配置说明： Emacs会让光标在那里一闪一闪的， 我只想安安静静的做一个程序员， 好好思考问题， 闪的我心烦， 这句配置就是让 Emacs 光标 shutup 的。</p>
 
-<p><code class="highlighter-rouge">(setq ring-bell-function 'ignore)</code></p>
+<p><code class="language-plaintext highlighter-rouge">(setq ring-bell-function 'ignore)</code></p>
 
 <p>配置说明： 避免Emacs在出错时发出声音， 我只想安安静静的做一个美男子。</p>
 
-<p><code class="highlighter-rouge">(setq mouse-yank-at-point t)</code></p>
+<p><code class="language-plaintext highlighter-rouge">(setq mouse-yank-at-point t)</code></p>
 
 <p>配置说明： 默认Emacs是会把粘贴的内容到鼠标指针处， 上面的配置让粘贴的内容粘贴到文本光标处而不是鼠标指针处， 避免遇到那些坑爹的笔记本触摸板， 手掌一碰就乱粘贴内容。</p>
 
-<p><code class="highlighter-rouge">(setq split-width-threshold nil)</code></p>
+<p><code class="language-plaintext highlighter-rouge">(setq split-width-threshold nil)</code></p>
 
 <p>配置说明： 分屏的时候强制使用上下分屏的方式， 而不是随着屏幕宽度而变化， 因为我喜欢上下分屏好对比代码的不同部分。</p>
 
