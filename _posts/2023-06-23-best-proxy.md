@@ -12,14 +12,18 @@ categories: [Proxy]
 ### 安装 v2raya
 ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/docs/prologue/installation/archlinux/), 然后在浏览器打开 `http://127.0.0.1:2017` 进行如下配置：
 
-1. 订阅机场: 拷贝机场订阅 URL, 点击导入按钮导入
-2. 选择服务器： 选择 `S.JISUSUB.CC` 标签， 选择一个合适的服务器， 然后选择左上角启动按钮
-3. 更新 GFWList： 点击页面右上角设置按钮， 在设置对话框右上角点击更新按钮更新 GFWLIST， 然后再按照下面的步骤对设置页面进行配置
-4. 透明代理/系统代理： `启用 GFWList 模式`
-5. 透明代理/系统代理实现方式： `redirect`
-6. 规则端口的分流模式： `GFWList 模式`
-7. 防止 DNS 污染： DNS-over-HTTPS
-8. 自动更新 GFWList: 每个 1 小时自动更新
-9. 自动更新订阅: 每个 1 小时自动更新
+01. 订阅机场: 拷贝机场订阅 URL, 点击导入按钮导入
+02. 选择服务器： 选择 `S.JISUSUB.CC` 标签， 选择一个合适的服务器， 然后选择左上角启动按钮
+03. 更新 GFWList： 点击页面右上角设置按钮， 在设置对话框右上角点击更新按钮更新 GFWLIST， 然后再按照下面的步骤对设置页面进行配置
+04. 透明代理/系统代理： `启用 GFWList 模式`
+05. 透明代理/系统代理实现方式： `redirect`
+06. 规则端口的分流模式： `GFWList 模式`
+07. 防止 DNS 污染： DNS-over-HTTPS
+08. 特殊模式： supervisor
+09. TCPFastOpen: 关闭
+10. 多路复用： 关闭
+11. 自动更新 GFWList: 每个 1 小时自动更新
+12. 自动更新订阅: 每个 1 小时自动更新
+13. 解析订阅地址/更新时优先使用： 不进行分流
 
 That‘s all! ;)
