@@ -417,6 +417,8 @@ categories: [Travel]
 
 ![]({{site.url}}/pics/daxinganling/137.jpg)
 
+广场舞源于东北， 哈尔滨晚上的广场舞很有特色， 有空一定要去看一看。
+
 #### 第十三天： 哈尔滨
 未完待续
 
