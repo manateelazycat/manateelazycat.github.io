@@ -420,7 +420,32 @@ categories: [Travel]
 广场舞源于东北， 哈尔滨晚上的广场舞很有特色， 有空一定要去看一看。
 
 #### 第十三天： 哈尔滨
-未完待续
+回到哈尔滨的第一天早上去了郊外的伏尔加庄园， 里面有很多俄式建筑可以看看， 主要是人比较少。
+
+下午 2 点歌剧院还有俄式的歌唱和舞蹈表演， 非常不错， 可以带小朋友体验一下。
+
+![]({{site.url}}/pics/daxinganling/138.jpg)
+
+![]({{site.url}}/pics/daxinganling/139.jpg)
+
+![]({{site.url}}/pics/daxinganling/140.jpg)
+
+![]({{site.url}}/pics/daxinganling/141.jpg)
+
+![]({{site.url}}/pics/daxinganling/142.jpg)
+
+![]({{site.url}}/pics/daxinganling/143.jpg)
+
+![]({{site.url}}/pics/daxinganling/144.jpg)
+
+下午回到哈尔滨市区的中央大街， 打卡网红景点 “圣·索菲亚教堂”， 中国最大的东正教教堂， 修的还是不错的， 就是人山人海。
+
+![]({{site.url}}/pics/daxinganling/145.jpg)
+
+ 旁边有一个叫米德维奇的俄式餐厅， 也可以体验下， 需要提前去排队。
+
+![]({{site.url}}/pics/daxinganling/146.jpg)
+
 
 #### 第十四天： 哈尔滨
 未完待续
