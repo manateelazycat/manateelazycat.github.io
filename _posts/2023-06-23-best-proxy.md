@@ -26,4 +26,9 @@ ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/
 12. 自动更新订阅: 每个 1 小时自动更新
 13. 解析订阅地址/更新时优先使用： 不进行分流
 
+### 故障解决
+#### failed to start v2ray-core: LocateServerRaw: ID or Sub exceed range
+这个错误， 删除 "/etc/v2raya" 目录下所有文件， 然后重启 v2raya `sudo systemctl restart v2raya` 后， 重新导入机场地址即可.
+
 That‘s all! ;)
+
