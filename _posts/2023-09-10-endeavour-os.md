@@ -44,32 +44,27 @@ Gnome 主要是去掉一些默认按键， 避免和 Emacs 按键冲突。
 
 同时有必要安装一些插件来调整默认的不合理交互习惯， 具体操作可以参考 [Gnome3 的一些设置](https://manateelazycat.github.io/2020/04/14/switch-to-gnome/)
 
-### 安装微信
-微信是工作中必不可少的应用， 但是 Linux 下还是要折腾下的， 具体操作请查看 [ArchLinux 折腾微信](https://manateelazycat.github.io/2023/06/03/arch-wechat/)
-
-### 安装闭源驱动
-ArchLinux 下安装了 N 卡闭源驱动， 才能解决 avi 视频播放的问题， 具体安装方法可以参考 [ArchLinux 安装 N 卡闭源驱动](https://manateelazycat.github.io/2023/06/03/nvidia-driver/)
-
-### 安装一些必备软件
-* deepin-terminal vala 版本： sudo pacman -S deepin-terminal-gtk
-* vivaldi: 隐私更好的浏览器, 安装后可以参考这篇[博客](https://manateelazycat.github.io/2023/06/09/vivaldi-html5-video/)来解决 HTML5 视频无法播放的问题
-* WPS: yay -S wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts
-
-### 安装一些必备的 Chrome 插件
-* Gnome Shell: 用于安装 Gnome Shell 扩展
-* Vimium: 快捷键操作网页
-* 沉浸式翻译： 看外文必不可少的插件
-* AdBlock: 广告过滤插件
-
-### Vivaldi 浏览器设置
+#### Vivaldi 浏览器设置
 * 常规： 自动翻译网页关闭
 * 快捷键： 上一个标签按顺序/下一个标签按顺序的快捷键设置成 Ctrl + Shift + Tab 和 Ctrl + Tab
 * 默认搜索： 换成 Google
 * 界面： 外观缩放 125%
 * 网页： 缩放 150%， 这样在 4k 屏幕下网页字不会太小
 
-### Fcitx 设置
+#### Fcitx 设置
 * 附加组件: 粘贴板快捷键去掉， 这个和 Emacs 按键冲突
 * 附加组件: 快速输入快捷键去掉， 这个和 Emacs 按键冲突
 
+### 安装一些必备软件
+* deepin-terminal vala 版本： sudo pacman -S deepin-terminal-gtk
+* vivaldi: 隐私更好的浏览器, 安装后可以参考这篇[博客](https://manateelazycat.github.io/2023/06/09/vivaldi-html5-video/)来解决 HTML5 视频无法播放的问题
+* WPS: yay -S wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts
+* 微信： 微信是工作中必不可少的应用， 但是 Linux 下还是要折腾下的， 具体操作请查看 [ArchLinux 折腾微信](https://manateelazycat.github.io/2023/06/03/arch-wechat/)
+* 闭源驱动： ArchLinux 下安装了 N 卡闭源驱动， 才能解决 avi 视频播放的问题， 具体安装方法可以参考 [ArchLinux 安装 N 卡闭源驱动](https://manateelazycat.github.io/2023/06/03/nvidia-driver/)
+
+### 安装一些必备的 Chrome 插件
+* Gnome Shell: 用于安装 Gnome Shell 扩展
+* Vimium: 快捷键操作网页
+* 沉浸式翻译： 看外文必不可少的插件
+* AdBlock: 广告过滤插件
 
