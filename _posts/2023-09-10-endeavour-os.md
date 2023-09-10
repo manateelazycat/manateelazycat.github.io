@@ -77,5 +77,15 @@ chsh -s $(which fish)
 yay -S variety 
 ```
 
+#### 修改登录主题
+```bash
+yay -S lightdm-webkit-theme-aether lightdm-webkit2-greeter
+sudo systemctl enable lightdm.service
+```
 
+这个主题安装以后， 默认总是用 xfce 登录， 而不能记住上一次的登录环境。
+
+可以通过编辑文件 `/etc/lightdm/lightdm.conf` 中的 user-session 字段为 `gnome-xorg` 来固定为 Gnome 登录。
+
+user-session 可以填写的值， 可以通过 `ls /usr/share/xessions/` 命令来找到。
 
