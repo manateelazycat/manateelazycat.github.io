@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 解决 Vivaldi 浏览器无法播放 HTML 视频的问题
-categories: [Linux]
+categories: [Linux, Arch]
 ---
 
 我在[这里](https://manateelazycat.github.io/2023/05/13/eaf-browser-html5-video.html) 讲了为什么 PyQt 的浏览器无法播放 HTML5 视频的原因， 同样 Vivaldi 浏览器也有类似的问题。

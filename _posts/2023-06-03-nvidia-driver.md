@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ArchLinux 安装 N 卡闭源驱动
-categories: [Linux]
+categories: [Linux, Arch]
 ---
 
 最近入手了 DEll G16 这个笔记本， 它自带了 RTX 4060 显卡。 系统安装时选择的是 N 卡开源驱动， 不支持 OpenCL, 为了以后可以玩一下深度学习， 今天折腾了一下 ArchLinux 的 N 卡闭源驱动， 安装方法如下：
