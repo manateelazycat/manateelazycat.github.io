@@ -50,10 +50,7 @@ Gnome 主要是去掉一些默认按键， 避免和 Emacs 按键冲突。
 * 默认搜索： 换成 Google
 * 界面： 外观缩放 125%
 * 网页： 缩放 150%， 这样在 4k 屏幕下网页字不会太小
-
-#### Fcitx 设置
-* 附加组件: 粘贴板快捷键去掉， 这个和 Emacs 按键冲突
-* 附加组件: 快速输入快捷键去掉， 这个和 Emacs 按键冲突
+* 字体： 设置为仓耳今楷
 
 ### 安装一些必备软件
 * deepin-terminal vala 版本： sudo pacman -S deepin-terminal-gtk
@@ -74,3 +71,11 @@ Gnome 主要是去掉一些默认按键， 避免和 Emacs 按键冲突。
 sudo pacman -S fish
 chsh -s $(which fish)
 ```
+
+#### 自动换壁纸
+```bash
+yay -S variety 
+```
+
+
+

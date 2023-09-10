@@ -75,6 +75,9 @@ git clone https://github.com/DogLooksGood/emacs-rime
 
 emacs-rime 搭配雾凇拼音后， Emacs 的中文输入非常爽， 我顺手就给 rime-ice 的作者捐了一点款， 感谢开源作者的辛劳付出。 ;)
 
+#### Fcitx 设置
+* 附加组件: 粘贴板和快速输入模块的快捷键去掉， 避免和 Emacs 按键冲突
+
 ### 配合插件
 因为我经常用 Markdown 写很多博客分享， 除了 emacs-rime, rime-ice 外， 推荐两外两个插件一起配合来用， 口感最佳：
 
