@@ -4,7 +4,7 @@ title: Emacs 里用雾凇拼音实现流畅中文输入
 categories: [Emacs]
 ---
 
-Emacs 下一直都在用狗哥写的[emacs-rime](https://github.com/DogLooksGood/emacs-rime)输入法来输入中文，但是 rime 默认的词库质量一般， 导致我们在 Emacs 输入中文的时候并没有使用外部输入法那么流畅。
+Emacs 下一直都在用狗哥写的 [emacs-rime](https://github.com/DogLooksGood/emacs-rime) 输入法来输入中文， 但是 rime 默认的词库质量一般， 导致我们在 Emacs 输入中文的时候并没有使用外部输入法那么流畅。
 
 今天主要介绍， 怎么在 Emacs 中安装 emacs-rime 并结合 [雾凇拼音](https://github.com/iDvel/rime-ice) 来实现流畅的中文输入体验。
 
@@ -13,7 +13,7 @@ Emacs 下一直都在用狗哥写的[emacs-rime](https://github.com/DogLooksGood
 使用下面的命令先安装 fcitx5 输入法框架和 rime 相关的代码库（下面安装 emacs-rime 会用到）
 
 ```bash
-sudo pacman -S fcitx5-rime librime
+sudo pacman -S fcitx5-rime librime fcitx5-configtool
 ```
 
 ### 安装雾凇拼音
@@ -34,11 +34,11 @@ cp -r ./rime-ice/* ~/.config/fcitx/rime/
 同时 grep ~/.config/fcitx/rime/ 目录， 把所有 url_2 开头的行的前面都加一个 `#` 符号注释掉。
 
 ### 更改候选词数量
-默认是 5 格，可以改成 9 个，减少翻页次数， 在 rime 目录下 grep `page_size`, 把 5 换成 9 即可。
+默认是 5 格， 可以改成 9 个， 减少翻页次数， 在 rime 目录下 grep `page_size`, 把 5 换成 9 即可。
 
 ### 安装 posframe
 
-[posframe](https://github.com/tumashu/posframe)可以让侯选词显示在光标处，所以建议安装。
+[posframe](https://github.com/tumashu/posframe) 可以让侯选词显示在光标处， 所以建议安装。
 
 ### 安装 emacs-rime
 
@@ -46,7 +46,7 @@ cp -r ./rime-ice/* ~/.config/fcitx/rime/
 git clone https://github.com/DogLooksGood/emacs-rime
 ```
 
-把 emacs-rime 目录放到 ```load-path``` 下，添加以下配置:
+把 emacs-rime 目录放到 ```load-path``` 下， 添加以下配置:
 
 ```elisp
 (require 'rime)
@@ -64,14 +64,14 @@ git clone https://github.com/DogLooksGood/emacs-rime
       rime-show-candidate 'posframe)
 ```
 
-上面的配置分别设置 emacs-rime 读取 RIME 配置的路径、UI 细节和使用 posframe 来显示候选词。
+上面的配置分别设置 emacs-rime 读取 RIME 配置的路径、 UI 细节和使用 posframe 来显示候选词。
 
 ### 测试
 重启 Emacs 后， 调用 `toggle-input-method` 命令来尝试输入中文。
 
 [雾凇拼音](https://github.com/iDvel/rime-ice) 主页有一些输入用例， 如果你打同样的拼音可以补全相同的中文候选词， 就证明已经成功用上了雾凇拼音。
 
-我个人的体验， 雾凇拼音的细节调教非常好，比我们自己折腾的 rime 词库要专业的多，中文输入， 特别是长句输入再也不用翻很多页。
+我个人的体验， 雾凇拼音的细节调教非常好， 比我们自己折腾的 rime 词库要专业的多， 中文输入， 特别是长句输入再也不用翻很多页。
 
 emacs-rime 搭配雾凇拼音后， Emacs 的中文输入非常爽， 我顺手就给 rime-ice 的作者捐了一点款， 感谢开源作者的辛劳付出。 ;)
 
