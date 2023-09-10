@@ -68,3 +68,9 @@ Gnome 主要是去掉一些默认按键， 避免和 Emacs 按键冲突。
 * 沉浸式翻译： 看外文必不可少的插件
 * AdBlock: 广告过滤插件
 
+### 美化
+#### 默认使用 Fish
+```bash
+sudo pacman -S fish
+chsh -s $(which fish)
+```
