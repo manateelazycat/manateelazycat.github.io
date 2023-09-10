@@ -53,6 +53,7 @@ ArchLinux 下安装了 N 卡闭源驱动， 才能解决 avi 视频播放的问�
 ### 安装一些必备软件
 * deepin-terminal vala 版本： sudo pacman -S deepin-terminal-gtk
 * vivaldi: 隐私更好的浏览器, 安装后可以参考这篇[博客](https://manateelazycat.github.io/2023/06/09/vivaldi-html5-video/)来解决 HTML5 视频无法播放的问题
+* WPS: yay -S wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts
 
 ### 安装一些必备的 Chrome 插件
 * Gnome Shell: 用于安装 Gnome Shell 扩展
