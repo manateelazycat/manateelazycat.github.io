@@ -17,9 +17,17 @@ categories: [Linux, Arch]
 
 LiveCD 启动后， 先在安装对话框中点击按钮， 把 Arch 和 EndeavourOS 的仓库源都测试一下， 这样会修改 LiveCD 的默认镜像源， 加快安装其他桌面环境的速度。
 
-安装系统的时候选择 Oneline， 这样可以在线安装其他桌面环境， 我选择 Gnome， 主要对多屏支持比较好。
+安装系统的时候选择 offline， 先安装 xfce 环境， 等装好系统才更换其他桌面环境， 直接选 Online 会报错， 没法完成安装。
 
 分区的时候建议： EFI、 /root、 /data 分区分开划分， 这样下次重新安装的时候就不需要借助外部硬盘来备份数据啦。
+
+### 添加 ArchLinux CN
+首先， 需要添加 ArchLinuxCN 的源: 在 ```/etc/pacman.conf``` 配置文件末尾加上: 
+
+```
+[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+```
 
 ### 配置代理
 装好系统后， 首先配置代理， 要不是啥都干不了， 代理配置可以参考 [最佳代理实践之 v2raya](https://manateelazycat.github.io/2023/06/23/best-proxy/)
@@ -30,6 +38,8 @@ LiveCD 启动后， 先在安装对话框中点击按钮， 把 Arch 和 Endeavo
 具体的配置看 [Emacs 里用雾凇拼音实现流畅中文输入](https://manateelazycat.github.io/2023/04/05/emacs-rime-ice/)。
 
 ### Gnome 设置
+安装完毕后， 用 `sudo pacman -S gnome` 就可以安装整个 Gnome 桌面环境。
+
 Gnome 主要是去掉一些默认按键， 避免和 Emacs 按键冲突。
 
 同时有必要安装一些插件来调整默认的不合理交互习惯， 具体操作可以参考 [Gnome3 的一些设置](https://manateelazycat.github.io/2020/04/14/switch-to-gnome/)
@@ -39,5 +49,26 @@ Gnome 主要是去掉一些默认按键， 避免和 Emacs 按键冲突。
 
 ### 安装闭源驱动
 ArchLinux 下安装了 N 卡闭源驱动， 才能解决 avi 视频播放的问题， 具体安装方法可以参考 [ArchLinux 安装 N 卡闭源驱动](https://manateelazycat.github.io/2023/06/03/nvidia-driver/)
+
+### 安装一些必备软件
+* deepin-terminal vala 版本： sudo pacman -S deepin-terminal-gtk
+* vivaldi: 隐私更好的浏览器, 安装后可以参考这篇[博客](https://manateelazycat.github.io/2023/06/09/vivaldi-html5-video/)来解决 HTML5 视频无法播放的问题
+
+### 安装一些必备的 Chrome 插件
+* Gnome Shell: 用于安装 Gnome Shell 扩展
+* Vimium: 快捷键操作网页
+* 沉浸式翻译： 看外文必不可少的插件
+* AdBlock: 广告过滤插件
+
+### Vivaldi 浏览器设置
+* 常规： 自动翻译网页关闭
+* 快捷键： 上一个标签按顺序/下一个标签按顺序的快捷键设置成 Ctrl + Shift + Tab 和 Ctrl + Tab
+* 默认搜索： 换成 Google
+* 界面： 外观缩放 125%
+* 网页： 缩放 150%， 这样在 4k 屏幕下网页字不会太小
+
+### Fcitx 设置
+* 附加组件: 粘贴板快捷键去掉， 这个和 Emacs 按键冲突
+* 附加组件: 快速输入快捷键去掉， 这个和 Emacs 按键冲突
 
 
