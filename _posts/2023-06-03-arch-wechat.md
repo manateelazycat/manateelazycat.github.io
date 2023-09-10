@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ArchLinux 折腾微信
-categories: [Linux]
+categories: [Linux, Arch]
 ---
 
 最近 ArchLinux 安装 Wine 微信不是很顺利， 总结记录一下安装方式。

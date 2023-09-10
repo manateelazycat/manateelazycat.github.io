@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 不要说自己是玩电脑的
-categories: [Linux, OCR]
+categories: [Linux]
 ---
 
 不要告诉别人自己是玩电脑的，特别是亲朋好友，他们会认为你啥都会干，特别是...
