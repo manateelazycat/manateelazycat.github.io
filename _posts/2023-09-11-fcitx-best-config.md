@@ -55,6 +55,8 @@ Font="Noto Sans Mono 13"
 Theme=adwaita-dark
 ```
 
+备注： 我比较喜欢仓耳今楷， 上面的 Font 可以换成 `TsangerJinKai03-6763 15`
+
 ### 安装雾凇拼音
 上面的步骤只是把 Fcitx 的核心和皮肤搞定了， 但是 Fcitx 默认的词库非常难用, 流畅的输入需要安装雾凇输入法。
 
