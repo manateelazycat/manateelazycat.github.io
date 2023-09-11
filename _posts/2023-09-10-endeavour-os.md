@@ -35,7 +35,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ### 配置输入法
 目前 Linux 下最流畅的输入法方案就是雾凇输入法， 词库精心配置， 输入体验非常流畅。
 
-具体的配置看 [Emacs 里用雾凇拼音实现流畅中文输入](https://manateelazycat.github.io/2023/04/05/emacs-rime-ice/)。
+具体的配置看 [Fcitx 最佳配置实践 2023-09-11](https://manateelazycat.github.io/2023/09/11/fcitx-best-config)。
 
 ### Gnome 设置
 安装完毕后， 用 `sudo pacman -S gnome` 就可以安装整个 Gnome 桌面环境。
