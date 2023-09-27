@@ -10,14 +10,25 @@ categories: [Linux]
 
 Gnome3 方面坑很多， 各方面稍微调整了一下， 方便下次重装系统参考 。
 
-## # # 去掉 一些快捷键
+#### 去掉 一些快捷键
 我主要用 Emacs 和 EAF， Chrome 浏览器都不用， 所以 Gnome3 很多内置快捷键会和 EAF 冲突, 而且这些快捷键无法通过 Gnome3 的设置面板中定制， 需要 dconf-editor 来解决。
 
 1. 安装 dconf-editor
-2. 根据目录 org->gnome->shell->keybindings 打开内置按键设置界面
-3. 修 改按键值为 [], 去掉内置快捷键占用
+2. 根据路径 org->gnome->shell->keybindings 打开内置按键设置界面
+3. 修改按键值为 [], 去掉内置快捷键占用
 
 顺便图槽一下 Gnome3 的返回上级的交互设计， 一个返回按钮和 Backspace 按键可以搞定的事情， 非要通过弹出单选菜单的方式进行返回， 真是脑残的设计。
+
+#### 恢复常规 Alt Tab 操作
+Gnome Shell 第二个脑残的设计是， Alt Tab 是切换应用程序， 而不是切换实际的窗口， 在某些应用（终端、 办公软件、 思维导图等）多开窗口时切换非常不方便， 需要先切换到对应应用， 再用 Alt ` 去切换应用内窗口。
+
+修改方法如下：
+1. 安装 dconf-editor
+2. 根据路径 org->gnome->desktop->wm->keybindings 打开内置按键设置界面
+3. 把 switch-applications/switch-applications-backward 中的 `'<Alt>Tab'` 以及 `'<Shift><Alt>Tab'` 去掉 
+4. 在 switch-windows/switch-windows-backward 中增加 `'<Alt>Tab'` 和 `'<Shift><Alt>Tab'` 这两个快捷键
+
+点击应用后， Alt Tab 的功能就回归了正常的窗口操作了。
 
 #### 系统设置微调
 * 触摸板： 自然滚动
