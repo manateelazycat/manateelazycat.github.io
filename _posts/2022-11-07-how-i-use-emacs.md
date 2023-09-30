@@ -151,7 +151,7 @@ Emacs 本身的弹窗规则比较混乱， 当我们专注的学习和研究的�
 
 ![]({{site.url}}/pics/howiuseemacs/insert-translated-name.gif)
 
-写 README 的时候， 经常需要狂飙英文， 所以这时候一个方便的英文单词补全插件就非常重要。 自己写过 [company-english-helper](https://github.com/manateelazycat/company-english-he lper)和 [corfu-english-helper](https://github.com/manateelazycat/corfu-english-helper)， 但是性能都不胜理想， 主要的原因是当英文词典的单词数量达到 10 万规模时， 即时把所有单词都弄到内存中去搜索， Elisp 实时过滤 10 万个单词都非常吃力。 目前主要用 lsp-bridge 的 [search_sdcv_words.py](https://github.com/manateelazycat/lsp-bridge/blob/fc7384d2850ad580fc32ecb490333fb4438cc099/core/search_sdcv_words.py#L1)后端来实现英文补全， `search_sdcv_words` 后端把 10 万单词的过滤都在 Python 线程中实现， Python 搜索 10 万单词的性能基本上是瞬间， 所以最终的差别是， Python 实现英文单词补全可以做到丝滑的补全体验， 而纯粹的 Elisp 实现总是有一卡一卡的感觉。 安装 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge) 后， 执行 `lsp-bridge-toggle-sdcv-helper` 命令来激活英文书写助手。
+写 README 的时候， 经常需要狂飙英文， 所以这时候一个方便的英文单词补全插件就非常重要。 自己写过 [company-english-helper](https://github.com/manateelazycat/company-english-helper)和 [corfu-english-helper](https://github.com/manateelazycat/corfu-english-helper)， 但是性能都不胜理想， 主要的原因是当英文词典的单词数量达到 10 万规模时， 即时把所有单词都弄到内存中去搜索， Elisp 实时过滤 10 万个单词都非常吃力。 目前主要用 lsp-bridge 的 [search_sdcv_words.py](https://github.com/manateelazycat/lsp-bridge/blob/fc7384d2850ad580fc32ecb490333fb4438cc099/core/search_sdcv_words.py#L1)后端来实现英文补全， `search_sdcv_words` 后端把 10 万单词的过滤都在 Python 线程中实现， Python 搜索 10 万单词的性能基本上是瞬间， 所以最终的差别是， Python 实现英文单词补全可以做到丝滑的补全体验， 而纯粹的 Elisp 实现总是有一卡一卡的感觉。 安装 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge) 后， 执行 `lsp-bridge-toggle-sdcv-helper` 命令来激活英文书写助手。
 
 ![]({{site.url}}/pics/howiuseemacs/acm-english-helper.png)
 
@@ -283,6 +283,12 @@ EAF RSS 阅读器相对于文本版的 RSS Reader 实现， 主要有两个优�
 其实我因为重度开发 Emacs 插件， 经常会让 Emacs 重启来测试， 所以我用的最多的是我写的另外一个终端 [Deepin Terminal](https://github.com/manateelazycat/deepin-terminal), 哈哈哈哈。
  
 ![]({{site.url}}/pics/howiuseemacs/eaf-terminal.png)
+
+### 小心情
+#### Holo-Layer
+[HoloLayer](https://github.com/manateelazycat/holo-layer/blob/master/README.zh-CN.md) 是一个专为 Emacs 设计的多媒体图层插件， 它基于 PyQt 开发， 旨在显著增强 Emacs 的视觉体验。 插件提供了一系列的视觉效果增强功能， 包括现代化的窗口边框、 光标果冻动画、 窗口跳转提示、 以及实时词典等等。 这些功能不仅让 Emacs 界面看起来更现代， 同时也确保了 Emacs 的运行性能不会受到影响。
+
+我最喜欢的其实是右上角的实时词典， 以前遇到不会的单词都需要查询一下， 现在借助 Holo-Layer 会实时把翻译显示在屏幕右上角， 不会的时候直接瞄一下就好了， 连按键都懒得按了。
 
 ### 贴心小命令
 我平常会用一些小命令来提升微操作效率， 有些是内置的， 有些是外部插件：
