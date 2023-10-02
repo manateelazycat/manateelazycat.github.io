@@ -286,7 +286,7 @@ EAF RSS 阅读器相对于文本版的 RSS Reader 实现， 主要有两个优�
 
 ### 小心情
 #### Holo-Layer
-[HoloLayer](https://github.com/manateelazycat/holo-layer/blob/master/README.zh-CN.md) 是一个专为 Emacs 设计的多媒体图层插件， 它基于 PyQt 开发， 旨在显著增强 Emacs 的视觉体验。 插件提供了一系列的视觉效果增强功能， 包括现代化的窗口边框、 光标果冻动画、 窗口跳转提示、 以及实时词典等等。 这些功能不仅让 Emacs 界面看起来更现代， 同时也确保了 Emacs 的运行性能不会受到影响。
+[HoloLayer](https://github.com/manateelazycat/holo-layer/blob/master/README.zh-CN.md) 是一个专为 Emacs 设计的多媒体图层插件， 它基于 PyQt 开发， 旨在显著增强 Emacs 的视觉体验。 插件提供了一系列的视觉效果增强功能， 包括现代化的窗口边框、 光标果冻动画、 窗口跳转提示、 现代化的标签栏、 以及实时词典等等。 这些功能不仅让 Emacs 界面看起来更现代， 同时也确保了 Emacs 的运行性能不会受到影响。
 
 我最喜欢的其实是右上角的实时词典， 以前遇到不会的单词都需要查询一下， 现在借助 Holo-Layer 会实时把翻译显示在屏幕右上角， 不会的时候直接瞄一下就好了， 连按键都懒得按了。
 
