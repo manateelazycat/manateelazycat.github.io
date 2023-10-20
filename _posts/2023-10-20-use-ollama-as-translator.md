@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 基于本地大模型的 Emacs 翻译插件
+title: 基于本地 AI 大模型的 Emacs 翻译插件
 categories: [Emacs]
 ---
 
