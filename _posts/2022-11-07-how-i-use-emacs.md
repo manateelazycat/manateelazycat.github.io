@@ -149,6 +149,8 @@ Emacs 本身的弹窗规则比较混乱， 当我们专注的学习和研究的�
 ### 英文翻译
 做为一个英文不咋地的程序员， 每天最头疼的就是给各种函数和变量起名字, 传统的做法是递给 Google 翻译中文， 获取英文翻译后， 再根据语言特定的代码风格， 做大量的连接符处理， 比如手写 下划线、 连接线甚至每个单词都做骆驼风格调整， 这个操作每天会遇到无数次， 每次都需要手动调整英文名字风格真的太痛苦了。 [insert-translated-name](https://github.com/manateelazycat/insert-translated-name) 就是为了处理这种情况而生的， 每次需要定义函数或变量名时， 直接键入中文， insert-translated-name 会自动翻译中文并按照当前文件对应的语言风格自动命名， 甚至支持区分字符串、 注释和正常代码区域等不同语法位置。 这样写代码既可以保证单词拼写正确， 也大大提升了写代码命名的效率。
 
+最开始的版本使用的是在线翻译， 最新版本可以直接使用 llama 大模型进行离线本地翻译， 翻译的速度要比在线翻译快很多。
+
 ![]({{site.url}}/pics/howiuseemacs/insert-translated-name.gif)
 
 写 README 的时候， 经常需要狂飙英文， 所以这时候一个方便的英文单词补全插件就非常重要。 自己写过 [company-english-helper](https://github.com/manateelazycat/company-english-helper)和 [corfu-english-helper](https://github.com/manateelazycat/corfu-english-helper)， 但是性能都不胜理想， 主要的原因是当英文词典的单词数量达到 10 万规模时， 即时把所有单词都弄到内存中去搜索， Elisp 实时过滤 10 万个单词都非常吃力。 目前主要用 lsp-bridge 的 [search_sdcv_words.py](https://github.com/manateelazycat/lsp-bridge/blob/fc7384d2850ad580fc32ecb490333fb4438cc099/core/search_sdcv_words.py#L1)后端来实现英文补全， `search_sdcv_words` 后端把 10 万单词的过滤都在 Python 线程中实现， Python 搜索 10 万单词的性能基本上是瞬间， 所以最终的差别是， Python 实现英文单词补全可以做到丝滑的补全体验， 而纯粹的 Elisp 实现总是有一卡一卡的感觉。 安装 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge) 后， 执行 `lsp-bridge-toggle-sdcv-helper` 命令来激活英文书写助手。
