@@ -219,7 +219,7 @@ def show_emacs_light(device):
 
     emacs_chars = [
         # E
-        {"chars": ['esc', 'f1', 'f2', 'f3', '3', '2', '1', '`', 'lshift', 'caps', 'tab', 'a', 's', 'lctrl', 'fn', 'lwin', 'lalt'],
+        {"chars": ['3', '2', '1', '`', 'lshift', 'caps', 'tab', 'a', 's', 'lctrl', 'fn', 'lwin', 'lalt'],
          "color":  0x00ffff},
         # M
         {"chars": ['x', 'd', 'r', '5', 't', 'g', 'y', '7', 'u', 'm', 'f5', 'f7'],
