@@ -219,20 +219,20 @@ def show_emacs_light(device):
 
     emacs_chars = [
         # E
-        {"chars": ['3', '2', '1', '`', 'lshift', 'caps', 'tab', 'a', 's', 'lctrl', 'fn', 'lwin', 'lalt'],
-         "color":  0x00ff00},
+        {"chars": ['esc', 'f1', 'f2', 'f3', '3', '2', '1', '`', 'lshift', 'caps', 'tab', 'a', 's', 'lctrl', 'fn', 'lwin', 'lalt'],
+         "color":  0x00ffff},
         # M
-        {"chars": ['d', 'e', '4', 'f4', '5', 'f6', '6', 'y', 'h'],
+        {"chars": ['x', 'd', 'r', '5', 't', 'g', 'y', '7', 'u', 'm', 'f5', 'f7'],
          "color":  0xeec900},
         # A
         {"chars": ['n', 'j', 'i', '9', 'f9', 'o', 'l', '.'],
-         "color":  0x00ff00},
+         "color":  0x00ffff},
         # C
         {"chars": ['f12', 'f11', '0', 'p', ';', '\''],
          "color":  0xeec900},
         # S
-        {"chars": ['microphone', 'back', ']', 'enter', 'voice+', 'voice-', 'right', 'down', 'left'],
-         "color":  0x00ff00},
+        {"chars": ['microphone', 'back', ']', 'enter', 'voice+', 'voice-', 'right', 'down', 'left', 'rctrl'],
+         "color":  0x00ffff},
     ]
     for emacs_char in emacs_chars:
         show_chars_with_color(device, emacs_char["chars"], emacs_char["color"])
@@ -240,15 +240,15 @@ def show_emacs_light(device):
             if char in rest_chars:
                 rest_chars.remove(char)
 
-    show_chars_with_color(device, rest_chars, 0x00ffff)
+    show_chars_with_color(device, rest_chars, 0x00ff00)
         
 if __name__ == '__main__':
     device = AlienwareUSBDriver()
     device.acquire()
     try:
         close_all_light(device)
-        # show_emacs_light(device)
-        enable_fluctuation(device)
+        show_emacs_light(device)
+        # enable_fluctuation(device)
         # disable_fluctuation(device)
     except Exception:
         pass
