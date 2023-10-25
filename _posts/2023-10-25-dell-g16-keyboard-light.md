@@ -40,8 +40,8 @@ from usb import USBError
 
 
 class AlienwareUSBDriver:
-    VENDOR_ID = 0xd62         # 这个表示 Dell 这个生产厂商
-    PRODUCT_ID = 0xccbc       # 这个是键盘的产品型号， 外星人 M16 和 Dell G16 的按键是一样的， 主要是这个型号不一样
+    VENDOR_ID = 0xd62           # 这个表示 Dell 这个生产厂商
+    PRODUCT_ID = 0xccbc         # 这个是键盘的产品型号， 外星人 M16 和 Dell G16 的按键是一样的， 主要是这个型号不一样
 
     SEND_BM_REQUEST_TYPE = 0x21
     SEND_B_REQUEST = 0x09
@@ -175,8 +175,6 @@ def split_list(lst, n):
 
 # 关闭所有灯光
 def close_all_light(device):
-    # device.write_packet(bytes.fromhex(
-    #    'cc8c1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'))
     key_list = split_list(list(KEYMAP.values()), 15)
     for keys in key_list:
         key_buf = bytes.fromhex('cc8c0200')
@@ -194,37 +192,76 @@ def disable_fluctuation(device):
         'cc8c0600000101010101010101010101010101000000000000010101010101010101010101000100000000000101000101010001000101010100010000000000'))
     device.write_packet(bytes.fromhex(
         'cc8c0700000000000000000000000000000101010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'))
-    # device.write_packet(bytes.fromhex(
-    #    'cc8c010101000001010100ff0000ff00000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'))
-
-
 
 # 开启彩色波动
 def enable_fluctuation(device):
     device.write_packet(bytes.fromhex(
         'cc800302000001010101000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'))
 
+def show_chars_with_color(device, chars, color):
+    a = 0
+    a_color = 0
+    b = 0
+    b_color = 0
+    for i, k in enumerate(chars):
+        key = KEYMAP[k]
+        a = key
+        a_color = color
+        b = 0
+        b_color = 0
+        if i > 0:
+            b = KEYMAP[chars[i - 1]]
+            b_color = color
+        device.write_packet(get_key_bytes(a, b, a_color, b_color))
 
+def show_emacs_light(device):
+    rest_chars = list(KEYMAP.keys())
+
+    emacs_chars = [
+        # E
+        {"chars": ['3', '2', '1', '`', 'lshift', 'caps', 'tab', 'a', 's', 'lctrl', 'fn', 'lwin', 'lalt'],
+         "color":  0x00ff00},
+        # M
+        {"chars": ['d', 'e', '4', 'f4', '5', 'f6', '6', 'y', 'h'],
+         "color":  0xeec900},
+        # A
+        {"chars": ['n', 'j', 'i', '9', 'f9', 'o', 'l', '.'],
+         "color":  0x00ff00},
+        # C
+        {"chars": ['f12', 'f11', '0', 'p', ';', '\''],
+         "color":  0xeec900},
+        # S
+        {"chars": ['microphone', 'back', ']', 'enter', 'voice+', 'voice-', 'right', 'down', 'left'],
+         "color":  0x00ff00},
+    ]
+    for emacs_char in emacs_chars:
+        show_chars_with_color(device, emacs_char["chars"], emacs_char["color"])
+        for char in emacs_char["chars"]:
+            if char in rest_chars:
+                rest_chars.remove(char)
+
+    show_chars_with_color(device, rest_chars, 0x00ffff)
+        
 if __name__ == '__main__':
     device = AlienwareUSBDriver()
     device.acquire()
     try:
-
-        # close_all_light(device)
-        show_chars(device, "emacs")
-        # enable_fluctuation(device)
+        close_all_light(device)
+        # show_emacs_light(device)
+        enable_fluctuation(device)
         # disable_fluctuation(device)
     except Exception:
         pass
     finally:
+        pass
         device.release()
-
 ```
 
 * `close_all_light` 是将所有的按键设置成黑色
 * `show_chars` 逐键显示字符
 * `enable_fluctuation` 开启彩色波动
 * `disable_fluctuation` 关闭彩色波动
+* `show_emacs_light` 用键盘显示一个 Emacs 单词
 
 ### 限制
 本来写了一段 pynput 代码用于监听系统的按键， 想实现一个功能 “当键入某个字符的时候才亮一个按键”， 最后发现 `usb.util.claim_interface` 函数会独占 USB 设备， 导致设置的时候无法输入字符， 影响写代码，  随之放弃这个想法。
