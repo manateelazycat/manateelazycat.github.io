@@ -13,8 +13,9 @@ categories: [Emacs]
 #### 使用方法
 1. 更新 insert-translated-name 到最新版本
 2. 安装 ollama: linux 平台只需要一条命令自动安装， `curl https://ollama.ai/install.sh | sh`, 其他平台安装方式请参考 [ollama](https://github.com/jmorganca/ollama) 官网说明
-3. 下载 llama2-chinese 大模型： `ollama run llama2-chinese` 这条命令会自动下载 `llama2-chinese` 这个模型文件， 下载好了可以在终端测试一下
+3. 下载 zephyr 大模型： `ollama run zephyr` 这条命令会自动下载 `zephyr` 这个模型文件， 下载好了可以在终端测试一下
 4. 设置翻译程序后端： ```(setq insert-translated-name-program "ollama")```
+5. 默认的模型使用的是 zephyr, 你也可以通过设置 `insert-translated-name-ollama-model-name` 选项来更换为其他模型
 
 设置好以后就可以调用 `insert-translated-name-insert` 命令来测试了， 我测试了一下， 第一次稍微慢一点（应该是在加载模型文件到内存）， 后面的翻译都是秒回了， 非常方便。
 
@@ -22,5 +23,5 @@ categories: [Emacs]
 1. crow 优点: 翻译结果更自然一点
 2. crow 缺点: 网络差返回翻译结果有点慢， 没网没法用
 3. ollama 优点： 本地翻译， 返回速度很快， 不用写代码起名字的时候过多等待
-4. ollama 缺点： 大模型对内存要求比较高， 7B/13B 模型翻译质量一般， 但是对于起名字完全够用， 估计 70B 的大模型效果会好很多
+4. ollama 缺点： 大模型对内存和 GPU 要求比较高
 
