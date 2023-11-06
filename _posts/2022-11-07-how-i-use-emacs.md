@@ -278,12 +278,22 @@ EAF RSS 阅读器相对于文本版的 RSS Reader 实现， 主要有两个优�
 ![]({{site.url}}/pics/howiuseemacs/eaf-map.png)
 
 #### EAF 终端
-从文本操作的角度看， 客观的说 EAF 的终端没有 eshell 和 [aweshell](https://github.com/manateelazycat/aweshell) 好用， 唯一的优势是具备完全渲染 VTE 所有细节的能力, 同时不会因为 Emacs 自身的限制导致终端运行的命令性能降低。
+终端方面我主要用社区开发的 [eaf-pyqterminal](https://github.com/mumu-lhl/eaf-pyqterminal/)， EAF PyQTerminal 也许是 Emacs 下最好的终端模拟器, 理由如下：
+
+1. 完全图形化支持: 借助 Qt 图形库， 能完整支持 htop、 emacs、 vi 等图形化终端程序
+2. 快速启动: 启动速度秒开， 无须等待
+3. 出色性能: 采用多线程技术， 即使运行复杂程序也不会影响 Emacs 的响应
+4. 平滑滚动: 利用 Qt 技术实现了触摸板的平滑滚屏， 优于 Emacs 内置滚动
+5. 键盘文本选择: 使用快捷键和键盘命令即可选择和复制文本， 无需鼠标
+6. 高兼容性: 适用于所有安装了 EAF 的 Emacs 版本， 不需要像 vterm 编译特定模块
+7. 易于扩展: 可通过 Elisp 和 Python 扩展功能
+
+![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/1.png)
+
+![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/2.png)
 
 其实我因为重度开发 Emacs 插件， 经常会让 Emacs 重启来测试， 所以我用的最多的是我写的另外一个终端 [Deepin Terminal](https://github.com/manateelazycat/deepin-terminal), 哈哈哈哈。
  
-![]({{site.url}}/pics/howiuseemacs/eaf-terminal.png)
-
 ### 小心情
 #### Holo-Layer
 [HoloLayer](https://github.com/manateelazycat/holo-layer/blob/master/README.zh-CN.md) 是一个专为 Emacs 设计的多媒体图层插件， 它基于 PyQt 开发， 旨在显著增强 Emacs 的视觉体验。 插件提供了一系列的视觉效果增强功能， 包括现代化的窗口边框、 光标果冻动画、 窗口跳转提示、 现代化的标签栏、 以及实时词典等等。 这些功能不仅让 Emacs 界面看起来更现代， 同时也确保了 Emacs 的运行性能不会受到影响。
