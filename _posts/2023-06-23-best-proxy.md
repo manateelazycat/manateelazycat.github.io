@@ -29,19 +29,17 @@ ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/
 ### 规则配置
 ```
 default: proxy
-# write your own rules below
-domain(domain:mail.qq.com)->direct
-domain(domain:weixin.qq.com, domain:ipinfo.io) -> proxy
 
-domain(geosite:google-scholar)->proxy
-domain(geosite:category-scholar-!cn, geosite:category-scholar-cn)->direct
-domain(geosite:geolocation-!cn, geosite:google)->proxy
+# 直连
+domain(domain:qq.com)->direct
 domain(geosite:cn)->direct
-ip(geoip:hk,geoip:mo)->proxy
-ip(geoip:private, geoip:cn)->direct
+ip(geoip:private)->direct
+ip(geoip:cn)->direct
 ```
 
-上面规则的意思是， 整个系统默认全部走代理， 只有 QQ 邮箱， 微信这些域名走直连， 不影响微信客户端。 这样的配置比 GFWList 方便， 因为防火墙列表不一定全面， 很多新认证的网站范围上不了。
+上面规则的意思是， 整个系统默认全部走代理， 只有 QQ 微信域名、 中国大陆域名、 内网服务器、 中国大陆 IP 走直连。
+
+这样设置不影响微信客户端启动， 比 GFWList 方便， 因为防火墙列表不一定全面， 很多新认证的网站范围上不了。
 
 
 ### 故障解决
