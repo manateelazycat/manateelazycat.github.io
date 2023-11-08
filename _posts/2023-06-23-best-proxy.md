@@ -31,16 +31,19 @@ ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/
 default: proxy
 
 # 直连
-domain(domain:qq.com)->direct
+domain(domain:qq.com, domain:163.com)->direct
 domain(geosite:cn)->direct
 ip(geoip:private)->direct
 ip(geoip:cn)->direct
 ```
 
-上面规则的意思是， 整个系统默认全部走代理， 只有 QQ 微信域名、 中国大陆域名、 内网服务器、 中国大陆 IP 走直连。
+* 默认走代理: default: proxy 
+* 微信网易云音乐走直连: domain(domain:qq.com, domain:163.com)->direct
+* 大陆域名走直连: domain(geosite:cn)->direct
+* 内网服务器走直连: ip(geoip:private)->direct
+* 大陆 IP 走直连: ip(geoip:cn)->direct
 
 这样设置不影响微信客户端启动， 比 GFWList 方便， 因为防火墙列表不一定全面， 很多新认证的网站范围上不了。
-
 
 ### 故障解决
 #### failed to start v2ray-core: LocateServerRaw: ID or Sub exceed range
