@@ -12,3 +12,5 @@ categories: [Linux, Arch]
 4. 检查是否加载闭源驱动： ```lspci -k | grep -A 2 -E "(VGA|3D)"```, 命令会输出 ```Kernel driver in use: nvidia``` 的字样， 有```nvidia```就表示已经加载闭源驱动， 如果是开源驱动， 应该会显示 ```nouveau```
 
 安装好闭源驱动， [EAF](https://github.com/emacs-eaf/emacs-application-framework) 在 N 卡下播放 avi 视频的问题自动就好了， 开源驱动总是报错。
+
+备注： 每次升级新版内核以后， 新版内核有可能会卸载 N 卡驱动模块， 导致多显无法工作。 更新系统后， 再按照上面的命令安装一次闭源驱动重启系统就好了。 
