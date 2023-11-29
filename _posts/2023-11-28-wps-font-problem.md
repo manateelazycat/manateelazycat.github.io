@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 通过降级 FreeType 解决 WPS 加粗字体乱码的问题
-categories: [Emacs]
+categories: [Linux]
 ---
 
 最近用 Linux 打开一个 Word 文档， 发现大片大片的乱码， 最开始以为是缺少特定字体， 搜索了一下， 原来是 FreeType 新版导致 WPS 打开文档时所有加粗字体的地方都会乱码。
