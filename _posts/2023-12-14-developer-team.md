@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 研发团队
+title: 研发团队构建心得
 categories: [Think]
 ---
 
