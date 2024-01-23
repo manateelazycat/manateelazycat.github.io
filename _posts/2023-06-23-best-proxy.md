@@ -45,6 +45,8 @@ ip(geoip:cn)->direct
 
 这样设置不影响微信客户端启动， 比 GFWList 方便， 因为防火墙列表不一定全面， 很多新认证的网站范围上不了。
 
+备忘： 具体的规则看我电脑本地的 v2ray_rule.txt 规则配置。
+
 ### 故障解决
 #### failed to start v2ray-core: LocateServerRaw: ID or Sub exceed range
 这个错误， 删除 "/etc/v2raya" 目录下所有文件， 然后重启 v2raya `sudo systemctl restart v2raya` 后， 重新导入机场地址即可.
