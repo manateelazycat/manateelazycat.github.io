@@ -15,3 +15,5 @@ categories: [AI]
 我遇到一个偶然的现象是当 Chrome 浏览器默认打开 QUIC 后， 即使在 PC 端开启透明代理后， ChatGPT 依然会检测到中国的 IPv6 地址而禁止登录。 
 
 解决方法也很简单， 浏览器输入 ```chrome://flags/#enable-quic```, 把 ```Experimental QUIC protocol``` 和 ```Use DNS https alpn``` 两个选项都禁用掉， 重启浏览器就可以访问 ChatGPT 了。
+
+PS: 理论上来说， 如果 Google Play 不暴露支付地域， 上面的 2， 3 
