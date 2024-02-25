@@ -16,4 +16,4 @@ categories: [AI]
 
 解决方法也很简单， 浏览器输入 ```chrome://flags/#enable-quic```, 把 ```Experimental QUIC protocol``` 和 ```Use DNS https alpn``` 两个选项都禁用掉， 重启浏览器就可以访问 ChatGPT 了。
 
-PS: 理论上来说， 如果 Google Play 不暴露支付地域， 上面的 2， 3 
+PS: 理论上来说， 如果 Google Play 不暴露支付地域， 上面的 2， 3 步应该也可以绑定国内的借记卡支付， 这样就不用去 nobepay 那边绕一圈了。
