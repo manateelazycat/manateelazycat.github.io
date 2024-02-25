@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 基于本地 AI 大模型的 Emacs 翻译插件
-categories: [Emacs]
+categories: [Emacs, AI]
 ---
 
 我平常主要使用 [insert-translated-name](https://github.com/manateelazycat/insert-translated-name) 这个插件来快速起英文名或者写英文注释。
