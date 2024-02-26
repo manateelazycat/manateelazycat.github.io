@@ -25,3 +25,5 @@ categories: [Emacs, AI]
 3. ollama 优点： 本地翻译， 返回速度很快， 不用写代码起名字的时候过多等待
 4. ollama 缺点： 大模型对内存和 GPU 要求比较高
 
+#### 备注
+如果执行命令 ollama run model 的时候出现 ```invalid version``` 错误， 请执行 ```curl https://ollama.ai/install.sh | sh``` 命令升级 ollama 即可解决。
