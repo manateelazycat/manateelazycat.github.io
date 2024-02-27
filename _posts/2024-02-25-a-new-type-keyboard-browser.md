@@ -24,5 +24,4 @@ categories: [Emacs]
 3. 开发一个插件框架， 方便大家开发一些键盘驱动的 JS 插件
 4. 可能会支持 Emacs Overlay 动态渲染， 这样 org-mode 啥的多媒体渲染就可以搞定
 
-但是我公司的正事太多了， 先构想着， 可能哪天突然有大块时间就可以写完了。
-
+上面的想法我都会陆续在 [Trekker](https://github.com/manateelazycat/trekker) 项目中实践， 实验多进程的模型是否能做到 Emacs 中最快的浏览器。
