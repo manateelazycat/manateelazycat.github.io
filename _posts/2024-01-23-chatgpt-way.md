@@ -12,7 +12,7 @@ categories: [AI]
 
 上面是我使用最简单注册 ChatGPT 的方法， 因为 Google Play 不检测虚拟信用卡的卡号， 可以通过 Google Play 来变相支付 ChatGPT. 只要手机端登录成功 ChatGPT 以后， 网页端 ChatGPT 都会直接登录的。
 
-PS: 理论上来说， 如果 Google Play 不暴露支付地域， 上面的 2， 3 步应该也可以绑定国内的借记卡支付， 这样就不用去 nobepay 那边绕一圈了。
+理论上来说， 如果 Google Play 不暴露支付地域， 上面的 2， 3 步应该也可以绑定国内的借记卡支付， 这样就不用去 nobepay 那边绕一圈了。
 
 #### not available in your country
 ChatGPT 会检测我们的 IPv6 的地址， 如果 IPv6 的地址是中国的， 会显示 "not available in your country" 的错误。
@@ -24,5 +24,3 @@ ChatGPT 会检测我们的 IPv6 的地址， 如果 IPv6 的地址是中国的�
 上面的方法可以绕过 IPv6 的优先级， 强制使用 IPv4 进行访问 ChatGPT。
 
 其他的情况可以检查 Chrome 的 QUIC 功能， 当 Chrome 浏览器默认打开 QUIC 后， 即使在 PC 端开启透明代理后， ChatGPT 依然会检测到中国的 IPv6 地址而禁止登录。 解决方法也很简单， 浏览器输入 ```chrome://flags/#enable-quic```, 把 ```Experimental QUIC protocol``` 和 ```Use DNS https alpn``` 两个选项都禁用掉。
-
-
