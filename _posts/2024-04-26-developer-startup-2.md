@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 研发人员创业 2
-categories: [Think]
+categories: [Business]
 ---
 
 [https://manateelazycat.github.io/2021/05/23/developer-entrepreneurship/](三年前的感悟)， 如果现在总结起来， 研发人员创业最容易范的错误：
