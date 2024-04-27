@@ -4,7 +4,8 @@ title: 研发人员创业 2
 categories: [Business]
 ---
 
-[https://manateelazycat.github.io/2021/05/23/developer-entrepreneurship/](三年前的感悟)， 如果现在总结起来， 研发人员创业最容易范的错误：
+
+[三年前的感悟](https://manateelazycat.github.io/2021/05/23/developer-entrepreneurship/)， 如果现在总结起来， 研发人员创业最容易范的错误：
 
 1. 战术勤奋掩盖战略懒惰， 总是觉得多做点事情就是对得起团队
 2. 看人不准， 总是找技术牛逼的兵王， 但是兵王往往管理不好团队， 喜欢专研细节
