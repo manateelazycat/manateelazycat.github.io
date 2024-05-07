@@ -23,5 +23,6 @@ categories: [Emacs]
 2. 专注 Web 领域不准访问本地 JS 和文件系统
 3. 开发一个插件框架， 方便大家开发一些键盘驱动的 JS 插件
 4. 可能会支持 Emacs Overlay 动态渲染， 这样 org-mode 啥的多媒体渲染就可以搞定
+5. 支持油猴脚本， 这样可以对接很多有趣的社区插件
 
 上面的想法我都会陆续在 [Trekker](https://github.com/manateelazycat/trekker) 项目中实践， 实验多进程的模型是否能做到 Emacs 中最快的浏览器。
