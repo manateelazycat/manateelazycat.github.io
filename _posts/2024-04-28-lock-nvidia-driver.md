@@ -10,7 +10,10 @@ N 卡驱动最近升级以后经常待机死机， Kernel 直接 Panic 导致待
 
 ```
 sudo pacman -U /var/cache/pacman/pkg/lib32-nvidia-utils-550.67-1-x86_64.pkg.tar.zst /var/cache/pacman/pkg/lib32-opencl-nvidia-550.67-1-x86_64.pkg.tar.zst /var/cache/pacman/pkg/libxnvctrl-550.67-1-x86_64.pkg.tar.zst /var/cache/pacman/pkg/nvidia-550.67-6-x86_64.pkg.tar.zst /var/cache/pacman/pkg/nvidia-settings-550.67-1-x86_64.pkg.tar.zst /var/cache/pacman/pkg/nvidia-utils-550.67-1-x86_64.pkg.tar.zst /var/cache/pacman/pkg/opencl-nvidia-550.67-1-x86_64.pkg.tar.zst
+/var/cache/pacman/pkg/linux-6.8.5.arch1-1-x86_64.pkg.tar.zst
 ```
+
+锁定 linux 6.8.5 的目的是， 只有这个版本的内核和 nvidia 550.67 相匹配， 安装高版本内核会导致外接屏幕无法使用。
 
 最后， 编辑 /etc/pacman.conf 文件， IgnorePkg 那一行改成如下的内容
 
