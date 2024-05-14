@@ -24,7 +24,7 @@ scrc py 这个工具可以通过 USB（或 TCP/IP）连接用于显示或控制�
 #### 安装必要的工具
 
 ```bash
-sudo pacman -S sc rcp y adb
+sudo pacman -S scrcpy adb
 ```
 
 #### 打开手机的 ADB 网络调试功能 
