@@ -17,6 +17,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ### 安装微信
 1. 配置好代理工具， 比如我经常使用的 [proxy-ns](https://git.ookami.one/cgit/proxy-ns/), 保证 yay 可以顺利下载 ```mmmojo.dll```
 2. 安装 automake: ```sudo pacman -S automake```, 以解决 ```Can't exec "aclocal": 没有那个文件或目录``` 问题
+3. 64位Arch加载32位dll文件： ```sudo pacman -Syu libldap lib32-gnutls```, 解决 ```WeChatWin.dll 无效的```的问题
 3. 尝试安装微信： ```proxy-ns yay -S deepin-wine-wechat```, 这一步会报 ```md5sum ... WeChatSetup-3.9.0.28.exe ... 失败``` 的错误， 解决方式是， 从 [这里](https://github.com/tom-snow/wechat-windows-versions/releases/tag/v3.9.0.28) 下载 WeChatSetup-3.9.0.28.exe， 替换掉 ```/home/用户名/.cache/yay/deepin-wine-wechat``` 内的 WeChatSetup-3.9.0.28.exe, 重新跑 ```proxy-ns yay -S deepin-wine-wechat```
 
 ### 配置微信
