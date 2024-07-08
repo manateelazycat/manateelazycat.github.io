@@ -41,12 +41,12 @@ sudo pacman -S scrcpy adb
 ```bash
 adb shell
 
-setprop service.adb.tcp.po rt 5 555
+setprop service.adb.tcp.port 5555
 
-st op adbd 
-sta rt ad bd
+stop adbd 
+start adbd
  
-exi t
+exit
 ```
 
 #### 通过 Wifi 投屏 
@@ -56,7 +56,7 @@ exi t
 使用下面的命令来投屏手机到电脑:
 
 ```bash
- adb connect 192. 168 .x.x:55 55
+adb connect 192.168.x.x:5555
 scrcpy
 ```
 
