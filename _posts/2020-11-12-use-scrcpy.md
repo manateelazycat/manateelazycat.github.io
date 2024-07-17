@@ -8,7 +8,7 @@ categories: [Linux]
 
 但是华为的同屏协作仅限于华为平板和华为 手机之间， 今天发现了 scrcpy  这个工具， 可以在 Linux 下实现同样的功能。 (严重怀疑华为同屏协作也是用 scrcpy 实现的 ， 哈哈哈哈)
  
-scrc py 这个工具可以通过 USB（或 TCP/IP）连接用于显示或控制安卓设备, 并且不需要手机获取 _root_ 权限。
+scrcpy 这个工具可以通过 USB（或 TCP/IP）连接用于显示或控制安卓设备, 并且不需要手机获取 _root_ 权限。
 
 它的特点主要 有：
 
@@ -100,7 +100,7 @@ scrcpy -r file.mkv
  
 ```ba sh
 scrcpy --no-display --record file.mp4
-scrc py -Nr file.mkv
+scrcpy -Nr file.mkv
 ```
 按 Ctrl+C 以停止录制。
 
@@ -178,7 +178,7 @@ scrcpy -w
 
 #### 关闭屏保
 
-_Scrcpy_ 不会默认关闭屏幕保护。
+_scrcpy_ 不会默认关闭屏幕保护。
 
 关闭屏幕保护：
 
@@ -188,7 +188,7 @@ scrcpy --disable-sc reensaver
 
 #### 旋转设备屏幕
 
-使用<kbd>MOD</k bd>+<kb d>r</kbd>以 在竖屏和横屏模式之间切换。
+使用<kbd>MOD</kbd>+<kb d>r</kbd>以 在竖屏和横屏模式之间切换。
 
 需要注意的是， 只有在前台应用程序支持所要求的模式时， 才会进行切换。
  
@@ -212,7 +212,7 @@ scrcpy --disable-sc reensaver
 
 #### 安装 APK
 
-如果您要要安装 APK， 请拖放 APK 文件（文件名以`. apk`结尾）到 _ scr cpy_ 窗口。
+如果您要要安装 APK， 请拖放 APK 文件（文件名以`.apk`结尾）到 _ scrcpy_ 窗口。
 
 该操作在屏幕上不会出现任何变化， 而 会在控制台输出一条日志。
 
@@ -234,7 +234,7 @@ scrcpy --push-target /sdcard/foo/bar/
  | 操作                                        |   快捷键
  | ------------------------------------------- |:-----------------------------
  | 全屏                                        | <kbd>MOD</kbd>+<kbd>f</kbd>
- | 向左旋转屏幕                                 | <kbd>MOD</kbd>+<kbd>←</k bd> _(左)_
+ | 向左旋转屏幕                                 | <kbd>MOD</kbd>+<kbd>←</kbd> _(左)_
  | 向右旋转屏幕                                 | <kbd>MOD</kbd>+<kbd>→</kbd> _(右)_
  | 将窗口大小重置为 1:1 (像素优先)                | <kbd>MOD</kbd>+<kbd>g</kbd>
  | 将窗口大小重置为消除黑边                      | <kbd>MOD</kbd>+<kbd>w</kbd> \| _双击¹_
