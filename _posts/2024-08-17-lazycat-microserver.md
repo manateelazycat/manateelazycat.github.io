@@ -35,6 +35,6 @@ categories: [Microserver]
 只要你拥有三个开源项目， 每个项目的 Commit 和 Star 都不少于 10 个， 欢迎邮件我们 lazycat.manatee@gmail.com
 
 🛒 购买渠道：
-京东旗舰店： https://item.jd.com/10101262547531.html
-抖音旗舰店： https://v.douyin.com/irUf5w99/
-官方旗舰店： 微信搜索 ‘懒猫微服’ 小程序
+1. 京东旗舰店： https://item.jd.com/10101262547531.html
+2. 抖音旗舰店： https://v.douyin.com/irUf5w99/
+3. 官方旗舰店： 微信搜索 ‘懒猫微服’ 小程序
