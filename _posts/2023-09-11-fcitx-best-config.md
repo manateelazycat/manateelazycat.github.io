@@ -75,6 +75,14 @@ git clone https://github.com/iDvel/rime-ice --depth=1
 2. grep 所有 url_2 开头的行的前面都加一个 `#` 符号注释掉
 3. grep `page_size`, 把 5 换成 9 即可
 
+```bash
+sed -i 's/# \(- { when: \(paging\|has_menu\), accept: \(comma\|period\), send: Page_\(Up\|Down\) }\)/\1/' default.yaml
+
+sed -i 's/# \(url_2: "[^"]*".*句号不上屏.*\)/\1/' default.yaml
+
+sed -i 's/page_size: 5/page_size: 9/' default.yaml
+```
+
 前两个操作是实现逗号、 句号翻页， 后面一个操作是更改候选词的数量
 
 #### 更新到 Fcitx 目录
