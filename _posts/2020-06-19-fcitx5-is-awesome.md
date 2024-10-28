@@ -75,13 +75,15 @@ Layout=
 
 ### 5. 修改输入法环境变量， 使应用可以调用 Fcitx5 输入法
 
-将下面的内容粘贴到 ~/.pam_environment
+然后将下面的内容粘贴到 ~/.xprofile       
 
 ```bash
-GTK_IM_MODULE=fcitx5
-XMODIFIERS=@im=fcitx5
-QT_IM_MODULE=fcitx5
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
 ```
+
+重新登录即可。
 
 ### 6. 系统登录后默认启动 Fcitx5 输入法
 

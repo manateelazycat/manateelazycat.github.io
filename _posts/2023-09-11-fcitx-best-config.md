@@ -20,15 +20,18 @@ sudo pacman -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-rime librime
 * fcitx5-qt: QT5 程序的支持， 必须安装， 修复打字太快漏字的问题
 * fcitx5-configtool: 图形化配置工具
 * fcitx5-rime: RIME 输入法
+* fcitx5-im: 输入法设置工具
 * librime: rime 相关库， 下面的 emacs-rime 会用到
 
-然后将下面的内容粘贴到 ~/.pam_environment
+然后将下面的内容粘贴到 ~/.xprofile
 
 ```bash
-GTK_IM_MODULE=fcitx5
-XMODIFIERS=@im=fcitx5
-QT_IM_MODULE=fcitx5
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
 ```
+
+重新登录即可。
 
 备注： 
 * 需要安装 `fcitx5-gtk` 和 `fcitx5-qt` 并写入上面 IM 设置， 不然打字太快会发生漏字的现象， 就是拼音没有变成汉字而是直接插入输入框中。
