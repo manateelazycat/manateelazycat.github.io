@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 折腾 emacs-rime
-categories: [Emacs]
+categories: [Emacs, Fcitx, Rime]
 ---
 
 半年前在[在 Linux 版的 Emacs 中使用 RIME 输入法](https://manateelazycat.github.io/2019/09/12/make-rime-works-with-linux.html) 这篇文章中详细讲述了怎么在 Emacs 使用 RIME 输入法。

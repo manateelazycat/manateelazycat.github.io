@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 配置 Fcitx5 输入法, 肥猫百万词库就是赞
-categories: [Linux]
+categories: [Linux, Fcitx]
 ---
 
 今天刷 Twitter 的时候， 看到肥猫基于 Fcitx5 制作的 “肥猫维基百万大词库” ， 简直太好用了。

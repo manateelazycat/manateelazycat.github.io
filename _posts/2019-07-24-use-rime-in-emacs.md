@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在 Mac 版的 Emacs 中使用 RIME 输入法
-categories: [Emacs]
+categories: [Emacs, Rime]
 ---
 
 做为一个资深的 Emacs 党， 期望每件事情都用 Emacs 来搞定， 同时做为中国人， 输入中文真的是刚需。

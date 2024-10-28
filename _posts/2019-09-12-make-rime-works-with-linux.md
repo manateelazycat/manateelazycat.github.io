@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在 Linux 版的 Emacs 中使用 RIME 输入法
-categories: [Emacs]
+categories: [Emacs, Fcitx, Rime]
 ---
 
 之前写了一篇文章[<<在 Mac 版的 Emacs 中使用 RIME 输入法>>](https://manateelazycat.github.io/2019/07/24/use-rime-in-emacs.html) 详细说明了 Mac OS 下怎么让 Emacs 使用 RIME 输入法。 最近又折腾回我最喜欢的 Linux， 今天讲一下怎么在 Linux 下配置 Emacs 的 RIME 输入法。
