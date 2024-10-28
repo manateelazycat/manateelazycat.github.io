@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Emacs 里用雾凇拼音实现流畅中文输入
-categories: [Emacs]
+categories: [Emacs, Fctix, Rime]
 ---
 
 Emacs 下一直都在用狗哥写的 [emacs-rime](https://github.com/DogLooksGood/emacs-rime) 输入法来输入中文， 但是 rime 默认的词库质量一般， 导致我们在 Emacs 输入中文的时候并没有使用外部输入法那么流畅。
