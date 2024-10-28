@@ -39,3 +39,4 @@ DEEPIN_WINE_SCALE=1.25
 ### 环境冲突
 微信和 Gnome Shell 的 [Smart Auto Move](https://extensions.gnome.org/extension/4736/smart-auto-move/)插件冲突， 这个插件会导致微信窗口启动不了， 卸载这个插件就好了。
 
+微信是X11技术开发的，如果使用Wayland会导致窗口上有覆盖的黑窗口无法点击，切换到X11环境即可。
