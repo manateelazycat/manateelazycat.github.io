@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux 上好用的截图
+title: Linux 上好用的截图工具
 categories: [Linux]
 ---
 
