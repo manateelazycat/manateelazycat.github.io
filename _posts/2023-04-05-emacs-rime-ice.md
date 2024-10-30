@@ -31,8 +31,6 @@ cp -r ./rime-ice/* ~/.config/fcitx/rime/
 我比较喜欢用逗号或句号翻页， 下面是详细的设置方法：
 找到 ~/.config/fcitx/rime/default.yaml 文件中的 `- { when: paging, accept: comma, send: Page_Up }` 和 `- { when: has_menu, accept: period, send: Page_Down }` 内容， 去掉注释。
 
-同时 grep ~/.config/fcitx/rime/ 目录， 把所有 url_2 开头的行的前面都加一个 `#` 符号注释掉。
-
 ### 更改候选词数量
 默认是 5 格， 可以改成 9 个， 减少翻页次数， 在 rime 目录下 grep `page_size`, 把 5 换成 9 即可。
 
