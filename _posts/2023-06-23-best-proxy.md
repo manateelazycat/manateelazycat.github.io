@@ -19,7 +19,7 @@ ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/
 05. 透明代理/系统代理实现方式： `redirect`
 06. 规则端口的分流模式： `RoutingA`, 右边的规则配置见下面
 07. 防止 DNS 污染： DNS-over-HTTPS
-08. 特殊模式： supervisor
+08. 特殊模式： 关闭 （不要选择 supervisor, 这个选项会导致懒猫微服应用打不开）
 09. TCPFastOpen: 关闭
 10. 多路复用： 关闭
 11. 自动更新 GFWList: 每个 1 小时自动更新
@@ -32,6 +32,8 @@ default: proxy
 
 # 直连
 domain(domain:qq.com, domain:163.com)->direct
+domain(domain:heiyu.space, domain:lazycat.cloud)->direct
+
 domain(geosite:cn)->direct
 ip(geoip:private)->direct
 ip(geoip:cn)->direct
