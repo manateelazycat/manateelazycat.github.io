@@ -15,3 +15,5 @@ plugins:
 collections:
   posts:
     permalink: /:year/:month/:day/:title/
+
+timezone: Asia/Shanghai
