@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 修复微信 Bad Window 的问题
-categories: [Linux, Arch]
+categories: [Linux, Arch, WeChat]
 ---
 
 ### 问题
