@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 解决 Linux 下微信缺失 WeChatWin.dll 的问题
-categories: [Linux, Arch]
+categories: [Linux, Arch, WeChat]
 ---
 
 Arch 最近升级系统后， 微信会弹出缺失 WeChatWin.dll 的错误导致无法启动微信。
