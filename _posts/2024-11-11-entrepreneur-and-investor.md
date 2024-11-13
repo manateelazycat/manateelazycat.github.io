@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 创业者和投资人
+title: 技术创业者怎么拉投资
 categories: [Business]
 ---
 
