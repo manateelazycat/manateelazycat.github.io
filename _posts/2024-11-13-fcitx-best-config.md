@@ -136,7 +136,3 @@ git clone https://github.com/DogLooksGood/emacs-rime
 重启 Emacs 后， 调用 `toggle-input-method` 命令来尝试输入中文。
 
 [白霜拼音](https://github.com/gaboolic/rime-frost) 主页有一些输入用例， 如果你打同样的拼音可以补全相同的中文候选词， 就证明已经成功用上了白霜拼音。
-
-我个人的体验， 白霜拼音的细节调教非常好， 比我们自己折腾的 rime 词库要专业的多， 中文输入， 特别是长句输入再也不用翻很多页。
-
-emacs-rime 搭配白霜拼音后， Emacs 的中文输入非常爽， 我顺手就给 rime-ice 的作者捐了一点款， 感谢开源作者的辛劳付出。 ;)
