@@ -29,14 +29,17 @@ ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/
 ### 规则配置
 ```
 default: proxy
-
-# 直连
-domain(domain:qq.com, domain:163.com)->direct
+domain(domain:163.com, domain:qq.com, domain:wechat.com)->direct
 domain(domain:heiyu.space, domain:lazycat.cloud)->direct
 
+domain(domain:unsplash.com)->proxy
+
+domain(geosite:google-scholar)->proxy
+domain(geosite:category-scholar-!cn, geosite:category-scholar-cn)->direct
+domain(geosite:geolocation-!cn, geosite:google)->proxy
 domain(geosite:cn)->direct
-ip(geoip:private)->direct
-ip(geoip:cn)->direct
+ip(geoip:hk,geoip:mo)->proxy
+ip(geoip:private, geoip:cn)->direct
 ```
 
 * 默认走代理: default: proxy 
