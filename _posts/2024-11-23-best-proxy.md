@@ -53,7 +53,7 @@ ip(geoip:private, geoip:cn)->direct
 备忘： 具体的规则看我电脑本地的 v2ray_rule.txt 规则配置。
 
 ### 手机端
-手机端， 直接在 Nexitally `Ss & Trojan` 页面下载客户端， 点击订阅导入就可以了。
+手机端我用 v2rayNG 客户端， 直接在 Nexitally `Ss & Trojan` 页面找到 Android 的订阅地址， 导入到 v2rayNG 即可。
 
 Android 双 VPN 请查看我的另一篇文章[手机上开两个 VPN](https://manateelazycat.github.io/2023/02/01/shelter/)
 
