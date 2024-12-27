@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 产品定价、 产异化和供应链
-categories: [Think]
+categories: [Think, Twitter]
 ---
 
 推特上， 有网友问我： ”懒猫大佬， 明天休息时间。 可以分享一下产品定价， 如何在当前市场下如何做产品差异化以及在公司规模小的情况下供应链如何谈判。"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 创业架构师和工程架构师
-categories: [Think]
+categories: [Think, Twitter]
 ---
 
 推特上， 有网友问我： ”想问问 Andy 老师在开始一个项目的时候是怎么区分必要的设计考虑和过早优化的?“
