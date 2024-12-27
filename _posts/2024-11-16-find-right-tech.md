@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 年轻人的技术选型
-categories: [Think]
+categories: [Think, Twitter]
 ---
 
 推特上， 有网友问我： ”我想了解一下您对于技术选型的见解， 对于年轻人在选择一门技术 dive in 方面有什么建议"。

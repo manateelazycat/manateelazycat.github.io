@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 对抗创业焦虑
-categories: [Think]
+categories: [Think, Twitter]
 ---
 
 推特上， 有网友问我： ”看到银行账上的数字， 发现只够团队用几个月的时候如何缓解这种焦虑“
