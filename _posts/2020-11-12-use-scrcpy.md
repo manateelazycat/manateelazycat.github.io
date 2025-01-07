@@ -24,7 +24,7 @@ scrcpy 这个工具可以通过 USB（或 TCP/IP）连接用于显示或控制�
 #### 安装必要的工具
 
 ```bash
-sudo pacman -S scrcpy adb
+sudo pacman -S scrcpy android-tools
 ```
 
 #### 打开手机的 ADB 网络调试功能 
@@ -260,4 +260,4 @@ scrcpy --push-target /sdcard/foo/bar/
 
 _¹双击黑色边界以关闭黑色边界_
 
-_²点击鼠标右键将在屏幕熄灭时点亮屏幕， 其余情况则视为按下返回键。_
+_²点击鼠标右键将在屏幕熄灭时点亮屏幕， 其余情况则视为按下返回键。 _
