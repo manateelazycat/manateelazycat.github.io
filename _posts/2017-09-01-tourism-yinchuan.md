@@ -32,7 +32,7 @@ categories: [Travel]
 #### 第一天： 中阿之轴
 在飞机上鸟瞰银川， 家人就在惊叹于大自然的鬼斧神工了
 
-![IMG_2504.JPG]({{site.u rl}}/pics/tourism-yinch uan/5957- c8f358a b29f69 45a .JPG)
+![IMG_2504.JPG]({{site.url}}/pics/tourism-yinchuan/5957-c8f358ab29f6945a.JPG)
 
 下了飞机， 乘坐机场大巴半个小时到达市区（银川市区很小）， 酒店稍作休息以后， 第一个找吃的， 带着班尼徒步 1.5 公里到一个清真的餐馆吃了网上推荐的“羊杂汤”
 
@@ -42,7 +42,7 @@ categories: [Travel]
 
 ![IMG_2555.JPG]({{site.url}}/pics/tourism-yinchuan/5957-4d7e176df208b5a8.JPG)
 
-![IMG_2554.JPG]({{si te.url}}/p ics/tourism -yinchua n/5957-be515ad d040b1ba9 .JPG)
+![IMG_2554.JPG]({{site.url}}/pics/tourism-yinchuan/5957-be515add040b1ba9.JPG)
 
 卖相不是 很好， 但是味道 真的很不错， 满满一大碗都 是羊肉啊， 而且那个羊肉汤， 超级 好喝。
 建议去一个景点， 不要去景点周围吃， 都是当地人坑 外地人的， 价格贵 又不好吃。 就在酒 店周围搜索那种小店， 价格便宜又正宗。
@@ -66,7 +66,7 @@ categories: [Travel]
 ![IMG_2583.JPG]({{site.url}}/pics/tourism-yinchuan/5957-69ae2e74bdb4a8b9.JPG)
 
 
-![I MG_2604.JPG]({{sit e.url }}/ pi cs/touri sm- yi nchuan/5957-275f573ea1c4c8d d.JPG)
+![IMG_2604.JPG]({{site.url}}/pics/tourism-yinchuan/5957-275f573ea1c4c8dd.JPG)
 
 #### 第二天： 水洞沟
 第二天一早起来准备去水洞沟， 打 车花了小 100 块， 其实路上看评论， 坐大巴 12 块就可以去的（悲伤的表情)。
@@ -107,7 +107,7 @@ categories: [Travel]
 ![深度截图_选择区域_20170831220025.png]({{site.url}}/pics/tourism-yinchuan/5957-b327230b2955bcf7.png)
 
 
-![深度 截图_选择区域_201708312201 07.png]({{s ite .url}} /pics/tourism-yi nchuan/5957-e7 7d8acd6a1 738bf.png)
+![深度 截图_选择区域_201708312201 07.png]({{site.url}}/pics/tourism-yinchuan/5957-e77d8acd6a1738bf.png)
 
 终 于来到传说中的藏兵洞， 传 说是明朝的士兵为 了抵御塞北敌人而建的， 里面有各种机关（弓箭、 木滚、 杀人陷阱）， 虽然里面有灯光但是还是非常昏暗， 想一想古代没有光照的情况下， 敌人进入这种洞穴， 根本就分不清楚怎么走出去， 更不用说和明朝士兵作战了， 古人真的了不起， 在那么落后的时代就修建了这么好玩的“密室逃脱”游乐场。 ;)
 
@@ -115,7 +115,7 @@ categories: [Travel]
 ![深度截图_选择区域_20170831220335.png]({{site.url}}/pics/tourism-yinchuan/5957-75f7e1e19c974c37.png)
 
 
-![深度截图_选择区域_20170831220344.png]({{site.url}}/pics/tourism-yinchuan/5957-d10f728cc6b7a75 b.png) 
+![深度截图_选择区域_20170831220344.png]({{site.url}}/pics/tourism-yinchuan/5957-d10f728cc6b7a75b.png) 
 
 
 ![深度截图_选择区域 _2017 0831221005.png]({{site.url}}/pics/tourism-yinchuan/5957-38ee70083511aa7e.png)
@@ -126,7 +126,7 @@ categories: [Travel]
 
 第二天， 三个人走了两万步， 走惨了， 坐大巴回银川市的万达广场吃 一餐“筋头巴脑”来补充能量：
 
- ![深度截图_选择区域_20170831221317.png]({{sit e.url}}/pics/tourism-yinchuan/5957-090a53176b04ecfd.png)
+![深度截图_选择区域_20170831221317.png]({{site.url}}/pics/tourism-yinchuan/5957-090a53176b04ecfd.png)
 
 
 #### 第三天： 镇北堡影视城
@@ -136,7 +136,7 @@ categories: [Travel]
 ![深度截图_选择区域_20170831221801.png]({{site.url}}/pics/tourism-yinchuan/5957-1100ab313d44b3c5.png)
 
 
-![深度截图_选择区域_20170831221528.png]({{site.url}}/pics/tourism-yinchuan/5957-494f2e5290 65227c.p ng)
+![深度截图_选择区域_20170831221528.png]({{site.url}}/pics/tourism-yinchuan/5957-494f2e529065227c.png)
 
 
 ![深度截图_选择区域_20170831221959.png]({{site.url}}/pics/tourism-yinchuan/5957-aab686a2b55664af.png)
@@ -188,23 +188,23 @@ categories: [Travel]
 
 ![深度截图_选择区域_20170831221813.png]({{site.url}}/pics/tourism-yinchuan/5957-60a41f03b831153e.png)
 
-![深度截图_选择区域_20170831221747.png]({{site.url}}/pics/tourism-yinchuan/595 7 -e48dc43a a68de914.pn g)
+![深度截图_选择区域_20170831221747.png]({{site.url}}/pics/tourism-yinchuan/5957-e48dc43aa68de914.png)
 
 ![深度截图_选择区域_20170831221735.png]({{site.url}}/pics/tourism-yinchuan/5957-0e88171ec4f86bb6.png)
 
 镇北堡影视城 3 个小时就可以逛完， 简单走一圈下来的体验： 这就是一个为了拍照而生的地方。
 
 
-![深度截图_选择区域_20170831222335.png]({{site.url}}/pics/tourism-yinchuan/5957-845c c8f5da9e48a9. png)
+![深度截图_选择区域_20170831222335.png]({{site.url}}/pics/tourism-yinchuan/5957-845cc8f5da9e48a9.png)
 
 
-![深度截图_选择区域_20170831222342.png]({{s ite.url }}/pics/tourism-yinchuan/5957-713d5f9157f77f53.png)
+![深度截图_选择区域_20170831222342.png]({{site.url}}/pics/tourism-yinchuan/5957-713d5f9157f77f53.png)
 
 逛完银川的水洞沟和影视城以后， 从银川汽车站坐快客到中卫， 准备第四天的沙漠之旅。
 到中卫建议入住 “伊丁酒店”， 离沙坡 头和腾格里沙漠都很近，  而且价格适中，  非常干 净。 
  
 
-![ 深 度截图_选择区域_2 0170831223732. png]({{site.url}}/pi cs/tour ism-yinchuan/59 57-ea6cf8e0b 5e569b5 .png) 
+![深度截图_选择区域_20170831223732.png]({{site.url}}/pics/tourism-yinchuan/5957-ea6cf8e0b5e569b5.png)
 
 
 
@@ -254,7 +254,7 @@ categories: [Travel]
 ![深度截图_deepin-image-viewer_20170831224337.png]({{site.url}}/pics/tourism-yinchuan/5957-9f23e3aa0288f890.png)
 
 
-![深度截图_deepin-image-viewer_20170831224655.png]({{site.url}}/pics/tourism-yin chuan/5957-d82b6e869c26a550.png)
+![深度截图_deepin-image-viewer_20170831224655.png]({{site.url}}/pics/tourism-yinchuan/5957-d82b6e869c26a550.png)
 
 ![深度截图_deepin-image-viewer_20170831224648.png]({{site.url}}/pics/tourism-yinchuan/5957-8fa818105f9eb4a8.png)
 
@@ -270,7 +270,7 @@ categories: [Travel]
 ![深度截图_deepin-image-viewer_20170831224425.png]({{site.url}}/pics/tourism-yinchuan/5957-0c1cfc2cde32d124.png)
 
 
-![深度截图_deepin-image-viewer_20170831224434.png]({{site.url}}/pics/tourism-yi nchuan/5957- 36787314c4ea34b0.png)
+![深度截图_deepin-image-viewer_20170831224434.png]({{site.url}}/pics/tourism-yinchuan/5957-36787314c4ea34b0.png)
 
 
 ![深度截图_deepin-image-viewer_20170831224509.png]({{site.url}}/pics/tourism-yinchuan/5957-97042316322abdaf.png)
@@ -279,7 +279,7 @@ categories: [Travel]
 
 ![深度截图_deepin-image-viewer_20170831230622.png]({{site.url}}/pics/tourism-yinchuan/5957-bd6a51ff8242f2cb.png)
 
-![深度截图_deepin-image-viewer_20170831230615.png]({{site.url}}/pics/touri sm-yinchu an/5957-9897 1410692be510.png)
+![深度截图_deepin-image-viewer_20170831230615.png]({{site.url}}/pics/tourism-yinchuan/5957-98971410692be510.png)
 
 ![深度截图_deepin-image-viewer_20170831230724.png]({{site.url}}/pics/tourism-yinchuan/5957-581a6da1d31b7dd9.png)
 
@@ -298,9 +298,9 @@ categories: [Travel]
 
 ![深度截图_deepin-image-viewer_20170831230707.png]({{site.url}}/pics/tourism-yinchuan/5957-75589fd0c7478d8e.png)
 
-![深度截图_deepin-image-viewer_20170831230657.png]({{site.url}}/pics/tourism-yinchuan /5957-1ae64158b95d7ab7.png )
+![深度截图_deepin-image-viewer_20170831230657.png]({{site.url}}/pics/tourism-yinchuan/5957-1ae64158b95d7ab7.png)
  
-![深度截 图_deepi n-imag e-viewer_2017083123 0646.png]({{site.ur l}}/pics/tour ism-yinchuan/595 7-6545658f1b993e3e.png)
+![深度截图_deepin-image-viewer_20170831230646.png]({{site.url}}/pics/tourism-yinchuan/5957-6545658f1b993e3e.png)
 
 有没有“精绝古城”的赶脚？
 你们发现没， 这么美的骆驼队最后的那一位“扎眼”的奇装异服外星人， 对， 那是我老婆， 去沙漠怕晒黑， 非要穿蝉衣， 然后...然后...然后就没有然后了， 容我做一个悲伤的表情。
@@ -308,7 +308,7 @@ categories: [Travel]
 骑完 骆驼后， 还可以开一下卡 丁车和滑沙， 话说滑沙一定要早上凉快的时候滑， 中午滑感觉脚都快被沙子煮熟了。
 
 
-![深度截图_deepin-image-viewer_20170831231653.png]({{site.url}}/pics/tourism-yinchuan/5957-6f407 fb158dae6 8f.png) 
+![深度截图_deepin-image-viewer_20170831231653.png]({{site.url}}/pics/tourism-yinchuan/5957-6f407fb158dae68f.png)
 
 
 小朋友， 不知道哪 里捡了一根棍子， 拿 着 棍子在沙漠里玩了一上午。 
@@ -319,7 +319,7 @@ categories: [Travel]
 
 
 
-![深度截图_deepin-image-viewer_20170831231847.png]({{s ite.url}}/pi cs/to urism-yin chuan/595 7-21f929afd1 74207e.png)
+![深度截图_deepin-image-viewer_20170831231847.png]({{site.url}}/pics/tourism-yinchuan/5957-21f929afd174207e.png)
 
 
 
@@ -416,7 +416,7 @@ categories: [Travel]
 
 ![深度截图_选择区域_20170901000157.png]({{site.url}}/pics/tourism-yinchuan/5957-a8eedabb52e5d295.png)
 
-![深度 截图 _选择区域 _20170901000138.png] ({{site. url}}/pics/t ourism-yinchuan/5957-2ee2609f78caff5e.png)
+![深度截图_选择区域_20170901000138.png]({{site.url}}/pics/tourism-yinchuan/5957-2ee2609f78caff5e.png)
 
 ![深度截图_选择区域_20170901000127.png]({{site.url}}/pics/tourism-yinchuan/5957-a06d2bc4d89d5ae4.png)
 
@@ -475,11 +475,11 @@ categories: [Travel]
 
 ![深度截图_选择区域_20170901000947.png]({{site.url}}/pics/tourism-yinchuan/5957-3bf365abc2a47332.png)
 
-![深度截图_选择区域_20170901001009.png]({{site.url}}/pics/tourism-yinchuan/5957-2e4daf1682c94426.p ng)
+![深度截图_选择区域_20170901001009.png]({{site.url}}/pics/tourism-yinchuan/5957-2e4daf1682c94426.png)
 
- ![深度截图_选择区域_2017090100102 4.png]({{site .url}}/pics/tourism-yinchuan/5957- 9c9e20303fc8fe64.png)
- 
-![深度截图_选 择区域_20170 901001036.pn g]({{site.url}}/pi cs/tourism -yinchuan/5957-379c 7a8a92232b91.p ng)
+![深度截图_选择区域_20170901001024.png]({{site.url}}/pics/tourism-yinchuan/5957-9c9e20303fc8fe64.png)
+
+![深度截图_选择区域_20170901001036.png]({{site.url}}/pics/tourism-yinchuan/5957-379c7a8a92232b91.png)
 
 
 #### 第 六天： 银川休整， 悦海湿地公园
