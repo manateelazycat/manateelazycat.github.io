@@ -90,6 +90,8 @@ sed -i 's/page_size: 5/page_size: 9/' default.yaml
 具体的操作方法如下：
 下载 [rime-lmdg](https://github.com/amzxyz/RIME-LMDG/releases), 我下载的是 amz-v2n3m1-zh-hans.gram 文件。
 
+amz-v2n3m1-zh-hans.gram 这个文件移动到 rime-ice 目录下
+
 在 rime-ice 目录下新建一个 rime_ice.custom.yaml 文件， 内容如下：
 
 ```
