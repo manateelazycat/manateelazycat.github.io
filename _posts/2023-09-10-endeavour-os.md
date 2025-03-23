@@ -71,7 +71,7 @@ KDE 的系统更加稳定一些， 进入 KDE 后， 需要做一些必要设置
 * deepin-terminal vala 版本： sudo pacman -S deepin-terminal-gtk
 * vivaldi: 隐私更好的浏览器, 安装后可以参考这篇[博客](https://manateelazycat.github.io/2023/06/09/vivaldi-html5-video/)来解决 HTML5 视频无法播放的问题
 * WPS: yay -S wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts
-* 微信： 微信是工作中必不可少的应用， 但是 Linux 下还是要折腾下的， 具体操作请查看 [ArchLinux 折腾微信](https://manateelazycat.github.io/2023/06/03/arch-wechat/)
+* 微信： 微信是工作中必不可少的应用， 但是 Linux 下还是要折腾下的， 具体操作请查看 [ArchLinux 安装原生微信](https://manateelazycat.github.io/2024/11/04/wechat-native/)
 * 腾讯会议: yay -S wemeet-bin
 * 闭源驱动： ArchLinux 下安装了 N 卡闭源驱动， 才能解决 avi 视频播放的问题， 具体安装方法可以参考 [ArchLinux 安装 N 卡闭源驱动](https://manateelazycat.github.io/2023/06/03/nvidia-driver/)
 
