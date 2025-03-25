@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 折腾台式机
-categories: [Emacs]
+title: 折腾 AMD 9950x
+categories: [Curiosity]
 ---
 
 最近在家 DIY 我的开发机器，下面是配件 BOM 表
