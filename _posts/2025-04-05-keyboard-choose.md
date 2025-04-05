@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 习惯用 ThinkPad，应该怎么选择机械键盘
+title: ThinkPad 键盘忠粉：如何挑机械键盘
 categories: [Curiosity]
 ---
 
