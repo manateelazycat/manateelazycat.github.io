@@ -69,7 +69,7 @@ GHC 黑客 Dons Stewart 写的这本 Real World Haskell 系统型的讲解了 Ha
 因为当你编程语言学得足够多的时候，不同语言的语法都是相同的，
 只用学习不同语言之间的微小区别就可以了。
 
-以前一直对 Ruby 的 end 语法抱有偏见，但是至从我在 Emacs 配置了 ruby-end 插件以后，世界都清净了。
+以前一直对 Ruby 的 end 语法抱有偏见，但是自从我在 Emacs 配置了 ruby-end 插件以后，世界都清净了。
 ```
 
 #### Vala: [Vala Tutorial](https://wiki.gnome.org/Projects/Vala/Tutorial)
