@@ -89,6 +89,12 @@ sudo pacman -S fish
 chsh -s $(which fish)
 ```
 
+Fish 4.0 引入 Kitty Keyboard Protocols 协议， 会导致 pyte 基础的终端产生额外的 5u 字符， 需要在配置文件 `~/.config/fish/config.fish` 中添加下面配置禁用 Kitty 协议:
+
+```
+set -Ua fish_features no-keyboard-protocols
+```
+
 #### 自动换壁纸
 ```bash
 yay -S variety 
