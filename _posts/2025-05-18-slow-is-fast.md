@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 慢就是快，很多人看不懂
-categories: [Think]
+categories: [Business]
 ---
 
 推特有网友说，你们懒猫微服 “硬件+系统" 铺货太慢了。

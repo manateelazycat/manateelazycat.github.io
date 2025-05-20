@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 修复 Btrfs 文件系统的秘籍
-categories: [Think]
+categories: [Tech]
 ---
 
 #### Btrfs炸了
