@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 软件工程的 SOLID 原理，如果通过想象力实践的？
+title: 软件工程的 SOLID 原理，如何通过想象力实践的？
 categories: [Think]
 ---
 
-推友问： 软件工程的 SOLID 原理，如果通过想象力实践的？
+推友问： 软件工程的 SOLID 原理，如何通过想象力实践的？
 
 我的回答：
 
