@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 
+title: 你推荐现在的小孩子，学计算机吗？
 categories: [Think]
 ---
 
