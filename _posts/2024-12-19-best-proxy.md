@@ -12,7 +12,7 @@ categories: [Proxy]
 ### 安装 v2raya
 ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/docs/prologue/installation/archlinux/), 然后在浏览器打开 `http://127.0.0.1:2017` 进行如下配置：
 
-01. 订阅机场: Nexitally 机场购买后， 等一下， 在 `Ss & Trojan` 页面点击 `Clash Trojan Subscription` 拷贝机场订阅 URL, 在 v2raya 点击导入按钮导入
+01. 订阅机场: Nexitally 机场购买后， 等一下， 在 `Ss & Trojan` 页面点击对应操作系统平台的 `Shadowsocks` 拷贝机场订阅 URL, 在 v2raya 点击导入按钮导入
 02. 选择服务器： 选择 `SUB.NEXCONVERT.COM` 标签， 选择一个合适的服务器， 然后选择左上角启动按钮
 03. 更新 GFWList： 点击页面右上角设置按钮， 在设置对话框右上角点击更新按钮更新 GFWLIST， 然后再按照下面的步骤对设置页面进行配置
 04. 透明代理/系统代理： `启用: 分流规则与规则端口所选模式一致`
@@ -60,7 +60,7 @@ DNS 我用 systemd-resolved 来做 DNS 缓存， 避免 pacman + v2raya + 著名
 3. 配置好用 resolvectl 这个工具来查看 DNS 信息
 
 ### 手机端
-手机端我用 v2rayNG 客户端， 直接在 Nexitally `Ss & Trojan` 页面找到 Android 的订阅地址， 导入到 v2rayNG 即可。
+手机端我用 v2rayNG 客户端， 直接在 Nexitally `Ss & Trojan` 页面找到 Android 的 `Shadowsocks` 的订阅地址， 导入到 v2rayNG 即可。
 
 Android 双 VPN 请查看我的另一篇文章[手机上开两个 VPN](https://manateelazycat.github.io/2023/02/01/shelter/)
 
