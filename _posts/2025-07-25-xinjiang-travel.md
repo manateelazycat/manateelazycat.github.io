@@ -236,7 +236,7 @@ categories: [Travel]
 
  ![]({{site.url}}/pics/tourism-xinjiang/IMG_20250707_143513.jpg)
 
- ![]({{site.url}}/pics/tourism-xinjiang/IMG_20250707_144651.jpg)
+ ![]({{site.url}}/pics/tourism-xinjiang/IMG_20250707_144651.png)
  
 本来想去卓尔山看看的，可惜路过时刚好阵雨，不过，卓尔山到酒泉这一条 213 国道（二尕公路） 非常非常的美，雪山、峡谷、冰川融河，建议每个路边的停车区都停下来拍照，景色不输独库公路呀。
 
