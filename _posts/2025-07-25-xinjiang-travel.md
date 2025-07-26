@@ -11,9 +11,10 @@ categories: [Travel]
 2. 总里程： 1 万公里
 3. 时间： 20 天
 
+ ![]({{site.url}}/pics/tourism-xinjiang/map.png)
 
 #### 武汉 -> 石泉
-
+ 
  ![]({{site.url}}/pics/tourism-xinjiang/IMG_20250705_175946.jpg)
 
  ![]({{site.url}}/pics/tourism-xinjiang/IMG_20250705_180057.jpg)
