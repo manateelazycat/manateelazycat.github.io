@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 游泳为什么对技术创业者有帮助？
+title: 游泳禅宗
 categories: [Think]
 ---
 
