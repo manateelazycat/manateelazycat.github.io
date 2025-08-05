@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 技术创业者必读的销售秘籍
+title: 技术创业者最需要懂得的销售秘籍
 categories: [Reading]
 ---
 
