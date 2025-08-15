@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 怎么说服老板投入基础设施建设？
+title: 用户执意要做功能怎么办？
 categories: [Think]
 ---
 
