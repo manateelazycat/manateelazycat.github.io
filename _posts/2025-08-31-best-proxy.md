@@ -10,7 +10,13 @@ categories: [Proxy]
 因为我需要那种超级稳定, 支持 SSH， 同时国家节点特别多的顶级机场， 经过网友的推荐， 最后买了 [Nexitally](https://naiixi.com/) 家的， 全世界节点 135 个， 延迟非常低， 很给力哇。
 
 ### 安装 v2raya
-ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/docs/prologue/installation/archlinux/), 然后在浏览器打开 `http://127.0.0.1:2017` 进行如下配置：
+ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/docs/prologue/installation/archlinux/)
+
+用 sudo systemctl start v2raya.service 命令启动服务
+用 sudo systemctl enable v2raya.service 命令设置为开机启动
+
+### 配置 v2raya
+然后在浏览器打开 `http://127.0.0.1:2017` 进行如下配置：
 
 订阅机场: Nexitally 机场购买后， 等一下， 在 `Ss & Trojan` 页面点击对应操作系统平台的 `Shadowsocks` 拷贝机场订阅 URL, 在 v2raya 点击导入按钮导入。选择服务器： 选择 `CDN.KINETICBLOOM.ORG` 标签， 选择一个合适的服务器， 然后选择左上角启动按钮，开启代理。
 
