@@ -23,10 +23,6 @@ sudo pacman -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-rime librime
 * fcitx5-im: 输入法设置工具
 * librime: rime 相关库， 下面的 emacs-rime 会用到
 
-备注： 
-* 需要安装 `fcitx5-gtk` 和 `fcitx5-qt` 并写入上面 IM 设置， 不然打字太快会发生漏字的现象， 就是拼音没有变成汉字而是直接插入输入框中。
-* 附加组件: 粘贴板和快速输入模块的快捷键去掉， 避免和 Emacs 按键冲突
-
 #### Wayland 环境设置
 安装好上面的 Fcitx 包，在 KDE 环境下，只需要进入 KDE 设置->虚拟键盘， 选择 Fcitx5 后重新注销即可在应用中输入中文。
 
@@ -37,6 +33,10 @@ export XMODIFIERS=@im=fcitx
 ```
 
 重新注销后就可以在 Wayland 环境下的微信输入中文了。
+
+备注： 
+* 需要安装 `fcitx5-gtk` 和 `fcitx5-qt` 并写入上面 IM 设置， 不然打字太快会发生漏字的现象， 就是拼音没有变成汉字而是直接插入输入框中。
+* 附加组件: 粘贴板和快速输入模块的快捷键去掉， 避免和 Emacs 按键冲突
 
 #### X11 环境设置
 
@@ -49,6 +49,10 @@ export XMODIFIERS="@im=fcitx"
 ```
 
 重新登录即可。
+
+备注： 
+* 需要安装 `fcitx5-gtk` 和 `fcitx5-qt` 并写入上面 IM 设置， 不然打字太快会发生漏字的现象， 就是拼音没有变成汉字而是直接插入输入框中。
+* 附加组件: 粘贴板和快速输入模块的快捷键去掉， 避免和 Emacs 按键冲突
 
 ### 安装 Fcitx5 输入法皮肤
 ```bash
