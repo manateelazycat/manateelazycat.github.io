@@ -24,12 +24,14 @@ sudo pacman -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-rime librime
 * librime: rime 相关库， 下面的 emacs-rime 会用到
 
 #### Wayland 环境设置
-安装好上面的 Fcitx 包，在 KDE 环境下，只需要进入 KDE 设置->虚拟键盘， 选择 Fcitx5 后重新注销即可在应用中输入中文。
+安装好上面的 Fcitx 包，在 KDE 环境下，只需要进入 KDE 设置->虚拟键盘， 选择 Fcitx5 后重新注销即可在大部分应用中输入中文。
 
 一些特殊的应用，比如微信就无法输入中文， 需要创建配置文件 ~/.config/plasma-workspace/env/ime.sh 文件， 并在配置文件中写入
 
 ```bash
-export XMODIFIERS=@im=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
 ```
 
 重新注销后就可以在 Wayland 环境下的微信输入中文了。
@@ -40,7 +42,7 @@ export XMODIFIERS=@im=fcitx
 
 #### X11 环境设置
 
-然后将下面的内容粘贴到 ~/.xprofile
+X11 的配置文件需要写入 ~/.xprofile
 
 ```bash
 export GTK_IM_MODULE=fcitx
