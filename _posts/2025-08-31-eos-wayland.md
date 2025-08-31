@@ -89,9 +89,11 @@ KDE 的系统更加稳定一些， 进入 KDE 后， 需要做一些必要设置
 * 窗口左分屏： Ctrl + Win + y
 * 窗口右分屏： Ctrl + Win + o
 * 关闭分屏： Ctrl + Win + ;
+* 截图： Ctrl + Alt + A
 
 ### 安装一些必备软件
 * deepin-terminal vala 版本： sudo pacman -S deepin-terminal-gtk
+* 截图工具: [Flameshot](https://manateelazycat.github.io/2024/10/29/recommand-flameshot/)是我用过的最好的截图工具， 比我 15 年前写的 deepin-screenshot 还好用
 * WPS: yay -S wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts
 * 微信： 微信是工作中必不可少的应用， 但是 Linux 下还是要折腾下的， 具体操作请查看 [ArchLinux 安装原生微信](https://manateelazycat.github.io/2024/11/04/wechat-native/)
 * 腾讯会议: yay -S wemeet-bin
