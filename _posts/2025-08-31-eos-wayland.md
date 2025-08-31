@@ -55,7 +55,6 @@ sudo pacman -S endeavouros-keyring
 sudo pacman -Syyu
 ```
 
-
 ### 配置代理
 装好系统后， 首先配置代理， 要不是啥都干不了， 代理配置可以参考 [最佳代理实践之 v2raya](https://manateelazycat.github.io/2025/08/31/best-proxy/)
 
@@ -74,6 +73,7 @@ sudo pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 ### KDE 设置
 KDE 的系统更加稳定一些， 进入 KDE 后， 需要做一些必要设置：
+
 1. 触摸板： 反向滚动更自然一点，右键点击，选择双指按下的设置， 要不默认设置会导致触摸板点击中间也是右键
 2. 会话 -> 桌面会话， 默认不要恢复注销的程序， 很烦人
 3. 窗口管理 -> 任务切换 -> 主窗口: 取消 ‘显示选中窗口’ 选项， 这样 Alt + Tab 的时候不会立即切换窗口， 不那么恍眼睛
@@ -92,16 +92,34 @@ KDE 的系统更加稳定一些， 进入 KDE 后， 需要做一些必要设置
 * 截图： Ctrl + Alt + A
 
 ### 安装一些必备软件
-* deepin-terminal vala 版本： sudo pacman -S deepin-terminal-gtk
+* deepin-terminal vala 版本： ```sudo pacman -S deepin-terminal-gtk``` , 这个是当年我在 deepin 手搓的终端
 * 截图工具: [Flameshot](https://manateelazycat.github.io/2024/10/29/recommand-flameshot/)是我用过的最好的截图工具， 比我 15 年前写的 deepin-screenshot 还好用
-* WPS: yay -S wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts
-* 微信： 微信是工作中必不可少的应用， 但是 Linux 下还是要折腾下的， 具体操作请查看 [ArchLinux 安装原生微信](https://manateelazycat.github.io/2024/11/04/wechat-native/)
-* 腾讯会议: yay -S wemeet-bin
-* 闭源驱动： ArchLinux 下安装了 N 卡闭源驱动， 才能解决 avi 视频播放的问题， 具体安装方法可以参考 [ArchLinux 安装 N 卡闭源驱动](https://manateelazycat.github.io/2023/06/03/nvidia-driver/)
+* WPS: ```yay -S wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts```
+* 微信： 微信在 Linux 下已经有原生客户端了， 具体操作请查看 [ArchLinux 安装原生微信](https://manateelazycat.github.io/2024/11/04/wechat-native/)
+* 腾讯会议: ```yay -S wemeet-bin```
+* 闭源驱动： ArchLinux 下安装了 N 卡闭源驱动， 才能解决 AVI 视频播放的问题， 具体安装方法可以参考 [ArchLinux 安装 N 卡闭源驱动](https://manateelazycat.github.io/2023/06/03/nvidia-driver/)
 
 ### 安装懒猫微服
-* 懒猫微服客户端： ```/bin/bash -c "$(curl -fsSL https://dl.lazycat.cloud/client/desktop/linux-install)"```， 用了[懒猫微服](https://lazycat.cloud/), 我所有的文件和代码都在家里的私有云服务器中，终端设备不留任何文件，想重装系统的时候马上就可以重装
-* 懒猫 AI 浏览器： ```curl https://dl.lazycatcloud.com/aibrowser/install.sh | bash``` [懒猫 AI 浏览器](https://lazycat.cloud/download) 基于 Chromiu 改造，去掉了 Google 的广告追踪，配合我家的懒猫 AI 算力舱，AI 大模型和沉浸式翻译随便用，无限 Tokens
+
+#### 懒猫微服客户端： 
+
+安装方法如下:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://dl.lazycat.cloud/client/desktop/linux-install)"
+```
+
+用了[懒猫微服](https://lazycat.cloud/), 我所有的文件和代码都在家里的私有云服务器中，终端设备不留任何文件，想重装系统的时候马上就可以重装
+
+#### 懒猫 AI 浏览器：
+
+安装方法如下：
+
+```bash
+curl https://dl.lazycatcloud.com/aibrowser/install.sh | bash
+``` 
+
+[懒猫 AI 浏览器](https://lazycat.cloud/download) 基于 Chromium 改造，去掉了 Google 的广告追踪，配合我家的懒猫 AI 算力舱，AI 大模型和沉浸式翻译随便用，无限 Tokens
 
 ### 安装一些必备的 Chrome 插件
 * Vimium: 快捷键操作网页
@@ -120,3 +138,6 @@ Fish 4.0 引入 Kitty Keyboard Protocols 协议， 会导致 pyte 基础的终�
 ```
 set -Ua fish_features no-keyboard-protocols
 ```
+
+### 最后
+我大量的代码环境都在 Emacs 中，所有 KDE 整体设置非常简单。
