@@ -97,6 +97,10 @@ KDE 的系统更加稳定一些， 进入 KDE 后， 需要做一些必要设置
 * 腾讯会议: yay -S wemeet-bin
 * 闭源驱动： ArchLinux 下安装了 N 卡闭源驱动， 才能解决 avi 视频播放的问题， 具体安装方法可以参考 [ArchLinux 安装 N 卡闭源驱动](https://manateelazycat.github.io/2023/06/03/nvidia-driver/)
 
+### 安装懒猫微服
+* 懒猫微服客户端： ```/bin/bash -c "$(curl -fsSL https://dl.lazycat.cloud/client/desktop/linux-install)"```， 用了[懒猫微服](https://lazycat.cloud/), 我所有的文件和代码都在家里的私有云服务器中，终端设备不留任何文件，想重装系统的时候马上就可以重装
+* 懒猫 AI 浏览器： ```curl https://dl.lazycatcloud.com/aibrowser/install.sh | bash``` [懒猫 AI 浏览器](https://lazycat.cloud/download) 基于 Chromiu 改造，去掉了 Google 的广告追踪，配合我家的懒猫 AI 算力舱，AI 大模型和沉浸式翻译随便用，无限 Tokens
+
 ### 安装一些必备的 Chrome 插件
 * Vimium: 快捷键操作网页
 * AdBlock: 广告过滤插件
