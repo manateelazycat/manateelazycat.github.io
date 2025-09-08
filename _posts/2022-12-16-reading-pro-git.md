@@ -121,18 +121,18 @@ Ref 'refs/heads/master' was rewritten
 
 #### 全局性地更换电子邮件地址
 
-另一个常见的案例是你在开始时忘了运行 git config 来设置你的姓名和电子邮件地址，也许你想开源一个项目，把你所有的工作电子邮件地址修改为个人地址。无论哪种情况你都可以用 filter-branch 来更换多次提交里的电子邮件地址。你必须小心一些，只改变属于你的电子邮件地址，所以你使用--commit-filter：$ 
+另一个常见的案例是你在开始时忘了运行 git config 来设置你的姓名和电子邮件地址，也许你想开源一个项目，把你所有的工作电子邮件地址修改为个人地址。无论哪种情况你都可以用 filter-branch 来更换多次提交里的电子邮件地址。
 
 ```
 git filter-branch --commit-filter
-    'if [ "$GIT_AUTHOR_EMAIL" = "schacon@localhost" ];
-    then
-        GIT_AUTHOR_NAME="Scott Chacon";
-        GIT_AUTHOR_EMAIL="schacon@example.com";
-        git commit-tree "$@";
-    else
-        git commit-tree "$@";
-    fi' HEAD
+'if [ "$GIT_AUTHOR_EMAIL" = "schacon@localhost" ];
+then
+    GIT_AUTHOR_NAME="Scott Chacon";
+    GIT_AUTHOR_EMAIL="schacon@example.com";
+    git commit-tree "$@";
+else
+    git commit-tree "$@";
+fi' HEAD
 ```
 
 这个会遍历并重写所有提交使之拥有你的新地址。因为提交里包含了它们的父提交的 SHA-1 值，这个命令会修改你的历史中的所有提交，而不仅仅是包含了匹配的电子邮件地址的那些。
