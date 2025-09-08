@@ -1,7 +1,7 @@
 ---
 layout: post
 title: LNKS 的设计原则
-categories: [Think]
+categories: [LNKS]
 ---
 
 这是公司内部产品团队的设计原则，分享给大家。
