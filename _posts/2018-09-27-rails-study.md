@@ -4,21 +4,21 @@ title: Rails 入门最佳实践
 categories: [Rails]
 ---
 
-花了两个月做了一个类似 [Tower](https://tower.im) 的GTD工具, 从最开始学习 Ruby 和 Rails, 到跌跌撞撞中摸索 Rails 的各种小技巧, 直到最后一块拼图的完成, 才感觉自己掌握了 Rails 构建Web产品方法和技巧.
-![Tower NG]({{site.url}}/pics/rails-study/rails-study-1.png)
+花了两个月做了一个类似 [Tower](https://tower.im) 的 GTD 工具, 从最开始学习 Ruby 和 Rails, 到跌跌撞撞中摸索 Rails 的各种小技巧, 直到最后一块拼图的完成, 才感觉自己掌握了 Rails 构建 Web 产品方法和技巧.
+![Tower NG]({{site.url}}/pics/rails-study-post/rails-study-1.png)
 
 在自学 Rails 的这几个月, 也看了很多现成的文章, 虽然很多文章都写的非常详细, 但是对于初学者来说, 没有重点的详细只会给人一种盲人摸象的感觉, 感觉很强大, 心里却没有底.
 
-所以, 我一直在想写一篇重新梳理过的 Rails 教程, 能够帮助后来的 Rails 自学者更快的掌握整个 Rails 的脉络得以快速上手, 也就是今天的 << Rails入门最佳实践 >>
+所以, 我一直在想写一篇重新梳理过的 Rails 教程, 能够帮助后来的 Rails 自学者更快的掌握整个 Rails 的脉络得以快速上手, 也就是今天的 << Rails 入门最佳实践 >>
 
 #### 预备知识
-因为用 Rails 开发Web项目, 首先需要懂 Ruby 编程和基本的 Rails 操作, 所以建议你先把下面这两本书看完以后再来反过来阅读本文, 会有茅塞顿开的感觉, 哈哈哈哈.
+因为用 Rails 开发 Web 项目, 首先需要懂 Ruby 编程和基本的 Rails 操作, 所以建议你先把下面这两本书看完以后再来反过来阅读本文, 会有茅塞顿开的感觉, 哈哈哈哈.
 
 1. Ruby: [Ruby Essentials](https://www.techotopia.com/index.php/Ruby_Essentials)
 2. Rails: [Ruby on Rails 指南](https://ruby-china.github.io/rails-guides/getting_started.html)
 
 #### 极简理念
-就像我刚开始看了上面的两本书以后, 我依然没法脱离 "Ruby on Rails指南" 本书来独立构建项目, 因为 Web 的知识太碎了, 你只有把每个模块都弄懂并串联起来, 你才能知道怎么做, 而看了指南这本书以后, 虽然对怎么构建 Web 项目有一个简单的认识, 但是怎么自己构建和扩展功能, 还是一头雾水.
+就像我刚开始看了上面的两本书以后, 我依然没法脱离 "Ruby on Rails 指南" 本书来独立构建项目, 因为 Web 的知识太碎了, 你只有把每个模块都弄懂并串联起来, 你才能知道怎么做, 而看了指南这本书以后, 虽然对怎么构建 Web 项目有一个简单的认识, 但是怎么自己构建和扩展功能, 还是一头雾水.
 
 所以, 本文是在你看了上面两本书以后, 针对这两本书遗漏和马上有疑问的点, 用极简通俗的语言来补齐知识体系缺失的一环, 希望用最少篇幅让你知道怎么把所学的知识串联起来.
 
@@ -28,7 +28,7 @@ categories: [Rails]
 学习 Rails 最重要的是, 需要清楚的知道消息响应的循环, 只有知道消息从哪里发出, 哪里经过, 最后以怎样的形式返回, 才能在问题发生时知道怎么准确的定位问题.
 
 注意看下面这张图:
-![消息响应循环]({{site.url}}/pics/rails-study/rails-study-2.png)
+![消息响应循环]({{site.url}}/pics/rails-study-post/rails-study-2.png)
 
 1. 首先你的浏览器访问网页的时候, 比如本地的 0.0.0.0, 浏览器会向 Rails 后台发送 0.0.0.0 的 GET 请求
 2. 路由器 (Router) 会直接返回路由中 root 路径对应的页面, 这就是我们访问网站的首页
@@ -40,22 +40,22 @@ categories: [Rails]
 Rails 在控制器 respond_to 处理响应的时候有四种方式:
 1. 第一种是直接返回 html.erb 文件, html.erb 文件会根据填充数据生成新的 html 文件替换现有的页面
 2. 返回 js.erb 文件, 根据填充数据生成新的 js 文件直接在当前页面中执行代码操作 DOM 元素
-3. 返回 json 数据给 ajax , 由浏览器中 ajax的js回调来处理返回的 json 数据, 并操作当前页面的 DOM 元素
+3. 返回 json 数据给 ajax , 由浏览器中 ajax 的 js 回调来处理返回的 json 数据, 并操作当前页面的 DOM 元素
 4. 当然也可以直接用 ```redirect_to new_path``` 跳转到 new_path 页面
 
 只要把这个消息响应循环铭记于心, 你已经就理解了 Rails 一半了, 虽然 Rails 功能强大, 但是本质上 Rails 就是按照上面的消息循环来处理所有的 HTTP 请求.
 
 #### 剑法
 剑法部分主要是实操, 主要分为四个部分:
-1. 三板斧, 三板斧学会了Web项目马上就可以上手
+1. 三板斧, 三板斧学会了 Web 项目马上就可以上手
 2. 锦囊妙计, 提供各种小技巧来灵活解决一些现实中的障碍
-3. 目录参考, 讲解一下Web开发最主要需要了解的一些目录
+3. 目录参考, 讲解一下 Web 开发最主要需要了解的一些目录
 4. 扩展阅读, 通过系统学习某一本书来夯实知识体系
 
 ##### 第一板斧: 从 Restful 的角度打通路由、控制器、视图
 看了很多关于 Rails 的文章, 上来就说, 你要做这个命令, 那个命令, 然后你就可以访问到页面了.
 
-其实我们再回想一下 "消息响应循环" 那张图, Web本质是什么?
+其实我们再回想一下 "消息响应循环" 那张图, Web 本质是什么?
 
 ```
 Web的本质就是用户点击HTML的连接, 更新当前页面.
@@ -71,14 +71,14 @@ Rails 的本质就是根据 Restful 的设计原则来修改路由, 控制器和
 ```
 
 所以, Rails 的大部分工作, 就是下面这几件事情:
-1. 改路由 (routes.rb), 让Rails可以根据发送过来的 href 连接和路由设置去找到控制器和对应的动作函数
+1. 改路由 (routes.rb), 让 Rails 可以根据发送过来的 href 连接和路由设置去找到控制器和对应的动作函数
 2. 创建对应的控制器 (resources_controller.rb) 并添加动作函数 (action)
 3. 在动作函数中, 从模型 (resources.rb) 中抓取数据, 根据 respond_to 表达式来返回响应结果 (html.erb, js.erb, json, redirect_to)
 4. 修改 js 代码来处理 DOM 元素
 
 Rails 的所有开发都是围绕着上面这四点来展开的.
 
-说到啥是 Restful API ? 不用想什么高大上的概念, 其实就是结合访问资源的路径 + HTTP的请求类型来自动对应 controller.rb 里面不同动作函数 (index, new, edit, show, update, destroy) 的规范和技术.
+说到啥是 Restful API ? 不用想什么高大上的概念, 其实就是结合访问资源的路径 + HTTP 的请求类型来自动对应 controller.rb 里面不同动作函数 (index, new, edit, show, update, destroy) 的规范和技术.
 
 不同的动作函数在所有资源中对应的意义是一致的:
 1. index 就是显示资源的列表
@@ -89,17 +89,17 @@ Rails 的所有开发都是围绕着上面这四点来展开的.
 5. destroy 就是删除资源
 
 我们以任务的图来形象的给出不同动作最终应该生成的页面长什么样子?
-![mission index]({{site.url}}/pics/rails-study/rails-study-3.png)
+![mission index]({{site.url}}/pics/rails-study-post/rails-study-3.png)
 
-![mission show]({{site.url}}/pics/rails-study/rails-study-4.png)
+![mission show]({{site.url}}/pics/rails-study-post/rails-study-4.png)
 
-![mission new]({{site.url}}/pics/rails-study/rails-study-5.png)
+![mission new]({{site.url}}/pics/rails-study-post/rails-study-5.png)
 
-![mission edit]({{site.url}}/pics/rails-study/rails-study-6.png)
+![mission edit]({{site.url}}/pics/rails-study-post/rails-study-6.png)
 
-![mission update]({{site.url}}/pics/rails-study/rails-study-7.png)
+![mission update]({{site.url}}/pics/rails-study-post/rails-study-7.png)
 
-![mission destroy]({{site.url}}/pics/rails-study/rails-study-8.png)
+![mission destroy]({{site.url}}/pics/rails-study-post/rails-study-8.png)
 
 所以, 如果我们要建立一批像上面 "任务" 的页面, 我们应该怎么做?
 1. 修改 config/routes.rb 增加 missions 这个资源:
@@ -136,7 +136,7 @@ end
 
 3. 如果默认只是返回动作对应的模板页面, 上面的函数不用加什么内容, 直接在 app/views/missions 目录中分别创建 index.html.erb , show.html.erb, new.html.erb, edit.html.erb, update.html.erb, destroy.html.erb 的模板文件即可.
 
-上面就是Rails创建页面的核心步骤, 只要你完成上面的步骤后, 在页面中加入 <a> 标签连接后, Rails 会按照下面的对照方式自动渲染页面的:
+上面就是 Rails 创建页面的核心步骤, 只要你完成上面的步骤后, 在页面中加入 <a> 标签连接后, Rails 会按照下面的对照方式自动渲染页面的:
 
 | Rails Path            | Url Path          | Http Type | Controller action |
 | :------               | :--------         | :-----    | :----             |
@@ -205,9 +205,9 @@ end
 这样, 我们就可以在所有的模式、控制器、视图文件中访问 ```log_in``` 函数了.
 
 ##### 第三板斧
-前两板斧主要讲了怎么生成资源页面和模型文件中功能函数的处理, 现实的Web场景不仅仅是跳转到新的页面或者大范围更新当前页面的内容, 更多的场景是, 根据用户的交互行为, 局部微小的改变一小块界面来进行视觉反馈.
+前两板斧主要讲了怎么生成资源页面和模型文件中功能函数的处理, 现实的 Web 场景不仅仅是跳转到新的页面或者大范围更新当前页面的内容, 更多的场景是, 根据用户的交互行为, 局部微小的改变一小块界面来进行视觉反馈.
 
-第三板斧讲的主要就是怎么在 Rails 中使用 JavaScript, JavaScript的代码编写的时候, 时刻问自己, 从哪里发起 submit 或者 ajax ? 发送完成后是否要处理返回数据?
+第三板斧讲的主要就是怎么在 Rails 中使用 JavaScript, JavaScript 的代码编写的时候, 时刻问自己, 从哪里发起 submit 或者 ajax ? 发送完成后是否要处理返回数据?
 
 JavaScript 主要有四种情况:
 ###### 1. 表单的类型, 只提交, 不处理返回数据
@@ -263,16 +263,16 @@ end
 和返回模板数据的格式类似, 唯一的不同是 format.html 变成了 format.json, 然后通过 ```json: { key: "value" }``` 的形式返回JSON数据给 ajax 请求.
 
 ###### 4. 第三方插件发送表单请求, 在 ajax 成功后执行JS代码
-![上传头像]({{site.url}}/pics/rails-study/rails-study-9.png)
+![上传头像]({{site.url}}/pics/rails-study-post/rails-study-9.png)
 我们来举一个简单的例子, 如果我们要实现上图中这种上传头像后自动更新页面中两处头像元素的功能, 我们一般会按照下图这种流程来处理:
-![image.png]({{site.url}}/pics/rails-study/rails-study-10.png)
+![image.png]({{site.url}}/pics/rails-study-post/rails-study-10.png)
 
 1. 首先我们会在 form_with 表单中增加 data-controller 和 data-action 字段, 表示 AJAX 成功返回结果后, 调用 app/javascript/controllers/user_controller.js的 update 函数, submit 按钮点击后提交数据给 user_controller.rb 中的 update 函数
 2. user_controller.rb 控制器在处理数据后, 返回的并不是 JS 文件, 而是返回 JSON 数据
 3. Stimulus 的JS文件在接到 AJAX 返回的 JSON 数据后在浏览器端修改 HTML页面的DOM结构
 
 下面就是抽象的消息响应循环:
-![ajax:sucess 消息响应循环]({{site.url}}/pics/rails-study/rails-study-11.png)
+![ajax:sucess 消息响应循环]({{site.url}}/pics/rails-study-post/rails-study-11.png)
 
 
 因为像这种第三方插件, 有时候我们往往并不能用 ajax 简单的替换 submit 的操作, 所以这种情况, 我们依然会采用 form_with 的方式提交表单, 但是会在 ajax:success 的方式使得请求返回 JSON 数据的时候调用我们制定的 JS 函数.
@@ -302,9 +302,9 @@ Rails.application.routes.draw do
   end
 end
 ```
-Rails会在你访问 mission 资源的时候, 自动在 mission 资源前面加入 project 的前缀.
+Rails 会在你访问 mission 资源的时候, 自动在 mission 资源前面加入 project 的前缀.
 
-你会发现, 上面的 projects 和 missions 后面的 ID 感觉都是 hash 过的, 这种处理一般是防止通过资源的数字id猜出产品的规模.
+你会发现, 上面的 projects 和 missions 后面的 ID 感觉都是 hash 过的, 这种处理一般是防止通过资源的数字 id 猜出产品的规模.
 
 HashID 的处理很简单, 只用在 Gemfile 加入
 ```
@@ -384,17 +384,17 @@ Rails 是一个约定即为规则的框架, 文件放错了就没效果了, 下�
 | app/controllers               | 控制器目录           |
 | app/models                    | 模型目录             |
 | app/views                     | 视图目录             |
-| app/helpers                   | helper模块目录       |
-| app/javascript/controllers    | StimulusJS控制器目录 |
-| app/assets/stylesheets/custom | 自定义CSS文件        |
+| app/helpers                   | helper 模块目录       |
+| app/javascript/controllers    | StimulusJS 控制器目录 |
+| app/assets/stylesheets/custom | 自定义 CSS 文件        |
 | db/migrate                    | 数据库合并记录目录   |
 
 ### 扩展阅读
-上面的内容主要是针对初学 Rails 并期望快速实战上手的同学, 但是开发一个完整的Web产品还需要学习 CSS、JQuery以及Rails才推出的 StimulusJS, 这些都需要系统性的学习才能融汇贯通.
+上面的内容主要是针对初学 Rails 并期望快速实战上手的同学, 但是开发一个完整的 Web 产品还需要学习 CSS、JQuery 以及 Rails 才推出的 StimulusJS, 这些都需要系统性的学习才能融汇贯通.
 
-* [CSS揭秘](https://book.douban.com/subject/26745943/) CSS高级编程技巧书籍, 特别是伪元素和各种奇淫技巧, 可以非常优雅的实现复杂的界面效果
-* [锋利的 JQuery](https://book.douban.com/subject/3794471/) 系统的学习JQuery 的好书
-* [StimulusJS Handbook](https://stimulusjs.org/handbook/introduction) StimulusJS 能够非常清晰的、模块化的开发JS功能, 同时保持JS代码的可维护性
+* [CSS 揭秘](https://book.douban.com/subject/26745943/) CSS 高级编程技巧书籍, 特别是伪元素和各种奇淫技巧, 可以非常优雅的实现复杂的界面效果
+* [锋利的 JQuery](https://book.douban.com/subject/3794471/) 系统的学习 JQuery 的好书
+* [StimulusJS Handbook](https://stimulusjs.org/handbook/introduction) StimulusJS 能够非常清晰的、模块化的开发 JS 功能, 同时保持 JS 代码的可维护性
 * [BootStrap](http://getbootstrap.com/docs/4.1/getting-started/introduction/) 对多平台自适应做的很好, 内置很多方便的小控件, 不用自己造. ;)
 
 
