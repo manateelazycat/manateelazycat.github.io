@@ -87,7 +87,7 @@ KDE 的系统更加稳定一些， 进入 KDE 后， 需要做一些必要设置
 * 窗口左分屏： Ctrl + Win + y
 * 窗口右分屏： Ctrl + Win + o
 * 关闭分屏： Ctrl + Win + ;
-* 显示桌面： Win + D
+* 最小化窗口： Win + D
 * 终端： Ctrl + Alt + T （快捷键右上角新增应用程序 deepin-terminal）
 * 截图： Ctrl + Alt + A （快捷键右上角新增命令 flameshot gui） 
 
