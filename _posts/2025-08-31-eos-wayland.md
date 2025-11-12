@@ -78,18 +78,18 @@ KDE 的系统更加稳定一些， 进入 KDE 后， 需要做一些必要设置
 2. 会话 -> 桌面会话， 默认不要恢复注销的程序， 很烦人
 3. 窗口管理 -> 任务切换 -> 主窗口: 取消 ‘显示选中窗口’ 选项， 这样 Alt + Tab 的时候不会立即切换窗口， 不那么恍眼睛
 4. 深度终端去掉标题栏： 标题栏右键，更多，选择应用程序设置，添加属性，选择 “无标题栏和边框”， 选择 “是”； 设置等宽字体， 调整一下字体大小
-5. 快捷键： Meta + D 绑定到 ‘最小化窗口’ 这个值
-6. 去掉全局按键避免和 Emacs 冲突： Fcitx 设置所有按键， KDE 快捷键搜索“表情”， 去掉 `Meta + .`
+5. 去掉全局按键避免和 Emacs 冲突： Fcitx 设置所有按键， KDE 快捷键搜索“表情”， 去掉 `Meta + .`
 
 ### 我的全局快捷键
 为了最大程度减少对 Emacs 按键的影响， 我只设置少量的全局快捷键
 
 * 最大化窗口： Ctrl + Win + i
-* 最消化窗口： Win + D
 * 窗口左分屏： Ctrl + Win + y
 * 窗口右分屏： Ctrl + Win + o
 * 关闭分屏： Ctrl + Win + ;
-* 截图： Ctrl + Alt + A
+* 显示桌面： Win + D
+* 终端： Ctrl + Alt + T （快捷键右上角新增应用程序 deepin-terminal）
+* 截图： Ctrl + Alt + A （快捷键右上角新增命令 flameshot gui） 
 
 ### 安装一些必备软件
 * deepin-terminal vala 版本： ```sudo pacman -S deepin-terminal-gtk``` , 这个是当年我在 deepin 手搓的终端
