@@ -8,7 +8,7 @@ categories: [Mac, Hardware]
 
 我在淘宝上买了键帽准备开始修复
 
-![MacBook Pro-Keyboard]({{site.url}}/pics/fix-macbook-keyboard/1.jpeg)
+![MacBook Pro-Keyboard]({{site.url}}/pics/macbook-keyboard/1.jpeg)
 
 谁知是一场从头到尾的作死， 也最终产生了这篇怎么教你徒手修复键盘的攻略
 
@@ -25,7 +25,7 @@ MacBook Pro 的蝴蝶键盘的回弹除了支架以外， 主要靠底座的触�
 ### 分析原因
 既然底座被 502 脆化以后， 干脆直接把底座给撕下来研究一下 Mac 键盘的机械原理。
 
-![MacBook Pro-Keyboard]({{site.url}}/pics/fix-macbook-keyboard/2.png)
+![MacBook Pro-Keyboard]({{site.url}}/pics/macbook-keyboard/2.png)
 
 从下到上依次是：
 1. 键盘电路板， 用于联通电路和给 LED 灯通电
@@ -45,18 +45,18 @@ MacBook Pro 的蝴蝶键盘的回弹除了支架以外， 主要靠底座的触�
 最终在淘宝上找到这种名字叫 B7000 的慢干精细型手机胶水。
 打开是一个针头粗细的出口， 挤之前用吸水纸擦干就很容易把胶水的大小范围控制在毫米级别。
 
-![MacBook Pro-Keyboard]({{site.url}}/pics/fix-macbook-keyboard/3.png)
+![MacBook Pro-Keyboard]({{site.url}}/pics/macbook-keyboard/3.png)
 
 ### 修复
 首先在淘宝上花 10 块买一个 MacBook 的底座和支架， 老板可以剪给你, 如下图一所示：
 
-![MacBook Pro-Keyboard]({{site.url}}/pics/fix-macbook-keyboard/4.png)
+![MacBook Pro-Keyboard]({{site.url}}/pics/macbook-keyboard/4.png)
 
 然后用镊子把底座从电路板上撕下来， 注意底座和支架最后需要再粘贴到笔记本上， 所以撕的时候一定要小心和耐心， 一点点的撕， 不要把底座和支架撕坏了。 最终会变成上图中图二和图三的单个零件。
 
 附一张我撕底座的残骸， 看着好暴力的赶脚.
 
-![MacBook Pro-Keyboard]({{site.url}}/pics/fix-macbook-keyboard/5.png)
+![MacBook Pro-Keyboard]({{site.url}}/pics/macbook-keyboard/5.png)
 
 修复步骤:
 
