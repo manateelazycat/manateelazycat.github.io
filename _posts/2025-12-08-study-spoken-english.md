@@ -44,12 +44,12 @@ what's wrong with you， holy shit， damn right， chinese family， he likes y
 #### Day 3 2025-12-15
 今天把英语字幕都对照了一遍，发现这个电影大概有 200 多个单词不认识。
 
-我都一个一个的超到小本子上，并标注了每个单词的意思。
+我都一个一个的抄到小本子上，并标注了每个单词的意思。
 
 我发现大部分我不会的单词都是真实场景会用到的一些单词，而不是平常开发会见到的一些单词。
 
-比如， stabbed，nuclear，threw up,threatened，insane 这种
+比如，stabbed，nuclear，threw up,threatened，insane 这种
 
-晚上到家跟读了 4 分多钟，腮帮快读废了，我发现英语很多时候都要靠口腔后半部分发音，比如 disintegration 。
+晚上到家跟读了 4 分多钟，腮帮子快读废了，我发现英语很多时候都要靠口腔后半部分发音，比如 disintegration 。
 
-按照这个进度，我要把 90 分钟的电影读完，最少需要一天的时间，满满加油吧。
+按照这个进度，我要把 90 分钟的电影读完，最少需要一天的时间，慢慢加油吧。
