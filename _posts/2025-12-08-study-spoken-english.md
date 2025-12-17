@@ -19,7 +19,7 @@ categories: [Curiosity]
 
 这篇博文主要是记录我学习英语口语的过程，希望我的实时记录可以给那些英语口语和我一样烂的人一个纪录参考。
 
-#### Day 1 2025-12-13
+#### 第1遍 2025-12-13
 今天无字幕看了《500 Days of Summer》，只听懂了几句话： 
 
 what's wrong with you， holy shit， damn right， chinese family， he likes you， you want fire me? you're married， I should go， summer i want you be happy, why not
@@ -30,7 +30,7 @@ what's wrong with you， holy shit， damn right， chinese family， he likes y
 
 哈哈哈哈，期待第二天二刷，给自己加油。
 
-#### Day 2 2025-12-14
+#### 第2遍 2025-12-14
 第二遍看完了，终于明白那个哲理小女孩是 Tom 的妹妹，三个 old friend 在说啥，还有啥是美洲狮，哈哈哈哈
 
 还有为啥 Summer 突然就结婚了
@@ -41,7 +41,7 @@ what's wrong with you， holy shit， damn right， chinese family， he likes y
 
 继续加油，明天下班回家第三遍，第三遍要把所有不会的单词抄下来，哈哈哈哈。
 
-#### Day 3 2025-12-15
+#### 第3遍 2025-12-15
 今天把英语字幕都对照了一遍，发现这个电影大概有 200 多个单词不认识。
 
 我都一个一个的抄到小本子上，并标注了每个单词的意思。
@@ -50,6 +50,17 @@ what's wrong with you， holy shit， damn right， chinese family， he likes y
 
 比如，stabbed，nuclear，threw up,threatened，insane 这种
 
-晚上到家跟读了 4 分多钟，腮帮子快读废了，我发现英语很多时候都要靠口腔后半部分发音，比如 disintegration 。
+#### 第4遍
+12-15 晚上到家跟读了 4 分多钟，腮帮子快读废了，我发现英语很多时候都要靠口腔后半部分发音，比如 disintegration 。
 
 按照这个进度，我要把 90 分钟的电影读完，最少需要一天的时间，慢慢加油吧。
+
+12-16 和 12-17 都在练习口语， 进度到 9:22， 1/10 的进度了
+
+跟着读单词，把每个单词都发音准确后，我发现美式英语有几个特点：
+
+1. 连读： aren't you 这个读起来 you 的发音有点像拼音的 qiu 了， of 的发音更像 o, f 的发音快忽略不计了， 特别是 did she say why 可以忽略读成 d s-say why 的发音, broken up 可以读成 boken up, r 的发音基本上没有了
+2. 忽略： 很多时候 are 会直接忽略掉， what are we doing 可以忽略成 what we doing
+3. 语气： 当深入了解对话场景时，搞懂每句话就自然能发出预感了，比如今天学习的 "I think it's kind of like how they say"， it's kind of like 更像一个过度调调， 语音的起伏在 I think 和 how they say 上
+
+感觉第 4 遍把所有句子都读通顺，语气把握准是一道坎，估计要花一周的时间才能搞定，但是已经领略到作者 “要听懂首先要会读” 的良苦用心了。
