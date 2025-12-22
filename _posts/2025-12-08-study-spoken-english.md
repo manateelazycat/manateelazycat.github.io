@@ -64,3 +64,7 @@ what's wrong with you， holy shit， damn right， chinese family， he likes y
 3. 语气： 当深入了解对话场景时，搞懂每句话就自然能发出预感了，比如今天学习的 "I think it's kind of like how they say"， it's kind of like 更像一个过度调调， 语音的起伏在 I think 和 how they say 上
 
 感觉第 4 遍把所有句子都读通顺，语气把握准是一道坎，估计要花一周的时间才能搞定，但是已经领略到作者 “要听懂首先要会读” 的良苦用心了。
+
+12-22 学到一个新的用法， 可以说 Me thinks the lady doth protest too much, 之前一直以为只能说 I think, me think 更像一个中式英语。 还学到一句 I guess we can just agree to disagree。 还有 Level with me, 以前都不知道这样的说法
+
+
