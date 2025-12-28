@@ -67,4 +67,4 @@ what's wrong with you， holy shit， damn right， chinese family， he likes y
 
 12-22 学到一个新的用法， 可以说 Me thinks the lady doth protest too much, 之前一直以为只能说 I think, me think 更像一个中式英语。 还学到一句 I guess we can just agree to disagree。 还有 Level with me, 以前都不知道这样的说法
 
-
+12-28 花了 13 天时间（中间估计 10 天连续）终于把第一遍跟读完了，其实跟读到一半的时候，我发现嘴已经在形成肌肉记忆了，后面的一半明显跟读速度快很多了，即使不听，整个的调调也能读出七七八八。后面的时间就是不看字幕读剩下的 96 遍，期待蜕变的那一刻。
