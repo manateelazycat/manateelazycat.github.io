@@ -82,7 +82,7 @@ Theme=adwaita-dark
 ```bash
 sudo pacman -S go
 
-https://github.com/ca-x/rime-wanxiang-updater.git
+git clone https://github.com/ca-x/rime-wanxiang-updater.git
 cd rime-wanxiang-updater
 
 go mod download
@@ -93,9 +93,9 @@ chmod +x rime-wanxiang-updater
 ./rime-wanxiang-updater
 ```
 
-然后跟着提示走就好了，安装所有东西后，退出重新登录皆可体验流畅的输入法。
+TUI界面出来以后，直接选择第一项 “自动更新” 菜单项即可，安装所有东西后，退出重新登录皆可体验流畅的输入法。
 
-PS： 万象输入法更新非常频繁，后续也可以通过 ./rime-wanxiang-updater 程序来自动更新
+PS： 万象输入法这个项目更新非常频繁，后续也可以通过 ./rime-wanxiang-updater 程序来自动更新
 
 #### 修改翻页配置
 找到 ~/.local/share/fcitx5/rime/default.yaml 配置文件，在 bindings 下面增加
