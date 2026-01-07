@@ -132,23 +132,12 @@ PS： 万象输入法这个项目更新非常频繁，后续也可以通过 ./ri
 
 Fcitx 的用户自定义英文候选词都会自动记录到下面配置文件中：
 
-~/.local/share/fcitx5/rime/en_dicts/en.dict.yaml
-~/.config/fcitx/rime/en_dicts/en.dict.yaml
+```~/.local/share/fcitx5/rime/en_dicts/en.dict.yaml```
 
 找到误输入的字符串， 保存配置文件重启 Fcitx 即可。
 
 ### 安装 emacs-rime
 这一节讲的是怎么让 Emacs 可以使用上万象输入法， 如果平常不用 Emacs 的用户可以跳过此章节。
-
-Fcitx 输入法的配置目录是在 ~/.local/share/fcitx5/rime/ 下的，如果需要 Emacs 下也可以调用万象输入法，所有配置需要拷贝到 ~/.config/fcitx/rime/ 下才行，使用下面命令把 ~/.local/share/fcitx5/rime 下的所有配置都更新到 ~/.config/fcitx/rime/ 下
-
-```bash
-rm -rf ~/.config/fcitx/rime
-cp -r ~/.local/share/fcitx5/rime/* ~/.config/fcitx/rime/
-```
-
-* ~/.config/fcitx/rime/: 这个目录主要是 Emacs 的 emacs-rime 插件会读取
-* ~/.local/share/fcitx5/rime: 这个目录是 Fcitx 读取的， 用于外部软件使用万象输入法
 
 在 Emacs 里，需要安装 [posframe](https://github.com/tumashu/posframe), posframe 可以让侯选词显示在光标处， 所以建议安装。
 
@@ -162,8 +151,8 @@ git clone https://github.com/DogLooksGood/emacs-rime
 ```elisp
 (require 'rime)
 
-;;; Code:
-(setq rime-user-data-dir "~/.config/fcitx/rime")
+;;; 注意这里要设置一下 rime 的默认配置为 ~/.local/share/fcitx5/rime ，否则 Emacs 这边无法加载万象输入法的配置
+(setq rime-user-data-dir (expand-file-name "~/.local/share/fcitx5/rime"))
 
 (setq rime-posframe-properties
       (list :background-color "#333333"
