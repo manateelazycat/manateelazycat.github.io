@@ -119,7 +119,7 @@ yay -S rime-wanxiang-updater
 
 Fcitx 的用户自定义英文候选词都会自动记录到下面配置文件中：
 
-```~/.local/share/fcitx5/rime/en_dicts/en.dict.yaml```
+~/.local/share/fcitx5/rime/en_dicts/en.dict.yaml
 
 找到误输入的字符串， 保存配置文件重启 Fcitx 即可。
 
@@ -129,6 +129,7 @@ Fcitx 的用户自定义英文候选词都会自动记录到下面配置文件�
 在 Emacs 里，需要安装 [posframe](https://github.com/tumashu/posframe), posframe 可以让侯选词显示在光标处， 所以建议安装。
 
 然后下载 emacs-rime:
+
 ```bash
 git clone https://github.com/DogLooksGood/emacs-rime
 ```
