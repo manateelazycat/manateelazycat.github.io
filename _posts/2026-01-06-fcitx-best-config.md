@@ -93,7 +93,7 @@ chmod +x rime-wanxiang-updater
 ./rime-wanxiang-updater
 ```
 
-TUI界面出来以后，直接选择第一项 “自动更新” 菜单项即可，安装所有东西后，退出重新登录皆可体验流畅的输入法。
+TUI 界面出来以后，直接选择第一项 “自动更新” 菜单项即可，安装所有东西后，退出重新登录皆可体验流畅的输入法。
 
 PS： 万象输入法这个项目更新非常频繁，后续也可以通过 ./rime-wanxiang-updater 程序来自动更新
 
@@ -107,16 +107,25 @@ PS： 万象输入法这个项目更新非常频繁，后续也可以通过 ./ri
 
 配置，然后重启输入法，就可以实现逗号和句号对候选词进行快速翻页。
 
-#### 更新到 Fcitx 目录
-使用下面命令把 ~/.local/share/fcitx5/rime 下的所有配置都更新到 ~/.config/fcitx/rime/ 下， 以保证 Emacs 中调用 Rime 输入法的配置和外部使用 Fcitx5 的体验是一样的
+#### 快捷输入
+有时候我们需要输入日期或者原点等符号，就可以用万象输入法的字符 / 作为符号扩展输入。
 
-```bash
-rm -rf ~/.config/fcitx/rime
-cp -r ~/.local/share/fcitx5/rime/* ~/.config/fcitx/rime/
-```
+下面是输入法激活的时候，你输入下面这些辅助码就可以快速输入特殊字符，节省大量时间：
 
-* ~/.config/fcitx/rime/: 这个目录主要是 Emacs 的 emacs-rime 插件会读取
-* ~/.local/share/fcitx5/rime: 这个目录是 Fcitx 读取的， 用于外部软件使用雾凇输入法
+* /rq 日期
+* /sj 时间
+* /yd 原点符号
+* /sx 数学符号
+* /ss 手势符号
+* /rc26o 26 天前的日期
+* /rc26p 26 天后的日期
+* /nl 农历日期
+* /xq 星期几
+* /jq 节气
+* /dt 日期和时间
+* /jr 今天后面的节日，以及还要多少天
+
+如果输入法模式下，需要输入 / 自己， 只需要输入 // 即可。
 
 #### 删除误输入的拼音
 有时候我们会不小心把拼音确认了， 这样这些拼音就会变成第一个候选词， 影响拼音后面对应的中文候选词。
@@ -129,9 +138,19 @@ Fcitx 的用户自定义英文候选词都会自动记录到下面配置文件�
 找到误输入的字符串， 保存配置文件重启 Fcitx 即可。
 
 ### 安装 emacs-rime
-这一节讲的是怎么让 Emacs 可以使用上雾凇输入法。
+这一节讲的是怎么让 Emacs 可以使用上万象输入法， 如果平常不用 Emacs 的用户可以跳过此章节。
 
-首先安装 [posframe](https://github.com/tumashu/posframe), posframe 可以让侯选词显示在光标处， 所以建议安装。
+Fcitx 输入法的配置目录是在 ~/.local/share/fcitx5/rime/ 下的，如果需要 Emacs 下也可以调用万象输入法，所有配置需要拷贝到 ~/.config/fcitx/rime/ 下才行，使用下面命令把 ~/.local/share/fcitx5/rime 下的所有配置都更新到 ~/.config/fcitx/rime/ 下
+
+```bash
+rm -rf ~/.config/fcitx/rime
+cp -r ~/.local/share/fcitx5/rime/* ~/.config/fcitx/rime/
+```
+
+* ~/.config/fcitx/rime/: 这个目录主要是 Emacs 的 emacs-rime 插件会读取
+* ~/.local/share/fcitx5/rime: 这个目录是 Fcitx 读取的， 用于外部软件使用万象输入法
+
+在 Emacs 里，需要安装 [posframe](https://github.com/tumashu/posframe), posframe 可以让侯选词显示在光标处， 所以建议安装。
 
 然后下载 emacs-rime:
 ```bash
