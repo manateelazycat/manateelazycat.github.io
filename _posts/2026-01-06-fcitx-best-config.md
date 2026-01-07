@@ -8,7 +8,7 @@ Linux 下最爽的输入法就是 Fcitx 了， 但是没有配置好， 就会�
 
 今天把所有博客关于 Fcitx 的配置都整理成一篇， 方便我自己和大家以后用。
 
-### 安装 Fcitx5 输入法
+### 安装 Fcitx5 输入法框架
 安装 Fcitx5 软件包：
 
 ```bash
@@ -52,7 +52,7 @@ export XMODIFIERS="@im=fcitx"
 
 重新登录即可。
 
-### 安装 Fcitx5 输入法皮肤
+### 安装 Fcitx5 皮肤
 ```bash
 yay -S fcitx5-skin-adwaita-dark
 ```
@@ -76,26 +76,13 @@ Theme=adwaita-dark
 备注： 我比较喜欢仓耳今楷， 上面的 Font 可以换成 `TsangerJinKai03-6763 15`
 
 ### 安装万象输入法
-上面的步骤只是把 Fcitx 的核心和皮肤搞定了， 但是 Fcitx 默认的词库非常难用, 流畅的输入需要安装万象输入法，万象输入法搞定了默认的词库和 AI 大模型的配置，安装好就开箱即用。
+ArchLinux 里面安装万象输入法非常简单， czyt 大佬开发的 rime-wanxiang-updater 非常好用
 
-使用下面方案来自动安装万象输入法
 ```bash
-sudo pacman -S go
-
-git clone https://github.com/ca-x/rime-wanxiang-updater.git
-cd rime-wanxiang-updater
-
-go mod download
-go build -o rime-wanxiang-updater ./cmd/rime-wanxiang-updater
-GOOS=linux GOARCH=amd64 go build -o rime-wanxiang-updater-linux ./cmd/rime-wanxiang-updater
-
-chmod +x rime-wanxiang-updater
-./rime-wanxiang-updater
+yay -S rime-wanxiang-updater
 ```
 
-TUI 界面出来以后，直接选择第一项 “自动更新” 菜单项即可，安装所有东西后，退出重新登录皆可体验流畅的输入法。
-
-PS： 万象输入法这个项目更新非常频繁，后续也可以通过 ./rime-wanxiang-updater 程序来自动更新
+运行 rime-wanxiang-updater， 直接选择第一项 “自动更新” 菜单项即可，安装所有东西后，退出重新登录皆可体验流畅的输入法
 
 #### 修改翻页配置
 找到 ~/.local/share/fcitx5/rime/default.yaml 配置文件，在 bindings 下面增加
