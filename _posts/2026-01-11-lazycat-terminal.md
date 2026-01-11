@@ -20,4 +20,4 @@ categories: [Linux, Arch]
 
 ![]({{site.url}}/pics/lazycat-terminal/screenshot.png)
 
-AUR 包我打了一个，ArchLinux 的用户直接用命令 sudo pip3 install meson --break ; yay -S lazycat-terminal 来安装吧！
+AUR 包我打了一个，ArchLinux 的用户直接用命令 `yay -S lazycat-terminal` 来安装吧！
