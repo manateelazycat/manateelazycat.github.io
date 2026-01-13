@@ -84,6 +84,11 @@ yay -S rime-wanxiang-updater
 
 运行 rime-wanxiang-updater， 直接选择第一项 “自动更新” 菜单项即可，安装所有东西后，退出重新登录皆可体验流畅的输入法
 
+#### 去掉右Shift按键
+当你按回车的时候有时候会不小心碰到右边的 Shift, Fcitx 这个默认设置很烦， 右边 Shift 进入一个 “A” 的状态后， 如果不知道这个按键的，很难切回来，一旦进入这个状态再按右边 Shift 会让原来的输入法出现奇奇怪怪的问题。
+
+禁用右 Shift 的方法很简单，在 ~/.local/share/fcitx5/rime/default.yaml 文件中找到 `Shift_R: commit_code`， 删除这一行。
+
 #### 修改翻页配置
 找到 ~/.local/share/fcitx5/rime/default.yaml 配置文件，在 bindings 下面增加
 
