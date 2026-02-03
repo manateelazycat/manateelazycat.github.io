@@ -36,8 +36,6 @@ ArchLinux 用```yay -S v2raya``` 命令一键安装 [v2raya](https://v2raya.org/
 
 保存后，再次打开设置按钮，点击弹出对话框右上角 ‘更新’ 按钮， 更新 GFWList。
 
-**备注**
-
 奶昔的机场不要自动更新订阅， 要不会发生错误 **failed to start v2ray-core: LocateServerRaw: ID or Sub exceed range**, 如果遇到， 就删除 "/etc/v2raya" 目录下所有文件， 然后重启 v2raya `sudo systemctl restart v2raya` 后， 重新配置即可。
 
 ### 规则配置
@@ -64,3 +62,33 @@ ip(geoip:private, geoip:cn)->direct
 
 ### 手机端
 手机端我用 v2rayNG 客户端， 直接在 Nexitally `Ss & Trojan` 页面找到 Android 的 `Shadowsocks` 的订阅地址， 导入到 v2rayNG 即可。
+
+### 替换系统DNS
+Arch Linux 自己的 DNS 用的是 systemd-resolved， systemd-resolved 自己的 DNS 策略会导致路由器 192.168.1.1 ， 这样会导致 DNS 污染， 因为 tproxy 没有正确拦截到 DNS 流量。
+
+用下面方法可以修复系统 DNS 和 v2raya 冲突的问题
+
+```
+# 让系统直接用外部 DNS，这样 tproxy 才能拦截
+sudo mkdir -p /etc/systemd/resolved.conf.d/
+echo -e "[Resolve]\nDNS=8.8.8.8\nDNSStubListener=no" | sudo tee /etc/systemd/resolved.conf.d/no-stub.conf
+sudo systemctl restart systemd-resolved
+
+# 修改 /etc/resolv.conf 指向真实 DNS
+sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
+
+# 重启 v2raya
+sudo systemctl restart v2raya
+```
+
+恢复系统默认 DNS 设置的方法
+```
+# 删除配置文件
+sudo rm /etc/systemd/resolved.conf.d/no-stub.conf
+
+# 恢复默认的 resolv.conf 软链接
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
+# 重启服务
+sudo systemctl restart systemd-resolved
+```
