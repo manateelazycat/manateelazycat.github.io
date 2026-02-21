@@ -20,7 +20,6 @@ categories: [Travel]
 
 ![]({{site.url}}/pics/tourism-guangxi/微信图片_2025-01-31_093443_124_update.png)
 
-![]({{site.url}}/pics/tourism-guangxi/微信图片_2025-01-31_093447_199_update.png)
 
 ![]({{site.url}}/pics/tourism-guangxi/微信图片_2025-01-31_093447_620_update.png)
 
