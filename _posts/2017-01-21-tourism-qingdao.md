@@ -42,7 +42,7 @@ categories: [Travel]
 
 
 ![
-![wKgBpVXi_66AfglBAAzAloVDWlc02.jpeg]({{site.url}}/pics/tourism-qingdao/5957-6692c339986b9316_update.jpeg)
+![wKgBpVXi_66AfglBAAzAloVDWlc02.jpeg]({{site.url}}/pics/tourism-qingdao/5957-99f8c5dfda778699_update.jpeg)
 ]({{site.url}}/pics/tourism-qingdao/5957-99f8c5dfda778699_update.jpeg)
 
 
@@ -53,7 +53,7 @@ categories: [Travel]
 ![wKgBpVXi_7KART5cABAErvFQsrg30.jpeg]({{site.url}}/pics/tourism-qingdao/5957-a1ffce34796d4752_update.jpeg)
 
 ![
-![wKgBpVXi_7eAJeUXAAyLgYlk90M59.jpeg]({{site.url}}/pics/tourism-qingdao/5957-0ed8bc01bbfdd8c3_update.jpeg)
+![wKgBpVXi_7eAJeUXAAyLgYlk90M59.jpeg]({{site.url}}/pics/tourism-qingdao/5957-e0df5c23855dbfb3_update.jpeg)
 ]({{site.url}}/pics/tourism-qingdao/5957-e0df5c23855dbfb3_update.jpeg)
 这就是网上攻略推荐的《王姐烧烤》，　其实就是在一个路口，　一排背包客，　其实东西还是就是那些，　东西还不便宜，　不建议去扎堆吃，　相机消消毒就可以了。　;)
 

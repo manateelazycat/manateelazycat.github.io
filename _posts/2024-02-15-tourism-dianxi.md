@@ -250,8 +250,6 @@ categories: [Travel]
 
 ![]({{site.url}}/pics/tourism-dianxi/微信图片_202402150955512_update.jpg)
 
-![]({{site.url}}/pics/tourism-dianxi/微信图片_202402150954031_update.jpg)
-
 ![]({{site.url}}/pics/tourism-dianxi/微信图片_20240215095404_update.jpg)
 
 ![]({{site.url}}/pics/tourism-dianxi/微信图片_202402150954041_update.jpg)
