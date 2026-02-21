@@ -16,10 +16,10 @@ categories: [Think]
 
 我是专业旅游博主，业余玩计算机和创业的苦逼老板。
 
-![]({{site.url}}/pics/live-place/1_update.jpg)
+![]({{site.url}}/pics/live-place/1_update.jpeg)
 
-![]({{site.url}}/pics/live-place/2_update.jpg)
+![]({{site.url}}/pics/live-place/2_update.jpeg)
 
-![]({{site.url}}/pics/live-place/3_update.jpg)
+![]({{site.url}}/pics/live-place/3_update.jpeg)
 
-![]({{site.url}}/pics/live-place/4_update.jpg)
+![]({{site.url}}/pics/live-place/4_update.jpeg)
