@@ -6,42 +6,42 @@ categories: [Life]
 
 这两天去外地出差，酒店楼下有一个日式的鸡尾酒吧，评分很不错，刚好才下高铁，饥肠辘辘，下楼去探一下店。
 
-![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_212557.jpg)
+![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_212557_update.jpg)
 
-![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_214237.jpg)
+![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_214237_update.jpg)
 
 整体氛围还是很棒的，老板对音乐也很有品味，放的是 Maroon5 的 Just A Feeling。
 
 饿了一天啦，先点一点吃的。
 
-![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_222223.jpg)
+![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_222223_update.jpg)
 
-![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_215608.jpg)
+![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_215608_update.jpg)
 
-![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_214827.jpg)
+![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_214827_update.jpg)
 
 老板家的关东煮不错，吃饭的氛围有点深夜食堂的感觉，哈哈哈。
 
 既然来了酒吧，怎么能不点一点酒呢？
 
-![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_214220.jpg)
+![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_214220_update.jpg)
 
 这个酒很好看，大家都在问我名字叫啥，名字很朴实 “梅”。
 
-![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_215056.jpg)
+![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_215056_update.jpg)
 
 后面点了一杯忘记名字的酒，这个酒的特色是上面有一层薄薄的冰沙，口感非常清爽，有淡淡的柠檬香味。
 
 期间，老板送了我们两杯原创酒，前调酒味比较浓郁，后调是苦苦的绿茶味，第一次把酒喝出茶的味道，很独特。我们问老板，这酒的名字叫什么？老板说今天即兴创作的，还没有名字，如果真要叫，就叫它 “密香单枞烧酒” 吧， 听老板说是用 LV 茶和日本烧酒勾兑的。
 
-![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_221529.jpg)
+![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_221529_update.jpg)
 
 继续点了这杯盘尼西林，老板问我要浓郁一点，还是清淡一点？ 我说，老板按照你最好喝的方式调吧， 虽然卖相没那么好看，但是真的是今晚最佳，柠檬、姜和烧酒融合在一起，口感入口浓郁，回味层次相当的丰富。
 
-![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_230757.jpg)
+![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_230757_update.jpg)
 
 最后，懒猫微服的用户在微信群说，都去喝鸡尾酒了，肯定要来一杯僵尸酒哇，随即点了一杯，高度烧酒调得果然上头哇，喝到一半就开始微醺啦，哈哈哈哈。
 
-![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_214424.jpg)
+![]({{site.url}}/pics/rmk-shochu-bar/IMG_20250401_214424_update.jpg)
 
 这家酒吧的氛围确实很不错，名字叫 RMK Shochu bar, 推荐大家去喝盘尼西林和僵尸烧酒，哈哈哈。;)

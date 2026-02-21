@@ -26,7 +26,7 @@ categories: [Web]
 
 ### 配置 React + Express 开发环境
 #### 带着目的性去学习
-![完整的工作流程]({{site.url}}/pics/webpack-and-react/webpack-and-react.png)
+![完整的工作流程]({{site.url}}/pics/webpack-and-react/webpack-and-react_update.png)
 
 
 在折腾之前, 先把上面的这张逻辑流程想清楚, 这就是我们开发环境需要达到的最后目标, 记住这个开发流程, 你在阅读那些配置文件细节的时候, 就会理解的更深入:

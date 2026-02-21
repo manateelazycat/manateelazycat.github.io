@@ -9,9 +9,9 @@ EAF最近合并了开发者mackong的[mume.js补丁](https://github.com/manateel
 这个补丁利用[mume.js](https://github.com/shd101wyy/mume)这个JavaScript库来替换[python-grip](https://github.com/joeyespo/grip)，实现Markdown文件的实时预览，mume.js同时也是Atom以及VSCode内置的Markdown预览引擎。
 
 具体的效果如下：
-![EAF and mume.js]({{site.url}}/pics/mumejs/mumejs.png)
+![EAF and mume.js]({{site.url}}/pics/mumejs/mumejs_update.png)
 
-![EAF and mume.js]({{site.url}}/pics/mumejs/mumejs-2.png)
+![EAF and mume.js]({{site.url}}/pics/mumejs/mumejs-2_update.png)
 
 #### 优势
 用mume.js作为Markdown渲染引擎后，有如下好处：

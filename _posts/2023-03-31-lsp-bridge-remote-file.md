@@ -14,7 +14,7 @@ categories: [Emacs, LSP]
 ### 架构图
 下面是 lsp-bridge 远程代码补全技术的架构图：
 
-![lsp-bridge]({{site.url}}/pics/lsp-bridge/remote_file_framework.png)
+![lsp-bridge]({{site.url}}/pics/lsp-bridge/remote_file_framework_update.png)
 
 #### 架构图原理（请按照红线、蓝线、紫线以及绿线的顺序看）：
 

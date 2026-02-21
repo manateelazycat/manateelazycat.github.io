@@ -15,7 +15,7 @@ Emacs无法像其他现代图形库那样天然支持多线程编程，导致Ema
 
 看新闻的基本功能已经完全没有问题了，相对于Emacs现有其他新闻阅读器除了优秀的性能外，对新闻网页的渲染也是其他新闻阅读器无法媲美的。
 
-![RSS Reader]({{site.url}}/pics/eaf-rss-reader/eaf-rss-reader.gif)
+![RSS Reader]({{site.url}}/pics/eaf-rss-reader/eaf-rss-reader_update.gif)
 
 现在已经支持如下操作：
 

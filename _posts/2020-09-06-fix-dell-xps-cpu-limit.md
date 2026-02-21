@@ -21,23 +21,23 @@ You need to shutdown the PC, then open the bottom lid up (unscrew 10 torx t5 scr
 随即开始动手尝试：
 
 #### 拍一张菩萨保佑照
-![菩萨照]({{site.url}}/pics/fix-dell-xps-cpu-limit/4.jpg)
+![菩萨照]({{site.url}}/pics/fix-dell-xps-cpu-limit/4_update.jpg)
 
 老婆大人说我不到一个星期就要拆电脑的毛病什么时候可以改？ 囧
 
 #### 背面照
-![背面照]({{site.url}}/pics/fix-dell-xps-cpu-limit/3.jpg)
+![背面照]({{site.url}}/pics/fix-dell-xps-cpu-limit/3_update.jpg)
 
 后盖是八颗六角螺丝， 用 T4 螺丝头拧下后， 用指甲或者塑料片撬开铝后盖和键盘黑色框架的中间缝隙， 后盖内部有卡扣， 转半圈会自然打开， 不要暴力掰， 防止后盖卡扣断裂。
 
 #### 内部结构
-![内部结构]({{site.url}}/pics/fix-dell-xps-cpu-limit/2.jpg)
+![内部结构]({{site.url}}/pics/fix-dell-xps-cpu-limit/2_update.jpg)
 
 Dell XPS 13 的内部结构做工还是很不错的， 除了电源下面的音频走线， 看着像我玩树莓派杜邦线的山寨风格， 手动扒拉一下散热风扇玩玩， 哈哈哈。
 
 #### 拔掉电源线
 
-![拔掉电源线]({{site.url}}/pics/fix-dell-xps-cpu-limit/1.jpg)
+![拔掉电源线]({{site.url}}/pics/fix-dell-xps-cpu-limit/1_update.jpg)
 
 我上图划圈的地方有一个标有 BATT 标志 的电源插座， 用尖嘴镊子在金属插槽两边小心的推， 左右推几下， 接头就会下来， 注意不要暴力拔， 这时候持续使小劲比瞬间暴力劲更可取。
 

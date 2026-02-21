@@ -21,7 +21,7 @@ Snails 的这个项目的主要目的是：
 
 ### 架构设计
 
-![snails framework]({{site.url}}/pics/snails/framework.png)
+![snails framework]({{site.url}}/pics/snails/framework_update.png)
 
 在想清楚设计思路以后， 代码实现就很简单了， 深入的思考和清晰的思路永远是架构设计的核心， 代码不过是架构设计的表现方式而已。
 

@@ -4,7 +4,7 @@ title: 一个技术人周末的放松
 categories: [Peace]
 ---
 
-![Weekend]({{site.url}}/pics/one-tech-man-s-weekend/weekend.png)
+![Weekend]({{site.url}}/pics/one-tech-man-s-weekend/weekend_update.png)
 
 一个技术人周末的放松：
 1. 看着纸质书

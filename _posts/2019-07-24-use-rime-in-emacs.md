@@ -13,7 +13,7 @@ categories: [Emacs, Rime]
 
 先上一张动态效果图， 增强你克服困难的决心， 哈哈哈哈:
 
-![pyim-and-rime]({{site.url}}/pics/pyim/rime.gif)
+![pyim-and-rime]({{site.url}}/pics/pyim/rime_update.gif)
 
 ### 1 更新 pyim 和 posframe 到最新版
 为了支持 RIME 输入法需要把 [pyim](https://github.com/tumashu/pyim) 和 [posframe](https://github.com/tumashu/posframe) 这两个库更新到最新， 否则有可能会报 posframe 的错误

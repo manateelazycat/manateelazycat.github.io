@@ -61,12 +61,12 @@ categories: [Deepin]
 ### 深度桌面环境是怎么构建的？
 在说怎么构建桌面环境之前，先放三张深度桌面环境的图：
 
-![深度截图20170202162735.png]({{site.url}}/pics/dde/5957-9d67135a60916147.png)
+![深度截图20170202162735.png]({{site.url}}/pics/dde/5957-9d67135a60916147_update.png)
 
-![094325u3k3lym0yu034nc1.png]({{site.url}}/pics/dde/5957-74496ee473f4c275.png)
+![094325u3k3lym0yu034nc1.png]({{site.url}}/pics/dde/5957-74496ee473f4c275_update.png)
 
 
-![launcher5.jpg]({{site.url}}/pics/dde/5957-7ea8b47fc96478e8.jpg)
+![launcher5.jpg]({{site.url}}/pics/dde/5957-7ea8b47fc96478e8_update.jpg)
 
 是不是美哭了？ 这就是自己从头构建桌面环境和只换皮肤主题的差别。
 
@@ -74,7 +74,7 @@ categories: [Deepin]
 讲之前先放一张架构图：
 
 
-![深度桌面操作系统架构设计 (3).png]({{site.url}}/pics/dde/5957-197f374e850297eb.png)
+![深度桌面操作系统架构设计 (3).png]({{site.url}}/pics/dde/5957-197f374e850297eb_update.png)
 
 一个完整的桌面系统从技术剖面看，从下到上主要分这几层：
 * 内核驱动层：前面已经说了，主要是保障硬件的基本功能和兼容性，所有的Linux发行版都大同小异，差别就是内核补丁集不一样，或者集成的驱动和固件多少的差异
@@ -92,19 +92,19 @@ categories: [Deepin]
 关于应用商店和应用后面会详细讲， 所以这里我们就向大家详细描述一下从显示管理器到桌面环境都做了哪些事情？为了方便大家理解，全程不讲源代码，有开发经验的朋友可以直接去 github 上面查看我们的代码： https://github.com/linuxdeepin/ ， 深度所有项目的源代码都是按照 GPL3 许可证实时开源的（只要内部代码审查机器人通过代码质量审查以后就会由机器人自动推送到 github )
 
 
-![深度截图20170202165633.png]({{site.url}}/pics/dde/5957-ee27895369d12103.png)
+![深度截图20170202165633.png]({{site.url}}/pics/dde/5957-ee27895369d12103_update.png)
 首先看一下显示管理器，当X Server启动以后，根据系统启动服务的顺序，显示管理器就在 X Server 之后启动，深度系统使用的是由Ubuntu开发的LightDM, 其他主流的显示管理器还有 Gnome 的 GDM 和 KDE 的 KDM, 使用LightDM的原因主要是 LightDM 非常的轻量，不绑定任何桌面环境，而且提供Gtk+、Qt、Html5等各种前端界面的定制接口，非常方便。
 显示管理器主要是根据系统中安装的用户的权限对正在登录的用户提供权限认证和多用户切换功能，一旦认证通过后就从 greeter (LightDM 定制的配置接口）中执行下一步启动程序（通常是桌面环境的初始化程序），以显示桌面环境。
 Deepin 开发了一个基于Qt5的前端界面程序， deepin-greeter 主要长这样：
 
-![深度截图20170202170531.png]({{site.url}}/pics/dde/5957-208859ad50f88211.png)
+![深度截图20170202170531.png]({{site.url}}/pics/dde/5957-208859ad50f88211_update.png)
 
 除了基本的用户认证、多用户切换、日期和关机功能以外，还会提供：
 * 多媒体的控制接口（右下角），方便用户锁屏和切换用户的时候切换音乐和暂停音乐
 * 当系统使用多屏幕时，启动和解锁时，会根据用户的鼠标位置切换锁屏主界面
 * 在用户输入密码的时候，就直接启动一些系统级的服务，比如电源、账户、亮度等守护程序，这样用户输入密码的过程很多系统服务就加载好了，可以相对于其他桌面环境同等服务缩短30%以上的登录时间
 
-![深度截图20170202170942.png]({{site.url}}/pics/dde/5957-f63e29a75a725032.png)
+![深度截图20170202170942.png]({{site.url}}/pics/dde/5957-f63e29a75a725032_update.png)
 当显示管理器认证成功以后，就会调用 greeter 的 exec 参数，深度桌面环境就是 startdde, startdde 从名字看很容易理解，就是启动深度桌面环境的引导程序，为了让深度桌面环境可以正常启动和显示，startdde调用时会执行以下操作：
 * 基本的桌面会话管理，比如大家熟知的注销、重启等操作
 * 按照 xsettings 主题规范设置整个系统的主题，保证桌面环境以及桌面环境的应用，不论Gtk+还是Qt可以正常的加载用户设置的主题。屏幕DPI设置也是在这个阶段初始化完成的
@@ -139,7 +139,7 @@ dde-sessin-initalizer、dde-session-daemon以及dde-system-daemon从功能上，
 备注： 很多社区的开发者经常质疑DDE就是基于Gnome的UI壳，没有自己的核心技术，希望懂编程的朋友查看深度的源代码 https://github.com/linuxdeepin/dde-daemon ， 看看是否只是一个 Gnome 的壳。我非常尊重每一位技术开发者，但是真的对于那些完全不基于调查，只是简简单单基于对国内开发团队鄙视而轻言下结论的人感到痛心，这也是我今天写这篇文章的原因之一，希望国人基于事实支持好的产品和团队，停止一切不实的攻击和乱喷。
 
 
-![深度截图20170203103240.png]({{site.url}}/pics/dde/5957-e528b86b1d68fc98.png)
+![深度截图20170203103240.png]({{site.url}}/pics/dde/5957-e528b86b1d68fc98_update.png)
 
 在深度桌面环境的后台守护进程基础之上，桌面环境会对外提供一个API层，包括图形开发工具库、二进制工具和DBus API接口，供桌面环境和应用程序直接调用，而不用自己重头开发，其中DBus API部分都通过DBus总线在应用调用特定的接口时动态唤醒（默认不常驻内存），任何语言编写的应用都可以轻松调用，根据上面图所示，从左到右分别进行介绍。
 
@@ -174,23 +174,23 @@ dde-daemon dbus API:
 
 说到用户体验的一致性，包括右键菜单、对话框、认证密码框这些看是小的地方（也是90% linux开发者不屑的地方），给用户带来的体验是最深刻的，一个产品的质量不光是你大老远一看很美或者主题很美，很多小细节的地方做好，才能得到用户的尊重。用户用到这些小细节的时候，会知道后面是一群用心的人在做事情，而不仅仅只是写个功能丢在那里就完事。
 
-![深度截图20170203101157.png]({{site.url}}/pics/dde/5957-5c243ef7e57157ac.png)
+![深度截图20170203101157.png]({{site.url}}/pics/dde/5957-5c243ef7e57157ac_update.png)
 
 深度桌面环境的最后一部分就是深度桌面环境的UI展示层，主要有：
 * dde-wm: 窗口管理器，我们写了两个窗口管理器，根据用户的硬件性能和显卡驱动情况自动使用2D窗口管理器还是3D窗口管理器，像Gnome的话，你还要手动注销（关闭所有窗口）才能在3D和classic模式中切换，而深度桌面环境完全是自动的。每个工作区可以单独设置不同壁纸：
 
-![174415o3zi1puiuz1ede2i.png]({{site.url}}/pics/dde/5957-ac39045b2530eefd.png)
+![174415o3zi1puiuz1ede2i.png]({{site.url}}/pics/dde/5957-ac39045b2530eefd_update.png)
 
 * dde-desktop: 桌面模块，基本的文件网格对齐功能，拖动文件会自动进行网格对齐，很多桌面就是简单的一个壁纸然后还要费劲的人工对齐，还有下面这种换壁纸的方式，轻轻一点就行了， linux最简单的换壁纸操作：
 
-![深度截图20170202180050.png]({{site.url}}/pics/dde/5957-be6a35e3f519a7b5.png)
+![深度截图20170202180050.png]({{site.url}}/pics/dde/5957-be6a35e3f519a7b5_update.png)
 * dde-dock: 不论你喜欢Mac还是Windows风格的任务栏，都可以随时切换
 * dde-launcher: 不论你喜欢Mac还是Windows风格的开始菜单，都可以随时切换
 
-![深度截图20170202162735.png]({{site.url}}/pics/dde/5957-46ac2aa3c26240c5.png)
+![深度截图20170202162735.png]({{site.url}}/pics/dde/5957-46ac2aa3c26240c5_update.png)
 
 
-![launcher5.jpg]({{site.url}}/pics/dde/5957-98f33ed4bc527606.jpg)
+![launcher5.jpg]({{site.url}}/pics/dde/5957-98f33ed4bc527606_update.jpg)
 
 * dde-control-center: 深度控制中心，到底有多方便， 我一会在下面说 ;)
 * dde-osd: 当按下音量、亮度等多媒体按键时在屏幕中间显示快速提示
@@ -203,7 +203,7 @@ dde-daemon dbus API:
 * deepin-default-settings: 深度桌面环境默认的设置，比如默认的壁纸、图标主题等默认设置
 * qt5-integration: 给Gtk+和Qt源码编写了补丁，保证所有程序弹出的文件打开对话框都是完全一致的体验（如下图所示），不论是Gtk+还是Qt编写的程序，再也不用为不同图形库开发的程序弹出不同风格的文件打开对话框这种事情烦恼了
 
-![深度截图20170203104130.png]({{site.url}}/pics/dde/5957-a33cfc20bd117026.png)
+![深度截图20170203104130.png]({{site.url}}/pics/dde/5957-a33cfc20bd117026_update.png)
 
 
 ### 为什么要自己写桌面环境？
@@ -229,25 +229,25 @@ dde-daemon dbus API:
 * 默认折腾好QQ、字体设置、解码器：不用装好系统满世界折腾Wine、粘贴xorg配置和下载不知道包名叫啥的解码器
 * 屏幕旋转不用歪着头逆天的移动鼠标：注意看下图，系统进行屏幕方向设置的时候，会弹出一个全屏界面，向左旋转就点一下鼠标左键，继续旋转的话就继续点鼠标左键，什么时候旋转好了，点击鼠标右键确认。旋转屏幕的时候，全程不需要歪着头，也不用拿着鼠标晕头转向的找“确定”按钮，这个问题，即使Windows和Mac都做的非常不好， 其他linux系统也一样，有人仔细研究了这个二十多年的非人类痛点了吗？我始终认为，这才是一个桌面研发团队应该关注的，通过小小的创新就可以解决用户的大痛苦
 
-![2LTt1RD0Hv0IXlhD.jpeg]({{site.url}}/pics/dde/5957-b7c3800d519e8fca.jpeg)
+![2LTt1RD0Hv0IXlhD.jpeg]({{site.url}}/pics/dde/5957-b7c3800d519e8fca_update.jpeg)
 
 * 边界值的时候要有吸附功能： 注意看下图，当选择声音左右平衡时，不论左、右还是中间平衡那点，只要在周围 -5px ~ 5px 的范围都会自动吸附到左、右、中间的那个点，用户即使触摸板或鼠标不好用，都不会发生在平衡点左右差一点的位置来回晃（同时拖住不放就可以精确调整），这也不是什么大功能， 但是每个用户都会遇到这种不爽的操作
-![7声音.png]({{site.url}}/pics/dde/5957-37a3dbf60c0f3138.png)
+![7声音.png]({{site.url}}/pics/dde/5957-37a3dbf60c0f3138_update.png)
 * 设置时区的时候显示白天黑夜：当你添加其他时区时，除了提示比当前快还是慢，一眼就可以通过表盘判断当地时间是黑夜还是晚上
-![]({{site.url}}/pics/dde/5957-84a1df340e634ff0.png)
+![]({{site.url}}/pics/dde/5957-84a1df340e634ff0_update.png)
 * 不要在世界地图上费劲的找一个点：注意看哈，当你在欧洲那一块选择城市时，因为欧洲的城市在地图太密了（比如梵蒂冈），根本就无法快速选择，这时候你随便一点，当发现鼠标周围太多城市时，就会弹出一个菜单列表，把鼠标范围的城市都弹出来让你选择，你只需要轻轻松松两下鼠标就可以选择时区城市，再也不用辛苦的去找蚂蚁那么大点的城市, 这种事情我好像没有发现别的系统在关心用户
-![1T90d6RoIDc3CJ5D.jpg]({{site.url}}/pics/dde/5957-5a8f55c78b9ad9a5.jpg)
+![1T90d6RoIDc3CJ5D.jpg]({{site.url}}/pics/dde/5957-5a8f55c78b9ad9a5_update.jpg)
 * 打字时禁用触摸板： 国内好多性价比高的笔记本触摸板很容易误碰，手掌一不小心就碰到触摸板导致光标乱飞，你只要开了这个开关，打字的时候触摸板就不响应，你打字一停马上就可以响应，这样就可以解决硬件的问题，当然你也可以写一段脚本然后添加到开机服务中折腾半天，而在深度桌面环境，只需要一个开关的事情
-![16SHzxnm3SsIWyZY.png]({{site.url}}/pics/dde/5957-4a539e86c3bd78a7.png)
+![16SHzxnm3SsIWyZY.png]({{site.url}}/pics/dde/5957-4a539e86c3bd78a7_update.png)
 * 开机画面轻轻一拖就更换了： 在深度控制中心中，看到你喜欢的壁纸自动拖拽一下就可以自动设置，想象一下你打开 grub-customizer, 首先要求壁纸的分辨率是对的，然后宽高比也要对，否则设置出来就是各种黑边。为啥深度里面一拖就可以？ 控制中心发现你的图片和屏幕宽高比不一样的时候会自动裁剪上下或者左右的部分，然后设置一张分辨率和宽高比和屏幕一模一样的壁纸，一个要折腾10分钟，一个只需要5秒钟
-![e4CGn9wNoBklLqVy.png]({{site.url}}/pics/dde/5957-4c964b344bbe5c27.png)
+![e4CGn9wNoBklLqVy.png]({{site.url}}/pics/dde/5957-4c964b344bbe5c27_update.png)
 
 像这种贴心的设置，在深度桌面环境中随处可见，而这些交互细节的背后需要的是对用户场景的思考、换位思考理解用户痛苦以及完全掌控所有代码才能做到。
 我一直都相信：好的系统是让用户觉得不多不少，刚刚好，而且很贴心。而不是堆砌满屏的开关选项，让用户看着就头疼，再天书文案纠结半天都不知道怎么做。
 
 ### 深度商店
 
-![]({{site.url}}/pics/dde/5957-d8c6dd058a614f09.png)
+![]({{site.url}}/pics/dde/5957-d8c6dd058a614f09_update.png)
 深度商店是Linux下第一款有产品质量和交互体验优秀的应用商店，以前的社区的都只能叫软件管理工具。
 这里你可以看到的所有高质量的软件都可以搜索，一键安装使用，再也不用自己折腾 myeclipse、sublime、 shadowsocks-qt5、迅雷、RTX等各种应用，所有软件都默认打包好放到软件仓库，也不用担心添加了哪个质量不佳的ppa把系统搞死了，所有的依赖默认就调好了，装完就用。
 
@@ -259,7 +259,7 @@ dde-daemon dbus API:
 这么多年deepin自己开发了几百万行GPL3的源代码，向上游贡献了无数的 commit, 我们更在意用户体验和功能更新，不想去比什么commit刷屏，但是一次又一次的被喷子们用各种逻辑瞎喷，希望这些喷子看看我们的代码再来喷我们。
 
 
-![深度截图20170203101553.png]({{site.url}}/pics/dde/5957-e214f330e683a332.png)
+![深度截图20170203101553.png]({{site.url}}/pics/dde/5957-e214f330e683a332_update.png)
 
 深度应用商店从技术架构上，主要分为lastore-daemon、lastore-session-helper、deepin-appstore三个部分：
 * lastore-daemon: 应用商店的核心部分，主要负责所有软件的安装程序的下载、哈希安全校验、依赖分析、本地缓存管理、软件安装、软件卸载和软件升级等工作，这个守护进程会和深度的软件仓库智能的通信，在后台保障整个操作系统应用的更新和安全守护。lastore-daemon同时会在 apt/dpkg 程序中加入钩子，不论用户是从应用商店还是终端中安装的程序都会被商店守护进程管理和保护，避免一些高级用户从终端安装以后把系统的依赖弄坏
@@ -271,24 +271,24 @@ dde-daemon dbus API:
 
 深度安装器：
 
-![w5lHLhyRd1IgMUL1.png]({{site.url}}/pics/dde/5957-5c3c2ea7393fe116.png)
+![w5lHLhyRd1IgMUL1.png]({{site.url}}/pics/dde/5957-5c3c2ea7393fe116_update.png)
 
-![EkpcTsDu8vE3doxo.png]({{site.url}}/pics/dde/5957-2458bc126b1898b3.png)
+![EkpcTsDu8vE3doxo.png]({{site.url}}/pics/dde/5957-2458bc126b1898b3_update.png)
 
-![bk4SJmc6hHwbQPHQ.png]({{site.url}}/pics/dde/5957-b9d83a5b46d53478.png)
+![bk4SJmc6hHwbQPHQ.png]({{site.url}}/pics/dde/5957-b9d83a5b46d53478_update.png)
 * 如果你在有wifi的地方，安装器不用连接网络，自动从路由器中找出国家码设置时区，不需要网络连接和GPS就可以准确知道用户在哪个时区，不需要让用户手动设置时区
 * 安装linux不需要知道分区知识，不需要知道 /、/var、/boot、/home、swap啥概念，选择任意空白分区即可安装，还可以根据内存大小自动选择是否设置swapfile(大内存不设置加速读取，小内存自动算swapfile最佳大小，当然也可以手动设置swap分区）
 * 安装错误了，扫描二维码的时候就自动上传错误日志了，不需要来回倒腾错误日志
 
 深度启动盘制作工具
 
-![深度启动盘制作工具]({{site.url}}/pics/dde/5957-12e28f98f89da0cb.png)
+![深度启动盘制作工具]({{site.url}}/pics/dde/5957-12e28f98f89da0cb_update.png)
 * 不需要研究各种U盘参数、引导参数，选择ISO文件，选择U盘就可以直接制作U盘启动安装盘
 * 系统安装盘里包含了Windows安装器，可以直接安装在windows xp/windows 7/windows 8/windows 10的NTFS分区安装深度操作系统
 
 深度文件管理器
 
-![]({{site.url}}/pics/dde/5957-ee9be5c9833fd799.png)
+![]({{site.url}}/pics/dde/5957-ee9be5c9833fd799_update.png)
 * 经典的文件操作方式， 没有坑爹的设计
 * 基于rlocate开发了内核模块，2TB的文件名2秒中搜索完毕，而且会根据文件添加删除启动实时维护搜索索引，不用手动定期更新索引
 * 内置avfs模块，所有压缩格式文件管理器秒开，而不用等漫长的解压时间和额外解压的磁盘空间
@@ -296,9 +296,9 @@ dde-daemon dbus API:
 
 深度显卡管理工具
 
-![1.png]({{site.url}}/pics/dde/5957-aa80a65b62d08efe.png)
+![1.png]({{site.url}}/pics/dde/5957-aa80a65b62d08efe_update.png)
 
-![2.png]({{site.url}}/pics/dde/5957-4350100e7426e76a.png)
+![2.png]({{site.url}}/pics/dde/5957-4350100e7426e76a_update.png)
 
 Linux 的私有显卡驱动如果安装失败，会导致图形环境直接崩溃，无法输入密码进入桌面，如果不是Linux技术专家，普通的用户完全没法正常卸载私有驱动和清理内核动态模块，甚至还需要修改一些Xorg配置才能修复好系统重新进入桌面。
 
@@ -308,21 +308,21 @@ Linux 的私有显卡驱动如果安装失败，会导致图形环境直接崩�
 
 深度演示助手
 
-![deepin-presentation-assistant-cn1.png]({{site.url}}/pics/dde/5957-234f385eb3690bd4.png)
+![deepin-presentation-assistant-cn1.png]({{site.url}}/pics/dde/5957-234f385eb3690bd4_update.png)
 
-![deepin-presentation-assistant-cn2.png]({{site.url}}/pics/dde/5957-a29b7f6163655325.png)
+![deepin-presentation-assistant-cn2.png]({{site.url}}/pics/dde/5957-a29b7f6163655325_update.png)
 
-![deepin-presentation-assistant-cn3.png]({{site.url}}/pics/dde/5957-e0ace527292f1787.png)
+![deepin-presentation-assistant-cn3.png]({{site.url}}/pics/dde/5957-e0ace527292f1787_update.png)
 
 * 提供了图片分享、PPT演示（手机变成翻页器）、手机屏幕投屏的功能
 * 在企业开会或者老师上课的时候，都可以快速分享手机的内容到电脑屏幕上
 
 深度备份还原工具
 
-![1-1.png]({{site.url}}/pics/dde/5957-9b71a290a500f7e2.png)
+![1-1.png]({{site.url}}/pics/dde/5957-9b71a290a500f7e2_update.png)
 
 
-![2 (1).png]({{site.url}}/pics/dde/5957-94bc315029ff0c9b.png)
+![2 (1).png]({{site.url}}/pics/dde/5957-94bc315029ff0c9b_update.png)
 
 * Linux下易用性最佳的备份还原工具，基于 libclone 库（CloneZilla也是用这个库实现的），基于磁盘扇区来备份和还原
 * 提供了磁盘、分区的备份和还原功能
@@ -331,41 +331,41 @@ Linux 的私有显卡驱动如果安装失败，会导致图形环境直接崩�
 
 深度截图工具
 
-![project-screenshot-1.png]({{site.url}}/pics/dde/5957-b6d264cb2dd98119.png)
+![project-screenshot-1.png]({{site.url}}/pics/dde/5957-b6d264cb2dd98119_update.png)
 * 类似QQ截图体验的截图工具，Linux下最好用的截图工具，不解释
 
 深度录屏工具
 
-![deepin-screen-recorder2_zh.jpg]({{site.url}}/pics/dde/5957-b224db5670ad1e3a.jpg)
+![deepin-screen-recorder2_zh.jpg]({{site.url}}/pics/dde/5957-b224db5670ad1e3a_update.jpg)
 * Linux下最方便的录屏软件，你甚至会怀疑你以前用的Linux录屏软件为什么会做的如此复杂？　https://www.deepin.org/2017/03/07/deepin-screen-recorder-is-released/
 
 深度录音工具
 
-![2-cn.jpg]({{site.url}}/pics/dde/5957-39f5484d32dff5ee.jpg)
+![2-cn.jpg]({{site.url}}/pics/dde/5957-39f5484d32dff5ee_update.jpg)
 * 即使一个小小的录音程序，每一个交互流程和细节都要做的精致
 
 深度影院
-![deepin-movie-1.png]({{site.url}}/pics/dde/5957-2bef02efea745cdc.png)
+![deepin-movie-1.png]({{site.url}}/pics/dde/5957-2bef02efea745cdc_update.png)
 * 无边框沉浸式观看影片， 只有鼠标移动到顶部或底部才显示控件，看电影最重要的是内容
 * 窗口跟随视频比例缩放，永远没有黑边
 * 最小化窗口切换到其他应用时自动暂停，切换回来后继续播放
 
 深度音乐
 
-![project-music-3.png]({{site.url}}/pics/dde/5957-7feec46b72f12d04.png)
+![project-music-3.png]({{site.url}}/pics/dde/5957-7feec46b72f12d04_update.png)
 * 简洁的音乐播放器，可以放无损音乐
 * 自动解决歌曲乱码，不用自己折腾
 * 自动下载歌曲歌词和封面，专心听音乐就好
 
 深度看图
 
-![deepin-imageviewer-3.png]({{site.url}}/pics/dde/5957-edfbb8b057b981e7.png)
+![deepin-imageviewer-3.png]({{site.url}}/pics/dde/5957-edfbb8b057b981e7_update.png)
 * 自动同步图片目录，不用在目录树中眼花缭乱的找，自动根据图片拍摄时间按时光机排序
 * 简单美观看图功能，其他乱七八糟功能没有
 
 深度终端
 
-![deepin-terminal-1.png]({{site.url}}/pics/dde/5957-dd5b0a16b7443c0c.png)
+![deepin-terminal-1.png]({{site.url}}/pics/dde/5957-dd5b0a16b7443c0c_update.png)
 * 同等功能的终端，启动速度最快、内存占用最小
 * 类似Chrome的沉浸式体验，除了标签以外每一像素都只显示终端的内容，内容至上，不用无谓的控件喧宾夺主，让用户更加专注
 * 当发现后台工作区的任务完成后， 会通过标签的颜色及时通知我们， 只需要瞟一眼终端标签就可以知道后台任务是否完成， 彻底告别人肉轮询命令的时代了。 ;)
@@ -376,7 +376,7 @@ Linux 的私有显卡驱动如果安装失败，会导致图形环境直接崩�
 
 深度系统监视器
 
-![5957-85f90ad9b3de39b2.png]({{site.url}}/pics/dde/5957-6130702efb4c1ee9.png)
+![5957-85f90ad9b3de39b2.png]({{site.url}}/pics/dde/5957-6130702efb4c1ee9_update.png)
 * 系统资源监控和进程列表放在一个页面中，用户不用为了找最占资源的进程来回在两个标签中切换
 * 除了监听CPU、内存外，对每个进程的网络IO和磁盘IO都进行监控，最快的速度查找出后台占用带宽的进程
 * 把图形化应用程序、我的进程和所有进程用三个标签分出来，平常使用的时候只用查看第一个标签就可以管理图形化应用程序，不用在进程的汪洋大海中来回滚屏
@@ -387,42 +387,42 @@ Linux 的私有显卡驱动如果安装失败，会导致图形环境直接崩�
 
 深度远程协助
 
-![project-remoteassistance-1.png]({{site.url}}/pics/dde/5957-9c369c1add619ee1.png)
+![project-remoteassistance-1.png]({{site.url}}/pics/dde/5957-9c369c1add619ee1_update.png)
 
-![project-remoteassistance-2.png]({{site.url}}/pics/dde/5957-8be5110b11eef508.png)
+![project-remoteassistance-2.png]({{site.url}}/pics/dde/5957-8be5110b11eef508_update.png)
 * 6位数字就可以快速帮助别人和寻求别人帮助，没有比这更简单的远程帮助工具了
 
 深度手册
 
-![deepin-manual2.png]({{site.url}}/pics/dde/5957-a1cdb7c2538a53e6.png)
+![deepin-manual2.png]({{site.url}}/pics/dde/5957-a1cdb7c2538a53e6_update.png)
 * 图文并茂，markdown的语法，方便社区协作，美观易度
 
 深度云打印/深度云扫描
 
 ![
-![project-cloudscan-2.png]({{site.url}}/pics/dde/5957-309a61d3871ab835.png)
-]({{site.url}}/pics/dde/5957-cc5dc683279ded76.png)
+![project-cloudscan-2.png]({{site.url}}/pics/dde/5957-309a61d3871ab835_update.png)
+]({{site.url}}/pics/dde/5957-cc5dc683279ded76_update.png)
 * 企业用户，内网直接支持所有打印机和扫描仪
 
 深度取色器
 
-![01-255x150.jpg]({{site.url}}/pics/dde/5957-bb5179d92506974b.jpg)
+![01-255x150.jpg]({{site.url}}/pics/dde/5957-bb5179d92506974b_update.jpg)
 
-![02-255x150.jpg]({{site.url}}/pics/dde/5957-bc915231b8e6ea4e.jpg)
+![02-255x150.jpg]({{site.url}}/pics/dde/5957-bc915231b8e6ea4e_update.jpg)
 
 * Linux 下操作最简单的屏幕取色器
 * 可以高性能实时取色，比如光标下有
 
 深度开源字体
 
-![deepin-opensymbol1.jpg]({{site.url}}/pics/dde/5957-312a2628c8f2d77d.jpg)
+![deepin-opensymbol1.jpg]({{site.url}}/pics/dde/5957-312a2628c8f2d77d_update.jpg)
 * 社区中吵了十几年的Office排版字体，要不就是吐槽，要不就是拷贝微软版权字体，没有人站出来解决问题。5个版权字体，上千个符号，我们一个一个字体，自己重新画了一遍，然后开源给大家免费使用，行动才能推动开源，而不是靠嘴
 
 deepin-emacs
 
-![deepin-emacs2-1.png]({{site.url}}/pics/dde/5957-404142f1e71ccb3f.png)
+![deepin-emacs2-1.png]({{site.url}}/pics/dde/5957-404142f1e71ccb3f_update.png)
 
-![f60d05d0-8c1e-11e3-98c7-a14fa75e3ff7.png]({{site.url}}/pics/dde/5957-5de39ac14d946c22.png)
+![f60d05d0-8c1e-11e3-98c7-a14fa75e3ff7.png]({{site.url}}/pics/dde/5957-5de39ac14d946c22_update.png)
 
 
 * 我十几年的Emacs插件和贴心配置，那时候还没有 spacemacs 存在呢： 那些鄙视deepin只会开发图形应用的喷子， 命令行操作先超过我再来喷吧， https://www.emacswiki.org/emacs/AndyStewart ， 我Emacs做任何事情全程不用一下鼠标
@@ -441,11 +441,11 @@ deepin-emacs
 * 2015年联合网易开发了有道词典 for linux
 * 2016年联合网易开发了网易云音乐 for linux
 
-![11293849zi444azmi33e9g.jpg]({{site.url}}/pics/dde/5957-27d8327b555fe047.jpg)
+![11293849zi444azmi33e9g.jpg]({{site.url}}/pics/dde/5957-27d8327b555fe047_update.jpg)
 
-![]({{site.url}}/pics/dde/5957-c7f4ae7d7b47000c.jpg)
+![]({{site.url}}/pics/dde/5957-c7f4ae7d7b47000c_update.jpg)
 
-![7fe698e9d1c9f041fc1bc9b8c899fb60_b.png]({{site.url}}/pics/dde/5957-f5440d1e6962e14d.png)
+![7fe698e9d1c9f041fc1bc9b8c899fb60_b.png]({{site.url}}/pics/dde/5957-f5440d1e6962e14d_update.png)
 
 开发这些应用，深度投入了巨大的财力人力不求回报，只求国内的linux用户能够更加幸福一点，我们未来会联合国内的厂商开发更多的Linux应用，我们坚信Linux生态普及的那一天。
 

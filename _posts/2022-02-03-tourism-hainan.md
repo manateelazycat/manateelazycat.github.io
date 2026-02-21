@@ -5,9 +5,9 @@ categories: [Travel]
 ---
 
 ### 自驾行程
-![]({{site.url}}/pics/tourism-hainan/map1.png)
+![]({{site.url}}/pics/tourism-hainan/map1_update.png)
 
-![]({{site.url}}/pics/tourism-hainan/map2.png)
+![]({{site.url}}/pics/tourism-hainan/map2_update.png)
 
 武汉的冬天太冷了， 冷到什么程度？ 打个比方， 我们家冰箱都比客厅暖和。
 
@@ -29,23 +29,23 @@ categories: [Travel]
 4. 考虑到春节大多数饭店都要关门， 落脚到海花岛是一个比较好的选择， 可以保证年夜饭有地方吃， 哈哈哈哈
 
 ### 黄姚古镇
-![]({{site.url}}/pics/tourism-hainan/huangyao1.jpg)
+![]({{site.url}}/pics/tourism-hainan/huangyao1_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/huangyao2.jpg)
+![]({{site.url}}/pics/tourism-hainan/huangyao2_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/huangyao3.jpg)
+![]({{site.url}}/pics/tourism-hainan/huangyao3_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/huangyao4.jpg)
+![]({{site.url}}/pics/tourism-hainan/huangyao4_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/huangyao5.jpg)
+![]({{site.url}}/pics/tourism-hainan/huangyao5_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/huangyao6.jpg)
+![]({{site.url}}/pics/tourism-hainan/huangyao6_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/huangyao7.jpg)
+![]({{site.url}}/pics/tourism-hainan/huangyao7_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/huangyao8.jpg)
+![]({{site.url}}/pics/tourism-hainan/huangyao8_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/huangyao9.jpg)
+![]({{site.url}}/pics/tourism-hainan/huangyao9_update.jpg)
 
 武汉到海南需要 1300 多公里， 中途逛了一下广西贺州的黄姚古镇。 黄姚古镇发祥于宋朝年间， 镇中的建筑多为明清时期所建， 有着近 1000 年历史。 去的那天刚好飘了一会儿小雨， 雨淅淅沥沥的雨落在青石板路上， 别有一番风情。 古镇比较小， 2 个小时就可以轻松逛完， 出口附近的古榕树很漂亮， 看着参天的气根和枝叶， 特别有生命力。
 
@@ -57,13 +57,13 @@ categories: [Travel]
 离岛和上岛流程差不多， 唯一的变化是， 离岛需要提前预约买票（微信搜索新海港公众号预约买票）， 如果你在免税区买了东西， 建议去新海港离岛（只有新海港才支持免税商品出港检查）， 没有买东西可以选择秀英港离岛。 这次我是大年初一离岛的， 人很少， 没有上岛的时候那么挤。
 
 ### 三亚湾
-![]({{site.url}}/pics/tourism-hainan/sanyawan4.jpg)
+![]({{site.url}}/pics/tourism-hainan/sanyawan4_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/sanyawan1.jpg)
+![]({{site.url}}/pics/tourism-hainan/sanyawan1_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/sanyawan2.jpg)
+![]({{site.url}}/pics/tourism-hainan/sanyawan2_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/sanyawan3.jpg)
+![]({{site.url}}/pics/tourism-hainan/sanyawan3_update.jpg)
 
 第一天到三亚的时候已经下午了， 先去三亚湾看一下夕阳， 客观的说三亚的海滩一般， 沙子没那么细腻， 大多数人都是来海上玩游艇的。
 
@@ -72,26 +72,26 @@ categories: [Travel]
 晚上很多新疆人会在三亚湾旁跳广场舞， 舞蹈跳的挺好的， 比内陆大妈们跳得好看， 哈哈哈哈。
 
 ### 三亚三美湾
-![]({{site.url}}/pics/tourism-hainan/sanmeiwan1.jpg)
+![]({{site.url}}/pics/tourism-hainan/sanmeiwan1_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/sanmeiwan2.jpg)
+![]({{site.url}}/pics/tourism-hainan/sanmeiwan2_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/sanmeiwan3.jpg)
+![]({{site.url}}/pics/tourism-hainan/sanmeiwan3_update.jpg)
 
 第二天一大早先去看南海观音， 景点实在游客太多不想去挤， 就导航岛旁边的一个三美湾的地方从远处瞭望下， 本来是看南海观音的， 没想到脚下的三美湾海岸线那么美， 湛蓝的海水拍打着干净的沙滩， 浪花激打在旁边的礁石上， 真的太美了。
 
 ### 三亚西岛
-![]({{site.url}}/pics/tourism-hainan/xidao1.jpg)
+![]({{site.url}}/pics/tourism-hainan/xidao1_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/xidao2.jpg)
+![]({{site.url}}/pics/tourism-hainan/xidao2_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/xidao3.jpg)
+![]({{site.url}}/pics/tourism-hainan/xidao3_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/xidao4.jpg)
+![]({{site.url}}/pics/tourism-hainan/xidao4_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/xidao5.jpg)
+![]({{site.url}}/pics/tourism-hainan/xidao5_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/xidao6.jpg)
+![]({{site.url}}/pics/tourism-hainan/xidao6_update.jpg)
 
 三亚最好玩的景点其实是一海相隔的西岛， 海水非常干净，“蓝绿的海水 + 晒热的沙滩 + 依偎的椰树” 满足了我小时候对海南的所有幻想， 随处都是明信片般的风景。
 
@@ -102,7 +102,7 @@ categories: [Travel]
 西岛中午热的时候去海滩浴场游一下泳很舒服， 唯一不完美的地方是浴场底部有很多礁石有点硌脚。
 
 ### 陵水清水湾
-![]({{site.url}}/pics/tourism-hainan/linshuiwan.jpg)
+![]({{site.url}}/pics/tourism-hainan/linshuiwan_update.jpg)
 
 西岛住了一晚上后， 第三天开车去陵水， 去陵水主要是去分界洲岛， 本来没想去清水湾的， 傍晚刚好路过就去看看。
 
@@ -111,66 +111,66 @@ categories: [Travel]
 强烈建议大家路过陵水一定要来清水湾感受一下， 毫不夸张的说， 陵水清水湾是海南最适合散步的海滩。
 
 ### 陵水分界洲岛
-![]({{site.url}}/pics/tourism-hainan/fenjiezhou1.jpg)
+![]({{site.url}}/pics/tourism-hainan/fenjiezhou1_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/fenjiezhou2.jpg)
+![]({{site.url}}/pics/tourism-hainan/fenjiezhou2_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/fenjiezhou3.jpg)
+![]({{site.url}}/pics/tourism-hainan/fenjiezhou3_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/fenjiezhou4.jpg)
+![]({{site.url}}/pics/tourism-hainan/fenjiezhou4_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/fenjiezhou5.jpg)
+![]({{site.url}}/pics/tourism-hainan/fenjiezhou5_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/fenjiezhou6.jpg)
+![]({{site.url}}/pics/tourism-hainan/fenjiezhou6_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/fenjiezhou7.jpg)
+![]({{site.url}}/pics/tourism-hainan/fenjiezhou7_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/fenjiezhou8.jpg)
+![]({{site.url}}/pics/tourism-hainan/fenjiezhou8_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/fenjiezhou9.jpg)
+![]({{site.url}}/pics/tourism-hainan/fenjiezhou9_update.jpg)
 
 西岛总面积大概 3 平方公里， 分界洲岛只有 0.48 平方公里， 全程走路 3 个小时就可以玩完。
 
 第一次见这么美的海滩， 就像颜料瓶不小心打翻在岛屿周围， 不同颜色的海水随着海岸线一圈一圈染印开来， 任何言语都很难形容分界洲岛的美。
 
 ### 万宁巴厘村
-![]({{site.url}}/pics/tourism-hainan/balicun1.jpg)
+![]({{site.url}}/pics/tourism-hainan/balicun1_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/balicun2.jpg)
+![]({{site.url}}/pics/tourism-hainan/balicun2_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/balicun3.jpg)
+![]({{site.url}}/pics/tourism-hainan/balicun3_update.jpg)
 
 分界洲岛出来后， 开车一个小时就到万宁， 海南这一点比较好， 每个城市间都是一个小时车程， 连续换景点也不会太劳累。
 
 马蜂窝上看了巴厘村的一些独特建筑， 第四天早上先在巴厘村转了转， 景点很小， 里面的景色一般， 反而是入口处的善恶门最有意思， 印尼语叫做坎迪班塔， 传说天神把阻挡住去路的山给劈成了两半， 而这被劈开的山就向左右两边退开， 形成了一道大门。 如果邪灵通过这道门， 就会被夹在中间， 无法通过。
 
 ### 万宁石梅湾
-![]({{site.url}}/pics/tourism-hainan/shimeiwan.jpg)
+![]({{site.url}}/pics/tourism-hainan/shimeiwan_update.jpg)
 
 ### 万宁南燕湾
-![]({{site.url}}/pics/tourism-hainan/nanyanwan.jpg)
+![]({{site.url}}/pics/tourism-hainan/nanyanwan_update.jpg)
 
 ### 万宁神州半岛
-![]({{site.url}}/pics/tourism-hainan/shenzhoubandao1.jpg)
+![]({{site.url}}/pics/tourism-hainan/shenzhoubandao1_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/shenzhoubandao2.jpg)
+![]({{site.url}}/pics/tourism-hainan/shenzhoubandao2_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/shenzhoubandao3.jpg)
+![]({{site.url}}/pics/tourism-hainan/shenzhoubandao3_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/shenzhoubandao4.jpg)
+![]({{site.url}}/pics/tourism-hainan/shenzhoubandao4_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/shenzhoubandao5.jpg)
+![]({{site.url}}/pics/tourism-hainan/shenzhoubandao5_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/shenzhoubandao6.jpg)
+![]({{site.url}}/pics/tourism-hainan/shenzhoubandao6_update.jpg)
 
 万宁的石梅湾、 南燕湾和神州半岛都是免费景点， 景色不错， 南燕湾沙滩在别墅区里面， 导航到‘南燕往’进去后， 一直往里面走， 穿过别墅区就是南燕湾。
 
 ### 万宁太阳河入海口
-![]({{site.url}}/pics/tourism-hainan/taiyanghe1.jpg)
+![]({{site.url}}/pics/tourism-hainan/taiyanghe1_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/taiyanghe2.jpg)
+![]({{site.url}}/pics/tourism-hainan/taiyanghe2_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/taiyanghe3.jpg)
+![]({{site.url}}/pics/tourism-hainan/taiyanghe3_update.jpg)
 
 此次海南第二个惊喜就是路过的太阳河入海口， 导航到 “太阳和景观大桥” 就可以找到。
 
@@ -179,21 +179,21 @@ categories: [Travel]
 沙滩上有很多漂亮的贝壳， 走的时候可以捡一些走， 小朋友的最爱。
 
 ### 琼中百花岭热带雨林
-![]({{site.url}}/pics/tourism-hainan/baihualing1.jpg)
+![]({{site.url}}/pics/tourism-hainan/baihualing1_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/baihualing2.jpg)
+![]({{site.url}}/pics/tourism-hainan/baihualing2_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/baihualing3.jpg)
+![]({{site.url}}/pics/tourism-hainan/baihualing3_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/baihualing4.jpg)
+![]({{site.url}}/pics/tourism-hainan/baihualing4_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/baihualing5.jpg)
+![]({{site.url}}/pics/tourism-hainan/baihualing5_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/baihualing6.jpg)
+![]({{site.url}}/pics/tourism-hainan/baihualing6_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/baihualing7.jpg)
+![]({{site.url}}/pics/tourism-hainan/baihualing7_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/baihualing8.jpg)
+![]({{site.url}}/pics/tourism-hainan/baihualing8_update.jpg)
 
 海南的沙滩紫外线特别大， 玩了几天， 大家已经对绝美的海滩产生审美疲劳， 第五天自驾到琼中（海南最中间的地方）的百花岭热带雨林， 琼中绝对是海南当地人民的最爱， 因为这里森林覆盖率超过 90%, 高大的香蕉树、 椰树和榕树把紫外线挡在浓密的树冠上， 徒步行走在雨林中全身都非常凉快。
 
@@ -204,42 +204,42 @@ categories: [Travel]
 站在树下仰望， 相对于神树经历的沧海桑田， 我们这些人不过是蝼蚁， 再想想， 世界上很多烦心事本无必要， 你看看神树活那么久就没有这些烦恼， 烦恼都是人自己的妄念和执念造成的。
 
 ### 海花岛
-![]({{site.url}}/pics/tourism-hainan/haihuadao1.jpg)
+![]({{site.url}}/pics/tourism-hainan/haihuadao1_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/haihuadao2.jpg)
+![]({{site.url}}/pics/tourism-hainan/haihuadao2_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/haihuadao3.jpg)
+![]({{site.url}}/pics/tourism-hainan/haihuadao3_update.jpg)
 
 海花岛的五国温泉城很大， 温泉水很干净， 特别是温泉泳池简直是我的最爱， 从 6 点多一直玩到晚上 9:30。
 
-![]({{site.url}}/pics/tourism-hainan/haihuadao4.jpg)
+![]({{site.url}}/pics/tourism-hainan/haihuadao4_update.jpg)
 
 除夕夜在海花岛的大三元饭店吃的， 厨师手艺不错， 每道菜都保留了食材最原始的味道。
 
-![]({{site.url}}/pics/tourism-hainan/haihuadao5.jpg)
+![]({{site.url}}/pics/tourism-hainan/haihuadao5_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/haihuadao6.jpg)
+![]({{site.url}}/pics/tourism-hainan/haihuadao6_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/haihuadao7.jpg)
+![]({{site.url}}/pics/tourism-hainan/haihuadao7_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/haihuadao8.jpg)
+![]({{site.url}}/pics/tourism-hainan/haihuadao8_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/haihuadao10.jpg)
+![]({{site.url}}/pics/tourism-hainan/haihuadao10_update.jpg)
 
 整个海花岛没有开发完， 建议夏天来度假， 冬天天太冷了， 很多娱乐设施都没有开放。
 
 冬天岛上只有一个海洋馆可以逛逛， 不过只要有水有鱼的地方都是小朋友的天堂。
 
 ### 崇左德天跨国大瀑布
-![]({{site.url}}/pics/tourism-hainan/detiandapubu1.jpg)
+![]({{site.url}}/pics/tourism-hainan/detiandapubu1_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/detiandapubu2.jpg)
+![]({{site.url}}/pics/tourism-hainan/detiandapubu2_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/detiandapubu3.jpg)
+![]({{site.url}}/pics/tourism-hainan/detiandapubu3_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/detiandapubu4.jpg)
+![]({{site.url}}/pics/tourism-hainan/detiandapubu4_update.jpg)
 
-![]({{site.url}}/pics/tourism-hainan/detiandapubu6.jpg)
+![]({{site.url}}/pics/tourism-hainan/detiandapubu6_update.jpg)
 
 从海南回贵州的路上会经过广西崇左， 去年就想来看中越边境上的德天大瀑布， 可惜去年春节加班错过了， 今年终于有机会瞻仰一下。
 

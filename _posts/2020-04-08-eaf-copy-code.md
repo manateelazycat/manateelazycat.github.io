@@ -12,6 +12,6 @@ categories: [Emacs, EAF]
 2. 按 C 键调用 insert_or_copy_code 命令，会在网页中搜索所有代码片段的地方，并高亮索引标签，类似Vimium的效果
 3. 键入相应的索引标签，即可快速拷贝代码标签到系统剪切板
 
-![EAF Copy Code]({{site.url}}/pics/eaf-copy-code/eaf-copy-code.gif)
+![EAF Copy Code]({{site.url}}/pics/eaf-copy-code/eaf-copy-code_update.gif)
 
 是不是效率非常高？;)

@@ -8,7 +8,7 @@ categories: [Emacs, EAF]
 
 试用了一下[ Vimium 的功能](https://github.com/manateelazycat/emacs-application-framework/pull/179) , 哇，太好用了。
 
-![Vimium]({{site.url}}/pics/eaf-vimium/eaf-vimium.png)
+![Vimium]({{site.url}}/pics/eaf-vimium/eaf-vimium_update.png)
 
 十几年前还是Emacs菜鸟的时候，梦想有一天可以Live in Emacs中，完全用Emacs做所有工作...
 

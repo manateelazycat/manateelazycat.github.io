@@ -25,7 +25,7 @@ instant-rename-tag 认识到上面的问题，从实现上放弃了Tag实时匹�
 
 这样只在重命名启动的时候查找一下 Tag 的区域，后面只是简单的光标监控和内容同步，既实现了实时改名的功能，又不会因为Tag不匹配产生很多乱改用户buffer的问题。
 
-![instant-rename-tag]({{site.url}}/pics/instant-rename-tag/instant-rename-tag.gif)
+![instant-rename-tag]({{site.url}}/pics/instant-rename-tag/instant-rename-tag_update.gif)
 
 安装方法见[Github](https://github.com/manateelazycat/instant-rename-tag)
 

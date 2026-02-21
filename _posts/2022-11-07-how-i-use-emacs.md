@@ -16,7 +16,7 @@ categories: [Emacs]
 
 每次启动 Emacs， 我都有一个比较明确的目的： 写代码、 修改配置或者文件， 我一般会想一想今天打开 Emacs 想干啥， 然后直接通过快捷键打开特定的目录， 所以我的 Emacs 启动后通常都是下面这张图的布局: 
 
-![]({{site.url}}/pics/howiuseemacs/layout.png)
+![]({{site.url}}/pics/howiuseemacs/layout_update.png)
 
 * 最上面标签栏是 [sort-tab](https://github.com/manateelazycat/sort-tab), sort-tab 会根据文件使用的频率自动对标签进行排序， 用的越多的 Buffer 越靠左边， 它不像传统的标签栏那样按照文件的类型或者项目的目录进行模式划分， 只按照使用频率来动态排序， 这样的好处是， 不管你当前在进行哪种类型的操作， 都可以快速在最左边的几个标签中快速切换， 效率特别高， 针对使用频率低的 Buffer 再结合搜索插件进行快速过滤， 非常的直观方便。 同时 sort-tab 是用顶部固定窗口的方式实现的， 不管怎么分屏都只占用一行高度， 节省了笔记本宝贵的纵向空间。
 * 中间是 [EAF](https://github.com/emacs-eaf/emacs-application-framework) 的文件管理器应用， EAF 文件管理器相对于传统的 dired 主要的好处是， 双栏设计， 非常方便快速预览文件和图片， 内置多线程技术， 不会因为文件数量多而导致的卡顿。 同时， 文件的信息都是按照结构体的方式进行存储计算， 扩展新功能的时候， 不用担心像 dired 那样基于文本正则表达式的方式各种魔改， 也不会发生 dired 各种高级插件之间的相互冲突。 最后， 像大家常用的快速标记文件、 递归查找文件、 整个目录转换成文本后批量编辑的功能， EAF File Manager 都已经完整实现。
@@ -34,11 +34,11 @@ blink-search 针对上面两种场景进行归纳分析:
 
 第一种场景主要是双栏混合搜索， 通过左侧混合不同后端的搜索结果， 避免因某个后端搜索数据过多导致的切换后端效率低下的问题：
 
-![]({{site.url}}/pics/howiuseemacs/blink-search.png)
+![]({{site.url}}/pics/howiuseemacs/blink-search_update.png)
 
 第二种场景主要是通过前缀来快速过滤， 这种探索性的搜索一般都是文本内容， 需要单列才能有足够的窗口， 搜索体验更像 ivy 一点：
 
-![]({{site.url}}/pics/howiuseemacs/blink-search-grep-directory.png)
+![]({{site.url}}/pics/howiuseemacs/blink-search-grep-directory_update.png)
 
 因为 blink-search 小心的进行多线程设计和渲染优化， 基本上不管以后加多少个搜索后端， 都会非常快速的响应， blink-search 更适合那些习惯 helm 的用户切换， 探索性搜索体验还离 ivy 有不少差距。
 
@@ -61,7 +61,7 @@ lsp-bridge 现在主要的几个特性：
 
 这个插件的原理和核心技术我就不展开说了， 可以读我以前写的文章 [LSP-Bridge 架构设计与 LSP 协议解析](https://manateelazycat.github.io/2022/05/12/lsp-bridge) 和 [为什么 lsp-bridge 不用 capf?](https://manateelazycat.github.io/2022/06/26/why-lsp-bridge-not-use-capf) 。
 
-![]({{site.url}}/pics/howiuseemacs/lsp-bridge.png)
+![]({{site.url}}/pics/howiuseemacs/lsp-bridge_update.png)
 
 #### 括号插件
 除开语法编辑外， 我们每天写各种语言代码， 最常用的编辑就是括号编辑， 比如括号自动匹配插入、 括号内内容快速删除、 快速用括号包裹光标所在对象、 能够区分字符串和注释进行语义字符串删除， 我日常用的主要是 [fingertip](https://github.com/manateelazycat/fingertip), fingertip 是 基于 [tree-sitter](https://tree-sitter.github.io/tree-sitter/)开发的， 相对于传统括号插件 paredit 的优势是能够语义的识别当前光标处的内容， 同时对更多语言提供支持， 比如 JavaScript、 ruby、 Vue.js 等等流行语言， 强在多语言兼容性上， 在编辑 Lisp 语言方面， 能力可能较 lispy 弱一点。 
@@ -124,17 +124,17 @@ markmacro 的原理:
 
 color-rg.el 相对于 ivy 那种实时搜索的好处是， color-rg.el 有一个专门的 buffer 来存储搜索结果， 搜索 Buffer 的内容更持久和稳定些， 甚至可以把搜索结果先和其他窗口各种分屏对比后再编辑， 非常适合重度重构的应用场景。 ivy 更适合探索式搜索的应用场景， 重构方便性不如 color-rg.el 。
 
-![]({{site.url}}/pics/howiuseemacs/color-rg.png)
+![]({{site.url}}/pics/howiuseemacs/color-rg_update.png)
 
 用 Emacs 的都少不了 isearch, 但是 isearch 不方便的地方是每次都要手动输入或者 yank 当前 symbol 给 isearch， 同时要批量替换的按键流程也很繁琐。 在使用 [symbol-overlay](https://github.com/wolray/symbol-overlay) 之前我一直用我自己开发的 [lazy-search](https://github.com/manateelazycat/lazy-search), 这两个项目的目标都是启动后立即选中光标处的 symbol, 再按单按键比如按 n/p 后， 快速跳转上一个和下一个匹配项， 节省了大量选中当前 symbol 启动 isearch 再粘贴 symbol 的操作时间。 用了 symbol-overlay 后， 发现比我的 lazy-search 实现的更加简洁和强大， 包括搜索后快速按 `r` 键可以对所有匹配的 symbol 进行快速重命名操作， symbol-overlay 基本上是单文件重构场景下最好用的插件， 强烈推荐大家使用。
 
-![]({{site.url}}/pics/howiuseemacs/symbol-overlay.png)
+![]({{site.url}}/pics/howiuseemacs/symbol-overlay_update.png)
 
 在编辑一些 Html 或者 Vue.js 的代码， 需要快速重命名当前 Tag 内容， 遇到复杂 HTML 布局时， 如果手动重命名 Tag 就会进行多次跳转操作， 搭配 [highlight-matching-tag](https://github.com/manateelazycat/highlight-matching-tag) 和 [instant-rename-tag](https://github.com/manateelazycat/instant-rename-tag) 可以在不移动光标的前提下， 实现 Tag 名字的实时修改， 因为 instant-rename-tag 是基于 overlay 来实现的， 不会因为编辑 Tag 过程中因语法不平衡导致的重命名失败的问题。
 
-![]({{site.url}}/pics/howiuseemacs/highlight-matching-tag.gif)
+![]({{site.url}}/pics/howiuseemacs/highlight-matching-tag_update.gif)
 
-![]({{site.url}}/pics/howiuseemacs/instant-rename-tag.gif)
+![]({{site.url}}/pics/howiuseemacs/instant-rename-tag_update.gif)
  
 ### 窗口管理 
 
@@ -149,27 +149,27 @@ Emacs 本身的弹窗规则比较混乱， 当我们专注的学习和研究的�
 
 最开始的版本使用的是在线翻译， 最新版本可以直接使用 llama 大模型进行离线本地翻译， 翻译的速度要比在线翻译快很多。
 
-![]({{site.url}}/pics/howiuseemacs/insert-translated-name.gif)
+![]({{site.url}}/pics/howiuseemacs/insert-translated-name_update.gif)
 
 写 README 的时候， 经常需要狂飙英文， 所以这时候一个方便的英文单词补全插件就非常重要。 自己写过 [company-english-helper](https://github.com/manateelazycat/company-english-helper)和 [corfu-english-helper](https://github.com/manateelazycat/corfu-english-helper)， 但是性能都不胜理想， 主要的原因是当英文词典的单词数量达到 10 万规模时， 即时把所有单词都弄到内存中去搜索， Elisp 实时过滤 10 万个单词都非常吃力。 目前主要用 lsp-bridge 的 [search_sdcv_words.py](https://github.com/manateelazycat/lsp-bridge/blob/fc7384d2850ad580fc32ecb490333fb4438cc099/core/search_sdcv_words.py#L1)后端来实现英文补全， `search_sdcv_words` 后端把 10 万单词的过滤都在 Python 线程中实现， Python 搜索 10 万单词的性能基本上是瞬间， 所以最终的差别是， Python 实现英文单词补全可以做到丝滑的补全体验， 而纯粹的 Elisp 实现总是有一卡一卡的感觉。 安装 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge) 后， 执行 `lsp-bridge-toggle-sdcv-helper` 命令来激活英文书写助手。
 
-![]({{site.url}}/pics/howiuseemacs/acm-english-helper.png)
+![]({{site.url}}/pics/howiuseemacs/acm-english-helper_update.png)
 
 你甚至在不记得英文单词怎么拼写的时候， 直接写拼音就可以补全英文单词了， 连 Google 翻译都节省了。
 
-![]({{site.url}}/pics/howiuseemacs/lsp-bridge-sdcv-pinyin.png)
+![]({{site.url}}/pics/howiuseemacs/lsp-bridge-sdcv-pinyin_update.png)
 
 除了英文辅助写入， 偶尔查一下单词也是必须的， 以前都用 [sdcv](https://github.com/manateelazycat/sdcv), 我一直嫌弃排版不好看， 后面基于 EAF 的原理写了 [popweb](https://github.com/manateelazycat/popweb), popweb 利用网页技术来展示在线翻译页面， popweb 很难被封锁的原因是， 它本质是打开翻译网站的网页， 然后利用 CSS 隐藏掉不需要的页面元素， 这种实现方式非常简单稳定， 不需要破解 API， 维护代价很低。
 
-![]({{site.url}}/pics/howiuseemacs/popweb.png)
+![]({{site.url}}/pics/howiuseemacs/popweb_update.png)
 
 平常编程工作需要查阅大量英文网站和材料， 遇到不会的单词要反复用鼠标去选中， 效率非常低。 这时候可以先用 [EAF Browser](https://github.com/emacs-eaf/eaf-browser) 先查看英文网站（如下图一）， 当需要翻译时， 按 `N` 键 (`eaf-py-proxy-insert_or_render_by_eww` 命令), EAF Browser 会自动用 `eww` 来渲染网页(如下图二), 因为 eww 渲染出来都是文本内容， 这时候可以结合 popweb 对任意文本进行键盘移动翻译。
 
 这种操作和直接用 `eww` 打开网页的区别是， EAF Browser 先用 [Readability.js](https://github.com/mozilla/readability) 提取网页中真正需要阅读的内容(过滤掉网页两边的控件和导航链接等)再传递给 eww, 这样既可以避免 eww 的缺陷 （无法解析 CSS 和 JS), 又能利用 eww 文本渲染的能力为我所用。
 
-![]({{site.url}}/pics/howiuseemacs/eaf-browser-normal-render.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-browser-normal-render_update.png)
 
-![]({{site.url}}/pics/howiuseemacs/eaf-browser-eww-render.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-browser-eww-render_update.png)
 
 [dictionary-overlay](https://github.com/ginqi7/dictionary-overlay): 这个插件是我强烈推荐的一个英语单词记忆插件， 它的原理是当你执行命令 `dictionary-overlay-mark-word-unknown` 标记一个单词不懂时, 它会自动搜索翻译， 并通过 overlay 的方式把翻译显示生词后面。 这样你下次你看别的文章时， 所有你不懂的单词的翻译都会自动显示， 避免再次遇到生词时你要一个一个的查找翻译， 当你有一天终于记住这些单词的意思后就可以用 `dictionary-overlay-mark-word-known` 标记这个单词我已经记住了， 生词后面的翻译也会一并隐藏。
 
@@ -179,7 +179,7 @@ Emacs 本身的弹窗规则比较混乱， 当我们专注的学习和研究的�
 3. 在 eww 模式中执行 `dictionary-overlay-render-buffer` 命令, 开启 dictionary-overlay
 4. 遇到不懂的单词自动调用 `popweb-dict-bing-pointer` 弹出翻译并同时做生词标记 `dictionary-overlay-mark-word-unknown`, 具体参考我的[小函数](https://github.com/manateelazycat/lazycat-emacs/blob/5c887f791123356fb79128d11b1a651680c037bb/site-lisp/config/init-popweb.el#L92)
 
-![]({{site.url}}/pics/howiuseemacs/dictionary-overlay.png)
+![]({{site.url}}/pics/howiuseemacs/dictionary-overlay_update.png)
 
 #### 沉浸式翻译
 不过现在我最喜欢的是 EAF Browser 的沉浸式翻译功能， 遇到英文网页， 按 Alt + i 调用 ```immersive_translation``` 命令自动把整个网页翻译成一段英文一段中文的形式。 沉静式翻译相对于其他翻译插件的优势是可以最快速度知道一个英文网页在说什么， 了解其全貌以后， 再详细看局部的英文， 这样学习外文材料的速度就大大加快了。
@@ -207,7 +207,7 @@ EAF 文件管理器主要的优势是双列查看， 快速预览文件非常方
 * `eaf-py-proxy-find_files`: 按 `G` 键， 自动在目录下递归搜索文件， 因为是基于 [fd](https://github.com/sharkdp/fd) 实现的， 基本上是秒搜。
 * `eaf-py-proxy-batch_rename`: 按 `e` 键， 自动把当前目录转换成文本， 编辑文本内容后， `C-c C-c` 批量更改文件名。
 
-![]({{site.url}}/pics/howiuseemacs/eaf-file-manager.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-file-manager_update.png)
 
 #### EAF Git 客户端
 EAF Git 从功能上， 现阶段肯定要比 magit 弱很多。 EAF Git 的局部优势是， 多线程技术加持不会有性能问题， 比如 Linux Kernel 上百万的 Commit 可以全部展开和实时搜索， 这种规模的项目， magit 打开就直接卡死了。 同时 EAF Git 的界面和设计都是面向 Git 小白来设计的， 全是傻瓜化操作， 相对于 magit 更好入门一点。 
@@ -220,17 +220,17 @@ EAF Git 从功能上， 现阶段肯定要比 magit 弱很多。 EAF Git 的局�
 
 完整的手册可以查看 [EAF Git Client 手册](https://manateelazycat.github.io/2022/04/22/eaf-git)
 
-![]({{site.url}}/pics/howiuseemacs/eaf-git.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-git_update.png)
 
 #### EAF Markdown 预览
 写项目介绍时， 能够按照 github 的实时预览提前看效果， 就可以避免一些语法错误。 EAF Markdown Previewer 是基于 mume.js 这个库来实现的， 不但可以完全还原 Github 的渲染风格， 还能够支持各种公式渲染， 包括： Mermaid, Plantuml, Katex, Mathjax 等， 通过 JavaScript 的实现方式， Markdown 渲染性能非常高， 不用像原来 Emacs 的一些插件借助外部工具生成图片后再插入图片到 Emacs Buffer 中， 性能优势明显。
 
-![]({{site.url}}/pics/howiuseemacs/eaf-markdown-previewer.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-markdown-previewer_update.png)
 
 #### EAF 图片浏览器
 EAF 图片浏览器最大的优势就是， 不管多大的图片都能够无极丝滑缩放， 这在 Emacs 内置图片渲染很难达到的性能。
 
-![]({{site.url}}/pics/howiuseemacs/eaf-image-viewer.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-image-viewer_update.png)
 
 
 #### EAF 浏览器
@@ -245,37 +245,37 @@ EAF 浏览器基本上就是 EAF 这个项目最重要的应用， 内置 V8 的
 * 按 `,` 键： 利用 Mozilla 的 Readability.js 库， 把网页中间部分阅读内容提取出来进行清爽阅读 (如下图二所示)
 * 按 `n` 键： 利用 Mozilla 的 Readability.js 库， 把网页中间部分阅读内容转换成 Emacs Text Buffer, 方便批量操作
 
-![]({{site.url}}/pics/howiuseemacs/eaf-browser.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-browser_update.png)
 
-![]({{site.url}}/pics/howiuseemacs/eaf-browser-reader-mode.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-browser-reader-mode_update.png)
 
 #### EAF PDF 阅读器
 EAF PDF 阅读器是用 mupdf 这个库来实现, 是 Emacs 下性能最好的 PDF 阅读器， 除了简单的连续翻页、 实时缩放， 还包括 DarkMode、 Vimium Jump、 Annotation、 LaTeX Sync Jump、 ISearch、 OrgMode Link 等等超级方便高级功能。 
 
-![]({{site.url}}/pics/howiuseemacs/eaf-pdf-viewer.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-pdf-viewer_update.png)
 
 PDF 里面一个功能我经常用 `eaf-ocr-buffer`, 这个命令会调用 [EasyOCR](https://github.com/JaidedAI/EasyOCR) 自动识别 PDF 截图中的文字并自动粘贴到 Emacs 粘贴板中， 特别是看那些扫描版的 PDF 特别好用， 作笔记的时候不用对着一个字一个字的手动敲入。
 
 #### EAF RSS 阅读器
 EAF RSS 阅读器相对于文本版的 RSS Reader 实现， 主要有两个优势： 文章直接用 EAF 浏览器查看原文， 支持双栏布局和支持中文标题对齐。
 
-![]({{site.url}}/pics/howiuseemacs/eaf-rss-reader.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-rss-reader_update.png)
 
 #### EAF 音乐播放器
 我曾经是 emms.el 插件的[重度配置者](https://github.com/manateelazycat/lazycat-emacs-time-machine/blob/master/site-lisp/config/init-emms.el)， 但是实在受不了播放列表多列无法对齐的界面， 强迫症真心忍受不了, 偶尔会按一下 `F` 键， 像浏览器网页跳转那样来快速切换音乐。
 
 默认还支持网易云音乐的歌单播放， 同时支持封面、 歌词的自动下载。
 
-![]({{site.url}}/pics/howiuseemacs/eaf-music-player.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-music-player_update.png)
 
-![]({{site.url}}/pics/howiuseemacs/eaf-music-player-cloud.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-music-player-cloud_update.png)
 
 #### EAF 地图
 我比较喜欢全世界到处浪， 一般浪之前我都会做详细的攻略， 找出所有可能的旅游景点， 自驾的时候一个刚需就是要知道怎么走最顺路， 这样可以节省大量的时间。 商业地图不管是 Goolge 还是高德地图， 都有一个限制， 超过 20 个地址以后， 这些商业地图就没法做路径自动规划了。 一旦超过 20 个景点， 以前我就需要用两张地图才能规划， 经常在两个地图对坐标或者异动景点位置， 全凭脑袋记坐标。
 
 终于在折磨了很多次以后， 我有一天下午基于 OpenStreetMap 开发了一个旅游地图， 按 a 键自动添加地址， 按 d 键删除地址， 按 x 键自动对已经添加的地址做动态路径规划， 按 s 键还可以以文本的方式保存名称和坐标， 方便 Emacs 批量快速操作， 也方便快速分享给朋友们。
 
-![]({{site.url}}/pics/howiuseemacs/eaf-map.png)
+![]({{site.url}}/pics/howiuseemacs/eaf-map_update.png)
 
 #### EAF 终端
 终端方面我主要用社区开发的 [eaf-pyqterminal](https://github.com/mumu-lhl/eaf-pyqterminal/)， EAF PyQTerminal 也许是 Emacs 下最好的终端模拟器, 理由如下：
@@ -288,9 +288,9 @@ EAF RSS 阅读器相对于文本版的 RSS Reader 实现， 主要有两个优�
 6. 高兼容性: 适用于所有安装了 EAF 的 Emacs 版本， 不需要像 vterm 编译特定模块
 7. 易于扩展: 可通过 Elisp 和 Python 扩展功能
 
-![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/1.png)
+![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/1_update.png)
 
-![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/2.png)
+![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/2_update.png)
 
 其实我因为重度开发 Emacs 插件， 经常会让 Emacs 重启来测试， 所以我用的最多的是我写的另外一个终端 [Deepin Terminal](https://github.com/manateelazycat/deepin-terminal), 哈哈哈哈。
  

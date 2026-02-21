@@ -18,6 +18,6 @@ categories: [Linux, Arch]
 * 贴心设计： 后台标签进程完成提醒，透明度实时调节，URL 超链一点打开，实时搜索...
 * Vibe Coding: 一键拷贝最后一个命令输出，输出反馈给 AI 速度更快
 
-![]({{site.url}}/pics/lazycat-terminal/screenshot.png)
+![]({{site.url}}/pics/lazycat-terminal/screenshot_update.png)
 
 AUR 包我打了一个，ArchLinux 的用户直接用命令 `yay -S lazycat-terminal` 来安装吧！

@@ -4,7 +4,7 @@ title: 川西红岩顶
 categories: [Travel]
 ---
 
-![红岩顶雪山]({{site.url}}/pics/tourism-hongyanding/5957-4ba70aed2775ad59.jpg)
+![红岩顶雪山]({{site.url}}/pics/tourism-hongyanding/5957-4ba70aed2775ad59_update.jpg)
 
 #### 老婆一直挂念的牛背山
 今年要带老婆回四川老家看她奶奶， 顺道可以去一下川西， 体验一下西藏周边的磅礴雪山风景， 其中最令老婆神往的要数牛背山， 用我的老婆的话来说： ＂牛背山是每一个人这一生都要去体验的地方＂， 在牛背山可以看到迷人的日照金山、 云海和西藏的贡嘎雪山（海拔 7758 米）．
@@ -20,7 +20,7 @@ categories: [Travel]
 红岩顶位于泸定县冷碛镇二郎山上， 经验丰富的驴友都知道， 在二郎山隧道开通之前， 进藏的唯一一条道路就当属 318 国道。 二郎山做为承载 318 国道的山脉， 是内陆进入藏区的第一道屏障， 而二郎山山高路陡， 每一个曾经盘山翻越过二郎山的师傅都对二郎山有着无限的崇敬和敬畏。 至从新的 318 国道开通以后， 现在只有极少数的人知道老 318 国道就在那里......
 
 进藏的 318 国道完全是盘踞在二郎山上， 经常都是下坡 180 度的发卡弯， 开车过弯速度不要超过 50 码, 避免在发卡弯和大卡车亲密接触．
-![进藏的老 318 国道长这样]({{site.url}}/pics/tourism-hongyanding/5957-3ce35744a39c82f2.png)
+![进藏的老 318 国道长这样]({{site.url}}/pics/tourism-hongyanding/5957-3ce35744a39c82f2_update.png)
 
 ###### 必备装备：
 * 帽子和围巾（面对雪山的狂风和高海拔的时候， 我真的好想念这两样东西）
@@ -40,12 +40,12 @@ categories: [Travel]
 * 到达冷碛镇以后， 在导航上找＂干海子＂， 开到第二张图的绿线终点后继续往前开(上山路都是无名道路， 没导航数据）， 一直开到一个路口， 一个向上一个向下的岔路时， 选择左边的上山路， 怎么判断上山路是对的？ 看一下上山路口是否有政府立的大大的警告牌， 看到这块严禁任何人进荒山警告牌时就证明走对路了
 * 路过警告牌再在蜿蜒的山路开 30 公里就达到＂干海子＂
 
-![到冷碛镇的路线]({{site.url}}/pics/tourism-hongyanding/5957-cd2ba73dbce72f0c.png)
-![冷碛镇到干海子的路线]({{site.url}}/pics/tourism-hongyanding/5957-6ba609ae88c5ba6b.png)
+![到冷碛镇的路线]({{site.url}}/pics/tourism-hongyanding/5957-cd2ba73dbce72f0c_update.png)
+![冷碛镇到干海子的路线]({{site.url}}/pics/tourism-hongyanding/5957-6ba609ae88c5ba6b_update.png)
 
 #### 登顶雪山
 到干海子以后， 有几家类似下图的营地， 供驴友们登雪山之前休息， 干海子海拔 2700 米， 因为当时山上飘着雪刮着寒风， 原谅我没有勇气拿出单反， 就在寒风中抖抖的用手机拍了一下．
-![干海子营地]({{site.url}}/pics/tourism-hongyanding/5957-f3109841d66bd05f.jpg)
+![干海子营地]({{site.url}}/pics/tourism-hongyanding/5957-f3109841d66bd05f_update.jpg)
 
 说是一个营地， 其实就是一座铁皮搭建的类似在城市修地铁的那种民工房， 进屋以后， 寒风还往屋里灌的那种房子， 如果山上刮暴风雪都可以刮飞的那种， 好的是屋里还可以烤火， 有热饭吃， 睡觉的房间就是大概在 10 平方米里放了两张床， 房间很乱就只可以睡觉的那种， 因为提前做了攻略， 心里已经对红岩顶这种＂五星级的营地＂心生感激了， 传说牛背山的环境还要差一点， 所有陌生人都睡在通铺的牛棚中， 真的像牛棚的地方．在这个五星级营地最起码还有一个标准的公共卫生间可以用， 不用像牛背山那种在寒风中方便．
 
@@ -55,17 +55,17 @@ categories: [Travel]
 
 等驴友们都喝完酒， 世界终于清静了， 勉勉强强的在寒风中小憩了２个小时后， 手机闹钟响了， 几乎没有睡觉， 但是很感激在雪山上还有电热毯的温度．一家人带着对雪山兴奋和激动的心情中起了床， 带上帽子， 手套后， 和 50 多位驴友在登山口集合说了一下路线就开始无比期待的抹黑登山路．
 
-![驴友们登山口集合]({{site.url}}/pics/tourism-hongyanding/5957-77a8c114be12c4d7.jpg)
+![驴友们登山口集合]({{site.url}}/pics/tourism-hongyanding/5957-77a8c114be12c4d7_update.jpg)
 
-![驴友们登山口集合]({{site.url}}/pics/tourism-hongyanding/5957-3617fd754ee39ba9.jpg)
+![驴友们登山口集合]({{site.url}}/pics/tourism-hongyanding/5957-3617fd754ee39ba9_update.jpg)
 
-![最开始的黑夜中登山]({{site.url}}/pics/tourism-hongyanding/5957-d8c9ed6fb2ea5cc6.jpg)
+![最开始的黑夜中登山]({{site.url}}/pics/tourism-hongyanding/5957-d8c9ed6fb2ea5cc6_update.jpg)
 
 凌晨 4 点的雪山， 大家在兴奋中， 一起相互搀扶着开始登雪山， 山上之路极度难走， 都是 50 度以上的陂， 路上结满了冰， 在手电筒微弱的亮光下只能看到隐隐约约的反光， 那就是驴友们踏出来小道， 旁边就是灌木和悬崖．多亏了上山时的黑暗， 因为看不到， 所以不知道害怕， 等中午我们下山时我们才感到后怕， 山上路无比险峻， 所以上山时一定要很多人结伴而行， 单独行动很容易在雪山中迷路．
 
 头天晚上因为风雪和云层没法看到星空， 早上起来， 走在上山路上， 举目皆是繁星， 在城市的光污染中生活多年， 真是好多年没有看到这么纯粹的星空了， 不但可以看到满天繁星， 还可以清晰的看到银河， 光是这寂静的黑夜中满天繁星给人带来的无垠的沉浸感就值这次长驾之旅了．
 
-![红岩顶雪山上的星空]({{site.url}}/pics/tourism-hongyanding/5957-8185fd2de20f6d74.jpg)
+![红岩顶雪山上的星空]({{site.url}}/pics/tourism-hongyanding/5957-8185fd2de20f6d74_update.jpg)
 
 在登雪山的过程中， 虽然已经穿的很厚了， 女儿体温下降的很快， 小脸冻得青紫， 一直流鼻涕．因为第一次登雪山， 女儿一度呼吸急促， 每走 100 米就需要大口喘气， 当时真的非常担心女儿会发生高原反应．一路上都在鼓励女儿， 牵着她的小手， 不断的告诉她要放慢呼吸， 累的时候就喝一点热水， 慢慢的伴着爸爸妈妈的鼓励和歌声， 女儿也渐渐地克服了黑暗和寒冷的恐惧， 越来越坚强， 一步一步的杵着登山杖攀登着．
 
@@ -77,93 +77,93 @@ categories: [Travel]
 
 我终于明白网上驴友们说， 在红岩顶上看贡嘎雪山的感觉是人一辈子终身难忘的体验了： 当一个人耗尽所有体力对抗寒风和严酷的山上路后， 极目之处都是干净的蓝天， 白云和世界上最高的山峰的时候， 那种对自然的感激之情， 感激到你可以跪在大自然面前的情感， 不是你亲身经历真的无法体会．
 
-![红岩顶山顶清晨]({{site.url}}/pics/tourism-hongyanding/5957-2bae1964d455c502.jpg)
+![红岩顶山顶清晨]({{site.url}}/pics/tourism-hongyanding/5957-2bae1964d455c502_update.jpg)
 
 红岩顶上看雪山的情感太过强烈， 任何辞藻都显得无力， 请各位欣赏我在山顶看到的美景吧， 如果你此时正在听藏区的音乐， 那种感觉就对了．
 
-![深度截图_选择区域_20180225212810.png]({{site.url}}/pics/tourism-hongyanding/5957-e9d37d0f8783a395.png)
+![深度截图_选择区域_20180225212810.png]({{site.url}}/pics/tourism-hongyanding/5957-e9d37d0f8783a395_update.png)
 
-![深度截图_选择区域_20180225212826.png]({{site.url}}/pics/tourism-hongyanding/5957-70e83289388b2fa1.png)
+![深度截图_选择区域_20180225212826.png]({{site.url}}/pics/tourism-hongyanding/5957-70e83289388b2fa1_update.png)
 
-![深度截图_选择区域_20180225212842.png]({{site.url}}/pics/tourism-hongyanding/5957-73064d6cbc852270.png)
+![深度截图_选择区域_20180225212842.png]({{site.url}}/pics/tourism-hongyanding/5957-73064d6cbc852270_update.png)
 
-![深度截图_选择区域_20180225212912.png]({{site.url}}/pics/tourism-hongyanding/5957-dee7c60ac08dcce8.png)
+![深度截图_选择区域_20180225212912.png]({{site.url}}/pics/tourism-hongyanding/5957-dee7c60ac08dcce8_update.png)
 
-![深度截图_选择区域_20180225212941.png]({{site.url}}/pics/tourism-hongyanding/5957-ab4a8fd8227ff5fc.png)
+![深度截图_选择区域_20180225212941.png]({{site.url}}/pics/tourism-hongyanding/5957-ab4a8fd8227ff5fc_update.png)
 
-![深度截图_选择区域_20180225213011.png]({{site.url}}/pics/tourism-hongyanding/5957-c6f26b7fd243edff.png)
+![深度截图_选择区域_20180225213011.png]({{site.url}}/pics/tourism-hongyanding/5957-c6f26b7fd243edff_update.png)
 
-![深度截图_选择区域_20180225213024.png]({{site.url}}/pics/tourism-hongyanding/5957-7fc5dd073cd5586c.png)
+![深度截图_选择区域_20180225213024.png]({{site.url}}/pics/tourism-hongyanding/5957-7fc5dd073cd5586c_update.png)
 
-![深度截图_选择区域_20180225213041.png]({{site.url}}/pics/tourism-hongyanding/5957-4d8cacad86ad438a.png)
+![深度截图_选择区域_20180225213041.png]({{site.url}}/pics/tourism-hongyanding/5957-4d8cacad86ad438a_update.png)
 
-![深度截图_选择区域_20180225213135.png]({{site.url}}/pics/tourism-hongyanding/5957-a9ea60b5ab0064dc.png)
+![深度截图_选择区域_20180225213135.png]({{site.url}}/pics/tourism-hongyanding/5957-a9ea60b5ab0064dc_update.png)
 
-![深度截图_选择区域_20180225213158.png]({{site.url}}/pics/tourism-hongyanding/5957-f1437c5c8be30a32.png)
+![深度截图_选择区域_20180225213158.png]({{site.url}}/pics/tourism-hongyanding/5957-f1437c5c8be30a32_update.png)
 
-![深度截图_选择区域_20180225213210.png]({{site.url}}/pics/tourism-hongyanding/5957-ddb05869ddc07565.png)
+![深度截图_选择区域_20180225213210.png]({{site.url}}/pics/tourism-hongyanding/5957-ddb05869ddc07565_update.png)
 
-![深度截图_选择区域_20180225213237.png]({{site.url}}/pics/tourism-hongyanding/5957-8e55a48bd01d6786.png)
+![深度截图_选择区域_20180225213237.png]({{site.url}}/pics/tourism-hongyanding/5957-8e55a48bd01d6786_update.png)
 
-![深度截图_选择区域_20180225213251.png]({{site.url}}/pics/tourism-hongyanding/5957-6c0295d3a05353b6.png)
+![深度截图_选择区域_20180225213251.png]({{site.url}}/pics/tourism-hongyanding/5957-6c0295d3a05353b6_update.png)
 
-![深度截图_选择区域_20180225213307.png]({{site.url}}/pics/tourism-hongyanding/5957-3558ef2c3cdfcce4.png)
+![深度截图_选择区域_20180225213307.png]({{site.url}}/pics/tourism-hongyanding/5957-3558ef2c3cdfcce4_update.png)
 
-![深度截图_选择区域_20180225213415.png]({{site.url}}/pics/tourism-hongyanding/5957-9790bc73fe0360f4.png)
+![深度截图_选择区域_20180225213415.png]({{site.url}}/pics/tourism-hongyanding/5957-9790bc73fe0360f4_update.png)
 
-![深度截图_选择区域_20180225213431.png]({{site.url}}/pics/tourism-hongyanding/5957-f604619061104617.png)
+![深度截图_选择区域_20180225213431.png]({{site.url}}/pics/tourism-hongyanding/5957-f604619061104617_update.png)
 
-![深度截图_选择区域_20180225213450.png]({{site.url}}/pics/tourism-hongyanding/5957-d18b8de2d57c72cd.png)
+![深度截图_选择区域_20180225213450.png]({{site.url}}/pics/tourism-hongyanding/5957-d18b8de2d57c72cd_update.png)
 
-![深度截图_选择区域_20180225213502.png]({{site.url}}/pics/tourism-hongyanding/5957-74350e9b2f9aec18.png)
+![深度截图_选择区域_20180225213502.png]({{site.url}}/pics/tourism-hongyanding/5957-74350e9b2f9aec18_update.png)
 
-![深度截图_选择区域_20180225213518.png]({{site.url}}/pics/tourism-hongyanding/5957-2890628768f5787f.png)
+![深度截图_选择区域_20180225213518.png]({{site.url}}/pics/tourism-hongyanding/5957-2890628768f5787f_update.png)
 
-![深度截图_选择区域_20180225213609.png]({{site.url}}/pics/tourism-hongyanding/5957-6b9bd3932f54caef.png)
+![深度截图_选择区域_20180225213609.png]({{site.url}}/pics/tourism-hongyanding/5957-6b9bd3932f54caef_update.png)
 
-![深度截图_选择区域_20180225213623.png]({{site.url}}/pics/tourism-hongyanding/5957-c424102db927855a.png)
+![深度截图_选择区域_20180225213623.png]({{site.url}}/pics/tourism-hongyanding/5957-c424102db927855a_update.png)
 
-![深度截图_选择区域_20180225213646.png]({{site.url}}/pics/tourism-hongyanding/5957-7666598713417b73.png)
+![深度截图_选择区域_20180225213646.png]({{site.url}}/pics/tourism-hongyanding/5957-7666598713417b73_update.png)
 
-![深度截图_选择区域_20180225213706.png]({{site.url}}/pics/tourism-hongyanding/5957-0b6ffe6a31ecee85.png)
+![深度截图_选择区域_20180225213706.png]({{site.url}}/pics/tourism-hongyanding/5957-0b6ffe6a31ecee85_update.png)
 
-![深度截图_选择区域_20180225213728.png]({{site.url}}/pics/tourism-hongyanding/5957-1278bad4759bed46.png)
+![深度截图_选择区域_20180225213728.png]({{site.url}}/pics/tourism-hongyanding/5957-1278bad4759bed46_update.png)
 
-![深度截图_选择区域_20180225213741.png]({{site.url}}/pics/tourism-hongyanding/5957-1a2109d36810bdaf.png)
+![深度截图_选择区域_20180225213741.png]({{site.url}}/pics/tourism-hongyanding/5957-1a2109d36810bdaf_update.png)
 
-![深度截图_选择区域_20180225213800.png]({{site.url}}/pics/tourism-hongyanding/5957-0ce4fc3f760fd47c.png)
+![深度截图_选择区域_20180225213800.png]({{site.url}}/pics/tourism-hongyanding/5957-0ce4fc3f760fd47c_update.png)
 
-![深度截图_选择区域_20180225213835.png]({{site.url}}/pics/tourism-hongyanding/5957-c3a2ebdb02f5688c.png)
+![深度截图_选择区域_20180225213835.png]({{site.url}}/pics/tourism-hongyanding/5957-c3a2ebdb02f5688c_update.png)
 
-![深度截图_选择区域_20180225213902.png]({{site.url}}/pics/tourism-hongyanding/5957-2767568671054b33.png)
+![深度截图_选择区域_20180225213902.png]({{site.url}}/pics/tourism-hongyanding/5957-2767568671054b33_update.png)
 
-![深度截图_选择区域_20180225213916.png]({{site.url}}/pics/tourism-hongyanding/5957-ab405b0bc5f135ed.png)
+![深度截图_选择区域_20180225213916.png]({{site.url}}/pics/tourism-hongyanding/5957-ab405b0bc5f135ed_update.png)
 
-![深度截图_选择区域_20180225213930.png]({{site.url}}/pics/tourism-hongyanding/5957-bee76c7a546cef6f.png)
+![深度截图_选择区域_20180225213930.png]({{site.url}}/pics/tourism-hongyanding/5957-bee76c7a546cef6f_update.png)
 
-![深度截图_选择区域_20180225213943.png]({{site.url}}/pics/tourism-hongyanding/5957-c047dc9a70920f9f.png)
+![深度截图_选择区域_20180225213943.png]({{site.url}}/pics/tourism-hongyanding/5957-c047dc9a70920f9f_update.png)
 
-![深度截图_选择区域_20180225213956.png]({{site.url}}/pics/tourism-hongyanding/5957-4ae8475556a13ab4.png)
+![深度截图_选择区域_20180225213956.png]({{site.url}}/pics/tourism-hongyanding/5957-4ae8475556a13ab4_update.png)
 
-![深度截图_选择区域_20180225214039.png]({{site.url}}/pics/tourism-hongyanding/5957-1b6554f4b00f738a.png)
+![深度截图_选择区域_20180225214039.png]({{site.url}}/pics/tourism-hongyanding/5957-1b6554f4b00f738a_update.png)
 
-![深度截图_选择区域_20180225214100.png]({{site.url}}/pics/tourism-hongyanding/5957-69f224b110a583b1.png)
+![深度截图_选择区域_20180225214100.png]({{site.url}}/pics/tourism-hongyanding/5957-69f224b110a583b1_update.png)
 
-![深度截图_选择区域_20180225214127.png]({{site.url}}/pics/tourism-hongyanding/5957-c9644ce316ad714f.png)
+![深度截图_选择区域_20180225214127.png]({{site.url}}/pics/tourism-hongyanding/5957-c9644ce316ad714f_update.png)
 
-![深度截图_选择区域_20180225214143.png]({{site.url}}/pics/tourism-hongyanding/5957-9313e6969144f417.png)
+![深度截图_选择区域_20180225214143.png]({{site.url}}/pics/tourism-hongyanding/5957-9313e6969144f417_update.png)
 
-![深度截图_选择区域_20180225214157.png]({{site.url}}/pics/tourism-hongyanding/5957-e02705228ae87a7f.png)
+![深度截图_选择区域_20180225214157.png]({{site.url}}/pics/tourism-hongyanding/5957-e02705228ae87a7f_update.png)
 
-![深度截图_选择区域_20180225214213.png]({{site.url}}/pics/tourism-hongyanding/5957-5bfe3544bef2fdf2.png)
+![深度截图_选择区域_20180225214213.png]({{site.url}}/pics/tourism-hongyanding/5957-5bfe3544bef2fdf2_update.png)
 
-![深度截图_选择区域_20180225214231.png]({{site.url}}/pics/tourism-hongyanding/5957-99db0ff33659d13d.png)
+![深度截图_选择区域_20180225214231.png]({{site.url}}/pics/tourism-hongyanding/5957-99db0ff33659d13d_update.png)
 
-![深度截图_选择区域_20180225214247.png]({{site.url}}/pics/tourism-hongyanding/5957-504ec2255c6646d2.png)
+![深度截图_选择区域_20180225214247.png]({{site.url}}/pics/tourism-hongyanding/5957-504ec2255c6646d2_update.png)
 
-![深度截图_选择区域_20180225214315.png]({{site.url}}/pics/tourism-hongyanding/5957-010ad0759a58004b.png)
+![深度截图_选择区域_20180225214315.png]({{site.url}}/pics/tourism-hongyanding/5957-010ad0759a58004b_update.png)
 
-![深度截图_选择区域_20180225214351.png]({{site.url}}/pics/tourism-hongyanding/5957-48f3040ed0e85352.png)
+![深度截图_选择区域_20180225214351.png]({{site.url}}/pics/tourism-hongyanding/5957-48f3040ed0e85352_update.png)
 
 #### 结语
 中午快下到登山口的时候， 女儿牵着我的手对我说：

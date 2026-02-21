@@ -4,7 +4,7 @@ title: 研发的同学，苦恼就来听这首歌吧
 categories: [Curiosity]
 ---
 
-![Adam Green]({{site.url}}/pics/adam-green/Adam Green.png)
+![Adam Green]({{site.url}}/pics/adam-green/Adam Green_update.png)
 
 给大家推荐一首歌《Cigarette Burns Forever》
 

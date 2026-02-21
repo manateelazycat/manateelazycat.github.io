@@ -49,8 +49,8 @@ categories: [Emacs]
 4. 编辑Elisp文件时，临时增加 company-elisp 这个补全后端
 5. 删除多个后端间重复的补全选项
 
-![LSP补全后端]({{site.url}}/pics/company-multiple-backends/tabnine.png)
+![LSP补全后端]({{site.url}}/pics/company-multiple-backends/tabnine_update.png)
 
-![Ctags补全后端]({{site.url}}/pics/company-multiple-backends/citre.png)
+![Ctags补全后端]({{site.url}}/pics/company-multiple-backends/citre_update.png)
 
 详细的配置请访问 https://github.com/manateelazycat/lazycat-emacs/blob/8f3dee8a6fe724ec52cd2b17155cfc2cefc8066b/site-lisp/config/init-company-mode.el

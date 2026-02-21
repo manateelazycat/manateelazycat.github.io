@@ -5,7 +5,7 @@ categories: [Rails]
 ---
 
 花了两个月做了一个类似 [Tower](https://tower.im) 的 GTD 工具, 从最开始学习 Ruby 和 Rails, 到跌跌撞撞中摸索 Rails 的各种小技巧, 直到最后一块拼图的完成, 才感觉自己掌握了 Rails 构建 Web 产品方法和技巧.
-![Tower NG]({{site.url}}/pics/rails-study-post/rails-study-1.png)
+![Tower NG]({{site.url}}/pics/rails-study-post/rails-study-1_update.png)
 
 在自学 Rails 的这几个月, 也看了很多现成的文章, 虽然很多文章都写的非常详细, 但是对于初学者来说, 没有重点的详细只会给人一种盲人摸象的感觉, 感觉很强大, 心里却没有底.
 
@@ -28,7 +28,7 @@ categories: [Rails]
 学习 Rails 最重要的是, 需要清楚的知道消息响应的循环, 只有知道消息从哪里发出, 哪里经过, 最后以怎样的形式返回, 才能在问题发生时知道怎么准确的定位问题.
 
 注意看下面这张图:
-![消息响应循环]({{site.url}}/pics/rails-study-post/rails-study-2.png)
+![消息响应循环]({{site.url}}/pics/rails-study-post/rails-study-2_update.png)
 
 1. 首先你的浏览器访问网页的时候, 比如本地的 0.0.0.0, 浏览器会向 Rails 后台发送 0.0.0.0 的 GET 请求
 2. 路由器 (Router) 会直接返回路由中 root 路径对应的页面, 这就是我们访问网站的首页
@@ -89,17 +89,17 @@ Rails 的所有开发都是围绕着上面这四点来展开的.
 5. destroy 就是删除资源
 
 我们以任务的图来形象的给出不同动作最终应该生成的页面长什么样子?
-![mission index]({{site.url}}/pics/rails-study-post/rails-study-3.png)
+![mission index]({{site.url}}/pics/rails-study-post/rails-study-3_update.png)
 
-![mission show]({{site.url}}/pics/rails-study-post/rails-study-4.png)
+![mission show]({{site.url}}/pics/rails-study-post/rails-study-4_update.png)
 
-![mission new]({{site.url}}/pics/rails-study-post/rails-study-5.png)
+![mission new]({{site.url}}/pics/rails-study-post/rails-study-5_update.png)
 
-![mission edit]({{site.url}}/pics/rails-study-post/rails-study-6.png)
+![mission edit]({{site.url}}/pics/rails-study-post/rails-study-6_update.png)
 
-![mission update]({{site.url}}/pics/rails-study-post/rails-study-7.png)
+![mission update]({{site.url}}/pics/rails-study-post/rails-study-7_update.png)
 
-![mission destroy]({{site.url}}/pics/rails-study-post/rails-study-8.png)
+![mission destroy]({{site.url}}/pics/rails-study-post/rails-study-8_update.png)
 
 所以, 如果我们要建立一批像上面 "任务" 的页面, 我们应该怎么做?
 1. 修改 config/routes.rb 增加 missions 这个资源:
@@ -263,16 +263,16 @@ end
 和返回模板数据的格式类似, 唯一的不同是 format.html 变成了 format.json, 然后通过 ```json: { key: "value" }``` 的形式返回JSON数据给 ajax 请求.
 
 ###### 4. 第三方插件发送表单请求, 在 ajax 成功后执行JS代码
-![上传头像]({{site.url}}/pics/rails-study-post/rails-study-9.png)
+![上传头像]({{site.url}}/pics/rails-study-post/rails-study-9_update.png)
 我们来举一个简单的例子, 如果我们要实现上图中这种上传头像后自动更新页面中两处头像元素的功能, 我们一般会按照下图这种流程来处理:
-![image.png]({{site.url}}/pics/rails-study-post/rails-study-10.png)
+![image.png]({{site.url}}/pics/rails-study-post/rails-study-10_update.png)
 
 1. 首先我们会在 form_with 表单中增加 data-controller 和 data-action 字段, 表示 AJAX 成功返回结果后, 调用 app/javascript/controllers/user_controller.js的 update 函数, submit 按钮点击后提交数据给 user_controller.rb 中的 update 函数
 2. user_controller.rb 控制器在处理数据后, 返回的并不是 JS 文件, 而是返回 JSON 数据
 3. Stimulus 的JS文件在接到 AJAX 返回的 JSON 数据后在浏览器端修改 HTML页面的DOM结构
 
 下面就是抽象的消息响应循环:
-![ajax:sucess 消息响应循环]({{site.url}}/pics/rails-study-post/rails-study-11.png)
+![ajax:sucess 消息响应循环]({{site.url}}/pics/rails-study-post/rails-study-11_update.png)
 
 
 因为像这种第三方插件, 有时候我们往往并不能用 ajax 简单的替换 submit 的操作, 所以这种情况, 我们依然会采用 form_with 的方式提交表单, 但是会在 ajax:success 的方式使得请求返回 JSON 数据的时候调用我们制定的 JS 函数.

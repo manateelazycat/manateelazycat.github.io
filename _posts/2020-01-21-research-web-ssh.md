@@ -62,7 +62,7 @@ wetty -p 8081 --base / --sshuser="$(whoami)" --sshauth=publickey -c bash
 
 启动后，浏览器直接访问 ```127.0.0.1:8081``` 地址，SSH over Web的效果图如下，得益于xterm.js的渲染技术，终端显示和交互的功能非常完整：
 
-![SSH over Web]({{site.url}}/pics/ssh-over-web/ssh-over-web.png)
+![SSH over Web]({{site.url}}/pics/ssh-over-web/ssh-over-web_update.png)
 
 
 ### 敬请期待EAF完美版终端模拟器

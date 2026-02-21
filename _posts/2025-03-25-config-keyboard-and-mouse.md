@@ -32,7 +32,7 @@ categories: [Curiosity]
 #### 展示效果
 下面是机器完整组装好的效果图
 
-![]({{site.url}}/pics/develop-computer/computer.jpeg)
+![]({{site.url}}/pics/develop-computer/computer_update.jpeg)
 
 4 个屏幕的效率非常高，左下角是我最爱的 Emacs，右下角是 deepin terminal 平常外部执行一些命令，上面分别是上推特和听网易云。 
 

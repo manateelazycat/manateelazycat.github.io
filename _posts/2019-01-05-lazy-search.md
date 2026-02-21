@@ -8,7 +8,7 @@ Emacs的isearch一般都是激活以后直接搜索字符并上下跳转, 但是
 
 2008年的时候, 写了插件 lazy-search.el, 主要的目的是, 自动激活当前光标处的符号, 然后直接按 s 或者 r 就可以在匹配的字符中快速跳转, 跳转到目标位置后按q退出搜索继续编程
 
-![lazy-search.el]({{site.url}}/pics/lazy-search/lazy-search.png)
+![lazy-search.el]({{site.url}}/pics/lazy-search/lazy-search_update.png)
 
 但是这个插件依赖我的另一个插件 one-key.el , on-key 是一个针对快捷键的菜单导航系统, one-key.el 虽然强大但是配置还是比较折腾的.
 

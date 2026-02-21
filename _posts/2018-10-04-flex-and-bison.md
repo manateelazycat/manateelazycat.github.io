@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
 ```
 
 编译命令:
-![compile wc.l]({{site.url}}/pics/flex-bison/flex-bison-1.png)
+![compile wc.l]({{site.url}}/pics/flex-bison/flex-bison-1_update.png)
 
 
 源码备注:
@@ -64,7 +64,7 @@ int main(int argc, char **argv) {
 ```
 
 编译命令:
-![compile convert.l]({{site.url}}/pics/flex-bison/flex-bison-2.png)
+![compile convert.l]({{site.url}}/pics/flex-bison/flex-bison-2_update.png)
 
 源码备注:
 * 匹配英式单词后, 转换称模式后的美式英语
@@ -154,7 +154,7 @@ YYSTYPE yylval;
 ```
 
 编译命令:
-![compile calculator]({{site.url}}/pics/flex-bison/flex-bison-3.png)
+![compile calculator]({{site.url}}/pics/flex-bison/flex-bison-3_update.png)
 
 源码备注:
 * ```#define YYSTYPE double``` 要放在顶部, 这样就可以把默认的 YYSTYPE 从 int 改成 double 来支持浮点数运算
@@ -226,7 +226,7 @@ int main(int argc, char **argv) {
 ```
 
 编译命令:
-![compile wc-file.l]({{site.url}}/pics/flex-bison/flex-bison-4.png)
+![compile wc-file.l]({{site.url}}/pics/flex-bison/flex-bison-4_update.png)
 
 阅读笔记:
 * %option noyywrap 是用于关闭 yywrap 这个鸡肋的函数, yywrap 主要用于调整 yyin 的值来读取新文件的内容

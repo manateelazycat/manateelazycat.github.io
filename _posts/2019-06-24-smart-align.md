@@ -20,7 +20,7 @@ Emacs其实有更强大的 align-regexp 功能，可以让用户对选中的内�
 
 针对上面的情况，写了 smart-align 这个插件，会自动选择当前光标处的代码块，一键就可以自动对齐代码块内的所有内容。
 
-![smart-align]({{site.url}}/pics/smart-align/smart-align.gif)
+![smart-align]({{site.url}}/pics/smart-align/smart-align_update.gif)
 
 安装方法见[Github](https://github.com/manateelazycat/smart-align)
 

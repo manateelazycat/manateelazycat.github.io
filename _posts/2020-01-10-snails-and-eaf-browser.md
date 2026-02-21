@@ -8,7 +8,7 @@ categories: [Emacs, EAF]
 
 今天用了同样的原理实现了 Snails 直接搜索浏览器历史的功能：
 
-![Snails and EAF Browser]({{site.url}}/pics/snails-and-eaf-browser/snails-and-eaf-browser.gif)
+![Snails and EAF Browser]({{site.url}}/pics/snails-and-eaf-browser/snails-and-eaf-browser_update.gif)
 
 1. 启动 Snails
 2. 搜索网址或者关键字

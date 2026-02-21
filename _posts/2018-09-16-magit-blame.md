@@ -12,7 +12,7 @@ categories: [Emacs]
 
 在Emacs中, 我们可以直接执行 magit-blame 命令反向从源代码定位到所有相关的 commint.
 就像下图一样, 我们可以在当前行相关的所有 commit 的 diff 中穿梭, 研究当前行相关的修改历史.
-![magit-blame default style]({{site.url}}/pics/magit-blame/magit-blame-1.png)
+![magit-blame default style]({{site.url}}/pics/magit-blame/magit-blame-1_update.png)
 
 如果定位到具体的 commit diff 位置, 可以直接按 C-c C-q 退出 blame mode.
 
@@ -30,7 +30,7 @@ categories: [Emacs]
 ```
 
 修改的风格如下图所示:
-![magit-blame sidebar style]({{site.url}}/pics/magit-blame/magit-blame-1.png)
+![magit-blame sidebar style]({{site.url}}/pics/magit-blame/magit-blame-1_update.png)
 
 commit 在左边, 源代码在右边, 直接在源代码中按回车或者移动光标即可实时查看 commit diff 同时又不影响源代码布局.
 

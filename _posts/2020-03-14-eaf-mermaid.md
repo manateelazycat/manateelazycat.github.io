@@ -20,12 +20,12 @@ categories: [Emacs, EAF]
 
 EAF会自动处理刷新的问题，当你在左边修改逻辑图文本内容时，EAF会自动在右边刷新文本对应的逻辑图。
 
-![EAF Mermaid]({{site.url}}/pics/eaf-mermaid/eaf-mermaid.gif)
+![EAF Mermaid]({{site.url}}/pics/eaf-mermaid/eaf-mermaid_update.gif)
 
 ### 实验
 只需要短短的几行文本就可以自动生成EAF Mermaid插件的流程图：
 
-![EAF Mermaid]({{site.url}}/pics/eaf-mermaid/eaf-mermaid.png)
+![EAF Mermaid]({{site.url}}/pics/eaf-mermaid/eaf-mermaid_update.png)
 
 <pre>
 ```mermaid

@@ -12,4 +12,4 @@ categories: [AI]
 
 这样大大提高了 AI 编程的效率，等待这个任务的时候，可以测试其他任务
 
-![]({{site.url}}/pics/vibe-kanban/vibe-kanban.jpeg)
+![]({{site.url}}/pics/vibe-kanban/vibe-kanban_update.jpeg)

@@ -9,7 +9,7 @@ EAF的输入事件的原理主要是在Emacs截获键盘事件，然后通过DBu
 
 这种处理方法的优势是Emacs可以一直保持键盘的全局控制，劣势是因为Qt控件无法直接处理键盘事件，导致用户无法在EAF浏览器中输入中文。
 
-![EAF edit focus text]({{site.url}}/pics/eaf-edit-focus-text/1.png)
+![EAF edit focus text]({{site.url}}/pics/eaf-edit-focus-text/1_update.png)
 
 ### 解决方法
 解决方法思路如下：
@@ -51,6 +51,6 @@ activeElement.value = decodeURIComponent(escape(window.atob(newText)));
 2. Emacs窗口输入文本后，确认按 Ctrl + c Ctrl + c 发送输入内容给浏览器；
 3. 如果按Ctrl + c Ctrl + k则取消编辑。
 
-![EAF edit focus text]({{site.url}}/pics/eaf-edit-focus-text/2.png)
+![EAF edit focus text]({{site.url}}/pics/eaf-edit-focus-text/2_update.png)
 
 现在基本上可以做到不用Chrome,只用EAF浏览器了。

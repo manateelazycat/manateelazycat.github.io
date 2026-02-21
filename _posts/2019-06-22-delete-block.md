@@ -11,7 +11,7 @@ categories: [Emacs]
 
 今天写了一个插件，主要融合 ```skip-syntax-forward``` ```skip-syntax-backward``` 和 ```subword-mode``` , 使得Emacs可以快速向左和向右进行语法块删除，同时遇到骆驼风格单词的时候可以快速删除子单词。
 
-![delete-block]({{site.url}}/pics/delete-block/delete-block.gif)
+![delete-block]({{site.url}}/pics/delete-block/delete-block_update.gif)
 
 安装方法见[Github](https://github.com/manateelazycat/delete-block)
 

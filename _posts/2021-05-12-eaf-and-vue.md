@@ -4,7 +4,7 @@ title: EAF音乐播放器发布啦！
 categories: [Emacs, EAF]
 ---
 
-![EAF and vue.js]({{site.url}}/pics/eaf-and-vue/eaf-and-vue.png)
+![EAF and vue.js]({{site.url}}/pics/eaf-and-vue/eaf-and-vue_update.png)
 
 最近用Vue.js给EAF写了一个音乐播放器，主要解决了一项关键技术 “Elisp直接调用Vue.js的函数", 原理如下：
 

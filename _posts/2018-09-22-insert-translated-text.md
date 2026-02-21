@@ -13,21 +13,21 @@ categories: [Emacs]
 2. 正常输入中文
 3. 中文后输入空格自动查询翻译并替换成符合当前语言风格的变量名(或函数名)
 
-![insert translated name]({{site.url}}/pics/insert-translated-text/insert-translated-text-1.gif)
+![insert translated name]({{site.url}}/pics/insert-translated-text/insert-translated-text-1_update.gif)
 
 如果当前光标在注释或者字符串区域, 会自动插入英文注释:
 1. 执行 ```insert-translated-name-insert``` 命令进入输入激活模式
 2. 正常输入中文
 3. 中文后输入空格自动查询翻译并替换成英文注释
 
-![insert english comment]({{site.url}}/pics/insert-translated-text/insert-translated-text-2.gif)
+![insert english comment]({{site.url}}/pics/insert-translated-text/insert-translated-text-2_update.gif)
 
 如果你安装了 [pyim](https://github.com/tumashu/pyim) 输入法，写英文注释的时候会自动激活切换输入法：
 1. 执行 ```insert-translated-name-insert``` 命令进入输入激活模式，并自动激活中文（不用手动切换中文输入法）
 2. 正常输入中文
 3. 中文后输入空格自动查询翻译并替换成英文注释（并自动切换成英文输入状态）
 
-![pyim]({{site.url}}/pics/insert-translated-text/insert-translated-text-3.gif)
+![pyim]({{site.url}}/pics/insert-translated-text/insert-translated-text-3_update.gif)
 
 
 ### 安装

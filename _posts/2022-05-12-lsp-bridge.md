@@ -14,7 +14,7 @@ lsp-bridge 通过 Python 多线程技术在 Emacs 和 LSP Server 之间建立一
 
 下面，我们通过讲解 lsp-bridge 架构协议图来学习其设计思想和协议细节：
 
-![lsp-bridge]({{site.url}}/pics/lsp-bridge/framework.png)
+![lsp-bridge]({{site.url}}/pics/lsp-bridge/framework_update.png)
 
 ### 工程模型
 首先上图分为两种模型，上面的部分是单文件模型，下面半部分是项目模型。
@@ -484,7 +484,7 @@ Client 向服务器发送当前光标的位置的时候， 要注意使用 utf-1
 
 ### 安装和使用 lsp-bridge
 
-![lsp-bridge]({{site.url}}/pics/lsp-bridge/screenshot.png)
+![lsp-bridge]({{site.url}}/pics/lsp-bridge/screenshot_update.png)
 
 lsp-bridge 安装很简单， 为了保持最新的内容， 请大家直接查看 lsp-bridge 的[README](https://github.com/manateelazycat/lsp-bridge)
 

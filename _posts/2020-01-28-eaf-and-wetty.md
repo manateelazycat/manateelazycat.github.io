@@ -29,8 +29,8 @@ categories: [Emacs, EAF]
 
 #### htop命令
 
-![EAF and Wetty]({{site.url}}/pics/eaf-and-wetty/eaf-and-wetty.gif)
+![EAF and Wetty]({{site.url}}/pics/eaf-and-wetty/eaf-and-wetty_update.gif)
 
 #### sl命令
 
-![EAF and Wetty]({{site.url}}/pics/eaf-and-wetty/eaf-and-wetty-1.gif)
+![EAF and Wetty]({{site.url}}/pics/eaf-and-wetty/eaf-and-wetty-1_update.gif)

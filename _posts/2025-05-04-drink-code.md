@@ -4,7 +4,7 @@ title: 喝酒可以修疑难杂症是什么原理？
 categories: [Curiosity]
 ---
 
-![]({{site.url}}/pics/drink-code/genius.jpg)
+![]({{site.url}}/pics/drink-code/genius_update.jpg)
 
 因为程序员是多重人格，有时候状态好的时候觉得自己是超人，但是状态不好得时候觉得自己是傻逼。
 

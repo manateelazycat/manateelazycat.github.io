@@ -12,7 +12,7 @@ categories: [Emacs]
 我们阅读英文材料的时候, 难免会看到不认识的单词, 所以我十多年前给Emacs写了一个星际译王的插件 [sdcv.el](https://github.com/manateelazycat/sdcv) , 按一个快捷键就可以翻译当前的英文单词, 或者把输入的中文翻译成英文单词.
 
 单词弹出的时候会同步真人发音, 就像这样:
-![sdcv.el]({{site.url}}/pics/emacs-study-english/emacs-study-english-1.png)
+![sdcv.el]({{site.url}}/pics/emacs-study-english/emacs-study-english-1_update.png)
 
 ### 输入英文
 有时候写英文文档的时候, 记不得复杂单词的拼写, 这个时候就需要一个插件帮忙补全拼写, 最好补全的时候显示一下单词是动词,名词还是形容词, 免得闹语法错误.
@@ -21,7 +21,7 @@ categories: [Emacs]
 
 妈妈再也不用担心我的英文拼写了, 就像这样:
 
-![company-english-helper.el.el]({{site.url}}/pics/emacs-study-english/emacs-study-english-2.png)
+![company-english-helper.el.el]({{site.url}}/pics/emacs-study-english/emacs-study-english-2_update.png)
 
 ### 英文文档
 会认识英文单词和正确拼写英文单词是一回事, 但是能够写出流畅的, 老外可以看得懂的英文文档又是另外一回事.
@@ -30,7 +30,7 @@ categories: [Emacs]
 
 所以我几个月前写了一个自动翻译的插件 [insert-translated-name.el](https://github.com/manateelazycat/insert-translated-name) 的插件, 当你需要输入英文文档, 注释或者函数名时, 这个插件会自动通过Google或者有道自动查询翻译并替换输入的中文字符, 就像这样:
 
-![insert-translated-name.el]({{site.url}}/pics/emacs-study-english/emacs-study-english-3.png)
+![insert-translated-name.el]({{site.url}}/pics/emacs-study-english/emacs-study-english-3_update.png)
 
 这个插件会自动识别当前的编程语言, 代码区域或者注释区域, 当你输入完中文按空格以后, 它会自动插入不同风格的翻译形式, 比如C语言就插入 foo-bar 风格的翻译字符, Java就插入 fooBar 风格的, 字符串里面, 注释区域或者文本模式的时候, 就插入首字母大写并按照空格划分的英文语句.
 

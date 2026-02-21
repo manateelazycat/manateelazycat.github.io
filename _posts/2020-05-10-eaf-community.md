@@ -44,7 +44,7 @@ Emacs的劣势也是因为它太古老了，导致在多线程和图形扩展能
 EAF的愿景是在保留Emacs古老的黑客文化和庞大的开发者插件生态前提下，通过EAF框架扩展Emacs的多线程和图形渲染能力，实现Live In Emacs的理想。
 
 ### EAF架构设计
-![EAF 架构图]({{site.url}}/pics/eaf-community/framework.png)
+![EAF 架构图]({{site.url}}/pics/eaf-community/framework_update.png)
 
 用最通俗的话来讲, EAF其实做的工作和手机贴膜差不多, 就是先把 PyQt5 的图形程序运行起来, 然后通过QWindow::setParent 的技术把PyQt5的窗口粘贴到Emacs窗口对应的位置。
 

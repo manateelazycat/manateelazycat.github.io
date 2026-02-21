@@ -20,7 +20,7 @@ categories: [Emacs]
 
 所以最终的效果是， 不论搜索后端的数据量有多大， blink-search 都可以实现闪电般的补全速度， 就像项目名称本身的寓意一样：
 
-![blink-search.el]({{site.url}}/pics/blink-search/blink-search.png)
+![blink-search.el]({{site.url}}/pics/blink-search/blink-search_update.png)
 
 {:.line-quote}
 眨眼之间，搜索完成

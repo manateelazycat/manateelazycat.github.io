@@ -16,8 +16,8 @@ categories: [Emacs, EAF]
 
 下面是一些 EAF PyQTerminal 的截图欣赏， 欢迎大家加入 EAF PyQTerminal 的开发工作中来。 ;)
 
-![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/1.png)
+![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/1_update.png)
 
-![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/2.png)
+![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/2_update.png)
 
-![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/3.png)
+![EAF PyQTerminal]({{site.url}}/pics/eaf-pyqterminal/3_update.png)

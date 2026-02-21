@@ -16,7 +16,7 @@ categories: [Emacs, EAF]
 
 这在阅读文档到中间位置的时候特别有用，我们不需要回到目录页面，然后手动去查找目录的标题和页码信息，在阅读到文档的任何地方都可以快速搜索目录标题并跳转。
 
-![Snails and EAF]({{site.url}}/pics/snails-and-eaf/snails-and-eaf.gif)
+![Snails and EAF]({{site.url}}/pics/snails-and-eaf/snails-and-eaf_update.gif)
 
 实现原理：
 

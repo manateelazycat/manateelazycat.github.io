@@ -4,7 +4,7 @@ title: 一天自制自己的地图软件
 categories: [Tech]
 ---
 
-![]({{site.url}}/pics/your-own-map/1.jpeg)
+![]({{site.url}}/pics/your-own-map/1_update.jpeg)
 
 一天自制地图规划的核心技术小黑板：
 

@@ -6,11 +6,11 @@ categories: [Emacs, EAF]
 
 最近晚上才有空看会儿书，EAF PDF阅读器默认是渲染PDF文件的原色，一般的PDF文件背景都是白色的，就像这样。
 
-![Light Mode]({{site.url}}/pics/eaf-pdf-support-inverted-mode/eaf_light_mode.png)
+![Light Mode]({{site.url}}/pics/eaf-pdf-support-inverted-mode/eaf_light_mode_update.png)
 
 晚上看的时间久了眼睛就会很累，一直想添加一个模式切换的功能，晚上可以用夜晚模式来读书，就像下面这样。
 
-![Dark Mode]({{site.url}}/pics/eaf-pdf-support-inverted-mode/eaf_dark_mode.png)
+![Dark Mode]({{site.url}}/pics/eaf-pdf-support-inverted-mode/eaf_dark_mode_update.png)
 
 最开始的时候读了 PyMupdf 的手册，找到API
 

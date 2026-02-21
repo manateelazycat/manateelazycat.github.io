@@ -121,9 +121,9 @@ valgrind --tool=callgrind --simulate-cache=yes --collect-jumps=yes emacs
 kcachegrind callgrind.out.PID
 ```
 
-![]({{site.url}}/pics/emacs_gc/1.png)
+![]({{site.url}}/pics/emacs_gc/1_update.png)
 
-![]({{site.url}}/pics/emacs_gc/2.png)
+![]({{site.url}}/pics/emacs_gc/2_update.png)
 
 目前看 mark_localized_symbol 函数的性能占比非常高。
 

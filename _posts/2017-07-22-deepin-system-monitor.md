@@ -7,7 +7,7 @@ categories: [Deepin]
 ### 为什么要做深度系统监视器？
 为了达到深度操作系统UI/UX大统一的‘雄伟’目标，闲来无事写了深度系统监视器，先发一张图镇楼，哈哈哈。
 
-![]({{site.url}}/pics/deepin-system-monitor/deepin-system-monitor-1.png)
+![]({{site.url}}/pics/deepin-system-monitor/deepin-system-monitor-1_update.png)
 
 社区的开源爱好者马上会跳出来说，深度你们又造轮子，你们造的轮子比Gnome和KDE的系统监视器好吗？
 
@@ -16,9 +16,9 @@ categories: [Deepin]
 深度系统监视器首先要解决的问题是：提高用户操作的易用性
 Gnome的系统监视器默认分开了三个标签，把进程列表和资源总览分开了，看进程列表的状态就不知道资源总览的信息，看资源总览信息就不知道进程列表的状态，而且还在第三个标签提供了一个鸡肋的磁盘设备的空间，只能看啥操作都不能做，还不如放在文件管理器或者磁盘管理工具里面。
 
-![]({{site.url}}/pics/deepin-system-monitor/deepin-system-monitor-2.png)
+![]({{site.url}}/pics/deepin-system-monitor/deepin-system-monitor-2_update.png)
 
-![]({{site.url}}/pics/deepin-system-monitor/deepin-system-monitor-3.png)
+![]({{site.url}}/pics/deepin-system-monitor/deepin-system-monitor-3_update.png)
 
 所以针对这些不爽的设计，深度系统监视器把资源总览信息和列表的进程信息放在一起，一眼就可以知道现在电脑的整体负载，而且用户马上就可以在右边查看高资源占用的进程，再也不用来回费劲的切换标签去看这两个本来就应该在一起的信息。
 
@@ -530,7 +530,7 @@ nethogs这种方式只能计算出TCP链接的网络流量，无法计算UDP链�
 
 这样用户就可以在系统监视器看到Wine程序的网络流量了，如下图所示：
 
-![]({{site.url}}/pics/deepin-system-monitor/deepin-system-monitor-4.png)
+![]({{site.url}}/pics/deepin-system-monitor/deepin-system-monitor-4_update.png)
 
 代码参考实现：
 

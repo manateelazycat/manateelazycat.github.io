@@ -21,6 +21,6 @@ categories: [Raspberry]
 
 其他发行版Arch Linux的步骤也是类似的, 下面是启动状态中树莓派的样子.
 
-![树莓派3B+]({{site.url}}/pics/build-raspberry-on-mac/build-raspberry-on-mac.jpg)
+![树莓派3B+]({{site.url}}/pics/build-raspberry-on-mac/build-raspberry-on-mac_update.jpg)
 
 系统灌好了, 我的电烙铁也差不多热了, 哈哈哈.

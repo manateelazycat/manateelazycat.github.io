@@ -8,7 +8,7 @@ categories: [Emacs, EAF]
 
 这个功能的用法很简单，当你在EAF PDF Viewer里面按 f 键后，EAF会自动在PDF所有可以跳转的地方，画上类似 Vimium 的按键线索：
 
-![Vimium Jump]({{site.url}}/pics/eaf-pdfviewer-link/eaf-pdfviewer-link.png)
+![Vimium Jump]({{site.url}}/pics/eaf-pdfviewer-link/eaf-pdfviewer-link_update.png)
 
 接着输入提示按键线索后，即可通过键盘跳转到链接对应的页面，特别在阅读PDF材料翻目录的时候特别有用。
 

@@ -8,7 +8,7 @@ categories: [Emacs, EAF]
 
 在 EAF PDF 插件中， 按 s 键输入需要搜索的字符， 即可在 PDF 显示匹配的位置， 再按一下 s 按键取消关键字高亮。
 
-![Search]({{site.url}}/pics/eaf-pdfviewer-search/eaf-pdfviewer-search.png)
+![Search]({{site.url}}/pics/eaf-pdfviewer-search/eaf-pdfviewer-search_update.png)
 
 搜索关键字后， 按 n 键跳到下一个关键字的位置， 按 N 键跳到最后一个关键字的位置。
 

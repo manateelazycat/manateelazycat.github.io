@@ -7,7 +7,7 @@ categories: [Deepin]
 深度录屏现在已经变成深度社区反馈问题的神器了，以前要大段文字才能表述清楚的问题反馈，现在直接用录屏录制一段，清清楚楚，不拖泥带水。社区的用户反馈简单，我们深度团队修复问题也迅速了。
 
 ### 总体架构
-![总体架构]({{site.url}}/pics/deepin-screen-recorder/deepin-screen-recorder-1.png)
+![总体架构]({{site.url}}/pics/deepin-screen-recorder/deepin-screen-recorder-1_update.png)
 
 深度录屏这个小工具的总体架构非常简单，从上到下依次为：
 1、进程启动的初始化操作，包括单实例处理和快捷键处理（第一次按快捷键开始录制，再按一次结束录制）

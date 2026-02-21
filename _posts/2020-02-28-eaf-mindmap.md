@@ -6,7 +6,7 @@ categories: [Emacs, EAF]
 
 平常写项目文档经常用到思维导图帮助梳理思路，最近下班后用EAF结合jsMind这个库自己写了一个思维导图软件:
 
-![EAF Mindmap]({{site.url}}/pics/eaf-mindmap/eaf-mindmap.gif)
+![EAF Mindmap]({{site.url}}/pics/eaf-mindmap/eaf-mindmap_update.gif)
 
 这个思维导图插件主要的功能有：
 

@@ -8,7 +8,7 @@ categories: [Emacs, EAF]
 
 现在只需要在PDF Viewer里面双击，然后移动鼠标选择区域，最后按一下 Alt + W 键即可从PDF复制文本到Emacs Keyring.
 
-![Select Text]({{site.url}}/pics/eaf-pdfviewer-support-select/eaf-pdfviewer-support-select.gif)
+![Select Text]({{site.url}}/pics/eaf-pdfviewer-support-select/eaf-pdfviewer-support-select_update.gif)
 
 有了这个功能为基础，估计以后可以做到选择PDF文档时，自动把标注内容备份到Org-Mode中，甚至可以在PDF和Org-Mode之间进行联动，反复对学习材料进行复习温故。
 

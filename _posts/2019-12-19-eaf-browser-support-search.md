@@ -6,7 +6,7 @@ categories: [Emacs, EAF]
 
 社区大神提交了一个[新的补丁](https://github.com/manateelazycat/emacs-application-framework/commit/f5526b01c90d7ac2df22d5f4d06a98f2ad4d76d9)
 
-![Search]({{site.url}}/pics/eaf-browser-support-search/eaf-browser-support-search.png)
+![Search]({{site.url}}/pics/eaf-browser-support-search/eaf-browser-support-search_update.png)
 
 现在可以直接在EAF Browser里面按 Ctrl + s 或者 Ctrl + r 进行浏览器页面内容搜索了，所有的搜索细节都和Emacs细节保持一致：
 1. 第一次按 Ctrl + s 或 Ctrl + r 键进入搜索模式，输入搜索关键字

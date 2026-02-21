@@ -17,21 +17,21 @@ categories: [Travel]
 当地的美食非常像贵州风味的做法, 我们在上山之前的一个路边小餐馆, 三菜一汤才 70~80, 美味又实惠.
 
 住宿的话建议住在山下的县城里, 条件要好很多, 这次我们住的是景区门口的客栈, 不管是吃的还是住宿都不是很好 (没想到老司机第一站就翻车了, 手动捂脸)
-![141549774282_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-c9be28fc0ccd2d99.jpg)
+![141549774282_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-c9be28fc0ccd2d99_update.jpg)
 
-![151549774283_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-108673a5bf43c453.jpg)
+![151549774283_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-108673a5bf43c453_update.jpg)
 
-![161549774284_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-09f853c0d5b5212e.jpg)
+![161549774284_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-09f853c0d5b5212e_update.jpg)
 
-![171549774285_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-3eb9eb44c5c169eb.jpg)
+![171549774285_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-3eb9eb44c5c169eb_update.jpg)
 
-![181549774286_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-e808d5c1e2e88178.jpg)
+![181549774286_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-e808d5c1e2e88178_update.jpg)
 
-![191549774287_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-e6a12952b22756d0.jpg)
+![191549774287_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-e6a12952b22756d0_update.jpg)
 
-![201549774288_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d08e750b1e7bb9db.jpg)
+![201549774288_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d08e750b1e7bb9db_update.jpg)
 
-![211549774289_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-2dd4e3d30d965bf8.jpg)
+![211549774289_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-2dd4e3d30d965bf8_update.jpg)
 
 也许是去过了黄山和银川的寺口大峡谷, 对奇石怪林和丹霞之险已经没那么新奇了, 我们一家第二天早早的起床随着缆车就登山山顶开始游览, 景区不是很大, 2 个多小时就游览完了, 下山的时候比较坑, 说是可以走下山, 但是是没有下山路的, 只能被迫坐索道.
 
@@ -55,41 +55,41 @@ categories: [Travel]
 2. 袁家界和杨家界 (阿凡达的取景地), 因为景区有免费的环保车接送, 其实一天就足够游览
 
 
-![221549775640_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-0dafe95aae3d38a6.jpg)
+![221549775640_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-0dafe95aae3d38a6_update.jpg)
 
-![231549775641_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-bd0183e292a3de40.jpg)
+![231549775641_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-bd0183e292a3de40_update.jpg)
 
-![241549775642_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-14b83fd8dbeca6d0.jpg)
+![241549775642_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-14b83fd8dbeca6d0_update.jpg)
 
-![251549775643_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-c7429b9c3c36ebc5.jpg)
+![251549775643_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-c7429b9c3c36ebc5_update.jpg)
 
-![261549775644_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-9824fd18c1f0ec19.jpg)
+![261549775644_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-9824fd18c1f0ec19_update.jpg)
 
-![271549775645_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-238f8c8572cd1fb9.jpg)
+![271549775645_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-238f8c8572cd1fb9_update.jpg)
 
-![281549775646_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-703384328d9139a1.jpg)
+![281549775646_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-703384328d9139a1_update.jpg)
 
-![291549775647_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-80c06167bf9e1ae2.jpg)
+![291549775647_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-80c06167bf9e1ae2_update.jpg)
 
-![301549775648_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-c304c4a16200ba43.jpg)
+![301549775648_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-c304c4a16200ba43_update.jpg)
 
-![311549775656_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-f0d7722dcce5419b.jpg)
+![311549775656_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-f0d7722dcce5419b_update.jpg)
 
-![321549775657_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-1f422da603a27147.jpg)
+![321549775657_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-1f422da603a27147_update.jpg)
 
-![331549775658_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-1a7d0d0cd47c6a06.jpg)
+![331549775658_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-1a7d0d0cd47c6a06_update.jpg)
 
-![341549775659_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-071acaec2ea64568.jpg)
+![341549775659_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-071acaec2ea64568_update.jpg)
 
-![351549775660_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-349f982a8d9138ab.jpg)
+![351549775660_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-349f982a8d9138ab_update.jpg)
 
-![361549775661_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-8ae34668af1dfc23.jpg)
+![361549775661_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-8ae34668af1dfc23_update.jpg)
 
-![371549775662_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-ba65d188d0f2a943.jpg)
+![371549775662_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-ba65d188d0f2a943_update.jpg)
 
-![381549775663_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-f8d4fe331a8e62e3.jpg)
+![381549775663_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-f8d4fe331a8e62e3_update.jpg)
 
-![391549775664_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-77ab166372759da3.jpg)
+![391549775664_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-77ab166372759da3_update.jpg)
 
 对于第二站的点评:
 * 金鞭溪的感觉就像走进了一个原始森林的小溪中, 逆流而上, 到处都是参天的松柏, 夏天来一定是天然的大自然氧吧, 沿途到处都是成群结队的猴子, 进景区千万不要带任何吃的, 我们亲眼看到一大堆猴子直接上手抓破口袋一抢而哄的场景, 非常凶狠, 就是一帮土匪
@@ -107,29 +107,29 @@ categories: [Travel]
 
 武隆的整个行程还是比较轻松的, 第一天早上游览天生三桥, 天生三桥出口有直接到天坑地缝入口的大巴, 下午轻轻松松即可游览完天坑地缝. 第二天早上开车上山到仙女山山顶玩一下山顶的自然滑雪场, 坐着滑雪圈, 还是挺刺激的, 比较适合带小朋友一起玩.
 
-![401549787122_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-32177e10c9708cc8.jpg)
+![401549787122_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-32177e10c9708cc8_update.jpg)
 
-![411549787123_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-62ceca1d09e54124.jpg)
+![411549787123_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-62ceca1d09e54124_update.jpg)
 
-![421549787124_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-bc6ff8e461f061d1.jpg)
+![421549787124_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-bc6ff8e461f061d1_update.jpg)
 
-![431549787125_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d17ce3b859c58331.jpg)
+![431549787125_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d17ce3b859c58331_update.jpg)
 
-![441549787126_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-ff0f8ca90446a8d7.jpg)
+![441549787126_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-ff0f8ca90446a8d7_update.jpg)
 
-![451549787127_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d8c50e052ce5f6eb.jpg)
+![451549787127_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d8c50e052ce5f6eb_update.jpg)
 
-![461549787128_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-44697f3b0dac9265.jpg)
+![461549787128_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-44697f3b0dac9265_update.jpg)
 
-![471549787129_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-011cef1c3c3052cc.jpg)
+![471549787129_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-011cef1c3c3052cc_update.jpg)
 
-![481549787130_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-6c4f851919912f4e.jpg)
+![481549787130_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-6c4f851919912f4e_update.jpg)
 
-![491549787131_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-203c5b52483653fd.jpg)
+![491549787131_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-203c5b52483653fd_update.jpg)
 
-![501549787132_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-473937e5cd55f9cb.jpg)
+![501549787132_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-473937e5cd55f9cb_update.jpg)
 
-![511549787133_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-859f2b6df2f54a5f.jpg)
+![511549787133_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-859f2b6df2f54a5f_update.jpg)
 
 对于第三站的点评
 * 武隆是我们旅途中临时添加的景点, 但是景色之美和震撼却是超出我们的期望
@@ -139,9 +139,9 @@ categories: [Travel]
 
 #### 四川老家
  四川老家主要是吃酒, 啥都不说了, 吃了妹妹做的麻辣味香肠和羊肉杂, 满满的满足感.
-![521549788912_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-29af695b3d227538.jpg)
+![521549788912_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-29af695b3d227538_update.jpg)
 
-![531549788913_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-a89176d681eada75.jpg)
+![531549788913_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-a89176d681eada75_update.jpg)
 
 #### 泸沽湖
 门票: 75 元/人
@@ -152,23 +152,23 @@ categories: [Travel]
 
 头一天到泸沽湖都晚上了, 除了满天繁星什么都看不到, 到了第二天早上起床后, 才真的体验到泸沽湖的美, 泸沽湖为四川最大, 全国第三大的淡水湖, 水清澈见底, 湖面上有到处都是野鸭子, 西伯利亚飞来过冬的海鸥和小渔船, 加上规划很好, 湖边没有商业化的小摊贩, 吃的住的都在集中的半岛上, 90% 的沿途都是自然风光和野生动物, 在湖边的山坡上看到成群的羊群牛群...
 
-![541549788914_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d3f7bb38a683a5cd.jpg)
+![541549788914_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d3f7bb38a683a5cd_update.jpg)
 
-![551549788915_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-60527b7159b4d834.jpg)
+![551549788915_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-60527b7159b4d834_update.jpg)
 
-![561549788916_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-17b4106b60ceb76b.jpg)
+![561549788916_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-17b4106b60ceb76b_update.jpg)
 
-![571549788917_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-ffe77d9deb0b549c.jpg)
+![571549788917_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-ffe77d9deb0b549c_update.jpg)
 
-![581549788918_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-b4db25802f50b06d.jpg)
+![581549788918_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-b4db25802f50b06d_update.jpg)
 
-![591549788919_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d83405d249ff9267.jpg)
+![591549788919_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d83405d249ff9267_update.jpg)
 
-![601549788920_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-acd9d9635d443576.jpg)
+![601549788920_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-acd9d9635d443576_update.jpg)
 
-![611549788921_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-91149bee320ed7cd.jpg)
+![611549788921_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-91149bee320ed7cd_update.jpg)
 
-![621549788922_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-1bac501e4042b6b7.jpg)
+![621549788922_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-1bac501e4042b6b7_update.jpg)
 
 对于第四站泸沽湖的点评:
 * 泸沽湖的美, 那种自带滤镜的美, 不像大海, 沙漠和雪山, 它的美不是那种你一眼看去就会为之震撼的美, 它的美是那种幽静的美, 你的心越平静你越能体验它的美, 如果说别的风景是饕餮盛宴, 泸沽湖的美就是一徐清茶, 需要你静静的品味, 越品味越陶醉其中
@@ -182,9 +182,9 @@ categories: [Travel]
 
 泸沽湖环湖完了以后, 就驱车前往丽江玉龙县的白沙古镇, 中间的这段路就叫做丽宁公路, 先给你们几张图感受一下.
 
-![641549790841_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-9cd39fd2a90e6e47.jpg)
+![641549790841_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-9cd39fd2a90e6e47_update.jpg)
 
-![651549790842_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-95304e441de15c5c.jpg)
+![651549790842_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-95304e441de15c5c_update.jpg)
 
 在这条公路上开, 每隔五秒就是导航播报: 前方急下坡, 前方有急弯, 旁边有落石...
 全程都是急下坡后马上左转 90°急弯后马上又 180°向右的发卡弯, 周而复始, 如果不是老司机千万不要开这条路, 太危险了, 因为当你躲避落石的同时往往会和对面的来车迎面擦过.
@@ -198,21 +198,21 @@ categories: [Travel]
 
 玉龙雪山这边天非常干, 要多注意喝水和抹唇膏, 要不是会变成洪七公的嘴唇的, 哈哈哈哈.
 
-![661549791434_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-0e41ec2181783315.jpg)
+![661549791434_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-0e41ec2181783315_update.jpg)
 
-![671549791435_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-4f6968294b8b50c9.jpg)
+![671549791435_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-4f6968294b8b50c9_update.jpg)
 
-![681549791436_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-457ee731a42e9d53.jpg)
+![681549791436_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-457ee731a42e9d53_update.jpg)
 
-![691549791437_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-1b4e5a96836fb8f7.jpg)
+![691549791437_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-1b4e5a96836fb8f7_update.jpg)
 
-![701549791438_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-8f84c878b2e3257e.jpg)
+![701549791438_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-8f84c878b2e3257e_update.jpg)
 
-![711549791439_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-43beba652ab332d1.jpg)
+![711549791439_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-43beba652ab332d1_update.jpg)
 
-![721549791440_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-e005b196037da5b0.jpg)
+![721549791440_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-e005b196037da5b0_update.jpg)
 
-![731549791441_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-f0158009fab9a50a.jpg)
+![731549791441_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-f0158009fab9a50a_update.jpg)
 
 第五站评价:
 * 玉龙雪山不像大多数川西和藏区的雪山, 雪并不多, 海拔也不是那么夸张(5596 米), 它给我的感觉非常非常的安静, 甚至有一点暖和的感觉
@@ -225,27 +225,27 @@ categories: [Travel]
 
 所以这次直接砍掉了稻城亚丁, 转而在朋友的青旅中度过春节, 我们一家在那里青旅度过的非常非常快乐, 感谢老朋友贤民的招待 (贤民也是电脑高手, deepin 的粉丝), 还有米汤, 民谣小川, 彪叔以及倩倩的热情招待, 如果你也是文艺青年, 厌倦了商业化的酒店, 不妨也去那里青旅住几天, 看着雪山, 每天和民谣歌手和各国友人畅聊人生, 那才是生活
 
-![741549792072_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-6fc3e3fe68a20b00.jpg)
+![741549792072_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-6fc3e3fe68a20b00_update.jpg)
 
-![751549792073_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-df855f5da0a263fc.jpg)
+![751549792073_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-df855f5da0a263fc_update.jpg)
 
-![771549792075_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-ffee0f18c2a3bafd.jpg)
+![771549792075_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-ffee0f18c2a3bafd_update.jpg)
 
-![781549792076_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-0cf3350319b2fa0f.jpg)
+![781549792076_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-0cf3350319b2fa0f_update.jpg)
 
-![791549792077_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-f1cf028a7dda014c.jpg)
+![791549792077_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-f1cf028a7dda014c_update.jpg)
 
-![801549792078_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-490eb373f4f60bd9.jpg)
+![801549792078_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-490eb373f4f60bd9_update.jpg)
 
-![811549792079_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-b5a1fdbd74aecf03.jpg)
+![811549792079_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-b5a1fdbd74aecf03_update.jpg)
 
-![821549792080_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-62c543e09e2949c1.jpg)
+![821549792080_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-62c543e09e2949c1_update.jpg)
 
-![831549792081_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-11c5a686c16d000b.jpg)
+![831549792081_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-11c5a686c16d000b_update.jpg)
 
-![841549792082_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-94d61e471eb30bbb.jpg)
+![841549792082_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-94d61e471eb30bbb_update.jpg)
 
-![851549792083_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-eaeaebaf6155fb6a.jpg)
+![851549792083_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-eaeaebaf6155fb6a_update.jpg)
 
 #### 洱海
 门票: 无
@@ -254,11 +254,11 @@ categories: [Travel]
 
 洱海就是一个缩小版的泸沽湖, 但是我却很难去赞美洱海, 因为商业化太严重了, 到处都是美食街, 人头和污染, 走在人山人海中, 很难提起对大自然的兴致.
 
-![871549792497_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-84f68d1ef1557f81.jpg)
+![871549792497_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-84f68d1ef1557f81_update.jpg)
 
 美景不如泸沽湖, 但是小吃好丰盛, 除了吃小吃外, 最喜欢这道菜, 水性杨花, 就是生在在大理湖上的一种叫 "水性杨花" 的植物, 吃起来特别嫩, 入口即化的感觉, 传说这种植物必须生在在矿泉水水质的水域中才能存活.
 
-![WechatIMG86.jpeg]({{site.url}}/pics/tourism-yunnan-bei/5957-e52b85ba5222b49f.jpeg)
+![WechatIMG86.jpeg]({{site.url}}/pics/tourism-yunnan-bei/5957-e52b85ba5222b49f_update.jpeg)
 
 第六站评价:
 * 洱海全面不如泸沽湖, 强烈推荐看了泸沽湖就 pass 洱海吧
@@ -269,17 +269,17 @@ categories: [Travel]
 
 高速路上看到好多壮美的石林风景, 冲动的下了高速进景区游览, 但是证明冲动是魔鬼, 因为进景区已经下午 6 点了, 时间太匆忙, 无法深入的游览石林的魅力.
 
-![881549792890_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-a89cfe948c1264a6.jpg)
+![881549792890_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-a89cfe948c1264a6_update.jpg)
 
-![891549792891_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-cb991e22a2b7dace.jpg)
+![891549792891_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-cb991e22a2b7dace_update.jpg)
 
-![901549792892_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-45042fe51b5f6757.jpg)
+![901549792892_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-45042fe51b5f6757_update.jpg)
 
-![911549792893_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-42a0495af50159da.jpg)
+![911549792893_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-42a0495af50159da_update.jpg)
 
-![921549792894_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-71a4ba8c4fe90ceb.jpg)
+![921549792894_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-71a4ba8c4fe90ceb_update.jpg)
 
-![931549792895_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-424df4fcb45499c6.jpg)
+![931549792895_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-424df4fcb45499c6_update.jpg)
 
 
 第七站评价:
@@ -303,54 +303,54 @@ categories: [Travel]
 妆点一座座孤峰
 把淡淡的清香洒满人间
 
-![951549793437_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-54078979a606a428.jpg)
+![951549793437_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-54078979a606a428_update.jpg)
 
-![961549793438_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-817c304dc248db79.jpg)
+![961549793438_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-817c304dc248db79_update.jpg)
 
-![971549793439_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-51b14d1c42110cd0.jpg)
+![971549793439_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-51b14d1c42110cd0_update.jpg)
 
-![981549793440_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-0a537fa651507cb5.jpg)
+![981549793440_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-0a537fa651507cb5_update.jpg)
 
-![991549793441_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-38d96e6ad4708e12.jpg)
+![991549793441_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-38d96e6ad4708e12_update.jpg)
 
-![1001549793442_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-8c15334ffe8da582.jpg)
+![1001549793442_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-8c15334ffe8da582_update.jpg)
 
-![1011549793443_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d1fb4a30c53aee57.jpg)
+![1011549793443_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-d1fb4a30c53aee57_update.jpg)
 
-![1021549793444_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-99271f2b15992f2f.jpg)
+![1021549793444_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-99271f2b15992f2f_update.jpg)
 
-![1031549793445_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-a6f179e5c1961acb.jpg)
+![1031549793445_.pic_hd.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-a6f179e5c1961acb_update.jpg)
 
-![1041549793447_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-4460b67ce6520e16.jpg)
+![1041549793447_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-4460b67ce6520e16_update.jpg)
 
-![1051549793448_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-87cf083cffd26d65.jpg)
+![1051549793448_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-87cf083cffd26d65_update.jpg)
 
-![1061549793449_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-073460d994482e72.jpg)
+![1061549793449_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-073460d994482e72_update.jpg)
 
-![1071549793450_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-c64b9037903e9c8b.jpg)
+![1071549793450_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-c64b9037903e9c8b_update.jpg)
 
-![1081549793451_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-bb1b8f4aa6a25812.jpg)
+![1081549793451_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-bb1b8f4aa6a25812_update.jpg)
 
-![1091549793452_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-57cb202959bfd223.jpg)
+![1091549793452_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-57cb202959bfd223_update.jpg)
 
-![1131549793489_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-40f9f61164a304da.jpg)
+![1131549793489_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-40f9f61164a304da_update.jpg)
 
-![1141549793490_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-6c25c1adff7d0a8d.jpg)
+![1141549793490_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-6c25c1adff7d0a8d_update.jpg)
 
-![1151549793491_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-56c5f1618a9999c2.jpg)
+![1151549793491_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-56c5f1618a9999c2_update.jpg)
 
-![1161549793492_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-e597db826cdd5faa.jpg)
+![1161549793492_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-e597db826cdd5faa_update.jpg)
 
-![1171549793493_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-bf24e09c2e1b2ab3.jpg)
+![1171549793493_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-bf24e09c2e1b2ab3_update.jpg)
 
 
 油菜花田旁有卖这种五彩糯米, 是用山上小花小草染色后晾干制成的, 给小朋友买了一碗, 超级好吃.
 
-![1101549793453_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-6f45857b99e97b55.jpg)
+![1101549793453_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-6f45857b99e97b55_update.jpg)
 
-![1111549793454_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-c9d8131f6cdf7dc6.jpg)
+![1111549793454_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-c9d8131f6cdf7dc6_update.jpg)
 
-![1121549793455_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-40086890ad68161f.jpg)
+![1121549793455_.pic.jpg]({{site.url}}/pics/tourism-yunnan-bei/5957-40086890ad68161f_update.jpg)
 
 
 第八站评价:

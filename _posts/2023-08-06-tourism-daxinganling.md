@@ -10,7 +10,7 @@ categories: [Travel]
 
 从哈尔滨出发， 途径小兴安岭、 大兴安岭北、 中俄边境、 呼伦贝尔、 大兴安岭南， 再回到哈尔滨， 全程 3307 公里， 历时 14 天。
 
-![]({{site.url}}/pics/tourism-daxinganling/plan.png)
+![]({{site.url}}/pics/tourism-daxinganling/plan_update.png)
 
 备注： 路线图是由我开发的 [eaf-map](https://github.com/emacs-eaf/eaf-map/) 地图软件所制作， 主要的功能是提供超过 20 个景点以上的路径自动规划， 不需要手工排序， 节省了大量路线图制作的时间。
 
@@ -19,7 +19,7 @@ categories: [Travel]
 
 租车建议租 SUV， 因为去根河市和扎兰屯市的路都比较烂， 轿车底盘较低， 小心翼翼开车会耗费大量旅途的时间。 我自己租了一辆大众的混动 GTE， 底盘通过性足够， 还特别省油。
 
-![]({{site.url}}/pics/tourism-daxinganling/1.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/1_update.jpg)
 
 #### 第二天： 小兴安岭
 先从哈尔滨机场去市区吃早餐， 在张包铺（群力店）点了东北地道美食： 大拉皮和锅包肉。 
@@ -28,7 +28,7 @@ categories: [Travel]
 
 东北的菜分量相对于南方来说要足很多， 建议南方的朋友按照人口数量点菜， 点多了就吃不完啦。
 
-![]({{site.url}}/pics/tourism-daxinganling/2.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/2_update.jpg)
 
 原来的规划是直接从哈尔滨开车到嫩江县住下， 第二天起来发现伊春市的旁边就是美丽的小兴安岭， 所以临时改道伊春。
 
@@ -36,19 +36,19 @@ categories: [Travel]
 
 行驶在乌带公路途中， 可以看到大量红松和白桦等珍贵树种交织而成的原始森林， 宛如宫崎骏画中的森林小路， 清新而宁静。
 
-![]({{site.url}}/pics/tourism-daxinganling/3.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/3_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/4.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/4_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/5.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/5_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/6.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/6_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/8.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/8_update.jpg)
 
 乌带公路沿路欣赏完已是傍晚， 建议住在南岔县， 南岔县的饺子味道很不错， 还有当地人喜欢喝的大窑汽水。
 
-![]({{site.url}}/pics/tourism-daxinganling/7.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/7_update.jpg)
 
 
 #### 第三天： 伊春
@@ -58,45 +58,45 @@ categories: [Travel]
 
 走在森林小道中， 一阵阵微风吹过， 全身的疲乏之气仿佛被森林给瞬间吸走一样， 留在身体里的只有凉爽和悠静。
 
-![]({{site.url}}/pics/tourism-daxinganling/9.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/9_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/10.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/10_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/11.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/11_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/13.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/13_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/15.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/15_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/16.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/16_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/17.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/17_update.jpg)
 
 鹿苑的梅花鹿都是完全放养的， 行动比较自由， 大多数梅花鹿都不怕人， 个别贪吃的梅花鹿还会追着你要玉米粒吃。
 
-![]({{site.url}}/pics/tourism-daxinganling/12.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/12_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/14.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/14_update.jpg)
 
 游完金山鹿苑， 下午可以伊春市东北边的五营国家森林公园， 这个公园最有趣的就是会看到很多贪吃的小松鼠， 只要带一包瓜子， 小松鼠就会从四面八方围过来要吃的。
 
-![]({{site.url}}/pics/tourism-daxinganling/18.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/18_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/19.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/19_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/20.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/20_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/21.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/21_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/22.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/22_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/23.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/23_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/24.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/24_update.jpg)
 
 晚上可以直接住在景区门口的一家酒店， 价格和伊春市区的酒店差不多， 但是环境却要好很多， 吃完晚饭在酒店门口看看晚霞遛遛弯， 也是非常惬意。
 
-![]({{site.url}}/pics/tourism-daxinganling/25.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/25_update.jpg)
 
 #### 第四天： 伊春-加格达奇
 像这种时间比较长的旅途， 其实不用一开始就做完所有地方的攻略， 一来分析所有景点比较累， 二来景点太多有时也会有选择困难症。 
@@ -109,19 +109,19 @@ categories: [Travel]
 
 去加格达奇的沿途都是美景， 在这种满眼都是绿色美景的地方开车， 非常享受， 一点都不累。
 
-![]({{site.url}}/pics/tourism-daxinganling/26.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/26_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/27.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/27_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/31.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/31_update.jpg)
 
 经过加格达奇前面的 332 国道， 偶遇一片一望无际的太阳花海， 站在观景台上， 看着海洋般的金色花海， 心中有点小小的激动， 也许这就是作物本身充满生机的力量吧。
 
-![]({{site.url}}/pics/tourism-daxinganling/28.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/28_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/29.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/29_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/30.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/30_update.jpg)
 
 
 #### 第五天： 根河
@@ -133,82 +133,82 @@ categories: [Travel]
 
 开车导航到根河市“敖鲁古雅使鹿部落景区”即可， 不用去北边满归镇找鄂温克族， 真正养野生驯鹿的鄂温克族都在大兴安岭森林中， 很难找到。
 
-![]({{site.url}}/pics/tourism-daxinganling/32.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/32_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/33.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/33_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/34.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/34_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/35.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/35_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/36.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/36_update.jpg)
 
 看完驯鹿， 下午可以去旁边的根河源国家湿地公园， 可以站在山顶上鸟瞰大兴安岭的延绵壮阔。
 
 夏天根河源山上的饿蚊很多， 一定要注意穿长袖并随身带花露水， 忘记带花露水就会像我们一样被一群蚊子追着在山顶狂跑， 哈哈哈哈。
 
-![]({{site.url}}/pics/tourism-daxinganling/37.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/37_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/38.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/38_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/39.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/39_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/40.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/40_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/41.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/41_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/42.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/42_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/43.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/43_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/44.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/44_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/45.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/45_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/46.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/46_update.jpg)
 
 晚上找了一家根河市的烧烤店， 苏子叶包着烤肉一起吃， 有一种特殊的风味， 吃腻了烤肉再来点蓝莓干解腻， 最后吃一碗东北大冷面， 别提有多爽啊。 
 
-![]({{site.url}}/pics/tourism-daxinganling/47.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/47_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/48.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/48_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/49.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/49_update.jpg)
 
 晚饭后在街边买了一些炒货， 有酸奶草莓、 烤蘑菇、 蔬菜果干等， 可以当作小朋友在自驾路上的健康零食。
 
 #### 第六天： 莫尔道嘎-室韦
 根河北上可以游览一下莫尔道嘎国家森林公园， 建议坐景区的托马斯小火车， 山路曲折， 自驾反而景色一般， 也比较容易疲劳。
 
-![]({{site.url}}/pics/tourism-daxinganling/50.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/50_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/51.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/51_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/52.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/52_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/53.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/53_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/54.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/54_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/56.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/56_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/55.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/55_update.jpg)
 
 莫尔道嘎出来后， 继续北上到太平县， 太平县去室韦路上有一个野景点叫‘老鹰嘴’， 风景还不错。
 
 需要注意的是这一段几十公里的路异常烂， 经常有山体滑坡， 所以一定要开 SUV 才行。
 
-![]({{site.url}}/pics/tourism-daxinganling/57.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/57_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/59.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/59_update.jpg)
 
 从老鹰嘴开始， 到室韦的路上都属于中俄边境线， 以额尔古纳河为界， 开着边防公路上， 可以远远地看到河对岸的俄罗斯小村庄。
 
-![]({{site.url}}/pics/tourism-daxinganling/58.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/58_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/60.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/60_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/61.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/61_update.jpg)
 
 
 #### 第七天： 中俄边境-海拉尔
@@ -216,31 +216,31 @@ categories: [Travel]
 
 室韦到七卡， 沿途额尔古纳河的沿途风光：
 
-![]({{site.url}}/pics/tourism-daxinganling/62.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/62_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/63.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/63_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/64.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/64_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/65.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/65_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/66.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/66_update.jpg)
 
 七卡去海拉尔的路上， 会经过额尔古纳国家湿地公园， 登到公园山顶瞭望， 延绵不绝的草原、 群山， 让人感叹祖国的壮美河山。
 
-![]({{site.url}}/pics/tourism-daxinganling/67.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/67_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/68.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/68_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/69.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/69_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/70.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/70_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/71.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/71_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/72.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/72_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/73.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/73_update.jpg)
 
 从额尔古纳国家湿地公园出来， 继续南下， 大约下午 5 点开到了莫尔格勒河 -- 呼伦贝尔草原的母亲河， 因为官方观景台已经关闭， 所以一家人租了几架滑翔机， 从天空俯瞰莫尔格勒河。
 
@@ -248,68 +248,68 @@ categories: [Travel]
 
 莫尔格勒河的河水由涌泉汇聚形成， 并且所经过的区域多是杳无人烟的山地、 草原， 所以河水很干净， 是完全没有污染的水源。
 
-![]({{site.url}}/pics/tourism-daxinganling/74.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/74_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/75.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/75_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/76.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/76_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/77.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/77_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/78.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/78_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/79.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/79_update.jpg)
 
 建议当晚住在海拉尔， 酒店和饭店都很多， 比较方便。
 
 #### 第八天： 海拉尔-阿尔山
 海拉尔继续南下去往阿尔山的路上， 看到了此次行程最美的马群， 两群马站在河水中， 相互向对方抬头喷水玩耍， 看着他们自由自在的生活， 感到非常的治愈， 看着它们的那一刻， 自己过去生活中遇到的所有困难都已烟消云散。
 
-![]({{site.url}}/pics/tourism-daxinganling/80.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/80_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/81.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/81_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/82.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/82_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/83.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/83_update.jpg)
 
 快到阿尔山市的时候， 会经过一个叫玫瑰峰的风景区， 可以稍作休息， 活动一下筋骨：
 
-![]({{site.url}}/pics/tourism-daxinganling/84.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/84_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/85.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/85_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/86.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/86_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/87.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/87_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/88.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/88_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/89.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/89_update.jpg)
 
 进了阿尔山市， 先去阿尔山火车站这个网红景点打个卡：
 
-![]({{site.url}}/pics/tourism-daxinganling/90.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/90_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/91.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/91_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/92.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/92_update.jpg)
 
 阿尔山广场晚上有一个非常棒的露天电影院， 可以带着小朋友在夜色下体验一下我们小时候大伙聚在一起看电影的感觉。
 
 当天晚上， 幕布上方还有月亮挂在空中， 蒙蒙胧胧的， 特别柔美。 
 
-![]({{site.url}}/pics/tourism-daxinganling/93.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/93_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/94.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/94_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/95.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/95_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/96.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/96_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/97.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/97_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/98.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/98_update.jpg)
 
 #### 第九天： 阿尔山
 阿尔山国家森林公园网上说要玩两天， 我们自己体验， 其实一天就可以玩完。 景区停车场分为总站、 兴安站和大峡谷站三个服务中转站， 中转站的停车场很小， 所以景区规划的是， 游客每次游完景点都要返回总站换乘， 非常浪费时间。
@@ -320,108 +320,108 @@ categories: [Travel]
 
 阿尔山-三潭峡：
 
-![]({{site.url}}/pics/tourism-daxinganling/99.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/99_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/100.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/100_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/101.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/101_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/102.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/102_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/103.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/103_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/104.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/104_update.jpg)
 
 阿尔山-杜鹃湖：
 
-![]({{site.url}}/pics/tourism-daxinganling/105.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/105_update.jpg)
 
 阿尔山-大峡谷：
 
-![]({{site.url}}/pics/tourism-daxinganling/106.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/106_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/107.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/107_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/108.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/108_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/109.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/109_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/110.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/110_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/111.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/111_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/112.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/112_update.jpg)
 
 阿尔山-驼峰岭：
 
-![]({{site.url}}/pics/tourism-daxinganling/113.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/113_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/114.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/114_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/115.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/115_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/116.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/116_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/117.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/117_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/118.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/118_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/119.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/119_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/120.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/120_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/121.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/121_update.jpg)
 
 #### 第十天： 阿尔山-扎兰屯
 从阿尔山到扎兰屯市路上会经过柴河月亮小镇， 月亮小镇网上评价很美， 我看了一下和阿尔山的景色差不多， 所以我们就没有去柴河的十大湾和天池景区。
 
 反而在路上的景点美如画， 不同深浅的绿色配上蓝天白云， 宛如油画一般的色调， 一弯一步皆是景， 还有森林牧场的牛都超级可爱， 真希望这条阿蘑公路可以一直开下去。
 
-![]({{site.url}}/pics/tourism-daxinganling/122.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/122_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/123.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/123_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/124.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/124_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/125.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/125_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/126.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/126_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/127.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/127_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/128.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/128_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/129.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/129_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/130.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/130_update.jpg)
 
 #### 第十一天： 扎兰屯 - 齐齐哈尔
 扎兰屯这个城市没有什么景点， 早上起来可以去看一下 “中东铁路博物馆”， 博物馆很小， 大概半个小时就可以逛完。 
 
-![]({{site.url}}/pics/tourism-daxinganling/150.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/150_update.jpg)
 
 中午顺道吃一下当地的美食： 炸蘑菇、 小鸡炖粉条、 手扒肉配韭菜花、 蒙古酸奶， 推荐老家千层肉饼总店和娜仁塔蒙这两个餐厅。
 
-![]({{site.url}}/pics/tourism-daxinganling/151.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/151_update.jpg)
 
 下午开车到齐齐哈尔， 来齐齐哈尔一定要来吃当地的烧烤, 味道非常不错， 特别是苏子叶的口味， 吃过一次就上瘾了， 每次烧烤必点的一道菜。
 
-![]({{site.url}}/pics/tourism-daxinganling/131.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/131_update.jpg)
 
 #### 第十二天： 齐齐哈尔 - 哈尔滨
 从齐齐哈尔到哈尔滨的路上要经过扎龙国家级自然保护区， 可以带小朋友来这里看一下丹顶鹤， 丹顶鹤全世界已不足 3700 只， 其中 300 多只在扎龙自然保护区。
 
-![]({{site.url}}/pics/tourism-daxinganling/132.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/132_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/133.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/133_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/134.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/134_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/135.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/135_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/136.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/136_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/137.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/137_update.jpg)
 
 广场舞源于东北， 哈尔滨晚上的广场舞很有特色， 有空一定要去看一看。
 
@@ -430,29 +430,29 @@ categories: [Travel]
 
 下午 2 点歌剧院还有俄式的歌唱和舞蹈表演， 表演的很热情， 可以带小朋友体验一下。
 
-![]({{site.url}}/pics/tourism-daxinganling/138.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/138_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/139.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/139_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/140.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/140_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/141.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/141_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/142.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/142_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/143.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/143_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/144.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/144_update.jpg)
 
 下午打卡网红景点 “圣·索菲亚教堂”， 教堂修建于 1907 年， 是中国最大的东正教教堂。 在很远处， 就能看见它的绿色穹窿被托举的极高， 给人一种升腾的美感。
 
-![]({{site.url}}/pics/tourism-daxinganling/145.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/145_update.jpg)
 
 在教堂旁边有一个叫米德维奇的俄式餐厅， 可以带小朋友去体验下， 人比较多， 需要提前去排队。
 
 俄罗斯罐牛肉、 大盘肠的味道都做的不错。
 
-![]({{site.url}}/pics/tourism-daxinganling/146.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/146_update.jpg)
 
 
 #### 第十四天： 哈尔滨
@@ -460,17 +460,17 @@ categories: [Travel]
 
 最后一天没有安排特别的行程， 睡了懒觉， 下午去了酒店附近的众创书局看书， 放松一下。
 
-![]({{site.url}}/pics/tourism-daxinganling/148.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/148_update.jpg)
 
-![]({{site.url}}/pics/tourism-daxinganling/149.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/149_update.jpg)
 
 众创书局旁边就有很多美食， 最后一天品尝了麻辣鸡架和铁锅炖， 分量依然很大， 吃起来味道有点像南方的柴火灶锅。
 
-![]({{site.url}}/pics/tourism-daxinganling/152.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/152_update.jpg)
 
 晚饭后的哈尔滨街道， 依然那么晴朗、 那么凉爽， 想到了马上又要回到世界上最热的城市， 突然有点依依不舍。
 
-![]({{site.url}}/pics/tourism-daxinganling/153.jpg)
+![]({{site.url}}/pics/tourism-daxinganling/153_update.jpg)
 
 ### 最后
 这次旅行， 给我最深的印记， 是那一瞬间， 驾车穿梭在如同油画般的浪漫世界中， 车两侧牛群和马群在白云下， 微风中， 享受着自由自在的生活， 让人心灵深处得到了无尽的抚慰。 

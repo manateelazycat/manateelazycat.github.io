@@ -4,13 +4,13 @@ title: 怎样培养自己的架构能力?
 categories: [Think]
 ---
 
-![]({{site.url}}/pics/build-design/1.png)
+![]({{site.url}}/pics/build-design/1_update.png)
 
-![]({{site.url}}/pics/build-design/2.png)
+![]({{site.url}}/pics/build-design/2_update.png)
 
-![]({{site.url}}/pics/build-design/3.png)
+![]({{site.url}}/pics/build-design/3_update.png)
 
-![]({{site.url}}/pics/build-design/4.png)
+![]({{site.url}}/pics/build-design/4_update.png)
 
 分享几张图：
 1. 第一张是我设计 [EAF](https://github.com/manateelazycat/emacs-application-framework) 开源项目时，我家黑板上的架构图

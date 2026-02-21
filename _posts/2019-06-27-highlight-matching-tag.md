@@ -16,7 +16,7 @@ highlight-matching-tag 的原理和 instant-rename-tag 完全是一样的， 只
 2. 如果光标在 Tag 区域， 找到匹配的光标， 然后用 Overlay 高亮匹配的标签
 3. 如果光标不在 Tag 区域， 隐藏标签高亮
 
-![highlight-matching-tag]({{site.url}}/pics/highlight-matching-tag/highlight-matching-tag.gif)
+![highlight-matching-tag]({{site.url}}/pics/highlight-matching-tag/highlight-matching-tag_update.gif)
 
 安装方法见 [Github](https://github.com/manateelazycat/highlight-matching-tag)
 

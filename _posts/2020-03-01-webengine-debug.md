@@ -8,7 +8,7 @@ categories: [Linux, EAF]
 
 随即详细研究了一下QWebEngine的进程模型:
 
-![WebEngine]({{site.url}}/pics/webengine/webengine.png)
+![WebEngine]({{site.url}}/pics/webengine/webengine_update.png)
 
 在讲进程模型之前，需要明白Qt WebEngine的组成结构:
 

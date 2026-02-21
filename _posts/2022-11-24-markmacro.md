@@ -20,7 +20,7 @@ markmacro 的原理和 Meow 键盘宏的理念一样：
 为了直观的让大家理解这个插件的作用， 我编写了一些测试用例：
 
 ### Case 1
-![]({{site.url}}/pics/markmacro/case_1.gif)
+![]({{site.url}}/pics/markmacro/case_1_update.gif)
 
 ```python
 fruit = apple watermelon peaches
@@ -36,7 +36,7 @@ fruit = ["apple", "watermelon", "peaches"]
 * `markmacro-apply-all` apply kmacro to all **mark words**
 
 ### Case 2
-![]({{site.url}}/pics/markmacro/case_2.gif)
+![]({{site.url}}/pics/markmacro/case_2_update.gif)
 
 ```python
 it-is-ver-long-variable
@@ -51,7 +51,7 @@ it_is_ver_long_variable
 * `markmacro-apply-all-except-first` apply kmacro to all **mark words** except first word
 
 ### Case 3
-![]({{site.url}}/pics/markmacro/case_3.gif)
+![]({{site.url}}/pics/markmacro/case_3_update.gif)
 
 
 ```python
@@ -88,7 +88,7 @@ prefix-flex-row.txt
 * `markmacro-apply-all` apply kmacro to all **mark lines** 
 
 ### Case 4
-![]({{site.url}}/pics/markmacro/case_4.gif)
+![]({{site.url}}/pics/markmacro/case_4_update.gif)
 
 
 ```elisp
@@ -111,7 +111,7 @@ prefix-flex-row.txt
 * `markmacro-apply-all` apply kmacro to all **mark symbols** 
 
 ### Case 5
-![]({{site.url}}/pics/markmacro/case_5.gif)
+![]({{site.url}}/pics/markmacro/case_5_update.gif)
 
 ```elisp
 ("s-/" . markmacro-mark-words)
@@ -152,7 +152,7 @@ prefix-flex-row.txt
 * Delete right character and type `'`
 
 ### Case 6
-![]({{site.url}}/pics/markmacro/case_6.gif)
+![]({{site.url}}/pics/markmacro/case_6_update.gif)
 
 ```elisp
 (defun test-function-1 (arg)
@@ -182,7 +182,7 @@ prefix-flex-row.txt
 * `markmacro-apply-all` apply kmacro to all **mark functions** 
 
 ### Case 7
-![]({{site.url}}/pics/markmacro/case_7.gif)
+![]({{site.url}}/pics/markmacro/case_7_update.gif)
 
 ```elisp
 (defun markmacro-mark-words ()
@@ -252,7 +252,7 @@ prefix-flex-row.txt
 
 
 ### Case 8
-![]({{site.url}}/pics/markmacro/case_8.gif)
+![]({{site.url}}/pics/markmacro/case_8_update.gif)
 
 ```elisp
 window.scrollTo(0, 0); document.getElementsByTagName('html')[0].style.visibility = 'hidden'; document.getElementsByClassName('lf_area')[0].style.visibility = 'visible'; document.getElementsByTagName('header')[0].style.display = 'none'; document.getElementsByClassName('contentPadding')[0].style.padding = '10px';
@@ -298,7 +298,7 @@ document.getElementsByClassName('contentPadding')[0].style.padding = '10px';
 * `markmacro-apply-all` apply kmacro to all **mark chars**
 
 ### Case 9
-![]({{site.url}}/pics/markmacro/case_9.gif)
+![]({{site.url}}/pics/markmacro/case_9_update.gif)
 
 ```shell
 $ find .git/objects -type f.git/objects/01/55eb4229851634a0f03eb265b69f5a2d56f341 # tree 2.git/objects/1a/410efbd13591db07496601ebc7a059dd55cfe9 # commit 3.git/objects/1f/7a7a472abf3dd9643fd615f6da379c4acb3e3a # test.txt v2.git/objects/3c/4e9cd789d88d8d89c1073707c3585e41b0e614 # tree 3.git/objects/83/baae61804e65cc73a7201a7252750c76066a30 # test.txt v1.git/objects/ca/c0cab538b970a37ea1e769cbbde608743bc96d # commit 2.git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4 # 'test content'.git/objects/d8/329fc1cc938780ffdd9f94e0d364e0ea74f579 # tree 1.git/objects/fa/49b077972391ad58037050f2a75f74e3671e92 # new.txt.git/objects/fd/f4fc3344e67ab068f836878b6c4951e3b15f3d # commit 1

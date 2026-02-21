@@ -26,7 +26,7 @@ categories: [Linux]
 
 测试了一下，成功率蛮高，99%:
 
-![Breaking Captcha]({{site.url}}/pics/breaking-captcha/breaking-captcha.png)
+![Breaking Captcha]({{site.url}}/pics/breaking-captcha/breaking-captcha_update.png)
 
 整体思路如下：
 1. 用 selenium 调用 Chromium 加载网页

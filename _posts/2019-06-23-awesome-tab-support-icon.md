@@ -11,6 +11,6 @@ categories: [Emacs]
 只要 [AllTheIcons](https://github.com/domtronn/all-the-icons.el) 这个图标插件安装好以后， AwesomeTab会自动在标签上渲染对应的文件图标。
 
 最终的效果图如下：
-![AwesomeTab]({{site.url}}/pics/awesome-tab/support-icons.png)
+![AwesomeTab]({{site.url}}/pics/awesome-tab/support-icons_update.png)
 
 这就是开源社区的魅力，每天只做一点点，滴水石穿就能做出非常好的软件。

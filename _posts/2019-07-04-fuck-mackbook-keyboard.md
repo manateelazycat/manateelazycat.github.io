@@ -11,7 +11,7 @@ categories: [Mac, Tech]
 
 人算不如天算啊，MacBook Pro用了刚好一年，J这个按键已经被我敲碎了，完全没法用了：
 
-![MacBook Pro-Keyboard]({{site.url}}/pics/fuck-macbook-keyboard/1.png)
+![MacBook Pro-Keyboard]({{site.url}}/pics/fuck-macbook-keyboard/1_update.png)
 
 而且我有预感，其他按键过一段时间也会步J按键的后尘，为了保险，下午去了一趟苹果售后，售货人员直接说，换整个键盘3000，换一个键帽几大百。
 真黑心啊，自己动手丰衣足食，我在淘宝上花了35元买了一整套键帽，等键帽回来自己动手换。
@@ -23,15 +23,15 @@ Mac无法正确映射IKBC的键盘布局，导致快捷键不兼容后我完全�
 
 首先把MacBook Pro内置的Fn和Ctrl键交换了，我喜欢左下角就是Ctrl按键的踏实感
 
-![MacBook Pro-Keyboard]({{site.url}}/pics/fuck-macbook-keyboard/2.png)
+![MacBook Pro-Keyboard]({{site.url}}/pics/fuck-macbook-keyboard/2_update.png)
 
 其次把IKBC机械键盘的左Ctrl、左Win、左Alt键做一个映射，解决MacBook Pro映射错键位的问题
 
-![MacBook Pro-Keyboard]({{site.url}}/pics/fuck-macbook-keyboard/3.png)
+![MacBook Pro-Keyboard]({{site.url}}/pics/fuck-macbook-keyboard/3_update.png)
 
 最后设置当IKBC机械键盘插入时，禁用MacBook Pro的内置键盘，这样我就可以把机械键盘放到笔记本上敲而不会触发笔记本的内置键盘
 
-![MacBook Pro-Keyboard]({{site.url}}/pics/fuck-macbook-keyboard/4.png)
+![MacBook Pro-Keyboard]({{site.url}}/pics/fuck-macbook-keyboard/4_update.png)
 
 经过上面三个步骤的设置后，我又可以非常流畅的使用Emacs了，忍受了一年MacBook Pro的垃圾键盘，终于又体会到机械键盘写代码的快乐了。
 

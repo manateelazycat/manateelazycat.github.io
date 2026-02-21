@@ -24,7 +24,7 @@ Emacs 本身的布局非常奇怪， 用 mode-line 来进行上下分割， 左�
 
 今天利用 PyQt 置顶透明窗口以及 python-bridge 框架实现了一个多媒体图层， 可以完美的实现窗口边框， 具体效果如下：
 
-![]({{site.url}}/pics/holo-layer/holo-layer.jpg)
+![]({{site.url}}/pics/holo-layer/holo-layer_update.jpg)
 
 这张图从上到下依次是：
 1. sort-tab: 只在顶部显示标签栏， 不会因为分屏浪费纵向空间

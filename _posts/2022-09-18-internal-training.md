@@ -10,8 +10,8 @@ categories: [Think]
 
 下面分享一下我在公司内部做的两次培训内容， 希望能够帮助读我博客的朋友， 因为内容较多， 我就不再写成文档的形式， 思维导图反而更能清晰的表达我想说的。
 
-![]({{site.url}}/pics/internal-training/invincible-in-your-heart-can-be-invincible.png)
+![]({{site.url}}/pics/internal-training/invincible-in-your-heart-can-be-invincible_update.png)
 
-![]({{site.url}}/pics/internal-training/how-to-achieve-wide-horizons-and-rapidly-grow.png)
+![]({{site.url}}/pics/internal-training/how-to-achieve-wide-horizons-and-rapidly-grow_update.png)
 
 如果你是天天研究 Linux、 Emacs/Vi、 Golang/JavaScript 的朋友， 觉得我说的有道理并想继续成长， 欢迎投简历加入我们 lazycat.manatee@gmail.com ;)
