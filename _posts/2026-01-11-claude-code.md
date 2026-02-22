@@ -16,4 +16,4 @@ categories: [AI]
 
 [中转站](https://www.aicodemirror.com/register?invitecode=NGB2WS) 注册以后，直接看右侧的 `安装&教程`， 三条命令行就搞定，非常爽.
 
-如果偶尔把机场IP搞成大陆的，会容易被Claude识别，弹出 `Unable to connect to Anthropic services` 的错误，直接在 ~/.claude.json 文件的最外层中添加 "hasCompletedOnboarding": true 选项就可以了
+如果偶尔把机场IP搞成大陆的，会容易被Claude识别，弹出 `Unable to connect to Anthropic services` 的错误，直接在 ~/.claude.json 文件的最外层中添加 "hasCompletedOnboarding": true

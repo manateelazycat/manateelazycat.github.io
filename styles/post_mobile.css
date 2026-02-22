@@ -56,15 +56,33 @@ p {
     line-height: 28px;
 }
 
-li>img,
-p>img {
+.content a.post-image-link {
+    display: block;
+    margin: 0 auto;
+}
+
+.content p > a.post-image-link,
+.content li > a.post-image-link {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.content picture.post-image-picture {
+    display: block;
+}
+
+.content p img,
+.content li img {
+    display: block;
     max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
     border-radius: 5px;
 }
 
-p img {
-    display: block;
-    margin: 0 auto;
+.content a.post-image-link img {
+    cursor: zoom-in;
 }
 
 .nickname {

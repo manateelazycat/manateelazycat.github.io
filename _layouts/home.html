@@ -4,9 +4,9 @@
     <head>
         {% include header.html %}
 
-        <link rel="stylesheet" href="{{site.url}}/styles/font.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{site.url}}/styles/home.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{site.url}}/styles/home_mobile.css">
+        <link rel="stylesheet" href="{{ '/styles/font.css' | relative_url }}">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{ '/styles/home.css' | relative_url }}">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{ '/styles/home_mobile.css' | relative_url }}">
     </head>
     <body>
         <div class="content">

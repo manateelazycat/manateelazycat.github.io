@@ -4,12 +4,13 @@
     <head>
         {% include header.html %}
 
-        <link rel="stylesheet" href="{{site.url}}/styles/font.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{site.url}}/styles/post.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{site.url}}/styles/post_mobile.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{site.url}}/styles/navigatebar.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{site.url}}/styles/navigatebar_mobile.css">
-        <link rel="stylesheet" href="{{site.url}}/theme/highlight.css">
+        <link rel="stylesheet" href="{{ '/styles/font.css' | relative_url }}">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{ '/styles/post.css' | relative_url }}">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{ '/styles/post_mobile.css' | relative_url }}">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{ '/styles/navigatebar.css' | relative_url }}">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{ '/styles/navigatebar_mobile.css' | relative_url }}">
+        <link rel="stylesheet" href="{{ '/theme/highlight.css' | relative_url }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css">
     </head>
     <body>
         {% include navigatebar.html %}
@@ -19,7 +20,7 @@
             </div>
             <div class="category-area">
                 「{% for category in page.categories %}
-                <a href="{{ site.url }}/tags.html#{{ category }}">
+                <a href="{{ '/tags.html' | relative_url }}#{{ category }}">
                     <div class="category">
                         {{ category }}
                     </div>
@@ -33,5 +34,6 @@
                 {{ content }}
             </div>
         </div>
+        <script type="module" src="{{ '/scripts/photoswipe-init.js' | relative_url }}"></script>
     </body>
 </html>

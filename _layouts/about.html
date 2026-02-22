@@ -4,11 +4,11 @@
     <head>
         {% include header.html %}
 
-        <link rel="stylesheet" href="{{site.url}}/styles/font.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{site.url}}/styles/about.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{site.url}}/styles/about_mobile.css">
-        <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{site.url}}/styles/navigatebar.css">
-        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{site.url}}/styles/navigatebar_mobile.css">
+        <link rel="stylesheet" href="{{ '/styles/font.css' | relative_url }}">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{ '/styles/about.css' | relative_url }}">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{ '/styles/about_mobile.css' | relative_url }}">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{ '/styles/navigatebar.css' | relative_url }}">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{ '/styles/navigatebar_mobile.css' | relative_url }}">
     </head>
     <body>
         {% include navigatebar.html %}

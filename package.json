@@ -1,0 +1,15 @@
+{
+  "name": "manateelazycat.github.io",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "images:build": "node scripts/build-optimized-images.mjs",
+    "site:rewrite-images": "node scripts/rewrite-site-images.mjs",
+    "publish": "bash scripts/publish.sh"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "fast-glob": "^3.3.3",
+    "sharp": "^0.34.3"
+  }
+}
