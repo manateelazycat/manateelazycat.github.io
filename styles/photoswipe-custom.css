@@ -86,18 +86,18 @@
 .pswp__button--zoom .pswp__icn {
   width: 24px;
   height: 24px;
-  transform: translate(-50%, -54%);
+  transform: translate(-50%, -50%);
 }
 
 .pswp__button--open-original .pswp__icn {
-  stroke-width: 1.55;
+  stroke-width: 1.9;
 }
 
 .pswp__counter {
   margin-top: 0;
   height: 48px;
   line-height: 48px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-shadow: none;
