@@ -6,7 +6,8 @@
 
 .pswp__top-bar {
   height: 64px;
-  padding-top: 8px;
+  align-items: center;
+  padding-top: 0;
   padding-right: 8px;
 }
 
@@ -52,9 +53,9 @@
 }
 
 .pswp__button--arrow {
-  width: 60px;
-  height: 60px;
-  margin-top: -30px;
+  width: 68px;
+  height: 68px;
+  margin-top: -34px;
   border: 0;
   background: transparent;
   color: var(--pswp-icon-color);
@@ -66,8 +67,8 @@
 }
 
 .pswp__button--arrow .pswp__icn {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   margin: 0;
   top: 50%;
   left: 50%;
@@ -92,7 +93,9 @@
 }
 
 .pswp__counter {
-  margin-top: 17px;
+  margin-top: 0;
+  height: 48px;
+  line-height: 48px;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.02em;
