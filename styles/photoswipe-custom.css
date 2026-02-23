@@ -22,6 +22,11 @@
   color: var(--pswp-icon-color);
 }
 
+.pswp__top-bar .pswp__button--zoom {
+  width: 48px;
+  height: 48px;
+}
+
 .pswp__top-bar .pswp__button--close:hover,
 .pswp__top-bar .pswp__button--zoom:hover,
 .pswp__top-bar .pswp__button--open-original:hover {
@@ -68,12 +73,22 @@
   left: 50%;
   right: auto;
   transform: translate(-50%, -50%);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.68)) drop-shadow(0 0 1px rgba(0, 0, 0, 0.55));
 }
 
 .pswp__button--arrow--next .pswp__icn {
   left: 50%;
   right: auto;
   transform: translate(-50%, -50%);
+}
+
+.pswp__button--zoom .pswp__icn {
+  width: 24px;
+  height: 24px;
+}
+
+.pswp__button--open-original .pswp__icn {
+  stroke-width: 1.55;
 }
 
 .pswp__counter {
