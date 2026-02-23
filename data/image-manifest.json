@@ -48543,6 +48543,2905 @@
         ]
       }
     },
+    "pics/tourism-jiangxi/map.png": {
+      "sourceHash": "07f97133d4b190463687f3b7e9c2cfc45ae18628",
+      "width": 1920,
+      "height": 959,
+      "format": "png",
+      "updatedAt": "2026-02-23T01:33:10.397Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/map-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/map-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/tourism-jiangxi/map-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/map-640w.png"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/map-1280w.png"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/tourism-jiangxi/map-1920w.png"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091313_843.jpg": {
+      "sourceHash": "55b9f32d1739dbd8063fee89cd9b415ca638f2e0",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:10.783Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091313_843-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091313_843-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091313_843-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091313_843-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091313_843-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091313_843-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091324_992.jpg": {
+      "sourceHash": "50a358c4800b3766efe9838910e1d5c3a6fd8114",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:11.025Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091324_992-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091324_992-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091324_992-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091324_992-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091329_202.jpg": {
+      "sourceHash": "131705ff197402ff7a41ca3ba36b4ae0934db1f7",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:11.267Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091329_202-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091329_202-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091329_202-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091329_202-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091332_959.jpg": {
+      "sourceHash": "191caacae56a2d6eeab66ce4002b1688b9e4222d",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:11.540Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091332_959-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091332_959-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091332_959-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091332_959-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091332_959-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091332_959-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091336_933.jpg": {
+      "sourceHash": "2ba641fafafa8d054a2a0dfdf2393b79af0210c1",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:11.903Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091336_933-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091336_933-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091336_933-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091336_933-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091341_981.jpg": {
+      "sourceHash": "7f300f3c416fe3c9107a4dd76cd9a14ecc2ccf7a",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:12.073Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091341_981-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091341_981-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091341_981-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091341_981-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091346_207.jpg": {
+      "sourceHash": "322a08198361a4374b64e779a2137c4537bc007e",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:12.485Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091346_207-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091346_207-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091346_207-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091346_207-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091346_207-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091346_207-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091349_769.jpg": {
+      "sourceHash": "978d3a3486af8894f39dc498d8a1cb2d5d0dba1c",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:12.829Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091349_769-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091349_769-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091349_769-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091349_769-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091349_769-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091349_769-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091353_592.jpg": {
+      "sourceHash": "f667b29ffd9e96493782eaaacd80a05b7bdf6845",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:13.134Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091353_592-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091353_592-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091353_592-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091353_592-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091353_592-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091353_592-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091405_733.jpg": {
+      "sourceHash": "976cf1b932dd24a8e0683974b19526755de3f54b",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:13.377Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091405_733-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091405_733-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091405_733-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091405_733-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091409_456.jpg": {
+      "sourceHash": "dd2f17c3af47189987fd8283f54a2a05810f1473",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:13.590Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091409_456-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091409_456-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091409_456-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091409_456-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091412_918.jpg": {
+      "sourceHash": "8d78faa2f120069badd409ad9ce3882db500b12e",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:13.787Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091412_918-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091412_918-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091412_918-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091412_918-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091416_866.jpg": {
+      "sourceHash": "ac1c103a72acd963d2e0e1c4593d16752bf8d45b",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:14.211Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091416_866-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091416_866-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091416_866-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091416_866-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091416_866-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091416_866-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091419_956.jpg": {
+      "sourceHash": "faec230dc0a8a93ed27016bc6712fb133d7a36fc",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:14.534Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091419_956-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091419_956-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091419_956-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091419_956-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091423_105.jpg": {
+      "sourceHash": "deb89144aba9064256ec4c0de1b0818eeb3b0099",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:14.918Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091423_105-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091423_105-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091423_105-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091423_105-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091423_105-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091423_105-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091425_856.jpg": {
+      "sourceHash": "8583111f490c779015a3adb9d088ce084b421751",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:15.353Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091425_856-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091425_856-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091425_856-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091425_856-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091425_856-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091425_856-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091428_780.jpg": {
+      "sourceHash": "75984900832e5a43c794911c6ca4bf299c45587d",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:15.623Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091428_780-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091428_780-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091428_780-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091428_780-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091432_087.jpg": {
+      "sourceHash": "1ef60eb2ff8e0d5acda5ab185e0d7ac951035c19",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:16.082Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091432_087-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091432_087-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091432_087-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091432_087-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091432_087-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091432_087-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091441_959.jpg": {
+      "sourceHash": "ba5365dc4a55826e40a816e53e5bc089d6634995",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:16.508Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091441_959-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091441_959-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091441_959-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091441_959-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091441_959-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091441_959-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091445_488.jpg": {
+      "sourceHash": "15c357aa773691ea02fe892d8a4f6fd2a5157028",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:16.848Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091445_488-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091445_488-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091445_488-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091445_488-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091448_658.jpg": {
+      "sourceHash": "117875b05f81cb76113b52f57bd634b8e2e7e1b7",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:17.432Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091448_658-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091448_658-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091448_658-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091448_658-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091448_658-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091448_658-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091451_175.jpg": {
+      "sourceHash": "dde11a6af09e9d9125fc03cb6a247f32efb8b70c",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:17.868Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091451_175-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091451_175-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091451_175-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091451_175-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091451_175-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091451_175-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091453_916.jpg": {
+      "sourceHash": "41dd41c7094f61d841f433f8c6c41da74029fe70",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:18.252Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091453_916-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091453_916-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091453_916-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091453_916-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091456_484.jpg": {
+      "sourceHash": "87a2c840dcfe2858b52fee22dc2cad135fa9455a",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:18.530Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091456_484-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091456_484-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091456_484-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091456_484-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091459_019.jpg": {
+      "sourceHash": "0a1930390dfa4c20d0a30c3ff4da3381ad0861f9",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:19.057Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091459_019-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091459_019-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091459_019-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091459_019-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091459_019-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091459_019-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091502_011.jpg": {
+      "sourceHash": "a1cf1df44c48a6199069b860572ae0a0bf0f9656",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:19.286Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091502_011-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091502_011-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091502_011-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091502_011-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091504_817.jpg": {
+      "sourceHash": "9f9ec98e88ec6813ffdbefae9e2ef043c3f8cc41",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:19.571Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091504_817-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091504_817-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091504_817-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091504_817-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091514_099.jpg": {
+      "sourceHash": "7155f701505c47a34af48e045d6689b461667d7a",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:19.865Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091514_099-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091514_099-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091514_099-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091514_099-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091517_226.jpg": {
+      "sourceHash": "aba23d71710a4b66c4c3abbce5f3384b021dda8d",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:20.138Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091517_226-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091517_226-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091517_226-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091517_226-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091517_226-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091517_226-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091519_758.jpg": {
+      "sourceHash": "de2cf252c2f48dd1e6d13b48b941ee39fc881cda",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:20.432Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091519_758-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091519_758-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091519_758-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091519_758-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091522_096.jpg": {
+      "sourceHash": "7d6bef0cb55f60317b1adaab47fc57e7bbade9ff",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:20.688Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091522_096-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091522_096-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091522_096-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091522_096-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091524_681.jpg": {
+      "sourceHash": "83edc3c40af44a9a2d54cd0b4a335ccce85b333e",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:20.937Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091524_681-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091524_681-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091524_681-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091524_681-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091527_420.jpg": {
+      "sourceHash": "a45e3353262918adbed84774dcd6453445f1a45a",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:21.323Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091527_420-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091527_420-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091527_420-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091527_420-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091527_420-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091527_420-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091529_709.jpg": {
+      "sourceHash": "3c516dcaa3904bf5d46a6a08b079277360409cdb",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:21.577Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091529_709-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091529_709-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091529_709-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091529_709-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091532_054.jpg": {
+      "sourceHash": "eaa48916f9cc1f2d8705d8bc4780f85885a16bb6",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:21.831Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091532_054-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091532_054-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091532_054-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091532_054-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091534_731.jpg": {
+      "sourceHash": "92966587779b7f6564933b304310e4f658b46b8d",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:22.228Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091534_731-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091534_731-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091534_731-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091534_731-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091534_731-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091534_731-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091542_497.jpg": {
+      "sourceHash": "1196e710fd0e0dd53dc3d1faed8ef9b747b219d7",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:22.626Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091542_497-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091542_497-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091542_497-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091542_497-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091545_022.jpg": {
+      "sourceHash": "e8e5349601e01dbe385c58e830adf65e22bae523",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:22.978Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091545_022-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091545_022-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091545_022-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091545_022-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091547_442.jpg": {
+      "sourceHash": "2c45a47aa202d709be6ea2daf6df9759ef7ad7a8",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:23.449Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091547_442-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091547_442-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091547_442-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091547_442-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091549_854.jpg": {
+      "sourceHash": "ca84f6de94ac8fca27e0078383fddd2eaeb4da6d",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:23.855Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091549_854-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091549_854-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091549_854-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091549_854-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091552_801.jpg": {
+      "sourceHash": "28cffdc1a8fdde4e60432e7549ca66c86c562530",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:24.189Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091552_801-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091552_801-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091552_801-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091552_801-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091555_716.jpg": {
+      "sourceHash": "8314f695db1b713bd01e84a6fad3195336c109f2",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:24.628Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091555_716-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091555_716-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091555_716-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091555_716-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091604_751.jpg": {
+      "sourceHash": "1170551490ea147a92380277cfb69900a2496f90",
+      "width": 1920,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:25.052Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091604_751-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091604_751-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091604_751-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091604_751-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091604_751-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091604_751-1920w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091613_986.jpg": {
+      "sourceHash": "7042f45ecfd3ac522241a03a54fe4d7e5dbae69e",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:25.392Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091613_986-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091613_986-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091613_986-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091613_986-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091613_986-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091613_986-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091616_641.jpg": {
+      "sourceHash": "090554a3eb69b046b9a19a696f1dcd089324be69",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:25.644Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091616_641-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091616_641-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091616_641-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091616_641-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091619_125.jpg": {
+      "sourceHash": "7b22b4c2314a54a72e891fe56027c6eb5fdfe67a",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:25.885Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091619_125-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091619_125-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091619_125-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091619_125-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091621_432.jpg": {
+      "sourceHash": "b13916f573e1e57018c8c5d2781d21401869548f",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:26.130Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091621_432-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091621_432-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091621_432-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091621_432-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091624_261.jpg": {
+      "sourceHash": "9ba4748c34ac1f38e89a6aeb24475a5f32cd311a",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:26.326Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091624_261-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091624_261-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091624_261-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091624_261-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091626_810.jpg": {
+      "sourceHash": "bbd762fd1c2a82b1eac9145ce88c13f21ab8d6a4",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:26.717Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091626_810-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091626_810-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091626_810-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091626_810-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091626_810-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091626_810-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091629_425.jpg": {
+      "sourceHash": "56aef5a8f97388d593b8e54a4fe1770160cdce0b",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:26.967Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091629_425-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091629_425-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091629_425-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091629_425-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091632_122.jpg": {
+      "sourceHash": "62246cd51cb5d495ab5db2281d005eec831b3883",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:27.370Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091632_122-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091632_122-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091632_122-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091632_122-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091632_122-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091632_122-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091634_607.jpg": {
+      "sourceHash": "f55c286f100e38db72b2ada140b9a242df549dfb",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:27.602Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091634_607-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091634_607-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091634_607-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091634_607-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091847_314.jpg": {
+      "sourceHash": "907552c09898c63498014324aaa6224840494e4f",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:27.835Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091847_314-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091847_314-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091847_314-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091847_314-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091857_511.jpg": {
+      "sourceHash": "a620d396188d50501a9cfce70ed30c60e29c2a3b",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:28.082Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091857_511-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091857_511-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091857_511-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091857_511-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091901_108.jpg": {
+      "sourceHash": "a8f55146967fd83558150b9cab775ce460c3025f",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:28.341Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091901_108-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091901_108-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091901_108-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091901_108-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091903_512.jpg": {
+      "sourceHash": "ce2aeaf57dcbfb21b539fec2ae0f7033657e841c",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:28.569Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091903_512-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091903_512-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091903_512-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091903_512-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091906_616.jpg": {
+      "sourceHash": "2e2427adbbc5a91e3fce59ffee856dcffe63a94c",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:28.823Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091906_616-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091906_616-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091906_616-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091906_616-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091909_332.jpg": {
+      "sourceHash": "0c2d875bf1cc78784055a06304b4916a42b410e7",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:29.108Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091909_332-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091909_332-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091909_332-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091909_332-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091911_737.jpg": {
+      "sourceHash": "427e8f31b8ebf7bd37b512b77d449b986db19c20",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:29.347Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091911_737-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091911_737-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091911_737-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091911_737-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091914_100.jpg": {
+      "sourceHash": "e1f5e4145221c0f649e44def975947224cee8751",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:29.631Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091914_100-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091914_100-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091914_100-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091914_100-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091916_214.jpg": {
+      "sourceHash": "02bf9d5f35cc40c677546bc0dda97136754cb6df",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:29.852Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091916_214-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091916_214-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091916_214-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091916_214-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091916_214-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091916_214-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091918_363.jpg": {
+      "sourceHash": "68b73386101f5eb782c2c2935c098b689ad5acfd",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:30.088Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091918_363-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091918_363-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091918_363-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091918_363-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_091927_360.jpg": {
+      "sourceHash": "1a34a5cfd82b1ed5f32c4e20614888b9a5d9289b",
+      "width": 1700,
+      "height": 1280,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:30.608Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091927_360-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091927_360-1280w.webp"
+          },
+          {
+            "width": 1700,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091927_360-1700w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091927_360-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091927_360-1280w.jpg"
+          },
+          {
+            "width": 1700,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_091927_360-1700w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092011_956.jpg": {
+      "sourceHash": "ee6e9a3374e7e069077abbcf34b93e01f6beb856",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:30.881Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092011_956-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092011_956-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092011_956-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092011_956-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092014_909.jpg": {
+      "sourceHash": "21872cae3c4f604e4de914d35092a9b6a2d727d8",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:31.145Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092014_909-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092014_909-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092014_909-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092014_909-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092017_696.jpg": {
+      "sourceHash": "c181e847b0adb960165db8fe5ca9479d3634383a",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:31.413Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092017_696-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092017_696-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092017_696-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092017_696-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092020_368.jpg": {
+      "sourceHash": "e002fae760d721568e863f8f25c19f769771afb9",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:32.003Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092020_368-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092020_368-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092020_368-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092020_368-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092020_368-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092020_368-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092022_715.jpg": {
+      "sourceHash": "da541d978e7aa68cb73c0d494b2ee906b2067167",
+      "width": 1920,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:32.333Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092022_715-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092022_715-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092022_715-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092022_715-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092022_715-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092022_715-1920w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092024_860.jpg": {
+      "sourceHash": "1f4a7d681fa5ead8f45fe16909fb03e5c9517db3",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:32.643Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092024_860-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092024_860-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092024_860-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092024_860-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092027_973.jpg": {
+      "sourceHash": "e56aa85d9692b80bc593e32c3c864d538c263c8d",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:33.031Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092027_973-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092027_973-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092027_973-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092027_973-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092027_973-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092027_973-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092030_309.jpg": {
+      "sourceHash": "8608cd4ec665f5f9b1300dd43466b9d0a30a9e00",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:33.498Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092030_309-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092030_309-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092030_309-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092030_309-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092030_309-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092030_309-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092049_131.jpg": {
+      "sourceHash": "e95e2075ed4216234a6a71930bf351cc9ef7e8c6",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:33.899Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092049_131-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092049_131-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092049_131-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092049_131-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092049_131-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092049_131-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092052_339.jpg": {
+      "sourceHash": "27e931abc4f16cf210a78750451a3c3c2ed47005",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:34.228Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092052_339-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092052_339-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092052_339-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092052_339-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092052_339-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092052_339-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092054_412.jpg": {
+      "sourceHash": "b053643c0a11b8d8038ff41994d21132210e2383",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:34.431Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092054_412-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092054_412-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092054_412-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092054_412-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092058_720.jpg": {
+      "sourceHash": "f8da195ddacce3003fbb2b0fe632cf6394665805",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:34.724Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092058_720-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092058_720-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092058_720-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092058_720-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092102_014.jpg": {
+      "sourceHash": "90273c2f64c526e34789f2b4d70ad4c47e1006ce",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:34.951Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092102_014-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092102_014-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092102_014-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092102_014-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092124_944.jpg": {
+      "sourceHash": "15e4a417251278ffe8b7eb9c020a2a35486e41c0",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:35.256Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092124_944-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092124_944-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092124_944-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092124_944-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092131_146.jpg": {
+      "sourceHash": "40009b06b5cf46d1ed0ea1e393f29b329bdbc5c4",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:35.633Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092131_146-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092131_146-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092131_146-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092131_146-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092131_146-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092131_146-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092140_978.jpg": {
+      "sourceHash": "657112270f9656d386a06e6f7c96ea9b623d8d28",
+      "width": 1434,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:36.011Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092140_978-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092140_978-1280w.webp"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092140_978-1434w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092140_978-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092140_978-1280w.jpg"
+          },
+          {
+            "width": 1434,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092140_978-1434w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092144_465.jpg": {
+      "sourceHash": "7a25a3d772d2ffd0c64e61e193573ab6beb48641",
+      "width": 1080,
+      "height": 1434,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:36.204Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092144_465-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092144_465-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092144_465-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092144_465-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092148_079.jpg": {
+      "sourceHash": "85aa76cbbc9847f25462f648f8b6a4b6613f2243",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:36.549Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092148_079-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092148_079-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092148_079-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092148_079-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092150_426.jpg": {
+      "sourceHash": "d9eb0c0bc8508bfdcf92773b72c2fd31cb11da8f",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:36.990Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092150_426-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092150_426-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092150_426-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092150_426-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092150_426-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092150_426-1440w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092153_848.jpg": {
+      "sourceHash": "5a5256da7adc1edbe3d23e9a1f9d7e83fb16a35b",
+      "width": 1080,
+      "height": 1440,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:37.207Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092153_848-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092153_848-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092153_848-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092153_848-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tourism-jiangxi/微信图片_2026-02-23_092202_274.jpg": {
+      "sourceHash": "bd6f894e6883a459efedfd28156d6b3aef6db0ca",
+      "width": 1440,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-02-23T01:33:37.439Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092202_274-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092202_274-1280w.webp"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092202_274-1440w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092202_274-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092202_274-1280w.jpg"
+          },
+          {
+            "width": 1440,
+            "path": "pics-optimized/tourism-jiangxi/微信图片_2026-02-23_092202_274-1440w.jpg"
+          }
+        ]
+      }
+    },
     "pics/tourism-qingdao/5957-000775fce99a6e98_update.jpeg": {
       "sourceHash": "a5f148ebe98543d61a3873b9da3edbdeb442648a",
       "width": 1536,
