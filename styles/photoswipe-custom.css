@@ -1,0 +1,81 @@
+.pswp {
+  --pswp-bg: rgba(12, 12, 14, 0.95);
+  --pswp-icon-color: #f5f5f7;
+  --pswp-icon-color-secondary: transparent;
+}
+
+.pswp__top-bar {
+  height: 64px;
+  padding-top: 8px;
+  padding-right: 8px;
+}
+
+.pswp__top-bar .pswp__button--close,
+.pswp__top-bar .pswp__button--zoom,
+.pswp__top-bar .pswp__button--open-original {
+  width: 42px;
+  height: 42px;
+  margin: 0 0 0 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(30, 30, 34, 0.62);
+  backdrop-filter: saturate(160%) blur(14px);
+  opacity: 1;
+}
+
+.pswp__top-bar .pswp__button--close:hover,
+.pswp__top-bar .pswp__button--zoom:hover,
+.pswp__top-bar .pswp__button--open-original:hover {
+  background: rgba(42, 42, 46, 0.75);
+}
+
+.pswp__button .pswp__icn {
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pswp__button .pswp__icn-shadow {
+  display: none;
+}
+
+.pswp__button--arrow {
+  width: 56px;
+  height: 56px;
+  margin-top: -28px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(25, 25, 28, 0.56);
+  backdrop-filter: saturate(150%) blur(10px);
+}
+
+.pswp__button--arrow .pswp__icn {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+}
+
+.pswp__button--arrow--next .pswp__icn {
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+}
+
+.pswp__counter {
+  margin-top: 17px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-shadow: none;
+}

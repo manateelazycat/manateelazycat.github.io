@@ -1,5 +1,35 @@
 import PhotoSwipeLightbox from "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js";
 
+const APPLE_CLOSE_SVG = `
+<svg aria-hidden="true" class="pswp__icn" viewBox="0 0 24 24" width="24" height="24">
+  <path d="M6 6L18 18M18 6L6 18"/>
+</svg>`;
+
+const APPLE_ZOOM_SVG = `
+<svg aria-hidden="true" class="pswp__icn" viewBox="0 0 24 24" width="24" height="24">
+  <circle cx="11" cy="11" r="6"></circle>
+  <path class="pswp__zoom-icn-bar-h" d="M8 11H14"></path>
+  <path class="pswp__zoom-icn-bar-v" d="M11 8V14"></path>
+  <path d="M16 16L20 20"></path>
+</svg>`;
+
+const APPLE_ARROW_PREV_SVG = `
+<svg aria-hidden="true" class="pswp__icn" viewBox="0 0 24 24" width="24" height="24">
+  <path d="M15 6L9 12L15 18"></path>
+</svg>`;
+
+const APPLE_ARROW_NEXT_SVG = `
+<svg aria-hidden="true" class="pswp__icn" viewBox="0 0 24 24" width="24" height="24">
+  <path d="M9 6L15 12L9 18"></path>
+</svg>`;
+
+const APPLE_OPEN_ORIGINAL_SVG = `
+<svg aria-hidden="true" class="pswp__icn" viewBox="0 0 24 24" width="24" height="24">
+  <path d="M14 4H20V10"></path>
+  <path d="M20 4L10 14"></path>
+  <path d="M20 14V18C20 19.1 19.1 20 18 20H6C4.9 20 4 19.1 4 18V6C4 4.9 4.9 4 6 4H10"></path>
+</svg>`;
+
 function isSkippableImage(img) {
   return Boolean(img.closest("pre, code, .highlighter-rouge"));
 }
@@ -123,23 +153,21 @@ if (galleryItems.length > 0) {
     gallery: ".content",
     children: "a.post-image-link",
     preload: [0, 1],
+    closeSVG: APPLE_CLOSE_SVG,
+    zoomSVG: APPLE_ZOOM_SVG,
+    arrowPrevSVG: APPLE_ARROW_PREV_SVG,
+    arrowNextSVG: APPLE_ARROW_NEXT_SVG,
     pswpModule: () => import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js"),
   });
 
   lightbox.on("uiRegister", () => {
     lightbox.pswp.ui.registerElement({
       name: "open-original",
-      order: 9,
+      order: 15,
       isButton: true,
-      title: "Open original image",
-      ariaLabel: "Open original image in new tab",
-      html: {
-        isCustomSVG: true,
-        size: 32,
-        inner:
-          '<path d="M8 24h24v-4H12V0H8v24zm16-16h-4v4h7.17L16.59 22.59 19.41 25.41 30 14.83V22h4V8H24z"/>',
-        outlineID: "pswp__icn-open-original",
-      },
+      title: "View original image",
+      ariaLabel: "View original image in new tab",
+      html: APPLE_OPEN_ORIGINAL_SVG,
       onClick: (_event, _el, pswp) => {
         const originalUrl = getCurrentOriginalUrl(pswp);
         if (originalUrl) {
