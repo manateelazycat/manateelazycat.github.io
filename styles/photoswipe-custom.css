@@ -53,9 +53,9 @@
 }
 
 .pswp__button--arrow {
-  width: 68px;
-  height: 68px;
-  margin-top: -34px;
+  width: 74px;
+  height: 74px;
+  margin-top: -37px;
   border: 0;
   background: transparent;
   color: var(--pswp-icon-color);
@@ -67,8 +67,8 @@
 }
 
 .pswp__button--arrow .pswp__icn {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   margin: 0;
   top: 50%;
   left: 50%;
@@ -84,8 +84,8 @@
 }
 
 .pswp__button--zoom .pswp__icn {
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
   transform: translate(-50%, -50%);
 }
 
