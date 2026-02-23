@@ -7,8 +7,8 @@ const APPLE_CLOSE_SVG = `
 
 const APPLE_ZOOM_SVG = `
 <svg aria-hidden="true" class="pswp__icn" viewBox="0 0 24 24" width="24" height="24">
-  <path class="pswp__zoom-icn-bar-h" d="M6.5 12H17.5"></path>
-  <path class="pswp__zoom-icn-bar-v" d="M12 6.5V17.5"></path>
+  <path class="pswp__zoom-icn-bar-h" d="M4.5 12H19.5"></path>
+  <path class="pswp__zoom-icn-bar-v" d="M12 4.5V19.5"></path>
 </svg>`;
 
 const APPLE_ARROW_PREV_SVG = `
