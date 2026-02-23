@@ -42,10 +42,10 @@ jobs:
           gem install jekyll-feed --no-document --user-install
 
       - name: Build site
-        run: jekyll build
+        run: jekyll build --config _config.yml,_config_ci.yml
 
       - name: Rewrite optimized image tags
-        run: node scripts/rewrite-site-images.mjs
+        run: node scripts/rewrite-site-images.mjs --asset-base-url https://cdn.jsdelivr.net/gh/manateelazycat/manateelazycat.github.io@master
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

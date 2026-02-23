@@ -9,6 +9,7 @@ function parseArgs(argv) {
   const options = {
     siteDir: "_site",
     manifestPath: path.join("data", "image-manifest.json"),
+    assetBaseUrl: "",
     dryRun: false,
   };
 
@@ -19,6 +20,9 @@ function parseArgs(argv) {
       i += 1;
     } else if (arg === "--manifest") {
       options.manifestPath = argv[i + 1];
+      i += 1;
+    } else if (arg === "--asset-base-url") {
+      options.assetBaseUrl = argv[i + 1] || "";
       i += 1;
     } else if (arg === "--dry-run") {
       options.dryRun = true;
@@ -42,20 +46,29 @@ function printHelp() {
       "",
       "  --site      Jekyll output directory (default: _site)",
       "  --manifest  Image manifest path (default: data/image-manifest.json)",
+      "  --asset-base-url  Optional absolute base URL for image assets (default: local site paths)",
       "  --dry-run   Show affected files without rewriting",
     ].join("\n")
   );
 }
 
-function asWebPath(filePath) {
-  return `/${filePath.split(path.sep).join("/")}`;
+function normalizeBaseUrl(baseUrl) {
+  return (baseUrl || "").replace(/\/+$/, "");
 }
 
-function buildSrcset(variants = []) {
+function toPublicUrl(filePath, baseUrl) {
+  const normalizedPath = filePath.split(path.sep).join("/").replace(/^\/+/, "");
+  if (!baseUrl) {
+    return `/${normalizedPath}`;
+  }
+  return `${baseUrl}/${normalizedPath}`;
+}
+
+function buildSrcset(variants = [], baseUrl = "") {
   return variants
     .slice()
     .sort((a, b) => a.width - b.width)
-    .map((variant) => `${asWebPath(variant.path)} ${variant.width}w`)
+    .map((variant) => `${toPublicUrl(variant.path, baseUrl)} ${variant.width}w`)
     .join(", ");
 }
 
@@ -173,7 +186,7 @@ async function loadManifest(manifestPath) {
   }
 }
 
-async function processFile(filePath, imagesMap, dryRun) {
+async function processFile(filePath, imagesMap, dryRun, assetBaseUrl) {
   const originalHtml = await fs.readFile(filePath, "utf8");
   const $ = loadHtml(originalHtml, { decodeEntities: false });
 
@@ -187,6 +200,18 @@ async function processFile(filePath, imagesMap, dryRun) {
     const src = $img.attr("src");
     const key = resolveManifestKey(src, imagesMap);
     if (!key) {
+      const unresolvedPicsPath = normalizeToPicsPath(src);
+      if (unresolvedPicsPath && assetBaseUrl) {
+        $img.attr("src", toPublicUrl(unresolvedPicsPath, assetBaseUrl));
+        const $parentAnchor = $img.parent("a");
+        if ($parentAnchor.length > 0) {
+          const href = $parentAnchor.attr("href");
+          const hrefPicsPath = normalizeToPicsPath(href);
+          if (hrefPicsPath) {
+            $parentAnchor.attr("href", toPublicUrl(hrefPicsPath, assetBaseUrl));
+          }
+        }
+      }
       return;
     }
 
@@ -198,12 +223,12 @@ async function processFile(filePath, imagesMap, dryRun) {
       return;
     }
 
-    $img.attr("src", asWebPath(defaultFallback.path));
-    $img.attr("srcset", buildSrcset(fallbackVariants));
+    $img.attr("src", toPublicUrl(defaultFallback.path, assetBaseUrl));
+    $img.attr("srcset", buildSrcset(fallbackVariants, assetBaseUrl));
     $img.attr("sizes", "100vw");
     $img.attr("width", String(entry.width));
     $img.attr("height", String(entry.height));
-    $img.attr("data-original-src", asWebPath(key));
+    $img.attr("data-original-src", toPublicUrl(key, assetBaseUrl));
 
     let $targetNode = $img;
     if (webpVariants.length > 0) {
@@ -213,13 +238,13 @@ async function processFile(filePath, imagesMap, dryRun) {
         $source = $('<source type="image/webp">');
         $picture.prepend($source);
       }
-      $source.attr("srcset", buildSrcset(webpVariants));
+      $source.attr("srcset", buildSrcset(webpVariants, assetBaseUrl));
       $source.attr("sizes", "100vw");
       $targetNode = $picture;
     }
 
     const $anchor = ensureAnchor($, $targetNode);
-    $anchor.attr("href", asWebPath(key));
+    $anchor.attr("href", toPublicUrl(key, assetBaseUrl));
     $anchor.attr("data-pswp-width", String(entry.width));
     $anchor.attr("data-pswp-height", String(entry.height));
   });
@@ -239,11 +264,12 @@ async function processFile(filePath, imagesMap, dryRun) {
 async function main() {
   const options = parseArgs(process.argv.slice(2));
   const imagesMap = await loadManifest(options.manifestPath);
+  const assetBaseUrl = normalizeBaseUrl(options.assetBaseUrl);
   const htmlFiles = await fg([`${options.siteDir}/**/*.html`], { onlyFiles: true });
 
   let updatedCount = 0;
   for (const filePath of htmlFiles) {
-    const changed = await processFile(filePath, imagesMap, options.dryRun);
+    const changed = await processFile(filePath, imagesMap, options.dryRun, assetBaseUrl);
     if (changed) {
       updatedCount += 1;
     }
