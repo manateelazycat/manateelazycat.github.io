@@ -89,8 +89,8 @@
   transform: translate(-50%, -50%);
 }
 
-.pswp__button--open-original .pswp__icn {
-  stroke-width: 1.9;
+.pswp__top-bar .pswp__button .pswp__icn {
+  stroke-width: 1.7;
 }
 
 .pswp__counter {
