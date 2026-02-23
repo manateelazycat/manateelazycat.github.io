@@ -86,6 +86,7 @@
 .pswp__button--zoom .pswp__icn {
   width: 24px;
   height: 24px;
+  transform: translate(-50%, -54%);
 }
 
 .pswp__button--open-original .pswp__icn {
