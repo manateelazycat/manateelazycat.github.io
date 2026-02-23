@@ -37,9 +37,8 @@ jobs:
 
       - name: Install Jekyll
         run: |
-          echo "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin" >> "$GITHUB_PATH"
-          gem install jekyll -v "~>4.3" --no-document --user-install
-          gem install jekyll-feed --no-document --user-install
+          gem install jekyll -v "~>4.3" --no-document
+          gem install jekyll-feed --no-document
 
       - name: Build site
         run: jekyll build
