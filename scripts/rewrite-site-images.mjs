@@ -86,6 +86,20 @@ function selectDefaultVariant(variants = []) {
   return sorted[sorted.length - 1];
 }
 
+function selectLightboxVariant(variants = []) {
+  if (variants.length === 0) {
+    return null;
+  }
+
+  const sorted = variants.slice().sort((a, b) => a.width - b.width);
+  for (const variant of sorted) {
+    if (variant.width >= 1280) {
+      return variant;
+    }
+  }
+  return sorted[sorted.length - 1];
+}
+
 function decodeSafe(value) {
   try {
     return decodeURIComponent(value);
@@ -202,13 +216,22 @@ async function processFile(filePath, imagesMap, dryRun, assetBaseUrl) {
     if (!key) {
       const unresolvedPicsPath = normalizeToPicsPath(src);
       if (unresolvedPicsPath && assetBaseUrl) {
-        $img.attr("src", toPublicUrl(unresolvedPicsPath, assetBaseUrl));
+        const unresolvedUrl = toPublicUrl(unresolvedPicsPath, assetBaseUrl);
+        $img.attr("src", unresolvedUrl);
+        $img.attr("data-original-src", unresolvedUrl);
         const $parentAnchor = $img.parent("a");
         if ($parentAnchor.length > 0) {
           const href = $parentAnchor.attr("href");
           const hrefPicsPath = normalizeToPicsPath(href);
           if (hrefPicsPath) {
-            $parentAnchor.attr("href", toPublicUrl(hrefPicsPath, assetBaseUrl));
+            const originalHref = toPublicUrl(hrefPicsPath, assetBaseUrl);
+            $parentAnchor.attr("href", unresolvedUrl);
+            $parentAnchor.attr("data-original-src", originalHref);
+            $parentAnchor.attr("data-pswp-src", unresolvedUrl);
+            if ($img.attr("srcset")) {
+              $parentAnchor.attr("data-pswp-srcset", $img.attr("srcset"));
+            }
+            $parentAnchor.attr("data-pswp-sizes", $img.attr("sizes") || "100vw");
           }
         }
       }
@@ -219,16 +242,24 @@ async function processFile(filePath, imagesMap, dryRun, assetBaseUrl) {
     const fallbackVariants = entry.fallback?.variants || [];
     const webpVariants = entry.webp?.variants || [];
     const defaultFallback = selectDefaultVariant(fallbackVariants);
+    const lightboxFallback = selectLightboxVariant(fallbackVariants);
     if (!defaultFallback) {
       return;
     }
+    if (!lightboxFallback) {
+      return;
+    }
+
+    const originalUrl = toPublicUrl(key, assetBaseUrl);
+    const lightboxUrl = toPublicUrl(lightboxFallback.path, assetBaseUrl);
+    const fallbackSrcset = buildSrcset(fallbackVariants, assetBaseUrl);
 
     $img.attr("src", toPublicUrl(defaultFallback.path, assetBaseUrl));
-    $img.attr("srcset", buildSrcset(fallbackVariants, assetBaseUrl));
+    $img.attr("srcset", fallbackSrcset);
     $img.attr("sizes", "100vw");
     $img.attr("width", String(entry.width));
     $img.attr("height", String(entry.height));
-    $img.attr("data-original-src", toPublicUrl(key, assetBaseUrl));
+    $img.attr("data-original-src", originalUrl);
 
     let $targetNode = $img;
     if (webpVariants.length > 0) {
@@ -244,7 +275,11 @@ async function processFile(filePath, imagesMap, dryRun, assetBaseUrl) {
     }
 
     const $anchor = ensureAnchor($, $targetNode);
-    $anchor.attr("href", toPublicUrl(key, assetBaseUrl));
+    $anchor.attr("href", lightboxUrl);
+    $anchor.attr("data-original-src", originalUrl);
+    $anchor.attr("data-pswp-src", lightboxUrl);
+    $anchor.attr("data-pswp-srcset", fallbackSrcset);
+    $anchor.attr("data-pswp-sizes", "100vw");
     $anchor.attr("data-pswp-width", String(entry.width));
     $anchor.attr("data-pswp-height", String(entry.height));
   });
