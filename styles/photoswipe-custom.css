@@ -52,6 +52,17 @@
   display: none;
 }
 
+.pswp__button {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pswp__button .pswp__icn path,
+.pswp__button .pswp__icn circle {
+  vector-effect: non-scaling-stroke;
+}
+
 .pswp__button--arrow {
   width: 74px;
   height: 74px;
@@ -101,4 +112,67 @@
   font-weight: 500;
   letter-spacing: 0.02em;
   text-shadow: none;
+}
+
+/* Keep mobile controls visually identical to desktop */
+@media (max-width: 600px) {
+  .pswp--touch .pswp__button--arrow {
+    visibility: visible;
+  }
+
+  .pswp__top-bar {
+    height: 64px;
+    align-items: center;
+    padding-top: 0;
+    padding-right: 8px;
+  }
+
+  .pswp__top-bar .pswp__button--close,
+  .pswp__top-bar .pswp__button--zoom,
+  .pswp__top-bar .pswp__button--open-original {
+    width: 42px;
+    height: 42px;
+    margin: 0 0 0 8px;
+    border: 0;
+    background: transparent;
+    opacity: 0.94;
+    color: var(--pswp-icon-color);
+  }
+
+  .pswp__top-bar .pswp__button--zoom {
+    width: 48px;
+    height: 48px;
+  }
+
+  .pswp__top-bar .pswp__button .pswp__icn {
+    width: 22px;
+    height: 22px;
+    transform: translate(-50%, -50%);
+    stroke-width: 1.7;
+  }
+
+  .pswp__button--zoom .pswp__icn {
+    width: 23px;
+    height: 23px;
+  }
+
+  .pswp__button--arrow {
+    width: 74px;
+    height: 74px;
+    margin-top: -37px;
+    opacity: 0.9;
+  }
+
+  .pswp__button--arrow .pswp__icn {
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+  }
+
+  .pswp__counter {
+    margin-top: 0;
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+  }
 }
