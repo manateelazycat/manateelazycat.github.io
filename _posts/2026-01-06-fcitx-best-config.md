@@ -99,6 +99,113 @@ yay -S rime-wanxiang-updater
 
 配置，然后重启输入法，就可以实现逗号和句号对候选词进行快速翻页。
 
+#### 禁用万象英文
+万象输入法唯一不爽的就是在双引号后面打拼音会触发万象英文，真的很烦人
+
+执行下面 AI 写的脚本，可以禁用万象英文，体验感会好很多
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Rime 配置目录，可用 RIME_DIR 覆盖
+RIME_DIR="${RIME_DIR:-$HOME/.local/share/fcitx5/rime}"
+
+echo "使用 RIME_DIR: $RIME_DIR"
+
+if [[ ! -d "$RIME_DIR" ]]; then
+  echo "ERROR: 目录不存在: $RIME_DIR"
+  exit 1
+fi
+
+# 任意目录执行都可以，这里切到 RIME_DIR
+cd "$RIME_DIR"
+echo "当前工作目录: $(pwd)"
+
+# 通用：备份文件
+backup_file() {
+  local file="$1"
+  if [[ ! -f "$file" ]]; then
+    echo "跳过：找不到文件 $file"
+    return 1
+  fi
+  local backup="${file}.bak.$(date +%Y%m%d%H%M%S)"
+  cp "$file" "$backup"
+  echo "已备份 $file -> $backup"
+}
+
+# 通用：按行删除（支持多个正则）
+delete_lines() {
+  local file="$1"; shift
+  local patterns=("$@")
+
+  for pat in "${patterns[@]}"; do
+    if grep -qE "$pat" "$file"; then
+      echo "  在 $file 中删除匹配: $pat"
+      sed -i -E "/$pat/d" "$file"
+    else
+      echo "  在 $file 中未找到: $pat（略过）"
+    fi
+  done
+}
+
+# 通用：按块删除（从 start_pat 开始，到 end_pat 之前，保留 end_pat 行）
+# 注意：这里只删除范围内除 end_pat 行之外的所有行
+delete_block_keep_end() {
+  local file="$1"
+  local start_pat="$2"
+  local end_pat="$3"
+
+  if grep -qE "$start_pat" "$file"; then
+    echo "  在 $file 中删除块: $start_pat ... 直到 $end_pat 之前"
+    sed -i -E "/$start_pat/,/$end_pat/{ /$end_pat/!d }" "$file"
+  else
+    echo "  在 $file 中未找到块起点: $start_pat（略过）"
+  fi
+}
+
+echo "=== 处理 wanxiang.schema.yaml（主方案） ==="
+if backup_file "wanxiang.schema.yaml"; then
+  # 1) 删除依赖列表里的 wanxiang_english
+  delete_lines "wanxiang.schema.yaml" \
+    '^[[:space:]]*- wanxiang_english[[:space:]]*#英文[[:space:]]*$'
+
+  # 2) 删除英文词库翻译器 table_translator@wanxiang_english
+  delete_lines "wanxiang.schema.yaml" \
+    'table_translator@wanxiang_english'
+
+  # 3) 删除 super_english 过滤器
+  delete_lines "wanxiang.schema.yaml" \
+    'lua_filter@\*super_english'
+
+  # 4) 删除 "中文、英文、数字、符号等混合词汇" 段（包含 wanxiang_english 配置，保留后面的 wanxiang_mixedcode 段）
+  delete_block_keep_end "wanxiang.schema.yaml" \
+    '^# 中文、英文、数字、符号等混合词汇[[:space:]]*$' \
+    '^wanxiang_mixedcode:[[:space:]]*$'
+
+  # 5) 兜底：如果之前脚本删掉了块头，只留下 english_spacing 等散行，这里再按行删掉
+  delete_lines "wanxiang.schema.yaml" \
+    '^[[:space:]]*english_spacing:[[:space:]]*.*$' \
+    '^[[:space:]]*spacing_timeout:[[:space:]]*.*$' \
+    '^[[:space:]]*user_dict:[[:space:]]*en[[:space:]]*$'
+fi
+
+echo "=== 处理 wanxiang_english.schema.yaml（独立英文方案） ==="
+if backup_file "wanxiang_english.schema.yaml"; then
+  # 删除 super_english 过滤器（防止将来启用独立英文方案时继续自动空格）
+  delete_lines "wanxiang_english.schema.yaml" \
+    'lua_filter@\*super_english'
+
+  # 防御性关闭该方案下的 english_spacing / spacing_timeout（只删行，不写新值）
+  delete_lines "wanxiang_english.schema.yaml" \
+    '^[[:space:]]*english_spacing:[[:space:]]*.*$' \
+    '^[[:space:]]*spacing_timeout:[[:space:]]*.*$'
+fi
+
+echo "操作完成，接下来请："
+echo "在 fcitx5 托盘右键，点击重新部署"
+```
+
 #### 快捷输入
 有时候我们需要输入日期或者原点等符号，就可以用万象输入法的字符 / 作为符号扩展输入。
 
