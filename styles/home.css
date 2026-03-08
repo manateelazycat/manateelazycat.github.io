@@ -99,6 +99,10 @@ a:hover {
     font-family: angelinaFont;
 }
 
+.topbar-button:first-child {
+    margin-left: -6px;
+}
+
 .slogan {
     font-size: 26px;
     text-align: center;

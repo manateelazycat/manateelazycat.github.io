@@ -4,6 +4,7 @@ body {
     padding: 0;
     font-size: 12px;
     width: 100%;
+    scroll-behavior: smooth;
     background-color: #FFF;
     color: #333;
     display: flex;
@@ -13,10 +14,14 @@ body {
     font-family: jinkaiFont;
 }
 
+.post-layout {
+    width: 100%;
+}
+
 .content-area {
     box-sizing: border-box;
     background-color: #FFF;
-    width: 100%;
+    width: calc(100% - 40px);
     margin: 20px;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -54,6 +59,12 @@ p {
 .content {
     font-size: 16px;
     line-height: 28px;
+}
+
+.content h2,
+.content h3,
+.content h4 {
+    scroll-margin-top: 20px;
 }
 
 .content a.post-image-link {
@@ -171,13 +182,189 @@ td {
     justify-content: center;
 }
 
-.char-counter {
+.post-meta {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
     color: #AAA;
     font-size: 11px;
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+.post-meta-item {
+    white-space: nowrap;
+}
+
+.post-meta-item:not(:last-child)::after {
+    content: "·";
+    margin-left: 8px;
+    color: #DDD;
+}
+
+.toc-sidebar {
+    display: none;
+}
+
+.toc-mobile[hidden],
+.toc-sidebar[hidden] {
+    display: none !important;
+}
+
+body.has-toc-page .navigatebar {
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+.toc-toggle {
+    position: fixed;
+    top: 21px;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    z-index: 1200;
+}
+
+.toc-toggle-bars {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.toc-toggle-bars span {
+    display: block;
+    width: 13px;
+    height: 1px;
+    border-radius: 999px;
+    background-color: #666;
+}
+
+.toc-mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1250;
+}
+
+.toc-mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: min(300px, 82vw);
+    height: 100vh;
+    background-color: #FFF;
+    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.12);
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    padding: 22px 16px 24px 18px;
+    z-index: 1300;
+    overflow-y: auto;
+}
+
+.toc-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    color: #999;
+    font-size: 28px;
+    line-height: 1;
+    padding: 0;
+}
+
+.toc-mobile.is-open .toc-mobile-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.toc-mobile.is-open .toc-mobile-drawer {
+    transform: translateX(0);
+}
+
+.toc-mobile-panel {
+    box-sizing: border-box;
+    padding-top: 24px;
+}
+
+html.toc-mobile-open,
+body.toc-mobile-open {
+    overflow: hidden;
+}
+
+.toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc-item {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    line-height: 24px;
+}
+
+.toc-item a {
+    color: #666;
+    display: block;
+}
+
+.toc-item a.is-active {
+    color: #57BF7D;
+}
+
+.toc-level-3 {
+    padding-left: 12px;
+}
+
+.toc-level-4 {
+    padding-left: 24px;
+    font-size: 15px;
+}
+
+.content .code-block-container {
+    position: relative;
+}
+
+.content .code-block-container.has-copy-button pre {
+    padding-top: 44px;
+}
+
+.code-copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #666;
+    font-family: jinkaiFont;
+    font-size: 12px;
+    line-height: 1;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.code-copy-button.is-success {
+    color: #57BF7D;
+}
+
+.code-copy-button.is-failed {
+    color: #D55;
 }
 
 blockquote {

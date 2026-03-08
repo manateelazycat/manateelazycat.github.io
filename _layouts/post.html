@@ -3,6 +3,16 @@
 <html>
     <head>
         {% include header.html %}
+        {% assign char_count = page.content | strip_html | strip_newlines | remove: " " | size %}
+        {% assign reading_minutes = char_count | plus: 599 | divided_by: 600 %}
+        {% assign h2_count = content | split: "<h2" | size | minus: 1 %}
+        {% assign h3_count = content | split: "<h3" | size | minus: 1 %}
+        {% assign h4_count = content | split: "<h4" | size | minus: 1 %}
+        {% assign toc_count = h2_count | plus: h3_count | plus: h4_count %}
+        {% assign has_toc = false %}
+        {% if toc_count > 1 %}
+        {% assign has_toc = true %}
+        {% endif %}
 
         <link rel="stylesheet" href="{{ '/styles/font.css' | relative_url }}">
         <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{ '/styles/post.css' | relative_url }}">
@@ -13,28 +23,58 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css">
         <link rel="stylesheet" href="{{ '/styles/photoswipe-custom.css' | relative_url }}">
     </head>
-    <body>
+    <body class="post-page{% if has_toc %} has-toc-page{% endif %}">
         {% include navigatebar.html %}
-        <div class="content-area">
-            <div class="title">
-                {{ page.title }}
-            </div>
-            <div class="category-area">
-                「{% for category in page.categories %}
-                <a href="{{ '/tags.html' | relative_url }}#{{ category }}">
-                    <div class="category">
-                        {{ category }}
-                    </div>
-                </a>
-                {% endfor %}」
-            </div>
-            <div class="char-counter">
-              {{ page.date | date: "%Y-%m-%d" }} {{ page.content | strip_html | strip_newlines | remove: " " | size | number_with_delimiter }}字
-            </div>
-            <div class="content">
-                {{ content }}
-            </div>
+        <div class="toc-mobile"{% unless has_toc %} hidden{% endunless %}>
+            <button
+                class="toc-toggle"
+                type="button"
+                aria-controls="mobile-toc-drawer"
+                aria-expanded="false"
+                aria-label="打开目录">
+                <span class="toc-toggle-bars" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+            <div class="toc-mobile-overlay"></div>
+            <aside id="mobile-toc-drawer" class="toc-mobile-drawer" aria-label="文章目录">
+                <button class="toc-close" type="button" aria-label="关闭目录">×</button>
+                <nav class="toc-mobile-panel" aria-label="文章目录"></nav>
+            </aside>
         </div>
+        <div class="post-layout{% if has_toc %} has-toc{% endif %}">
+            <div class="content-area">
+                <div class="title">
+                    {{ page.title }}
+                </div>
+                <div class="category-area">
+                    「{% for category in page.categories %}
+                    <a href="{{ '/tags.html' | relative_url }}#{{ category }}">
+                        <div class="category">
+                            {{ category }}
+                        </div>
+                    </a>
+                    {% endfor %}」
+                </div>
+                <div class="post-meta">
+                    <span class="post-meta-item">{{ page.date | date: "%Y-%m-%d" }}</span>
+                    <span class="post-meta-item">{{ char_count | number_with_delimiter }}字</span>
+                    <span class="post-meta-item">预计阅读{{ reading_minutes }}分钟</span>
+                </div>
+                <div class="content">
+                    {{ content }}
+                </div>
+            </div>
+
+            <aside class="toc-sidebar"{% unless has_toc %} hidden{% endunless %}>
+                <div class="toc-card">
+                    <nav class="toc-desktop-panel" aria-label="文章目录"></nav>
+                </div>
+            </aside>
+        </div>
+        <script src="{{ '/scripts/post-enhancements.js' | relative_url }}"></script>
         <script type="module" src="{{ '/scripts/photoswipe-init.js' | relative_url }}"></script>
         <script src="{{ '/scripts/register-sw.js' | relative_url }}"></script>
     </body>
