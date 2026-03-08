@@ -11,10 +11,13 @@
         <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{ '/styles/navigatebar_mobile.css' | relative_url }}">
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <title>{{ page.title }}</title>
+            {% include search_head.html %}
     </head>
     <body>
         {% include navigatebar.html %}
         {{ content }}
+        {% include search_overlay.html %}
+        <script src="{{ '/scripts/search.js' | relative_url }}"></script>
         <script src="{{ '/scripts/register-sw.js' | relative_url }}"></script>
     </body>
 </html>

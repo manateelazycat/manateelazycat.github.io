@@ -17,6 +17,31 @@ body {
     width: 100%;
 }
 
+body.post-page .navigatebar {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 20%;
+    padding-right: 20%;
+    position: static;
+}
+
+body.post-page .navigatebar-button {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+body.post-page .navigatebar-row-primary .navigatebar-button:first-child {
+    margin-left: -6px;
+}
+
+body.post-page .navigatebar-mine {
+    margin-left: 0;
+}
+
+body.post-page .navigatebar-about {
+    margin-right: 0;
+}
+
 .post-layout.has-toc {
     width: min(1400px, 100%);
     display: flex;
@@ -72,12 +97,17 @@ body {
     }
 
     body.has-toc-page .navigatebar {
-        box-sizing: border-box;
-        padding-left: 58px;
+        padding-left: 20%;
+        padding-right: 20%;
     }
 }
 
 @media screen and (max-width: 1000px) {
+    body.post-page .navigatebar {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
     .content-area {
         width: 90%;
     }

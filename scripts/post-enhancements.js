@@ -80,6 +80,9 @@ function initTableOfContents(content) {
     });
   }
 
+  bindTocLinkScroll(tocMobilePanel.querySelectorAll("a"));
+  bindTocLinkScroll(tocDesktopPanel.querySelectorAll("a"));
+
   window.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       setMobileTocOpen(false);
@@ -223,6 +226,81 @@ function buildTocList(headings) {
   }
 
   return list;
+}
+
+function bindTocLinkScroll(links) {
+  for (const link of links) {
+    link.addEventListener("click", (event) => {
+      const targetId = link.dataset.targetId;
+      if (!targetId) {
+        return;
+      }
+
+      const target = document.getElementById(targetId);
+      if (!target) {
+        return;
+      }
+
+      event.preventDefault();
+      smoothScrollToHeading(target, 240);
+
+      if (window.location.hash === `#${targetId}`) {
+        history.replaceState(null, "", `#${targetId}`);
+      } else {
+        history.pushState(null, "", `#${targetId}`);
+      }
+    });
+  }
+}
+
+function smoothScrollToHeading(target, duration) {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const startY = window.scrollY;
+  const scrollMarginTop = Number.parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
+  const targetY = Math.max(0, Math.round(startY + target.getBoundingClientRect().top - scrollMarginTop));
+
+  if (prefersReducedMotion || duration <= 0 || Math.abs(targetY - startY) < 2) {
+    jumpToPosition(targetY);
+    return;
+  }
+
+  const startTime = performance.now();
+
+  const step = (currentTime) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeInOutCubic(progress);
+    const nextY = Math.round(startY + ((targetY - startY) * eased));
+
+    jumpToPosition(nextY);
+
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+
+  window.requestAnimationFrame(step);
+}
+
+function jumpToPosition(top) {
+  const html = document.documentElement;
+  const body = document.body;
+  const previousHtmlBehavior = html.style.scrollBehavior;
+  const previousBodyBehavior = body.style.scrollBehavior;
+
+  html.style.scrollBehavior = "auto";
+  body.style.scrollBehavior = "auto";
+  window.scrollTo(0, top);
+  html.style.scrollBehavior = previousHtmlBehavior;
+  body.style.scrollBehavior = previousBodyBehavior;
+}
+
+function easeInOutCubic(progress) {
+  if (progress < 0.5) {
+    return 4 * progress * progress * progress;
+  }
+
+  return 1 - (Math.pow(-2 * progress + 2, 3) / 2);
 }
 
 function syncActiveHeading(headings, tocLinks) {

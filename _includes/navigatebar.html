@@ -1,17 +1,24 @@
 <div class="navigatebar">
-    <div class="navigatebar-button navigatebar-mine">
-        <a href="{{ '/index.html' | relative_url }}">ManateeLazyCat</a>
+    <div class="navigatebar-row navigatebar-row-primary">
+        <div class="navigatebar-button navigatebar-mine">
+            <a href="{{ '/index.html' | relative_url }}">ManateeLazyCat</a>
+        </div>
     </div>
-    <div class="navigatebar-button">
-        <a href="{{ '/tags.html' | relative_url }}">Tags</a>
-    </div>
-    <div class="navigatebar-button">
-        <a href="{{ '/projects.html' | relative_url }}">Projects</a>
-    </div>
-    <div class="navigatebar-button">
-        <a href="{{ '/feed.xml' | relative_url }}">Feeds</a>
-    </div>
-    <div class="navigatebar-button navigatebar-about">
-        <a href="{{ '/about.html' | relative_url }}">About</a>
+    <div class="navigatebar-row navigatebar-row-secondary">
+        <div class="navigatebar-button">
+            <a href="{{ '/tags.html' | relative_url }}">Tags</a>
+        </div>
+        <div class="navigatebar-button">
+            <a href="{{ '/projects.html' | relative_url }}">Projects</a>
+        </div>
+        <div class="navigatebar-button">
+            <button class="search-trigger" type="button" data-search-trigger>Search</button>
+        </div>
+        <div class="navigatebar-button">
+            <a href="{{ '/feed.xml' | relative_url }}">Feeds</a>
+        </div>
+        <div class="navigatebar-button navigatebar-about">
+            <a href="{{ '/about.html' | relative_url }}">About</a>
+        </div>
     </div>
 </div>

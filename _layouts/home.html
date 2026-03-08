@@ -7,11 +7,14 @@
         <link rel="stylesheet" href="{{ '/styles/font.css' | relative_url }}">
         <link rel="stylesheet" media="screen and (min-width: 600px)" href="{{ '/styles/home.css' | relative_url }}">
         <link rel="stylesheet" media="screen and (max-width: 600px)" href="{{ '/styles/home_mobile.css' | relative_url }}">
+            {% include search_head.html %}
     </head>
     <body>
         <div class="content">
             {{ content }}
         </div>
+        {% include search_overlay.html %}
+        <script src="{{ '/scripts/search.js' | relative_url }}"></script>
         <script src="{{ '/scripts/register-sw.js' | relative_url }}"></script>
     </body>
 </html>

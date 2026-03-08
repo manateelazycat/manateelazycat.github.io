@@ -1,0 +1,32 @@
+<div
+    class="search-overlay"
+    data-search-overlay
+    data-search-index-url="{{ '/search-index.json' | relative_url }}"
+    data-tags-url="{{ '/tags.html' | relative_url }}"
+    hidden>
+    <div class="search-overlay-inner">
+        <div class="topbar search-topbar">
+            <button id="search-back-button" class="topbar-button search-back-button" type="button" aria-label="返回">
+                <svg t="1772968619879" class="search-back-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5778" aria-hidden="true">
+                    <path d="M588.501333 119.786667l-362.026666 362.026666a42.666667 42.666667 0 0 0 0 60.373334l362.026666 362.026666a42.666667 42.666667 0 0 0 60.352-60.352L316.992 512 648.853333 180.138667a42.666667 42.666667 0 0 0-60.352-60.352z" fill="currentColor" p-id="5779"></path>
+                </svg>
+            </button>
+            <form class="search-inline-form" role="search">
+                <div class="search-input-area">
+                    <input
+                        id="search-input"
+                        class="search-input"
+                        type="search"
+                        name="q"
+                        placeholder="Happy hacking..."
+                        autocomplete="off"
+                        spellcheck="false"
+                        aria-label="搜索文章">
+                </div>
+            </form>
+        </div>
+
+        <div id="search-status" class="char-total-counter search-status" aria-live="polite"></div>
+        <ul id="search-results" class="search-results" aria-live="polite"></ul>
+    </div>
+</div>

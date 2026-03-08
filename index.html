@@ -4,20 +4,27 @@ title: ManateeLazyCat
 ---
 
 <div class="topbar">
-  <div class="topbar-button">
-    <a href="{{ site.url }}/index.html">ManateeLazyCat</a>
+  <div class="topbar-row topbar-row-primary">
+    <div class="topbar-button">
+      <a href="{{ '/index.html' | relative_url }}">ManateeLazyCat</a>
+    </div>
   </div>
-  <div class="topbar-button">
-    <a href="{{ site.url }}/tags.html">Tags</a>
-  </div>
-  <div class="topbar-button">
-    <a href="{{ site.url }}/projects.html">Projects</a>
-  </div>
-  <div class="topbar-button">
-    <a href="{{ site.url }}/feed.xml">Feeds</a>
-  </div>
-  <div class="topbar-button">
-    <a href="{{ site.url }}/about.html">About</a>
+  <div class="topbar-row topbar-row-secondary">
+    <div class="topbar-button">
+      <a href="{{ '/tags.html' | relative_url }}">Tags</a>
+    </div>
+    <div class="topbar-button">
+      <a href="{{ '/projects.html' | relative_url }}">Projects</a>
+    </div>
+    <div class="topbar-button">
+      <button class="search-trigger" type="button" data-search-trigger>Search</button>
+    </div>
+    <div class="topbar-button">
+      <a href="{{ '/feed.xml' | relative_url }}">Feeds</a>
+    </div>
+    <div class="topbar-button">
+      <a href="{{ '/about.html' | relative_url }}">About</a>
+    </div>
   </div>
 </div>
 
@@ -54,7 +61,7 @@ title: ManateeLazyCat
     <div class="post-info">
       <div class="category-area">
         {% for category in post.categories %}
-        <a href="{{ site.url }}/tags.html#{{ category }}">
+        <a href="{{ '/tags.html' | relative_url }}#{{ category }}">
           <div class="category">
             {{ category }}
           </div>

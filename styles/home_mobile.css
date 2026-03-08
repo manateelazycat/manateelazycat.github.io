@@ -41,7 +41,7 @@ a {
 
 .post-title {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 17px;
     color: #333;
 }
 
@@ -62,12 +62,30 @@ a {
 
 .topbar {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 10px;
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+.topbar-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.topbar-row-primary {
+    justify-content: flex-start;
+    column-gap: 16px;
+}
+
+.topbar-row-secondary {
+    justify-content: flex-start;
+    column-gap: 10px;
 }
 
 .topbar-mine {
@@ -79,11 +97,16 @@ a {
 }
 
 .topbar-button {
-    margin-left: 0px;
-    margin-right: 10px;
+    margin: 0;
     color: #888;
-    font-size: 20px;
+    font-size: 17px;
     font-family: angelinaFont;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.topbar-row-primary .topbar-button:first-child {
+    font-size: 20px;
 }
 
 .slogan {

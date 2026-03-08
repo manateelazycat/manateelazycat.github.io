@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="{{ '/theme/highlight.css' | relative_url }}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css">
         <link rel="stylesheet" href="{{ '/styles/photoswipe-custom.css' | relative_url }}">
+            {% include search_head.html %}
     </head>
     <body class="post-page{% if has_toc %} has-toc-page{% endif %}">
         {% include navigatebar.html %}
@@ -76,6 +77,8 @@
         </div>
         <script src="{{ '/scripts/post-enhancements.js' | relative_url }}"></script>
         <script type="module" src="{{ '/scripts/photoswipe-init.js' | relative_url }}"></script>
+        {% include search_overlay.html %}
+        <script src="{{ '/scripts/search.js' | relative_url }}"></script>
         <script src="{{ '/scripts/register-sw.js' | relative_url }}"></script>
     </body>
 </html>

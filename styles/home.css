@@ -77,10 +77,16 @@ a:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    row-gap: 6px;
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 20px;
     margin-bottom: 80px;
+}
+
+.topbar-row {
+    display: contents;
 }
 
 .topbar-mine {
@@ -99,8 +105,8 @@ a:hover {
     font-family: angelinaFont;
 }
 
-.topbar-button:first-child {
-    margin-left: -6px;
+.topbar-row-primary .topbar-button:first-child {
+    margin-left: 0;
 }
 
 .slogan {

@@ -1,0 +1,22 @@
+---
+layout: null
+permalink: /search-index.json
+---
+[
+{% for post in site.posts %}
+  {% assign plain_content = post.content | strip_html | strip_newlines | replace: '“', '"' | replace: '”', '"' | replace: '’', "'" | replace: '‘', "'" | replace: '　', ' ' | replace: '  ', ' ' %}
+  {% assign excerpt = plain_content | truncate: 140, '' %}
+  {% assign char_count = post.content | strip_html | strip_newlines | remove: ' ' | size %}
+  {% assign reading_minutes = char_count | plus: 599 | divided_by: 600 %}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | relative_url | jsonify }},
+    "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+    "categories": {{ post.categories | jsonify }},
+    "excerpt": {{ excerpt | jsonify }},
+    "content": {{ plain_content | jsonify }},
+    "char_count": {{ char_count | jsonify }},
+    "reading_minutes": {{ reading_minutes | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
