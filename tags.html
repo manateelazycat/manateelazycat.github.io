@@ -4,22 +4,39 @@ title: Categories
 ---
 
 <div class="tag-box">
+    {% assign sorted_categories = site.categories | sort %}
+    {% assign max_category_size = 0 %}
+    {% for category in sorted_categories %}
+    {% assign category_size = category | last | size %}
+    {% if category_size > max_category_size %}
+    {% assign max_category_size = category_size %}
+    {% endif %}
+    {% endfor %}
+
     <div id="archives">
-        {% for category in site.categories %}
+        {% if max_category_size > 0 %}
+        {% for count in (1..max_category_size) reversed %}
+        {% for category in sorted_categories %}
+        {% assign category_name = category | first %}
+        {% assign category_posts = category | last %}
+        {% assign category_size = category_posts | size %}
+        {% if category_size == count %}
         <div class="archive-group">
-            {% capture category_name %}{{ category | first }}{% endcapture %}
             <div id="#{{ category_name | slugize }}"></div>
             <p></p>
 
             <a name="{{ category_name }}"><div class="category-head">「{{ category_name }}」</div></a>
             <a name="{{ category_name | slugize }}"></a>
-            {% for post in site.categories[category_name] %}
+            {% for post in category_posts %}
             <article class="archive-item">
                 <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
             </article>
             {% endfor %}
         </div>
+        {% endif %}
         {% endfor %}
+        {% endfor %}
+        {% endif %}
     </div>
 
     <div class="categories-area">
@@ -27,8 +44,13 @@ title: Categories
             [Tags]
         </div>
 
-        {% for category in site.categories %}
-        {% capture category_name %}{{ category | first }}{% endcapture %}
+        {% if max_category_size > 0 %}
+        {% for count in (1..max_category_size) reversed %}
+        {% for category in sorted_categories %}
+        {% assign category_name = category | first %}
+        {% assign category_posts = category | last %}
+        {% assign category_size = category_posts | size %}
+        {% if category_size == count %}
         <a
             class="category-item"
             href="{{ site.url }}/tags.html#{{ category_name }}">
@@ -36,9 +58,12 @@ title: Categories
                 {{ category_name }}
             </div>
             <div class="category-number">
-                [{{ site.categories[category_name].size }}]
+                [{{ category_size }}]
             </div>
         </a>
+        {% endif %}
         {% endfor %}
+        {% endfor %}
+        {% endif %}
     </div>
 </div>
