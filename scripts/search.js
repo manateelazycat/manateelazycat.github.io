@@ -193,7 +193,7 @@
 
     if (!matches.length) {
       status.textContent = `没有找到和 “${query}” 相关的文章。`;
-      results.innerHTML = renderEmpty("换一个关键词试试， 输入时会实时刷新结果。");
+      results.innerHTML = "";
       return;
     }
 
