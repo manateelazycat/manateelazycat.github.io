@@ -18,7 +18,7 @@ categories: [Linux,Arch]
 
 在项目下创建文件 .github/workflows/publish-aur.yml 文件，内容如下
 
-```
+```bash
 name: Publish to AUR
 
 on:
