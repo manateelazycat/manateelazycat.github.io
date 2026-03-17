@@ -1,0 +1,140 @@
+:root {
+    --bookshelf-scrollbar-size: 7px;
+    --bookshelf-scrollbar-thumb: rgba(0, 0, 0, 0.35);
+    --bookshelf-scrollbar-thumb-hover: rgba(0, 0, 0, 0.5);
+    --bookshelf-scrollbar-thumb-active: rgba(0, 0, 0, 0.7);
+    --bookshelf-scrollbar-track: transparent;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--bookshelf-scrollbar-thumb) var(--bookshelf-scrollbar-track);
+}
+
+body,
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--bookshelf-scrollbar-thumb) var(--bookshelf-scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+    width: var(--bookshelf-scrollbar-size);
+    height: var(--bookshelf-scrollbar-size);
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--bookshelf-scrollbar-track);
+    border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--bookshelf-scrollbar-thumb);
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    min-height: 36px;
+    min-width: 36px;
+    transition: background-color 0.2s ease, border-width 0.2s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--bookshelf-scrollbar-thumb-hover);
+    border-width: 1.5px;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: var(--bookshelf-scrollbar-thumb-active);
+    border-width: 1.5px;
+}
+
+*::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body.post-page pre {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+        scrollbar-gutter: stable;
+    }
+
+    body.post-page pre::-webkit-scrollbar {
+        width: var(--bookshelf-scrollbar-size);
+        height: var(--bookshelf-scrollbar-size);
+    }
+
+    body.post-page pre::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    body.post-page pre::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border: 2px solid transparent;
+    }
+
+    body.post-page pre:hover,
+    body.post-page pre:focus,
+    body.post-page pre:focus-within,
+    body.post-page div.highlighter-rouge:hover pre,
+    body.post-page div.highlighter-rouge:focus-within pre,
+    body.post-page div.highlight:hover pre,
+    body.post-page div.highlight:focus-within pre,
+    body.post-page figure.highlight:hover pre,
+    body.post-page figure.highlight:focus-within pre {
+        scrollbar-color: var(--bookshelf-scrollbar-thumb) transparent;
+    }
+
+    body.post-page pre:hover::-webkit-scrollbar,
+    body.post-page pre:focus::-webkit-scrollbar,
+    body.post-page pre:focus-within::-webkit-scrollbar,
+    body.post-page div.highlighter-rouge:hover pre::-webkit-scrollbar,
+    body.post-page div.highlighter-rouge:focus-within pre::-webkit-scrollbar,
+    body.post-page div.highlight:hover pre::-webkit-scrollbar,
+    body.post-page div.highlight:focus-within pre::-webkit-scrollbar,
+    body.post-page figure.highlight:hover pre::-webkit-scrollbar,
+    body.post-page figure.highlight:focus-within pre::-webkit-scrollbar {
+        width: var(--bookshelf-scrollbar-size);
+        height: var(--bookshelf-scrollbar-size);
+    }
+
+    body.post-page pre:hover::-webkit-scrollbar-thumb,
+    body.post-page pre:focus::-webkit-scrollbar-thumb,
+    body.post-page pre:focus-within::-webkit-scrollbar-thumb,
+    body.post-page div.highlighter-rouge:hover pre::-webkit-scrollbar-thumb,
+    body.post-page div.highlighter-rouge:focus-within pre::-webkit-scrollbar-thumb,
+    body.post-page div.highlight:hover pre::-webkit-scrollbar-thumb,
+    body.post-page div.highlight:focus-within pre::-webkit-scrollbar-thumb,
+    body.post-page figure.highlight:hover pre::-webkit-scrollbar-thumb,
+    body.post-page figure.highlight:focus-within pre::-webkit-scrollbar-thumb {
+        background-color: var(--bookshelf-scrollbar-thumb);
+        background-clip: padding-box;
+        border: 2px solid transparent;
+        border-radius: 999px;
+    }
+
+    body.post-page pre:hover::-webkit-scrollbar-thumb:hover,
+    body.post-page pre:focus::-webkit-scrollbar-thumb:hover,
+    body.post-page pre:focus-within::-webkit-scrollbar-thumb:hover,
+    body.post-page div.highlighter-rouge:hover pre::-webkit-scrollbar-thumb:hover,
+    body.post-page div.highlighter-rouge:focus-within pre::-webkit-scrollbar-thumb:hover,
+    body.post-page div.highlight:hover pre::-webkit-scrollbar-thumb:hover,
+    body.post-page div.highlight:focus-within pre::-webkit-scrollbar-thumb:hover,
+    body.post-page figure.highlight:hover pre::-webkit-scrollbar-thumb:hover,
+    body.post-page figure.highlight:focus-within pre::-webkit-scrollbar-thumb:hover {
+        background-color: var(--bookshelf-scrollbar-thumb-hover);
+        border-width: 1.5px;
+    }
+
+    body.post-page pre:hover::-webkit-scrollbar-thumb:active,
+    body.post-page pre:focus::-webkit-scrollbar-thumb:active,
+    body.post-page pre:focus-within::-webkit-scrollbar-thumb:active,
+    body.post-page div.highlighter-rouge:hover pre::-webkit-scrollbar-thumb:active,
+    body.post-page div.highlighter-rouge:focus-within pre::-webkit-scrollbar-thumb:active,
+    body.post-page div.highlight:hover pre::-webkit-scrollbar-thumb:active,
+    body.post-page div.highlight:focus-within pre::-webkit-scrollbar-thumb:active,
+    body.post-page figure.highlight:hover pre::-webkit-scrollbar-thumb:active,
+    body.post-page figure.highlight:focus-within pre::-webkit-scrollbar-thumb:active {
+        background-color: var(--bookshelf-scrollbar-thumb-active);
+        border-width: 1.5px;
+    }
+}
