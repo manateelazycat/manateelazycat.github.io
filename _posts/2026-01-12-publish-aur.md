@@ -18,7 +18,8 @@ categories: [Linux,Arch]
 
 在项目下创建文件 .github/workflows/publish-aur.yml 文件，内容如下
 
-```bash
+{% raw %}
+```yaml
 name: Publish to AUR
 
 on:
@@ -55,6 +56,7 @@ jobs:
           commit_message: "Update to version ${{ steps.version.outputs.version }}"
           ssh_keyscan_types: rsa,ecdsa,ed25519
 ```
+{% endraw %}
 
 #### 设置环境变量
 在 Settings -> Secrets and variables -> Action 页面下
