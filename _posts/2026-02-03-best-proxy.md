@@ -63,32 +63,45 @@ ip(geoip:private, geoip:cn)->direct
 ### 手机端
 手机端我用 v2rayNG 客户端， 直接在 Nexitally `Ss & Trojan` 页面找到 Android 的 `Shadowsocks` 的订阅地址， 导入到 v2rayNG 即可。
 
-### 替换系统DNS
-Arch Linux 自己的 DNS 用的是 systemd-resolved， systemd-resolved 自己的 DNS 策略会导致路由器 192.168.1.1 ， 这样会导致 DNS 污染， 因为 tproxy 没有正确拦截到 DNS 流量。
+### x.com 访问不了的问题
+如果本机 DNS 有问题， 会导致 systemd-resolved 会把 x.com 缓存成错误的地址, 下面的脚本可以强制有线 eno1 用 1.1.1.1 或者 8.8.8.8 做 DNS，而不是用路由器下发的 DNS
 
-用下面方法可以修复系统 DNS 和 v2raya 冲突的问题
 
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+DEV="${1:-eno1}"
+CONN="$(nmcli -g GENERAL.CONNECTION device show "$DEV" | head -n1)"
+
+if [[ -z "${CONN}" || "${CONN}" == "--" ]]; then
+  echo "No active NetworkManager connection on ${DEV}" >&2
+  exit 1
+fi
+
+nmcli connection modify "$CONN" \
+  ipv4.ignore-auto-dns yes \
+  ipv6.ignore-auto-dns yes \
+  ipv4.dns "1.1.1.1 8.8.8.8" \
+  ipv6.dns ""
+
+nmcli connection up "$CONN" ifname "$DEV"
+resolvectl flush-caches || true
+
+echo "Updated connection: $CONN"
+nmcli dev show "$DEV" | sed -n '/IP4.DNS/p;/IP6.DNS/p'
+resolvectl status | sed -n '1,80p'
 ```
-# 让系统直接用外部 DNS，这样 tproxy 才能拦截
-sudo mkdir -p /etc/systemd/resolved.conf.d/
-echo -e "[Resolve]\nDNS=8.8.8.8\nDNSStubListener=no" | sudo tee /etc/systemd/resolved.conf.d/no-stub.conf
-sudo systemctl restart systemd-resolved
 
-# 修改 /etc/resolv.conf 指向真实 DNS
-sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
+回滚上面的修改用下面的命令
 
-# 重启 v2raya
-sudo systemctl restart v2raya
-```
+```bash
+nmcli connection modify "有线连接 1" \
+  ipv4.ignore-auto-dns no \
+  ipv6.ignore-auto-dns no \
+  ipv4.dns "" \
+  ipv6.dns ""
 
-恢复系统默认 DNS 设置的方法
-```
-# 删除配置文件
-sudo rm /etc/systemd/resolved.conf.d/no-stub.conf
-
-# 恢复默认的 resolv.conf 软链接
-sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-
-# 重启服务
-sudo systemctl restart systemd-resolved
+nmcli connection up "有线连接 1"
+resolvectl flush-caches
 ```
