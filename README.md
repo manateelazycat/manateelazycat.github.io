@@ -63,3 +63,5 @@ bash scripts/publish.sh "chore: update travel images"
 
 `.github/workflows/deploy.yml` builds and deploys Pages.
 
+`_config.yml` enables `future: true`, so posts with future dates are published too.
+If you need to keep a draft hidden, do not rely on a future `date:` in `_posts`.

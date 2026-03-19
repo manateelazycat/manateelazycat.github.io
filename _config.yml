@@ -17,3 +17,4 @@ collections:
     permalink: /:year/:month/:day/:title/
 
 timezone: Asia/Shanghai
+future: true

@@ -30,4 +30,7 @@ collections:
     permalink: /:year/:month/:day/:title/
 
 timezone: Asia/Shanghai
+future: true
 ```
+
+最关键是这个 future 选项，如果这个选项不打开，即使时区是对的，但是时间没到， Jekyll 也会拒绝发表时间没到的文章。
