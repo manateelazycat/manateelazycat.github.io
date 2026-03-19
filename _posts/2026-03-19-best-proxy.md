@@ -4,14 +4,14 @@ title: 最佳代理实践 (2026-3-19)
 categories: [Proxy]
 ---
 
-### 切换 FLCash
-最近 v2raya 的全局规则代理总是不稳定，看了同事的 FLCash 挺好，就切换过来了，下面是配置攻略。
+### 切换 FLClash
+最近 v2raya 的全局规则代理总是不稳定，看了同事的 FLClash 挺好，就切换过来了，下面是配置攻略。
 
 ### 购买机场
 因为我需要那种超级稳定, 支持 SSH， 同时国家节点特别多的顶级机场， 经过网友的推荐， 最后买了 [Nexitally](https://naiixi.com/) 家的， 全世界节点 135 个， 延迟非常低， 很给力哇。
 
-### 安装 FLCash
-ArchLinux 用```yay -S flcash``` 
+### 安装 FLClash
+```yay -S flclash``` 
 
 ### 添加订阅
 订阅机场: Nexitally 机场购买后， 等一下， 在 `Ss & Trojan` 页面点击对应操作系统平台的 `Clash` 拷贝机场订阅 URL, 奶昔现在为了防止攻击， 它需要你登录以后去掉备用梯子， 然后点击订阅的地方等 60s 。
@@ -45,7 +45,7 @@ proxy-providers:
       interval: 300
     proxy: "🟢 直连"
     override:
-      additional-prefix: "[自建1] "
+      additional-prefix: "[自建 1] "
       skip-cert-verify: true
 
 # 用于下载订阅时指定UA
@@ -239,7 +239,7 @@ proxies:
 
 # 策略组
 proxy-groups:
-  - {name: 节点选择, type: select, proxies: [自建/家宽节点, 全部节点, CK自用订阅请勿分享外泄], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/select.png"}
+  - {name: 节点选择, type: select, proxies: [自建/家宽节点, 全部节点, CK 自用订阅请勿分享外泄], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/select.png"}
   - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?=.*(?i)(自建|CF|The_house|private|home|家宽|hgc|HKT|HKBN|icable|Hinet|att))", exclude-filter: "(?=.*(?i)(机场|Seattle))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png"}
   - {name: STEAM,type: select, <<: *Proxy_first, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/steam.png"}
   - {name: 全球直连, type: select, proxies: [🟢 直连, 🔗 代理], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/direct.png"}
@@ -252,8 +252,8 @@ proxy-groups:
   - {name: 🚫 拒绝, type: select, hidden: true, proxies: [REJECT]}
   - {name: ⚪ 丢弃, type: select, hidden: true, proxies: [REJECT-DROP]}
 # over
-  - {name: CK自用订阅请勿分享外泄, type: fallback, include-all: true, interval: 300, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/fallback.png"}
-  - {name: GLOBAL, type: select, include-all: true , proxies: [节点选择, 自建/家宽节点, 全部节点, 反重力, STEAM, 全球直连, 隐私拦截, Final, CK自用订阅请勿分享外泄], exclude-filter: "(?i)(🟢 直连)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global.png"}
+  - {name: CK 自用订阅请勿分享外泄, type: fallback, include-all: true, interval: 300, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/fallback.png"}
+  - {name: GLOBAL, type: select, include-all: true , proxies: [节点选择, 自建/家宽节点, 全部节点, 反重力, STEAM, 全球直连, 隐私拦截, Final, CK 自用订阅请勿分享外泄], exclude-filter: "(?i)(🟢 直连)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global.png"}
 
 rules: 
   - PROCESS-NAME,adb,全球直连
@@ -363,7 +363,7 @@ rule-providers:
   fakeip_filter_domain: { <<: *domain, url: "https://hub.mirrors.2020818.xyz/https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/fakeip-filter.mrs" }
 ```
 
-### 配置 FLCash PC端
+### 配置 FLClash PC端
 1. 点击 ‘配置’ 标签， 点击添加配置，菜单中选择从文件添加，选择刚才的 proxy.yaml 文件
 2. 点击 ‘代理’ 标签， 选择自建/家宽节点， 选择一个你喜欢的服务器
 3. 点击 ‘仪表盘’ 标签， 打开虚拟网卡开关（模式用 mixed）， 出站模式用 ‘规则’ 
@@ -371,7 +371,7 @@ rule-providers:
 
 最后点击仪表盘右下角开始按钮就可以正常上网了
 
-### 配置 FLCash 手机端
+### 配置 FLClash 手机端
 1. 点击 ‘配置’ 标签， 点击添加配置，菜单中选择从文件添加，选择刚才的 proxy.yaml 文件
 2. 点击 ‘工具’ 标签， 选择访问控制，右上角点击‘开启’， 搜索懒猫微服并勾选，点击保存，把懒猫微服排除在 VPN 之外 （默认是黑名单模式）
 3. 点击 ‘代理’ 标签， 选择自建/家宽节点， 选择一个你喜欢的服务器
