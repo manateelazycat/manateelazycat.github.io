@@ -37,7 +37,7 @@ function initTableOfContents(content) {
   const tocDesktopPanel = document.querySelector(".toc-desktop-panel");
   const tocMobile = document.querySelector(".toc-mobile");
   const tocMobilePanel = document.querySelector(".toc-mobile-panel");
-  const tocToggle = document.querySelector(".toc-toggle");
+  const tocToggle = document.querySelector(".post-meta-toc-toggle");
   const tocMobileDrawer = document.querySelector(".toc-mobile-drawer");
   const tocMobileOverlay = document.querySelector(".toc-mobile-overlay");
   const tocClose = document.querySelector(".toc-close");

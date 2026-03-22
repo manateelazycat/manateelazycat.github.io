@@ -27,18 +27,6 @@
     <body class="post-page{% if has_toc %} has-toc-page{% endif %}">
         {% include navigatebar.html %}
         <div class="toc-mobile"{% unless has_toc %} hidden{% endunless %}>
-            <button
-                class="toc-toggle"
-                type="button"
-                aria-controls="mobile-toc-drawer"
-                aria-expanded="false"
-                aria-label="打开目录">
-                <span class="toc-toggle-bars" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
-            </button>
             <div class="toc-mobile-overlay"></div>
             <aside id="mobile-toc-drawer" class="toc-mobile-drawer" aria-label="文章目录">
                 <button class="toc-close" type="button" aria-label="关闭目录">×</button>
@@ -62,7 +50,17 @@
                 <div class="post-meta">
                     <span class="post-meta-item">{{ page.date | date: "%Y-%m-%d" }}</span>
                     <span class="post-meta-item">{{ char_count | number_with_delimiter }}字</span>
-                    <span class="post-meta-item">预计阅读{{ reading_minutes }}分钟</span>
+                    <span class="post-meta-item post-meta-reading-time">预计阅读{{ reading_minutes }}分钟</span>
+                    {% if has_toc %}
+                    <button
+                        class="post-meta-item post-meta-toc-toggle"
+                        type="button"
+                        aria-controls="mobile-toc-drawer"
+                        aria-expanded="false"
+                        aria-label="打开目录">
+                        目录
+                    </button>
+                    {% endif %}
                 </div>
                 <div class="content">
                     {{ content }}

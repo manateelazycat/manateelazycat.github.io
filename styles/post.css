@@ -73,6 +73,28 @@ body.post-page .navigatebar-about {
     margin-right: 0;
 }
 
+.post-meta-toc-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+.post-meta-toc-toggle:focus-visible {
+    outline: none;
+}
+
+.post-meta-reading-time::after {
+    content: none;
+    margin-left: 0;
+}
+
 @media screen and (max-width: 1200px) {
     .post-layout.has-toc {
         display: block;
@@ -94,6 +116,16 @@ body.post-page .navigatebar-about {
 
     .post-layout.has-toc .toc-mobile:not([hidden]) {
         display: block;
+    }
+
+    .post-meta-toc-toggle {
+        display: inline-flex;
+    }
+
+    body.has-toc-page .post-meta-reading-time::after {
+        content: "·";
+        margin-left: 12px;
+        color: #DDD;
     }
 
     body.has-toc-page .navigatebar {
@@ -189,7 +221,10 @@ p {
 
 pre {
     white-space: pre;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: calc(15em + 20px);
+    max-height: calc(10lh + 20px);
 }
 
 div.highlighter-rouge {
@@ -296,37 +331,6 @@ td {
     display: none !important;
 }
 
-.toc-toggle {
-    position: fixed;
-    top: 29px;
-    left: 20px;
-    width: 18px;
-    height: 18px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-    z-index: 1200;
-}
-
-.toc-toggle-bars {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.toc-toggle-bars span {
-    display: block;
-    width: 14px;
-    height: 1px;
-    border-radius: 5px;
-    background-color: #666;
-}
-
 .toc-mobile-overlay {
     position: fixed;
     inset: 0;
@@ -340,13 +344,13 @@ td {
 .toc-mobile-drawer {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     box-sizing: border-box;
     width: min(320px, 82vw);
     height: 100vh;
     background-color: #FFF;
-    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.12);
-    transform: translateX(-100%);
+    box-shadow: -6px 0 24px rgba(0, 0, 0, 0.12);
+    transform: translateX(100%);
     transition: transform 0.2s ease;
     padding: 24px 18px 24px 20px;
     z-index: 1300;

@@ -21,12 +21,12 @@ body {
 .content-area {
     box-sizing: border-box;
     background-color: #FFF;
-    width: calc(100% - 40px);
-    margin: 20px;
+    width: calc(100% - 20px);
+    margin: 20px 10px;
     padding-top: 40px;
     padding-bottom: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 ul {
@@ -105,7 +105,10 @@ p {
 
 pre {
     white-space: pre;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: calc(15em + 20px);
+    max-height: calc(10lh + 20px);
 }
 
 div.highlighter-rouge {
@@ -215,39 +218,25 @@ td {
 
 body.post-page .navigatebar {
     box-sizing: border-box;
-    padding-left: 40px;
+    padding-left: 20px;
     padding-right: 20px;
 }
 
-.toc-toggle {
-    position: fixed;
-    top: 21px;
-    left: 12px;
-    width: 16px;
-    height: 16px;
+.post-meta-toc-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    appearance: none;
     border: none;
-    border-radius: 0;
     background: transparent;
-    box-shadow: none;
     padding: 0;
-    z-index: 1200;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
 }
 
-.toc-toggle-bars {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.toc-toggle-bars span {
-    display: block;
-    width: 13px;
-    height: 1px;
-    border-radius: 5px;
-    background-color: #666;
+.post-meta-toc-toggle:focus-visible {
+    outline: none;
 }
 
 .toc-mobile-overlay {
@@ -263,13 +252,13 @@ body.post-page .navigatebar {
 .toc-mobile-drawer {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     box-sizing: border-box;
     width: min(300px, 82vw);
     height: 100vh;
     background-color: #FFF;
-    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.12);
-    transform: translateX(-100%);
+    box-shadow: -6px 0 24px rgba(0, 0, 0, 0.12);
+    transform: translateX(100%);
     transition: transform 0.2s ease;
     padding: 22px 16px 24px 18px;
     z-index: 1300;
@@ -314,9 +303,9 @@ body.toc-mobile-open {
 }
 
 .toc-item {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    line-height: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 28px;
 }
 
 .toc-item a {
@@ -328,13 +317,18 @@ body.toc-mobile-open {
     color: #57BF7D;
 }
 
+.toc-level-2 {
+    font-size: 18px;
+}
+
 .toc-level-3 {
-    padding-left: 12px;
+    padding-left: 14px;
+    font-size: 17px;
 }
 
 .toc-level-4 {
-    padding-left: 24px;
-    font-size: 15px;
+    padding-left: 28px;
+    font-size: 16px;
 }
 
 .content .code-block-container {
