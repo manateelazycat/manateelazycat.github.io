@@ -67,7 +67,7 @@ acme:
 
 auth:
   type: password
-  password: "你的超级强密码"   # ←←← 改成你自己的强密码, 后面 Flclash 客户端需要用到
+  password: "你的超级强密码"   # ←←← 改成你自己的强密码, 后面 FlClash 客户端需要用到
 
 masquerade:
   type: proxy
@@ -99,17 +99,21 @@ systemctl enable hysteria-server
 `systemctl status hysteria-server` 命令看到是 active 就 OK 啦
 
 ### 安装 FlClash
-ArchLinux 用下面方式安装 FlClash 客户端 
+ArchLinux 用下面方式安装 FlClash PC 客户端 
 
 ```yay -S flclash``` 
 
 ### 配置 FlClash
 把下面文件保存为 proxy.yaml, 然后把里面的域名改成 Cloudflare 买的子域名， 把密码改成 VPS 服务端 `/etc/hysteria/config.yaml` 里面设置的超级密码, 搜索我在下面模板文件中标注的 `←←←` 注释
 
-1. 打开 Flclash 第三个标签， 点击 “添加配置”, 选择 proxy.yaml ， 保存
-2. 打开 Flclash 第二个标签， 选择 `自建/家宽节点`
-3. 打开 Flclash 最后一个标签， 应用程序里面打开 ‘自启动’、‘静默启动‘、 ’自动运行‘ 的选项
-4. 切换到第一个标签， 右下角点击开始， 搞定! 浏览器打开 YouTube或X 试一下
+打开 FlClash PC客户端
+
+1. 打开 FlClash 第三个标签， 点击 “添加配置”, 选择 proxy.yaml ， 保存
+2. 打开 FlClash 第二个标签， 选择 `自建/家宽节点`
+3. 打开 FlClash 最后一个标签， 应用程序里面打开 ‘自启动’、‘静默启动‘、 ’自动运行‘ 的选项
+4. 切换到第一个标签， 右下角点击开始， 搞定!
+
+FlClash 手机端配置也是类似， 添加配置文件、 选择家宽、 选择自动运行。
 
 ```yaml
 # 锚点区
@@ -440,16 +444,12 @@ rule-providers:
   fakeip_filter_domain: { <<: *domain, url: "https://hub.mirrors.2020818.xyz/https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/fakeip-filter.mrs" }
 ```
 
-### 配置 FlClash 手机端
-1. 点击 ‘配置’ 标签， 点击添加配置，菜单中选择从文件添加，选择刚才的 proxy.yaml 文件
-2. 点击 ‘工具’ 标签， 选择访问控制，右上角点击‘开启’， 搜索懒猫微服并勾选，点击保存，把懒猫微服排除在 VPN 之外 （默认是黑名单模式）
-3. 点击 ‘代理’ 标签， 选择自建/家宽节点
-4. 点击 ‘工具’ 标签， 应用程序里面打开 ’自动运行‘ 的选项
-
 ### 懒猫微服的配置
-懒猫微服直连穿透需要配置代理工具，避免和懒猫微服自己的网络冲突：
+FlClash默认用Tun模式，会接管手机和电脑所有流量，上面的配置文件已经在规则上把微服的域名排除在外,还需要在客户端进行下面配置，才能保证懒猫微服直连:
 
-1. 点击 ‘工具’ 标签， 选择基本配置，打开 IPv6 开关 （PC 和手机端）
-2. 点击 ‘工具 -> 访问控制’，右上角点击‘开启’，搜索懒猫微服并勾选，点击保存，把懒猫微服排除在 VPN 之外 （仅移动端）
+1. PC端和移动端： 点击 ‘工具’ 标签， 选择基本配置，打开 IPv6 开关
+2. 移动端： 点击 ‘工具 -> 访问控制’，右上角点击‘开启’，搜索懒猫微服并勾选，点击保存，把懒猫微服排除在 VPN 之外
+
+这两点配置好以后，重启 FlClash 和懒猫微服客户端， 就可以同时科学上外网并能直连回家中的微服啦。
 
 
