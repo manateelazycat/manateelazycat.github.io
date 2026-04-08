@@ -8,30 +8,30 @@ categories: [Proxy]
 
 今天这篇文章手把手教你怎么自建机场，方案：
 
-1) 丽莎 VPS： 有美国家庭 IP，方便注册 Claude Code 和 ChatGPT
-2) CloudFlare: 主要是买域名方便， DNS 设置也方便
-3) Xray (VLESS + Reality + Vision): TCP + TLS 伪装成正常 HTTPS，抗封锁能力最强，对 FlClash 支持良好
+1. 丽莎 VPS： 有美国家庭 IP，方便注册 Claude Code 和 ChatGPT
+2. CloudFlare: 主要是买域名方便， DNS 设置也方便
+3. Xray (VLESS + Reality + Vision): TCP + TLS 伪装成正常 HTTPS，抗封锁能力最强，对 FlClash 支持良好
 
 下面就是手把手的教程， 熟手不超过 5 分钟, 跟着我一步一步的来
 
 ### 购买丽莎 VPS
 
-1) 打开 [lisahost.com](https://lisahost.com/aff.php?aff=9555)
-2) 购买美国 9929 网络， 我买的一年 499， 支付宝直接付， 会有一点税, 比 499 多一点
-3) 主机默认是 CentOS， 我重装成了 Ubuntu
-4) 记住你主机的三个关键信息 VPS IP、 随机端口、 实例密码 （这三个信息下面会用）
+1. 打开 [lisahost.com](https://lisahost.com/aff.php?aff=9555)
+2. 购买美国 9929 网络， 我买的一年 499， 支付宝直接付， 会有一点税, 比 499 多一点
+3. 主机默认是 CentOS， 我重装成了 Ubuntu
+4. 记住你主机的三个关键信息 VPS IP、 随机端口、 实例密码 （这三个信息下面会用）
 
 ### 购买域名
 
-1) 注册 [CloudFlare](https://dash.cloudflare.com/) 账号
-2) 在左边面板找到 Domains -> Registrations， 搜索你想买的域名， 直接用信用卡买
-3) 购买的时候输入美国地址， 用 [美国地址生成器](https://www.meiguodizhi.com/) 生成需要的信息填入
+1. 注册 [CloudFlare](https://dash.cloudflare.com/) 账号
+2. 在左边面板找到 Domains -> Registrations， 搜索你想买的域名， 直接用信用卡买
+3. 购买的时候输入美国地址， 用 [美国地址生成器](https://www.meiguodizhi.com/) 生成需要的信息填入
 
 ### 域名解析到VPS
 
-1) 进入 Cloudflare, 左上角输入框搜索 DNS， 找到 DNS->Record， 点击你刚才买的域名
-2) 找到蓝色的 Add Record 按钮， 点击添加域名记录
-3) 填写内容如下:
+1. 进入 Cloudflare, 左上角输入框搜索 DNS， 找到 DNS->Record， 点击你刚才买的域名
+2. 找到蓝色的 Add Record 按钮， 点击添加域名记录
+3. 填写内容如下:
 
 ```
 Type: A
@@ -145,10 +145,10 @@ ArchLinux 用下面方式安装 FlClash PC 客户端
 
 打开 FlClash PC客户端
 
-1) 打开 FlClash 第三个标签， 点击 “添加配置”, 选择 proxy.yaml ， 保存
-2) 打开 FlClash 第二个标签， 选择 自建/家宽节点
-3) 打开 FlClash 最后一个标签， 应用程序里面打开 ‘自启动’、‘静默启动‘、 ’自动运行‘ 的选项
-4) 切换到第一个标签， 右下角点击开始， 搞定!
+1. 打开 FlClash 第三个标签， 点击 “添加配置”, 选择 proxy.yaml ， 保存
+2. 打开 FlClash 第二个标签， 选择 自建/家宽节点
+3. 打开 FlClash 最后一个标签， 应用程序里面打开 ‘自启动’、‘静默启动‘、 ’自动运行‘ 的选项
+4. 切换到第一个标签， 右下角点击开始， 搞定!
 
 FlClash 手机端配置也是类似， 添加配置文件、 选择家宽、 选择自动运行。
 
