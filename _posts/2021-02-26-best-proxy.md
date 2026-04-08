@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 最佳代理实践之 trojan-gfw (2021-02-26)
+title: 代理配置 2021-02-26 Trojan 全局代理
 categories: [Proxy]
 ---
 

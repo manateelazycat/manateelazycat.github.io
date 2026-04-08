@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 最佳代理实践 (2026-3-19)
+title: 代理配置 2026-03-19 Nexitally FLClash
 categories: [Proxy]
 ---
 
@@ -384,5 +384,3 @@ rule-providers:
 
 1. 点击 ‘工具’ 标签， 选择基本配置，打开 IPv6 开关 （PC 和手机端）
 2. 点击 ‘工具 -> 访问控制’，右上角点击‘开启’，搜索懒猫微服并勾选，点击保存，把懒猫微服排除在 VPN 之外 （仅移动端）
-
-

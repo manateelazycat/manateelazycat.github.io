@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 最佳代理实践 (2024-12-19)
+title: 代理配置 2024-12-19 Nexitally v2raya DNS
 categories: [Proxy]
 ---
 
@@ -69,4 +69,3 @@ Android 双 VPN 请查看我的另一篇文章[手机上开两个 VPN](https://m
 这个错误， 删除 "/etc/v2raya" 目录下所有文件， 然后重启 v2raya `sudo systemctl restart v2raya` 后， 重新导入机场地址即可.
 
 That‘s all! ;)
-

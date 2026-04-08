@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 最佳代理实践 (2026-4-8)
+title: 代理配置 2026-04-08 Xray Reality 自建
 categories: [Proxy]
 ---
 

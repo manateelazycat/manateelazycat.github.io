@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 最佳代理实践之 v2raya (2023-06-23)
+title: 代理配置 2023-06-23 机场 v2raya 透明代理
 categories: [Proxy]
 ---
 
@@ -54,4 +54,3 @@ ip(geoip:cn)->direct
 这个错误， 删除 "/etc/v2raya" 目录下所有文件， 然后重启 v2raya `sudo systemctl restart v2raya` 后， 重新导入机场地址即可.
 
 That‘s all! ;)
-

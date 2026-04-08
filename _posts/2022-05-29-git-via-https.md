@@ -47,4 +47,3 @@ $ ssh -T git@github.com
 
 ### 最后
 通过 Git via HTTPS 的方法， 可以保障 git ssh 正常运行， 不需启用 sshuttle 即可满足日常的开发需求。
-

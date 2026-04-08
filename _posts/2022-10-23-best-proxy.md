@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 最佳代理实践之 trojan-gfw (2022-10-23)
+title: 代理配置 2022-10-23 Trojan Clash 分流
 categories: [Proxy]
 ---
 
@@ -253,4 +253,3 @@ rules:
 ```
 
 接着运行命令 ```clash -f config.yml``` 来启动 Clash， Clash 会对外暴露一个 http 类型的 18080 端口代理。
-

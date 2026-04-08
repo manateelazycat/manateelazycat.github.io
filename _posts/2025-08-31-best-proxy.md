@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 最佳代理实践 (2025-8-31)
+title: 代理配置 2025-08-31 Nexitally v2raya DoH
 categories: [Proxy]
 ---
 
