@@ -10,7 +10,7 @@ categories: [Proxy]
 2. CloudFlare: 主要是买域名方便， DNS 设置也方便
 3. Xray (VLESS + Reality + Vision): TCP + TLS 伪装成正常 HTTPS，抗封锁能力最强，对 FlClash 支持良好
 
-### 购买丽莎 VPS
+### 购买 VPS
 
 1. 打开 [DMIT](https://www.dmit.io/aff.php?aff=20094)
 2. 购买美国 Premium CN2 GIA 线路的服务器
