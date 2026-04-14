@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 怎么让 OpenClaw WebChat 渲染图片
-categories: [AI, openclaw]
+categories: [AI, OpenClaw]
 ---
 
 最近在开发 OpenClaw 的聊天管理软件，方便懒猫微服的用户低门槛养小龙虾。

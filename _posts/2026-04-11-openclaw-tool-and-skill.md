@@ -1,7 +1,7 @@
 ---
 layout: post
 title: OpenClaw 中的 Tool 和 Skill
-categories: [AI, openclaw]
+categories: [AI, OpenClaw]
 ---
 
 很多朋友用了 OpenClaw  很久都分不清楚 Tool 和 Skill 有啥区别，今天大家详细分享一下

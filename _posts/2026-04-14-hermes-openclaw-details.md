@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hermes 和 OpenClaw 的底层适配细节
-categories: [AI, openclaw]
+categories: [AI, OpenClaw]
 ---
 
 Hermes 和 OpenClaw 的底层细节还是很不一样的，分享我的开发细节

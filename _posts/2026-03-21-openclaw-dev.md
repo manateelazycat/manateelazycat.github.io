@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 怎么开发小龙虾插件？
-categories: [AI, openclaw]
+categories: [AI, OpenClaw]
 ---
 
 AI 时代之间，我们要创造软件主要靠自己的经验和对大项目的源码理解。

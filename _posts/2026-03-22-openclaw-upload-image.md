@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 小龙虾上传图片的方法
-categories: [AI, openclaw]
+categories: [AI, OpenClaw]
 ---
 
 我要给我的小龙虾聊天工具开发上传图片的功能，同时为了实时预览上传的图片，所以我做了一个 markdown 的 openclaw-file:// 协议，这个协议一上传，就导致 AI 要调用 agent 能力检查我的文件，然后就是一大堆安全 guard 不让过

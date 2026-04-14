@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 小龙虾 webchat 的 bug
-categories: [AI, openclaw]
+categories: [AI, OpenClaw]
 ---
 
 小龙虾工具经验分享
