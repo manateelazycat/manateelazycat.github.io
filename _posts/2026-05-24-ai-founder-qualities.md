@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AI时代创始人要具备的素质
-categories: [AI, Business, Think]
+categories: [AI, Business]
 ---
 
 AI时代，创始人要具备的素质

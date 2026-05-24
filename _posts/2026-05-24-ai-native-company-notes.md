@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AI Native Company需要注意的点
-categories: [AI, Business, Think]
+categories: [AI, Business]
 ---
 
 大家分享一下，AI Native Company需要注意的点

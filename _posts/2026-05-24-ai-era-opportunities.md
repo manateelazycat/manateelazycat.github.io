@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AI时代的冲击和机会
-categories: [AI, Business, Think]
+categories: [AI, Business]
 ---
 
 AI时代，冲击非常大，机会也非常大

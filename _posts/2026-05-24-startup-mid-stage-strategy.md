@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AI时代创业中期的策略变化
-categories: [AI, Business, Think]
+categories: [AI, Business]
 ---
 
 现在AI时刻，它的执行力变得很高了，所以说创业的中期发展方向要发生策略性的变化

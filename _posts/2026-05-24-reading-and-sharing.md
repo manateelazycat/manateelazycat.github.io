@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 真正吸引人的分享来自岁月的沉淀
-categories: [Think, Reading, Twitter]
+categories: [Think, Reading]
 ---
 
 很多人发推，其实他内心在说，不知道发什么

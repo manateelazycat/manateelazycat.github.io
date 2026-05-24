@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AI Native公司的组织结构思考
-categories: [AI, Business, Think]
+categories: [AI, Business]
 ---
 
 YC的这个视频很值得看

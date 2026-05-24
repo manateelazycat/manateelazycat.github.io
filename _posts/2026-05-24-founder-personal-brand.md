@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AI时代创始人应该做个人IP
-categories: [AI, Business, Think]
+categories: [AI, Business]
 ---
 
 AI时代之前，创始人要低调，营销部门在前面

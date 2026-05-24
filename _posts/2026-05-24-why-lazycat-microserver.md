@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 我为什么选择做懒猫微服
-categories: [Business, Microserver, Linux]
+categories: [Business, Microserver]
 ---
 
 昨天晚上和一堆老板朋友吃🥔喝🍺聊天
