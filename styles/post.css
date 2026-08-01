@@ -395,6 +395,33 @@ body.toc-mobile-open {
     max-height: calc(100vh - 60px);
     overflow: auto;
     margin-top: 20px;
+    scrollbar-width: none;
+}
+
+.toc-sidebar:hover {
+    scrollbar-color: #C8C8C8 transparent;
+    scrollbar-width: thin;
+}
+
+.toc-sidebar::-webkit-scrollbar {
+    width: 0;
+}
+
+.toc-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.toc-sidebar::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+.toc-sidebar:hover::-webkit-scrollbar {
+    width: 6px;
+}
+
+.toc-sidebar:hover::-webkit-scrollbar-thumb {
+    background-color: #C8C8C8;
 }
 
 .toc-card {
