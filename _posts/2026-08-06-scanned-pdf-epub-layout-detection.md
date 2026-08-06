@@ -22,5 +22,7 @@ CPU：Ryzen AI 9 HX PRO 370，12 个线程
 懒猫读书已经是扫描版PDF转换EPUB最好的整体解决方案了，喜欢读书的老板欢迎采购懒猫微服，我亲自给你写代码服务
 
 ![检测配置与结果概览]({{site.url}}/pics/scanned-pdf-epub-layout-detection/scan-layout-overview.jpeg)
+
 ![逐页检测结果]({{site.url}}/pics/scanned-pdf-epub-layout-detection/scan-layout-results.jpeg)
+
 ![扫描书页面标注示例]({{site.url}}/pics/scanned-pdf-epub-layout-detection/scan-layout-samples.jpeg)
