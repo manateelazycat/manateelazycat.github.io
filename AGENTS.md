@@ -22,7 +22,7 @@
 
 6. 用户没有指定分类时，根据文章主题选择一个或两个已有分类。当前常用分类包括：`AI`、`Think`、`Tech`、`Business`、`Work`、`Reading`、`Life`、`Travel`、`Emacs`、`Elisp`、`EAF`、`Linux`、`Deepin`、`OpenSource`、`OpenClaw`、`Microserver`、`Proxy`、`Hardware`、`Web`、`Rails`、`Jekyll`、`Git`、`Mac`、`Raspberry`、`Fcitx`、`Rime`、`OCR`、`Curiosity`。优先复用这些分类，只有确实没有合适分类时才创建新分类。
 7. 保留用户的事实、观点和语气。默认只做必要的 Markdown 排版、分段、标题层级和代码块整理，不擅自扩写事实或改变立场。用户明确要求润色时，才进行文字润色。
-8. 正文包含多个 `##`、`###` 或 `####` 标题时照常保留，文章页面会自动生成目录。
+8. 新文章正文中的小标题默认使用 `####`，避免文章页的小标题字号过大。用户明确提供 Markdown 标题层级时，保留用户指定的层级。正文包含多个标题时，文章页面会自动生成目录。
 
 ### 图片规则
 
