@@ -7322,6 +7322,37 @@
         ]
       }
     },
+    "pics/make-codex-apps-look-better/codex-color-guide.png": {
+      "sourceHash": "0531fd64fab75f6416988c129f89fe613e9b52ab",
+      "width": 717,
+      "height": 1122,
+      "format": "png",
+      "updatedAt": "2026-08-16T03:19:15.503Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/make-codex-apps-look-better/codex-color-guide-640w.webp"
+          },
+          {
+            "width": 717,
+            "path": "pics-optimized/make-codex-apps-look-better/codex-color-guide-717w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/make-codex-apps-look-better/codex-color-guide-640w.png"
+          },
+          {
+            "width": 717,
+            "path": "pics-optimized/make-codex-apps-look-better/codex-color-guide-717w.png"
+          }
+        ]
+      }
+    },
     "pics/manager/how_update.jpeg": {
       "sourceHash": "8e3af489ba4f20213c8f73ea73403438bb29c085",
       "width": 680,
