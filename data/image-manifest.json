@@ -7750,6 +7750,91 @@
         ]
       }
     },
+    "pics/pi-agent-deepseek-optimization/context-optimization.jpg": {
+      "sourceHash": "a23614d2aff03940263869f7f3d92c8df73d3ed6",
+      "width": 1080,
+      "height": 720,
+      "format": "jpeg",
+      "updatedAt": "2026-08-22T08:10:23.373Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/pi-agent-deepseek-optimization/context-optimization-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/pi-agent-deepseek-optimization/context-optimization-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/pi-agent-deepseek-optimization/context-optimization-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/pi-agent-deepseek-optimization/context-optimization-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/pi-agent-deepseek-optimization/pi-agent-result.jpg": {
+      "sourceHash": "40a8b06e08f52e4a693995fe3eb13f5f52ca4b16",
+      "width": 1080,
+      "height": 873,
+      "format": "jpeg",
+      "updatedAt": "2026-08-22T08:10:23.564Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/pi-agent-deepseek-optimization/pi-agent-result-640w.webp"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/pi-agent-deepseek-optimization/pi-agent-result-1080w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/pi-agent-deepseek-optimization/pi-agent-result-640w.jpg"
+          },
+          {
+            "width": 1080,
+            "path": "pics-optimized/pi-agent-deepseek-optimization/pi-agent-result-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/pi-agent-deepseek-optimization/pi-agent-speed-poster.jpg": {
+      "sourceHash": "12125b73495c0422bef95e79eb98231cc740bfaf",
+      "width": 510,
+      "height": 1200,
+      "format": "jpeg",
+      "updatedAt": "2026-08-22T08:10:23.666Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 510,
+            "path": "pics-optimized/pi-agent-deepseek-optimization/pi-agent-speed-poster-510w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 510,
+            "path": "pics-optimized/pi-agent-deepseek-optimization/pi-agent-speed-poster-510w.jpg"
+          }
+        ]
+      }
+    },
     "pics/popweb/dict-bing_update.png": {
       "sourceHash": "50d632ad3ec3914237b7ec493f68891a31d6a452",
       "width": 3840,
