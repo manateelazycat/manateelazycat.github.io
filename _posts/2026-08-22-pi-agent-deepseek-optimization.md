@@ -22,10 +22,6 @@ categories: [AI, Microserver]
 
 很多朋友也在问，两台算力舱 + DeepSeek 离线跑有多快？可以看下面的视频感受一下速度， 每秒 60 tokens ，超级能打了，很多国产模型的在线版本还没这个快呢
 
-<video controls="controls" playsinline preload="metadata" poster="{{site.url}}/pics/pi-agent-deepseek-optimization/pi-agent-speed-poster.jpg" width="100%">
-  <source src="{{site.url}}/pics/pi-agent-deepseek-optimization/pi-agent-deepseek.mp4" type="video/mp4">
-</video>
-
 最后，很多朋友关心，成本呢？
 
 一天24小时100%负荷使用，一天成本1.9元，是不是世界上最便宜的 DeepSeek ？
