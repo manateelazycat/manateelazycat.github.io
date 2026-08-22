@@ -7835,6 +7835,37 @@
         ]
       }
     },
+    "pics/pi-agent-plugin-list/pi-agent-plugins.png": {
+      "sourceHash": "9ab948704942ccae532ba747ce91b2a1fd00f47d",
+      "width": 698,
+      "height": 346,
+      "format": "png",
+      "updatedAt": "2026-08-22T08:36:03.539Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/pi-agent-plugin-list/pi-agent-plugins-640w.webp"
+          },
+          {
+            "width": 698,
+            "path": "pics-optimized/pi-agent-plugin-list/pi-agent-plugins-698w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/pi-agent-plugin-list/pi-agent-plugins-640w.png"
+          },
+          {
+            "width": 698,
+            "path": "pics-optimized/pi-agent-plugin-list/pi-agent-plugins-698w.png"
+          }
+        ]
+      }
+    },
     "pics/popweb/dict-bing_update.png": {
       "sourceHash": "50d632ad3ec3914237b7ec493f68891a31d6a452",
       "width": 3840,
