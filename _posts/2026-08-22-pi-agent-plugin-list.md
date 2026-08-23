@@ -9,7 +9,5 @@ categories: [AI, Tech]
 1. `pi-web-access`：访问网络资源
 2. `pi-mcp-adapter`：访问 MCP
 3. `pi-grok-cli`：访问 Grok API，蓝 V 必备
-4. `pi-rewind`：每次 AI 输出的时候都备份一下代码
+4. `pi-input-history`：保存和浏览输入历史
 5. `pi-powerline-footer`：底部显示一些彩色的好看信息
-
-![Pi Agent 编程插件列表]({{site.url}}/pics/pi-agent-plugin-list/pi-agent-plugins.png)
