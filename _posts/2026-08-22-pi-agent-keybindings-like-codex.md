@@ -14,11 +14,13 @@ categories: [AI]
 {
   "tui.input.submit": "enter",
   "tui.input.tab": "alt+h",
-  "tui.editor.cursorUp": ["up", "ctrl+p"],
-  "tui.editor.cursorDown": ["down", "ctrl+n"],
+  "tui.editor.historyPrevious": ["up", "ctrl+p"],
+  "tui.editor.historyNext": ["down", "ctrl+n"],
   "app.message.followUp": "tab",
   "app.interrupt": "ctrl+c",
-  "app.clear": "ctrl+l"
+  "app.clear": "ctrl+l",
+  "app.session.rename": "ctrl+shift+r",
+  "app.model.cycleForward": "alt+p"
 }
 ```
 
@@ -26,8 +28,10 @@ categories: [AI]
 
 1. Enter：提交消息（空闲时发送，忙碌时插队）
 2. Alt+H：路径/文件自动补全
-3. ↑ / Ctrl+P：光标上移（含历史浏览）
-4. ↓ / Ctrl+N：光标下移（含历史浏览）
+3. ↑ / Ctrl+P：浏览上一条历史消息
+4. ↓ / Ctrl+N：浏览下一条历史消息
 5. Tab：排队跟进消息（等当前任务完成后再执行）
 6. Ctrl+C：中断当前操作
 7. Ctrl+L：清空编辑区
+8. Ctrl+Shift+R：重命名当前会话
+9. Alt+P：向前切换模型
