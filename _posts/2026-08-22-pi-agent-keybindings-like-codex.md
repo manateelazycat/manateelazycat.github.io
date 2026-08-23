@@ -20,7 +20,8 @@ categories: [AI]
   "app.interrupt": "ctrl+c",
   "app.clear": "ctrl+l",
   "app.session.rename": "ctrl+shift+r",
-  "app.model.cycleForward": "alt+p"
+  "app.model.cycleForward": "alt+n",
+  "app.model.cycleBackward": "alt+p"
 }
 ```
 
@@ -34,4 +35,5 @@ categories: [AI]
 6. Ctrl+C：中断当前操作
 7. Ctrl+L：清空编辑区
 8. Ctrl+Shift+R：重命名当前会话
-9. Alt+P：向前切换模型
+9. Alt+N：向前切换模型
+10. Alt+P：向后切换模型
