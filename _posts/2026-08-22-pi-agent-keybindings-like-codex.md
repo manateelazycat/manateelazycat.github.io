@@ -13,7 +13,7 @@ categories: [AI]
 ```json
 {
   "tui.input.submit": "enter",
-  "tui.input.tab": "alt+h",
+  "tui.input.tab": "alt+/",
   "tui.editor.historyPrevious": ["up", "ctrl+p"],
   "tui.editor.historyNext": ["down", "ctrl+n"],
   "app.message.followUp": "tab",
@@ -28,7 +28,7 @@ categories: [AI]
 #### 按键说明
 
 1. Enter：提交消息（空闲时发送，忙碌时插队）
-2. Alt+H：路径/文件自动补全
+2. Alt+/：路径/文件自动补全
 3. ↑ / Ctrl+P：浏览上一条历史消息
 4. ↓ / Ctrl+N：浏览下一条历史消息
 5. Tab：排队跟进消息（等当前任务完成后再执行）
