@@ -8061,6 +8061,45 @@
         ]
       }
     },
+    "pics/qwen-3-8-27b-coding-ability/code-fix-screenshot.png": {
+      "sourceHash": "8f5c821af40ecd80fc1d06710525898cda78d63b",
+      "width": 1917,
+      "height": 1055,
+      "format": "png",
+      "updatedAt": "2026-08-25T16:49:55.699Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-27b-coding-ability/code-fix-screenshot-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/qwen-3-8-27b-coding-ability/code-fix-screenshot-1280w.webp"
+          },
+          {
+            "width": 1917,
+            "path": "pics-optimized/qwen-3-8-27b-coding-ability/code-fix-screenshot-1917w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-27b-coding-ability/code-fix-screenshot-640w.png"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/qwen-3-8-27b-coding-ability/code-fix-screenshot-1280w.png"
+          },
+          {
+            "width": 1917,
+            "path": "pics-optimized/qwen-3-8-27b-coding-ability/code-fix-screenshot-1917w.png"
+          }
+        ]
+      }
+    },
     "pics/rails-study-post/rails-study-10_update.png": {
       "sourceHash": "f6ded4b23fe73c4b2235d33c290e955726b98152",
       "width": 960,
