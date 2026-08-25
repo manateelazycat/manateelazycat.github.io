@@ -7866,6 +7866,37 @@
         ]
       }
     },
+    "pics/pi-agent-qwen-3-8-27b/cover.jpg": {
+      "sourceHash": "99c5fb6cf40d8a2ffd649563095e724f4cdd8ec6",
+      "width": 1200,
+      "height": 480,
+      "format": "jpeg",
+      "updatedAt": "2026-08-25T16:13:39.890Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/pi-agent-qwen-3-8-27b/cover-640w.webp"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/pi-agent-qwen-3-8-27b/cover-1200w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/pi-agent-qwen-3-8-27b/cover-640w.jpg"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/pi-agent-qwen-3-8-27b/cover-1200w.jpg"
+          }
+        ]
+      }
+    },
     "pics/popweb/dict-bing_update.png": {
       "sourceHash": "50d632ad3ec3914237b7ec493f68891a31d6a452",
       "width": 3840,
