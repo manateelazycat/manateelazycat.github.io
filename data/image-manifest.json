@@ -8061,6 +8061,45 @@
         ]
       }
     },
+    "pics/qwen-3-8-27b-125-tokens/benchmark-result.jpg": {
+      "sourceHash": "7764a065d7935535b9c54f0479b71defa44263c8",
+      "width": 1817,
+      "height": 2048,
+      "format": "jpeg",
+      "updatedAt": "2026-08-27T01:21:29.265Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-27b-125-tokens/benchmark-result-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/qwen-3-8-27b-125-tokens/benchmark-result-1280w.webp"
+          },
+          {
+            "width": 1817,
+            "path": "pics-optimized/qwen-3-8-27b-125-tokens/benchmark-result-1817w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-27b-125-tokens/benchmark-result-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/qwen-3-8-27b-125-tokens/benchmark-result-1280w.jpg"
+          },
+          {
+            "width": 1817,
+            "path": "pics-optimized/qwen-3-8-27b-125-tokens/benchmark-result-1817w.jpg"
+          }
+        ]
+      }
+    },
     "pics/qwen-3-8-27b-coding-ability/code-fix-screenshot.png": {
       "sourceHash": "8f5c821af40ecd80fc1d06710525898cda78d63b",
       "width": 1917,
