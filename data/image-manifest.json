@@ -122174,6 +122174,37 @@
         ]
       }
     },
+    "pics/vllm-limit-mm-per-prompt/vllm-default-params.png": {
+      "sourceHash": "bdfdcd1fd8ac93aabe0e75412164cdff8e2502e8",
+      "width": 1277,
+      "height": 917,
+      "format": "png",
+      "updatedAt": "2026-08-28T15:55:57.859Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/vllm-limit-mm-per-prompt/vllm-default-params-640w.webp"
+          },
+          {
+            "width": 1277,
+            "path": "pics-optimized/vllm-limit-mm-per-prompt/vllm-default-params-1277w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/vllm-limit-mm-per-prompt/vllm-default-params-640w.png"
+          },
+          {
+            "width": 1277,
+            "path": "pics-optimized/vllm-limit-mm-per-prompt/vllm-default-params-1277w.png"
+          }
+        ]
+      }
+    },
     "pics/webengine/webengine_update.png": {
       "sourceHash": "192378d8cb098df099840264bb35388e07bfcb73",
       "width": 1920,
