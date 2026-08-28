@@ -8100,6 +8100,76 @@
         ]
       }
     },
+    "pics/qwen-3-8-27b-900k-context/900k-statusline.png": {
+      "sourceHash": "6e2b20066a9d0c798a105ea17b0458a6bba0a9ac",
+      "width": 1457,
+      "height": 655,
+      "format": "png",
+      "updatedAt": "2026-08-28T16:08:16.996Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-27b-900k-context/900k-statusline-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/qwen-3-8-27b-900k-context/900k-statusline-1280w.webp"
+          },
+          {
+            "width": 1457,
+            "path": "pics-optimized/qwen-3-8-27b-900k-context/900k-statusline-1457w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-27b-900k-context/900k-statusline-640w.png"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/qwen-3-8-27b-900k-context/900k-statusline-1280w.png"
+          },
+          {
+            "width": 1457,
+            "path": "pics-optimized/qwen-3-8-27b-900k-context/900k-statusline-1457w.png"
+          }
+        ]
+      }
+    },
+    "pics/qwen-3-8-27b-900k-context/900k-verify.png": {
+      "sourceHash": "5e1c9319285fcb848d836ec055f7bad77cb493db",
+      "width": 951,
+      "height": 268,
+      "format": "png",
+      "updatedAt": "2026-08-28T16:08:17.120Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-27b-900k-context/900k-verify-640w.webp"
+          },
+          {
+            "width": 951,
+            "path": "pics-optimized/qwen-3-8-27b-900k-context/900k-verify-951w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-27b-900k-context/900k-verify-640w.png"
+          },
+          {
+            "width": 951,
+            "path": "pics-optimized/qwen-3-8-27b-900k-context/900k-verify-951w.png"
+          }
+        ]
+      }
+    },
     "pics/qwen-3-8-27b-coding-ability/code-fix-screenshot.png": {
       "sourceHash": "8f5c821af40ecd80fc1d06710525898cda78d63b",
       "width": 1917,
