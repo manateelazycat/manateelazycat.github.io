@@ -8256,6 +8256,68 @@
         ]
       }
     },
+    "pics/qwen-3-8-flash-next-320k-context/102-tps-hot-state.png": {
+      "sourceHash": "4e2b0b1d60f86a6c7d9a1663082f26ba4020dbc6",
+      "width": 819,
+      "height": 378,
+      "format": "png",
+      "updatedAt": "2026-08-31T15:47:39.599Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-flash-next-320k-context/102-tps-hot-state-640w.webp"
+          },
+          {
+            "width": 819,
+            "path": "pics-optimized/qwen-3-8-flash-next-320k-context/102-tps-hot-state-819w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-flash-next-320k-context/102-tps-hot-state-640w.png"
+          },
+          {
+            "width": 819,
+            "path": "pics-optimized/qwen-3-8-flash-next-320k-context/102-tps-hot-state-819w.png"
+          }
+        ]
+      }
+    },
+    "pics/qwen-3-8-flash-next-320k-context/262k-vs-320k.png": {
+      "sourceHash": "d694cdf48e58f5135d6583553d300610f78894d3",
+      "width": 884,
+      "height": 351,
+      "format": "png",
+      "updatedAt": "2026-08-31T15:47:39.713Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-flash-next-320k-context/262k-vs-320k-640w.webp"
+          },
+          {
+            "width": 884,
+            "path": "pics-optimized/qwen-3-8-flash-next-320k-context/262k-vs-320k-884w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-flash-next-320k-context/262k-vs-320k-640w.png"
+          },
+          {
+            "width": 884,
+            "path": "pics-optimized/qwen-3-8-flash-next-320k-context/262k-vs-320k-884w.png"
+          }
+        ]
+      }
+    },
     "pics/rails-study-post/rails-study-10_update.png": {
       "sourceHash": "f6ded4b23fe73c4b2235d33c290e955726b98152",
       "width": 960,
