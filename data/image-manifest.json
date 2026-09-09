@@ -4971,6 +4971,68 @@
         ]
       }
     },
+    "pics/gpt-design-27b-execute/workflow-1.jpg": {
+      "sourceHash": "111b127cd97e99f702a67716695daf2f8ea7d0e9",
+      "width": 950,
+      "height": 1050,
+      "format": "jpeg",
+      "updatedAt": "2026-09-09T02:52:27.705Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/gpt-design-27b-execute/workflow-1-640w.webp"
+          },
+          {
+            "width": 950,
+            "path": "pics-optimized/gpt-design-27b-execute/workflow-1-950w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/gpt-design-27b-execute/workflow-1-640w.jpg"
+          },
+          {
+            "width": 950,
+            "path": "pics-optimized/gpt-design-27b-execute/workflow-1-950w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/gpt-design-27b-execute/workflow-2.png": {
+      "sourceHash": "e9cca44178d5d4b058384dbe9107eb73fc4c7e07",
+      "width": 949,
+      "height": 1049,
+      "format": "png",
+      "updatedAt": "2026-09-09T02:52:28.041Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/gpt-design-27b-execute/workflow-2-640w.webp"
+          },
+          {
+            "width": 949,
+            "path": "pics-optimized/gpt-design-27b-execute/workflow-2-949w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/gpt-design-27b-execute/workflow-2-640w.png"
+          },
+          {
+            "width": 949,
+            "path": "pics-optimized/gpt-design-27b-execute/workflow-2-949w.png"
+          }
+        ]
+      }
+    },
     "pics/grep-dired/grep-dired_update.png": {
       "sourceHash": "6780a6b9c2142ccd32757e4d3808ea552394746c",
       "width": 1240,
