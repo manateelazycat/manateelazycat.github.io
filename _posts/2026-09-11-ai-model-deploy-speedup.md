@@ -30,6 +30,4 @@ categories: [AI, Tech]
 | 缓存恢复及健康检查 | 未记录 | 约8秒 | – |
 | 镜像导入后到部署完成 | 至少20分钟 | 8分47秒 | 至少11分13秒 |
 
-![CUDA 内核缓存包优化前后的部署耗时对比]({{site.url}}/pics/ai-model-deploy-speedup/cuda-kernel-cache-speedup.png)
-
 通过这样的方式，我把整个重新部署的时间从 40 分钟，压缩到 16 分钟，大大节省了部署 AI 模型的时间。

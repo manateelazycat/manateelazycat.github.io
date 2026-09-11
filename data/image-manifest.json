@@ -274,37 +274,6 @@
         ]
       }
     },
-    "pics/ai-model-deploy-speedup/cuda-kernel-cache-speedup.png": {
-      "sourceHash": "367b08694dc80bdbef5d9ef6da3d08bd379e080e",
-      "width": 668,
-      "height": 260,
-      "format": "png",
-      "updatedAt": "2026-09-11T01:34:17.110Z",
-      "webp": {
-        "variants": [
-          {
-            "width": 640,
-            "path": "pics-optimized/ai-model-deploy-speedup/cuda-kernel-cache-speedup-640w.webp"
-          },
-          {
-            "width": 668,
-            "path": "pics-optimized/ai-model-deploy-speedup/cuda-kernel-cache-speedup-668w.webp"
-          }
-        ]
-      },
-      "fallback": {
-        "variants": [
-          {
-            "width": 640,
-            "path": "pics-optimized/ai-model-deploy-speedup/cuda-kernel-cache-speedup-640w.png"
-          },
-          {
-            "width": 668,
-            "path": "pics-optimized/ai-model-deploy-speedup/cuda-kernel-cache-speedup-668w.png"
-          }
-        ]
-      }
-    },
     "pics/ai-pod/1_update.jpeg": {
       "sourceHash": "374d317e02b47323abdf749f71eff5bc96364c58",
       "width": 2160,
