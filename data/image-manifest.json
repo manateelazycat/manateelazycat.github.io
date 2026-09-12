@@ -9191,6 +9191,107 @@
         ]
       }
     },
+    "pics/scanned-pdf-epub-layout-detection/scan-layout-overview.jpeg": {
+      "sourceHash": "fe708156d48829fdea758dc37492acf2d1f2d59e",
+      "width": 1116,
+      "height": 677,
+      "format": "jpeg",
+      "updatedAt": "2026-09-12T11:45:54.996Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-overview-640w.webp"
+          },
+          {
+            "width": 1116,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-overview-1116w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-overview-640w.jpg"
+          },
+          {
+            "width": 1116,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-overview-1116w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/scanned-pdf-epub-layout-detection/scan-layout-results.jpeg": {
+      "sourceHash": "cc0d02c629ed7af728dce4a02accd2c56c6d78bf",
+      "width": 1415,
+      "height": 1053,
+      "format": "jpeg",
+      "updatedAt": "2026-09-12T11:45:55.743Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-results-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-results-1280w.webp"
+          },
+          {
+            "width": 1415,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-results-1415w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-results-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-results-1280w.jpg"
+          },
+          {
+            "width": 1415,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-results-1415w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/scanned-pdf-epub-layout-detection/scan-layout-samples.jpeg": {
+      "sourceHash": "0fba9cc9e23fa600aee41093d432a56d05d213a6",
+      "width": 1120,
+      "height": 840,
+      "format": "jpeg",
+      "updatedAt": "2026-09-12T11:45:56.156Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-samples-640w.webp"
+          },
+          {
+            "width": 1120,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-samples-1120w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-samples-640w.jpg"
+          },
+          {
+            "width": 1120,
+            "path": "pics-optimized/scanned-pdf-epub-layout-detection/scan-layout-samples-1120w.jpg"
+          }
+        ]
+      }
+    },
     "pics/sister/5957-0065bf09d293f97a_update.JPG": {
       "sourceHash": "9909f75f8751b8e8df6ef84c9cd4e8ea5f833974",
       "width": 1920,
@@ -11120,6 +11221,130 @@
           {
             "width": 1842,
             "path": "pics-optimized/tabnine/js_update-1842w.png"
+          }
+        ]
+      }
+    },
+    "pics/tank500-hit4-bigger-tank/done.jpg": {
+      "sourceHash": "e9040f69d2f77818272972c2a5581fadc14b049a",
+      "width": 900,
+      "height": 1200,
+      "format": "jpeg",
+      "updatedAt": "2026-09-12T11:44:26.564Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/done-640w.webp"
+          },
+          {
+            "width": 900,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/done-900w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/done-640w.jpg"
+          },
+          {
+            "width": 900,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/done-900w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tank500-hit4-bigger-tank/install.jpg": {
+      "sourceHash": "63d77cfc084de9e6f01181013dd3360b0271fc85",
+      "width": 900,
+      "height": 1200,
+      "format": "jpeg",
+      "updatedAt": "2026-09-12T11:44:27.060Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/install-640w.webp"
+          },
+          {
+            "width": 900,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/install-900w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/install-640w.jpg"
+          },
+          {
+            "width": 900,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/install-900w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tank500-hit4-bigger-tank/new-tank.jpg": {
+      "sourceHash": "d8a471d2ae461315b81cc3a2842a14349e2aa5a6",
+      "width": 900,
+      "height": 1200,
+      "format": "jpeg",
+      "updatedAt": "2026-09-12T11:44:27.467Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/new-tank-640w.webp"
+          },
+          {
+            "width": 900,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/new-tank-900w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/new-tank-640w.jpg"
+          },
+          {
+            "width": 900,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/new-tank-900w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/tank500-hit4-bigger-tank/old-vs-new.jpg": {
+      "sourceHash": "4bd7f7f6d0e866fe997e6286cb9fe66a78512876",
+      "width": 900,
+      "height": 1200,
+      "format": "jpeg",
+      "updatedAt": "2026-09-12T11:44:27.871Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/old-vs-new-640w.webp"
+          },
+          {
+            "width": 900,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/old-vs-new-900w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/old-vs-new-640w.jpg"
+          },
+          {
+            "width": 900,
+            "path": "pics-optimized/tank500-hit4-bigger-tank/old-vs-new-900w.jpg"
           }
         ]
       }
