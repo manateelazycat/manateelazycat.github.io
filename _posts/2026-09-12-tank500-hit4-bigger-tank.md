@@ -11,6 +11,9 @@ categories: [Travel, Curiosity]
 我这次改装的方式是，原车的油表/油管/电路都不动，直接用140升的新油箱替换原车68升的油箱，这样就不会存在油泵的问题了 看油表的时候，就看车机仪表盘，燃油剩余里程 x 2就是真实的油箱里程
 
 ![]({{site.url}}/pics/tank500-hit4-bigger-tank/install.jpg)
+
 ![]({{site.url}}/pics/tank500-hit4-bigger-tank/old-vs-new.jpg)
+
 ![]({{site.url}}/pics/tank500-hit4-bigger-tank/done.jpg)
+
 ![]({{site.url}}/pics/tank500-hit4-bigger-tank/new-tank.jpg)
