@@ -284,6 +284,8 @@ async function processFile(filePath, imagesMap, dryRun, assetBaseUrl) {
     $anchor.attr("data-pswp-height", String(entry.height));
   });
 
+  rewriteVideos($, imagesMap, assetBaseUrl);
+
   const updatedHtml = $.html();
   if (updatedHtml === originalHtml) {
     return false;
@@ -294,6 +296,63 @@ async function processFile(filePath, imagesMap, dryRun, assetBaseUrl) {
   }
 
   return true;
+}
+
+function rewritePicsUrl(value, imagesMap, assetBaseUrl) {
+  const normalized = normalizeToPicsPath(value);
+  if (!normalized) {
+    return null;
+  }
+
+  const decoded = decodeSafe(normalized);
+  const key = imagesMap[decoded] ? decoded : (imagesMap[normalized] ? normalized : null);
+  if (key) {
+    const entry = imagesMap[key];
+    const fallbackVariants = entry.fallback?.variants || [];
+    const chosen = selectDefaultVariant(fallbackVariants);
+    if (chosen) {
+      return toPublicUrl(chosen.path, assetBaseUrl);
+    }
+  }
+
+  if (assetBaseUrl) {
+    return toPublicUrl(normalized, assetBaseUrl);
+  }
+  return null;
+}
+
+function rewriteVideos($, imagesMap, assetBaseUrl) {
+  $(".content video").each((_, videoElement) => {
+    const $video = $(videoElement);
+
+    const poster = $video.attr("poster");
+    if (poster) {
+      const rewrittenPoster = rewritePicsUrl(poster, imagesMap, assetBaseUrl);
+      if (rewrittenPoster) {
+        $video.attr("poster", rewrittenPoster);
+      }
+    }
+
+    const directSrc = $video.attr("src");
+    if (directSrc) {
+      const rewrittenSrc = rewritePicsUrl(directSrc, imagesMap, assetBaseUrl);
+      if (rewrittenSrc) {
+        $video.attr("src", rewrittenSrc);
+      }
+    }
+
+    $video.find("source").each((_, sourceElement) => {
+      const $source = $(sourceElement);
+      const src = $source.attr("src");
+      if (!src) {
+        return;
+      }
+      const rewrittenSrc = rewritePicsUrl(src, imagesMap, assetBaseUrl);
+      if (rewrittenSrc) {
+        $source.attr("src", rewrittenSrc);
+      }
+    });
+  });
 }
 
 async function main() {
