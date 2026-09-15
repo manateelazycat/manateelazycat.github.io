@@ -8380,6 +8380,53 @@
         ]
       }
     },
+    "pics/qwen-context-sweet-spot/qwen-decode-speed.jpg": {
+      "sourceHash": "ad5fac572ecb9ede2ccf7abd1e02e16c24e702bc",
+      "width": 2200,
+      "height": 2480,
+      "format": "jpeg",
+      "updatedAt": "2026-09-15T12:09:10.606Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-context-sweet-spot/qwen-decode-speed-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/qwen-context-sweet-spot/qwen-decode-speed-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/qwen-context-sweet-spot/qwen-decode-speed-1920w.webp"
+          },
+          {
+            "width": 2200,
+            "path": "pics-optimized/qwen-context-sweet-spot/qwen-decode-speed-2200w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-context-sweet-spot/qwen-decode-speed-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/qwen-context-sweet-spot/qwen-decode-speed-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/qwen-context-sweet-spot/qwen-decode-speed-1920w.jpg"
+          },
+          {
+            "width": 2200,
+            "path": "pics-optimized/qwen-context-sweet-spot/qwen-decode-speed-2200w.jpg"
+          }
+        ]
+      }
+    },
     "pics/rails-study-post/rails-study-10_update.png": {
       "sourceHash": "f6ded4b23fe73c4b2235d33c290e955726b98152",
       "width": 960,
