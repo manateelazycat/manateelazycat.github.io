@@ -415,6 +415,29 @@
         ]
       }
     },
+    "pics/aweshell/aweshell_update.gif": {
+      "sourceHash": "638c1e3a3de86ca3815f21e35580cb59d04cc15c",
+      "width": 562,
+      "height": 280,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:18.383Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 562,
+            "path": "pics-optimized/aweshell/aweshell_update-562w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 562,
+            "path": "pics-optimized/aweshell/aweshell_update-562w.gif"
+          }
+        ]
+      }
+    },
     "pics/awesome-tab/awesome-tab_update.png": {
       "sourceHash": "3f72f053915c0a2d290fd4c5d0adf3be8bfe8658",
       "width": 1240,
@@ -2957,6 +2980,29 @@
         ]
       }
     },
+    "pics/delete-block/delete-block_update.gif": {
+      "sourceHash": "9f3945b0d748a8c7723f013220827e0f60f91757",
+      "width": 214,
+      "height": 124,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:18.581Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 214,
+            "path": "pics-optimized/delete-block/delete-block_update-214w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 214,
+            "path": "pics-optimized/delete-block/delete-block_update-214w.gif"
+          }
+        ]
+      }
+    },
     "pics/develop-computer/computer_update.jpeg": {
       "sourceHash": "c5f66f52fbc6b0b432001b699d7022818a92a468",
       "width": 2048,
@@ -3051,6 +3097,56 @@
         ]
       }
     },
+    "pics/dtk/dtk-1_update.gif": {
+      "sourceHash": "1ed7168c8af6f9033019ae9e1cbe5783fed5411c",
+      "width": 405,
+      "height": 231,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:18.624Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 405,
+            "path": "pics-optimized/dtk/dtk-1_update-405w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 405,
+            "path": "pics-optimized/dtk/dtk-1_update-405w.gif"
+          }
+        ]
+      }
+    },
+    "pics/dtk/dtk-2_update.gif": {
+      "sourceHash": "846345e67b0ff013eb203049a702046ded3ff02d",
+      "width": 946,
+      "height": 234,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:18.771Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/dtk/dtk-2_update-640w.webp"
+          },
+          {
+            "width": 946,
+            "path": "pics-optimized/dtk/dtk-2_update-946w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 946,
+            "path": "pics-optimized/dtk/dtk-2_update-946w.gif"
+          }
+        ]
+      }
+    },
     "pics/dtk/dtk-3_update.png": {
       "sourceHash": "5ceb5c6200aa0eb42f6416d14a76fba9fc65e733",
       "width": 1000,
@@ -3078,6 +3174,114 @@
           {
             "width": 1000,
             "path": "pics-optimized/dtk/dtk-3_update-1000w.png"
+          }
+        ]
+      }
+    },
+    "pics/dtk/dtk-4_update.gif": {
+      "sourceHash": "ba28f325ddc8e0d4a13ac4d878d8d1e256b30894",
+      "width": 945,
+      "height": 286,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:19.194Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/dtk/dtk-4_update-640w.webp"
+          },
+          {
+            "width": 945,
+            "path": "pics-optimized/dtk/dtk-4_update-945w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 945,
+            "path": "pics-optimized/dtk/dtk-4_update-945w.gif"
+          }
+        ]
+      }
+    },
+    "pics/dtk/dtk-5_update.gif": {
+      "sourceHash": "fd2b415683e83aca64c45eb6ac67fa0894a550e5",
+      "width": 946,
+      "height": 237,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:19.466Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/dtk/dtk-5_update-640w.webp"
+          },
+          {
+            "width": 946,
+            "path": "pics-optimized/dtk/dtk-5_update-946w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 946,
+            "path": "pics-optimized/dtk/dtk-5_update-946w.gif"
+          }
+        ]
+      }
+    },
+    "pics/dtk/dtk-6_update.gif": {
+      "sourceHash": "54f417f7e5464db275f04622cbecdccc37fabcc4",
+      "width": 1000,
+      "height": 649,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:21.212Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/dtk/dtk-6_update-640w.webp"
+          },
+          {
+            "width": 1000,
+            "path": "pics-optimized/dtk/dtk-6_update-1000w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1000,
+            "path": "pics-optimized/dtk/dtk-6_update-1000w.gif"
+          }
+        ]
+      }
+    },
+    "pics/dtk/dtk-7_update.gif": {
+      "sourceHash": "b42766e964730823ef682af7ebd1ee81cfc7ef7f",
+      "width": 1000,
+      "height": 649,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:23.207Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/dtk/dtk-7_update-640w.webp"
+          },
+          {
+            "width": 1000,
+            "path": "pics-optimized/dtk/dtk-7_update-1000w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1000,
+            "path": "pics-optimized/dtk/dtk-7_update-1000w.gif"
           }
         ]
       }
@@ -3125,6 +3329,68 @@
           {
             "width": 3840,
             "path": "pics-optimized/eaf-and-vue/eaf-and-vue_update-3840w.png"
+          }
+        ]
+      }
+    },
+    "pics/eaf-and-wetty/eaf-and-wetty-1_update.gif": {
+      "sourceHash": "cddbd47c89670d5c9ade91e89839a82e37f235c3",
+      "width": 1920,
+      "height": 1080,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:30.458Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/eaf-and-wetty/eaf-and-wetty-1_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/eaf-and-wetty/eaf-and-wetty-1_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-and-wetty/eaf-and-wetty-1_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-and-wetty/eaf-and-wetty-1_update-1920w.gif"
+          }
+        ]
+      }
+    },
+    "pics/eaf-and-wetty/eaf-and-wetty_update.gif": {
+      "sourceHash": "97cf3dde463b0216d5283da4685dd0d4418c0a69",
+      "width": 1920,
+      "height": 1080,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:31.147Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/eaf-and-wetty/eaf-and-wetty_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/eaf-and-wetty/eaf-and-wetty_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-and-wetty/eaf-and-wetty_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-and-wetty/eaf-and-wetty_update-1920w.gif"
           }
         ]
       }
@@ -3234,6 +3500,68 @@
           {
             "width": 960,
             "path": "pics-optimized/eaf-community/framework_update-960w.png"
+          }
+        ]
+      }
+    },
+    "pics/eaf-copy-code/eaf-copy-code_update.gif": {
+      "sourceHash": "46a5b34dc7ed87e78ddb4f904209077b6b3fd162",
+      "width": 1920,
+      "height": 1080,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:33.847Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/eaf-copy-code/eaf-copy-code_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/eaf-copy-code/eaf-copy-code_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-copy-code/eaf-copy-code_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-copy-code/eaf-copy-code_update-1920w.gif"
+          }
+        ]
+      }
+    },
+    "pics/eaf-doc/eaf-doc_update.gif": {
+      "sourceHash": "66d8ad8883ff762b3cdafeb5379ae9a5016820e9",
+      "width": 1920,
+      "height": 1080,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:40.412Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/eaf-doc/eaf-doc_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/eaf-doc/eaf-doc_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-doc/eaf-doc_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-doc/eaf-doc_update-1920w.gif"
           }
         ]
       }
@@ -3637,6 +3965,37 @@
         ]
       }
     },
+    "pics/eaf-mermaid/eaf-mermaid_update.gif": {
+      "sourceHash": "e2358c8d82f2f2133614122b89f909830ba90d06",
+      "width": 1920,
+      "height": 1080,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:43.060Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/eaf-mermaid/eaf-mermaid_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/eaf-mermaid/eaf-mermaid_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-mermaid/eaf-mermaid_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-mermaid/eaf-mermaid_update-1920w.gif"
+          }
+        ]
+      }
+    },
     "pics/eaf-mermaid/eaf-mermaid_update.png": {
       "sourceHash": "985d23d525f85634a4e4b0404a5f76cd5ff2ffe2",
       "width": 359,
@@ -3656,6 +4015,37 @@
           {
             "width": 359,
             "path": "pics-optimized/eaf-mermaid/eaf-mermaid_update-359w.png"
+          }
+        ]
+      }
+    },
+    "pics/eaf-mindmap/eaf-mindmap_update.gif": {
+      "sourceHash": "78afd9065ba0c76aa13a8a74f0565a1df644429a",
+      "width": 1920,
+      "height": 1080,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:48.494Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/eaf-mindmap/eaf-mindmap_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/eaf-mindmap/eaf-mindmap_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-mindmap/eaf-mindmap_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-mindmap/eaf-mindmap_update-1920w.gif"
           }
         ]
       }
@@ -4004,6 +4394,37 @@
         ]
       }
     },
+    "pics/eaf-pdfviewer-support-select/eaf-pdfviewer-support-select_update.gif": {
+      "sourceHash": "15b226fea87340489f6c953e2b3e3fac3dcf2780",
+      "width": 1920,
+      "height": 1077,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:52.753Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/eaf-pdfviewer-support-select/eaf-pdfviewer-support-select_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/eaf-pdfviewer-support-select/eaf-pdfviewer-support-select_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-pdfviewer-support-select/eaf-pdfviewer-support-select_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-pdfviewer-support-select/eaf-pdfviewer-support-select_update-1920w.gif"
+          }
+        ]
+      }
+    },
     "pics/eaf-pyqterminal/1_update.png": {
       "sourceHash": "f6a6fab39925c98bfba35e0024c3d1785908b775",
       "width": 2560,
@@ -4141,6 +4562,37 @@
           {
             "width": 2560,
             "path": "pics-optimized/eaf-pyqterminal/3_update-2560w.png"
+          }
+        ]
+      }
+    },
+    "pics/eaf-rss-reader/eaf-rss-reader_update.gif": {
+      "sourceHash": "acf8247200abcb92481d1a9d8a7295a6b473d109",
+      "width": 1920,
+      "height": 1080,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:54.086Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/eaf-rss-reader/eaf-rss-reader_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/eaf-rss-reader/eaf-rss-reader_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-rss-reader/eaf-rss-reader_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/eaf-rss-reader/eaf-rss-reader_update-1920w.gif"
           }
         ]
       }
@@ -5060,6 +5512,33 @@
           {
             "width": 1240,
             "path": "pics-optimized/grep-dired/grep-dired_update-1240w.png"
+          }
+        ]
+      }
+    },
+    "pics/highlight-matching-tag/highlight-matching-tag_update.gif": {
+      "sourceHash": "4eb0d034fee550c74141ee587520aa9246321c42",
+      "width": 828,
+      "height": 490,
+      "format": "gif",
+      "updatedAt": "2026-09-16T00:59:59.174Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/highlight-matching-tag/highlight-matching-tag_update-640w.webp"
+          },
+          {
+            "width": 828,
+            "path": "pics-optimized/highlight-matching-tag/highlight-matching-tag_update-828w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 828,
+            "path": "pics-optimized/highlight-matching-tag/highlight-matching-tag_update-828w.gif"
           }
         ]
       }
@@ -6027,6 +6506,79 @@
         ]
       }
     },
+    "pics/howiuseemacs/highlight-matching-tag_update.gif": {
+      "sourceHash": "4eb0d034fee550c74141ee587520aa9246321c42",
+      "width": 828,
+      "height": 490,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:04.249Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/howiuseemacs/highlight-matching-tag_update-640w.webp"
+          },
+          {
+            "width": 828,
+            "path": "pics-optimized/howiuseemacs/highlight-matching-tag_update-828w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 828,
+            "path": "pics-optimized/howiuseemacs/highlight-matching-tag_update-828w.gif"
+          }
+        ]
+      }
+    },
+    "pics/howiuseemacs/insert-translated-name_update.gif": {
+      "sourceHash": "a7761438aa9e672c9a515d3dc91ed3c711d7d16d",
+      "width": 486,
+      "height": 112,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:04.385Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 486,
+            "path": "pics-optimized/howiuseemacs/insert-translated-name_update-486w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 486,
+            "path": "pics-optimized/howiuseemacs/insert-translated-name_update-486w.gif"
+          }
+        ]
+      }
+    },
+    "pics/howiuseemacs/instant-rename-tag_update.gif": {
+      "sourceHash": "8421232c90fd82e1363903e299b4fb6dc74179a1",
+      "width": 590,
+      "height": 264,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:05.352Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 590,
+            "path": "pics-optimized/howiuseemacs/instant-rename-tag_update-590w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 590,
+            "path": "pics-optimized/howiuseemacs/instant-rename-tag_update-590w.gif"
+          }
+        ]
+      }
+    },
     "pics/howiuseemacs/layout_update.png": {
       "sourceHash": "ddb37f12c590143a9b74ea919a3676d4283fd4f9",
       "width": 3840,
@@ -6378,6 +6930,106 @@
         ]
       }
     },
+    "pics/insert-translated-text/insert-translated-text-1_update.gif": {
+      "sourceHash": "a7761438aa9e672c9a515d3dc91ed3c711d7d16d",
+      "width": 486,
+      "height": 112,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:05.537Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 486,
+            "path": "pics-optimized/insert-translated-text/insert-translated-text-1_update-486w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 486,
+            "path": "pics-optimized/insert-translated-text/insert-translated-text-1_update-486w.gif"
+          }
+        ]
+      }
+    },
+    "pics/insert-translated-text/insert-translated-text-2_update.gif": {
+      "sourceHash": "9a5e5dd62000eb2ab9d3dca1c4ef5197dce027e1",
+      "width": 760,
+      "height": 140,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:07.208Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/insert-translated-text/insert-translated-text-2_update-640w.webp"
+          },
+          {
+            "width": 760,
+            "path": "pics-optimized/insert-translated-text/insert-translated-text-2_update-760w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 760,
+            "path": "pics-optimized/insert-translated-text/insert-translated-text-2_update-760w.gif"
+          }
+        ]
+      }
+    },
+    "pics/insert-translated-text/insert-translated-text-3_update.gif": {
+      "sourceHash": "c0b319192d7a9fb1c68b91c53b7637d6d82323b9",
+      "width": 1098,
+      "height": 160,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:08.861Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/insert-translated-text/insert-translated-text-3_update-640w.webp"
+          },
+          {
+            "width": 1098,
+            "path": "pics-optimized/insert-translated-text/insert-translated-text-3_update-1098w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1098,
+            "path": "pics-optimized/insert-translated-text/insert-translated-text-3_update-1098w.gif"
+          }
+        ]
+      }
+    },
+    "pics/instant-rename-tag/instant-rename-tag_update.gif": {
+      "sourceHash": "8421232c90fd82e1363903e299b4fb6dc74179a1",
+      "width": 590,
+      "height": 264,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:09.875Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 590,
+            "path": "pics-optimized/instant-rename-tag/instant-rename-tag_update-590w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 590,
+            "path": "pics-optimized/instant-rename-tag/instant-rename-tag_update-590w.gif"
+          }
+        ]
+      }
+    },
     "pics/internal-training/how-to-achieve-wide-horizons-and-rapidly-grow_update.png": {
       "sourceHash": "cf90c96984082b8ba96e5675deeb807f75b25d7c",
       "width": 5681,
@@ -6620,6 +7272,37 @@
         ]
       }
     },
+    "pics/lazycat-reader-tile-render/zoom-demo.webp": {
+      "sourceHash": "5d6540a475197852befeae951e5d299c6ebdcae0",
+      "width": 1064,
+      "height": 1200,
+      "format": "webp",
+      "updatedAt": "2026-09-16T01:00:10.126Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/lazycat-reader-tile-render/zoom-demo-640w.webp"
+          },
+          {
+            "width": 1064,
+            "path": "pics-optimized/lazycat-reader-tile-render/zoom-demo-1064w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/lazycat-reader-tile-render/zoom-demo-640w.jpg"
+          },
+          {
+            "width": 1064,
+            "path": "pics-optimized/lazycat-reader-tile-render/zoom-demo-1064w.jpg"
+          }
+        ]
+      }
+    },
     "pics/lazycat-terminal/screenshot_update.png": {
       "sourceHash": "23747747b30cee386eaff50ebcf9fd1cb29e7f95",
       "width": 1900,
@@ -6655,6 +7338,68 @@
           {
             "width": 1900,
             "path": "pics-optimized/lazycat-terminal/screenshot_update-1900w.png"
+          }
+        ]
+      }
+    },
+    "pics/linux-magnifier/linux-magnifier-1_update.gif": {
+      "sourceHash": "b71c2c651d913aa08bb6f483f743724ca6a87afe",
+      "width": 1920,
+      "height": 1080,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:21.844Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/linux-magnifier/linux-magnifier-1_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/linux-magnifier/linux-magnifier-1_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/linux-magnifier/linux-magnifier-1_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/linux-magnifier/linux-magnifier-1_update-1920w.gif"
+          }
+        ]
+      }
+    },
+    "pics/linux-magnifier/linux-magnifier-2_update.gif": {
+      "sourceHash": "a5a8ca125e5ed93a5aaccea91b998044e7a48b69",
+      "width": 1920,
+      "height": 1080,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:29.756Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/linux-magnifier/linux-magnifier-2_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/linux-magnifier/linux-magnifier-2_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/linux-magnifier/linux-magnifier-2_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/linux-magnifier/linux-magnifier-2_update-1920w.gif"
           }
         ]
       }
@@ -7632,6 +8377,293 @@
         ]
       }
     },
+    "pics/markmacro/case_1_update.gif": {
+      "sourceHash": "9df11ede4e3b54464ed2a12bbe831b896d9ecd88",
+      "width": 1286,
+      "height": 584,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:32.960Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/markmacro/case_1_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/markmacro/case_1_update-1280w.webp"
+          },
+          {
+            "width": 1286,
+            "path": "pics-optimized/markmacro/case_1_update-1286w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1286,
+            "path": "pics-optimized/markmacro/case_1_update-1286w.gif"
+          }
+        ]
+      }
+    },
+    "pics/markmacro/case_2_update.gif": {
+      "sourceHash": "b0bcae8b57ea4500a35e5c83bee4b2e2c99ed41b",
+      "width": 1286,
+      "height": 584,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:35.279Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/markmacro/case_2_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/markmacro/case_2_update-1280w.webp"
+          },
+          {
+            "width": 1286,
+            "path": "pics-optimized/markmacro/case_2_update-1286w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1286,
+            "path": "pics-optimized/markmacro/case_2_update-1286w.gif"
+          }
+        ]
+      }
+    },
+    "pics/markmacro/case_3_update.gif": {
+      "sourceHash": "39bd76f92cb971e43d4544646cd6211db48edc78",
+      "width": 1286,
+      "height": 584,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:00:38.564Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/markmacro/case_3_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/markmacro/case_3_update-1280w.webp"
+          },
+          {
+            "width": 1286,
+            "path": "pics-optimized/markmacro/case_3_update-1286w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1286,
+            "path": "pics-optimized/markmacro/case_3_update-1286w.gif"
+          }
+        ]
+      }
+    },
+    "pics/markmacro/case_4_update.gif": {
+      "sourceHash": "af632b42714de509409896a79d5f933ff170a7fd",
+      "width": 1286,
+      "height": 584,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:03:12.316Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/markmacro/case_4_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/markmacro/case_4_update-1280w.webp"
+          },
+          {
+            "width": 1286,
+            "path": "pics-optimized/markmacro/case_4_update-1286w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1286,
+            "path": "pics-optimized/markmacro/case_4_update-1286w.gif"
+          }
+        ]
+      }
+    },
+    "pics/markmacro/case_5_update.gif": {
+      "sourceHash": "d3218f53632384c94965bf627e5cb21fcba24249",
+      "width": 1764,
+      "height": 1154,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:03:47.179Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/markmacro/case_5_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/markmacro/case_5_update-1280w.webp"
+          },
+          {
+            "width": 1764,
+            "path": "pics-optimized/markmacro/case_5_update-1764w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1764,
+            "path": "pics-optimized/markmacro/case_5_update-1764w.gif"
+          }
+        ]
+      }
+    },
+    "pics/markmacro/case_6_update.gif": {
+      "sourceHash": "29760404d7e1f17a03e87cca1705e56f688f2c15",
+      "width": 1290,
+      "height": 772,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:03:50.690Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/markmacro/case_6_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/markmacro/case_6_update-1280w.webp"
+          },
+          {
+            "width": 1290,
+            "path": "pics-optimized/markmacro/case_6_update-1290w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1290,
+            "path": "pics-optimized/markmacro/case_6_update-1290w.gif"
+          }
+        ]
+      }
+    },
+    "pics/markmacro/case_7_update.gif": {
+      "sourceHash": "cae553de755ae078941d6208545131d82917d67f",
+      "width": 2064,
+      "height": 1648,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:04:22.833Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/markmacro/case_7_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/markmacro/case_7_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/markmacro/case_7_update-1920w.webp"
+          },
+          {
+            "width": 2064,
+            "path": "pics-optimized/markmacro/case_7_update-2064w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 2064,
+            "path": "pics-optimized/markmacro/case_7_update-2064w.gif"
+          }
+        ]
+      }
+    },
+    "pics/markmacro/case_8_update.gif": {
+      "sourceHash": "5eb8673a45f4fc450d3b50debeac4c4db2dc8c63",
+      "width": 1844,
+      "height": 1138,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:04:28.685Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/markmacro/case_8_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/markmacro/case_8_update-1280w.webp"
+          },
+          {
+            "width": 1844,
+            "path": "pics-optimized/markmacro/case_8_update-1844w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1844,
+            "path": "pics-optimized/markmacro/case_8_update-1844w.gif"
+          }
+        ]
+      }
+    },
+    "pics/markmacro/case_9_update.gif": {
+      "sourceHash": "d910555c7070c69b681ec04fd1470ae01b72d9a4",
+      "width": 2554,
+      "height": 924,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:04:44.118Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/markmacro/case_9_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/markmacro/case_9_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/markmacro/case_9_update-1920w.webp"
+          },
+          {
+            "width": 2554,
+            "path": "pics-optimized/markmacro/case_9_update-2554w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 2554,
+            "path": "pics-optimized/markmacro/case_9_update-2554w.gif"
+          }
+        ]
+      }
+    },
     "pics/mumejs/mumejs-2_update.png": {
       "sourceHash": "8161e0324adede5be1339ecb06c0b212b6982cf8",
       "width": 3840,
@@ -8096,6 +9128,33 @@
           {
             "width": 3840,
             "path": "pics-optimized/popweb/katex-preview_update-3840w.png"
+          }
+        ]
+      }
+    },
+    "pics/pyim/rime_update.gif": {
+      "sourceHash": "177484ed050023de5fd68e2b605096c187ce50c5",
+      "width": 846,
+      "height": 238,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:04:50.078Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/pyim/rime_update-640w.webp"
+          },
+          {
+            "width": 846,
+            "path": "pics-optimized/pyim/rime_update-846w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 846,
+            "path": "pics-optimized/pyim/rime_update-846w.gif"
           }
         ]
       }
@@ -10875,6 +11934,91 @@
         ]
       }
     },
+    "pics/smart-align/smart-align_update.gif": {
+      "sourceHash": "3a7a77b231c7375d637d30fa92f73e714998d958",
+      "width": 382,
+      "height": 122,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:04:50.316Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 382,
+            "path": "pics-optimized/smart-align/smart-align_update-382w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 382,
+            "path": "pics-optimized/smart-align/smart-align_update-382w.gif"
+          }
+        ]
+      }
+    },
+    "pics/snails-and-eaf-browser/snails-and-eaf-browser_update.gif": {
+      "sourceHash": "44b2ea6f040efccbd0edf6d50710f3c261f41b20",
+      "width": 1920,
+      "height": 1080,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:05:03.928Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/snails-and-eaf-browser/snails-and-eaf-browser_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/snails-and-eaf-browser/snails-and-eaf-browser_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/snails-and-eaf-browser/snails-and-eaf-browser_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/snails-and-eaf-browser/snails-and-eaf-browser_update-1920w.gif"
+          }
+        ]
+      }
+    },
+    "pics/snails-and-eaf/snails-and-eaf_update.gif": {
+      "sourceHash": "e343b25c26718f3ec6e3f135c8864fe1c896bd15",
+      "width": 1920,
+      "height": 1080,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:04:57.949Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/snails-and-eaf/snails-and-eaf_update-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/snails-and-eaf/snails-and-eaf_update-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/snails-and-eaf/snails-and-eaf_update-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 1920,
+            "path": "pics-optimized/snails-and-eaf/snails-and-eaf_update-1920w.gif"
+          }
+        ]
+      }
+    },
     "pics/snails/framework_update.png": {
       "sourceHash": "29b2a0c61c3143ba1663de23c28cb20b9e1df772",
       "width": 1738,
@@ -11392,6 +12536,33 @@
           {
             "width": 900,
             "path": "pics-optimized/tank500-hit4-bigger-tank/old-vs-new-900w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/thing-edit/thing-edit_update.gif": {
+      "sourceHash": "67fe3d421f3456c2514a65a955d0ec6983468419",
+      "width": 704,
+      "height": 196,
+      "format": "gif",
+      "updatedAt": "2026-09-16T01:05:06.290Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/thing-edit/thing-edit_update-640w.webp"
+          },
+          {
+            "width": 704,
+            "path": "pics-optimized/thing-edit/thing-edit_update-704w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 704,
+            "path": "pics-optimized/thing-edit/thing-edit_update-704w.gif"
           }
         ]
       }

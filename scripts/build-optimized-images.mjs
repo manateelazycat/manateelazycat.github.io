@@ -12,7 +12,7 @@ const SOURCE_DIR = "pics";
 const OUTPUT_DIR = "pics-optimized";
 const MANIFEST_PATH = path.join("data", "image-manifest.json");
 const BASE_WIDTHS = [640, 1280, 1920];
-const SUPPORTED_EXTS = new Set([".jpg", ".jpeg", ".png"]);
+const SUPPORTED_EXTS = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif"]);
 
 function parseArgs(argv) {
   const options = {
@@ -119,7 +119,7 @@ function unique(values) {
 }
 
 async function listAllSources() {
-  const files = await fg([`${SOURCE_DIR}/**/*.{jpg,jpeg,png,JPG,JPEG,PNG}`], { onlyFiles: true });
+  const files = await fg([`${SOURCE_DIR}/**/*.{jpg,jpeg,png,webp,gif,JPG,JPEG,PNG,WEBP,GIF}`], { onlyFiles: true });
   return files.map((filePath) => toPosixPath(filePath));
 }
 
@@ -171,19 +171,27 @@ async function writeVariants(sourcePath, format, variantPaths, dryRun) {
   await fsp.mkdir(variantPaths.outputDir, { recursive: true });
 
   for (const variant of variantPaths.webpVariants) {
-    await sharp(sourcePath)
+    // sharp >= 0.34 reads all frames of an animated image via the constructor option;
+    // stacked frames can exceed the default input pixel limit, so raise it for gif
+    const inputOptions = format === "gif" ? { animated: true, limitInputPixels: false } : undefined;
+    const pipeline = sharp(sourcePath, inputOptions)
       .rotate()
-      .resize({ width: variant.width, withoutEnlargement: true })
-      .webp({ quality: 76 })
-      .toFile(variant.path);
+      .resize({ width: variant.width, withoutEnlargement: true });
+    await pipeline.webp({ quality: 76 }).toFile(variant.path);
   }
 
   for (const variant of variantPaths.fallbackVariants) {
+    if (format === "gif") {
+      // Animated gif: reuse the original file as the fallback variant
+      await fsp.copyFile(sourcePath, variant.path);
+      continue;
+    }
     const pipeline = sharp(sourcePath).rotate().resize({ width: variant.width, withoutEnlargement: true });
-    if (format === "jpeg") {
-      await pipeline.jpeg({ quality: 82, mozjpeg: true, progressive: true }).toFile(variant.path);
-    } else {
+    if (format === "png") {
       await pipeline.png({ compressionLevel: 9, effort: 8 }).toFile(variant.path);
+    } else {
+      // jpeg and webp sources fall back to a universally decodable jpeg
+      await pipeline.jpeg({ quality: 82, mozjpeg: true, progressive: true }).toFile(variant.path);
     }
   }
 }
@@ -321,15 +329,32 @@ async function main() {
     const metadata = await sharp(sourcePath).metadata();
     const width = metadata.width || 0;
     const height = metadata.height || 0;
-    const format = metadata.format === "png" ? "png" : "jpeg";
+    const sourceFormat = metadata.format;
+    let format;
+    if (sourceFormat === "png") {
+      format = "png";
+    } else if (sourceFormat === "gif") {
+      format = "gif";
+    } else if (sourceFormat === "webp") {
+      format = "webp";
+    } else {
+      format = "jpeg";
+    }
     if (width === 0 || height === 0) {
       skippedCount += 1;
       continue;
     }
 
-    const fallbackExt = format === "png" ? ".png" : ".jpg";
+    const fallbackExt = format === "png" ? ".png" : (format === "gif" ? ".gif" : ".jpg");
     const widths = getTargetWidths(width);
-    const variantPaths = createVariantPaths(sourcePath, widths, fallbackExt);
+    let variantPaths = createVariantPaths(sourcePath, widths, fallbackExt);
+    if (format === "gif") {
+      // The gif fallback is an untouched copy of the original, one entry is enough
+      variantPaths = {
+        ...variantPaths,
+        fallbackVariants: variantPaths.fallbackVariants.filter((variant) => variant.width === width),
+      };
+    }
     await writeVariants(sourcePath, format, variantPaths, options.dryRun);
 
     manifest.images[sourcePath] = {

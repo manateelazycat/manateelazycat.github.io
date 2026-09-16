@@ -298,20 +298,22 @@ async function processFile(filePath, imagesMap, dryRun, assetBaseUrl) {
   return true;
 }
 
-function rewritePicsUrl(value, imagesMap, assetBaseUrl) {
+function rewritePicsUrl(value, imagesMap, assetBaseUrl, useManifest = true) {
   const normalized = normalizeToPicsPath(value);
   if (!normalized) {
     return null;
   }
 
-  const decoded = decodeSafe(normalized);
-  const key = imagesMap[decoded] ? decoded : (imagesMap[normalized] ? normalized : null);
-  if (key) {
-    const entry = imagesMap[key];
-    const fallbackVariants = entry.fallback?.variants || [];
-    const chosen = selectDefaultVariant(fallbackVariants);
-    if (chosen) {
-      return toPublicUrl(chosen.path, assetBaseUrl);
+  if (useManifest) {
+    const decoded = decodeSafe(normalized);
+    const key = imagesMap[decoded] ? decoded : (imagesMap[normalized] ? normalized : null);
+    if (key) {
+      const entry = imagesMap[key];
+      const fallbackVariants = entry.fallback?.variants || [];
+      const chosen = selectDefaultVariant(fallbackVariants);
+      if (chosen) {
+        return toPublicUrl(chosen.path, assetBaseUrl);
+      }
     }
   }
 
@@ -335,7 +337,8 @@ function rewriteVideos($, imagesMap, assetBaseUrl) {
 
     const directSrc = $video.attr("src");
     if (directSrc) {
-      const rewrittenSrc = rewritePicsUrl(directSrc, imagesMap, assetBaseUrl);
+      // Video sources always use the original file under pics/ (no optimization yet)
+      const rewrittenSrc = rewritePicsUrl(directSrc, imagesMap, assetBaseUrl, false);
       if (rewrittenSrc) {
         $video.attr("src", rewrittenSrc);
       }
@@ -347,7 +350,8 @@ function rewriteVideos($, imagesMap, assetBaseUrl) {
       if (!src) {
         return;
       }
-      const rewrittenSrc = rewritePicsUrl(src, imagesMap, assetBaseUrl);
+      // Video sources always use the original file under pics/ (no optimization yet)
+      const rewrittenSrc = rewritePicsUrl(src, imagesMap, assetBaseUrl, false);
       if (rewrittenSrc) {
         $source.attr("src", rewrittenSrc);
       }
