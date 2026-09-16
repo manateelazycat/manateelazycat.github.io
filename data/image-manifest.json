@@ -9182,6 +9182,37 @@
         ]
       }
     },
+    "pics/qwen-27b-execution/pi-agent-qwen38-27b.png": {
+      "sourceHash": "14be9af5343faad9380a77ace426a5275bc27577",
+      "width": 959,
+      "height": 587,
+      "format": "png",
+      "updatedAt": "2026-09-16T01:43:07.428Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-27b-execution/pi-agent-qwen38-27b-640w.webp"
+          },
+          {
+            "width": 959,
+            "path": "pics-optimized/qwen-27b-execution/pi-agent-qwen38-27b-959w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-27b-execution/pi-agent-qwen38-27b-640w.png"
+          },
+          {
+            "width": 959,
+            "path": "pics-optimized/qwen-27b-execution/pi-agent-qwen38-27b-959w.png"
+          }
+        ]
+      }
+    },
     "pics/qwen-3-8-27b-125-tokens/benchmark-result.jpg": {
       "sourceHash": "7764a065d7935535b9c54f0479b71defa44263c8",
       "width": 1817,
