@@ -2980,6 +2980,37 @@
         ]
       }
     },
+    "pics/deepseek-tp2-prefill-tuning/prefill-threshold.png": {
+      "sourceHash": "e3ada5c1800d6db62ed05cb985c45b87baf00107",
+      "width": 998,
+      "height": 332,
+      "format": "png",
+      "updatedAt": "2026-09-18T08:51:13.156Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/deepseek-tp2-prefill-tuning/prefill-threshold-640w.webp"
+          },
+          {
+            "width": 998,
+            "path": "pics-optimized/deepseek-tp2-prefill-tuning/prefill-threshold-998w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/deepseek-tp2-prefill-tuning/prefill-threshold-640w.png"
+          },
+          {
+            "width": 998,
+            "path": "pics-optimized/deepseek-tp2-prefill-tuning/prefill-threshold-998w.png"
+          }
+        ]
+      }
+    },
     "pics/delete-block/delete-block_update.gif": {
       "sourceHash": "9f3945b0d748a8c7723f013220827e0f60f91757",
       "width": 214,
