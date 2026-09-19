@@ -8789,6 +8789,37 @@
         ]
       }
     },
+    "pics/ninfer-vs-vllm-qwen-27b/vllm-ninfer-benchmark.png": {
+      "sourceHash": "31ceb8e875a0df5fc32ca3a47d352e921d76f557",
+      "width": 1220,
+      "height": 515,
+      "format": "png",
+      "updatedAt": "2026-09-19T02:35:09.512Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/ninfer-vs-vllm-qwen-27b/vllm-ninfer-benchmark-640w.webp"
+          },
+          {
+            "width": 1220,
+            "path": "pics-optimized/ninfer-vs-vllm-qwen-27b/vllm-ninfer-benchmark-1220w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/ninfer-vs-vllm-qwen-27b/vllm-ninfer-benchmark-640w.png"
+          },
+          {
+            "width": 1220,
+            "path": "pics-optimized/ninfer-vs-vllm-qwen-27b/vllm-ninfer-benchmark-1220w.png"
+          }
+        ]
+      }
+    },
     "pics/nox/nox_update.png": {
       "sourceHash": "d6ee90216f4343819c7b0b3121942ef8673a75c7",
       "width": 1920,
