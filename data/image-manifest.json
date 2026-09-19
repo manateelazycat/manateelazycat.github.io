@@ -9423,6 +9423,37 @@
         ]
       }
     },
+    "pics/qwen-3-8-27b-inference-tuning/vllm-ninfer-qwen38-27b.png": {
+      "sourceHash": "1dd25fc1e6b4ad5f26533b5f5900eb84cafb6ce1",
+      "width": 887,
+      "height": 477,
+      "format": "png",
+      "updatedAt": "2026-09-19T08:42:36.910Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-27b-inference-tuning/vllm-ninfer-qwen38-27b-640w.webp"
+          },
+          {
+            "width": 887,
+            "path": "pics-optimized/qwen-3-8-27b-inference-tuning/vllm-ninfer-qwen38-27b-887w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/qwen-3-8-27b-inference-tuning/vllm-ninfer-qwen38-27b-640w.png"
+          },
+          {
+            "width": 887,
+            "path": "pics-optimized/qwen-3-8-27b-inference-tuning/vllm-ninfer-qwen38-27b-887w.png"
+          }
+        ]
+      }
+    },
     "pics/qwen-3-8-27b-yarn-768k/yarn-768k-test.jpg": {
       "sourceHash": "a452a12b89a5c1cd1020bc75304aa890e596a4db",
       "width": 2200,
