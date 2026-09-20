@@ -199,7 +199,20 @@ Fish 4.0 引入 Kitty Keyboard Protocols 协议，会导致 pyte 基础的终端
 set -Ua fish_features no-keyboard-protocols
 ```
 
-#### 默认使用 micro
+#### 修改GUI默认编辑器
+
+Neovim 对普通用户不太友好，可以换成操作简单、依赖较少的图形编辑器 Gedit：
+
+```bash
+sudo pacman -S gedit
+mkdir -p ~/.local/state/omarchy/defaults
+printf 'gedit\n' > ~/.local/state/omarchy/defaults/editor
+xdg-mime default org.gnome.gedit.desktop text/plain
+```
+
+设置后，Omarchy 会使用 Gedit 作为默认图形编辑器，普通文本文件也会默认用 Gedit 打开。
+
+#### 修改CLI默认编辑器
 
 nano 用了很多年还是不习惯，换 micro 吧。
 
