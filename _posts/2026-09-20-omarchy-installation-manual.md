@@ -56,60 +56,13 @@ sudo pacman -Syyu
 
 装好系统后，首先配置代理，要不是啥都干不了。代理配置可以参考：[代理配置 2026-06-26 Xray VPS 一键部署](https://manateelazycat.github.io/2026/06/26/best-proxy/)
 
-#### 配置输入法
-
-安装雾凇输入法：
+#### 安装输入法
 
 ```bash
 sudo pacman -S rime-ice-installer
-rime-ice-installer
 ```
 
-安装完 Fcitx5 和 Rime 后，按 `Ctrl + Space` 没有任何反应。原因是 `~/.config/fcitx5/profile` 中只有 `keyboard-us`，并没有把已经安装的 Rime 加入输入法列表。
-
-先停止 Fcitx5 服务，再把 `~/.config/fcitx5/profile` 修改为：
-
-```ini
-[Groups/0]
-Name=Default
-Default Layout=us
-DefaultIM=keyboard-us
-
-[Groups/0/Items/0]
-Name=keyboard-us
-
-[Groups/0/Items/1]
-Name=rime
-
-[GroupOrder]
-0=Default
-```
-
-重新启动 Fcitx5 后，`Ctrl + Space` 即可在英文键盘和 Rime 之间正常切换。
-
-如果激活中文输入法后，按 `Shift` 不能在 `rime` 和 `keyboard-us` 之间快速切换，原因是 Shift 默认处理的是 Rime 内部的英文模式，并不是切换 Fcitx5 输入法。
-
-修改 `~/.config/fcitx5/config`：
-
-```ini
-[Hotkey]
-ModifierOnlyKeyTimeout=-1
-AltTriggerKeys=
-
-[Hotkey/EnumerateForwardKeys]
-0=Shift_L
-1=Shift_R
-```
-
-同时在 `~/.local/share/fcitx5/rime/default.custom.yaml` 中关闭 Rime 自己的 Shift 处理，避免冲突：
-
-```yaml
-patch:
-  ascii_composer/switch_key/Shift_L: noop
-  ascii_composer/switch_key/Shift_R: noop
-```
-
-重新部署 Rime 并启动 Fcitx5 后，按左右 Shift 都可以在 `rime` 和 `keyboard-us` 之间快速切换。
+安装后执行 rime-ice-installer， 这个输入法安装器会自动安装雾凇拼音、万象AI大模型、输入法主题，同时自动解决 Omarchy 下无法通过 Ctrl + Space 开启输入法、Shift无法切换中英文等问题
 
 #### 仅在使用电池时启用屏保
 
