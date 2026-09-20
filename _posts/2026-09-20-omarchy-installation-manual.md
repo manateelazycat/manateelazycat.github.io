@@ -21,7 +21,7 @@ categories: [Linux, Omarchy]
 
 需要修改默认的镜像源，加速系统更新和软件包安装速度。
 
-#### ArchLinuxCN
+**ArchLinuxCN**
 
 添加 ArchLinuxCN 的源，ArchLinuxCN 有很多中国用户需要的软件包，在 `/etc/pacman.conf` 配置文件末尾加上：
 
@@ -30,7 +30,7 @@ categories: [Linux, Omarchy]
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
 
-#### ArchLinux Mirror
+**ArchLinux Mirror**
 
 修改 `/etc/pacman.d/mirrorlist`：
 
@@ -39,14 +39,14 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 ```
 
-#### 导入镜像源的 GPG Key
+**导入镜像源的 GPG Key**
 
 ```bash
 sudo pacman -S archlinuxcn-keyring
 sudo pacman -S archlinux-keyring
 ```
 
-#### 更新系统
+**更新系统**
 
 ```bash
 sudo pacman -Syyu
@@ -64,7 +64,7 @@ sudo pacman -S rime-ice-installer
 
 安装后执行 rime-ice-installer， 这个输入法安装器会自动安装雾凇拼音、万象AI大模型、输入法主题，同时自动解决 Omarchy 下无法通过 Ctrl + Space 开启输入法、Shift无法切换中英文等问题
 
-#### 仅在使用电池时启用屏保
+#### 插电时禁用屏保
 
 我希望插电时不显示屏保，只有使用电池且长时间不操作时才显示。可以利用 Omarchy 内置的 Stay Awake 状态，根据电源状态自动启用或关闭空闲处理。
 
@@ -212,7 +212,9 @@ Fish 4.0 引入 Kitty Keyboard Protocols 协议，会导致 pyte 基础的终端
 set -Ua fish_features no-keyboard-protocols
 ```
 
-#### 修改GUI默认编辑器
+#### 修改默认编辑器
+
+**GUI 默认编辑器**
 
 Neovim 对普通用户不太友好，可以换成操作简单、依赖较少的图形编辑器 Gedit：
 
@@ -225,7 +227,7 @@ xdg-mime default org.gnome.gedit.desktop text/plain
 
 设置后，Omarchy 会使用 Gedit 作为默认图形编辑器，普通文本文件也会默认用 Gedit 打开。
 
-#### 修改CLI默认编辑器
+**CLI 默认编辑器**
 
 nano 用了很多年还是不习惯，换 micro 吧。
 
