@@ -58,9 +58,133 @@ sudo pacman -Syyu
 
 #### 配置输入法
 
-目前 Linux 下最流畅的输入法方案就是雾凇输入法，词库精心配置，输入体验非常流畅。
+安装雾凇输入法：
 
-具体的配置看：[Fcitx 最佳配置实践 2026-03-17](https://manateelazycat.github.io/2026/03/17/fcitx-best-config/)
+```bash
+sudo pacman -S rime-ice-installer
+rime-ice-installer
+```
+
+安装完 Fcitx5 和 Rime 后，按 `Ctrl + Space` 没有任何反应。原因是 `~/.config/fcitx5/profile` 中只有 `keyboard-us`，并没有把已经安装的 Rime 加入输入法列表。
+
+先停止 Fcitx5 服务，再把 `~/.config/fcitx5/profile` 修改为：
+
+```ini
+[Groups/0]
+Name=Default
+Default Layout=us
+DefaultIM=keyboard-us
+
+[Groups/0/Items/0]
+Name=keyboard-us
+
+[Groups/0/Items/1]
+Name=rime
+
+[GroupOrder]
+0=Default
+```
+
+重新启动 Fcitx5 后，`Ctrl + Space` 即可在英文键盘和 Rime 之间正常切换。
+
+如果激活中文输入法后，按 `Shift` 不能在 `rime` 和 `keyboard-us` 之间快速切换，原因是 Shift 默认处理的是 Rime 内部的英文模式，并不是切换 Fcitx5 输入法。
+
+修改 `~/.config/fcitx5/config`：
+
+```ini
+[Hotkey]
+ModifierOnlyKeyTimeout=-1
+AltTriggerKeys=
+
+[Hotkey/EnumerateForwardKeys]
+0=Shift_L
+1=Shift_R
+```
+
+同时在 `~/.local/share/fcitx5/rime/default.custom.yaml` 中关闭 Rime 自己的 Shift 处理，避免冲突：
+
+```yaml
+patch:
+  ascii_composer/switch_key/Shift_L: noop
+  ascii_composer/switch_key/Shift_R: noop
+```
+
+重新部署 Rime 并启动 Fcitx5 后，按左右 Shift 都可以在 `rime` 和 `keyboard-us` 之间快速切换。
+
+#### 仅在使用电池时启用屏保
+
+我希望插电时不显示屏保，只有使用电池且长时间不操作时才显示。可以利用 Omarchy 内置的 Stay Awake 状态，根据电源状态自动启用或关闭空闲处理。
+
+创建 `~/.local/bin/omarchy-idle-power-sync`：
+
+```bash
+#!/bin/bash
+
+set -euo pipefail
+
+state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/omarchy/indicators"
+stay_awake_file="$state_dir/stay-awake"
+
+sync_idle_state() {
+  mkdir -p "$state_dir"
+
+  if omarchy power present; then
+    touch "$stay_awake_file"
+  else
+    rm -f "$stay_awake_file"
+  fi
+}
+
+sync_idle_state
+
+upower --monitor | while IFS= read -r _; do
+  sync_idle_state
+done
+```
+
+创建 `~/.config/systemd/user/omarchy-idle-on-battery.service`：
+
+```ini
+[Unit]
+Description=Enable Omarchy idle handling only on battery power
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/omarchy-idle-power-sync
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target
+```
+
+最后启用服务：
+
+```bash
+chmod +x ~/.local/bin/omarchy-idle-power-sync
+systemctl --user daemon-reload
+systemctl --user enable --now omarchy-idle-on-battery.service
+```
+
+插电时会自动关闭屏保和空闲锁屏，切换到电池供电时则恢复 `~/.config/omarchy/shell.json` 中配置的超时时间。
+
+#### 反转触控板滚动方向
+
+如果触控板的双指滚动方向不习惯，可以在 `~/.config/hypr/input.lua` 中添加：
+
+```lua
+hl.config({
+  input = {
+    touchpad = {
+      natural_scroll = true,
+    },
+  },
+})
+```
+
+保存后 Hyprland 会自动重载，触控板滚动方向立即反转。
 
 #### 默认使用 Fish
 
