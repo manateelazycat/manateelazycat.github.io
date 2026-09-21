@@ -169,6 +169,42 @@ o.bind("CTRL + ALT + A", "Screenshot with Omasnap", "omasnap")
 
 [Orbit](https://github.com/rohan-patnaik/orbit)：支持窗口缩略图预览、跨工作区和多显示器切换的可视化 Alt + Tab 插件
 
+[Overview Workspaces](https://github.com/iamcheyan/omarchy-overview-workspaces)：使用实时缩略图预览和切换工作区，支持在工作区之间拖放窗口
+
+安装并启用 Overview Workspaces：
+
+```bash
+omarchy plugin add https://github.com/iamcheyan/omarchy-overview-workspaces.git --enable --yes
+```
+
+插件默认会接管单按 `Super`、`Super + Tab` 和 `Super + 数字键`。如果只需要通过 `Super + Tab` 打开和切换预览，先在 `~/.config/omarchy/shell.json` 的插件栏配置中使用系统原生工作区顺序，避免插件接管 `Super + 数字键`：
+
+```json
+{
+  "id": "hancore.overview-workspaces",
+  "sortMode": "system"
+}
+```
+
+然后修改 `~/.config/omarchy/plugins/hancore.overview-workspaces/KeybindingService.qml`，在 `bindingScript()` 中删除 `_G.hancoreOverviewSuperListener` 的键盘监听代码和四条 `SUPER_L`、`SUPER_R` 单键绑定，保留旧监听的清理以及 `Super + Tab` 的切换和松键确认绑定：
+
+```qml
+commands.push('if _G.hancoreOverviewSuperListener then _G.hancoreOverviewSuperListener:remove(); _G.hancoreOverviewSuperListener = nil end');
+commands.push('_G.hancoreOverviewSuperDown = nil');
+commands.push('hl.bind("SUPER + TAB", hl.dsp.global("quickshell:overviewNext"), { description = "Overview workspace next" })');
+commands.push('hl.bind("SUPER + SHIFT + TAB", hl.dsp.global("quickshell:overviewPrev"), { description = "Overview workspace previous" })');
+commands.push('hl.bind("SUPER + SUPER_L", hl.dsp.global("quickshell:overviewCommit"), { release = true, description = "Overview workspace commit" })');
+commands.push('hl.bind("SUPER + SUPER_R", hl.dsp.global("quickshell:overviewCommit"), { release = true, description = "Overview workspace commit" })');
+```
+
+最后重启 Omarchy Shell，让常驻的快捷键服务重新加载：
+
+```bash
+omarchy restart shell
+```
+
+修改后，单按 `Super` 不会触发插件，`Super + Tab` 和 `Super + Shift + Tab` 分别向前、向后切换工作区，松开 `Super` 后确认选择。插件升级可能覆盖 `KeybindingService.qml` 的本地补丁，升级后需要重新检查。
+
 [Omasnap](https://github.com/omacom/omasnap)：Omarchy 原生 Wayland 截图和标注工具，支持区域、窗口、全屏、滚动长截图、OCR、遮挡和最近截图历史
 
 在 `~/.config/hypr/bindings.lua` 中添加下面的 layer rule，关闭 Omasnap 的窗口动画并避免截图界面出现在屏幕共享中：
