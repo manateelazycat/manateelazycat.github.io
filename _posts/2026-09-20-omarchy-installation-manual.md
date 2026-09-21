@@ -139,6 +139,12 @@ hl.config({
 
 保存后 Hyprland 会自动重载，触控板滚动方向立即反转。
 
+#### Omarchy 插件
+
+[Plugin Manager](https://github.com/fross100/omaplug)：在顶部栏中安装、启停、更新和删除 Omarchy 插件
+
+[Orbit](https://github.com/rohan-patnaik/orbit)：支持窗口缩略图预览、跨工作区和多显示器切换的可视化 Alt + Tab 插件
+
 #### 托盘图标默认展开
 
 Omarchy 顶部栏默认会折叠应用托盘图标，需要通过箭头才能看到，日常使用不太方便。系统自带的托盘插件位于 `/usr/share/omarchy/`，不应该直接修改，否则系统更新后改动会丢失。先把托盘插件克隆到用户配置目录：
