@@ -64,65 +64,6 @@ sudo pacman -S rime-ice-installer
 
 安装后执行 rime-ice-installer， 这个输入法安装器会自动安装雾凇拼音、万象AI大模型、输入法主题，同时自动解决 Omarchy 下无法通过 Ctrl + Space 开启输入法、Shift无法切换中英文等问题
 
-#### 插电时禁用屏保
-
-我希望插电时不显示屏保，只有使用电池且长时间不操作时才显示。可以利用 Omarchy 内置的 Stay Awake 状态，根据电源状态自动启用或关闭空闲处理。
-
-创建 `~/.local/bin/omarchy-idle-power-sync`：
-
-```bash
-#!/bin/bash
-
-set -euo pipefail
-
-state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/omarchy/indicators"
-stay_awake_file="$state_dir/stay-awake"
-
-sync_idle_state() {
-  mkdir -p "$state_dir"
-
-  if omarchy power present; then
-    touch "$stay_awake_file"
-  else
-    rm -f "$stay_awake_file"
-  fi
-}
-
-sync_idle_state
-
-upower --monitor | while IFS= read -r _; do
-  sync_idle_state
-done
-```
-
-创建 `~/.config/systemd/user/omarchy-idle-on-battery.service`：
-
-```ini
-[Unit]
-Description=Enable Omarchy idle handling only on battery power
-After=graphical-session.target
-PartOf=graphical-session.target
-
-[Service]
-Type=simple
-ExecStart=%h/.local/bin/omarchy-idle-power-sync
-Restart=on-failure
-RestartSec=2
-
-[Install]
-WantedBy=graphical-session.target
-```
-
-最后启用服务：
-
-```bash
-chmod +x ~/.local/bin/omarchy-idle-power-sync
-systemctl --user daemon-reload
-systemctl --user enable --now omarchy-idle-on-battery.service
-```
-
-插电时会自动关闭屏保和空闲锁屏，切换到电池供电时则恢复 `~/.config/omarchy/shell.json` 中配置的超时时间。
-
 #### 反转触控板滚动方向
 
 如果触控板的双指滚动方向不习惯，可以在 `~/.config/hypr/input.lua` 中添加：
@@ -172,6 +113,8 @@ o.bind("CTRL + ALT + A", "Screenshot with Omasnap", "omasnap")
 [Omarchy Window Switcher](https://github.com/manateelazycat/omarchy-window-switcher)：实现 `Alt + Tab` 切换窗口，`Super + Tab` 切换工作区
 
 [Omarchy Tray Bar](https://github.com/manateelazycat/omarchy-tray-bar)：让托盘图标默认直接展开，无需点击箭头
+
+[Omarchy Power Awake](https://github.com/manateelazycat/omarchy-power-awake)：插电时保持唤醒，使用电池时恢复屏保和锁屏
 
 [Omasnap](https://github.com/omacom/omasnap)：Omarchy 原生 Wayland 截图和标注工具，支持区域、窗口、全屏、滚动长截图、OCR、遮挡和最近截图历史
 
