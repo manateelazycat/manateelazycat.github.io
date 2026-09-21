@@ -19,11 +19,11 @@ categories: [Linux, Omarchy]
 
 #### 修改镜像源
 
-需要修改默认的镜像源，加速系统更新和软件包安装速度。
+修改默认镜像源，加速系统更新和软件安装。
 
 **ArchLinuxCN**
 
-添加 ArchLinuxCN 的源，ArchLinuxCN 有很多中国用户需要的软件包，在 `/etc/pacman.conf` 配置文件末尾加上：
+在 `/etc/pacman.conf` 末尾添加 ArchLinuxCN 软件源：
 
 ```ini
 [archlinuxcn]
@@ -54,7 +54,7 @@ sudo pacman -Syyu
 
 #### 配置代理
 
-装好系统后，首先配置代理，要不是啥都干不了。代理配置可以参考：[代理配置 2026-06-26 Xray VPS 一键部署](https://manateelazycat.github.io/2026/06/26/best-proxy/)
+先配置代理，参考：[代理配置 2026-06-26 Xray VPS 一键部署](https://manateelazycat.github.io/2026/06/26/best-proxy/)
 
 #### 安装输入法
 
@@ -62,11 +62,11 @@ sudo pacman -Syyu
 sudo pacman -S rime-ice-installer
 ```
 
-安装后执行 rime-ice-installer， 这个输入法安装器会自动安装雾凇拼音、万象AI大模型、输入法主题，同时自动解决 Omarchy 下无法通过 Ctrl + Space 开启输入法、Shift无法切换中英文等问题
+安装后执行 `rime-ice-installer`，它会安装雾凇拼音、万象AI大模型和输入法主题，并修复 `Ctrl + Space` 无法开启输入法、`Shift` 无法切换中英文等问题。
 
 #### 反转触控板滚动方向
 
-如果触控板的双指滚动方向不习惯，可以在 `~/.config/hypr/input.lua` 中添加：
+如需反转双指滚动方向，在 `~/.config/hypr/input.lua` 中添加：
 
 ```lua
 hl.config({
@@ -78,11 +78,11 @@ hl.config({
 })
 ```
 
-保存后 Hyprland 会自动重载，触控板滚动方向立即反转。
+保存后 Hyprland 会自动重载。
 
 #### 默认快捷键
 
-使用 `Super + H/J/K/L` 切换当前工作区的窗口焦点，使用 `Super + 左/右方向键` 切换相邻工作区，使用 `Ctrl + Shift + J/K/L` 分别切换窗口分割、查看快捷键和切换工作区布局，使用 `Ctrl + Alt + A` 启动 Omasnap。在 `~/.config/hypr/bindings.lua` 中添加：
+在 `~/.config/hypr/bindings.lua` 中添加窗口导航、工作区切换、布局和截图快捷键：
 
 ```lua
 hl.unbind("SUPER + J")
@@ -106,7 +106,7 @@ o.bind("CTRL + ALT + A", "Screenshot with Omasnap", "omasnap")
 
 #### 懒猫微服客户端独占工作区
 
-如果在 Omarchy 中使用懒猫微服 PC 客户端，可以让客户端主窗口和每个懒猫 App 自动进入独立工作区。在 `~/.config/hypr/hyprland.lua` 末尾添加：
+让懒猫微服主窗口和每个 App 自动进入独立工作区。在 `~/.config/hypr/hyprland.lua` 末尾添加：
 
 ```lua
 o.window("^lzc-client-desktop$", {
@@ -114,14 +114,12 @@ o.window("^lzc-client-desktop$", {
 })
 ```
 
-`emptyn` 会为每个新窗口选择下一个空工作区。保存后执行：
+`emptyn` 会为新窗口选择下一个空工作区。保存后执行：
 
 ```bash
 hyprctl reload
 hyprctl configerrors
 ```
-
-这样懒猫微服主窗口和 App 不会再和其他应用挤在同一个工作区，用 `Super + Tab` 切换时也更加清晰。
 
 #### Omarchy 插件
 
@@ -143,7 +141,7 @@ hyprctl configerrors
 
 [Omasnap](https://github.com/omacom/omasnap)：Omarchy 原生 Wayland 截图和标注工具，支持区域、窗口、全屏、滚动长截图、OCR、遮挡和最近截图历史
 
-在 `~/.config/hypr/bindings.lua` 中添加下面的 layer rule，关闭 Omasnap 的窗口动画并避免截图界面出现在屏幕共享中：
+在 `~/.config/hypr/bindings.lua` 中添加 layer rule，关闭 Omasnap 动画，并在屏幕共享中隐藏截图界面：
 
 ```lua
 hl.layer_rule({
@@ -161,7 +159,7 @@ sudo pacman -S fish
 chsh -s $(which fish)
 ```
 
-Fish 4.0 引入 Kitty Keyboard Protocols 协议，会导致 pyte 基础的终端产生额外的 5u 字符，需要在配置文件 `~/.config/fish/config.fish` 中添加下面配置禁用 Kitty 协议：
+Fish 4.0 的 Kitty Keyboard Protocols 会让基于 pyte 的终端产生额外的 `5u` 字符。在 `~/.config/fish/config.fish` 中禁用该协议：
 
 ```fish
 set -Ua fish_features no-keyboard-protocols
@@ -171,7 +169,7 @@ set -Ua fish_features no-keyboard-protocols
 
 **GUI 默认编辑器**
 
-Neovim 对普通用户不太友好，可以换成操作简单、依赖较少的图形编辑器 Gedit：
+将图形编辑器改为简单、轻量的 Gedit：
 
 ```bash
 sudo pacman -S gedit
@@ -180,13 +178,9 @@ printf 'gedit\n' > ~/.local/state/omarchy/defaults/editor
 xdg-mime default org.gnome.gedit.desktop text/plain
 ```
 
-设置后，Omarchy 会使用 Gedit 作为默认图形编辑器，普通文本文件也会默认用 Gedit 打开。
-
 **CLI 默认编辑器**
 
-nano 用了很多年还是不习惯，换 micro 吧。
-
-安装 micro 并让 git 默认使用 micro：
+安装 micro，并设为 Git 默认编辑器：
 
 ```bash
 sudo pacman -S micro
