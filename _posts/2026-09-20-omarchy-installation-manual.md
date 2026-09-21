@@ -169,11 +169,7 @@ o.bind("CTRL + ALT + A", "Screenshot with Omasnap", "omasnap")
 
 [Omarchy Window Switcher](https://github.com/manateelazycat/omarchy-window-switcher)：实现 `Alt + Tab` 切换窗口，`Super + Tab` 切换工作区
 
-安装并启用：
-
-```bash
-omarchy plugin add https://github.com/manateelazycat/omarchy-window-switcher.git --enable --yes
-```
+[Omarchy Tray Bar](https://github.com/manateelazycat/omarchy-tray-bar)：让托盘图标默认直接展开，无需点击箭头
 
 [Omasnap](https://github.com/omacom/omasnap)：Omarchy 原生 Wayland 截图和标注工具，支持区域、窗口、全屏、滚动长截图、OCR、遮挡和最近截图历史
 
@@ -187,66 +183,6 @@ hl.layer_rule({
   no_screen_share = true,
 })
 ```
-
-#### 托盘图标默认展开
-
-Omarchy 顶部栏默认会折叠应用托盘图标，需要通过箭头才能看到，日常使用不太方便。系统自带的托盘插件位于 `/usr/share/omarchy/`，不应该直接修改，否则系统更新后改动会丢失。先把托盘插件克隆到用户配置目录：
-
-```bash
-omarchy plugin clone omarchy.tray
-```
-
-命令会创建 `~/.config/omarchy/plugins/$USER.tray/`，并自动把 `~/.config/omarchy/shell.json` 中的 `omarchy.tray` 替换为用户自己的托盘插件。
-
-修改 `~/.config/omarchy/plugins/$USER.tray/Tray.qml`，把托盘的默认展开状态从：
-
-```qml
-property bool expanded: false
-```
-
-改为：
-
-```qml
-property bool expanded: true
-```
-
-文件中横向和纵向托盘各有一段下面的代码，需要把这两段都删除，避免鼠标移出托盘后再次自动折叠：
-
-```qml
-HoverHandler {
-  onHoveredChanged: root.expanded = hovered
-}
-```
-
-托盘已经固定展开后，左侧的展开箭头也没有必要保留。删除横向和纵向托盘中的两个 `BarIconButton { id: expandIcon ... }` 代码块以及对应的 `containmentMask`，然后修改托盘区域的尺寸和位置：
-
-```qml
-// horizontalTrayRoot
-readonly property int drawerBlockWidth: root.drawerCount > 0 ? root.drawerExtent : 0
-
-// horizontalTray 中的 trayClip
-x: 0
-
-// verticalTrayRoot
-readonly property int drawerBlockHeight: root.drawerCount > 0 ? root.drawerExtent : 0
-
-// verticalTray 中的 trayClip
-y: 0
-```
-
-同时把横向和纵向 `drawerArea` 的 `visible` 都改成只在存在未固定托盘图标时显示：
-
-```qml
-visible: root.drawerCount > 0
-```
-
-最后重启 Omarchy Shell，让新的托盘组件重新加载：
-
-```bash
-omarchy restart shell
-```
-
-重启后，顶部栏的应用托盘图标会默认保持展开。
 
 #### 默认使用 Fish
 
