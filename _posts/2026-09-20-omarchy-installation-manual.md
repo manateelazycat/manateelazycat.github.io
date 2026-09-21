@@ -104,6 +104,25 @@ o.bind("CTRL + ALT + A", "Screenshot with Omasnap", "omasnap")
 
 保存后执行 `hyprctl reload` 重新加载配置。
 
+#### 懒猫微服客户端独占工作区
+
+如果在 Omarchy 中使用懒猫微服 PC 客户端，可以让客户端主窗口和每个懒猫 App 自动进入独立工作区。在 `~/.config/hypr/hyprland.lua` 末尾添加：
+
+```lua
+o.window("^lzc-client-desktop$", {
+  workspace = "emptyn",
+})
+```
+
+`emptyn` 会为每个新窗口选择下一个空工作区。保存后执行：
+
+```bash
+hyprctl reload
+hyprctl configerrors
+```
+
+这样懒猫微服主窗口和 App 不会再和其他应用挤在同一个工作区，用 `Super + Tab` 切换时也更加清晰。
+
 #### Omarchy 插件
 
 [Plugin Manager](https://github.com/fross100/omaplug)：在顶部栏中安装、启停、更新和删除 Omarchy 插件
