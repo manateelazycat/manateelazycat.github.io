@@ -141,7 +141,7 @@ hl.config({
 
 #### 修改窗口和工作区快捷键
 
-使用 `Super + H/J/K/L` 切换当前工作区的窗口焦点，使用 `Super + 左/右方向键` 切换相邻工作区。在 `~/.config/hypr/bindings.lua` 中添加：
+使用 `Super + H/J/K/L` 切换当前工作区的窗口焦点，使用 `Super + 左/右方向键` 切换相邻工作区，使用 `Ctrl + Alt + A` 启动 Omasnap。在 `~/.config/hypr/bindings.lua` 中添加：
 
 ```lua
 hl.unbind("SUPER + J")
@@ -155,6 +155,7 @@ o.bind("SUPER + K", "Focus on above window", hl.dsp.focus({ direction = "u" }))
 o.bind("SUPER + L", "Focus on right window", hl.dsp.focus({ direction = "r" }))
 o.bind("SUPER + LEFT", "Previous workspace", hl.dsp.focus({ workspace = "e-1" }))
 o.bind("SUPER + RIGHT", "Next workspace", hl.dsp.focus({ workspace = "e+1" }))
+o.bind("CTRL + ALT + A", "Screenshot with Omasnap", "omasnap")
 ```
 
 保存后执行 `hyprctl reload` 重新加载配置。
@@ -164,6 +165,19 @@ o.bind("SUPER + RIGHT", "Next workspace", hl.dsp.focus({ workspace = "e+1" }))
 [Plugin Manager](https://github.com/fross100/omaplug)：在顶部栏中安装、启停、更新和删除 Omarchy 插件
 
 [Orbit](https://github.com/rohan-patnaik/orbit)：支持窗口缩略图预览、跨工作区和多显示器切换的可视化 Alt + Tab 插件
+
+[Omasnap](https://github.com/omacom/omasnap)：Omarchy 原生 Wayland 截图和标注工具，支持区域、窗口、全屏、滚动长截图、OCR、遮挡和最近截图历史
+
+在 `~/.config/hypr/bindings.lua` 中添加下面的 layer rule，关闭 Omasnap 的窗口动画并避免截图界面出现在屏幕共享中：
+
+```lua
+hl.layer_rule({
+  match = { namespace = "^omasnap$" },
+  no_anim = true,
+  animation = "none",
+  no_screen_share = true,
+})
+```
 
 #### 托盘图标默认展开
 
