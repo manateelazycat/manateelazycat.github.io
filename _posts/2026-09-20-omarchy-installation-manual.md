@@ -116,6 +116,8 @@ o.bind("CTRL + ALT + A", "Screenshot with Omasnap", "omasnap")
 
 [Omarchy Power Awake](https://github.com/manateelazycat/omarchy-power-awake)：插电时保持唤醒，使用电池时恢复屏保和锁屏
 
+[Omarchy Smart Gaps](https://github.com/manateelazycat/omarchy-smart-gaps)：单窗口工作区自动移除窗口间隙和描边，多窗口时恢复默认样式
+
 [Omasnap](https://github.com/omacom/omasnap)：Omarchy 原生 Wayland 截图和标注工具，支持区域、窗口、全屏、滚动长截图、OCR、遮挡和最近截图历史
 
 在 `~/.config/hypr/bindings.lua` 中添加下面的 layer rule，关闭 Omasnap 的窗口动画并避免截图界面出现在屏幕共享中：
