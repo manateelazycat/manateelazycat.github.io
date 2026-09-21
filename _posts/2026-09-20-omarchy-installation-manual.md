@@ -139,6 +139,26 @@ hl.config({
 
 保存后 Hyprland 会自动重载，触控板滚动方向立即反转。
 
+#### 修改窗口和工作区快捷键
+
+使用 `Super + H/J/K/L` 切换当前工作区的窗口焦点，使用 `Super + 左/右方向键` 切换相邻工作区。在 `~/.config/hypr/bindings.lua` 中添加：
+
+```lua
+hl.unbind("SUPER + J")
+hl.unbind("SUPER + K")
+hl.unbind("SUPER + L")
+hl.unbind("SUPER + LEFT")
+hl.unbind("SUPER + RIGHT")
+o.bind("SUPER + H", "Focus on left window", hl.dsp.focus({ direction = "l" }))
+o.bind("SUPER + J", "Focus on below window", hl.dsp.focus({ direction = "d" }))
+o.bind("SUPER + K", "Focus on above window", hl.dsp.focus({ direction = "u" }))
+o.bind("SUPER + L", "Focus on right window", hl.dsp.focus({ direction = "r" }))
+o.bind("SUPER + LEFT", "Previous workspace", hl.dsp.focus({ workspace = "e-1" }))
+o.bind("SUPER + RIGHT", "Next workspace", hl.dsp.focus({ workspace = "e+1" }))
+```
+
+保存后执行 `hyprctl reload` 重新加载配置。
+
 #### Omarchy 插件
 
 [Plugin Manager](https://github.com/fross100/omaplug)：在顶部栏中安装、启停、更新和删除 Omarchy 插件
