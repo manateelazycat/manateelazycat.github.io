@@ -141,7 +141,7 @@ hl.config({
 
 #### 修改窗口和工作区快捷键
 
-使用 `Super + H/J/K/L` 切换当前工作区的窗口焦点，使用 `Super + 左/右方向键` 切换相邻工作区，使用 `Ctrl + Alt + A` 启动 Omasnap。在 `~/.config/hypr/bindings.lua` 中添加：
+使用 `Super + H/J/K/L` 切换当前工作区的窗口焦点，使用 `Super + 左/右方向键` 切换相邻工作区，使用 `Ctrl + Shift + J/K/L` 分别切换窗口分割、查看快捷键和切换工作区布局，使用 `Ctrl + Alt + A` 启动 Omasnap。在 `~/.config/hypr/bindings.lua` 中添加：
 
 ```lua
 hl.unbind("SUPER + J")
@@ -155,6 +155,9 @@ o.bind("SUPER + K", "Focus on above window", hl.dsp.focus({ direction = "u" }))
 o.bind("SUPER + L", "Focus on right window", hl.dsp.focus({ direction = "r" }))
 o.bind("SUPER + LEFT", "Previous workspace", hl.dsp.focus({ workspace = "e-1" }))
 o.bind("SUPER + RIGHT", "Next workspace", hl.dsp.focus({ workspace = "e+1" }))
+o.bind("CTRL + SHIFT + J", "Toggle window split", hl.dsp.layout("togglesplit"))
+o.bind("CTRL + SHIFT + K", "Keybindings", "omarchy-menu-keybindings")
+o.bind("CTRL + SHIFT + L", "Toggle workspace layout", "omarchy-hyprland-workspace-layout-toggle")
 o.bind("CTRL + ALT + A", "Screenshot with Omasnap", "omasnap")
 ```
 
