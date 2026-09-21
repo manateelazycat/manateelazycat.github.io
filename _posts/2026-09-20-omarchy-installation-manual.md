@@ -112,6 +112,8 @@ o.bind("CTRL + ALT + A", "Screenshot with Omasnap", "omasnap")
 
 [Omarchy Window Switcher](https://github.com/manateelazycat/omarchy-window-switcher)：实现 `Alt + Tab` 切换窗口，`Super + Tab` 切换工作区
 
+[Omarchy Workspace Gallery](https://github.com/manateelazycat/omarchy-workspace-gallery)：通过三指手势打开工作区画廊，实时预览、切换工作区，并在工作区内或跨工作区拖放窗口
+
 [Omarchy Tray Bar](https://github.com/manateelazycat/omarchy-tray-bar)：让托盘图标默认直接展开，无需点击箭头
 
 [Omarchy Power Awake](https://github.com/manateelazycat/omarchy-power-awake)：插电时保持唤醒，使用电池时恢复屏保和锁屏
