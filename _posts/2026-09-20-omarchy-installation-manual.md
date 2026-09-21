@@ -80,7 +80,7 @@ hl.config({
 
 保存后 Hyprland 会自动重载，触控板滚动方向立即反转。
 
-#### 修改窗口和工作区快捷键
+#### 默认快捷键
 
 使用 `Super + H/J/K/L` 切换当前工作区的窗口焦点，使用 `Super + 左/右方向键` 切换相邻工作区，使用 `Ctrl + Shift + J/K/L` 分别切换窗口分割、查看快捷键和切换工作区布局，使用 `Ctrl + Alt + A` 启动 Omasnap。在 `~/.config/hypr/bindings.lua` 中添加：
 
