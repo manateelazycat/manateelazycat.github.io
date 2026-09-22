@@ -121,6 +121,26 @@ hyprctl reload
 hyprctl configerrors
 ```
 
+#### 防止远程微信跳到当前工作区
+
+远程微信收到消息时可能会请求激活窗口，导致它从原来的工作区跳到当前工作区。要让它始终留在打开时所在的工作区，在 `~/.config/hypr/hyprland.lua` 末尾添加：
+
+```lua
+o.window(
+  {
+    class = "^wechat$",
+    initial_title = "^微信 on cloud\\.lazycat\\.catlink\\.wechat-cde$",
+  },
+  {
+    no_initial_focus = true,
+    focus_on_activate = false,
+    suppress_event = "activate activatefocus",
+  }
+)
+```
+
+这条规则不会指定固定的工作区编号，只会阻止远程微信抢焦点和响应激活请求。保存后执行 `hyprctl reload` 重新加载配置。
+
 #### Omarchy 插件
 
 [Plugin Manager](https://github.com/fross100/omaplug)：在顶部栏中安装、启停、更新和删除 Omarchy 插件
