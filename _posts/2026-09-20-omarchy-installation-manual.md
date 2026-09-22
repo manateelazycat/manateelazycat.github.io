@@ -109,6 +109,8 @@ hyprctl configerrors
 
 [Omarchy Terminal Clipboard](https://github.com/manateelazycat/omarchy-terminal-clipboard)：让 `Super + C/V` 在 Lazycat Terminal、LightOS、普通终端和图形应用中使用正确的复制粘贴快捷键
 
+[Omarchy Color Picker](https://github.com/manateelazycat/omarchy-color-picker)：在 Omarchy 顶栏提供屏幕取色器，使用像素放大镜精确选取颜色，并以 HEX、RGB 或 HSL 格式复制到系统剪贴板
+
 [Radio Atlas](https://github.com/AksharP5/omarchy-radio-atlas)：在 Omarchy 顶栏通过可旋转地球探索和播放全球直播电台，支持搜索、收藏、收听历史和音频输出选择
 
 [Lock Screen Explorer](https://github.com/SirJul1337/omarchy-lock-explorer)：提供多种与 Omarchy 主题相适配的锁屏设计，可预览并切换样式，支持自定义头像和解锁动画
