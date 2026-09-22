@@ -64,7 +64,7 @@ sudo pacman -S rime-ice-installer
 
 安装后执行 `rime-ice-installer`，它会安装雾凇拼音、万象AI大模型和输入法主题，并修复 `Ctrl + Space` 无法开启输入法、`Shift` 无法切换中英文等问题。
 
-#### 修复终端全屏时输入法候选窗消失
+**修复终端全屏时输入法候选窗消失**
 
 Omarchy 默认使用 `Super + Return` 启动 foot 终端。普通窗口和按 `Super + Alt + F` 最大化时可以正常显示输入法候选窗，但按 `Super + F` 进入真全屏后，候选窗可能会消失。
 
@@ -87,21 +87,36 @@ hyprctl configerrors
 
 如果 `hyprctl configerrors` 没有输出，就表示配置加载成功。
 
-#### 反转触控板滚动方向
+#### Omarchy 插件
 
-如需反转双指滚动方向，在 `~/.config/hypr/input.lua` 中添加：
+[Plugin Manager](https://github.com/fross100/omaplug)：在顶部栏中安装、启停、更新和删除 Omarchy 插件
+
+[Hyprmoncfg](https://github.com/crmne/omarchy-hyprmoncfg)：在顶部栏中可视化管理多显示器布局，为不同显示器组合保存配置，并在热插拔、开合盖和系统恢复后自动切换
+
+[Keystroke](https://github.com/evindor/keystroke)：替代 Omarchy 默认菜单的 Raycast 风格命令面板，可统一搜索应用、命令、文件和 AI 助手
+
+[Omarchy Window Switcher](https://github.com/manateelazycat/omarchy-window-switcher)：实现 `Alt + Tab` 切换窗口，`Super + Tab` 切换工作区
+
+[Omarchy Workspace Gallery](https://github.com/manateelazycat/omarchy-workspace-gallery)：通过三指手势打开工作区画廊，实时预览、切换工作区，并在工作区内或跨工作区拖放窗口
+
+[Omarchy Tray Bar](https://github.com/manateelazycat/omarchy-tray-bar)：让托盘图标默认直接展开，无需点击箭头
+
+[Omarchy Power Awake](https://github.com/manateelazycat/omarchy-power-awake)：插电时保持唤醒，使用电池时恢复屏保和锁屏
+
+[Omarchy Smart Gaps](https://github.com/manateelazycat/omarchy-smart-gaps)：单窗口工作区自动移除窗口间隙和描边，多窗口时恢复默认样式
+
+[Omasnap](https://github.com/omacom/omasnap)：Omarchy 原生 Wayland 截图和标注工具，支持区域、窗口、全屏、滚动长截图、OCR、遮挡和最近截图历史
+
+在 `~/.config/hypr/bindings.lua` 中添加 layer rule，关闭 Omasnap 动画，并在屏幕共享中隐藏截图界面：
 
 ```lua
-hl.config({
-  input = {
-    touchpad = {
-      natural_scroll = true,
-    },
-  },
+hl.layer_rule({
+  match = { namespace = "^omasnap$" },
+  no_anim = true,
+  animation = "none",
+  no_screen_share = true,
 })
 ```
-
-保存后 Hyprland 会自动重载。
 
 #### 默认快捷键
 
@@ -126,6 +141,57 @@ o.bind("CTRL + ALT + A", "Screenshot with Omasnap", "omasnap")
 ```
 
 保存后执行 `hyprctl reload` 重新加载配置。
+
+#### 修改默认编辑器
+
+**GUI 默认编辑器**
+
+将图形编辑器改为简单、轻量的 Gedit：
+
+```bash
+sudo pacman -S gedit
+mkdir -p ~/.local/state/omarchy/defaults
+printf 'gedit\n' > ~/.local/state/omarchy/defaults/editor
+xdg-mime default org.gnome.gedit.desktop text/plain
+```
+
+**CLI 默认编辑器**
+
+安装 micro，并设为 Git 默认编辑器：
+
+```bash
+sudo pacman -S micro
+git config --global core.editor "micro"
+```
+
+#### 反转触控板滚动方向
+
+如需反转双指滚动方向，在 `~/.config/hypr/input.lua` 中添加：
+
+```lua
+hl.config({
+  input = {
+    touchpad = {
+      natural_scroll = true,
+    },
+  },
+})
+```
+
+保存后 Hyprland 会自动重载。
+
+#### 默认使用 Fish
+
+```bash
+sudo pacman -S fish
+chsh -s $(which fish)
+```
+
+Fish 4.0 的 Kitty Keyboard Protocols 会让基于 pyte 的终端产生额外的 `5u` 字符。在 `~/.config/fish/config.fish` 中禁用该协议：
+
+```fish
+set -Ua fish_features no-keyboard-protocols
+```
 
 #### 懒猫微服客户端独占工作区
 
@@ -163,69 +229,3 @@ o.window(
 ```
 
 这条规则不会指定固定的工作区编号，只会阻止远程微信抢焦点和响应激活请求。保存后执行 `hyprctl reload` 重新加载配置。
-
-#### Omarchy 插件
-
-[Plugin Manager](https://github.com/fross100/omaplug)：在顶部栏中安装、启停、更新和删除 Omarchy 插件
-
-[Hyprmoncfg](https://github.com/crmne/omarchy-hyprmoncfg)：在顶部栏中可视化管理多显示器布局，为不同显示器组合保存配置，并在热插拔、开合盖和系统恢复后自动切换
-
-[Keystroke](https://github.com/evindor/keystroke)：替代 Omarchy 默认菜单的 Raycast 风格命令面板，可统一搜索应用、命令、文件和 AI 助手
-
-[Omarchy Window Switcher](https://github.com/manateelazycat/omarchy-window-switcher)：实现 `Alt + Tab` 切换窗口，`Super + Tab` 切换工作区
-
-[Omarchy Workspace Gallery](https://github.com/manateelazycat/omarchy-workspace-gallery)：通过三指手势打开工作区画廊，实时预览、切换工作区，并在工作区内或跨工作区拖放窗口
-
-[Omarchy Tray Bar](https://github.com/manateelazycat/omarchy-tray-bar)：让托盘图标默认直接展开，无需点击箭头
-
-[Omarchy Power Awake](https://github.com/manateelazycat/omarchy-power-awake)：插电时保持唤醒，使用电池时恢复屏保和锁屏
-
-[Omarchy Smart Gaps](https://github.com/manateelazycat/omarchy-smart-gaps)：单窗口工作区自动移除窗口间隙和描边，多窗口时恢复默认样式
-
-[Omasnap](https://github.com/omacom/omasnap)：Omarchy 原生 Wayland 截图和标注工具，支持区域、窗口、全屏、滚动长截图、OCR、遮挡和最近截图历史
-
-在 `~/.config/hypr/bindings.lua` 中添加 layer rule，关闭 Omasnap 动画，并在屏幕共享中隐藏截图界面：
-
-```lua
-hl.layer_rule({
-  match = { namespace = "^omasnap$" },
-  no_anim = true,
-  animation = "none",
-  no_screen_share = true,
-})
-```
-
-#### 默认使用 Fish
-
-```bash
-sudo pacman -S fish
-chsh -s $(which fish)
-```
-
-Fish 4.0 的 Kitty Keyboard Protocols 会让基于 pyte 的终端产生额外的 `5u` 字符。在 `~/.config/fish/config.fish` 中禁用该协议：
-
-```fish
-set -Ua fish_features no-keyboard-protocols
-```
-
-#### 修改默认编辑器
-
-**GUI 默认编辑器**
-
-将图形编辑器改为简单、轻量的 Gedit：
-
-```bash
-sudo pacman -S gedit
-mkdir -p ~/.local/state/omarchy/defaults
-printf 'gedit\n' > ~/.local/state/omarchy/defaults/editor
-xdg-mime default org.gnome.gedit.desktop text/plain
-```
-
-**CLI 默认编辑器**
-
-安装 micro，并设为 Git 默认编辑器：
-
-```bash
-sudo pacman -S micro
-git config --global core.editor "micro"
-```
