@@ -109,6 +109,10 @@ hyprctl configerrors
 
 [Radio Atlas](https://github.com/AksharP5/omarchy-radio-atlas)：在 Omarchy 顶栏通过可旋转地球探索和播放全球直播电台，支持搜索、收藏、收听历史和音频输出选择
 
+[Lock Screen Explorer](https://github.com/SirJul1337/omarchy-lock-explorer)：提供多种与 Omarchy 主题相适配的锁屏设计，可预览并切换样式，支持自定义头像和解锁动画
+
+[Touchpad](https://github.com/awkent01/omarchy-touchpad-widget)：在 Omarchy 顶栏管理触控板开关、滚动和指针速度、自然滚动、轻触点击、输入时禁用及点击指法
+
 [Omasnap](https://github.com/omacom/omasnap)：Omarchy 原生 Wayland 截图和标注工具，支持区域、窗口、全屏、滚动长截图、OCR、遮挡和最近截图历史
 
 在 `~/.config/hypr/bindings.lua` 中添加 layer rule，关闭 Omasnap 动画，并在屏幕共享中隐藏截图界面：
@@ -170,22 +174,6 @@ xdg-mime default org.gnome.gedit.desktop text/plain
 sudo pacman -S micro
 git config --global core.editor "micro"
 ```
-
-#### 反转触控板滚动方向
-
-如需反转双指滚动方向，在 `~/.config/hypr/input.lua` 中添加：
-
-```lua
-hl.config({
-  input = {
-    touchpad = {
-      natural_scroll = true,
-    },
-  },
-})
-```
-
-保存后 Hyprland 会自动重载。
 
 #### 默认使用 Fish
 
