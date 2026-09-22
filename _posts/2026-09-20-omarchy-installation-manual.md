@@ -64,6 +64,29 @@ sudo pacman -S rime-ice-installer
 
 安装后执行 `rime-ice-installer`，它会安装雾凇拼音、万象AI大模型和输入法主题，并修复 `Ctrl + Space` 无法开启输入法、`Shift` 无法切换中英文等问题。
 
+#### 修复终端全屏时输入法候选窗消失
+
+Omarchy 默认使用 `Super + Return` 启动 foot 终端。普通窗口和按 `Super + Alt + F` 最大化时可以正常显示输入法候选窗，但按 `Super + F` 进入真全屏后，候选窗可能会消失。
+
+这不是 Fcitx 或 Rime 的问题，而是完全不透明的全屏 foot 会触发 Hyprland 的单窗口渲染优化，导致输入法候选窗没有被合成。可以在 `~/.config/hypr/hyprland.lua` 末尾添加下面的窗口规则：
+
+```lua
+o.window("foot", {
+  opacity = "1 1 0.999 override",
+})
+```
+
+前两个 `1` 保持普通状态下的活动和非活动窗口透明度不变，第三个 `0.999 override` 将全屏透明度固定为 `0.999`。肉眼看起来仍然完全不透明，但可以避免触发单窗口渲染，让 `Super + F` 全屏状态下继续显示输入法候选窗。
+
+保存后执行：
+
+```bash
+hyprctl reload
+hyprctl configerrors
+```
+
+如果 `hyprctl configerrors` 没有输出，就表示配置加载成功。
+
 #### 反转触控板滚动方向
 
 如需反转双指滚动方向，在 `~/.config/hypr/input.lua` 中添加：
