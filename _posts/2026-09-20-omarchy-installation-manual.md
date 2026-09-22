@@ -107,6 +107,8 @@ hyprctl configerrors
 
 [Omarchy Terminal Clipboard](https://github.com/manateelazycat/omarchy-terminal-clipboard)：让 `Super + C/V` 在 Lazycat Terminal、LightOS、普通终端和图形应用中使用正确的复制粘贴快捷键
 
+[Radio Atlas](https://github.com/AksharP5/omarchy-radio-atlas)：在 Omarchy 顶栏通过可旋转地球探索和播放全球直播电台，支持搜索、收藏、收听历史和音频输出选择
+
 [Omasnap](https://github.com/omacom/omasnap)：Omarchy 原生 Wayland 截图和标注工具，支持区域、窗口、全屏、滚动长截图、OCR、遮挡和最近截图历史
 
 在 `~/.config/hypr/bindings.lua` 中添加 layer rule，关闭 Omasnap 动画，并在屏幕共享中隐藏截图界面：
