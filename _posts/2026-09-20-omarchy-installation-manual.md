@@ -120,9 +120,12 @@ hl.layer_rule({
 
 #### 默认快捷键
 
-在 `~/.config/hypr/bindings.lua` 中添加窗口导航、工作区切换、布局和截图快捷键：
+在 `~/.config/hypr/bindings.lua` 中将 `Super + Return` 改为启动 lazycat-terminal，并添加窗口导航、工作区切换、布局和截图快捷键：
 
 ```lua
+hl.unbind("SUPER + RETURN")
+o.bind("SUPER + RETURN", "Lazycat Terminal", "lazycat-terminal")
+
 hl.unbind("SUPER + J")
 hl.unbind("SUPER + K")
 hl.unbind("SUPER + L")
