@@ -101,6 +101,8 @@ hyprctl configerrors
 
 [Omarchy Tray Bar](https://github.com/manateelazycat/omarchy-tray-bar)：让托盘图标默认直接展开，无需点击箭头
 
+[Omarchy Fcitx Status](https://github.com/manateelazycat/omarchy-fctix-status)：在 Omarchy 顶栏实时显示当前聚焦窗口的中文或英文输入状态，右键可切换中文、英文或重启 Fcitx5
+
 [Omarchy Power Awake](https://github.com/manateelazycat/omarchy-power-awake)：插电时保持唤醒，使用电池时恢复屏保和锁屏
 
 [Omarchy Smart Gaps](https://github.com/manateelazycat/omarchy-smart-gaps)：单窗口工作区自动移除窗口间隙和描边，多窗口时恢复默认样式
