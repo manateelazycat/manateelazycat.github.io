@@ -54,11 +54,14 @@ bash <(curl -fsSL https://raw.githubusercontent.com/manateelazycat/xray-installe
 这个脚本会问两个问题, VPS绑定的域名和伪装目标的域名, 第一个问题输入 hy2.你的域名, 第二个问题默认使用 www.microsoft.com (也可以换成其他域名)， 脚本会全自动部署 Xray 服务端并输出 FlClash 客户端所需的配置文件
 
 ### 安装 FlClash
-ArchLinux 用下面方式安装 FlClash PC 客户端
+ArchLinux / Omarchy 用下面方式安装 FlClash PC 客户端，并安装 TUN Helper：
 
 ```bash
-yay -S flclash
+yay -S flclash-bin
+sudo /usr/lib/flclash/FlClashHelperService install
 ```
+
+`flclash-bin` 使用预编译的程序，避免 `flclash` 源码包构建时下载 Flutter、Go 和 Rust 依赖。首次安装仍需能访问 AUR、GitHub 和 Arch 软件仓库；如果新系统无法访问 AUR 或 GitHub，需要在重装前把安装包保存到 U 盘。
 
 ### 配置 FlClash
 创建 proxy.yaml 配置文件，把 xray-installer 生成的内容拷贝进来保存， 打开 FlClash PC 客户端：
