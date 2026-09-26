@@ -12,7 +12,7 @@ Omarchy 默认的 Tile 设计很像我当年用的 i3/awesome/Xmonad，这种完
 
 我基于 Orbit 和 Overview Window 插件改造了一下，直接安装 Omarchy Window Switcher，装好就可以用 Alt + Tab 切换工作区内的窗口，用 Super + Tab 切换工作区，不需要做任何设置，开箱即用。
 
-源代码在评论区，按照 MIT 许可证发布，Enjoy!
+源代码：[omarchy-window-switcher](https://github.com/manateelazycat/omarchy-window-switcher)
 
 <video controls="controls" width="100%" poster="{{site.url}}/pics/omarchy-window-switcher/demo.jpg">
   <source src="{{site.url}}/pics/omarchy-window-switcher/demo.mp4" type="video/mp4">

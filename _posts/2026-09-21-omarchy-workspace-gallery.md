@@ -12,7 +12,7 @@ categories: [Omarchy]
 
 可以三指上滑进入预览状态，三指左右滑动切换工作区，上下工作区中的窗口可以随意拖拽，完美复刻 GNOME Shell 的核心功能。
 
-所有代码已经在评论区按照 GPL 3.0 协议开源，Enjoy！
+源代码：[omarchy-workspace-gallery](https://github.com/manateelazycat/omarchy-workspace-gallery)
 
 <video controls="controls" width="100%" poster="{{site.url}}/pics/omarchy-workspace-gallery/demo.jpg">
   <source src="{{site.url}}/pics/omarchy-workspace-gallery/demo.mp4" type="video/mp4">

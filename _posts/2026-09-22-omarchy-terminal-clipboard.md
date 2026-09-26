@@ -12,6 +12,6 @@ categories: [Omarchy]
 
 所以我写了我的第六个插件， omarchy-terminal-clipboard ， 让 Omarchy 识别这两个终端， 按 super + c 的时候转换成 ctrl + shift + c, 按 super + v 转换成 ctrl + shift + v, 这样就不用 bings.lua 配置文件了，直接安装这一个包就好了，欢迎大家提交 terminal 名单，把这个包做的兼容性更好一点
 
-源代码放在评论区，按照 GPL 3.0 开源， Enjoy!
+源代码：[omarchy-terminal-clipboard](https://github.com/manateelazycat/omarchy-terminal-clipboard)
 
 ![omarchy-terminal-clipboard]({{site.url}}/pics/omarchy-terminal-clipboard/omarchy-terminal-clipboard.jpg)

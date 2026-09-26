@@ -12,6 +12,6 @@ categories: [Omarchy]
 
 所以我做了我的第三个 Omarchy 插件：笔记本插电的时候禁用一切屏保和省电模式，只有拔电的时候才启用电源管理。这样既满足了移动续航的需求，又保证我们平常工作中，不管是看 AI 发呆还是开会看 PPT，都不受 Linux 蹩脚的电源管理限制。如果真的要离开一会儿，为了保证安全，手动锁屏一下就好了。
 
-代码用 GPL 3.0 开源，放到评论区，Enjoy Omarchy!
+源代码：[omarchy-power-awake](https://github.com/manateelazycat/omarchy-power-awake)
 
 ![]({{site.url}}/pics/omarchy-power-awake/demo.jpg)

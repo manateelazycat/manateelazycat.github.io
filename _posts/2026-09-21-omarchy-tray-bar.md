@@ -10,6 +10,6 @@ Omarchy 整个系统的默认设计非常简洁，特别适合工程师。只是
 
 我重新设计了一个插件 Omarchy Tray Bar，安装以后自动展示所有托盘，随时随地都可以看到托盘状态，点击也非常直观高效。
 
-源代码按照我最喜欢的 GPL 3.0 发布，放到评论区了，稍后发布到 Omarchy 插件商店。
+源代码：[omarchy-tray-bar](https://github.com/manateelazycat/omarchy-tray-bar)
 
 ![]({{site.url}}/pics/omarchy-tray-bar/demo.jpg)

@@ -10,6 +10,6 @@ categories: [Omarchy]
 
 我说你别， 我来写一个语言切换插件, omarchy-language-switcher  点击按钮后， 可以快速搜索所有语言，按回车重新注销系统即可
 
-源码稍后以 GPL 3.0 许可证开源放在评论区， Enjoy!
+源代码：[omarchy-language-switcher](https://github.com/manateelazycat/omarchy-language-switcher)
 
 ![Omarchy Language Switcher]({{site.url}}/pics/omarchy-language-switcher/omarchy-language-switcher.jpg)

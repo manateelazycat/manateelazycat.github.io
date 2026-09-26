@@ -12,6 +12,6 @@ categories: [Omarchy]
 
 原理就是，选中显示器后，插件暂停 hyprmoncfgd，在配置中临时将对应输出设为 disabled = true 并执行 hyprctl reload，两秒后恢复配置、再次 reload 并启动服务
 
-源代码在评论区，按照 GPL 3.0 的协议开源， Enjoy！
+源代码：[omarchy-display-reset](https://github.com/manateelazycat/omarchy-display-reset)
 
 ![omarchy-display-reset]({{site.url}}/pics/omarchy-display-reset/omarchy-display-reset.jpg)
