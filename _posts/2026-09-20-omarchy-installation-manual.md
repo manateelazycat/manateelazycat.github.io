@@ -103,13 +103,19 @@ hyprctl configerrors
 
 [Omarchy Fcitx Status](https://github.com/manateelazycat/omarchy-fctix-status)：在 Omarchy 顶栏实时显示当前聚焦窗口的中文或英文输入状态，右键可切换中文、英文或重启 Fcitx5
 
-[Omarchy Power Awake](https://github.com/manateelazycat/omarchy-power-awake)：插电时保持唤醒，使用电池时恢复屏保和锁屏
+[Omarchy Power Awake](https://github.com/manateelazycat/omarchy-power-awake)：台式机和插电的笔记本保持唤醒，笔记本使用电池时恢复屏保和锁屏
 
 [Omarchy Smart Gaps](https://github.com/manateelazycat/omarchy-smart-gaps)：单窗口工作区自动移除窗口间隙和描边，多窗口时恢复默认样式
 
 [Omarchy Terminal Clipboard](https://github.com/manateelazycat/omarchy-terminal-clipboard)：让 `Super + C/V` 在 Lazycat Terminal、LightOS、普通终端和图形应用中使用正确的复制粘贴快捷键
 
 [Omarchy Color Picker](https://github.com/manateelazycat/omarchy-color-picker)：在 Omarchy 顶栏提供屏幕取色器，使用像素放大镜精确选取颜色，并以 HEX、RGB 或 HSL 格式复制到系统剪贴板
+
+[Omarchy Display Reset](https://github.com/manateelazycat/omarchy-display-reset)：在每个屏幕显示显示器布局，点击选中信号异常的显示器，临时禁用并重新加载配置以恢复显示信号
+
+[Omarchy Language Switcher](https://github.com/manateelazycat/omarchy-language-switcher)：在顶栏搜索并切换系统语言，切换后重新登录即可生效
+
+[Omarchy Startup Map](https://github.com/manateelazycat/omarchy-startup-map)：搜索已安装应用，设置登录后在指定显示器和工作区位置启动，下次登录时生效
 
 [Radio Atlas](https://github.com/AksharP5/omarchy-radio-atlas)：在 Omarchy 顶栏通过可旋转地球探索和播放全球直播电台，支持搜索、收藏、收听历史和音频输出选择
 

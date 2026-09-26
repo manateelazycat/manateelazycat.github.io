@@ -8945,6 +8945,84 @@
         ]
       }
     },
+    "pics/omarchy-startup-map/omarchy-startup-map-1.jpg": {
+      "sourceHash": "294b5b900dc8b53ee0800d6905a2d6147bec1754",
+      "width": 1920,
+      "height": 1054,
+      "format": "jpeg",
+      "updatedAt": "2026-09-26T16:49:04.572Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-1-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-1-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-1-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-1-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-1-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-1-1920w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/omarchy-startup-map/omarchy-startup-map-2.jpg": {
+      "sourceHash": "d82ba73c6e2d49603dfadba6225ed8c8bcb8c563",
+      "width": 1920,
+      "height": 1054,
+      "format": "jpeg",
+      "updatedAt": "2026-09-26T16:49:04.851Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-2-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-2-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-2-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-2-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-2-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-startup-map/omarchy-startup-map-2-1920w.jpg"
+          }
+        ]
+      }
+    },
     "pics/one-tech-man-s-weekend/weekend_update.png": {
       "sourceHash": "10e14ac70fcebb1fd132ea153e7ae9343087948a",
       "width": 2560,
