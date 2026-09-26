@@ -8906,6 +8906,45 @@
         ]
       }
     },
+    "pics/omarchy-language-switcher/omarchy-language-switcher.jpg": {
+      "sourceHash": "c1e64eae862867f78f4e53807dddaf3798780408",
+      "width": 1920,
+      "height": 1054,
+      "format": "jpeg",
+      "updatedAt": "2026-09-26T15:02:35.083Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-language-switcher/omarchy-language-switcher-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-language-switcher/omarchy-language-switcher-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-language-switcher/omarchy-language-switcher-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-language-switcher/omarchy-language-switcher-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-language-switcher/omarchy-language-switcher-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-language-switcher/omarchy-language-switcher-1920w.jpg"
+          }
+        ]
+      }
+    },
     "pics/one-tech-man-s-weekend/weekend_update.png": {
       "sourceHash": "10e14ac70fcebb1fd132ea153e7ae9343087948a",
       "width": 2560,

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Omarchy Display Reset 显示器信号重置插件
-categories: [Linux, OpenSource]
+categories: [Omarchy]
 ---
 
 我的第九个 Omarchy 插件
