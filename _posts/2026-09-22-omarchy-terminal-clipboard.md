@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Omarchy Terminal Clipboard 终端按键重定向
-categories: [Linux, OpenSource]
+categories: [Omarchy]
 ---
+
+我的第六个 Omarch 插件
 
 我日常用的终端主要有两个： lazycat-terminal 本地快速做研究，LightOS 主要手机和电脑多端远程 AI 编程
 

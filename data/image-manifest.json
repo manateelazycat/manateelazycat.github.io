@@ -8859,6 +8859,53 @@
         ]
       }
     },
+    "pics/omarchy-display-reset/omarchy-display-reset.jpg": {
+      "sourceHash": "d1e364671ca1449cf13b279ef165d4be852483be",
+      "width": 3840,
+      "height": 2161,
+      "format": "jpeg",
+      "updatedAt": "2026-09-26T13:13:53.425Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-display-reset/omarchy-display-reset-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-display-reset/omarchy-display-reset-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-display-reset/omarchy-display-reset-1920w.webp"
+          },
+          {
+            "width": 3840,
+            "path": "pics-optimized/omarchy-display-reset/omarchy-display-reset-3840w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-display-reset/omarchy-display-reset-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-display-reset/omarchy-display-reset-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-display-reset/omarchy-display-reset-1920w.jpg"
+          },
+          {
+            "width": 3840,
+            "path": "pics-optimized/omarchy-display-reset/omarchy-display-reset-3840w.jpg"
+          }
+        ]
+      }
+    },
     "pics/one-tech-man-s-weekend/weekend_update.png": {
       "sourceHash": "10e14ac70fcebb1fd132ea153e7ae9343087948a",
       "width": 2560,
