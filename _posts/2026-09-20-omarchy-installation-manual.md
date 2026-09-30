@@ -123,17 +123,10 @@ hyprctl configerrors
 
 [Touchpad](https://github.com/awkent01/omarchy-touchpad-widget)：在 Omarchy 顶栏管理触控板开关、滚动和指针速度、自然滚动、轻触点击、输入时禁用及点击指法
 
-[Omasnap](https://github.com/omacom/omasnap)：Omarchy 原生 Wayland 截图和标注工具，支持区域、窗口、全屏、滚动长截图、OCR、遮挡和最近截图历史
+截图工具使用 omarchy-screenshot，安装命令：
 
-在 `~/.config/hypr/bindings.lua` 中添加 layer rule，关闭 Omasnap 动画，并在屏幕共享中隐藏截图界面：
-
-```lua
-hl.layer_rule({
-  match = { namespace = "^omasnap$" },
-  no_anim = true,
-  animation = "none",
-  no_screen_share = true,
-})
+```bash
+yay -S omarchy-screenshot
 ```
 
 #### 默认快捷键
@@ -158,7 +151,7 @@ o.bind("SUPER + RIGHT", "Next workspace", hl.dsp.focus({ workspace = "e+1" }))
 o.bind("CTRL + SHIFT + J", "Toggle window split", hl.dsp.layout("togglesplit"))
 o.bind("CTRL + SHIFT + K", "Keybindings", "omarchy-menu-keybindings")
 o.bind("CTRL + SHIFT + L", "Toggle workspace layout", "omarchy-hyprland-workspace-layout-toggle")
-o.bind("CTRL + ALT + A", "Screenshot with Omasnap", "omasnap")
+o.bind("CTRL + ALT + A", "Screenshot with Omarchy Screenshot", "omarchy-screenshot")
 ```
 
 保存后执行 `hyprctl reload` 重新加载配置。
