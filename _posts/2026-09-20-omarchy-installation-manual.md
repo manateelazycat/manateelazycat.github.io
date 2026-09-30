@@ -117,8 +117,6 @@ hyprctl configerrors
 
 [Omarchy Startup Map](https://github.com/manateelazycat/omarchy-startup-map)：搜索已安装应用，设置登录后在指定显示器和工作区位置启动，下次登录时生效
 
-[Radio Atlas](https://github.com/AksharP5/omarchy-radio-atlas)：在 Omarchy 顶栏通过可旋转地球探索和播放全球直播电台，支持搜索、收藏、收听历史和音频输出选择
-
 [Lock Screen Explorer](https://github.com/SirJul1337/omarchy-lock-explorer)：提供多种与 Omarchy 主题相适配的锁屏设计，可预览并切换样式，支持自定义头像和解锁动画
 
 [Touchpad](https://github.com/awkent01/omarchy-touchpad-widget)：在 Omarchy 顶栏管理触控板开关、滚动和指针速度、自然滚动、轻触点击、输入时禁用及点击指法
