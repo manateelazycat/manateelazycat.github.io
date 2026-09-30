@@ -124161,6 +124161,45 @@
         ]
       }
     },
+    "pics/vllm-vs-tensorfold-performance/vllm-vs-tensorfold-choice.jpg": {
+      "sourceHash": "359ab57b5eb30b05ed3fa046efe433186face9e1",
+      "width": 1712,
+      "height": 1152,
+      "format": "jpeg",
+      "updatedAt": "2026-09-30T08:14:26.897Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/vllm-vs-tensorfold-performance/vllm-vs-tensorfold-choice-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/vllm-vs-tensorfold-performance/vllm-vs-tensorfold-choice-1280w.webp"
+          },
+          {
+            "width": 1712,
+            "path": "pics-optimized/vllm-vs-tensorfold-performance/vllm-vs-tensorfold-choice-1712w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/vllm-vs-tensorfold-performance/vllm-vs-tensorfold-choice-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/vllm-vs-tensorfold-performance/vllm-vs-tensorfold-choice-1280w.jpg"
+          },
+          {
+            "width": 1712,
+            "path": "pics-optimized/vllm-vs-tensorfold-performance/vllm-vs-tensorfold-choice-1712w.jpg"
+          }
+        ]
+      }
+    },
     "pics/webengine/webengine_update.png": {
       "sourceHash": "192378d8cb098df099840264bb35388e07bfcb73",
       "width": 1920,

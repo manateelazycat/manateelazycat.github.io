@@ -17,3 +17,5 @@ categories: [AI]
 1. 同样一台 128GB 的机器，如果你平常项目所需的上下文很低，对 Prefill 要求不高， TensorFold 的单流解码性能绝对要比 vLLM 好，一般来说好30%左右是没问题的
 
 2. 但是如果你对上下文超过 265K， 而且对 Prefill 的性能很敏感， 还有多并发的性能有要求， vLLM 绝对是更好的选择
+
+![vLLM 与 TensorFold 性能对比图]({{site.url}}/pics/vllm-vs-tensorfold-performance/vllm-vs-tensorfold-choice.jpg)
