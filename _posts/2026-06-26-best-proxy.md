@@ -81,6 +81,32 @@ FlClash 手机端配置也是类似， 添加配置文件、 选择家宽、 选
 
 这两点配置好以后，重启 FlClash 和懒猫微服客户端， 就可以同时科学上外网并能直连回家中的微服啦！
 
+#### 解决 FlClash TUN 与懒猫微服的网络冲突
+
+如果 PC 端懒猫客户端能登录却连不上微服，关闭 FlClash TUN 后恢复，且 `ip -6 rule` 显示 `9000: from all unreachable`，执行以下命令，让懒猫网段绕过拦截，开机自动生效：
+
+```bash
+sudo tee /etc/systemd/system/lazycat-flclash-route.service >/dev/null <<'EOF'
+[Unit]
+Description=Route Lazycat virtual IPv6 network outside FlClash TUN
+Before=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/ip -6 rule add priority 8999 to fc03:1136:3800::/40 lookup main
+ExecStop=/usr/bin/ip -6 rule del priority 8999 to fc03:1136:3800::/40 lookup main
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable --now lazycat-flclash-route.service
+```
+
+完成后，保持 FlClash TUN 开启，重新连接懒猫客户端即可。
+
 ### 解决Timeout的问题
 
 如果你使用一段时间，发现 VPS 节点突然 Timeout，一般就是你这条 VPS IP 的链路被识别了，这时候需要更换一下伪装目标的域名并重新生成一下配置就可以解决 Timeout 的问题。
