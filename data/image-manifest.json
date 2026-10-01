@@ -8945,6 +8945,100 @@
         ]
       }
     },
+    "pics/omarchy-screenshot-scrolling-capture/HTgejnAasAAwfsn.jpg": {
+      "sourceHash": "c29c1ca7eac0e600bd1f08445507baf09b042dc3",
+      "width": 4096,
+      "height": 3072,
+      "format": "jpeg",
+      "updatedAt": "2026-10-01T01:24:08.532Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgejnAasAAwfsn-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgejnAasAAwfsn-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgejnAasAAwfsn-1920w.webp"
+          },
+          {
+            "width": 4096,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgejnAasAAwfsn-4096w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgejnAasAAwfsn-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgejnAasAAwfsn-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgejnAasAAwfsn-1920w.jpg"
+          },
+          {
+            "width": 4096,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgejnAasAAwfsn-4096w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/omarchy-screenshot-scrolling-capture/HTgfcO9b0AAoT0b.jpg": {
+      "sourceHash": "b22232b8a8630213c453461fd020f3ef7878612a",
+      "width": 4096,
+      "height": 3072,
+      "format": "jpeg",
+      "updatedAt": "2026-10-01T01:24:10.715Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgfcO9b0AAoT0b-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgfcO9b0AAoT0b-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgfcO9b0AAoT0b-1920w.webp"
+          },
+          {
+            "width": 4096,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgfcO9b0AAoT0b-4096w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgfcO9b0AAoT0b-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgfcO9b0AAoT0b-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgfcO9b0AAoT0b-1920w.jpg"
+          },
+          {
+            "width": 4096,
+            "path": "pics-optimized/omarchy-screenshot-scrolling-capture/HTgfcO9b0AAoT0b-4096w.jpg"
+          }
+        ]
+      }
+    },
     "pics/omarchy-screenshot/demo.jpg": {
       "sourceHash": "f100cb8aa4fb56bb069e308365a41cc4ca1d9001",
       "width": 1200,
