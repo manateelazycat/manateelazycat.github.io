@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Omarchy 第一坑 Flclash 默认启动不了
-categories: [Linux, Proxy]
+categories: [omarchy]
 ---
 
 今天在一台新装的 Arch Linux 上配置 FlClash，自建的 Reality 节点一直显示 Timeout。排查后发现有两个问题：节点缺少 TLS 指纹配置，导致代理握手失败；系统还有残留的 IPv6 路由，导致 TUN 启动失败。两个问题叠在一起，看起来都是网络不通。
