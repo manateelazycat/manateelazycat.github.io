@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Omarchy Screenshot 的长截图交互设计
-categories: [Linux, OpenSource]
+categories: [Omarchy]
 ---
 
 Omarchy Screenshot 马上要支持任意位置、任意程序的长截图了。
