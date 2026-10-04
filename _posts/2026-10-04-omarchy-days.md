@@ -15,5 +15,3 @@ Omarchy 现有社区的大部分都是外国人，不能理解中国大陆这种
 源代码在评论区以 GPL 3.0 协议开源， Enjoy！
 
 ![Omarchy Days 日历与天气界面]({{site.url}}/pics/omarchy-days/HTxWuKxbMAEVFPQ.jpg)
-
-原文：[X](https://x.com/manateelazycat/status/2106654981319483423)

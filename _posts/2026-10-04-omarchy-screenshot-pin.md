@@ -9,5 +9,3 @@ categories: [Omarchy]
 而且这个 Pin 的界面可以在多个显示器任意位置拖拽，哈哈哈哈，很方便！
 
 ![Omarchy Screenshot Pin 功能演示]({{site.url}}/pics/omarchy-screenshot-pin/HTxVVw9a0AA2c_p.jpg)
-
-原文：[X](https://x.com/manateelazycat/status/2106653423743766591)
