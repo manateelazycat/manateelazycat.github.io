@@ -9265,6 +9265,37 @@
         ]
       }
     },
+    "pics/omarchy-wave/demo.jpg": {
+      "sourceHash": "1815b313dbb8f2865c9686eb6deb621cd495b123",
+      "width": 1200,
+      "height": 675,
+      "format": "jpeg",
+      "updatedAt": "2026-10-04T10:49:00.462Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-wave/demo-640w.webp"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/omarchy-wave/demo-1200w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-wave/demo-640w.jpg"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/omarchy-wave/demo-1200w.jpg"
+          }
+        ]
+      }
+    },
     "pics/one-tech-man-s-weekend/weekend_update.png": {
       "sourceHash": "10e14ac70fcebb1fd132ea153e7ae9343087948a",
       "width": 2560,
