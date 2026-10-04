@@ -115,6 +115,12 @@ hyprctl configerrors
 
 [Omarchy Startup Map](https://github.com/manateelazycat/omarchy-startup-map)：搜索已安装应用，设置登录后在指定显示器和工作区位置启动，下次登录时生效
 
+[Omarchy Days](https://github.com/manateelazycat/omarchy-days)：在任务栏提供日历与天气面板，显示公历、农历、节气和中国大陆放假调休安排，并支持城市搜索和最近七天天气
+
+[Omarchy Wave](https://github.com/manateelazycat/omarchy-wave)：在空白工作区的桌面底部显示随系统音频律动的波浪动画，颜色跟随 Omarchy 主题，不响应鼠标和键盘事件
+
+[Omarchy Side Panel](https://github.com/manateelazycat/omarchy-side-panel)：将默认任务栏替换为自动隐藏的侧边任务栏，鼠标移到屏幕左右边缘时展开，放大插件和应用托盘图标，支持多显示器
+
 [Lock Screen Explorer](https://github.com/SirJul1337/omarchy-lock-explorer)：提供多种与 Omarchy 主题相适配的锁屏设计，可预览并切换样式，支持自定义头像和解锁动画
 
 [Touchpad](https://github.com/awkent01/omarchy-touchpad-widget)：在 Omarchy 顶栏管理触控板开关、滚动和指针速度、自然滚动、轻触点击、输入时禁用及点击指法
