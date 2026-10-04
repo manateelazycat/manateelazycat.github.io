@@ -121,6 +121,8 @@ hyprctl configerrors
 
 [Omarchy Side Panel](https://github.com/manateelazycat/omarchy-side-panel)：将默认任务栏替换为自动隐藏的侧边任务栏，鼠标移到屏幕左右边缘时展开，放大插件和应用托盘图标，支持多显示器
 
+[Omarchy Desktop Clock](https://github.com/manateelazycat/omarchy-desktop-clock)：在桌面显示时钟，隐藏工作区窗口后方便查看时间，适合搭配 Omarchy Side Panel 的自动隐藏任务栏使用
+
 [Lock Screen Explorer](https://github.com/SirJul1337/omarchy-lock-explorer)：提供多种与 Omarchy 主题相适配的锁屏设计，可预览并切换样式，支持自定义头像和解锁动画
 
 [Touchpad](https://github.com/awkent01/omarchy-touchpad-widget)：在 Omarchy 顶栏管理触控板开关、滚动和指针速度、自然滚动、轻触点击、输入时禁用及点击指法

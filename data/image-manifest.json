@@ -8898,6 +8898,37 @@
         ]
       }
     },
+    "pics/omarchy-desktop-clock/demo.jpg": {
+      "sourceHash": "1ec2e593f3548f2f09adb9f04133bb956609d7f9",
+      "width": 1200,
+      "height": 675,
+      "format": "jpeg",
+      "updatedAt": "2026-10-04T16:21:54.911Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-desktop-clock/demo-640w.webp"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/omarchy-desktop-clock/demo-1200w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-desktop-clock/demo-640w.jpg"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/omarchy-desktop-clock/demo-1200w.jpg"
+          }
+        ]
+      }
+    },
     "pics/omarchy-display-reset/omarchy-display-reset.jpg": {
       "sourceHash": "d1e364671ca1449cf13b279ef165d4be852483be",
       "width": 3840,
