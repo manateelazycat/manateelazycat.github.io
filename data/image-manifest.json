@@ -8859,6 +8859,45 @@
         ]
       }
     },
+    "pics/omarchy-days/HTxWuKxbMAEVFPQ.jpg": {
+      "sourceHash": "84df1f26252f7a6494b521bdf11f9e4f24d3a2b0",
+      "width": 1920,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-10-04T08:02:02.727Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-days/HTxWuKxbMAEVFPQ-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-days/HTxWuKxbMAEVFPQ-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-days/HTxWuKxbMAEVFPQ-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-days/HTxWuKxbMAEVFPQ-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-days/HTxWuKxbMAEVFPQ-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-days/HTxWuKxbMAEVFPQ-1920w.jpg"
+          }
+        ]
+      }
+    },
     "pics/omarchy-display-reset/omarchy-display-reset.jpg": {
       "sourceHash": "d1e364671ca1449cf13b279ef165d4be852483be",
       "width": 3840,
@@ -8941,6 +8980,53 @@
           {
             "width": 1920,
             "path": "pics-optimized/omarchy-language-switcher/omarchy-language-switcher-1920w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/omarchy-screenshot-pin/HTxVVw9a0AA2c_p.jpg": {
+      "sourceHash": "f54fe3cb59ff3ec84d486ef2b5913373a09c4564",
+      "width": 4096,
+      "height": 3072,
+      "format": "jpeg",
+      "updatedAt": "2026-10-04T07:53:58.324Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-screenshot-pin/HTxVVw9a0AA2c_p-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-screenshot-pin/HTxVVw9a0AA2c_p-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-screenshot-pin/HTxVVw9a0AA2c_p-1920w.webp"
+          },
+          {
+            "width": 4096,
+            "path": "pics-optimized/omarchy-screenshot-pin/HTxVVw9a0AA2c_p-4096w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-screenshot-pin/HTxVVw9a0AA2c_p-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-screenshot-pin/HTxVVw9a0AA2c_p-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-screenshot-pin/HTxVVw9a0AA2c_p-1920w.jpg"
+          },
+          {
+            "width": 4096,
+            "path": "pics-optimized/omarchy-screenshot-pin/HTxVVw9a0AA2c_p-4096w.jpg"
           }
         ]
       }
