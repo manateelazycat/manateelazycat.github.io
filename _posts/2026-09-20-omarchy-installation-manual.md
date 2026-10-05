@@ -97,8 +97,6 @@ hyprctl configerrors
 
 [Omarchy Workspace Gallery](https://github.com/manateelazycat/omarchy-workspace-gallery)：通过三指手势打开工作区画廊，实时预览、切换工作区，并在工作区内或跨工作区拖放窗口
 
-[Omarchy Tray Bar](https://github.com/manateelazycat/omarchy-tray-bar)：让托盘图标默认直接展开，无需点击箭头
-
 [Omarchy Fcitx Status](https://github.com/manateelazycat/omarchy-fctix-status)：在 Omarchy 顶栏实时显示当前聚焦窗口的中文或英文输入状态，右键可切换中文、英文或重启 Fcitx5
 
 [Omarchy Power Awake](https://github.com/manateelazycat/omarchy-power-awake)：台式机和插电的笔记本保持唤醒，笔记本使用电池时恢复屏保和锁屏
