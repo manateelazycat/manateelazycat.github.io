@@ -8929,6 +8929,37 @@
         ]
       }
     },
+    "pics/omarchy-desktop-minimize/demo.jpg": {
+      "sourceHash": "e70dcbb4deba20284c893201240c54a95bd1bca3",
+      "width": 1200,
+      "height": 675,
+      "format": "jpeg",
+      "updatedAt": "2026-10-05T10:16:18.428Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-desktop-minimize/demo-640w.webp"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/omarchy-desktop-minimize/demo-1200w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-desktop-minimize/demo-640w.jpg"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/omarchy-desktop-minimize/demo-1200w.jpg"
+          }
+        ]
+      }
+    },
     "pics/omarchy-desktop-top/demo.jpg": {
       "sourceHash": "e9d6d421ea522fe157a92640c10761babe3e99c7",
       "width": 1200,
