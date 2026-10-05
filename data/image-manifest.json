@@ -9038,6 +9038,45 @@
         ]
       }
     },
+    "pics/omarchy-git-sync/HT3U5GmbsAAHKFv.jpg": {
+      "sourceHash": "363b63397881c7d41512a563a9536b602bc59f40",
+      "width": 1920,
+      "height": 1080,
+      "format": "jpeg",
+      "updatedAt": "2026-10-05T12:06:19.398Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-git-sync/HT3U5GmbsAAHKFv-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-git-sync/HT3U5GmbsAAHKFv-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-git-sync/HT3U5GmbsAAHKFv-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-git-sync/HT3U5GmbsAAHKFv-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-git-sync/HT3U5GmbsAAHKFv-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-git-sync/HT3U5GmbsAAHKFv-1920w.jpg"
+          }
+        ]
+      }
+    },
     "pics/omarchy-language-switcher/omarchy-language-switcher.jpg": {
       "sourceHash": "c1e64eae862867f78f4e53807dddaf3798780408",
       "width": 1920,
