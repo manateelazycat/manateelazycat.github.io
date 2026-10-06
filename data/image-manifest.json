@@ -274,6 +274,123 @@
         ]
       }
     },
+    "pics/ai-coding-design-alignment/HT7hffQawAAH0T_.jpg": {
+      "sourceHash": "de2ba676916e2d0f83b727d81add93a8a9a9a149",
+      "width": 1584,
+      "height": 993,
+      "format": "jpeg",
+      "updatedAt": "2026-10-06T07:37:21.856Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hffQawAAH0T_-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hffQawAAH0T_-1280w.webp"
+          },
+          {
+            "width": 1584,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hffQawAAH0T_-1584w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hffQawAAH0T_-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hffQawAAH0T_-1280w.jpg"
+          },
+          {
+            "width": 1584,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hffQawAAH0T_-1584w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/ai-coding-design-alignment/HT7hiuwaQAADlxV.jpg": {
+      "sourceHash": "8695d7985e5ef657ede525619f947e080360107d",
+      "width": 1536,
+      "height": 1024,
+      "format": "jpeg",
+      "updatedAt": "2026-10-06T07:37:22.173Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hiuwaQAADlxV-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hiuwaQAADlxV-1280w.webp"
+          },
+          {
+            "width": 1536,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hiuwaQAADlxV-1536w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hiuwaQAADlxV-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hiuwaQAADlxV-1280w.jpg"
+          },
+          {
+            "width": 1536,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hiuwaQAADlxV-1536w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/ai-coding-design-alignment/HT7hkNGbsAAg_E4.jpg": {
+      "sourceHash": "d3593c8177400562f663bf5aa36e8cb97bb4f7db",
+      "width": 1536,
+      "height": 1024,
+      "format": "jpeg",
+      "updatedAt": "2026-10-06T07:37:22.452Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hkNGbsAAg_E4-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hkNGbsAAg_E4-1280w.webp"
+          },
+          {
+            "width": 1536,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hkNGbsAAg_E4-1536w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hkNGbsAAg_E4-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hkNGbsAAg_E4-1280w.jpg"
+          },
+          {
+            "width": 1536,
+            "path": "pics-optimized/ai-coding-design-alignment/HT7hkNGbsAAg_E4-1536w.jpg"
+          }
+        ]
+      }
+    },
     "pics/ai-pod/1_update.jpeg": {
       "sourceHash": "374d317e02b47323abdf749f71eff5bc96364c58",
       "width": 2160,
