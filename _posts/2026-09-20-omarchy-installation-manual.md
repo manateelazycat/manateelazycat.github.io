@@ -121,7 +121,7 @@ hyprctl configerrors
 
 [Omarchy Desktop Clock](https://github.com/manateelazycat/omarchy-desktop-clock)：在桌面显示时钟，隐藏工作区窗口后方便查看时间，适合搭配 Omarchy Side Panel 的自动隐藏任务栏使用
 
-[Omarchy Desktop Top](https://github.com/manateelazycat/omarchy-deskop-top)：在桌面显示系统负载监视器，不抢占键盘和鼠标，切换窗口或工作区时可随时查看系统状态
+[Omarchy Desktop Top](https://github.com/manateelazycat/omarchy-desktop-top)：在桌面显示系统负载监视器，不抢占键盘和鼠标，切换窗口或工作区时可随时查看系统状态
 
 [Omarchy Git Sync](https://github.com/manateelazycat/omarchy-git-sync)：追踪插件的 Git 地址，在多台电脑之间同步已安装的 Omarchy 插件，无需等待 Omarchy 商店审核
 
