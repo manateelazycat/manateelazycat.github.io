@@ -9373,6 +9373,37 @@
         ]
       }
     },
+    "pics/omarchy-screenshot-delay/demo.jpg": {
+      "sourceHash": "b3c15a161bc8600ff6eb26b8b9a137897bc9950a",
+      "width": 1200,
+      "height": 750,
+      "format": "jpeg",
+      "updatedAt": "2026-10-12T05:54:22.694Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-screenshot-delay/demo-640w.webp"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/omarchy-screenshot-delay/demo-1200w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-screenshot-delay/demo-640w.jpg"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/omarchy-screenshot-delay/demo-1200w.jpg"
+          }
+        ]
+      }
+    },
     "pics/omarchy-screenshot-pin/HTxVVw9a0AA2c_p.jpg": {
       "sourceHash": "f54fe3cb59ff3ec84d486ef2b5913373a09c4564",
       "width": 4096,
