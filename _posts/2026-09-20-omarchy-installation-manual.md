@@ -91,8 +91,6 @@ hyprctl configerrors
 
 [Hyprmoncfg](https://github.com/crmne/omarchy-hyprmoncfg)：在顶部栏中可视化管理多显示器布局，为不同显示器组合保存配置，并在热插拔、开合盖和系统恢复后自动切换
 
-[Keystroke](https://github.com/evindor/keystroke)：替代 Omarchy 默认菜单的 Raycast 风格命令面板，可统一搜索应用、命令、文件和 AI 助手
-
 [Omarchy Window Switcher](https://github.com/manateelazycat/omarchy-window-switcher)：实现 `Alt + Tab` 切换窗口，`Super + Tab` 切换工作区
 
 [Omarchy Workspace Gallery](https://github.com/manateelazycat/omarchy-workspace-gallery)：通过三指手势打开工作区画廊，实时预览、切换工作区，并在工作区内或跨工作区拖放窗口
