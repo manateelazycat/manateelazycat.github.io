@@ -91,6 +91,18 @@ hyprctl configerrors
 
 [Hyprmoncfg](https://github.com/crmne/omarchy-hyprmoncfg)：在顶部栏中可视化管理多显示器布局，为不同显示器组合保存配置，并在热插拔、开合盖和系统恢复后自动切换
 
+[Omarchy Switch Display](https://github.com/manateelazycat/omarchy-switch-display)：按住 `Super`，反复按 `P` 预览扩展、镜像、仅内屏和仅外屏四种布局，松开两键后应用；单屏模式使用该屏幕支持的最大分辨率，切换只影响当前会话
+
+安装命令：
+
+```bash
+git clone https://github.com/manateelazycat/omarchy-switch-display.git
+cd omarchy-switch-display
+./install.sh
+```
+
+安装脚本会启用插件并配置 `Super + P` 快捷键，安装后请保留项目目录。如果同时使用 Hyprmoncfg，需要先切换到手动管理模式。
+
 [Omarchy Window Switcher](https://github.com/manateelazycat/omarchy-window-switcher)：实现 `Alt + Tab` 切换窗口，`Super + Tab` 切换工作区
 
 [Omarchy Workspace Gallery](https://github.com/manateelazycat/omarchy-workspace-gallery)：通过三指手势打开工作区画廊，实时预览、切换工作区，并在工作区内或跨工作区拖放窗口
