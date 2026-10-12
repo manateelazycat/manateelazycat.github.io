@@ -119,8 +119,6 @@ cd omarchy-switch-display
 
 [Omarchy Display Reset](https://github.com/manateelazycat/omarchy-display-reset)：在每个屏幕显示显示器布局，点击选中信号异常的显示器，临时禁用并重新加载配置以恢复显示信号
 
-[Omarchy Switch Display](https://github.com/manateelazycat/omarchy-switch-display)：使用 `Super + P` 预览并切换扩展、镜像、仅内屏和仅外屏四种显示模式
-
 [Omarchy Language Switcher](https://github.com/manateelazycat/omarchy-language-switcher)：在顶栏搜索并切换系统语言，切换后重新登录即可生效
 
 [Omarchy Startup Map](https://github.com/manateelazycat/omarchy-startup-map)：搜索已安装应用，设置登录后在指定显示器和工作区位置启动，下次登录时生效
