@@ -9685,6 +9685,45 @@
         ]
       }
     },
+    "pics/omarchy-switch-display/HUaL5cOa0AAgq5t.jpg": {
+      "sourceHash": "9cd2f3367432e4c8b159b5b552066499cdbb80c3",
+      "width": 1920,
+      "height": 1200,
+      "format": "jpeg",
+      "updatedAt": "2026-10-12T06:19:07.074Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-switch-display/HUaL5cOa0AAgq5t-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-switch-display/HUaL5cOa0AAgq5t-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-switch-display/HUaL5cOa0AAgq5t-1920w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-switch-display/HUaL5cOa0AAgq5t-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/omarchy-switch-display/HUaL5cOa0AAgq5t-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/omarchy-switch-display/HUaL5cOa0AAgq5t-1920w.jpg"
+          }
+        ]
+      }
+    },
     "pics/omarchy-wave/demo.jpg": {
       "sourceHash": "1815b313dbb8f2865c9686eb6deb621cd495b123",
       "width": 1200,
