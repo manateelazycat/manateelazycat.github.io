@@ -9295,6 +9295,37 @@
         ]
       }
     },
+    "pics/omarchy-file-previewer/demo.jpg": {
+      "sourceHash": "8598131ac74d969282cfb68c70cfdc98afdbeb7b",
+      "width": 1200,
+      "height": 750,
+      "format": "jpeg",
+      "updatedAt": "2026-10-18T04:10:12.672Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-file-previewer/demo-640w.webp"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/omarchy-file-previewer/demo-1200w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/omarchy-file-previewer/demo-640w.jpg"
+          },
+          {
+            "width": 1200,
+            "path": "pics-optimized/omarchy-file-previewer/demo-1200w.jpg"
+          }
+        ]
+      }
+    },
     "pics/omarchy-git-sync/HT3U5GmbsAAHKFv.jpg": {
       "sourceHash": "363b63397881c7d41512a563a9536b602bc59f40",
       "width": 1920,
