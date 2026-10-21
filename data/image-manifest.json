@@ -1,6 +1,37 @@
 {
   "version": 1,
   "images": {
+    "pics/128gb-ai-inference-engines/HVKt2uHboAA938c.jpg": {
+      "sourceHash": "bab6ba9676e81bf8a152587484f8e6a9d061ae64",
+      "width": 1168,
+      "height": 784,
+      "format": "jpeg",
+      "updatedAt": "2026-10-21T16:27:34.697Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/128gb-ai-inference-engines/HVKt2uHboAA938c-640w.webp"
+          },
+          {
+            "width": 1168,
+            "path": "pics-optimized/128gb-ai-inference-engines/HVKt2uHboAA938c-1168w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/128gb-ai-inference-engines/HVKt2uHboAA938c-640w.jpg"
+          },
+          {
+            "width": 1168,
+            "path": "pics-optimized/128gb-ai-inference-engines/HVKt2uHboAA938c-1168w.jpg"
+          }
+        ]
+      }
+    },
     "pics/35-years-old/1_update.png": {
       "sourceHash": "680da1f0d16b6e30b228dea85eaec23fd3ab793d",
       "width": 960,
