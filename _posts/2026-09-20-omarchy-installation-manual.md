@@ -105,6 +105,8 @@ hyprctl configerrors
 
 [Omarchy Terminal Clipboard](https://github.com/manateelazycat/omarchy-terminal-clipboard)：让 `Super + C/V` 在 Lazycat Terminal、LightOS、普通终端和图形应用中使用正确的复制粘贴快捷键
 
+[Omarchy LCMD Window Rule](https://github.com/manateelazycat/omarchy-lcmd-window-rule)：让懒猫微服主窗口和各 App 独占工作区，排除远程微信临时启动页，防止微信抢焦点和跳工作区；多屏时优先在显示空白工作区的屏幕打开微信
+
 [Omarchy Color Picker](https://github.com/manateelazycat/omarchy-color-picker)：在 Omarchy 顶栏提供屏幕取色器，使用像素放大镜精确选取颜色，并以 HEX、RGB 或 HSL 格式复制到系统剪贴板
 
 [Omarchy Display Reset](https://github.com/manateelazycat/omarchy-display-reset)：在每个屏幕显示显示器布局，点击选中信号异常的显示器，临时禁用并重新加载配置以恢复显示信号
@@ -198,40 +200,3 @@ Fish 4.0 的 Kitty Keyboard Protocols 会让基于 pyte 的终端产生额外的
 ```fish
 set -Ua fish_features no-keyboard-protocols
 ```
-
-#### 懒猫微服客户端独占工作区
-
-让懒猫微服主窗口和每个 App 自动进入独立工作区。在 `~/.config/hypr/hyprland.lua` 末尾添加：
-
-```lua
-o.window("^lzc-client-desktop$", {
-  workspace = "emptyn",
-})
-```
-
-`emptyn` 会为新窗口选择下一个空工作区。保存后执行：
-
-```bash
-hyprctl reload
-hyprctl configerrors
-```
-
-#### 防止远程微信跳到当前工作区
-
-远程微信收到消息时可能会请求激活窗口，导致它从原来的工作区跳到当前工作区。要让它始终留在打开时所在的工作区，在 `~/.config/hypr/hyprland.lua` 末尾添加：
-
-```lua
-o.window(
-  {
-    class = "^wechat$",
-    initial_title = "^微信 on cloud\\.lazycat\\.catlink\\.wechat-cde$",
-  },
-  {
-    no_initial_focus = true,
-    focus_on_activate = false,
-    suppress_event = "activate activatefocus",
-  }
-)
-```
-
-这条规则不会指定固定的工作区编号，只会阻止远程微信抢焦点和响应激活请求。保存后执行 `hyprctl reload` 重新加载配置。
