@@ -13234,6 +13234,37 @@
         ]
       }
     },
+    "pics/speaker-voiceprint-tracking/HWcdIG7b0AA4bPZ.png": {
+      "sourceHash": "0a7178755d29a8ae97adb10881b5d4c8a0bad4f1",
+      "width": 789,
+      "height": 219,
+      "format": "png",
+      "updatedAt": "2026-11-06T13:25:41.613Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/speaker-voiceprint-tracking/HWcdIG7b0AA4bPZ-640w.webp"
+          },
+          {
+            "width": 789,
+            "path": "pics-optimized/speaker-voiceprint-tracking/HWcdIG7b0AA4bPZ-789w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/speaker-voiceprint-tracking/HWcdIG7b0AA4bPZ-640w.png"
+          },
+          {
+            "width": 789,
+            "path": "pics-optimized/speaker-voiceprint-tracking/HWcdIG7b0AA4bPZ-789w.png"
+          }
+        ]
+      }
+    },
     "pics/ssh-over-web/ssh-over-web_update.png": {
       "sourceHash": "26743481e37bbc7d3776820c98d06f8de77c3e6a",
       "width": 1920,
