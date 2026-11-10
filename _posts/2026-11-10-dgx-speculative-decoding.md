@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 投机解码如何提升 DGX 的解码速度
+title: 显存带宽和投机解码技术
 categories: [AI, Hardware]
 ---
 
