@@ -422,6 +422,37 @@
         ]
       }
     },
+    "pics/ai-model-architecture-comparison/gemini-response.jpg": {
+      "sourceHash": "d79733d9c0af691b88d342d87cf7f8d7e25ce6d7",
+      "width": 1172,
+      "height": 1748,
+      "format": "jpeg",
+      "updatedAt": "2026-11-19T12:04:42.448Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/ai-model-architecture-comparison/gemini-response-640w.webp"
+          },
+          {
+            "width": 1172,
+            "path": "pics-optimized/ai-model-architecture-comparison/gemini-response-1172w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/ai-model-architecture-comparison/gemini-response-640w.jpg"
+          },
+          {
+            "width": 1172,
+            "path": "pics-optimized/ai-model-architecture-comparison/gemini-response-1172w.jpg"
+          }
+        ]
+      }
+    },
     "pics/ai-pod/1_update.jpeg": {
       "sourceHash": "374d317e02b47323abdf749f71eff5bc96364c58",
       "width": 2160,
@@ -1027,6 +1058,53 @@
           {
             "width": 1080,
             "path": "pics-optimized/build-raspberry-on-mac/build-raspberry-on-mac_update-1080w.jpg"
+          }
+        ]
+      }
+    },
+    "pics/car-phone-mount/car-phone-mount.jpg": {
+      "sourceHash": "105112ee94c4d77d6da7fd2747f26585b7cf774e",
+      "width": 4096,
+      "height": 3072,
+      "format": "jpeg",
+      "updatedAt": "2026-11-19T12:00:30.491Z",
+      "webp": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/car-phone-mount/car-phone-mount-640w.webp"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/car-phone-mount/car-phone-mount-1280w.webp"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/car-phone-mount/car-phone-mount-1920w.webp"
+          },
+          {
+            "width": 4096,
+            "path": "pics-optimized/car-phone-mount/car-phone-mount-4096w.webp"
+          }
+        ]
+      },
+      "fallback": {
+        "variants": [
+          {
+            "width": 640,
+            "path": "pics-optimized/car-phone-mount/car-phone-mount-640w.jpg"
+          },
+          {
+            "width": 1280,
+            "path": "pics-optimized/car-phone-mount/car-phone-mount-1280w.jpg"
+          },
+          {
+            "width": 1920,
+            "path": "pics-optimized/car-phone-mount/car-phone-mount-1920w.jpg"
+          },
+          {
+            "width": 4096,
+            "path": "pics-optimized/car-phone-mount/car-phone-mount-4096w.jpg"
           }
         ]
       }
